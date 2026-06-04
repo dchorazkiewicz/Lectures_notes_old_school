@@ -1,0 +1,213 @@
+\section{Acceleration}
+
+\subsection{Why velocity is not the end of the description}
+
+Velocity describes how position changes. But velocity itself may also change.
+
+A car may move faster and faster. A body may slow down. A point moving along a circle may keep the same speed but continuously change direction. In each of these cases, velocity changes.
+
+Acceleration describes the change of velocity with respect to time.
+
+\subsection{Average acceleration}
+
+Suppose the velocity at time \(t_1\) is \(\mathbf{v}(t_1)\), and the velocity at time \(t_2\) is \(\mathbf{v}(t_2)\). The change in velocity is
+
+\[
+\Delta \mathbf{v}
+=
+\mathbf{v}(t_2)-\mathbf{v}(t_1).
+\]
+
+The average acceleration over the interval is
+
+\[
+\mathbf{a}_{\mathrm{avg}}
+=
+\frac{\Delta \mathbf{v}}{\Delta t}
+=
+\frac{\mathbf{v}(t_2)-\mathbf{v}(t_1)}{t_2-t_1}.
+\]
+
+Average acceleration describes how velocity changes over a time interval.
+
+\subsection{Instantaneous acceleration}
+
+Instantaneous acceleration is the derivative of velocity with respect to time:
+
+\[
+\mathbf{a}(t)
+=
+\frac{d\mathbf{v}}{dt}.
+\]
+
+Since velocity is the derivative of position,
+
+\[
+\mathbf{v}(t)=\frac{d\mathbf{r}}{dt},
+\]
+
+we also have
+
+\[
+\mathbf{a}(t)
+=
+\frac{d^2\mathbf{r}}{dt^2}.
+\]
+
+Thus acceleration is the second derivative of position with respect to time.
+
+In coordinates,
+
+\[
+\mathbf{a}(t)
+=
+\left(
+\frac{d^2x}{dt^2},
+\frac{d^2y}{dt^2},
+\frac{d^2z}{dt^2}
+\right).
+\]
+
+In two dimensions,
+
+\[
+\mathbf{a}(t)
+=
+\left(
+\frac{d^2x}{dt^2},
+\frac{d^2y}{dt^2}
+\right).
+\]
+
+In one dimension,
+
+\[
+a(t)=\frac{d^2x}{dt^2}.
+\]
+
+\subsection{Acceleration is also a vector}
+
+Acceleration is a vector. It has magnitude and direction. It describes how the velocity vector changes.
+
+This point is important. Acceleration does not only mean that speed increases. Acceleration means that velocity changes. Since velocity is a vector, it can change in two ways:
+
+\begin{itemize}
+    \item its magnitude can change,
+    \item its direction can change.
+\end{itemize}
+
+Therefore a body may be accelerating even if its speed is constant, provided that the direction of velocity changes.
+
+This is one of the most common conceptual difficulties in kinematics. Constant speed does not necessarily mean zero acceleration.
+
+\subsection{Example: motion along a line}
+
+Consider
+
+\[
+x(t)=x_0+at.
+\]
+
+We already found that
+
+\[
+v(t)=a.
+\]
+
+The acceleration is
+
+\[
+a_{\mathrm{kin}}(t)=\frac{dv}{dt}.
+\]
+
+Since \(v(t)\) is constant,
+
+\[
+a_{\mathrm{kin}}(t)=0.
+\]
+
+Here we use the notation \(a_{\mathrm{kin}}\) for acceleration in this example to avoid confusion with the parameter \(a\) in the formula for \(x(t)\). This is a useful warning: the same letter can be used for different things in different contexts, but in one calculation we must keep the meaning clear.
+
+\subsection{Example: parabolic position}
+
+Consider again
+
+\[
+\mathbf{r}(t)=(t,t^2).
+\]
+
+We found
+
+\[
+\mathbf{v}(t)=(1,2t).
+\]
+
+Therefore
+
+\[
+\mathbf{a}(t)
+=
+\frac{d\mathbf{v}}{dt}
+=
+(0,2).
+\]
+
+The acceleration is constant. It points in the positive \(y\)-direction.
+
+This does not come from looking only at the geometric curve. It comes from how the point moves along the curve as time changes.
+
+\subsection{Example: circular motion}
+
+Consider again
+
+\[
+\mathbf{r}(t)=(R\cos t,R\sin t).
+\]
+
+We found
+
+\[
+\mathbf{v}(t)=(-R\sin t,R\cos t).
+\]
+
+Now we differentiate again:
+
+\[
+\mathbf{a}(t)
+=
+(-R\cos t,-R\sin t).
+\]
+
+But
+
+\[
+\mathbf{r}(t)=(R\cos t,R\sin t).
+\]
+
+Therefore
+
+\[
+\mathbf{a}(t)=-\mathbf{r}(t).
+\]
+
+This means that the acceleration points toward the center of the circle. The velocity is tangent to the circle, but the acceleration points inward.
+
+This is a major conceptual point. In uniform circular motion, speed may be constant, but acceleration is not zero, because the direction of velocity is changing.
+
+\subsection{Units of acceleration}
+
+Acceleration has units of velocity divided by time. If velocity is measured in metres per second and time in seconds, acceleration is measured in
+
+\[
+\mathrm{m/s^2}.
+\]
+
+This also follows from
+
+\[
+\mathbf{a}(t)=\frac{d^2\mathbf{r}}{dt^2}.
+\]
+
+Position contributes metres, and two differentiations with respect to time contribute two factors of seconds in the denominator.
+
+The unit \(\mathrm{m/s^2}\) means metres per second per second. It describes how velocity changes each second.
