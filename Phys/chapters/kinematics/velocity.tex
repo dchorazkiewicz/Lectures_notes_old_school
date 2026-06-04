@@ -17,19 +17,19 @@ Let the position of a moving point be \(\mathbf{r}(t)\). Suppose we compare two 
 \]
 
 \begin{center}
-\begin{tikzpicture}[x=1.05cm,y=0.75cm]
-    \draw[step=1, gray!25, very thin] (-0.35,-0.35) grid (5.25,4.75);
-    \draw[->] (-0.35,0) -- (5.55,0) node[right] {$x$};
-    \draw[->] (0,-0.35) -- (0,4.95) node[above] {$y$};
+\begin{tikzpicture}[x=1.08cm,y=0.90cm]
+    \draw[step=1, gray!25, very thin] (-0.35,-0.35) grid (4.75,3.75);
+    \draw[->] (-0.35,0) -- (5.05,0) node[right] {$x$};
+    \draw[->] (0,-0.35) -- (0,3.95) node[above] {$y$};
 
-    \draw[domain=0.2:4.6, smooth, samples=100] plot (\x,{0.25*(\x-2.2)*(\x-2.2)+0.7});
+    \draw[domain=0.15:4.35, smooth, samples=100] plot (\x,{0.30*(\x-1.2)*(\x-1.2)+0.8});
 
     \coordinate (O) at (0,0);
-    \coordinate (Pone) at (1.2,0.95);
-    \coordinate (Ptwo) at (4.0,1.51);
+    \coordinate (Pone) at (1.2,0.8);
+    \coordinate (Ptwo) at (4.0,3.15);
 
-    \draw[dashed] (1.2,0) -- (Pone) -- (0,0.95);
-    \draw[dashed] (4.0,0) -- (Ptwo) -- (0,1.51);
+    \draw[dashed] (1.2,0) -- (Pone) -- (0,0.8);
+    \draw[dashed] (4.0,0) -- (Ptwo) -- (0,3.15);
 
     \draw[->, thick, blue!70!black] (O) -- (Pone);
     \draw[->, thick, red!70!black] (O) -- (Ptwo);
@@ -38,14 +38,14 @@ Let the position of a moving point be \(\mathbf{r}(t)\). Suppose we compare two 
     \fill[blue!70!black] (Pone) circle (2pt);
     \fill[red!70!black] (Ptwo) circle (2pt);
 
-    \node[blue!70!black, above left] at (0.78,0.55) {$\mathbf{r}(t_1)$};
-    \node[red!70!black, below right] at (2.65,1.00) {$\mathbf{r}(t_2)$};
-    \node[purple!80!black, above] at (2.7,1.55) {$\Delta\mathbf{r}$};
+    \node[blue!70!black, above left] at (0.78,0.45) {$\mathbf{r}(t_1)$};
+    \node[red!70!black, below right] at (2.70,1.75) {$\mathbf{r}(t_2)$};
+    \node[purple!80!black, above] at (2.65,2.10) {$\Delta\mathbf{r}$};
 
     \node[below] at (1.2,0) {$x(t_1)$};
     \node[below] at (4.0,0) {$x(t_2)$};
-    \node[left] at (0,0.95) {$y(t_1)$};
-    \node[left] at (0,1.51) {$y(t_2)$};
+    \node[left] at (0,0.8) {$y(t_1)$};
+    \node[left] at (0,3.15) {$y(t_2)$};
     \node[below left] at (0,0) {$O$};
 \end{tikzpicture}
 \end{center}
