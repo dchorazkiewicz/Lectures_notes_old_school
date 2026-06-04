@@ -28,24 +28,17 @@ Let the position of a moving point be \(\mathbf{r}(t)\). Suppose we compare two 
     \coordinate (Pone) at ({3*cos(45)},{3*sin(45)});
     \coordinate (Ptwo) at ({3*cos(120)},{3*sin(120)});
 
-    \draw[dashed] ({3*cos(45)},0) -- (Pone) -- (0,{3*sin(45)});
-    \draw[dashed] ({3*cos(120)},0) -- (Ptwo) -- (0,{3*sin(120)});
-
     \draw[->, thick, blue!70!black] (O) -- (Pone);
     \draw[->, thick, red!70!black] (O) -- (Ptwo);
-    \draw[->, very thick, purple!80!black] (Pone) -- (Ptwo);
+    \draw[->, very thick, green!55!black] (Pone) -- (Ptwo);
 
     \fill[blue!70!black] (Pone) circle (2pt);
     \fill[red!70!black] (Ptwo) circle (2pt);
 
     \node[blue!70!black, below right] at (1.05,1.05) {$\mathbf{r}(t_1)$};
     \node[red!70!black, left] at (-0.95,1.55) {$\mathbf{r}(t_2)$};
-    \node[purple!80!black, above] at (0.35,2.65) {$\Delta\mathbf{r}$};
+    \node[green!55!black, above] at (0.35,2.65) {$\Delta\mathbf{r}$};
 
-    \node[below] at ({3*cos(45)},0) {$x(t_1)$};
-    \node[below] at ({3*cos(120)},0) {$x(t_2)$};
-    \node[right] at (0,{3*sin(45)}) {$y(t_1)$};
-    \node[left] at (0,{3*sin(120)}) {$y(t_2)$};
     \node[below left] at (0,0) {$O$};
 \end{tikzpicture}
 \end{center}
