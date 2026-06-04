@@ -75,13 +75,38 @@ Average velocity depends on the interval. If we choose a large interval, we desc
 
 \subsection{Instantaneous velocity}
 
-To describe the motion at one moment, we take the limit of the average velocity as the time interval becomes very small. This gives instantaneous velocity:
+Average velocity describes motion over a time interval. To describe motion at one instant, we make that interval smaller and smaller.
+
+Fix a time \(t\). Instead of comparing two arbitrary times \(t_1\) and \(t_2\), compare the position at time \(t\) with the position a short time \(\Delta t\) later:
+
+\[
+\mathbf{r}(t+\Delta t)-\mathbf{r}(t).
+\]
+
+The average velocity over this short interval is
+
+\[
+\frac{\mathbf{r}(t+\Delta t)-\mathbf{r}(t)}{\Delta t}.
+\]
+
+This vector still describes an interval, not a single instant. To obtain the velocity at the instant \(t\), we let the time interval shrink to zero:
+
+\[
+\mathbf{v}(t)
+=
+\lim_{\Delta t\to 0}
+\frac{\mathbf{r}(t+\Delta t)-\mathbf{r}(t)}{\Delta t}.
+\]
+
+This limit is the derivative of position with respect to time, so we write
 
 \[
 \mathbf{v}(t)
 =
 \frac{d\mathbf{r}}{dt}.
 \]
+
+The limiting process is the essential idea. We are not dividing by zero. We first compute the average velocity over a nonzero time interval \(\Delta t\), and only then study what this expression approaches as \(\Delta t\) becomes arbitrarily small.
 
 If
 
