@@ -34,6 +34,25 @@ In two dimensions we write
 
 The symbol \(\mathbf{r}\) represents the position vector. It points from the origin of the chosen coordinate system to the point whose position we want to describe.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[step=1, gray!25, very thin] (-0.5,-0.5) grid (5.0,4.5);
+    \draw[->] (-0.5,0) -- (5.3,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4.8) node[above] {$y$};
+    \foreach \x in {1,2,3,4} {
+        \draw (\x,0.06) -- (\x,-0.06) node[below] {\x};
+    }
+    \foreach \y in {1,2,3,4} {
+        \draw (0.06,\y) -- (-0.06,\y) node[left] {\y};
+    }
+    \draw[dashed] (3,0) -- (3,2.5) -- (0,2.5);
+    \draw[->, thick] (0,0) -- (3,2.5) node[midway, above left] {$\mathbf{r}$};
+    \fill (3,2.5) circle (2pt);
+    \node[above right] at (3,2.5) {$P=(x,y)$};
+    \node[below left] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+
 The position vector depends on the coordinate system. If we choose a different origin or different axes, the coordinates of the same physical point may change. This is not a contradiction. Coordinates are not the point itself. Coordinates are a numerical description of the point after a coordinate system has been chosen.
 
 \subsection{Motion as changing position}
