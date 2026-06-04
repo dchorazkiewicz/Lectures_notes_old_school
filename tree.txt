@@ -1,0 +1,132 @@
+.
+├── AGENTS.md
+├── INITIAL_SETUP_AGENT.md
+├── Math
+│   ├── Math
+│   │   ├── build.sh
+│   │   ├── chapters
+│   │   │   ├── analytic_geometry
+│   │   │   │   ├── coordinates.tex
+│   │   │   │   ├── lines.tex
+│   │   │   │   └── planes.tex
+│   │   │   ├── calculus
+│   │   │   │   ├── continuity.tex
+│   │   │   │   ├── derivatives.tex
+│   │   │   │   ├── functions.tex
+│   │   │   │   └── limits.tex
+│   │   │   ├── chapter_00_introduction.tex
+│   │   │   ├── chapter_01_linear_algebra.tex
+│   │   │   ├── chapter_02_analytic_geometry.tex
+│   │   │   ├── chapter_03_calculus.tex
+│   │   │   ├── introduction
+│   │   │   │   ├── ideas.md
+│   │   │   │   └── overview.tex
+│   │   │   └── linear_algebra
+│   │   │       ├── matrices.tex
+│   │   │       ├── systems_of_linear_equations.tex
+│   │   │       └── vectors.tex
+│   │   ├── macros.tex
+│   │   ├── main.pdf
+│   │   ├── main.tex
+│   │   ├── preamble.tex
+│   │   ├── styles.tex
+│   │   └── titlepage.tex
+│   └── Prob_meth
+│       ├── build.sh
+│       ├── chapters
+│       │   ├── chapter_00_introduction.tex
+│       │   ├── chapter_01_events_and_probability.tex
+│       │   ├── chapter_02_combinatorics.tex
+│       │   ├── chapter_03_probability_distributions.tex
+│       │   ├── chapter_04_discovery_formalism.tex
+│       │   ├── chapter_05_pmf_pdf_cdf.tex
+│       │   ├── chapter_06_conditional_probability.tex
+│       │   ├── chapter_07_data_analysis.tex
+│       │   ├── combinatorics
+│       │   │   └── overview.tex
+│       │   ├── conditional_probability
+│       │   │   └── overview.tex
+│       │   ├── data_analysis
+│       │   │   └── overview.tex
+│       │   ├── discovery_formalism
+│       │   │   └── overview.tex
+│       │   ├── events_and_probability
+│       │   │   └── overview.tex
+│       │   ├── introduction
+│       │   │   └── overview.tex
+│       │   ├── pmf_pdf_cdf
+│       │   │   └── overview.tex
+│       │   └── probability_distributions
+│       │       └── overview.tex
+│       ├── macros.tex
+│       ├── main.pdf
+│       ├── main.tex
+│       ├── preamble.tex
+│       ├── problems
+│       │   ├── 01_events_and_probability.md
+│       │   ├── 02_combinatorics.md
+│       │   ├── 03_probability_distributions.md
+│       │   ├── 04_discovery_formalism.md
+│       │   ├── 05_pmf_pdf_cdf.md
+│       │   ├── 06_conditional_probability.md
+│       │   └── 07_data_analysis.md
+│       ├── styles.tex
+│       └── titlepage.tex
+├── Phys
+│   ├── build.sh
+│   ├── chapters
+│   │   ├── chapter_00_introduction.tex
+│   │   ├── chapter_01_mathematical_foundations.tex
+│   │   ├── chapter_02_kinematics.tex
+│   │   ├── chapter_03_dynamics.tex
+│   │   ├── chapter_04_oscillations_and_waves.tex
+│   │   ├── chapter_05_electromagnetism.tex
+│   │   ├── chapter_06_statistics_and_measurements.tex
+│   │   ├── chapter_07_cosmology.tex
+│   │   ├── chapter_08_relativity.tex
+│   │   ├── chapter_09_modern_physics.tex
+│   │   ├── cosmology
+│   │   │   └── introduction.tex
+│   │   ├── dynamics
+│   │   │   └── introduction.tex
+│   │   ├── electromagnetism
+│   │   │   └── introduction.tex
+│   │   ├── introduction
+│   │   │   ├── ideas.md
+│   │   │   └── overview.tex
+│   │   ├── kinematics
+│   │   │   └── introduction.tex
+│   │   ├── mathematical_foundations
+│   │   │   └── introduction.tex
+│   │   ├── modern_physics
+│   │   │   └── introduction.tex
+│   │   ├── oscillations_and_waves
+│   │   │   └── introduction.tex
+│   │   ├── relativity
+│   │   │   └── introduction.tex
+│   │   └── statistics_and_measurements
+│   │       └── introduction.tex
+│   ├── macros.tex
+│   ├── main.pdf
+│   ├── main.tex
+│   ├── preamble.tex
+│   ├── problems
+│   │   ├── problem_set_01_mathematical_foundations.md
+│   │   ├── problem_set_02_mechanics_and_kinematics.md
+│   │   ├── problem_set_03_mechanics_ii_dynamics.md
+│   │   ├── problem_set_04_oscillations_and_waves.md
+│   │   ├── problem_set_05_electromagnetism_i.md
+│   │   ├── problem_set_06_electromagnetism_ii.md
+│   │   ├── problem_set_07_circuits_resistors_and_kirchhoff.md
+│   │   ├── problem_set_08_statistics_and_measurements.md
+│   │   ├── problem_set_09_model_cosmology.md
+│   │   ├── problem_set_10_relativity_spacetime_models.md
+│   │   └── problem_set_11_modern_physics_quantum_and_nuclear_model.md
+│   ├── styles.tex
+│   └── titlepage.tex
+├── README.md
+├── tree_sha.txt
+├── tree.txt
+└── WRITE_TEST.md
+
+32 directories, 98 files
