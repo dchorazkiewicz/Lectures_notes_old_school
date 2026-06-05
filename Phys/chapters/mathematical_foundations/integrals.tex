@@ -1,9 +1,9 @@
 \section{Integrals}
 
-An integral describes accumulation. It can be understood as a limiting sum or, geometrically, as the signed area under a graph. In this introductory chapter we will mainly use the connection between integration and antiderivatives.
+An integral describes accumulation. It can be understood as a limiting sum or, geometrically, as the signed area under a graph. In this introductory chapter we mainly need the connection between integration and antiderivatives.
 
 \begin{definitionbox}
-Let \(f\) be a real-valued function on an interval \(I\). A function \(F\) is called an antiderivative of \(f\) on \(I\) if
+Let \(f\colon I\to\mathbb{R}\) be a function defined on an interval \(I\). A function \(F\colon I\to\mathbb{R}\) is called an antiderivative of \(f\) on \(I\) if \(F\) is differentiable on \(I\) and
 \[
 F'(x)=f(x)
 \]
@@ -11,7 +11,7 @@ for every \(x\in I\).
 \end{definitionbox}
 
 \begin{definitionbox}
-If \(F\) is an antiderivative of \(f\), then the indefinite integral of \(f\) is the family of functions
+The indefinite integral of \(f\) is the family of all antiderivatives of \(f\). If \(F\) is one antiderivative of \(f\), we write
 \[
 \int f(x)\,dx=F(x)+C,
 \]
@@ -35,10 +35,14 @@ The definite integral of \(f(x)\) from \(a\) to \(b\) is written as
 \[
 \int_a^b f(x)\,dx.
 \]
-If \(F\) is an antiderivative of \(f\) on an interval containing \([a,b]\), then
+It measures accumulation over the interval \([a,b]\). Its precise construction can be given using limiting sums; in these notes we will mainly compute it using the theorem below.
+
+\begin{theorembox}
+If \(f\) is continuous on \([a,b]\) and \(F\) is an antiderivative of \(f\) on \([a,b]\), then
 \[
 \int_a^b f(x)\,dx=F(b)-F(a).
 \]
+\end{theorembox}
 
 \begin{examplebox}
 Since \(F(x)=x^2\) is an antiderivative of \(f(x)=2x\), we have
