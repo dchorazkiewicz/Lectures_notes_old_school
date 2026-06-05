@@ -5,6 +5,8 @@
 \definecolor{AccentBlue}{HTML}{D8E9F7}
 \definecolor{ExampleGreen}{HTML}{2F7D4A}
 \definecolor{ExampleGreenBack}{HTML}{EEF8F1}
+\definecolor{TheoremOrange}{HTML}{B85C00}
+\definecolor{TheoremOrangeBack}{HTML}{FFF4E6}
 
 % Chapter, section, and subsection heading styles
 \titleformat{\chapter}[display]
@@ -50,6 +52,14 @@
     colback=AccentBlue!28,
     colframe=SectionBlue,
     title=Definition,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{theorembox}{
+    breakable,
+    colback=TheoremOrangeBack,
+    colframe=TheoremOrange,
+    title=Theorem,
     fonttitle=\bfseries
 }
 
