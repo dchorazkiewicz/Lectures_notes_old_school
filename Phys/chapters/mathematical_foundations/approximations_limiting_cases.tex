@@ -1,0 +1,47 @@
+\section{Approximation and limiting cases}
+
+Mathematics often uses exact expressions, but in applications we frequently use approximations. An approximation replaces a complicated expression with a simpler one under specified conditions.
+
+\begin{definitionbox}
+An approximation is useful only together with its condition of validity. Without that condition, the approximation is incomplete information.
+\end{definitionbox}
+
+For small \(x\) measured in radians,
+\[
+\sin x \approx x.
+\]
+Also, for small \(x\),
+\[
+(1+x)^n \approx 1+nx.
+\]
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Expression & Approximation & Condition \\
+\midrule
+\(\sin x\) & \(x\) & small \(x\), in radians \\
+\((1+x)^n\) & \(1+nx\) & small \(x\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A limiting case is a way of checking an expression by asking what happens when a variable becomes very small, very large, or takes a special value.
+
+For example, consider
+\[
+f(x)=\frac{x}{1+x}.
+\]
+If \(x\) is very small, then
+\[
+f(x)\approx x.
+\]
+If \(x\) is very large, then
+\[
+f(x)\approx 1.
+\]
+These limiting behaviours help us understand the structure of the function.
+
+\begin{summarybox}
+Approximations simplify expressions. Limiting cases help us check whether expressions behave sensibly at special scales or special values.
+\end{summarybox}
