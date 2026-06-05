@@ -1,0 +1,41 @@
+\section{Unordered selections: combinations}
+
+A combination is an unordered selection.
+
+\begin{definitionbox}
+A \textbf{combination} of size \(k\) from an \(n\)-element set is a subset with \(k\) elements.
+\end{definitionbox}
+
+The number of combinations is
+\[
+\binom{n}{k}=\frac{n!}{k!(n-k)!}.
+\]
+
+This formula can be derived from ordered selections. There are
+\[
+P(n,k)=\frac{n!}{(n-k)!}
+\]
+ordered selections of length \(k\). But each unordered selection of \(k\) objects can be ordered in \(k!\) ways. Therefore
+\[
+\binom{n}{k}=\frac{P(n,k)}{k!}=\frac{n!}{k!(n-k)!}.
+\]
+
+Combinations are used when:
+\begin{itemize}
+    \item only membership is recorded,
+    \item order is ignored,
+    \item each object may be chosen at most once,
+    \item the outcome is a set.
+\end{itemize}
+
+\begin{examplebox}
+A five-card hand from a standard deck is a set of five cards, not a sequence of five draws, if the final hand is all that is recorded. The number of possible hands is
+\[
+\binom{52}{5}.
+\]
+If the order of drawing is recorded, the correct count is instead
+\[
+P(52,5)=52\cdot 51\cdot 50\cdot 49\cdot 48.
+\]
+These are different sample spaces.
+\end{examplebox}
