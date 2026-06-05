@@ -1,0 +1,49 @@
+\section{Differentiation and integration as inverse operations}
+
+Differentiation and integration are closely related. In a basic sense, they are inverse operations.
+
+If
+\[
+F'(x)=f(x),
+\]
+then
+\[
+\int f(x)\,dx=F(x)+C.
+\]
+
+\begin{examplebox}
+Since
+\[
+\frac{d}{dx}x^3=3x^2,
+\]
+we have
+\[
+\int 3x^2\,dx=x^3+C.
+\]
+\end{examplebox}
+
+For definite integrals, the connection is expressed by the fundamental theorem of calculus:
+\[
+\int_a^b f(x)\,dx=F(b)-F(a),
+\]
+where
+\[
+F'(x)=f(x).
+\]
+
+\begin{examplebox}
+If \(f(x)=2x\), then we can choose \(F(x)=x^2\). Thus
+\[
+\int_1^4 2x\,dx
+=
+F(4)-F(1)
+=
+4^2-1^2
+=
+15.
+\]
+\end{examplebox}
+
+\begin{summarybox}
+Differentiation moves from accumulated behaviour to local change. Integration moves from local contributions to accumulated behaviour.
+\end{summarybox}
