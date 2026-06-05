@@ -1,30 +1,49 @@
 \section{Simple differential equations}
 
-A differential equation is an equation involving an unknown function and one or more of its derivatives. It describes a relation between a function and its change.
-
 \begin{definitionbox}
-A differential equation does not ask for a number. It asks for a function.
+A differential equation is an equation involving an unknown function and one or more of its derivatives.
 \end{definitionbox}
 
-\begin{center}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Differential equation & General solution & Check \\
-\midrule
-\(\dfrac{dy}{dx}=3\) & \(y(x)=3x+C\) & derivative is \(3\) \\
-\(\dfrac{dy}{dx}=2x\) & \(y(x)=x^2+C\) & derivative is \(2x\) \\
-\(\dfrac{dy}{dx}=ky\) & \(y(x)=Ce^{kx}\) & derivative is \(kCe^{kx}\) \\
-\bottomrule
-\end{tabular}
-\end{center}
+Such an equation describes a relation between a function and its change. Unlike an algebraic equation, it does not usually ask for a single number. It asks for a function.
+
+The equation
+\[
+\frac{dy}{dx}=3
+\]
+asks for a function whose derivative is \(3\). The general solution is
+\[
+y(x)=3x+C.
+\]
+
+Another simple example is
+\[
+\frac{dy}{dx}=2x.
+\]
+A solution is
+\[
+y(x)=x^2+C,
+\]
+because
+\[
+\frac{d}{dx}(x^2+C)=2x.
+\]
+
+A slightly different example is
+\[
+\frac{dy}{dx}=ky,
+\]
+where \(k\) is a constant. This equation says that the derivative of the function is proportional to the function itself. One family of solutions is
+\[
+y(x)=Ce^{kx}.
+\]
+Indeed,
+\[
+\frac{d}{dx}Ce^{kx}=kCe^{kx}=ky(x).
+\]
 
 The constant \(C\) is determined by an additional condition. For example, if
 \[
 y(0)=2,
-\]
-and
-\[
-y(x)=Ce^{kx},
 \]
 then
 \[
@@ -36,5 +55,5 @@ y(x)=2e^{kx}.
 \]
 
 \begin{remarkbox}
-Here the important point is only the basic structure: a differential equation contains derivatives and asks for an unknown function.
+Here the important point is the basic structure: a differential equation contains derivatives and asks for an unknown function.
 \end{remarkbox}
