@@ -1,0 +1,59 @@
+\section{Recognizing the correct counting model}
+
+The following diagnostic table summarizes the main finite counting structures.
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Outcome type & Order? & Repetition? & Count \\
+\midrule
+sequence with repetition & yes & yes & \(n^k\) \\
+ordered selection & yes & no & \(P(n,k)=\dfrac{n!}{(n-k)!}\) \\
+permutation & yes & no, all used & \(n!\) \\
+circular arrangement & relative order & no, all used & \((n-1)!\) \\
+combination & no & no & \(\binom{n}{k}\) \\
+combination with repetition & no & yes & \(\binom{n+k-1}{k}\) \\
+multiset permutation & positions yes & identical objects & \(\dfrac{n!}{n_1!\cdots n_r!}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The table should be used only after the outcome type has been identified. It is a summary, not a substitute for modelling.
+
+\begin{remarkbox}
+A formula is a compressed argument. If the argument does not match the situation, the formula gives the wrong count even when the arithmetic is correct.
+\end{remarkbox}
+
+\section{Common traps}
+
+\subsection*{Trap 1: confusing a sequence with a set}
+
+The ordered outcomes
+\[
+(A,B,C)\quad\text{and}\quad(C,B,A)
+\]
+are different sequences but the same set:
+\[
+\{A,B,C\}=\{C,B,A\}.
+\]
+Use sequences when order is recorded. Use sets when only membership is recorded.
+
+\subsection*{Trap 2: treating indistinguishable objects as distinguishable}
+
+The letters in \(\text{BANANA}\) are not six distinct letters. The three \(A\)'s are indistinguishable, and the two \(N\)'s are indistinguishable. Therefore \(6!\) overcounts the number of visible arrangements.
+
+\subsection*{Trap 3: using combinations when roles matter}
+
+A committee is a set. A medal assignment is an ordered assignment. A group of three athletes and a gold-silver-bronze result are not the same kind of outcome.
+
+\subsection*{Trap 4: assuming all recorded outcomes are equally likely}
+
+If labelled balls are selected uniformly but only colors are recorded, then color outcomes may have different probabilities. A smaller recorded sample space does not automatically become equally likely.
+
+\subsection*{Trap 5: mixing models in one probability computation}
+
+In the formula
+\[
+P(A)=\frac{|A|}{|\Omega|},
+\]
+both \(|A|\) and \(|\Omega|\) must be counted using the same outcome type. Do not count ordered draws in one part and unordered hands in the other.
