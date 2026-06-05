@@ -1,0 +1,40 @@
+\section{Simple differential equations}
+
+A differential equation is an equation involving an unknown function and one or more of its derivatives. It describes a relation between a function and its change.
+
+\begin{definitionbox}
+A differential equation does not ask for a number. It asks for a function.
+\end{definitionbox}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Differential equation & General solution & Check \\
+\midrule
+\(\dfrac{dy}{dx}=3\) & \(y(x)=3x+C\) & derivative is \(3\) \\
+\(\dfrac{dy}{dx}=2x\) & \(y(x)=x^2+C\) & derivative is \(2x\) \\
+\(\dfrac{dy}{dx}=ky\) & \(y(x)=Ce^{kx}\) & derivative is \(kCe^{kx}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The constant \(C\) is determined by an additional condition. For example, if
+\[
+y(0)=2,
+\]
+and
+\[
+y(x)=Ce^{kx},
+\]
+then
+\[
+2=Ce^{k\cdot 0}=C,
+\]
+so
+\[
+y(x)=2e^{kx}.
+\]
+
+\begin{remarkbox}
+Here the important point is only the basic structure: a differential equation contains derivatives and asks for an unknown function.
+\end{remarkbox}
