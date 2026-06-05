@@ -1,3 +1,13 @@
+% Document color palette
+\definecolor{ChapterBlue}{HTML}{12355B}
+\definecolor{SectionBlue}{HTML}{1F5F99}
+\definecolor{SubsectionBlue}{HTML}{4F7FA8}
+\definecolor{AccentBlue}{HTML}{D8E9F7}
+\definecolor{ExampleGreen}{HTML}{2F7D4A}
+\definecolor{ExampleGreenBack}{HTML}{EEF8F1}
+\definecolor{TheoremOrange}{HTML}{B85C00}
+\definecolor{TheoremOrangeBack}{HTML}{FFF4E6}
+
 % Theorem-like environments
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}{Proposition}[chapter]
@@ -14,32 +24,32 @@
 % Colored boxes
 \newtcolorbox{definitionbox}{
     breakable,
-    colback=blue!3,
-    colframe=blue!60!black,
+    colback=AccentBlue!28,
+    colframe=SectionBlue,
     title=Definition,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{theorembox}{
+    breakable,
+    colback=TheoremOrangeBack,
+    colframe=TheoremOrange,
+    title=Theorem,
     fonttitle=\bfseries
 }
 
 \newtcolorbox{examplebox}{
     breakable,
-    colback=green!3,
-    colframe=green!50!black,
+    colback=ExampleGreenBack,
+    colframe=ExampleGreen,
     title=Example,
     fonttitle=\bfseries
 }
 
 \newtcolorbox{remarkbox}{
     breakable,
-    colback=yellow!8,
-    colframe=yellow!50!black,
+    colback=gray!4,
+    colframe=SubsectionBlue!75,
     title=Remark,
-    fonttitle=\bfseries
-}
-
-\newtcolorbox{summarybox}{
-    breakable,
-    colback=gray!5,
-    colframe=gray!60!black,
-    title=Summary,
     fonttitle=\bfseries
 }
