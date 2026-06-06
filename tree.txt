@@ -1,266 +1,181 @@
 .
-├── AGENTS.md
-├── INITIAL_SETUP_AGENT.md
-├── Math
-│   ├── Math
-│   │   ├── build.sh
-│   │   ├── chapters
-│   │   │   ├── analytic_geometry
-│   │   │   │   ├── coordinates.tex
-│   │   │   │   ├── lines.tex
-│   │   │   │   └── planes.tex
-│   │   │   ├── calculus
-│   │   │   │   ├── continuity.tex
-│   │   │   │   ├── derivatives.tex
-│   │   │   │   ├── functions.tex
-│   │   │   │   └── limits.tex
-│   │   │   ├── chapter_00_introduction.tex
-│   │   │   ├── chapter_01_linear_algebra.tex
-│   │   │   ├── chapter_02_analytic_geometry.tex
-│   │   │   ├── chapter_03_calculus.tex
-│   │   │   ├── introduction
-│   │   │   │   ├── ideas.md
-│   │   │   │   └── overview.tex
-│   │   │   └── linear_algebra
-│   │   │       ├── matrices.tex
-│   │   │       ├── systems_of_linear_equations.tex
-│   │   │       └── vectors.tex
-│   │   ├── macros.tex
-│   │   ├── main.pdf
-│   │   ├── main.tex
-│   │   ├── preamble.tex
-│   │   ├── styles.tex
-│   │   └── titlepage.tex
-│   └── Prob_meth
-│       ├── build.sh
-│       ├── chapters
-│       │   ├── chapter_00_introduction.tex
-│       │   ├── chapter_01_events_and_probability.tex
-│       │   ├── chapter_02_combinatorics.tex
-│       │   ├── chapter_03_probability_distributions.tex
-│       │   ├── chapter_04_discovery_formalism.tex
-│       │   ├── chapter_05_pmf_pdf_cdf.tex
-│       │   ├── chapter_06_conditional_probability.tex
-│       │   ├── chapter_07_data_analysis.tex
-│       │   ├── combinatorics
-│       │   │   └── overview.tex
-│       │   ├── conditional_probability
-│       │   │   └── overview.tex
-│       │   ├── data_analysis
-│       │   │   └── overview.tex
-│       │   ├── discovery_formalism
-│       │   │   └── overview.tex
-│       │   ├── events_and_probability
-│       │   │   └── overview.tex
-│       │   ├── introduction
-│       │   │   └── overview.tex
-│       │   ├── pmf_pdf_cdf
-│       │   │   └── overview.tex
-│       │   └── probability_distributions
-│       │       └── overview.tex
-│       ├── macros.tex
-│       ├── main.pdf
-│       ├── main.tex
-│       ├── preamble.tex
-│       ├── problems
-│       │   ├── 01_events_and_probability.md
-│       │   ├── 02_combinatorics.md
-│       │   ├── 03_probability_distributions.md
-│       │   ├── 04_discovery_formalism.md
-│       │   ├── 05_pmf_pdf_cdf.md
-│       │   ├── 06_conditional_probability.md
-│       │   └── 07_data_analysis.md
-│       ├── styles.tex
-│       └── titlepage.tex
-├── Phys
-│   ├── build.sh
-│   ├── chapters
-│   │   ├── chapter_00_introduction.tex
-│   │   ├── chapter_01_mathematical_foundations.tex
-│   │   ├── chapter_02_kinematics.tex
-│   │   ├── chapter_03_dynamics.tex
-│   │   ├── chapter_04_oscillations_and_waves.tex
-│   │   ├── chapter_05_electromagnetism.tex
-│   │   ├── chapter_06_statistics_and_measurements.tex
-│   │   ├── chapter_07_cosmology.tex
-│   │   ├── chapter_08_relativity.tex
-│   │   ├── chapter_09_modern_physics.tex
-│   │   ├── cosmology
-│   │   │   └── introduction.tex
-│   │   ├── dynamics
-│   │   │   └── introduction.tex
-│   │   ├── electromagnetism
-│   │   │   └── introduction.tex
-│   │   ├── introduction
-│   │   │   ├── ideas.md
-│   │   │   └── overview.tex
-│   │   ├── kinematics
-│   │   │   └── introduction.tex
-│   │   ├── mathematical_foundations
-│   │   │   └── introduction.tex
-│   │   ├── modern_physics
-│   │   │   └── introduction.tex
-│   │   ├── oscillations_and_waves
-│   │   │   └── introduction.tex
-│   │   ├── relativity
-│   │   │   └── introduction.tex
-│   │   └── statistics_and_measurements
-│   │       └── introduction.tex
-│   ├── macros.tex
-│   ├── main.pdf
-│   ├── main.tex
-│   ├── preamble.tex
-│   ├── problems
-│   │   ├── problem_set_01_mathematical_foundations.md
-│   │   ├── problem_set_02_mechanics_and_kinematics.md
-│   │   ├── problem_set_03_mechanics_ii_dynamics.md
-│   │   ├── problem_set_04_oscillations_and_waves.md
-│   │   ├── problem_set_05_electromagnetism_i.md
-│   │   ├── problem_set_06_electromagnetism_ii.md
-│   │   ├── problem_set_07_circuits_resistors_and_kirchhoff.md
-│   │   ├── problem_set_08_statistics_and_measurements.md
-│   │   ├── problem_set_09_model_cosmology.md
-│   │   ├── problem_set_10_relativity_spacetime_models.md
-│   │   └── problem_set_11_modern_physics_quantum_and_nuclear_model.md
-│   ├── styles.tex
-│   └── titlepage.tex
-├── README.md
-├── tree_sha.txt
-├── tree.txt
-└── WRITE_TEST.md
-
-32 directories, 98 files
-.
-├── AGENTS.md
-├── Math
-│   ├── Math
-│   │   ├── build.sh
-│   │   ├── chapters
-│   │   │   ├── analytic_geometry
-│   │   │   │   ├── coordinates.tex
-│   │   │   │   ├── lines.tex
-│   │   │   │   └── planes.tex
-│   │   │   ├── calculus
-│   │   │   │   ├── continuity.tex
-│   │   │   │   ├── derivatives.tex
-│   │   │   │   ├── functions.tex
-│   │   │   │   └── limits.tex
-│   │   │   ├── chapter_00_introduction.tex
-│   │   │   ├── chapter_01_linear_algebra.tex
-│   │   │   ├── chapter_02_analytic_geometry.tex
-│   │   │   ├── chapter_03_calculus.tex
-│   │   │   ├── introduction
-│   │   │   │   ├── ideas.md
-│   │   │   │   └── overview.tex
-│   │   │   └── linear_algebra
-│   │   │       ├── matrices.tex
-│   │   │       ├── systems_of_linear_equations.tex
-│   │   │       └── vectors.tex
-│   │   ├── macros.tex
-│   │   ├── main.pdf
-│   │   ├── main.tex
-│   │   ├── preamble.tex
-│   │   ├── styles.tex
-│   │   └── titlepage.tex
-│   └── Prob_meth
-│       ├── build.sh
-│       ├── chapters
-│       │   ├── chapter_00_introduction.tex
-│       │   ├── chapter_01_events_and_probability.tex
-│       │   ├── chapter_02_combinatorics.tex
-│       │   ├── chapter_03_probability_distributions.tex
-│       │   ├── chapter_04_discovery_formalism.tex
-│       │   ├── chapter_05_pmf_pdf_cdf.tex
-│       │   ├── chapter_06_conditional_probability.tex
-│       │   ├── chapter_07_data_analysis.tex
-│       │   ├── combinatorics
-│       │   │   └── overview.tex
-│       │   ├── conditional_probability
-│       │   │   └── overview.tex
-│       │   ├── data_analysis
-│       │   │   └── overview.tex
-│       │   ├── discovery_formalism
-│       │   │   └── overview.tex
-│       │   ├── events_and_probability
-│       │   │   └── overview.tex
-│       │   ├── introduction
-│       │   │   └── overview.tex
-│       │   ├── pmf_pdf_cdf
-│       │   │   └── overview.tex
-│       │   └── probability_distributions
-│       │       └── overview.tex
-│       ├── macros.tex
-│       ├── main.pdf
-│       ├── main.tex
-│       ├── preamble.tex
-│       ├── problems
-│       │   ├── 01_events_and_probability.md
-│       │   ├── 02_combinatorics.md
-│       │   ├── 03_probability_distributions.md
-│       │   ├── 04_discovery_formalism.md
-│       │   ├── 05_pmf_pdf_cdf.md
-│       │   ├── 06_conditional_probability.md
-│       │   └── 07_data_analysis.md
-│       ├── styles.tex
-│       └── titlepage.tex
-├── Phys
-│   ├── build.sh
-│   ├── chapters
-│   │   ├── chapter_00_introduction.tex
-│   │   ├── chapter_01_mathematical_foundations.tex
-│   │   ├── chapter_02_kinematics.tex
-│   │   ├── chapter_03_dynamics.tex
-│   │   ├── chapter_04_oscillations_and_waves.tex
-│   │   ├── chapter_05_electromagnetism.tex
-│   │   ├── chapter_06_statistics_and_measurements.tex
-│   │   ├── chapter_07_cosmology.tex
-│   │   ├── chapter_08_relativity.tex
-│   │   ├── chapter_09_modern_physics.tex
-│   │   ├── cosmology
-│   │   │   └── introduction.tex
-│   │   ├── dynamics
-│   │   │   └── introduction.tex
-│   │   ├── electromagnetism
-│   │   │   └── introduction.tex
-│   │   ├── introduction
-│   │   │   ├── ideas.md
-│   │   │   └── overview.tex
-│   │   ├── kinematics
-│   │   │   ├── acceleration.tex
-│   │   │   ├── introduction.tex
-│   │   │   ├── position_as_function_of_time.tex
-│   │   │   ├── position_velocity_acceleration.tex
-│   │   │   ├── velocity.tex
-│   │   │   └── what_kinematics_studies.tex
-│   │   ├── mathematical_foundations
-│   │   │   └── introduction.tex
-│   │   ├── modern_physics
-│   │   │   └── introduction.tex
-│   │   ├── oscillations_and_waves
-│   │   │   └── introduction.tex
-│   │   ├── relativity
-│   │   │   └── introduction.tex
-│   │   └── statistics_and_measurements
-│   │       └── introduction.tex
-│   ├── macros.tex
-│   ├── main.pdf
-│   ├── main.tex
-│   ├── preamble.tex
-│   ├── problems
-│   │   ├── problem_set_01_mathematical_foundations.md
-│   │   ├── problem_set_02_mechanics_and_kinematics.md
-│   │   ├── problem_set_03_mechanics_ii_dynamics.md
-│   │   ├── problem_set_04_oscillations_and_waves.md
-│   │   ├── problem_set_05_electromagnetism_i.md
-│   │   ├── problem_set_06_electromagnetism_ii.md
-│   │   ├── problem_set_07_circuits_resistors_and_kirchhoff.md
-│   │   ├── problem_set_08_statistics_and_measurements.md
-│   │   ├── problem_set_09_model_cosmology.md
-│   │   ├── problem_set_10_relativity_spacetime_models.md
-│   │   └── problem_set_11_modern_physics_quantum_and_nuclear_model.md
-│   ├── styles.tex
-│   └── titlepage.tex
-├── README.md
-└── tree.txt
-
-32 directories, 100 files
+./.gitignore
+./AGENTS.md
+./README.md
+./connector_write_read_test.md
+./mathematical_lectures
+./mathematical_lectures/basic_mathematics
+./mathematical_lectures/basic_mathematics/build.sh
+./mathematical_lectures/basic_mathematics/chapters
+./mathematical_lectures/basic_mathematics/chapters/analytic_geometry
+./mathematical_lectures/basic_mathematics/chapters/analytic_geometry/coordinates.tex
+./mathematical_lectures/basic_mathematics/chapters/analytic_geometry/lines.tex
+./mathematical_lectures/basic_mathematics/chapters/analytic_geometry/planes.tex
+./mathematical_lectures/basic_mathematics/chapters/calculus
+./mathematical_lectures/basic_mathematics/chapters/calculus/continuity.tex
+./mathematical_lectures/basic_mathematics/chapters/calculus/derivatives.tex
+./mathematical_lectures/basic_mathematics/chapters/calculus/functions.tex
+./mathematical_lectures/basic_mathematics/chapters/calculus/limits.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_00_introduction.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_01_linear_algebra.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_02_analytic_geometry.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_03_calculus.tex
+./mathematical_lectures/basic_mathematics/chapters/introduction
+./mathematical_lectures/basic_mathematics/chapters/introduction/ideas.md
+./mathematical_lectures/basic_mathematics/chapters/introduction/overview.tex
+./mathematical_lectures/basic_mathematics/chapters/linear_algebra
+./mathematical_lectures/basic_mathematics/chapters/linear_algebra/matrices.tex
+./mathematical_lectures/basic_mathematics/chapters/linear_algebra/systems_of_linear_equations.tex
+./mathematical_lectures/basic_mathematics/chapters/linear_algebra/vectors.tex
+./mathematical_lectures/basic_mathematics/macros.tex
+./mathematical_lectures/basic_mathematics/main.pdf
+./mathematical_lectures/basic_mathematics/main.tex
+./mathematical_lectures/basic_mathematics/preamble.tex
+./mathematical_lectures/basic_mathematics/styles.tex
+./mathematical_lectures/basic_mathematics/titlepage.tex
+./mathematical_lectures/probabilistic_methods
+./mathematical_lectures/probabilistic_methods/build.sh
+./mathematical_lectures/probabilistic_methods/chapters
+./mathematical_lectures/probabilistic_methods/chapters/chapter_00_introduction.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_01_combinatorics.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_01_events_and_probability.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_02_combinatorics.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_02_events_and_probability.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_03_probability_distributions.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_04_discovery_formalism.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_05_pmf_pdf_cdf.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_06_conditional_probability.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_07_data_analysis.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/counting_in_probability.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/diagnostic_questions.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/final_checklist.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/multiplication_principle.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/ordered_structures.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/outcomes_and_recording_rules.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/overcounting_and_indistinguishability.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/recognizing_models_and_traps.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/repetition_and_count_vectors.tex
+./mathematical_lectures/probabilistic_methods/chapters/combinatorics/unordered_structures.tex
+./mathematical_lectures/probabilistic_methods/chapters/conditional_probability
+./mathematical_lectures/probabilistic_methods/chapters/conditional_probability/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/data_analysis
+./mathematical_lectures/probabilistic_methods/chapters/data_analysis/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/discovery_formalism
+./mathematical_lectures/probabilistic_methods/chapters/discovery_formalism/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/events_and_probability
+./mathematical_lectures/probabilistic_methods/chapters/events_and_probability/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/introduction
+./mathematical_lectures/probabilistic_methods/chapters/introduction/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/pmf_pdf_cdf
+./mathematical_lectures/probabilistic_methods/chapters/pmf_pdf_cdf/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/probability_distributions
+./mathematical_lectures/probabilistic_methods/chapters/probability_distributions/overview.tex
+./mathematical_lectures/probabilistic_methods/macros.tex
+./mathematical_lectures/probabilistic_methods/main.pdf
+./mathematical_lectures/probabilistic_methods/main.tex
+./mathematical_lectures/probabilistic_methods/preamble.tex
+./mathematical_lectures/probabilistic_methods/problems
+./mathematical_lectures/probabilistic_methods/problems/01_events_and_probability.md
+./mathematical_lectures/probabilistic_methods/problems/02_combinatorics.md
+./mathematical_lectures/probabilistic_methods/problems/03_probability_distributions.md
+./mathematical_lectures/probabilistic_methods/problems/04_discovery_formalism.md
+./mathematical_lectures/probabilistic_methods/problems/05_pmf_pdf_cdf.md
+./mathematical_lectures/probabilistic_methods/problems/06_conditional_probability.md
+./mathematical_lectures/probabilistic_methods/problems/07_data_analysis.md
+./mathematical_lectures/probabilistic_methods/styles.tex
+./mathematical_lectures/probabilistic_methods/titlepage.tex
+./physics_lectures
+./physics_lectures/physics_basics
+./physics_lectures/physics_basics/build.sh
+./physics_lectures/physics_basics/chapters
+./physics_lectures/physics_basics/chapters/chapter_00_introduction.tex
+./physics_lectures/physics_basics/chapters/chapter_01_mathematical_foundations.tex
+./physics_lectures/physics_basics/chapters/chapter_02_kinematics.tex
+./physics_lectures/physics_basics/chapters/chapter_03_dynamics.tex
+./physics_lectures/physics_basics/chapters/chapter_04_oscillations_and_waves.tex
+./physics_lectures/physics_basics/chapters/chapter_05_electromagnetism.tex
+./physics_lectures/physics_basics/chapters/chapter_06_statistics_and_measurements.tex
+./physics_lectures/physics_basics/chapters/chapter_07_cosmology.tex
+./physics_lectures/physics_basics/chapters/chapter_08_relativity.tex
+./physics_lectures/physics_basics/chapters/chapter_09_modern_physics.tex
+./physics_lectures/physics_basics/chapters/cosmology
+./physics_lectures/physics_basics/chapters/cosmology/introduction.tex
+./physics_lectures/physics_basics/chapters/dynamics
+./physics_lectures/physics_basics/chapters/dynamics/introduction.tex
+./physics_lectures/physics_basics/chapters/electromagnetism
+./physics_lectures/physics_basics/chapters/electromagnetism/introduction.tex
+./physics_lectures/physics_basics/chapters/introduction
+./physics_lectures/physics_basics/chapters/introduction/ideas.md
+./physics_lectures/physics_basics/chapters/introduction/overview.tex
+./physics_lectures/physics_basics/chapters/kinematics
+./physics_lectures/physics_basics/chapters/kinematics/acceleration.tex
+./physics_lectures/physics_basics/chapters/kinematics/introduction.tex
+./physics_lectures/physics_basics/chapters/kinematics/position_as_function_of_time.tex
+./physics_lectures/physics_basics/chapters/kinematics/position_velocity_acceleration.tex
+./physics_lectures/physics_basics/chapters/kinematics/velocity.tex
+./physics_lectures/physics_basics/chapters/kinematics/what_kinematics_studies.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations
+./physics_lectures/physics_basics/chapters/mathematical_foundations/approximations_limiting_cases.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/calculus_inverse_operations.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/coordinates.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/curves_parametric_descriptions.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/derivatives.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/differential_equations.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/functions.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/graphs.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/integrals.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/introduction.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/matrices.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/numbers_quantities_units.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/scientific_notation.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/variables_constants_parameters.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/vectors.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/what_to_remember.tex
+./physics_lectures/physics_basics/chapters/mathematical_foundations/why_this_chapter.tex
+./physics_lectures/physics_basics/chapters/modern_physics
+./physics_lectures/physics_basics/chapters/modern_physics/introduction.tex
+./physics_lectures/physics_basics/chapters/oscillations_and_waves
+./physics_lectures/physics_basics/chapters/oscillations_and_waves/introduction.tex
+./physics_lectures/physics_basics/chapters/relativity
+./physics_lectures/physics_basics/chapters/relativity/introduction.tex
+./physics_lectures/physics_basics/chapters/statistics_and_measurements
+./physics_lectures/physics_basics/chapters/statistics_and_measurements/introduction.tex
+./physics_lectures/physics_basics/figures
+./physics_lectures/physics_basics/figures/README.md
+./physics_lectures/physics_basics/figures/kinematics
+./physics_lectures/physics_basics/figures/kinematics/circular_velocity_tangent.tex
+./physics_lectures/physics_basics/figures/kinematics/displacement_between_positions.tex
+./physics_lectures/physics_basics/figures/kinematics/position_function_parabola.tex
+./physics_lectures/physics_basics/figures/kinematics/position_vector.tex
+./physics_lectures/physics_basics/figures/mathematical_foundations
+./physics_lectures/physics_basics/figures/mathematical_foundations/cartesian_point.tex
+./physics_lectures/physics_basics/figures/mathematical_foundations/function_graphs.tex
+./physics_lectures/physics_basics/figures/mathematical_foundations/parametric_unit_circle.tex
+./physics_lectures/physics_basics/figures/mathematical_foundations/vector_components.tex
+./physics_lectures/physics_basics/figures/tikz
+./physics_lectures/physics_basics/figures/tikz/kinematics
+./physics_lectures/physics_basics/figures/tikz/kinematics/.gitkeep
+./physics_lectures/physics_basics/figures/tikz/kinematics/position_time_graph.tex
+./physics_lectures/physics_basics/figures/tikz/kinematics/velocity_time_graph.tex
+./physics_lectures/physics_basics/macros.tex
+./physics_lectures/physics_basics/main.lof
+./physics_lectures/physics_basics/main.pdf
+./physics_lectures/physics_basics/main.tex
+./physics_lectures/physics_basics/preamble.tex
+./physics_lectures/physics_basics/problems
+./physics_lectures/physics_basics/problems/problem_set_01_mathematical_foundations.md
+./physics_lectures/physics_basics/problems/problem_set_02_mechanics_and_kinematics.md
+./physics_lectures/physics_basics/problems/problem_set_03_mechanics_ii_dynamics.md
+./physics_lectures/physics_basics/problems/problem_set_04_oscillations_and_waves.md
+./physics_lectures/physics_basics/problems/problem_set_05_electromagnetism_i.md
+./physics_lectures/physics_basics/problems/problem_set_06_electromagnetism_ii.md
+./physics_lectures/physics_basics/problems/problem_set_07_circuits_resistors_and_kirchhoff.md
+./physics_lectures/physics_basics/problems/problem_set_08_statistics_and_measurements.md
+./physics_lectures/physics_basics/problems/problem_set_09_model_cosmology.md
+./physics_lectures/physics_basics/problems/problem_set_10_relativity_spacetime_models.md
+./physics_lectures/physics_basics/problems/problem_set_11_modern_physics_quantum_and_nuclear_model.md
+./physics_lectures/physics_basics/styles.tex
+./physics_lectures/physics_basics/titlepage.tex
+./tree.txt

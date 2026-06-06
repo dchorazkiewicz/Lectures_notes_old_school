@@ -1,8 +1,8 @@
-# Old_school — General Agent Working Rules
+# Lecture Notes — General Agent Working Rules
 
 ## 1. Purpose
 
-This document defines the general rules for working with lecture-note projects inside the `Old_school` directory.
+This document defines the general rules for working with lecture-note projects inside this repository.
 
 The repository is used to develop academic lecture notes in LaTeX. The final output of each project is a compiled PDF document.
 
@@ -20,25 +20,26 @@ The agent should not try to complete or rewrite whole lecture courses unless exp
 
 ## 2. Main projects
 
-The `Old_school` directory contains three main lecture-note projects:
+The repository contains three main lecture-note projects:
 
 ```text
-Old_school/
-├── Math/
-│   ├── Math/
-│   └── Prob_meth/
-└── Phys/
+Lectures_notes_old_school/
+├── mathematical_lectures/
+│   ├── basic_mathematics/
+│   └── probabilistic_methods/
+└── physics_lectures/
+    └── physics_basics/
 ```
 
 The projects are:
 
-1. `Old_school/Math/Math`
+1. `mathematical_lectures/basic_mathematics`
    General mathematics lecture notes.
 
-2. `Old_school/Math/Prob_meth`
+2. `mathematical_lectures/probabilistic_methods`
    Probabilistic methods lecture notes.
 
-3. `Old_school/Phys`
+3. `physics_lectures/physics_basics`
    General physics lecture notes.
 
 Each project should be treated as a separate LaTeX project.
