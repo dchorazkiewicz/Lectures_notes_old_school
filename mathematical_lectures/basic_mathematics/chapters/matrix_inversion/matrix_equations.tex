@@ -1,3 +1,208 @@
 \section{Matrix equations}
 
-This section will show how inverse matrices can be used to solve matrix equations such as \(AX=B\) and \(XA=B\). The main point will be to respect the order of multiplication and to understand why multiplying by an inverse on the correct side matters.
+One of the main reasons for studying inverse matrices is that they allow us to solve matrix equations. The idea is similar to solving ordinary equations, but there is one crucial difference: matrix multiplication is not commutative. Therefore the side on which we multiply by an inverse matters.
+
+\subsection{Equations of the form \(AX=B\)}
+
+Suppose
+\[
+AX=B,
+\]
+where \(A\) is a known square matrix, \(B\) is a known matrix, and \(X\) is unknown. If \(A\) is invertible, we multiply on the left by \(A^{-1}\):
+\[
+A^{-1}AX=A^{-1}B.
+\]
+Since \(A^{-1}A=I\), this gives
+\[
+X=A^{-1}B.
+\]
+
+The inverse must be placed on the left because \(A\) is on the left of \(X\). Writing \(XA^{-1}\) would not undo \(AX\).
+
+\begin{examplebox}
+Solve
+\[
+AX=B,
+\]
+where
+\[
+A=\begin{pmatrix}1&2\\3&7\end{pmatrix},
+\qquad
+B=\begin{pmatrix}4&1\\5&2\end{pmatrix}.
+\]
+From an earlier example,
+\[
+A^{-1}=\begin{pmatrix}7&-2\\-3&1\end{pmatrix}.
+\]
+Therefore
+\[
+X=A^{-1}B
+=\begin{pmatrix}7&-2\\-3&1\end{pmatrix}
+\begin{pmatrix}4&1\\5&2\end{pmatrix}.
+\]
+Compute the product:
+\[
+X=\begin{pmatrix}
+28-10&7-4\\
+-12+5&-3+2
+\end{pmatrix}
+=\begin{pmatrix}
+18&3\\
+-7&-1
+\end{pmatrix}.
+\]
+Thus
+\[
+X=\begin{pmatrix}18&3\\-7&-1\end{pmatrix}.
+\]
+\end{examplebox}
+
+\subsection{Equations of the form \(XA=B\)}
+
+Now suppose
+\[
+XA=B.
+\]
+Here \(A\) is on the right of \(X\). To undo multiplication by \(A\), we must multiply on the right by \(A^{-1}\):
+\[
+XAA^{-1}=BA^{-1}.
+\]
+Since \(AA^{-1}=I\), we get
+\[
+X=BA^{-1}.
+\]
+
+\begin{examplebox}
+Solve
+\[
+XA=B,
+\]
+where
+\[
+A=\begin{pmatrix}1&2\\3&7\end{pmatrix},
+\qquad
+B=\begin{pmatrix}4&1\\5&2\end{pmatrix}.
+\]
+Again,
+\[
+A^{-1}=\begin{pmatrix}7&-2\\-3&1\end{pmatrix}.
+\]
+But now
+\[
+X=BA^{-1}
+=\begin{pmatrix}4&1\\5&2\end{pmatrix}
+\begin{pmatrix}7&-2\\-3&1\end{pmatrix}.
+\]
+Thus
+\[
+X=\begin{pmatrix}
+28-3&-8+1\\
+35-6&-10+2
+\end{pmatrix}
+=\begin{pmatrix}
+25&-7\\
+29&-8
+\end{pmatrix}.
+\]
+This is not the same answer as in the previous example. The equation is different because the unknown matrix is multiplied by \(A\) on a different side.
+\end{examplebox}
+
+\subsection{Equations with matrices on both sides}
+
+Some equations have the unknown matrix between two known matrices:
+\[
+AXB=C.
+\]
+If \(A\) and \(B\) are invertible, then we undo \(A\) on the left and \(B\) on the right:
+\[
+A^{-1}(AXB)B^{-1}=A^{-1}CB^{-1}.
+\]
+Therefore
+\[
+X=A^{-1}CB^{-1}.
+\]
+
+The order is not optional. Each inverse must be placed on the side where it can cancel the corresponding matrix.
+
+\subsection{Solving vector equations}
+
+The equation
+\[
+Ax=b
+\]
+where \(x\) and \(b\) are column vectors is a special case of \(AX=B\). If \(A\) is invertible, then
+\[
+x=A^{-1}b.
+\]
+This gives a conceptual method for solving linear systems. In the next chapter we will study systems of linear equations in detail, and we will compare different methods: elimination, inverse matrices, and Cramer's rule.
+
+\begin{examplebox}
+Solve
+\[
+\begin{pmatrix}2&1\\1&1\end{pmatrix}
+\begin{pmatrix}x\\y\end{pmatrix}
+=
+\begin{pmatrix}5\\3\end{pmatrix}.
+\]
+Let
+\[
+A=\begin{pmatrix}2&1\\1&1\end{pmatrix},
+\qquad
+b=\begin{pmatrix}5\\3\end{pmatrix}.
+\]
+The determinant is
+\[
+\det A=2\cdot1-1\cdot1=1,
+\]
+so
+\[
+A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\]
+Therefore
+\[
+\begin{pmatrix}x\\y\end{pmatrix}
+=A^{-1}b
+=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}
+\begin{pmatrix}5\\3\end{pmatrix}
+=\begin{pmatrix}5-3\\-5+6\end{pmatrix}
+=\begin{pmatrix}2\\1\end{pmatrix}.
+\]
+Thus
+\[
+x=2,
+\qquad
+ y=1.
+\]
+\end{examplebox}
+
+\subsection{Common mistakes}
+
+The most common mistake is to move matrices as if they were numbers. For example, from
+\[
+AX=B
+\]
+one may be tempted to write
+\[
+X=BA^{-1}.
+\]
+This is wrong in general. Multiplying by \(A^{-1}\) on the right does not cancel the \(A\) on the left of \(X\). The correct step is
+\[
+A^{-1}AX=A^{-1}B,
+\]
+so
+\[
+X=A^{-1}B.
+\]
+
+\begin{summarybox}
+When solving matrix equations:
+\begin{itemize}
+\item identify where the unknown matrix is placed,
+\item multiply by inverses on the side where cancellation is valid,
+\item preserve the order of multiplication,
+\item check that the matrices involved are invertible,
+\item verify the final answer by substitution when possible.
+\end{itemize}
+\end{summarybox}
+
+Inverse matrices are powerful because they allow equations to be solved by undoing operations. But the power comes with a responsibility: the order of multiplication must be respected at every step.
