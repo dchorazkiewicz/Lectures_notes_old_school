@@ -60,6 +60,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/adjugate_method.tex
 ./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/gauss_jordan_method.tex
 ./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/inverses_of_two_by_two_matrices.tex
+./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/invertibility_and_structure.tex
 ./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/meaning_of_inverse_matrix.tex
 ./mathematical_lectures/basic_mathematics/figures
 ./mathematical_lectures/basic_mathematics/figures/README.md
