@@ -34,6 +34,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/chapter_02_analytic_geometry.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_02_determinants.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_03_calculus.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_03_matrix_inversion.tex
 ./mathematical_lectures/basic_mathematics/chapters/introduction
 ./mathematical_lectures/basic_mathematics/chapters/introduction/ideas.md
 ./mathematical_lectures/basic_mathematics/chapters/introduction/overview.tex
