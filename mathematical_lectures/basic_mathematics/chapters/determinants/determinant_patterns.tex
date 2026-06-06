@@ -1,3 +1,195 @@
 \section{Determinant patterns}
 
-This section will prepare space for determinant identities and recognizable patterns, such as determinants with parameters, Vandermonde-type structures, and transformations that reveal a factorized form. The emphasis will be on asking what structure is hidden in the determinant before expanding it.
+A student who has just learned determinants often tries to compute every determinant by direct expansion. This is understandable, but it is not the best habit. Determinants reward attention to structure. Before expanding, we should ask what kind of matrix we are looking at.
+
+In this final section we collect several patterns that help with determinant calculations. The purpose is not to create a list of tricks. The purpose is to train the eye.
+
+\subsection{Zeros are invitations}
+
+A row or column with many zeros usually tells us where to expand.
+
+\begin{examplebox}
+Compute
+\[
+\det\begin{pmatrix}
+2&0&1&3\\
+0&0&5&1\\
+4&0&-1&2\\
+1&7&0&6
+\end{pmatrix}.
+\]
+The second column is
+\[
+\begin{pmatrix}0\\0\\0\\7\end{pmatrix}.
+\]
+So expansion along the second column gives only one non-zero term:
+\[
+\det A=7C_{42}.
+\]
+The sign is
+\[
+(-1)^{4+2}=1,
+\]
+so
+\[
+\det A=7\det\begin{pmatrix}
+2&1&3\\
+0&5&1\\
+4&-1&2
+\end{pmatrix}.
+\]
+Now the problem has been reduced to a \(3\times3\) determinant.
+\end{examplebox}
+
+The point is not that this computation is finished immediately. The point is that the matrix itself suggested a good first move.
+
+\subsection{Triangular form is a goal}
+
+Because triangular matrices have easy determinants, it is often useful to transform a determinant into triangular form using row operations that preserve the determinant.
+
+\begin{examplebox}
+Let
+\[
+A=\begin{pmatrix}
+1&1&2\\
+2&3&7\\
+3&5&12
+\end{pmatrix}.
+\]
+Use row operations that do not change the determinant:
+\[
+R_2\leftarrow R_2-2R_1,
+\qquad
+R_3\leftarrow R_3-3R_1.
+\]
+Then
+\[
+A\longrightarrow
+\begin{pmatrix}
+1&1&2\\
+0&1&3\\
+0&2&6
+\end{pmatrix}.
+\]
+Now use
+\[
+R_3\leftarrow R_3-2R_2.
+\]
+We obtain
+\[
+\begin{pmatrix}
+1&1&2\\
+0&1&3\\
+0&0&0
+\end{pmatrix}.
+\]
+This triangular matrix has determinant
+\[
+1\cdot1\cdot0=0.
+\]
+Therefore \(\det A=0\). The final zero row reveals that the original rows were dependent.
+\end{examplebox}
+
+This example is valuable because the calculation and the interpretation agree. We did not merely obtain zero. We saw why zero appeared.
+
+\subsection{Common factors}
+
+If every entry in one row has a common factor, that factor can be taken out of the determinant. The same is true for columns.
+
+For example,
+\[
+\det\begin{pmatrix}
+2a&2b\\
+c&d
+\end{pmatrix}
+=2\det\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}.
+\]
+This is often useful when determinants contain parameters or expressions.
+
+\begin{examplebox}
+Compute
+\[
+\det\begin{pmatrix}
+3x&6x\\
+2&5
+\end{pmatrix}.
+\]
+The first row has a common factor \(3x\):
+\[
+\det\begin{pmatrix}
+3x&6x\\
+2&5
+\end{pmatrix}
+=3x\det\begin{pmatrix}
+1&2\\
+2&5
+\end{pmatrix}.
+\]
+Now
+\[
+\det\begin{pmatrix}
+1&2\\
+2&5
+\end{pmatrix}=1\cdot5-2\cdot2=1.
+\]
+Hence
+\[
+\det\begin{pmatrix}
+3x&6x\\
+2&5
+\end{pmatrix}=3x.
+\]
+\end{examplebox}
+
+Factoring is not only a simplification of arithmetic. It may reveal parameter values for which the determinant becomes zero.
+
+\subsection{Vandermonde-type structure}
+
+Some determinants have recognizable patterns. One famous example is the Vandermonde determinant:
+\[
+V=\begin{pmatrix}
+1&1&1\\
+x&y&z\\
+x^2&y^2&z^2
+\end{pmatrix}.
+\]
+Its determinant is
+\[
+\det V=(y-x)(z-x)(z-y).
+\]
+This formula is not something we need to memorize at this stage. What matters is the meaning: the determinant becomes zero when two of the parameters are equal. For example, if \(x=y\), then the first two columns are equal:
+\[
+\begin{pmatrix}1\\x\\x^2\end{pmatrix}
+=\begin{pmatrix}1\\y\\y^2\end{pmatrix}.
+\]
+Therefore the determinant must be zero. The factor \((y-x)\) records this fact algebraically.
+
+This is a powerful idea. A determinant with parameters often contains factors that describe when rows or columns become dependent.
+
+\subsection{Looking before expanding}
+
+The following checklist is often more valuable than a formula.
+
+\begin{summarybox}
+Before computing a determinant, ask:
+\begin{itemize}
+\item Is the matrix triangular or almost triangular?
+\item Is there a row or column with many zeros?
+\item Are two rows or columns equal or proportional?
+\item Can I create zeros using row operations that preserve the determinant?
+\item Is there a common factor in a row or column?
+\item If parameters are present, for which values could rows or columns become dependent?
+\item Which method gives the shortest honest calculation?
+\end{itemize}
+\end{summarybox}
+
+The last question is important. We do not want cleverness that hides the reasoning. We want calculations that are both efficient and understandable.
+
+\section*{What to remember}
+
+The determinant is a number attached to a square matrix, but it is not merely a computational ornament. It detects structural information. It becomes zero when independence is lost. It changes predictably under row and column operations. It can be computed by formulas for small matrices, by Laplace expansion in general, and often more efficiently by using determinant properties.
+
+Most importantly, determinants prepare the next question. If \(\det A\ne0\), then the matrix \(A\) is invertible. We can now ask how such an inverse matrix is found and how it can be used. That question leads directly to the next chapter.
