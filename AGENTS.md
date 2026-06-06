@@ -20,15 +20,17 @@ The agent should not try to complete or rewrite whole lecture courses unless exp
 
 ## 2. Main projects
 
-The repository contains three main lecture-note projects:
+The repository contains five LaTeX lecture-note projects:
 
 ```text
 Lectures_notes_old_school/
 ├── mathematical_lectures/
 │   ├── basic_mathematics/
-│   └── probabilistic_methods/
+│   ├── probabilistic_methods/
+│   └── general_notes_experiments/
 └── physics_lectures/
-    └── physics_basics/
+    ├── physics_basics/
+    └── general_notes_experiments/
 ```
 
 The projects are:
@@ -42,7 +44,17 @@ The projects are:
 3. `physics_lectures/physics_basics`
    General physics lecture notes.
 
+4. `mathematical_lectures/general_notes_experiments`
+   Independent mathematical notes, sketches, and larger exploratory ideas.
+
+5. `physics_lectures/general_notes_experiments`
+   Independent physics notes, models, thought experiments, and larger exploratory ideas.
+
 Each project should be treated as a separate LaTeX project.
+
+The two `general_notes_experiments` projects are incubators. They are meant for
+loose thoughts, AI-assisted discussions, exploratory notes, and self-contained
+larger ideas that may later be moved into a formal course project.
 
 ---
 
@@ -138,6 +150,11 @@ The `chapters` directory contains:
 - A subdirectory for each topic, containing the `.tex` files for the sections of that chapter.
 - A `chapter_*.tex` file for each chapter, which acts as a "table of contents" for that chapter, including the section files.
 
+In the `general_notes_experiments` projects, a `chapter_*.tex` file usually
+represents one independent note or experiment rather than a chapter in a linear
+course. The same modular structure is kept so a mature note can later be copied
+or adapted into a formal lecture-note project.
+
 The goal is to make each file readable, reviewable, and easy to edit.
 
 A single source file should usually correspond to a chapter, section, or substantial subsection. It does not need to be extremely small, but it should not become so large that it is difficult to inspect.
@@ -177,6 +194,18 @@ CourseFolder/
 
 Not every project must have every topic folder immediately, but when a category
 is used it should be placed in the appropriate top-level folder.
+
+For `general_notes_experiments` projects, new ideas should normally be added as
+new independent files:
+
+```text
+chapters/chapter_001_short_descriptive_name.tex
+chapters/chapter_002_another_independent_idea.tex
+```
+
+Do not force experimental notes into a single growing chapter file. Keep each
+substantial idea movable, reviewable, and easy to promote into a formal course
+later.
 
 ### 6.1 Figures and diagrams
 
@@ -680,3 +709,20 @@ Every course has a `main.tex` file that assembles the document from chapters and
 Most changes should be local, followed by compilation and PDF review.
 
 Large document-wide changes are allowed only when the human author explicitly requests them.
+
+---
+
+## 18. Useful links
+
+Useful external references may be consulted when improving the technical quality
+of the lecture notes.
+
+TikZ examples and documentation:
+
+```text
+https://tikz.dev/
+```
+
+Use this reference when creating or improving TikZ diagrams, checking TikZ
+syntax, or looking for clean examples of diagrams that can be adapted to the
+course style.

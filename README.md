@@ -1,16 +1,23 @@
 # Lectures Notes Old School!
 
-This repository contains three separate LaTeX lecture-note projects.
+This repository contains five separate LaTeX lecture-note projects.
 
 ## Projects
 
 ```text
 mathematical_lectures/basic_mathematics
 mathematical_lectures/probabilistic_methods
+mathematical_lectures/general_notes_experiments
 physics_lectures/physics_basics
+physics_lectures/general_notes_experiments
 ```
 
 Each project has its own `main.tex` source file and compiled `main.pdf` output.
+
+The `general_notes_experiments` projects are incubators for independent notes,
+loose ideas, AI-assisted discussions, sketches, and larger exploratory drafts.
+Each new substantial idea should usually become its own `chapter_*.tex` file so
+it can later be moved into a formal lecture-note project if it matures.
 
 ## Related Repositories
 
