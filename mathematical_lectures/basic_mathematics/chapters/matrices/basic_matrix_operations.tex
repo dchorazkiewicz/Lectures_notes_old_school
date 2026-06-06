@@ -1,0 +1,77 @@
+\section{Basic matrix operations}
+
+Once we know how to read a matrix, we can begin to operate on it. The simplest operations are addition, subtraction, and multiplication by a number. These operations are deliberately simple because they preserve the shape of the matrix. They do not change a table into a different kind of object; they change its entries while keeping the same positions.
+
+\begin{definitionbox}
+Let \(A=(a_{ij})\) and \(B=(b_{ij})\) be matrices of the same size \(m\times n\). Their sum is the matrix
+\[
+A+B=(a_{ij}+b_{ij}),
+\]
+and their difference is the matrix
+\[
+A-B=(a_{ij}-b_{ij}).
+\]
+If \(\lambda\) is a number, then
+\[
+\lambda A=(\lambda a_{ij}).
+\]
+\end{definitionbox}
+
+The phrase ``of the same size'' is not a technical detail. It is the reason the operation is meaningful. When two matrices have the same size, each entry of one matrix has a partner in the other matrix. Addition and subtraction then happen position by position.
+
+\begin{examplebox}
+Let
+\[
+A=\begin{pmatrix}2 & -1\\ 0 & 3\end{pmatrix},
+\qquad
+B=\begin{pmatrix}5 & 4\\ -2 & 1\end{pmatrix}.
+\]
+Then
+\[
+A+B=
+\begin{pmatrix}
+2+5 & -1+4\\
+0+(-2) & 3+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+7 & 3\\
+-2 & 4
+\end{pmatrix}.
+\]
+Also,
+\[
+A-B=
+\begin{pmatrix}
+2-5 & -1-4\\
+0-(-2) & 3-1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-3 & -5\\
+2 & 2
+\end{pmatrix}.
+\]
+Finally,
+\[
+-3A=
+\begin{pmatrix}
+-6 & 3\\
+0 & -9
+\end{pmatrix}.
+\]
+\end{examplebox}
+
+The calculation is not difficult. The important thing is the discipline of positions. We do not add rows to columns, and we do not rearrange entries because it looks convenient. We respect the shape of the object.
+
+These operations satisfy the familiar rules one expects from ordinary arithmetic. For matrices of the same size,
+\[
+A+B=B+A,
+\qquad
+(A+B)+C=A+(B+C).
+\]
+This should not be surprising: addition is performed entry by entry, and ordinary addition of numbers is commutative and associative.
+
+\begin{remarkbox}
+Whenever a matrix operation is defined entry by entry, many properties of ordinary arithmetic pass directly to matrices. But this principle must be used carefully. Matrix multiplication will not be entry-by-entry multiplication, and therefore it will behave differently.
+\end{remarkbox}
