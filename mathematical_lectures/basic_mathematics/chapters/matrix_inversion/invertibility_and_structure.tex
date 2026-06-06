@@ -1,3 +1,206 @@
 \section{Invertibility and structure}
 
-This section will discuss how structure helps us recognize invertibility or non-invertibility. Diagonal matrices, repeated rows, dependent rows, and matrices satisfying special identities will be used to show that invertibility is not only a matter of computation.
+It is possible to treat invertibility as a purely computational question: compute the determinant, or try Gauss--Jordan elimination, and see what happens. This works, but it is not the only way to think. Often the structure of a matrix already tells us something about whether an inverse should exist.
+
+The central rule remains the same:
+\[
+A \text{ is invertible } \iff \det A\ne0.
+\]
+But before computing the determinant, we should learn to look at the matrix.
+
+\subsection{Diagonal matrices}
+
+A diagonal matrix is one of the clearest cases. Let
+\[
+D=\operatorname{diag}(d_1,d_2,\ldots,d_n).
+\]
+Then
+\[
+\det D=d_1d_2\cdots d_n.
+\]
+Therefore \(D\) is invertible exactly when none of the diagonal entries is zero.
+
+If every \(d_i\ne0\), then
+\[
+D^{-1}=\operatorname{diag}\left(\frac1{d_1},\frac1{d_2},\ldots,\frac1{d_n}\right).
+\]
+
+\begin{examplebox}
+Let
+\[
+D=\begin{pmatrix}
+4&0&0\\
+0&-2&0\\
+0&0&5
+\end{pmatrix}.
+\]
+Then
+\[
+D^{-1}=\begin{pmatrix}
+\frac14&0&0\\
+0&-\frac12&0\\
+0&0&\frac15
+\end{pmatrix}.
+\]
+This inverse is easy to understand: each coordinate was scaled independently, so the inverse simply rescales each coordinate back.
+\end{examplebox}
+
+If a diagonal entry is zero, one coordinate is collapsed to zero. That information cannot be recovered.
+
+\subsection{Triangular matrices}
+
+Triangular matrices are also easy to test. If \(T\) is triangular, then
+\[
+\det T=\text{product of diagonal entries}.
+\]
+Thus \(T\) is invertible if and only if every diagonal entry is non-zero.
+
+\begin{examplebox}
+Let
+\[
+T=\begin{pmatrix}
+1&2&3\\
+0&-1&4\\
+0&0&6
+\end{pmatrix}.
+\]
+Since
+\[
+\det T=1\cdot(-1)\cdot6=-6\ne0,
+\]
+the matrix is invertible.
+
+On the other hand,
+\[
+S=\begin{pmatrix}
+2&1&0\\
+0&0&5\\
+0&0&3
+\end{pmatrix}
+\]
+has determinant
+\[
+\det S=2\cdot0\cdot3=0.
+\]
+So \(S\) is not invertible.
+\end{examplebox}
+
+This is not merely a shortcut. A zero on the diagonal of a triangular matrix means that one pivot is missing. Without all pivots, the matrix cannot be reduced to the identity matrix.
+
+\subsection{Repeated or dependent rows}
+
+If two rows of a matrix are equal, the determinant is zero. If one row is a multiple of another, the determinant is also zero. More generally, if one row can be built from the others, the determinant is zero.
+
+\begin{examplebox}
+Consider
+\[
+A=\begin{pmatrix}
+1&2&1\\
+3&6&3\\
+0&1&4
+\end{pmatrix}.
+\]
+The second row is three times the first row. Therefore the rows are dependent, and
+\[
+\det A=0.
+\]
+So \(A\) is not invertible.
+\end{examplebox}
+
+The interpretation is important. If one row repeats information already contained in another row, then the matrix does not contain enough independent information to be reversed.
+
+\subsection{Products of matrices}
+
+The determinant rule
+\[
+\det(AB)=\det A\det B
+\]
+has a direct consequence for invertibility.
+
+\begin{theorembox}
+If \(A\) and \(B\) are invertible square matrices of the same size, then \(AB\) is invertible, and
+\[
+(AB)^{-1}=B^{-1}A^{-1}.
+\]
+\end{theorembox}
+
+The order in this formula is essential. To undo the product \(AB\), we must undo the last action first.
+
+Suppose a vector \(x\) is transformed by \(B\) and then by \(A\):
+\[
+x \longmapsto Bx \longmapsto A(Bx)=ABx.
+\]
+To recover \(x\), first undo \(A\), and then undo \(B\):
+\[
+ABx \longmapsto Bx \longmapsto x.
+\]
+Thus the inverse is
+\[
+B^{-1}A^{-1}.
+\]
+
+We can verify algebraically:
+\[
+(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AI A^{-1}=AA^{-1}=I.
+\]
+Similarly,
+\[
+(B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=B^{-1}IB=B^{-1}B=I.
+\]
+
+\subsection{Matrices satisfying special identities}
+
+Sometimes a matrix is invertible because it satisfies an identity that already reveals its inverse.
+
+\begin{examplebox}
+Suppose a square matrix \(A\) satisfies
+\[
+A^2=I.
+\]
+Then \(A\) is its own inverse, because
+\[
+AA=I.
+\]
+Therefore
+\[
+A^{-1}=A.
+\]
+Such a matrix is called an involution.
+\end{examplebox}
+
+\begin{examplebox}
+Suppose a square matrix \(A\) satisfies
+\[
+A^2-3A+2I=0.
+\]
+Then
+\[
+A^2-3A=-2I.
+\]
+Factor the left side:
+\[
+A(A-3I)=-2I.
+\]
+Multiplying by \(-\frac12\), we get
+\[
+A\left(-\frac12(A-3I)\right)=I.
+\]
+Therefore
+\[
+A^{-1}=-\frac12(A-3I)=\frac12(3I-A).
+\]
+This argument finds the inverse without performing Gauss--Jordan elimination.
+\end{examplebox}
+
+These examples show that invertibility is not only a computational topic. It is also a structural topic. Sometimes the matrix tells us how it can be undone.
+
+\begin{summarybox}
+To recognize invertibility, look for structure:
+\begin{itemize}
+\item diagonal matrices are invertible when no diagonal entry is zero,
+\item triangular matrices are invertible when all diagonal entries are non-zero,
+\item repeated or dependent rows imply non-invertibility,
+\item products of invertible matrices are invertible,
+\item special identities may reveal the inverse directly.
+\end{itemize}
+\end{summarybox}
