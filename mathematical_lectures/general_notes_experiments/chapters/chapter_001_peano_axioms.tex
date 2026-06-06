@@ -1,0 +1,190 @@
+\chapter{Peano Axioms and Arithmetic from Successor}
+
+\section{Purpose of the Note}
+
+This independent note explains how the natural numbers can be described without
+assuming ordinary arithmetic in advance. The starting point is not a list of
+calculation rules, but a small structural idea: there is a first number, called
+\(0\), and there is a successor operation which produces the next number.
+
+The main goal is to show how addition and multiplication can be introduced from
+this successor structure, and then to verify concrete equalities such as
+\(2+3=5\) and \(2\cdot 2=4\) by unfolding the definitions.
+
+\section{The Peano Structure}
+
+\begin{definitionbox}
+A \emph{Peano system} consists of a set \(\mathbb{N}\), a distinguished element
+\(0\in \mathbb{N}\), and a function
+\[
+S:\mathbb{N}\to\mathbb{N},
+\]
+called the \emph{successor function}, satisfying the following axioms.
+
+\begin{enumerate}
+    \item \(0\) is a natural number.
+    \item If \(n\in\mathbb{N}\), then \(S(n)\in\mathbb{N}\).
+    \item \(0\) is not the successor of any natural number: there is no
+    \(n\in\mathbb{N}\) such that \(S(n)=0\).
+    \item The successor function is injective: if \(S(m)=S(n)\), then
+    \(m=n\).
+    \item If a subset \(A\subseteq \mathbb{N}\) contains \(0\), and whenever it
+    contains \(n\) it also contains \(S(n)\), then \(A=\mathbb{N}\).
+\end{enumerate}
+\end{definitionbox}
+
+The fifth axiom is the \emph{principle of induction}. It says that a property
+which holds for \(0\) and is preserved by the successor operation must hold for
+every natural number.
+
+The usual numerals are then abbreviations:
+\[
+1=S(0),\qquad 2=S(1),\qquad 3=S(2),\qquad 4=S(3),\qquad 5=S(4).
+\]
+Thus the statement \(2+3=5\) should not be read as something already known. In
+this note it will be derived from the recursive definition of addition.
+
+\section{The Recursion Principle}
+
+The Peano axioms support a basic construction principle: to define a function
+on \(\mathbb{N}\), it is enough to specify its value at \(0\) and explain how to
+pass from the value at \(n\) to the value at \(S(n)\).
+
+\begin{theorembox}
+Let \(X\) be a set, let \(x_0\in X\), and let \(F:X\to X\) be a function. There
+is a unique function \(f:\mathbb{N}\to X\) such that
+\[
+f(0)=x_0,
+\qquad
+f(S(n))=F(f(n))
+\quad\text{for every } n\in\mathbb{N}.
+\]
+\end{theorembox}
+
+In this note, the recursion principle is used to define addition first, and
+multiplication second. The definitions are recursive in the second argument.
+
+\section{Addition}
+
+\begin{definitionbox}
+For natural numbers \(a,b\in\mathbb{N}\), addition is defined recursively by
+\[
+a+0=a,
+\]
+and
+\[
+a+S(b)=S(a+b).
+\]
+\end{definitionbox}
+
+The first rule says that adding zero on the right changes nothing. The second
+rule says that adding the successor of \(b\) is the same as taking one successor
+after adding \(b\).
+
+\begin{proposition}
+For every \(b\in\mathbb{N}\), one has
+\[
+0+b=b.
+\]
+\end{proposition}
+
+\begin{proof}
+We prove the statement by induction on \(b\).
+
+For \(b=0\), the definition of addition gives
+\[
+0+0=0.
+\]
+
+Assume now that \(0+b=b\). Then
+\[
+0+S(b)=S(0+b)=S(b),
+\]
+where the first equality is the recursive definition of addition and the second
+uses the induction hypothesis. Hence the property is preserved by successor.
+By induction, \(0+b=b\) for every \(b\in\mathbb{N}\).
+\end{proof}
+
+\subsection*{A Formal Computation of \(2+3\)}
+
+We first compute small additions directly from the recursive rules.
+
+Since \(1=S(0)\),
+\[
+2+1=2+S(0)=S(2+0)=S(2)=3.
+\]
+Since \(2=S(1)\),
+\[
+2+2=2+S(1)=S(2+1)=S(3)=4.
+\]
+Since \(3=S(2)\),
+\[
+2+3=2+S(2)=S(2+2)=S(4)=5.
+\]
+Therefore
+\[
+\boxed{2+3=5}.
+\]
+
+Notice that the computation did not assume a prior addition table. It used only
+the definitions of the numerals and the two recursive clauses defining addition.
+
+\section{Multiplication}
+
+\begin{definitionbox}
+For natural numbers \(a,b\in\mathbb{N}\), multiplication is defined recursively
+by
+\[
+a\cdot 0=0,
+\]
+and
+\[
+a\cdot S(b)=a\cdot b+a.
+\]
+\end{definitionbox}
+
+The definition says that multiplying by zero gives zero, and multiplying by the
+successor of \(b\) means multiplying by \(b\) and then adding one more copy of
+\(a\).
+
+\subsection*{A Formal Computation of \(2\cdot 2\)}
+
+Since \(1=S(0)\),
+\[
+2\cdot 1=2\cdot S(0)=2\cdot 0+2=0+2=2,
+\]
+where the last equality follows from the proposition \(0+b=b\).
+
+Since \(2=S(1)\),
+\[
+2\cdot 2=2\cdot S(1)=2\cdot 1+2=2+2=4.
+\]
+Therefore
+\[
+\boxed{2\cdot 2=4}.
+\]
+
+Again, the equality is not taken from a multiplication table. It follows from
+the recursive definition of multiplication together with the previously defined
+addition.
+
+\section{What Has Been Constructed}
+
+The order of construction matters.
+
+\begin{enumerate}
+    \item The Peano axioms give the natural numbers as a successor structure.
+    \item The numerals \(1,2,3,4,5,\ldots\) are names for repeated successors of
+    \(0\).
+    \item Addition is defined by recursion from the successor operation.
+    \item Multiplication is defined by recursion from addition.
+    \item Concrete arithmetic facts are then consequences of these definitions.
+\end{enumerate}
+
+\begin{summarybox}
+The Peano axioms do not start with arithmetic tables. They start with \(0\), the
+successor function \(S\), injectivity of successor, the fact that \(0\) has no
+predecessor, and induction. From this structure one defines addition, then
+multiplication, and only afterward proves identities such as \(2+3=5\) and
+\(2\cdot 2=4\).
+\end{summarybox}
