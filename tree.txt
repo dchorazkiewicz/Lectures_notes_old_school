@@ -48,6 +48,8 @@
 ./mathematical_lectures/basic_mathematics/chapters/introduction
 ./mathematical_lectures/basic_mathematics/chapters/introduction/ideas.md
 ./mathematical_lectures/basic_mathematics/chapters/introduction/overview.tex
+./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity
+./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/lines
 ./mathematical_lectures/basic_mathematics/chapters/lines/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/matrices
