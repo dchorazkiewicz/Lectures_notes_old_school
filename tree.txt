@@ -3,6 +3,8 @@
 ./.github/workflows
 ./.github/workflows/update-tree.yml
 ./.gitignore
+./.memory
+./.memory/chatgpt_github_connector_instructions.md
 ./AGENTS.md
 ./README.md
 ./connector_write_read_test.md
