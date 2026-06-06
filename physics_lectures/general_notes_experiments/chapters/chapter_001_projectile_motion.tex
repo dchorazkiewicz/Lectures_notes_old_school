@@ -1,0 +1,370 @@
+\chapter{Projectile Motion as a Two-Dimensional Model}
+
+\section{Purpose and Physical Assumptions}
+
+Projectile motion is one of the simplest situations in which a two-dimensional
+motion becomes understandable by separating it into two one-dimensional motions.
+The horizontal motion is uniform, while the vertical motion is uniformly
+accelerated by gravity.
+
+In this note we derive the standard formulas for an ideal projectile launched
+from a point with initial speed \(v_0\) at an angle \(\theta\) above the
+horizontal. The purpose is not only to list the formulas, but to show where they
+come from and what assumptions make them valid.
+
+We use the following idealized model.
+
+\begin{itemize}
+    \item The projectile is treated as a point particle.
+    \item Air resistance is neglected.
+    \item The gravitational acceleration is constant and directed downward.
+    \item The Earth is treated locally as flat, so horizontal and vertical axes
+    are meaningful over the distance considered.
+    \item The launch point is chosen as the origin unless stated otherwise.
+\end{itemize}
+
+With the positive \(y\)-axis pointing upward, the acceleration vector is
+\[
+\mathbf{a}=(0,-g),
+\]
+where \(g>0\) is the magnitude of gravitational acceleration.
+
+\section{Geometry of the Launch}
+
+Let the initial velocity be
+\[
+\mathbf{v}_0=(v_{0x},v_{0y}).
+\]
+If the initial speed is \(v_0=\lVert \mathbf{v}_0\rVert\) and the launch angle is
+\(\theta\), then the velocity components are
+\[
+v_{0x}=v_0\cos\theta,
+\qquad
+v_{0y}=v_0\sin\theta.
+\]
+This is simply the decomposition of a vector into its horizontal and vertical
+components.
+
+\begin{figure}[h]
+\centering
+\input{figures/independent_notes/projectile_motion_geometry}
+\caption{Ideal projectile motion without air resistance. The trajectory is a
+parabola, the acceleration is vertical, and the horizontal and vertical motions
+can be treated separately.}
+\end{figure}
+
+\section{Equations of Motion from Constant Acceleration}
+
+The acceleration equations are
+\[
+\frac{d^2x}{dt^2}=0,
+\qquad
+\frac{d^2y}{dt^2}=-g.
+\]
+We derive the position functions by integrating with respect to time.
+
+For the horizontal coordinate,
+\[
+\frac{d^2x}{dt^2}=0.
+\]
+Integrating once gives
+\[
+\frac{dx}{dt}=C_1.
+\]
+The constant \(C_1\) is the initial horizontal velocity, so
+\[
+\frac{dx}{dt}=v_{0x}=v_0\cos\theta.
+\]
+Integrating again gives
+\[
+x(t)=v_{0x}t+C_2.
+\]
+If \(x(0)=0\), then \(C_2=0\), hence
+\[
+\boxed{x(t)=v_0\cos\theta\, t.}
+\]
+
+For the vertical coordinate,
+\[
+\frac{d^2y}{dt^2}=-g.
+\]
+Integrating once gives
+\[
+\frac{dy}{dt}=-gt+C_3.
+\]
+The constant \(C_3\) is the initial vertical velocity, so
+\[
+\frac{dy}{dt}=v_{0y}-gt=v_0\sin\theta-gt.
+\]
+Integrating again gives
+\[
+y(t)=v_{0y}t-\frac{1}{2}gt^2+C_4.
+\]
+If \(y(0)=0\), then \(C_4=0\), hence
+\[
+\boxed{y(t)=v_0\sin\theta\, t-\frac{1}{2}gt^2.}
+\]
+
+Thus the velocity and position are
+\[
+\boxed{\mathbf{v}(t)=\bigl(v_0\cos\theta,\,v_0\sin\theta-gt\bigr)}
+\]
+and
+\[
+\boxed{\mathbf{r}(t)=\bigl(v_0\cos\theta\,t,\,v_0\sin\theta\,t-
+\tfrac{1}{2}gt^2\bigr).}
+\]
+
+\begin{remarkbox}
+The horizontal coordinate changes linearly in time because there is no
+horizontal acceleration in the ideal model. The vertical coordinate contains a
+quadratic term because the vertical acceleration is constant and nonzero.
+\end{remarkbox}
+
+\section{The Trajectory as a Parabola}
+
+The parametric equations are
+\[
+x(t)=v_0\cos\theta\,t,
+\qquad
+y(t)=v_0\sin\theta\,t-\frac{1}{2}gt^2.
+\]
+Assume \(\cos\theta\neq 0\). From the horizontal equation,
+\[
+t=\frac{x}{v_0\cos\theta}.
+\]
+Substituting this into \(y(t)\) gives
+\[
+y=x\tan\theta-rac{g}{2v_0^2\cos^2\theta}x^2.
+\]
+Therefore the trajectory is
+\[
+\boxed{y(x)=x\tan\theta-rac{g}{2v_0^2\cos^2\theta}x^2.}
+\]
+This is a quadratic function of \(x\), so the ideal trajectory is a parabola.
+
+\section{Time of Flight}
+
+The projectile returns to the launch height when \(y(t)=0\). With launch and
+landing at the same height,
+\[
+y(t)=v_0\sin\theta\,t-\frac{1}{2}gt^2=0.
+\]
+Factoring out \(t\),
+\[
+t\left(v_0\sin\theta-\frac{1}{2}gt\right)=0.
+\]
+There are two solutions. The first is \(t=0\), the launch moment. The second is
+found from
+\[
+v_0\sin\theta-\frac{1}{2}gt=0.
+\]
+Hence the total time of flight is
+\[
+\boxed{T=\frac{2v_0\sin\theta}{g}.}
+\]
+This formula applies when the projectile lands at the same vertical level from
+which it was launched.
+
+\section{Maximum Height}
+
+At the highest point the vertical velocity is zero:
+\[
+v_y(t)=v_0\sin\theta-gt=0.
+\]
+Therefore the time to reach the top is
+\[
+\boxed{t_H=\frac{v_0\sin\theta}{g}.}
+\]
+Substituting \(t_H\) into \(y(t)\),
+\[
+H=v_0\sin\theta\left(\frac{v_0\sin\theta}{g}\right)
+-\frac{1}{2}g\left(\frac{v_0\sin\theta}{g}\right)^2.
+\]
+Thus
+\[
+H=\frac{v_0^2\sin^2\theta}{g}-\frac{v_0^2\sin^2\theta}{2g}
+=\frac{v_0^2\sin^2\theta}{2g}.
+\]
+So the maximum height above the launch point is
+\[
+\boxed{H=\frac{v_0^2\sin^2\theta}{2g}.}
+\]
+
+\section{Horizontal Range}
+
+The range \(R\) is the horizontal distance traveled during the total time of
+flight. Since
+\[
+x(t)=v_0\cos\theta\,t,
+\]
+we have
+\[
+R=x(T)=v_0\cos\theta\,T.
+\]
+Using \(T=2v_0\sin\theta/g\),
+\[
+R=v_0\cos\theta\cdot\frac{2v_0\sin\theta}{g}
+=\frac{2v_0^2\sin\theta\cos\theta}{g}.
+\]
+Since \(2\sin\theta\cos\theta=\sin(2\theta)\),
+\[
+\boxed{R=\frac{v_0^2\sin(2\theta)}{g}.}
+\]
+
+The range is maximal when \(\sin(2\theta)=1\), that is when
+\[
+2\theta=90^\circ,
+\qquad
+\theta=45^\circ.
+\]
+For launch and landing at the same height, the ideal range is therefore maximal
+at \(45^\circ\).
+
+\section{Velocity, Speed, and Direction During Flight}
+
+The velocity components are
+\[
+v_x(t)=v_0\cos\theta,
+\qquad
+v_y(t)=v_0\sin\theta-gt.
+\]
+The speed is the magnitude of the velocity vector:
+\[
+\lVert \mathbf{v}(t)\rVert
+=\sqrt{v_x(t)^2+v_y(t)^2}
+=\sqrt{v_0^2\cos^2\theta+\bigl(v_0\sin\theta-gt\bigr)^2}.
+\]
+Thus
+\[
+\boxed{\lVert \mathbf{v}(t)\rVert
+=\sqrt{v_0^2\cos^2\theta+\bigl(v_0\sin\theta-gt\bigr)^2}.}
+\]
+
+The instantaneous direction angle \(\alpha(t)\) of the velocity satisfies
+\[
+\tan\alpha(t)=\frac{v_y(t)}{v_x(t)}
+=\frac{v_0\sin\theta-gt}{v_0\cos\theta},
+\]
+provided \(v_0\cos\theta\neq 0\).
+
+At the highest point, \(v_y=0\), so the velocity is purely horizontal:
+\[
+\mathbf{v}(t_H)=(v_0\cos\theta,0).
+\]
+
+\section{Projectile Launched from an Initial Height}
+
+If the projectile is launched from height \(y_0\), the position equations become
+\[
+x(t)=x_0+v_0\cos\theta\,t,
+\]
+and
+\[
+y(t)=y_0+v_0\sin\theta\,t-\frac{1}{2}gt^2.
+\]
+If the ground is at \(y=0\), the landing time is obtained from
+\[
+y_0+v_0\sin\theta\,t-\frac{1}{2}gt^2=0.
+\]
+Equivalently,
+\[
+gt^2-2v_0\sin\theta\,t-2y_0=0.
+\]
+The physically relevant positive solution is
+\[
+\boxed{T=\frac{v_0\sin\theta+\sqrt{v_0^2\sin^2\theta+2gy_0}}{g}.}
+\]
+The corresponding range, measured from \(x_0\), is
+\[
+\boxed{R=v_0\cos\theta\,T.}
+\]
+
+When \(y_0=0\), the formula reduces to
+\[
+T=\frac{v_0\sin\theta+|v_0\sin\theta|}{g}.
+\]
+For an upward launch with \(\sin\theta>0\), this becomes
+\[
+T=\frac{2v_0\sin\theta}{g},
+\]
+which agrees with the same-height result.
+
+\section{Energy Check}
+
+The same maximum height formula can be checked using conservation of mechanical
+energy. At launch, the vertical part of the kinetic energy associated with
+upward motion is
+\[
+\frac{1}{2}m(v_0\sin\theta)^2.
+\]
+At the highest point, this vertical kinetic energy has been converted into
+gravitational potential energy \(mgH\). Thus
+\[
+\frac{1}{2}m v_0^2\sin^2\theta=mgH.
+\]
+Canceling \(m\) and solving for \(H\),
+\[
+H=\frac{v_0^2\sin^2\theta}{2g}.
+\]
+This agrees with the kinematic derivation.
+
+\section{A Worked Symbolic Example}
+
+Suppose a projectile is launched from ground level with speed \(v_0=20\,\mathrm{m/s}\)
+at angle \(\theta=30^\circ\). Since
+\[
+\sin 30^\circ=\frac{1}{2},
+\qquad
+\cos 30^\circ=\frac{\sqrt{3}}{2},
+\]
+the initial components are
+\[
+v_{0x}=10\sqrt{3}\,\mathrm{m/s},
+\qquad
+v_{0y}=10\,\mathrm{m/s}.
+\]
+The time of flight is
+\[
+T=\frac{2v_{0y}}{g}=\frac{20}{g}.
+\]
+The maximum height is
+\[
+H=\frac{v_{0y}^2}{2g}=\frac{100}{2g}=\frac{50}{g}.
+\]
+The range is
+\[
+R=v_{0x}T=10\sqrt{3}\cdot\frac{20}{g}=\frac{200\sqrt{3}}{g}.
+\]
+If one later substitutes \(g\approx 9.81\,\mathrm{m/s^2}\), these symbolic
+expressions give numerical predictions in SI units.
+
+\section{Limitations of the Model}
+
+The ideal projectile model is powerful because it is simple, but its assumptions
+are restrictive. In real motion, air resistance may reduce the range, change the
+optimal launch angle, and make the trajectory non-parabolic. For high speeds or
+long distances, the curvature of the Earth and variation of \(g\) may also
+matter. The formulas derived here are therefore best understood as exact results
+inside an ideal model, and as approximations for real projectiles when the
+assumptions are sufficiently accurate.
+
+\begin{summarybox}
+Projectile motion without air resistance separates into horizontal uniform
+motion and vertical uniformly accelerated motion. From
+\(\mathbf{a}=(0,-g)\), integration gives
+\[
+x(t)=v_0\cos\theta\,t,
+\qquad
+y(t)=v_0\sin\theta\,t-\frac{1}{2}gt^2.
+\]
+Eliminating time gives a parabolic trajectory. For launch and landing at the
+same height,
+\[
+T=\frac{2v_0\sin\theta}{g},
+\qquad
+H=\frac{v_0^2\sin^2\theta}{2g},
+\qquad
+R=\frac{v_0^2\sin(2\theta)}{g}.
+\]
+\end{summarybox}
