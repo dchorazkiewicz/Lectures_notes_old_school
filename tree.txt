@@ -63,6 +63,7 @@
 ./mathematical_lectures/general_notes_experiments/chapters
 ./mathematical_lectures/general_notes_experiments/chapters/README.md
 ./mathematical_lectures/general_notes_experiments/chapters/chapter_000_template_note.tex
+./mathematical_lectures/general_notes_experiments/chapters/chapter_001_peano_axioms.tex
 ./mathematical_lectures/general_notes_experiments/chapters/independent_notes
 ./mathematical_lectures/general_notes_experiments/chapters/independent_notes/.gitkeep
 ./mathematical_lectures/general_notes_experiments/figures
