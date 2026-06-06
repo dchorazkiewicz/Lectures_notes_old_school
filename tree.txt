@@ -159,6 +159,7 @@
 ./physics_lectures/general_notes_experiments/figures/independent_notes/sr_length_contraction_diagram.tex
 ./physics_lectures/general_notes_experiments/figures/independent_notes/sr_light_cone_interval.tex
 ./physics_lectures/general_notes_experiments/figures/independent_notes/sr_lorentz_axes.tex
+./physics_lectures/general_notes_experiments/figures/independent_notes/sr_muon_lifetime_geometry.tex
 ./physics_lectures/general_notes_experiments/figures/independent_notes/sr_relativity_of_simultaneity.tex
 ./physics_lectures/general_notes_experiments/figures/independent_notes/sr_time_dilation_clock.tex
 ./physics_lectures/general_notes_experiments/macros.tex
