@@ -1,33 +1,69 @@
 \begin{titlepage}
-    \centering
-    \vspace*{\stretch{1.0}}
-    
-    \begin{tcolorbox}[
-        colback=blue!5!white,
-        colframe=blue!75!black,
-        width=0.8\textwidth,
-        halign=center,
-        valign=center,
-        boxrule=1pt,
-        arc=10pt
-    ]
-        {\Huge\bfseries Mathematics Lecture Notes\par}
-    \end{tcolorbox}
-    
-    \vspace{0.5cm}
-    
-    {\large \par}
-    
-    \vspace{1.5cm}
-    
-    \rule{0.8\textwidth}{0.4pt}
-    
-    \vspace{1cm}
-    
-    {\Large \par}
-    
-    \vspace*{\stretch{2.0}}
-    
-    {\large \today\par}
-    
+    \thispagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[AccentBlue!42] (current page.south west) rectangle (current page.north east);
+        \fill[ExampleGreenBack] ([xshift=-1.8cm,yshift=-2.2cm]current page.north east)
+            circle (4.8cm);
+        \fill[TheoremOrangeBack] ([xshift=1.4cm,yshift=1.0cm]current page.south west)
+            circle (5.0cm);
+        \fill[white,opacity=0.62] ([xshift=-3.6cm,yshift=2.8cm]current page.south east)
+            circle (2.0cm);
+        \draw[SectionBlue!28,line width=1.0pt]
+            ([xshift=1.4cm,yshift=-1.4cm]current page.north west)
+            rectangle
+            ([xshift=-1.4cm,yshift=1.4cm]current page.south east);
+        \foreach \x/\y/\r in {
+            -5.0/4.4/0.08,
+            -3.8/5.0/0.06,
+            -2.4/4.1/0.05,
+             3.4/-3.9/0.07,
+             4.5/-4.7/0.05,
+             5.1/-3.3/0.06
+        }{
+            \fill[SectionBlue!45] ([xshift=\x cm,yshift=\y cm]current page.center) circle (\r cm);
+        }
+    \end{tikzpicture}
+
+    \vspace*{1.3cm}
+
+    \begin{flushleft}
+        {\Large\bfseries\color{SectionBlue} Basic Mathematics\par}
+        \vspace{0.18cm}
+        {\color{SectionBlue!70}\rule{0.42\textwidth}{1.2pt}\par}
+    \end{flushleft}
+
+    \vspace{2.0cm}
+
+    \begin{center}
+        \begin{tcolorbox}[
+            enhanced,
+            width=0.86\textwidth,
+            colback=white,
+            colframe=SectionBlue,
+            boxrule=1.0pt,
+            arc=6pt,
+            left=14mm,
+            right=14mm,
+            top=12mm,
+            bottom=12mm,
+            halign=center,
+            drop shadow={black!18!white}
+        ]
+            {\Huge\bfseries\color{ChapterBlue} Mathematics\par}
+            \vspace{0.25cm}
+            {\LARGE\bfseries\color{SectionBlue} Lecture Notes\par}
+            \vspace{0.55cm}
+            {\large\color{black!68}
+            A friendly path through algebra, geometry, and calculus.\par}
+        \end{tcolorbox}
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        {\large\color{ChapterBlue}\today\par}
+    \end{center}
+
+    \vspace*{0.8cm}
 \end{titlepage}

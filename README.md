@@ -12,6 +12,13 @@ physics_lectures/physics_basics
 
 Each project has its own `main.tex` source file and compiled `main.pdf` output.
 
+## Related Repositories
+
+These lecture notes are connected with separate problem repositories:
+
+- [dchorazkiewicz/Math_Problems_Repo](https://github.com/dchorazkiewicz/Math_Problems_Repo)
+- [dchorazkiewicz/Physics_Problems_Repo](https://github.com/dchorazkiewicz/Physics_Problems_Repo)
+
 Shared visual styling is kept in:
 
 ```text
