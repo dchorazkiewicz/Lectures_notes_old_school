@@ -1,0 +1,93 @@
+% Shared visual style for all lecture-note projects.
+
+% Heading styles
+\usepackage{titlesec}
+
+% Document color palette
+\definecolor{ChapterBlue}{HTML}{12355B}
+\definecolor{SectionBlue}{HTML}{1F5F99}
+\definecolor{SubsectionBlue}{HTML}{4F7FA8}
+\definecolor{AccentBlue}{HTML}{D8E9F7}
+\definecolor{ExampleGreen}{HTML}{2F7D4A}
+\definecolor{ExampleGreenBack}{HTML}{EEF8F1}
+\definecolor{TheoremOrange}{HTML}{B85C00}
+\definecolor{TheoremOrangeBack}{HTML}{FFF4E6}
+
+% Chapter, section, and subsection heading styles
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries\color{ChapterBlue}}
+    {\chaptertitlename\ \thechapter}
+    {0.6em}
+    {}
+
+\titlespacing*{\chapter}{0pt}{-0.5em}{2.0em}
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{SectionBlue}}
+    {\thesection}
+    {0.8em}
+    {}
+
+\titlespacing*{\section}{0pt}{1.8em}{0.8em}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{SubsectionBlue}}
+    {\thesubsection}
+    {0.8em}
+    {}
+
+\titlespacing*{\subsection}{0pt}{1.2em}{0.5em}
+
+% Theorem-like environments
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+
+% Colored boxes
+\newtcolorbox{definitionbox}{
+    breakable,
+    colback=AccentBlue!28,
+    colframe=SectionBlue,
+    title=Definition,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{theorembox}{
+    breakable,
+    colback=TheoremOrangeBack,
+    colframe=TheoremOrange,
+    title=Theorem,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{examplebox}{
+    breakable,
+    colback=ExampleGreenBack,
+    colframe=ExampleGreen,
+    title=Example,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{remarkbox}{
+    breakable,
+    colback=gray!4,
+    colframe=SubsectionBlue!75,
+    title=Remark,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{summarybox}{
+    breakable,
+    colback=gray!5,
+    colframe=ChapterBlue,
+    title=Summary,
+    fonttitle=\bfseries
+}

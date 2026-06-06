@@ -207,6 +207,24 @@ macros.tex
 styles.tex
 ```
 
+For visual styles shared by all lecture-note projects, edit:
+
+```text
+shared/styles.tex
+```
+
+The project-local `styles.tex` files should remain thin wrappers that load the
+shared style file.
+
+For mathematical notation macros shared by all lecture-note projects, edit:
+
+```text
+shared/macros.tex
+```
+
+The project-local `macros.tex` files should remain thin wrappers that load the
+shared macros file.
+
 The agent should not mix these levels unless necessary.
 
 For example, if the task is:

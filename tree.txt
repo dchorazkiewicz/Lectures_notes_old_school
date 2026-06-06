@@ -34,6 +34,12 @@
 ./mathematical_lectures/basic_mathematics/main.pdf
 ./mathematical_lectures/basic_mathematics/main.tex
 ./mathematical_lectures/basic_mathematics/preamble.tex
+./mathematical_lectures/basic_mathematics/problems
+./mathematical_lectures/basic_mathematics/problems/algebra
+./mathematical_lectures/basic_mathematics/problems/algebra/01_matrices_and_operations.md
+./mathematical_lectures/basic_mathematics/problems/algebra/02_determinants.md
+./mathematical_lectures/basic_mathematics/problems/algebra/03_matrix_inversion.md
+./mathematical_lectures/basic_mathematics/problems/algebra/04_systems_of_equations.md
 ./mathematical_lectures/basic_mathematics/styles.tex
 ./mathematical_lectures/basic_mathematics/titlepage.tex
 ./mathematical_lectures/probabilistic_methods
@@ -181,4 +187,7 @@
 ./physics_lectures/physics_basics/problems/problem_set_11_modern_physics_quantum_and_nuclear_model.md
 ./physics_lectures/physics_basics/styles.tex
 ./physics_lectures/physics_basics/titlepage.tex
+./shared
+./shared/macros.tex
+./shared/styles.tex
 ./tree.txt

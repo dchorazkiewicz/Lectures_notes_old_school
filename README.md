@@ -12,6 +12,24 @@ physics_lectures/physics_basics
 
 Each project has its own `main.tex` source file and compiled `main.pdf` output.
 
+Shared visual styling is kept in:
+
+```text
+shared/styles.tex
+```
+
+The project-local `styles.tex` files load this shared file so that all lecture
+notes use the same theorem boxes, colors, and heading styles.
+
+Shared mathematical notation macros are kept in:
+
+```text
+shared/macros.tex
+```
+
+The project-local `macros.tex` files load this shared file so that symbols such
+as `\R`, `\Prob`, `\E`, and `\Var` stay consistent across projects.
+
 ## Build
 
 From a project directory, compile with:
