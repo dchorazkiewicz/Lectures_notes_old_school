@@ -19,6 +19,8 @@
 ./mathematical_lectures/basic_mathematics
 ./mathematical_lectures/basic_mathematics/build.sh
 ./mathematical_lectures/basic_mathematics/chapters
+./mathematical_lectures/basic_mathematics/chapters/applications_of_calculus
+./mathematical_lectures/basic_mathematics/chapters/applications_of_calculus/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/calculus
 ./mathematical_lectures/basic_mathematics/chapters/calculus/continuity.tex
 ./mathematical_lectures/basic_mathematics/chapters/calculus/derivatives.tex
