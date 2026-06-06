@@ -33,34 +33,27 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.ref_name }}
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            lmodern \
-            texlive-fonts-recommended \
-            texlive-latex-base \
-            texlive-latex-extra \
-            texlive-pictures
-
       - name: Build all lecture PDFs
-        run: |
-          projects=(
-            "mathematical_lectures/basic_mathematics"
-            "mathematical_lectures/probabilistic_methods"
-            "mathematical_lectures/general_notes_experiments"
-            "physics_lectures/physics_basics"
-            "physics_lectures/general_notes_experiments"
-          )
+        uses: xu-cheng/texlive-action@v3
+        with:
+          texlive_version: latest
+          run: |
+            projects=(
+              "mathematical_lectures/basic_mathematics"
+              "mathematical_lectures/probabilistic_methods"
+              "mathematical_lectures/general_notes_experiments"
+              "physics_lectures/physics_basics"
+              "physics_lectures/general_notes_experiments"
+            )
 
-          for project in "${projects[@]}"; do
-            echo "Building ${project}"
-            if [[ ! -x "${project}/build.sh" ]]; then
-              echo "Missing executable build script: ${project}/build.sh" >&2
-              exit 1
-            fi
-            "${project}/build.sh"
-          done
+            for project in "${projects[@]}"; do
+              echo "Building ${project}"
+              if [[ ! -x "${project}/build.sh" ]]; then
+                echo "Missing executable build script: ${project}/build.sh" >&2
+                exit 1
+              fi
+              "${project}/build.sh"
+            done
 
       - name: Commit changed PDFs
         run: |

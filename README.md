@@ -81,4 +81,5 @@ generated file differs from the committed version.
 Lecture `main.pdf` files are rebuilt automatically by GitHub Actions after
 pushes that change LaTeX sources, shared TeX setup, or project build scripts.
 The workflow commits updated PDFs only when the rebuilt files differ from the
-committed versions.
+committed versions. PDF builds run in a prebuilt TeX Live container instead of
+installing LaTeX packages during every workflow run.
