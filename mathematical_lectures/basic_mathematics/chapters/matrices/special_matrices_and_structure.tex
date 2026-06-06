@@ -1,0 +1,81 @@
+\section{Special matrices and visible structure}
+
+Some matrices are important because their structure is easy to see. They help us learn a useful lesson: a matrix is not only a collection of entries. The position of the entries matters, and certain patterns can make an operation simple or meaningful.
+
+\subsection*{The zero matrix and the identity matrix}
+
+The zero matrix is the matrix whose entries are all zero. It behaves like zero for matrix addition. If \(A\) is an \(m\times n\) matrix and \(0\) is the zero matrix of the same size, then
+\[
+A+0=A.
+\]
+
+The identity matrix plays a similar role for multiplication, but only for square matrices.
+
+\begin{definitionbox}
+The \(n\times n\) identity matrix is
+\[
+I_n=
+\begin{pmatrix}
+1 & 0 & \cdots & 0\\
+0 & 1 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & 1
+\end{pmatrix}.
+\]
+For compatible matrices,
+\[
+I_nA=A,
+\qquad
+AI_n=A.
+\]
+\end{definitionbox}
+
+The identity matrix is important because it represents doing nothing. This phrase is informal, but helpful. Multiplying by the identity preserves the object, just as multiplying a number by \(1\) preserves the number.
+
+\subsection*{Diagonal matrices}
+
+A diagonal matrix is a square matrix whose non-zero entries, if any, lie only on the main diagonal.
+
+\begin{definitionbox}
+A square matrix \(D=(d_{ij})\) is diagonal if
+\[
+d_{ij}=0
+\quad \text{whenever } i\ne j.
+\]
+We often write
+\[
+D=\operatorname{diag}(d_1,d_2,\ldots,d_n).
+\]
+\end{definitionbox}
+
+Diagonal matrices are useful because they act independently on different positions. There is no mixing between coordinates. This is why many calculations with diagonal matrices are transparent.
+
+\begin{examplebox}
+Let
+\[
+D=\operatorname{diag}(3,-1,2).
+\]
+Then
+\[
+D^2=\operatorname{diag}(9,1,4),
+\qquad
+D^3=\operatorname{diag}(27,-1,8).
+\]
+The power is computed by taking powers of the diagonal entries. This works because all off-diagonal entries are zero, so the coordinates do not mix.
+\end{examplebox}
+
+If two diagonal matrices have the same size, then they commute. Indeed,
+\[
+\operatorname{diag}(a_1,\ldots,a_n)\operatorname{diag}(b_1,\ldots,b_n)
+=
+\operatorname{diag}(a_1b_1,\ldots,a_nb_n),
+\]
+and the same result is obtained in the opposite order because ordinary numbers commute. This is a good example of structure explaining an algebraic fact.
+
+\subsection*{Patterns worth noticing}
+
+When a matrix appears in a problem, it is useful to ask whether it has visible structure. Is it diagonal? Does it contain many zeros? Are two rows equal? Are rows or columns multiples of one another? Does it look symmetric? Such observations can simplify computations, but more importantly they help us understand the object.
+
+\begin{remarkbox}
+A calculation often becomes easier after we notice structure. But noticing structure is not a trick; it is part of mathematical understanding. We learn not only to compute with objects, but also to see them.
+\end{remarkbox}
