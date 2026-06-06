@@ -109,22 +109,22 @@ jobs:
         run: |
           read -r -a projects <<< "${PROJECTS_TO_BUILD}"
 
-          changed=()
+          pdfs=()
           for project in "${projects[@]}"; do
             pdf="${project}/main.pdf"
-            if ! git diff --quiet -- "${pdf}"; then
-              changed+=("${pdf}")
+            if [[ -f "${pdf}" ]]; then
+              pdfs+=("${pdf}")
             fi
           done
 
-          if [[ "${#changed[@]}" -eq 0 ]]; then
-            echo "All PDFs are already up to date."
+          if [[ "${#pdfs[@]}" -eq 0 ]]; then
+            echo "No PDFs were generated."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "${changed[@]}"
-          git commit -m "Build lecture PDFs"
+          git add "${pdfs[@]}"
+          git commit -m "Build lecture PDFs" || echo "No changes to commit"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
