@@ -29,7 +29,6 @@
 ./mathematical_lectures/basic_mathematics/chapters/chapter_00_introduction.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_01_matrices.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_02_determinants.tex
-./mathematical_lectures/basic_mathematics/chapters/chapter_03_calculus.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_03_matrix_inversion.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_04_systems_of_linear_equations.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_05_vectors_and_coordinates.tex
