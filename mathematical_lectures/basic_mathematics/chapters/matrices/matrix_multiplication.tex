@@ -1,0 +1,71 @@
+\section{Matrix multiplication}
+
+Matrix multiplication is the first operation in this chapter that is not simply performed position by position. This is why it deserves careful attention. Many mistakes with matrices come from treating multiplication as if it were only another version of addition. It is not. Addition compares matching positions. Multiplication combines rows of the first matrix with columns of the second matrix.
+
+\begin{definitionbox}
+Let \(A=(a_{ij})\) be an \(m\times n\) matrix and let \(B=(b_{ij})\) be an \(n\times p\) matrix. The product \(AB\) is the \(m\times p\) matrix \(C=(c_{ij})\), where
+\[
+c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}.
+\]
+In words, the entry \(c_{ij}\) is obtained by multiplying row \(i\) of \(A\) by column \(j\) of \(B\).
+\end{definitionbox}
+
+The condition on sizes is built into the definition. If \(A\) has size \(m\times n\), then each row of \(A\) has \(n\) entries. To multiply this row by a column of \(B\), each column of \(B\) must also have \(n\) entries. Therefore \(B\) must have \(n\) rows. We summarize this by writing
+\[
+(m\times n)(n\times p)=m\times p.
+\]
+The inner dimensions must match; the outer dimensions describe the size of the result.
+
+\begin{examplebox}
+Let
+\[
+A=\begin{pmatrix}1 & 3\\ -2 & 4\end{pmatrix},
+\qquad
+B=\begin{pmatrix}2 & 0\\ 5 & -1\end{pmatrix}.
+\]
+The first entry of \(AB\) comes from the first row of \(A\) and the first column of \(B\):
+\[
+1\cdot 2+3\cdot 5=17.
+\]
+The first row and second column give
+\[
+1\cdot 0+3\cdot (-1)=-3.
+\]
+Continuing in the same way,
+\[
+AB=
+\begin{pmatrix}
+17 & -3\\
+16 & -4
+\end{pmatrix}.
+\]
+\end{examplebox}
+
+The example is small, but the point is general. Each entry of the product answers one local question: how does a chosen row of the first matrix interact with a chosen column of the second matrix?
+
+\subsection*{Why the order matters}
+
+For ordinary numbers, \(ab=ba\). For matrices this is not generally true. The reason is conceptual, not only computational. The product \(AB\) asks rows of \(A\) to interact with columns of \(B\). The product \(BA\) asks a different question.
+
+Using the matrices from the previous example,
+\[
+BA=
+\begin{pmatrix}2 & 0\\ 5 & -1\end{pmatrix}
+\begin{pmatrix}1 & 3\\ -2 & 4\end{pmatrix}
+=
+\begin{pmatrix}
+2 & 6\\
+7 & 11
+\end{pmatrix}.
+\]
+Thus \(AB\ne BA\). The matrices have not changed, but the order has changed, and the question asked by the multiplication has changed.
+
+\begin{remarkbox}
+The statement \(AB\ne BA\) does not mean that two matrices can never commute. Some matrices do commute. The point is that commutativity is not automatic. If it matters, it must be checked or justified from the structure of the matrices.
+\end{remarkbox}
+
+Matrix multiplication is associative:
+\[
+(AB)C=A(BC),
+\]
+whenever the products are defined. This means that if several compatible matrices are multiplied in a fixed order, parentheses do not change the result. But the order of the matrices themselves still matters. Associativity tells us how to group operations. It does not allow us to swap them.
