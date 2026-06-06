@@ -22,3 +22,9 @@ pdflatex main.tex
 ```
 
 Some projects also include a local `build.sh` script.
+
+## Repository Tree
+
+`tree.txt` is regenerated automatically by GitHub Actions after pushes that change
+repository contents. The workflow commits the updated `tree.txt` only when the
+generated file differs from the committed version.
