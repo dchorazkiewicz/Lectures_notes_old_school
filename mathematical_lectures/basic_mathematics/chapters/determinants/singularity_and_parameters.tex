@@ -1,3 +1,148 @@
 \section{Singularity and parameters}
 
-This section will explain how determinants detect singular matrices and how determinant equations appear when a matrix depends on a parameter. The goal will be to show that solving \(\det A=0\) is not just algebraic manipulation, but a way of identifying when a matrix loses invertibility.
+The determinant is especially important because of what happens when it is equal to zero. A zero determinant is not just a numerical accident. It tells us that the matrix has lost a certain kind of independence.
+
+\begin{definitionbox}
+A square matrix \(A\) is called singular if
+\[
+\det A=0.
+\]
+It is called non-singular if
+\[
+\det A\ne0.
+\]
+\end{definitionbox}
+
+The word ``singular'' means exceptional or special. In this context, it means that the matrix does not behave like a fully independent square matrix. Something has collapsed. Rows or columns may be dependent, the associated transformation may flatten space, or a system of equations may fail to have a unique solution.
+
+\subsection{Reading singularity from rows}
+
+Consider
+\[
+A=\begin{pmatrix}
+1&2&3\\
+2&4&6\\
+0&1&-1
+\end{pmatrix}.
+\]
+The second row is twice the first row:
+\[
+(2,4,6)=2(1,2,3).
+\]
+Therefore the rows are dependent, and the determinant is zero:
+\[
+\det A=0.
+\]
+We do not need to expand the determinant to know this. The structure is visible.
+
+This is an important habit: before calculating, inspect. Sometimes the answer is already present in the shape of the object.
+
+\subsection{A determinant as a test for invertibility}
+
+A central theorem, which will become essential in the next chapter, is the following.
+
+\begin{theorembox}
+A square matrix \(A\) is invertible if and only if
+\[
+\det A\ne0.
+\]
+Equivalently, \(A\) is non-invertible if and only if
+\[
+\det A=0.
+\]
+\end{theorembox}
+
+This theorem is one of the reasons determinants matter. It says that a single number can answer a structural question: can the matrix be reversed? If the determinant is non-zero, the matrix has not collapsed its structure, and an inverse matrix exists. If the determinant is zero, the matrix has lost information, and no inverse matrix can recover it.
+
+We will study inverse matrices in the next chapter. Here we should understand the direction of thought:
+\[
+\det A\ne0 \quad \Longrightarrow \quad \text{the matrix can be inverted},
+\]
+while
+\[
+\det A=0 \quad \Longrightarrow \quad \text{the matrix cannot be inverted}.
+\]
+
+\subsection{Matrices depending on a parameter}
+
+Determinants are often used when a matrix contains a parameter. Then the determinant becomes an expression depending on that parameter. Solving
+\[
+\det A=0
+\]
+tells us for which parameter values the matrix becomes singular.
+
+\begin{examplebox}
+Let
+\[
+A(t)=\begin{pmatrix}
+t&1\\
+4&t
+\end{pmatrix}.
+\]
+Then
+\[
+\det A(t)=t\cdot t-1\cdot4=t^2-4.
+\]
+The matrix is singular when
+\[
+t^2-4=0.
+\]
+Therefore
+\[
+t=2 \quad \text{or} \quad t=-2.
+\]
+For all other values of \(t\), the matrix is non-singular.
+\end{examplebox}
+
+This example is simple, but it shows the main idea. A parameter does not merely make the computation longer. It changes the question. We are no longer asking for one determinant value. We are asking when the structure of the matrix changes.
+
+\begin{examplebox}
+Let
+\[
+B(a)=\begin{pmatrix}
+1&a&0\\
+0&1&a\\
+a&0&1
+\end{pmatrix}.
+\]
+Using Sarrus' rule,
+\[
+\det B(a)=(1\cdot1\cdot1+a\cdot a\cdot a+0\cdot0\cdot0)
+-(0\cdot1\cdot a+a\cdot0\cdot1+1\cdot a\cdot0).
+\]
+Thus
+\[
+\det B(a)=1+a^3.
+\]
+The matrix is singular when
+\[
+1+a^3=0,
+\]
+so
+\[
+a=-1.
+\]
+Thus \(B(a)\) is singular only for \(a=-1\), and non-singular for all other real values of \(a\).
+\end{examplebox}
+
+The determinant turns a structural question about a matrix into an algebraic equation. This is one of the most useful aspects of the concept.
+
+\subsection{What should be concluded?}
+
+When a problem asks for parameter values for which a matrix is singular, the answer is not just a list of numbers. The reasoning has a structure:
+\begin{enumerate}
+\item compute \(\det A\) as a function of the parameter,
+\item solve the equation \(\det A=0\),
+\item interpret the roots as values where the matrix loses invertibility.
+\end{enumerate}
+
+\begin{summarybox}
+The determinant separates square matrices into two broad classes.
+\begin{itemize}
+\item If \(\det A\ne0\), the matrix is non-singular and invertible.
+\item If \(\det A=0\), the matrix is singular and not invertible.
+\item If \(A\) depends on a parameter, the equation \(\det A=0\) identifies the exceptional parameter values.
+\end{itemize}
+\end{summarybox}
+
+This prepares the next chapter. Once we know how to detect whether a matrix is invertible, we can ask a new question: if the inverse exists, how do we find it?
