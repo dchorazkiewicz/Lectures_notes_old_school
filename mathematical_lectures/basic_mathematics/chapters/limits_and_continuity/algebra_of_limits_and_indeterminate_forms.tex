@@ -1,0 +1,127 @@
+\section{Algebra of limits and indeterminate forms}
+
+Limit computations often use algebra. But algebra should be used with understanding. Some transformations preserve the behavior near a point; others may accidentally change the problem. The guiding question should always be: what happens to the expression as the input approaches the limiting value?
+
+\subsection*{Basic algebra of limits}
+
+If two limits exist,
+\[
+\lim_{x\to a}f(x)=L,
+\qquad
+\lim_{x\to a}g(x)=M,
+\]
+then we can combine them in predictable ways:
+\[
+\lim_{x\to a}(f(x)+g(x))=L+M,
+\]
+\[
+\lim_{x\to a}(f(x)g(x))=LM,
+\]
+and, if \(M\ne0\),
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{L}{M}.
+\]
+
+These rules are useful when the individual limits are known and the resulting expression is meaningful.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to2}(x^2+3x-1).
+\]
+Using direct substitution and algebra of limits,
+\[
+\lim_{x\to2}(x^2+3x-1)=2^2+3\cdot2-1=9.
+\]
+\end{examplebox}
+
+For polynomials, this direct substitution works because polynomial functions are continuous everywhere. Rational functions behave similarly at points where the denominator is not zero.
+
+\subsection*{When direct substitution fails}
+
+Direct substitution may produce expressions such as
+\[
+\frac00,
+\qquad
+\frac{\infty}{\infty},
+\qquad
+0\cdot\infty,
+\qquad
+\infty-\infty.
+\]
+These are called indeterminate forms. They are not answers. They indicate that the expression needs to be transformed or analyzed more carefully.
+
+\begin{remarkbox}
+An indeterminate form means that competing behaviors are present. The expression may have a finite limit, an infinite limit, or no limit. The form itself does not decide the answer.
+\end{remarkbox}
+
+\subsection*{Factoring}
+
+Factoring is often used when direct substitution gives \(0/0\).
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to3}\frac{x^2-4x+3}{2x-6}.
+\]
+Substitution gives \(0/0\). Factor:
+\[
+x^2-4x+3=(x-1)(x-3),
+\qquad
+2x-6=2(x-3).
+\]
+For \(x\ne3\),
+\[
+\frac{x^2-4x+3}{2x-6}=\frac{(x-1)(x-3)}{2(x-3)}=\frac{x-1}{2}.
+\]
+Therefore
+\[
+\lim_{x\to3}\frac{x^2-4x+3}{2x-6}=\frac{3-1}{2}=1.
+\]
+\end{examplebox}
+
+The cancellation is valid for \(x\ne3\). This is enough for the limit, because the limit studies values near \(3\), not necessarily at \(3\).
+
+\subsection*{Rationalizing}
+
+Expressions with radicals may require multiplication by the conjugate.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to25}\frac{\sqrt{x}-5}{x-25}.
+\]
+Substitution gives \(0/0\). Multiply by the conjugate:
+\[
+\frac{\sqrt{x}-5}{x-25}\cdot\frac{\sqrt{x}+5}{\sqrt{x}+5}
+=
+\frac{x-25}{(x-25)(\sqrt{x}+5)}.
+\]
+For \(x\ne25\), this becomes
+\[
+\frac{1}{\sqrt{x}+5}.
+\]
+Therefore
+\[
+\lim_{x\to25}\frac{\sqrt{x}-5}{x-25}=\frac1{5+5}=\frac1{10}.
+\]
+\end{examplebox}
+
+Rationalizing is not a trick for its own sake. It removes a difference of square roots that hides the limiting behavior.
+
+\subsection*{Rewriting before deciding}
+
+A common mistake is to see \(0/0\) and conclude that the limit is zero or undefined. This is incorrect. The form \(0/0\) tells us that direct substitution has not answered the question.
+
+\begin{summarybox}
+When direct substitution gives an indeterminate form, ask:
+\begin{itemize}
+\item Can I factor the numerator or denominator?
+\item Is there a common factor that cancels for nearby inputs?
+\item Is there a square root expression that can be rationalized?
+\item Can I divide by a dominant power for limits at infinity?
+\item After rewriting, what expression describes the same nearby behavior?
+\end{itemize}
+\end{summarybox}
+
+The algebra of limits is useful because it helps us reveal behavior. The algebra should serve the limit, not replace the meaning of the limit.
