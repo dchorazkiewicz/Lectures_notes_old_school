@@ -1,0 +1,101 @@
+\section{What information defines a plane}
+
+A plane is the three-dimensional analogue of a line in one important sense: it is a flat object. But a plane is not one-dimensional. A line has one direction. A plane has two independent directions.
+
+This distinction changes how we describe planes. A line can be determined by a point and one non-zero direction vector. A plane can be determined by a point and two non-parallel direction vectors, or by a point and one normal vector.
+
+\subsection*{A point and two directions}
+
+Imagine standing at a point on a flat surface. To move around the surface, one direction is not enough. You need two independent directions. If those directions are not parallel, then every point of the plane can be reached by combining them.
+
+Let \(P_0\) be a point in space and let \(u\) and \(v\) be two non-zero, non-parallel vectors. Then the plane through \(P_0\) spanned by \(u\) and \(v\) is described by
+\[
+P=P_0+s u+t v,
+\qquad s,t\in\mathbb{R}.
+\]
+The two parameters \(s\) and \(t\) move independently in the two directions.
+
+\begin{examplebox}
+Let
+\[
+P_0=(1,2,0),
+\qquad
+u=(1,0,1),
+\qquad
+v=(0,1,2).
+\]
+Then a plane is given by
+\[
+P=(1,2,0)+s(1,0,1)+t(0,1,2).
+\]
+In coordinates,
+\[
+x=1+s,
+\qquad
+y=2+t,
+\qquad
+z=s+2t.
+\]
+Changing \(s\) and \(t\) moves the point across the whole plane.
+\end{examplebox}
+
+The condition that \(u\) and \(v\) are not parallel is essential. If they were parallel, they would describe only one direction, and the formula would trace a line, not a plane.
+
+\subsection*{A point and a normal vector}
+
+There is another very powerful way to describe a plane. Instead of giving two directions inside the plane, we may give one direction perpendicular to the plane. Such a vector is called a normal vector.
+
+If \(n\ne0\) is perpendicular to a plane and \(P_0\) is a point on the plane, then a point \(P\) lies on the plane exactly when the displacement \(P-P_0\) is perpendicular to \(n\). Using the dot product, this condition is
+\[
+n\cdot(P-P_0)=0.
+\]
+
+This is the normal description of a plane. It is especially useful for equations, distances, angles, and parallelism.
+
+\begin{remarkbox}
+Two direction vectors describe movement inside the plane. A normal vector describes the direction across the plane. Both viewpoints describe the same geometric object.
+\end{remarkbox}
+
+\subsection*{Three non-collinear points}
+
+A plane can also be determined by three points, provided they are not collinear. If the points are \(A\), \(B\), and \(C\), then the vectors
+\[
+\overrightarrow{AB}=B-A,
+\qquad
+\overrightarrow{AC}=C-A
+\]
+lie in the plane. If these vectors are not parallel, then they give the two independent directions needed to describe the plane.
+
+\begin{examplebox}
+The points
+\[
+A=(1,0,0),
+\qquad
+B=(0,1,0),
+\qquad
+C=(0,0,1)
+\]
+are not collinear. The vectors
+\[
+B-A=(-1,1,0),
+\qquad
+C-A=(-1,0,1)
+\]
+are not parallel, so they determine a plane.
+\end{examplebox}
+
+\subsection*{The same plane, different descriptions}
+
+As with lines, a plane is not the same thing as one formula. The same plane may be described parametrically, by a normal equation, by a general equation, or by three points.
+
+\begin{summarybox}
+A plane may be determined by:
+\begin{itemize}
+\item one point and two non-parallel direction vectors,
+\item one point and one non-zero normal vector,
+\item three non-collinear points,
+\item an equation of the form \(Ax+By+Cz+D=0\), where \((A,B,C)\ne(0,0,0)\).
+\end{itemize}
+\end{summarybox}
+
+The goal of this chapter is to learn how to move between these descriptions and how to use each one for the questions it answers best.
