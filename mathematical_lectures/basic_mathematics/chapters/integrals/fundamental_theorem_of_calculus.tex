@@ -1,0 +1,97 @@
+\section{The fundamental theorem of calculus}
+
+The fundamental theorem of calculus connects the two meanings of integration. It says that accumulation and antidifferentiation are not separate ideas. They are linked.
+
+If \(F\) is an antiderivative of \(f\), then a definite integral of \(f\) over \([a,b]\) can be computed by evaluating \(F\) at the endpoints.
+
+\begin{theorembox}
+If \(f\) is continuous on \([a,b]\) and \(F'(x)=f(x)\), then
+\[
+\int_a^b f(x)\,dx=F(b)-F(a).
+\]
+\end{theorembox}
+
+This formula is often written as
+\[
+\int_a^b f(x)\,dx=\left[F(x)\right]_a^b.
+\]
+The notation means
+\[
+\left[F(x)\right]_a^b=F(b)-F(a).
+\]
+
+\subsection*{A first example}
+
+\begin{examplebox}
+Compute
+\[
+\int_0^3 2x\,dx.
+\]
+An antiderivative of \(2x\) is
+\[
+F(x)=x^2.
+\]
+Therefore
+\[
+\int_0^3 2x\,dx=\left[x^2\right]_0^3=3^2-0^2=9.
+\]
+\end{examplebox}
+
+The definite integral is a number. The constant of integration is not needed because it cancels:
+\[
+(F(b)+C)-(F(a)+C)=F(b)-F(a).
+\]
+
+\subsection*{Another example}
+
+\begin{examplebox}
+Compute
+\[
+\int_1^4 \frac{1}{x}\,dx.
+\]
+An antiderivative of \(1/x\) is
+\[
+\ln|x|.
+\]
+On the interval \([1,4]\), this is simply \(\ln x\). Hence
+\[
+\int_1^4 \frac1x\,dx=\left[\ln x\right]_1^4=\ln4-\ln1=\ln4.
+\]
+\end{examplebox}
+
+This example also shows why the interval matters. Since \([1,4]\) is positive, no sign issue appears inside the logarithm.
+
+\subsection*{Accumulation functions}
+
+The theorem also has another interpretation. If we define
+\[
+A(x)=\int_a^x f(t)\,dt,
+\]
+then, under appropriate continuity assumptions,
+\[
+A'(x)=f(x).
+\]
+The function \(A(x)\) accumulates the values of \(f\) from \(a\) to \(x\). Its derivative is the rate at which accumulation changes, which is the original function \(f\).
+
+This explains why integration and differentiation are inverse processes in a precise sense.
+
+\begin{remarkbox}
+The dummy variable \(t\) in \(\int_a^x f(t)\,dt\) is used to avoid confusing the variable of integration with the endpoint \(x\). The integral accumulates with respect to \(t\), and the result depends on \(x\).
+\end{remarkbox}
+
+\subsection*{Using the theorem responsibly}
+
+The fundamental theorem requires that an antiderivative be valid on the interval being used. If the integrand is not defined somewhere inside the interval, the situation needs more care and may involve improper integrals, which are not treated in this introductory chapter.
+
+\begin{summarybox}
+When using the fundamental theorem, ask:
+\begin{itemize}
+\item Is the integral definite?
+\item What antiderivative \(F\) satisfies \(F'=f\)?
+\item Are the endpoints substituted correctly?
+\item Did I compute \(F(b)-F(a)\), not \(F(a)-F(b)\)?
+\item Is the integrand defined on the interval?
+\end{itemize}
+\end{summarybox}
+
+The fundamental theorem is the bridge between local change and total accumulation.
