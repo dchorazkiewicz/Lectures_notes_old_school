@@ -1,0 +1,129 @@
+\section{What information defines a line}
+
+A line is one of the simplest geometric objects, but it is also one of the easiest objects to misunderstand. In elementary algebra a line is often introduced through an equation such as \(y=mx+b\). That equation is useful, but it should not be confused with the object itself. A line is not a formula. A line is a set of points arranged in one direction.
+
+Analytic geometry studies this set of points by translating geometric information into algebraic language. The first question is therefore not ``Which formula should I use?'' The first question is: what information is enough to determine the line?
+
+\subsection*{A point and a direction}
+
+The most natural description of a line uses two pieces of information:
+\begin{itemize}
+\item one point on the line,
+\item one non-zero vector that gives the direction of the line.
+\end{itemize}
+
+If \(A\) is a point and \(v\ne0\) is a direction vector, then the line consists of all points obtained by starting at \(A\) and moving by arbitrary multiples of \(v\).
+
+\begin{definitionbox}
+Let \(A\) be a point and let \(v\ne0\) be a vector. The line through \(A\) in direction \(v\) is the set of points
+\[
+P=A+t v,
+\]
+where \(t\) runs through all real numbers.
+\end{definitionbox}
+
+The parameter \(t\) controls the movement along the line. When \(t=0\), we are at the point \(A\). When \(t=1\), we move from \(A\) by exactly one copy of the vector \(v\). When \(t=-1\), we move by the same vector in the opposite direction.
+
+\begin{examplebox}
+Let
+\[
+A=(1,2),
+\qquad
+v=(3,-1).
+\]
+The line through \(A\) in direction \(v\) is
+\[
+P=(1,2)+t(3,-1).
+\]
+For \(t=0\), we get
+\[
+P=(1,2).
+\]
+For \(t=1\), we get
+\[
+P=(4,1).
+\]
+For \(t=-1\), we get
+\[
+P=(-2,3).
+\]
+These are different points, but they all lie on the same line because they are obtained from the same starting point by moving in the same direction.
+\end{examplebox}
+
+This description matches the language developed in the previous chapter. A point gives position. A vector gives direction. A parameter tells us how much of that direction to use.
+
+\subsection*{Two distinct points}
+
+A second common way to determine a line is to give two distinct points. If the points are different, then the vector from one point to the other gives a direction.
+
+Let
+\[
+A=(a_1,a_2),
+\qquad
+B=(b_1,b_2),
+\qquad
+A\ne B.
+\]
+Then
+\[
+\overrightarrow{AB}=B-A=(b_1-a_1,\,b_2-a_2)
+\]
+is a non-zero direction vector for the line through \(A\) and \(B\). Therefore the line can be written as
+\[
+P=A+t(B-A).
+\]
+
+The condition \(A\ne B\) is not a technical decoration. If \(A=B\), then the vector \(B-A\) is the zero vector, and the zero vector has no direction. One point alone does not determine a unique line.
+
+\begin{examplebox}
+Let
+\[
+A=(2,-1),
+\qquad
+B=(5,3).
+\]
+Then
+\[
+B-A=(3,4).
+\]
+The line through \(A\) and \(B\) can be written as
+\[
+P=(2,-1)+t(3,4).
+\]
+For \(t=1\), this gives \((5,3)\), so the point \(B\) is indeed on the line.
+\end{examplebox}
+
+\subsection*{A point and a normal vector in the plane}
+
+In the plane there is another important way to determine a line. Instead of giving a direction along the line, we may give a direction perpendicular to the line. Such a vector is called a normal vector.
+
+If \(n\ne0\) is perpendicular to a line and \(A\) is a point on the line, then a point \(P\) lies on the line exactly when the displacement \(P-A\) is perpendicular to \(n\). Using the dot product, this becomes
+\[
+n\cdot(P-A)=0.
+\]
+
+This form is the beginning of the normal description of a line. It is extremely useful because perpendicularity, distance from a point to a line, and the general equation of a line all become natural from it.
+
+\begin{remarkbox}
+A direction vector points along the line. A normal vector points across the line. Both can describe the same line, but they reveal different information.
+\end{remarkbox}
+
+\subsection*{The same object, different data}
+
+A line may therefore be determined from different kinds of information. We may know a point and a direction. We may know two points. In the plane, we may know a point and a normal vector. We may also know an equation and need to read from it what the point, direction, or normal vector is.
+
+This is why this chapter will not present only one formula for a line. A line has many algebraic descriptions. Each description is a way of reading the same geometric object.
+
+\begin{summarybox}
+When first meeting a line problem, ask:
+\begin{itemize}
+\item Am I given a point on the line?
+\item Am I given a direction vector?
+\item Am I given two points?
+\item Am I given a normal vector or an implicit equation?
+\item Is the line in the plane or in space?
+\item Which description makes the given information visible?
+\end{itemize}
+\end{summarybox}
+
+The goal is not to memorize all possible formulas at once. The goal is to understand what information each formula is carrying.
