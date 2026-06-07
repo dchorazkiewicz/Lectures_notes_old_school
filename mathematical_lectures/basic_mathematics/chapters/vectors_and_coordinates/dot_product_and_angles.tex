@@ -1,0 +1,190 @@
+\section{Dot product and angles}
+
+Some geometric questions are not only about length. We often want to know whether two directions are similar, opposite, or perpendicular. We may want to measure the angle between two vectors. For this purpose, one of the most important operations is the dot product.
+
+The dot product takes two vectors and produces a number. This number is not a new vector. It is a measurement of how the two vectors interact directionally.
+
+\begin{definitionbox}
+For vectors
+\[
+u=(u_1,u_2),
+\qquad
+v=(v_1,v_2),
+\]
+the dot product is
+\[
+u\cdot v=u_1v_1+u_2v_2.
+\]
+In space, for
+\[
+u=(u_1,u_2,u_3),
+\qquad
+v=(v_1,v_2,v_3),
+\]
+we define
+\[
+u\cdot v=u_1v_1+u_2v_2+u_3v_3.
+\]
+\end{definitionbox}
+
+The formula multiplies corresponding coordinates and then adds the results. But the meaning is not merely arithmetic. The dot product measures how much two vectors point in compatible directions.
+
+\begin{examplebox}
+Let
+\[
+u=(2,3),
+\qquad
+v=(4,-1).
+\]
+Then
+\[
+u\cdot v=2\cdot4+3\cdot(-1)=8-3=5.
+\]
+The result is a number. It is not a vector, and it should not be interpreted as a point or a displacement.
+\end{examplebox}
+
+\subsection*{The dot product and length}
+
+The dot product of a vector with itself gives the square of its length:
+\[
+v\cdot v=\norm{v}^2.
+\]
+Indeed, if \(v=(v_1,v_2)\), then
+\[
+v\cdot v=v_1^2+v_2^2,
+\]
+while
+\[
+\norm{v}=\sqrt{v_1^2+v_2^2}.
+\]
+Therefore
+\[
+\norm{v}=\sqrt{v\cdot v}.
+\]
+
+This connection is important. It shows that the dot product contains metric information: it knows something about lengths.
+
+\begin{examplebox}
+For
+\[
+v=(-2,5),
+\]
+we have
+\[
+v\cdot v=(-2)^2+5^2=4+25=29.
+\]
+Therefore
+\[
+\norm{v}=\sqrt{29}.
+\]
+\end{examplebox}
+
+\subsection*{The dot product and angles}
+
+The deeper geometric meaning of the dot product is expressed by the formula
+\[
+u\cdot v=\norm{u}\norm{v}\cos\theta,
+\]
+where \(\theta\) is the angle between the non-zero vectors \(u\) and \(v\).
+
+This formula should be read as an interpretation. The dot product is large and positive when the vectors point in similar directions. It is negative when they point more against each other. It is zero when the vectors are perpendicular.
+
+\begin{theorembox}
+For non-zero vectors \(u\) and \(v\),
+\[
+\cos\theta=\frac{u\cdot v}{\norm{u}\norm{v}},
+\]
+where \(\theta\) is the angle between the vectors.
+\end{theorembox}
+
+The denominator \(\norm{u}\norm{v}\) removes the effect of the lengths. What remains is information about direction.
+
+\begin{examplebox}
+Let
+\[
+u=(1,0),
+\qquad
+v=(0,1).
+\]
+Then
+\[
+u\cdot v=1\cdot0+0\cdot1=0.
+\]
+Both vectors have length \(1\). Hence
+\[
+\cos\theta=0,
+\]
+so
+\[
+\theta=90^\circ.
+\]
+The vectors are perpendicular.
+\end{examplebox}
+
+\subsection*{Perpendicular vectors}
+
+The most important special case is orthogonality. Two non-zero vectors are perpendicular exactly when their dot product is zero.
+
+\begin{theorembox}
+Non-zero vectors \(u\) and \(v\) are perpendicular if and only if
+\[
+u\cdot v=0.
+\]
+\end{theorembox}
+
+This criterion is one of the main reasons the dot product is so useful in analytic geometry. It turns a geometric condition, perpendicularity, into an algebraic equation.
+
+\begin{examplebox}
+Let
+\[
+u=(3,2),
+\qquad
+v=(4,-6).
+\]
+Then
+\[
+u\cdot v=3\cdot4+2\cdot(-6)=12-12=0.
+\]
+Therefore the two vectors are perpendicular.
+\end{examplebox}
+
+This is not only a convenient test. It is a model for much of analytic geometry: translate a geometric relation into an algebraic condition, solve or simplify the condition, and then interpret the result geometrically.
+
+\subsection*{The sign of the dot product}
+
+The sign of the dot product gives qualitative information about the angle.
+
+\begin{itemize}
+\item If \(u\cdot v>0\), then the angle between \(u\) and \(v\) is acute.
+\item If \(u\cdot v=0\), then the angle is right.
+\item If \(u\cdot v<0\), then the angle is obtuse.
+\end{itemize}
+
+This follows from the sign of \(\cos\theta\). Positive cosine corresponds to an acute angle, zero cosine to a right angle, and negative cosine to an obtuse angle.
+
+\begin{remarkbox}
+The dot product does not only help us compute angles. It helps us read the relationship between directions. Sometimes the sign of the dot product is already enough to understand the geometry of a problem.
+\end{remarkbox}
+
+\subsection*{Why this matters for lines and planes}
+
+The dot product will appear repeatedly in the next chapters. A line may be described by a direction vector. A plane may be described by a normal vector. Perpendicularity between a vector and a direction, or between a vector and a plane, can be expressed using the dot product.
+
+For example, if \(n\) is a normal vector to a plane, then every vector lying inside that plane is perpendicular to \(n\). Algebraically, this becomes an equation of the form
+\[
+n\cdot v=0.
+\]
+This is the beginning of the standard equation of a plane.
+
+\begin{summarybox}
+When using the dot product, ask:
+\begin{itemize}
+\item Am I trying to measure length, angle, or perpendicularity?
+\item Is the result supposed to be a number rather than a vector?
+\item Does a zero dot product indicate a right angle?
+\item Does the sign of the dot product already tell me something about the angle?
+\item Can a geometric condition be written as a dot product equation?
+\end{itemize}
+\end{summarybox}
+
+The dot product is a bridge between algebra and geometry. It allows angles and perpendicularity to be handled with equations.
