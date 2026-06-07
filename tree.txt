@@ -237,6 +237,8 @@
 ./mathematical_lectures/probabilistic_methods/chapters/combinatorics/unordered_structures.tex
 ./mathematical_lectures/probabilistic_methods/chapters/conditional_probability
 ./mathematical_lectures/probabilistic_methods/chapters/conditional_probability/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/continuous_random_variables
+./mathematical_lectures/probabilistic_methods/chapters/continuous_random_variables/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/data_analysis
 ./mathematical_lectures/probabilistic_methods/chapters/data_analysis/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/discovering_formalism
