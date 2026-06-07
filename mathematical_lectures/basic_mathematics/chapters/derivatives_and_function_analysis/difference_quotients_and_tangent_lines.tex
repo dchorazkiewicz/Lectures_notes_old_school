@@ -1,0 +1,119 @@
+\section{Difference quotients and tangent lines}
+
+The derivative definition contains the expression
+\[
+\frac{f(a+h)-f(a)}{h}.
+\]
+This expression is called a difference quotient. It is the bridge between average change and local change.
+
+Before using derivative rules, we should be able to read this quotient. It will appear repeatedly in calculus.
+
+\subsection*{Average rate of change}
+
+For two inputs \(x_1\) and \(x_2\), with \(x_1\ne x_2\), the average rate of change of \(f\) from \(x_1\) to \(x_2\) is
+\[
+\frac{f(x_2)-f(x_1)}{x_2-x_1}.
+\]
+This quotient compares the change in output to the change in input.
+
+If we set \(x_1=a\) and \(x_2=a+h\), then the formula becomes
+\[
+\frac{f(a+h)-f(a)}{h}.
+\]
+
+\begin{examplebox}
+Let
+\[
+f(x)=x^2.
+\]
+The average rate of change from \(x=1\) to \(x=3\) is
+\[
+\frac{f(3)-f(1)}{3-1}
+=
+\frac{9-1}{2}=4.
+\]
+This means that on this interval the output changes, on average, by \(4\) units for each unit of input.
+\end{examplebox}
+
+The average rate of change is a number. Geometrically, it is the slope of the secant line through the two points on the graph.
+
+\subsection*{Secant lines}
+
+The graph of \(y=f(x)\) contains the points
+\[
+(a,f(a))
+\]
+and
+\[
+(a+h,f(a+h)).
+\]
+The slope of the line through these two points is
+\[
+\frac{f(a+h)-f(a)}{(a+h)-a}
+=
+\frac{f(a+h)-f(a)}{h}.
+\]
+This is exactly the difference quotient.
+
+\begin{remarkbox}
+A difference quotient is not an arbitrary algebraic expression. It is the slope of a secant line on the graph of the function.
+\end{remarkbox}
+
+\subsection*{Tangent lines}
+
+A tangent line is the limiting position of secant lines as the second point approaches the first. Algebraically, this means letting \(h\to0\) in the difference quotient.
+
+If the derivative \(f'(a)\) exists, then the tangent line to the graph at \(x=a\) has slope \(f'(a)\) and passes through the point \((a,f(a))\). Its equation is
+\[
+y-f(a)=f'(a)(x-a).
+\]
+
+\begin{examplebox}
+Find the tangent line to
+\[
+f(x)=x^2
+\]
+at \(x=2\).
+
+From the previous section, we know that
+\[
+f'(a)=2a.
+\]
+Thus
+\[
+f'(2)=4.
+\]
+Also,
+\[
+f(2)=4.
+\]
+The tangent line passes through \((2,4)\) with slope \(4\), so
+\[
+y-4=4(x-2).
+\]
+Equivalently,
+\[
+y=4x-4.
+\]
+\end{examplebox}
+
+The tangent line is a local linear approximation to the graph. Near the point of tangency, the graph behaves approximately like this line.
+
+\subsection*{Why the limit may fail}
+
+The derivative at a point exists only if the difference quotient approaches one finite number as \(h\to0\). If the left and right behaviors are different, or if the quotient grows without bound, the derivative does not exist.
+
+For example, the function \(f(x)=|x|\) has a corner at \(x=0\). From the right, the slope is \(1\). From the left, the slope is \(-1\). Since these do not agree, \(f'(0)\) does not exist.
+
+\begin{summarybox}
+When working with a difference quotient, ask:
+\begin{itemize}
+\item Which two inputs are being compared?
+\item What are the corresponding function values?
+\item What secant slope does the quotient represent?
+\item What happens when the two inputs move together?
+\item Does the limiting slope exist from both sides?
+\end{itemize}
+\end{summarybox}
+
+The derivative is the limit of secant slopes. This geometric picture should remain visible even when computations become more algebraic.
