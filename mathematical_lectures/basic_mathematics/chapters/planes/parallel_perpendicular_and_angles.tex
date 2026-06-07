@@ -1,0 +1,151 @@
+\section{Parallelism, perpendicularity, and angles}
+
+The normal vector is the most efficient tool for comparing planes. A plane may be visually hard to compare with another plane, but its normal vector turns many geometric questions into vector questions.
+
+Let
+\[
+\pi_1:A_1x+B_1y+C_1z+D_1=0,
+\]
+and
+\[
+\pi_2:A_2x+B_2y+C_2z+D_2=0.
+\]
+Their normal vectors are
+\[
+n_1=(A_1,B_1,C_1),
+\qquad
+n_2=(A_2,B_2,C_2).
+\]
+
+\subsection*{Parallel planes}
+
+Two planes are parallel when their normal vectors are parallel. This means that one normal vector is a scalar multiple of the other.
+
+\begin{definitionbox}
+The planes \(\pi_1\) and \(\pi_2\) are parallel if there exists a non-zero scalar \(\lambda\) such that
+\[
+n_2=\lambda n_1.
+\]
+\end{definitionbox}
+
+\begin{examplebox}
+Consider
+\[
+\pi_1:2x-y+3z-1=0
+\]
+and
+\[
+\pi_2:4x-2y+6z+5=0.
+\]
+Their normal vectors are
+\[
+n_1=(2,-1,3),
+\qquad
+n_2=(4,-2,6).
+\]
+Since
+\[
+n_2=2n_1,
+\]
+the planes are parallel.
+\end{examplebox}
+
+Parallel planes may be distinct, or they may be the same plane. To check whether they are the same, test whether a point from one plane satisfies the equation of the other.
+
+\subsection*{Perpendicular planes}
+
+Two planes are perpendicular when their normal vectors are perpendicular.
+
+\begin{definitionbox}
+The planes \(\pi_1\) and \(\pi_2\) are perpendicular if
+\[
+n_1\cdot n_2=0.
+\]
+\end{definitionbox}
+
+\begin{examplebox}
+Consider
+\[
+\pi_1:x+2y-z=0
+\]
+and
+\[
+\pi_2:2x-y+0z+3=0.
+\]
+The normal vectors are
+\[
+n_1=(1,2,-1),
+\qquad
+n_2=(2,-1,0).
+\]
+Their dot product is
+\[
+n_1\cdot n_2=1\cdot2+2\cdot(-1)+(-1)\cdot0=0.
+\]
+Therefore the planes are perpendicular.
+\end{examplebox}
+
+The test is simple because the normal vectors carry the orientation of the planes.
+
+\subsection*{Angle between planes}
+
+The angle between two planes is measured by the angle between their normal vectors. Usually we take the acute angle, so we use an absolute value in the formula.
+
+\begin{theorembox}
+Let \(\theta\) be the acute angle between two planes with normal vectors \(n_1\) and \(n_2\). Then
+\[
+\cos\theta=\frac{|n_1\cdot n_2|}{\lVert n_1\rVert\,\lVert n_2\rVert}.
+\]
+\end{theorembox}
+
+\begin{examplebox}
+Determine the angle between
+\[
+\pi_1:x+2y-2z+1=0
+\]
+and
+\[
+\pi_2:2x-y+z-3=0.
+\]
+The normal vectors are
+\[
+n_1=(1,2,-2),
+\qquad
+n_2=(2,-1,1).
+\]
+Their dot product is
+\[
+n_1\cdot n_2=1\cdot2+2\cdot(-1)+(-2)\cdot1=2-2-2=-2.
+\]
+Their lengths are
+\[
+\lVert n_1\rVert=\sqrt{1^2+2^2+(-2)^2}=3,
+\]
+and
+\[
+\lVert n_2\rVert=\sqrt{2^2+(-1)^2+1^2}=\sqrt6.
+\]
+Therefore
+\[
+\cos\theta=\frac{|-2|}{3\sqrt6}=\frac{2}{3\sqrt6}.
+\]
+So
+\[
+\theta=\arccos\frac{2}{3\sqrt6}.
+\]
+\end{examplebox}
+
+The calculation is a direct use of the dot product, but the interpretation is geometric: we compare the orientations of the planes through their normal directions.
+
+\begin{summarybox}
+When comparing two planes, ask:
+\begin{itemize}
+\item What are their normal vectors?
+\item Are the normal vectors parallel?
+\item Are the normal vectors perpendicular?
+\item If an angle is needed, should it be the acute angle?
+\item Do proportional normal vectors mean distinct parallel planes or the same plane?
+\end{itemize}
+\end{summarybox}
+
+Plane comparison becomes much simpler when the normal vectors are read first.
