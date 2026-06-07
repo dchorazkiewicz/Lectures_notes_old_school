@@ -124,6 +124,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/matrix_inversion/meaning_of_inverse_matrix.tex
 ./mathematical_lectures/basic_mathematics/chapters/planes
 ./mathematical_lectures/basic_mathematics/chapters/planes/.gitkeep
+./mathematical_lectures/basic_mathematics/chapters/planes/what_information_defines_a_plane.tex
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/discrete_and_continuous_domains.tex
