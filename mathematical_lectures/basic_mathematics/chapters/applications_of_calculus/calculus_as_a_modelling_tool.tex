@@ -1,0 +1,84 @@
+\section{Calculus as a modelling tool}
+
+The previous chapters developed limits, derivatives, and integrals as mathematical objects. In applications, these ideas become tools. We use them to describe change, accumulation, optimisation, motion, and many quantitative problems from geometry and physics.
+
+The most important skill is not only to compute a derivative or an integral. The important skill is to translate a situation into a mathematical model, choose the right calculus tool, and interpret the result in the original context.
+
+\subsection*{From a problem to a function}
+
+Many applications begin by identifying a quantity that depends on another quantity. For example:
+\begin{itemize}
+\item the area of a rectangle may depend on its width,
+\item the position of a particle may depend on time,
+\item the concentration of a drug may depend on time after administration,
+\item the cost of a cable may depend on where the cable crosses a river.
+\end{itemize}
+
+In each case we try to write a function. Once a function is available, calculus can be used to ask meaningful questions about it.
+
+\begin{remarkbox}
+Calculus does not solve the real-world problem directly. It solves a mathematical model. The modelling step decides what the variables mean and what assumptions are being made.
+\end{remarkbox}
+
+\subsection*{Derivatives as local change}
+
+A derivative measures local rate of change. In applications this often means speed, acceleration, growth rate, marginal change, or sensitivity.
+
+If \(s(t)\) is position, then
+\[
+v(t)=s'(t)
+\]
+is velocity, and
+\[
+a(t)=v'(t)=s''(t)
+\]
+is acceleration.
+
+If \(C(t)\) is a concentration, then \(C'(t)\) tells us whether the concentration is increasing or decreasing at time \(t\), and how fast.
+
+If \(A(x)\) is an area depending on a design variable \(x\), then \(A'(x)=0\) may indicate an optimal design.
+
+\subsection*{Integrals as accumulation}
+
+An integral measures accumulated quantity. In applications this may mean total distance, total work, accumulated flow, area, volume, or average value.
+
+If \(v(t)\) is velocity, then
+\[
+\int_a^b v(t)\,dt
+\]
+measures signed displacement over the time interval \([a,b]\). If \(v(t)\ge0\), it also measures distance travelled.
+
+If \(F(x)\) is force as a function of displacement, then
+\[
+\int_a^b F(x)\,dx
+\]
+measures work done by the force over the displacement interval.
+
+\subsection*{A general workflow}
+
+Application problems should be solved in stages:
+
+\begin{enumerate}
+\item Identify the quantity to be studied.
+\item Choose variables and state what they represent.
+\item Write the mathematical relationship between the variables.
+\item Use derivatives or integrals according to the question.
+\item Interpret the mathematical answer in the original context.
+\item Check whether the answer is reasonable, including units and restrictions.
+\end{enumerate}
+
+Skipping the first two steps often leads to correct calculations applied to the wrong function.
+
+\begin{summarybox}
+When calculus is used as a tool, ask:
+\begin{itemize}
+\item What quantity is being modelled?
+\item What are the variables and what do they mean?
+\item What assumptions are being made?
+\item Is the question about local change, optimisation, accumulation, or long-term behavior?
+\item Should I use a derivative, an integral, or both?
+\item Does the final answer make sense in the original situation?
+\end{itemize}
+\end{summarybox}
+
+Applications of calculus are applications of meaning. The calculation is only one part of the solution.
