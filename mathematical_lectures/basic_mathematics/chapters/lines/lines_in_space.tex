@@ -1,0 +1,201 @@
+\section{Lines in space}
+
+Lines in space are best understood through points and direction vectors. The parametric form works in the plane and in space, while slope-intercept form belongs only to the plane. This is one reason why the vector description is so important.
+
+In three-dimensional space, a line still needs the same kind of information: one point and one non-zero direction vector.
+
+\subsection*{Parametric form in space}
+
+Let
+\[
+A=(x_0,y_0,z_0)
+\]
+be a point in space, and let
+\[
+v=(a,b,c)\ne(0,0,0)
+\]
+be a direction vector. The line through \(A\) in direction \(v\) is
+\[
+(x,y,z)=(x_0,y_0,z_0)+t(a,b,c),
+\qquad t\in\mathbb{R}.
+\]
+Equivalently,
+\[
+x=x_0+ta,
+\qquad
+y=y_0+tb,
+\qquad
+z=z_0+tc.
+\]
+
+\begin{examplebox}
+The line
+\[
+(x,y,z)=(1,-2,3)+t(4,0,-1)
+\]
+has point \((1,-2,3)\) and direction vector \((4,0,-1)\). Its coordinate equations are
+\[
+x=1+4t,
+\qquad
+y=-2,
+\qquad
+z=3-t.
+\]
+The second coordinate is constant because the second component of the direction vector is zero.
+\end{examplebox}
+
+This example is important. A zero component of a direction vector does not mean that the vector is invalid. It means that the line does not move in that coordinate direction.
+
+\subsection*{A line through two points in space}
+
+Two distinct points in space determine a line in the same way as in the plane. If
+\[
+A=(a_1,a_2,a_3),
+\qquad
+B=(b_1,b_2,b_3),
+\qquad
+A\ne B,
+\]
+then
+\[
+B-A=(b_1-a_1,\,b_2-a_2,\,b_3-a_3)
+\]
+is a direction vector. The line is
+\[
+P=A+t(B-A).
+\]
+
+\begin{examplebox}
+Find a parametric equation of the line through
+\[
+A=(2,1,-1),
+\qquad
+B=(5,3,4).
+\]
+The direction vector is
+\[
+B-A=(3,2,5).
+\]
+Therefore the line is
+\[
+(x,y,z)=(2,1,-1)+t(3,2,5).
+\]
+In coordinates,
+\[
+x=2+3t,
+\qquad
+y=1+2t,
+\qquad
+z=-1+5t.
+\]
+\end{examplebox}
+
+The idea is unchanged: two points give a displacement, and the displacement gives a direction.
+
+\subsection*{Symmetric form}
+
+If all components of the direction vector are non-zero, then the parametric equations
+\[
+x=x_0+ta,
+\qquad
+y=y_0+tb,
+\qquad
+z=z_0+tc
+\]
+can be rewritten as
+\[
+\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}.
+\]
+This is called the symmetric form of a line in space.
+
+\begin{examplebox}
+For the line
+\[
+(x,y,z)=(1,2,-3)+t(2,-1,4),
+\]
+all components of the direction vector are non-zero. Therefore
+\[
+\frac{x-1}{2}=\frac{y-2}{-1}=\frac{z+3}{4}.
+\]
+\end{examplebox}
+
+The symmetric form is compact, but it must be used carefully. It comes from solving each parametric equation for the same parameter \(t\). If a component of the direction vector is zero, we cannot divide by it.
+
+\subsection*{Zero components in symmetric form}
+
+Suppose
+\[
+(x,y,z)=(1,-2,3)+t(4,0,-1).
+\]
+Then
+\[
+x=1+4t,
+\qquad
+y=-2,
+\qquad
+z=3-t.
+\]
+The second component of the direction vector is zero, so the line has constant \(y\)-coordinate. We may write
+\[
+\frac{x-1}{4}=\frac{z-3}{-1},
+\qquad
+y=-2.
+\]
+We should not write a fraction with denominator \(0\). The equation \(y=-2\) must be kept separately.
+
+\begin{remarkbox}
+Symmetric form is convenient only when used honestly. A zero component of the direction vector becomes a constant-coordinate condition, not a division by zero.
+\end{remarkbox}
+
+\subsection*{Why one equation is not enough in space}
+
+In the plane, a single linear equation
+\[
+Ax+By+C=0
+\]
+describes a line. In space, a single linear equation
+\[
+Ax+By+Cz+D=0
+\]
+usually describes a plane, not a line.
+
+This is a fundamental difference. In the plane, one linear condition leaves one degree of freedom, which gives a line. In space, one linear condition leaves two degrees of freedom, which gives a plane.
+
+A line in space can often be described as the intersection of two planes, that is, by a system
+\[
+\begin{cases}
+A_1x+B_1y+C_1z+D_1=0,\\
+A_2x+B_2y+C_2z+D_2=0.
+\end{cases}
+\]
+However, the parametric form is usually the clearest first description of a line in space.
+
+\begin{examplebox}
+The equation
+\[
+z=2
+\]
+in space does not describe a line. It describes all points whose third coordinate is \(2\). This is a plane parallel to the \(xy\)-plane.
+
+To describe a line in that plane, we need another independent condition or a parametric description.
+\end{examplebox}
+
+\subsection*{Comparing lines in space}
+
+Lines in space may be parallel, intersecting, or skew. Skew lines are lines that do not intersect and are not parallel. This possibility does not occur for lines in the plane.
+
+For now, the most important point is that direction vectors still detect parallelism. If two direction vectors are scalar multiples, the lines are parallel or the same line. If they are not scalar multiples, the lines may intersect or may be skew. To decide, one must solve the parametric equations together.
+
+\begin{summarybox}
+When working with lines in space, ask:
+\begin{itemize}
+\item What point lies on the line?
+\item What non-zero vector gives the direction?
+\item Are any direction-vector components zero?
+\item Is symmetric form safe to use?
+\item Am I mistakenly treating one plane equation as a line?
+\item Are two lines parallel, intersecting, or skew?
+\end{itemize}
+\end{summarybox}
+
+The vector-parametric description is the most reliable language for lines in space. It keeps the point, the direction, and the movement visible.
