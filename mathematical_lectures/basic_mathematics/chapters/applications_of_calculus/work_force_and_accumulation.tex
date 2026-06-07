@@ -1,0 +1,93 @@
+\section{Work, force, and accumulation}
+
+Physics gives many situations where an integral measures accumulated effect. One of the most important examples is work. If a force acts along a displacement, then work measures the accumulated force over distance.
+
+When the force is constant, work is simply
+\[
+W=F\cdot d.
+\]
+When the force changes with position, we replace this product by an integral.
+
+\begin{definitionbox}
+If a force \(F(x)\) acts along a line from \(x=a\) to \(x=b\), then the work done by the force is
+\[
+W=\int_a^b F(x)\,dx.
+\]
+\end{definitionbox}
+
+This formula says that work is accumulated force over displacement.
+
+\subsection*{Hooke's law}
+
+For a spring, Hooke's law says that the force needed to stretch the spring is proportional to its elongation:
+\[
+F(x)=kx,
+\]
+where \(k>0\) is the spring constant and \(x\) is the elongation from the natural length.
+
+\begin{examplebox}
+Compute the work required to stretch a spring from \(x=0\) to \(x=L\), assuming
+\[
+F(x)=kx.
+\]
+The work is
+\[
+W=\int_0^L kx\,dx.
+\]
+Compute:
+\[
+W=k\left[\frac{x^2}{2}\right]_0^L=\frac12kL^2.
+\]
+\end{examplebox}
+
+The force is small near the natural length and larger when the spring is stretched more. The integral accumulates these changing force values.
+
+\subsection*{Flow as accumulated rate}
+
+If water flows out of a tank at rate \(r(t)\), then the total amount of water that flows out between times \(a\) and \(b\) is
+\[
+\int_a^b r(t)\,dt.
+\]
+
+\begin{examplebox}
+Suppose water flows out of a tank at rate
+\[
+r(t)=2t-10
+\]
+liters per minute for \(0\le t\le5\). The signed amount over the first three minutes is
+\[
+\int_0^3 (2t-10)\,dt
+=\left[t^2-10t\right]_0^3
+=9-30=-21.
+\]
+The negative sign indicates that, with this sign convention, the rate is directed opposite to the chosen positive direction. If the problem asks for physical amount of water leaving, the model should use a non-negative outflow rate or the absolute value of the flow direction.
+\end{examplebox}
+
+This example shows why interpretation matters. An integral follows the sign convention of the model.
+
+\subsection*{Average value}
+
+The average value of a continuous function on \([a,b]\) is
+\[
+f_{\mathrm{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx.
+\]
+This is the continuous analogue of averaging finitely many numbers.
+
+For example, the root mean square value of a voltage \(U(t)\) over one period \(T\) is
+\[
+U_{\mathrm{RMS}}=\sqrt{\frac1T\int_0^T [U(t)]^2\,dt}.
+\]
+The square makes positive and negative oscillations contribute to energy-like effect rather than cancel.
+
+\begin{summarybox}
+For physical accumulation problems, ask:
+\begin{itemize}
+\item What rate or force is being accumulated?
+\item What is the variable of accumulation: time, position, or another quantity?
+\item What are the correct bounds?
+\item Are signs physically meaningful, or is an absolute amount needed?
+\item What units should the final answer have?
+\end{itemize}
+\end{summarybox}
+
+Integrals are natural in physics because many physical quantities are totals built from continuously changing contributions.
