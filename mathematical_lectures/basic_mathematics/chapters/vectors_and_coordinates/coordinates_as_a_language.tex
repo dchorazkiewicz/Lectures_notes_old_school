@@ -1,0 +1,118 @@
+\section{Coordinates as a language}
+
+The purpose of this chapter is not only to introduce several formulas. Its purpose is to build a language. Coordinates, points, vectors, lengths, distances, and dot products are the words of that language. Once we can read them correctly, we can use them to describe more complicated geometric objects.
+
+The next chapters will study lines and planes. These objects will not appear from nowhere. They will be built from the ideas already introduced here.
+
+\subsection*{Points give position}
+
+A point tells us where we are. In the plane, a point has the form
+\[
+P=(x,y).
+\]
+In space, it has the form
+\[
+P=(x,y,z).
+\]
+A point may be fixed, such as
+\[
+A=(2,-1),
+\]
+or variable, such as
+\[
+P=(x,y).
+\]
+When the coordinates are variable, the point is allowed to move through a set of possible positions.
+
+This distinction is essential for equations. An equation in coordinates usually does not describe one number. It describes all points whose coordinates satisfy a condition.
+
+\begin{examplebox}
+The condition
+\[
+y=3
+\]
+describes all points \((x,y)\) in the plane whose second coordinate is \(3\). The first coordinate is free. Thus the equation describes a horizontal line.
+
+The point \((2,3)\) is one point on that line, but it is not the whole line.
+\end{examplebox}
+
+A common mistake is to confuse one solution with the entire geometric object. A single point may satisfy an equation, but the equation may describe a whole set of points.
+
+\subsection*{Vectors give displacement and direction}
+
+A vector tells us how to move. If
+\[
+v=(v_1,v_2),
+\]
+then \(v_1\) and \(v_2\) describe coordinate changes. The vector may be used as an actual displacement from one point to another, or it may be used only as a direction.
+
+For example, the vector
+\[
+v=(2,1)
+\]
+can mean: move two units in the \(x\)-direction and one unit in the \(y\)-direction. But it can also mean: consider the direction determined by this displacement.
+
+This distinction will matter for lines. A line can be described by one point on the line and one non-zero direction vector. The point anchors the line. The vector gives the direction in which the line extends.
+
+\begin{remarkbox}
+A point and a vector may have the same coordinates, but they play different roles. A point answers the question ``where?'' A vector answers the question ``how far and in which direction?''
+\end{remarkbox}
+
+\subsection*{Equations describe conditions}
+
+An equation in analytic geometry is usually a condition on points. It says which points are allowed and which points are not.
+
+For example, the equation
+\[
+x^2+y^2=1
+\]
+describes all points whose distance from the origin is \(1\). This is a circle of radius \(1\) centered at the origin.
+
+The formula is algebraic, but the object is geometric. The equation does not merely ask us to solve for \(x\) or \(y\). It describes a set of points.
+
+\begin{examplebox}
+Consider the condition
+\[
+(x-2)^2+(y+1)^2=9.
+\]
+A point \((x,y)\) satisfies this condition exactly when its distance from \((2,-1)\) is \(3\). Therefore the equation describes a circle with center \((2,-1)\) and radius \(3\).
+\end{examplebox}
+
+This example shows the main power of analytic geometry. A geometric statement about distance becomes an algebraic equation. Conversely, an algebraic equation can be read as a geometric statement.
+
+\subsection*{Fixed and variable quantities}
+
+Many mistakes in analytic geometry come from not distinguishing fixed objects from variable ones. A point may be fixed. A direction vector may be fixed. But the point \((x,y)\) or \((x,y,z)\) often represents a variable point moving through a set.
+
+When we write a line in the form
+\[
+P=A+t v,
+\]
+the point \(A\) is fixed, the vector \(v\) is fixed and non-zero, and the parameter \(t\) is variable. As \(t\) changes, the point \(P\) moves along the line.
+
+This formula belongs to the next chapter, but the language is already available. A fixed point gives a starting position. A direction vector gives a possible movement. A parameter controls how far we move.
+
+\begin{remarkbox}
+Whenever a formula contains letters, ask which letters represent fixed data and which letters are allowed to vary. This question often reveals the meaning of the formula.
+\end{remarkbox}
+
+\subsection*{From this chapter to lines and planes}
+
+The chapter has prepared three ideas that will be used repeatedly.
+
+First, coordinates describe position. Second, vectors describe displacements and directions. Third, equations describe conditions on variable points.
+
+Lines will be described by combining points and direction vectors. Planes will be described either by points and directions or by a point and a normal vector. The dot product will allow us to express perpendicularity, and therefore it will help us write equations of planes.
+
+\begin{summarybox}
+When working with coordinates and vectors, ask:
+\begin{itemize}
+\item Am I describing a point, a vector, or a set of points?
+\item Which quantities are fixed, and which are variable?
+\item Is a vector being used as a displacement, a direction, or a normal vector?
+\item Can a geometric condition be translated into an algebraic equation?
+\item After computing, can I interpret the result geometrically?
+\end{itemize}
+\end{summarybox}
+
+Analytic geometry is not a collection of unrelated formulas. It is a way of translating between geometric objects and algebraic statements. The translation is useful only when we understand both languages.
