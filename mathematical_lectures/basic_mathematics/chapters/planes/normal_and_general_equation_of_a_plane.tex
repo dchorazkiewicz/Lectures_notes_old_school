@@ -1,0 +1,138 @@
+\section{Normal and general equation of a plane}
+
+The normal form of a plane is one of the most useful descriptions in analytic geometry. It uses a point on the plane and a vector perpendicular to the plane.
+
+Let
+\[
+P_0=(x_0,y_0,z_0)
+\]
+be a point on the plane, and let
+\[
+n=(A,B,C)\ne(0,0,0)
+\]
+be a normal vector. A point
+\[
+P=(x,y,z)
+\]
+lies on the plane exactly when \(P-P_0\) is perpendicular to \(n\). Therefore
+\[
+n\cdot(P-P_0)=0.
+\]
+
+\begin{definitionbox}
+A plane through \(P_0=(x_0,y_0,z_0)\) with normal vector \(n=(A,B,C)\ne(0,0,0)\) can be written as
+\[
+A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
+\]
+This is the normal equation of the plane.
+\end{definitionbox}
+
+The equation is not a memorized pattern. It says that the displacement from the fixed point to any point of the plane must be perpendicular to the normal vector.
+
+\subsection*{From normal form to general form}
+
+Expanding the normal equation gives
+\[
+Ax+By+Cz+D=0,
+\]
+where
+\[
+D=-Ax_0-By_0-Cz_0.
+\]
+This is called the general equation of a plane.
+
+\begin{definitionbox}
+The general equation of a plane in space is
+\[
+Ax+By+Cz+D=0,
+\]
+where \((A,B,C)\ne(0,0,0)\). The vector
+\[
+n=(A,B,C)
+\]
+is normal to the plane.
+\end{definitionbox}
+
+The coefficients of \(x\), \(y\), and \(z\) are not only numbers in an equation. Together they form a normal vector.
+
+\subsection*{Example from a point and normal vector}
+
+\begin{examplebox}
+Find the equation of the plane passing through
+\[
+A=(1,0,2)
+\]
+with normal vector
+\[
+n=(2,-1,1).
+\]
+Use the normal form:
+\[
+2(x-1)-1(y-0)+1(z-2)=0.
+\]
+Thus
+\[
+2(x-1)-y+z-2=0.
+\]
+Expand:
+\[
+2x-2-y+z-2=0,
+\]
+so
+\[
+2x-y+z-4=0.
+\]
+\end{examplebox}
+
+We can check the result. The point \((1,0,2)\) satisfies the equation:
+\[
+2\cdot1-0+2-4=0.
+\]
+The normal vector visible in the final equation is \((2,-1,1)\), as required.
+
+\subsection*{Reading information from an equation}
+
+If a plane is given by
+\[
+3x-2y+5z-7=0,
+\]
+then a normal vector is immediately visible:
+\[
+n=(3,-2,5).
+\]
+To find a point on the plane, choose convenient values for two variables and solve for the third.
+
+\begin{examplebox}
+Find one point on
+\[
+3x-2y+5z-7=0.
+\]
+Choose \(y=0\) and \(z=0\). Then
+\[
+3x-7=0,
+\]
+so
+\[
+x=\frac73.
+\]
+Thus
+\[
+\left(\frac73,0,0\right)
+\]
+lies on the plane.
+\end{examplebox}
+
+There are infinitely many possible points on a plane. We choose one that is easy to compute.
+
+\begin{summarybox}
+When reading a plane equation \(Ax+By+Cz+D=0\), ask:
+\begin{itemize}
+\item Are \(A\), \(B\), and \(C\) not all zero?
+\item What normal vector is visible?
+\item Can I find a convenient point on the plane?
+\item Does a given point satisfy the equation?
+\item Would the normal vector help with distance, angle, or parallelism questions?
+\end{itemize}
+\end{summarybox}
+
+The general equation is powerful because it stores the normal direction directly in its coefficients.
