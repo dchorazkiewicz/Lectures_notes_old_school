@@ -1,0 +1,91 @@
+\section{What a function is}
+
+The word ``function'' appears very often in mathematics, but it is sometimes introduced too quickly. A student may first meet functions as formulas such as \(f(x)=2x+1\), and then begin to think that a function is the same thing as a formula. This is not quite right.
+
+A formula can describe a function, but a function is more basic than a formula. A function is a rule of assignment. It tells us how to assign one output to each allowed input.
+
+\begin{definitionbox}
+Let \(X\) and \(Y\) be sets. A function from \(X\) to \(Y\) is a rule that assigns to every element \(x\in X\) exactly one element of \(Y\).
+
+We write
+\[
+f:X\to Y.
+\]
+The set \(X\) is called the domain, and the set \(Y\) is called the codomain.
+\end{definitionbox}
+
+The phrase ``exactly one'' is essential. For each allowed input, the function must give one output, not two different outputs and not no output at all. This is the basic discipline of functions.
+
+\subsection*{Inputs and outputs}
+
+If \(f:X\to Y\), then an element \(x\in X\) is an input. The value assigned to this input is written as \(f(x)\). This value belongs to \(Y\).
+
+We may write this assignment as
+\[
+x\mapsto f(x).
+\]
+This notation should be read as: the input \(x\) is sent to the output \(f(x)\).
+
+\begin{examplebox}
+Let
+\[
+f:\mathbb{R}\to\mathbb{R},
+\qquad
+f(x)=x^2+1.
+\]
+The input \(3\) is sent to
+\[
+f(3)=3^2+1=10.
+\]
+The input \(-2\) is sent to
+\[
+f(-2)=(-2)^2+1=5.
+\]
+The rule assigns one real number to each real input.
+\end{examplebox}
+
+The notation \(f(3)=10\) describes one value of the function. It does not describe the whole function. The whole function is the entire rule that works for every allowed input.
+
+\subsection*{A function is not only a formula}
+
+Functions can be described in several ways. A formula is common, but it is not the only possibility. A function may be described by a table, by a graph, by a verbal rule, or by a recursive rule.
+
+\begin{examplebox}
+Suppose a small machine accepts the inputs \(1,2,3\) and returns the following outputs:
+\[
+\begin{array}{c|ccc}
+x & 1 & 2 & 3\\
+\hline
+f(x) & 4 & 4 & 7
+\end{array}
+\]
+This table describes a function with domain \(\{1,2,3\}\). Each input has exactly one output. There is no need for a formula such as \(f(x)=\cdots\) in order for this assignment to be a function.
+\end{examplebox}
+
+A function is therefore not a decorative name for an algebraic expression. It is a structured assignment from one set to another.
+
+\subsection*{What can go wrong}
+
+Not every relation between two sets is a function. The problem occurs when one input is assigned more than one output, or when an allowed input is assigned no output.
+
+\begin{examplebox}
+Suppose the input \(2\) is assigned both \(5\) and \(8\). Then the assignment is not a function, because one input has two outputs.
+
+Suppose instead that the domain is \(\{1,2,3\}\), but no output is assigned to \(3\). Then the assignment is also not a function, because an allowed input has no output.
+\end{examplebox}
+
+The definition of a function is strict because it allows us to ask clear questions. If we ask for \(f(2)\), there must be one definite answer.
+
+\begin{summarybox}
+When reading a function, ask:
+\begin{itemize}
+\item What is the domain?
+\item What is the codomain?
+\item What are the allowed inputs?
+\item What output is assigned to each input?
+\item Is each allowed input assigned exactly one output?
+\item Is the function described by a formula, a table, a graph, or another rule?
+\end{itemize}
+\end{summarybox}
+
+The main idea is simple but important: a function is a controlled way of assigning outputs to inputs.
