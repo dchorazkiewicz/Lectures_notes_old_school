@@ -261,6 +261,8 @@
 ./mathematical_lectures/probabilistic_methods/chapters/probability_distributions/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/sample_spaces_and_elementary_probability
 ./mathematical_lectures/probabilistic_methods/chapters/sample_spaces_and_elementary_probability/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions
+./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/overview.tex
 ./mathematical_lectures/probabilistic_methods/figures
 ./mathematical_lectures/probabilistic_methods/figures/README.md
 ./mathematical_lectures/probabilistic_methods/macros.tex
