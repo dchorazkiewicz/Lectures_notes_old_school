@@ -85,6 +85,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/planes/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/.gitkeep
+./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/what_a_function_is.tex
 ./mathematical_lectures/basic_mathematics/chapters/systems_of_linear_equations
 ./mathematical_lectures/basic_mathematics/chapters/systems_of_linear_equations/cramers_rule.tex
 ./mathematical_lectures/basic_mathematics/chapters/systems_of_linear_equations/gaussian_elimination.tex
