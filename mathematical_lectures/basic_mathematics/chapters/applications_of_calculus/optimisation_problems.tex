@@ -1,0 +1,148 @@
+\section{Optimisation problems}
+
+Optimisation problems ask for the best possible value of a quantity. We may want to maximise area, minimise cost, maximise volume, or minimise the amount of material used. Derivatives are useful because extrema often occur where the derivative is zero or at the boundary of the allowed interval.
+
+The difficulty in optimisation is often not the derivative. The difficulty is building the function to optimise.
+
+\subsection*{The structure of an optimisation problem}
+
+A typical optimisation problem has three layers:
+\begin{itemize}
+\item an objective quantity, which we want to maximise or minimise,
+\item constraints, which limit the possible choices,
+\item a domain, which tells us which values are physically or geometrically meaningful.
+\end{itemize}
+
+The goal is to express the objective quantity as a function of one variable whenever possible. Then calculus can be applied.
+
+\begin{summarybox}
+A useful optimisation strategy is:
+\begin{enumerate}
+\item Draw or describe the situation clearly.
+\item Choose variables and define them.
+\item Write the objective function.
+\item Use the constraint to reduce the number of variables.
+\item Determine the allowed domain.
+\item Differentiate and find critical points.
+\item Check endpoints and interpret the result.
+\end{enumerate}
+\end{summarybox}
+
+The domain is not optional. A critical point outside the allowed domain is not a solution to the original problem.
+
+\subsection*{Fencing next to a river}
+
+\begin{examplebox}
+A farmer wants to fence a rectangular pasture next to a river. No fence is needed along the river. The farmer has \(L\) meters of fence. What dimensions maximise the area?
+
+Let \(x\) be the width perpendicular to the river, and let \(y\) be the length parallel to the river. Only three sides need fencing, so
+\[
+2x+y=L.
+\]
+The area is
+\[
+A=xy.
+\]
+Use the constraint to write
+\[
+y=L-2x.
+\]
+Therefore
+\[
+A(x)=x(L-2x)=Lx-2x^2.
+\]
+The meaningful domain is
+\[
+0<x<\frac L2.
+\]
+Differentiate:
+\[
+A'(x)=L-4x.
+\]
+Set \(A'(x)=0\):
+\[
+L-4x=0,
+\qquad
+x=\frac L4.
+\]
+Then
+\[
+y=L-2\cdot\frac L4=\frac L2.
+\]
+Thus the maximum area occurs when the side perpendicular to the river is \(L/4\) and the side parallel to the river is \(L/2\).
+\end{examplebox}
+
+The result should be interpreted geometrically: the side along the river is twice the perpendicular side.
+
+\subsection*{Open box from a cardboard sheet}
+
+\begin{examplebox}
+Squares of side length \(x\) are cut from each corner of a \(30\text{ cm}\times48\text{ cm}\) sheet of cardboard. The sides are folded up to form an open box. Find the value of \(x\) that maximises the volume.
+
+After cutting, the base has dimensions
+\[
+30-2x
+\qquad\text{and}\qquad
+48-2x,
+\]
+and the height is \(x\). Hence
+\[
+V(x)=x(30-2x)(48-2x).
+\]
+The domain is
+\[
+0<x<15,
+\]
+because the shorter side must remain positive.
+
+Expand:
+\[
+V(x)=x(1440-156x+4x^2)=1440x-156x^2+4x^3.
+\]
+Then
+\[
+V'(x)=1440-312x+12x^2.
+\]
+Set \(V'(x)=0\):
+\[
+12x^2-312x+1440=0.
+\]
+Divide by \(12\):
+\[
+x^2-26x+120=0.
+\]
+Factor:
+\[
+(x-6)(x-20)=0.
+\]
+Only \(x=6\) belongs to the domain \((0,15)\). Therefore the cut-out squares should have side length
+\[
+6\text{ cm}.
+\]
+\end{examplebox}
+
+The other critical value, \(20\), is mathematically produced by the derivative but physically impossible for the cardboard sheet.
+
+\begin{remarkbox}
+Optimisation always belongs to a context. The derivative gives candidates; the original problem decides which candidates are meaningful.
+\end{remarkbox}
+
+\subsection*{Checking maximum or minimum}
+
+After finding a critical point, we should check whether it gives a maximum or minimum. We may use the sign of the derivative, the second derivative, or endpoint comparison on a closed interval.
+
+In the fencing problem, the objective function was a downward-opening quadratic, so the critical point gives a maximum. In the box problem, the endpoints give zero volume, while the interior critical point gives positive volume; the relevant interior point gives the maximum.
+
+\begin{summarybox}
+When solving optimisation problems, ask:
+\begin{itemize}
+\item What is being optimised?
+\item What constraints are given?
+\item What is the domain of meaningful values?
+\item Does the derivative give critical points inside the domain?
+\item Are endpoints relevant?
+\item Does the final answer satisfy the original constraints?
+\end{itemize}
+\end{summarybox}
+
+Optimisation is calculus combined with modelling. The derivative helps only after the model is built correctly.
