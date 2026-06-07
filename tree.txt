@@ -225,6 +225,7 @@
 ./mathematical_lectures/probabilistic_methods/chapters/chapter_07_data_analysis.tex
 ./mathematical_lectures/probabilistic_methods/chapters/chapter_07_empirical_distributions.tex
 ./mathematical_lectures/probabilistic_methods/chapters/chapter_08_sampling_distributions.tex
+./mathematical_lectures/probabilistic_methods/chapters/chapter_09_limit_theorems_and_inference.tex
 ./mathematical_lectures/probabilistic_methods/chapters/combinatorics
 ./mathematical_lectures/probabilistic_methods/chapters/combinatorics/counting_in_probability.tex
 ./mathematical_lectures/probabilistic_methods/chapters/combinatorics/diagnostic_questions.tex
