@@ -1,0 +1,141 @@
+\section{Integrating rational functions}
+
+A rational function is a quotient of polynomials. Integrals of rational functions can range from simple to quite technical. In this course, the goal is to learn the basic reading habits: simplify first, look for a derivative of the denominator, and recognize standard logarithmic and arctangent patterns.
+
+\subsection*{When the numerator is the derivative of the denominator}
+
+If the integrand has the form
+\[
+\frac{g'(x)}{g(x)},
+\]
+then the integral is logarithmic:
+\[
+\int \frac{g'(x)}{g(x)}\,dx=\ln|g(x)|+C.
+\]
+
+\begin{examplebox}
+Compute
+\[
+\int \frac{2x-1}{x^2-x+1}\,dx.
+\]
+The denominator is
+\[
+g(x)=x^2-x+1.
+\]
+Its derivative is
+\[
+g'(x)=2x-1.
+\]
+Therefore
+\[
+\int \frac{2x-1}{x^2-x+1}\,dx=\ln|x^2-x+1|+C.
+\]
+\end{examplebox}
+
+The important step is recognizing the structure. The numerator is not random; it is the derivative of the denominator.
+
+\subsection*{Adjusting the numerator}
+
+Sometimes the numerator is close to the derivative of the denominator but not exactly equal. We can split it into a derivative part and a remainder.
+
+\begin{examplebox}
+Compute
+\[
+\int \frac{x+1}{x^2-x+1}\,dx.
+\]
+The derivative of the denominator is
+\[
+2x-1.
+\]
+Write the numerator \(x+1\) in terms of \(2x-1\):
+\[
+x+1=\frac12(2x-1)+\frac32.
+\]
+Thus
+\[
+\int \frac{x+1}{x^2-x+1}\,dx
+=\frac12\int \frac{2x-1}{x^2-x+1}\,dx
++\frac32\int \frac{dx}{x^2-x+1}.
+\]
+The first integral is logarithmic:
+\[
+\frac12\ln|x^2-x+1|.
+\]
+For the second integral, complete the square:
+\[
+x^2-x+1=\left(x-\frac12\right)^2+\frac34.
+\]
+Therefore the remaining part leads to an arctangent form.
+\end{examplebox}
+
+This example shows the general idea. A rational integral may contain both logarithmic and arctangent pieces.
+
+\subsection*{Completing the square}
+
+The standard arctangent pattern is
+\[
+\int \frac{dx}{x^2+a^2}=\frac1a\arctan\frac{x}{a}+C,
+\qquad a>0.
+\]
+When a quadratic denominator has no real roots, completing the square may reveal this pattern.
+
+\begin{examplebox}
+Compute
+\[
+\int \frac{dx}{x^2+4x+8}.
+\]
+Complete the square:
+\[
+x^2+4x+8=(x+2)^2+4.
+\]
+Thus
+\[
+\int \frac{dx}{x^2+4x+8}
+=\int \frac{dx}{(x+2)^2+2^2}.
+\]
+Using the arctangent pattern,
+\[
+\int \frac{dx}{(x+2)^2+2^2}
+=\frac12\arctan\frac{x+2}{2}+C.
+\]
+\end{examplebox}
+
+\subsection*{Polynomial division}
+
+If the degree of the numerator is greater than or equal to the degree of the denominator, divide first. Polynomial division separates the rational function into a polynomial part and a proper rational part.
+
+\begin{examplebox}
+Consider
+\[
+\int \frac{x^2+1}{x-1}\,dx.
+\]
+Divide:
+\[
+\frac{x^2+1}{x-1}=x+1+\frac2{x-1}.
+\]
+Therefore
+\[
+\int \frac{x^2+1}{x-1}\,dx
+=\int (x+1)\,dx+2\int \frac{dx}{x-1}.
+\]
+Hence
+\[
+\int \frac{x^2+1}{x-1}\,dx
+=\frac{x^2}{2}+x+2\ln|x-1|+C.
+\]
+\end{examplebox}
+
+Simplifying before integrating is often the main step.
+
+\begin{summarybox}
+When integrating a rational function, ask:
+\begin{itemize}
+\item Is the fraction proper, or should I divide polynomials first?
+\item Is the numerator the derivative of the denominator?
+\item Can the numerator be split into a derivative part plus a remainder?
+\item Does completing the square reveal an arctangent form?
+\item Are logarithms expected from factors in the denominator?
+\end{itemize}
+\end{summarybox}
+
+Rational integration is a large topic. The first skill is to read the denominator and numerator as related structures, not as isolated polynomials.
