@@ -1,0 +1,127 @@
+\section{Standard limits}
+
+Some limits occur so often that they become standard tools. They should not be treated as isolated formulas to memorize without meaning. Each standard limit captures a basic local behavior of an important function.
+
+\subsection*{The basic trigonometric limit}
+
+One of the most important limits is
+\[
+\lim_{x\to0}\frac{\sin x}{x}=1,
+\]
+where \(x\) is measured in radians.
+
+This limit says that, near zero, \(\sin x\) behaves like \(x\). The functions are not equal, but their ratio approaches \(1\).
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to0}\frac{\sin 3x}{4x}.
+\]
+Rewrite the expression to use the standard limit:
+\[
+\frac{\sin 3x}{4x}=\frac34\cdot\frac{\sin 3x}{3x}.
+\]
+As \(x\to0\), also \(3x\to0\), so
+\[
+\frac{\sin 3x}{3x}\to1.
+\]
+Therefore
+\[
+\lim_{x\to0}\frac{\sin 3x}{4x}=\frac34.
+\]
+\end{examplebox}
+
+The rewriting is the main step. We reshape the expression until the standard limit becomes visible.
+
+\subsection*{Tangent and arcsine type limits}
+
+Since
+\[
+\tan x=\frac{\sin x}{\cos x},
+\]
+and \(\cos x\to1\) as \(x\to0\), we also have
+\[
+\lim_{x\to0}\frac{\tan x}{x}=1.
+\]
+Similarly, in elementary calculus we use
+\[
+\lim_{x\to0}\frac{\arctan x}{x}=1.
+\]
+These limits express the fact that near zero, these functions are locally close to the identity function.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to0}\frac{\tan 2x}{\tan x}.
+\]
+Rewrite as
+\[
+\frac{\tan 2x}{\tan x}
+=2\cdot\frac{\tan 2x}{2x}\cdot\frac{x}{\tan x}.
+\]
+As \(x\to0\), both fractions tend to \(1\). Therefore
+\[
+\lim_{x\to0}\frac{\tan 2x}{\tan x}=2.
+\]
+\end{examplebox}
+
+\subsection*{The exponential standard limit}
+
+Another standard limit is
+\[
+\lim_{x\to0}(1+x)^{1/x}=e.
+\]
+More generally, if \(u\to0\), then
+\[
+(1+u)^{1/u}\to e.
+\]
+This limit is the basis for many expressions involving variable exponents.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to0}(1-3x)^{1/x}.
+\]
+Let
+\[
+u=-3x.
+\]
+Then \(u\to0\) as \(x\to0\), and
+\[
+\frac1x=\frac{-3}{u}.
+\]
+Therefore
+\[
+(1-3x)^{1/x}=(1+u)^{-3/u}=\left((1+u)^{1/u}\right)^{-3}.
+\]
+Taking the limit gives
+\[
+e^{-3}.
+\]
+\end{examplebox}
+
+This example shows why substitution is useful: it changes the expression into a recognizable standard form.
+
+\subsection*{Standard limits as local models}
+
+The standard limits tell us how certain functions behave near a point. Near zero,
+\[
+\sin x\sim x,
+\qquad
+\tan x\sim x,
+\qquad
+\arctan x\sim x.
+\]
+The symbol \(\sim\) means that the ratio of the two expressions tends to \(1\). This notation should be used carefully, but the idea is helpful: near zero, these functions can often be compared to simpler expressions.
+
+\begin{summarybox}
+Useful standard limits include:
+\begin{itemize}
+\item \(\displaystyle \lim_{x\to0}\frac{\sin x}{x}=1\),
+\item \(\displaystyle \lim_{x\to0}\frac{\tan x}{x}=1\),
+\item \(\displaystyle \lim_{x\to0}\frac{\arctan x}{x}=1\),
+\item \(\displaystyle \lim_{x\to0}(1+x)^{1/x}=e\).
+\end{itemize}
+\end{summarybox}
+
+Standard limits are not a substitute for understanding. They are reliable local models that help us simplify common limiting situations.
