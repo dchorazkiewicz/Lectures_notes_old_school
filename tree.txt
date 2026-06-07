@@ -235,6 +235,8 @@
 ./mathematical_lectures/probabilistic_methods/chapters/conditional_probability/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/data_analysis
 ./mathematical_lectures/probabilistic_methods/chapters/data_analysis/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/discovering_formalism
+./mathematical_lectures/probabilistic_methods/chapters/discovering_formalism/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/discovery_formalism
 ./mathematical_lectures/probabilistic_methods/chapters/discovery_formalism/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/events_and_probability
