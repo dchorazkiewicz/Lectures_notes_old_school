@@ -1,0 +1,190 @@
+\section{Normal and implicit forms in the plane}
+
+The parametric form describes a line by moving along it. The normal form describes a line in a different way: by using a vector perpendicular to it. This change of viewpoint is important. A direction vector tells us how to travel along the line. A normal vector tells us how to stand across the line.
+
+Both viewpoints describe the same geometric object, but they make different properties visible.
+
+\subsection*{Normal vector to a line}
+
+A non-zero vector \(n\) is called normal to a line if it is perpendicular to every direction vector of the line.
+
+If a line has direction vector \(v\), then a normal vector \(n\) satisfies
+\[
+n\cdot v=0.
+\]
+In the plane, if
+\[
+v=(a,b),
+\]
+then one possible normal vector is
+\[
+n=(-b,a),
+\]
+because
+\[
+(a,b)\cdot(-b,a)=-ab+ab=0.
+\]
+Another possible normal vector is \((b,-a)\). The normal vector is not unique, just as the direction vector is not unique.
+
+\begin{examplebox}
+Let a line have direction vector
+\[
+v=(3,2).
+\]
+Then
+\[
+n=(-2,3)
+\]
+is a normal vector, because
+\[
+(3,2)\cdot(-2,3)=-6+6=0.
+\]
+Thus \((-2,3)\) points perpendicular to the line.
+\end{examplebox}
+
+\subsection*{Normal form from a point and a normal vector}
+
+Suppose a line passes through a fixed point \(P_0=(x_0,y_0)\), and suppose \(n=(A,B)\ne(0,0)\) is normal to the line. A variable point \(P=(x,y)\) lies on the line exactly when the displacement from \(P_0\) to \(P\) is perpendicular to \(n\).
+
+The displacement is
+\[
+P-P_0=(x-x_0,\,y-y_0).
+\]
+The perpendicularity condition is
+\[
+n\cdot(P-P_0)=0.
+\]
+Therefore
+\[
+(A,B)\cdot(x-x_0,\,y-y_0)=0,
+\]
+so
+\[
+A(x-x_0)+B(y-y_0)=0.
+\]
+
+\begin{definitionbox}
+A line in the plane with point \(P_0=(x_0,y_0)\) and normal vector \(n=(A,B)\ne(0,0)\) can be written in normal form as
+\[
+A(x-x_0)+B(y-y_0)=0.
+\]
+Equivalently,
+\[
+n\cdot(P-P_0)=0.
+\]
+\end{definitionbox}
+
+This equation is not arbitrary. It says: the vector from the fixed point to the variable point must be perpendicular to the normal vector.
+
+\begin{examplebox}
+Find an equation of the line through
+\[
+P_0=(1,-2)
+\]
+with normal vector
+\[
+n=(3,4).
+\]
+The normal form is
+\[
+3(x-1)+4(y-(-2))=0.
+\]
+Thus
+\[
+3(x-1)+4(y+2)=0.
+\]
+Expanding,
+\[
+3x-3+4y+8=0,
+\]
+so
+\[
+3x+4y+5=0.
+\]
+\end{examplebox}
+
+\subsection*{Implicit or general form}
+
+After expanding the normal form, every line in the plane can be written as
+\[
+Ax+By+C=0,
+\]
+where \(A\) and \(B\) are not both zero.
+
+This is called the implicit form or general form of a line. The word ``implicit'' means that the line is described as a condition. A point \((x,y)\) lies on the line if its coordinates satisfy the equation.
+
+\begin{definitionbox}
+The general form of a line in the plane is
+\[
+Ax+By+C=0,
+\]
+where \((A,B)\ne(0,0)\). The vector
+\[
+n=(A,B)
+\]
+is normal to the line.
+\end{definitionbox}
+
+The last sentence is essential. The coefficients of \(x\) and \(y\) are not just coefficients. Together they form a normal vector.
+
+\begin{examplebox}
+Consider the line
+\[
+2x-5y+7=0.
+\]
+A normal vector is
+\[
+n=(2,-5).
+\]
+A direction vector must be perpendicular to \(n\). One possible choice is
+\[
+v=(5,2),
+\]
+because
+\[
+(2,-5)\cdot(5,2)=10-10=0.
+\]
+\end{examplebox}
+
+This example shows how information can be read from an equation. The equation does not display a direction vector directly, but it displays a normal vector.
+
+\subsection*{Checking membership}
+
+The implicit form is often the easiest way to check whether a point lies on a line. We substitute the coordinates into the left-hand side.
+
+\begin{examplebox}
+Let
+\[
+\ell: 2x-5y+7=0.
+\]
+Check whether \(P=(4,3)\) lies on \(\ell\). We compute
+\[
+2\cdot4-5\cdot3+7=8-15+7=0.
+\]
+Therefore \((4,3)\) lies on the line.
+
+For \(Q=(1,1)\), we get
+\[
+2\cdot1-5\cdot1+7=4.
+\]
+Since the result is not zero, \((1,1)\) does not lie on the line.
+\end{examplebox}
+
+The number obtained after substitution also has meaning. It measures, up to a scale factor, how far the point is from satisfying the line condition. This idea will later become the distance formula.
+
+\subsection*{Why implicit form is useful}
+
+The general form is especially useful because it treats all lines in the plane uniformly. It includes vertical lines, horizontal lines, and oblique lines. It also makes normal vectors visible, which helps with perpendicularity and distance.
+
+\begin{summarybox}
+When reading an implicit equation \(Ax+By+C=0\), ask:
+\begin{itemize}
+\item Are \(A\) and \(B\) not both zero?
+\item What normal vector is visible in the equation?
+\item Can I find a direction vector perpendicular to that normal vector?
+\item Does a given point satisfy the equation?
+\item Would this form help with distance or intersection questions?
+\end{itemize}
+\end{summarybox}
+
+The implicit form is not merely another formula. It is the language of conditions, normal vectors, and perpendicularity.
