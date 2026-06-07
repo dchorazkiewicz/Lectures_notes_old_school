@@ -1,0 +1,105 @@
+\section{Distance from a point to a plane}
+
+The distance from a point to a plane is the shortest distance from the point to any point of the plane. Geometrically, the shortest segment is perpendicular to the plane. This is why the normal vector appears in the distance formula.
+
+Let the plane be given by
+\[
+\pi:Ax+By+Cz+D=0,
+\]
+where \((A,B,C)\ne(0,0,0)\). A normal vector is
+\[
+n=(A,B,C).
+\]
+
+\begin{theorembox}
+The distance from a point \(P_0=(x_0,y_0,z_0)\) to the plane
+\[
+Ax+By+Cz+D=0
+\]
+is
+\[
+d(P_0,\pi)=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}.
+\]
+\end{theorembox}
+
+The numerator tells us how far the point is from satisfying the plane equation, scaled by the chosen equation. The denominator corrects for the length of the normal vector.
+
+\subsection*{Example}
+
+\begin{examplebox}
+For the plane
+\[
+\pi:x-2y+2z-4=0,
+\]
+find the distance from
+\[
+P=(3,0,1)
+\]
+to \(\pi\).
+
+Here
+\[
+A=1,
+\qquad
+B=-2,
+\qquad
+C=2,
+\qquad
+D=-4.
+\]
+Substitute the point into the numerator:
+\[
+Ax_0+By_0+Cz_0+D=1\cdot3+(-2)\cdot0+2\cdot1-4=1.
+\]
+The length of the normal vector is
+\[
+\sqrt{1^2+(-2)^2+2^2}=\sqrt9=3.
+\]
+Therefore
+\[
+d(P,\pi)=\frac{|1|}{3}=\frac13.
+\]
+\end{examplebox}
+
+This calculation should be interpreted. The point is not on the plane because substitution does not give zero. The distance is the perpendicular distance, measured in the normal direction.
+
+\subsection*{Why the denominator appears}
+
+The same plane can be represented by many equivalent equations. For example,
+\[
+x-2y+2z-4=0
+\]
+and
+\[
+2x-4y+4z-8=0
+\]
+describe the same plane. If we used only the absolute value in the numerator, the second equation would give twice the value. But the geometric distance cannot depend on the chosen equation.
+
+The denominator \(\sqrt{A^2+B^2+C^2}\) scales in the same way as the numerator, so the quotient remains unchanged.
+
+\begin{remarkbox}
+The distance formula is geometric, even though it uses an equation. Equivalent equations of the same plane give the same distance.
+\end{remarkbox}
+
+\subsection*{Signed distance}
+
+Without the absolute value, the quantity
+\[
+\frac{Ax_0+By_0+Cz_0+D}{\sqrt{A^2+B^2+C^2}}
+\]
+is a signed distance. Its sign depends on the chosen orientation of the normal vector. Points on opposite sides of the plane have opposite signs.
+
+This idea is useful when one wants to know not only how far a point is from the plane, but also on which side of the plane it lies.
+
+\begin{summarybox}
+When computing distance from a point to a plane, ask:
+\begin{itemize}
+\item Is the plane in general form?
+\item What is the normal vector?
+\item What value is obtained by substituting the point?
+\item Did I divide by the length of the normal vector?
+\item Does the sign before the absolute value carry side information?
+\end{itemize}
+\end{summarybox}
+
+The formula is the three-dimensional version of the point-to-line distance formula in the plane.
