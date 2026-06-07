@@ -57,6 +57,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/algebra_of_limits_and_indeterminate_forms.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/basic_techniques_for_sequence_limits.tex
+./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/choosing_the_right_limit_method.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/continuity_at_a_point.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/limits_at_infinity.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/limits_of_functions.tex
