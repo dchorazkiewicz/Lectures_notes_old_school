@@ -1,0 +1,99 @@
+\section{Definite integrals and accumulation}
+
+An indefinite integral gives a family of antiderivatives. A definite integral gives a number. It measures accumulated signed area over an interval.
+
+The notation is
+\[
+\int_a^b f(x)\,dx.
+\]
+The numbers \(a\) and \(b\) are the limits of integration. The function \(f\) is the integrand. The variable \(x\) is the variable of integration.
+
+\subsection*{Area under a non-negative function}
+
+If \(f(x)\ge0\) on \([a,b]\), then
+\[
+\int_a^b f(x)\,dx
+\]
+can be interpreted as the area under the graph of \(f\), above the \(x\)-axis, from \(x=a\) to \(x=b\).
+
+\begin{examplebox}
+Let
+\[
+f(x)=2
+\]
+on \([1,4]\). The graph is a horizontal line. The region under the graph is a rectangle of height \(2\) and width \(3\). Therefore
+\[
+\int_1^4 2\,dx=2\cdot3=6.
+\]
+\end{examplebox}
+
+This example is simple, but it gives the right idea: a definite integral accumulates contributions over an interval.
+
+\subsection*{Signed area}
+
+If the function is below the \(x\)-axis, then the definite integral contributes negatively. Therefore a definite integral is not always ordinary geometric area. It is signed area.
+
+\begin{examplebox}
+Let
+\[
+f(x)=-1
+\]
+on \([0,3]\). The graph lies below the \(x\)-axis. The signed area is
+\[
+\int_0^3 (-1)\,dx=-3.
+\]
+The ordinary geometric area of the region is \(3\), but the integral is \(-3\).
+\end{examplebox}
+
+This distinction matters. If a function is sometimes positive and sometimes negative, the integral can involve cancellation.
+
+\subsection*{Basic properties}
+
+Definite integrals satisfy natural rules:
+\[
+\int_a^b (f(x)+g(x))\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx,
+\]
+\[
+\int_a^b c f(x)\,dx=c\int_a^b f(x)\,dx.
+\]
+They are also additive over intervals:
+\[
+\int_a^c f(x)\,dx=\int_a^b f(x)\,dx+\int_b^c f(x)\,dx.
+\]
+
+Changing the order of the limits changes the sign:
+\[
+\int_b^a f(x)\,dx=-\int_a^b f(x)\,dx.
+\]
+Also,
+\[
+\int_a^a f(x)\,dx=0.
+\]
+There is no interval over which to accumulate.
+
+\subsection*{Definite integrals are numbers}
+
+The result of a definite integral is a number, not a function of \(x\). The variable of integration is internal to the integral.
+
+For example,
+\[
+\int_0^2 x^2\,dx
+\]
+is a number. After integration, the variable \(x\) no longer remains.
+
+\begin{remarkbox}
+In an indefinite integral, the answer is a family of functions and includes \(+C\). In a definite integral, the answer is a number and no \(+C\) remains.
+\end{remarkbox}
+
+\begin{summarybox}
+When reading a definite integral, ask:
+\begin{itemize}
+\item What interval is being used?
+\item Is the function positive, negative, or changing sign?
+\item Is the integral measuring signed area or ordinary area?
+\item Is the answer expected to be a number or a function?
+\item Can the integral be split into simpler intervals?
+\end{itemize}
+\end{summarybox}
+
+A definite integral measures accumulation across an interval. It is one of the main ways calculus turns local quantities into total quantities.
