@@ -1,0 +1,165 @@
+\section{Basic techniques for sequence limits}
+
+Many sequence limits can be found by reading which terms dominate when \(n\) becomes large. The goal is not to memorize many separate tricks. The goal is to learn how to simplify a formula so that its long-term behavior becomes visible.
+
+\subsection*{Dividing by the highest power}
+
+For rational expressions in \(n\), a common method is to divide numerator and denominator by the highest power of \(n\) that appears in the denominator or numerator.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{n\to\infty}\frac{4n-3}{6-5n}.
+\]
+Divide numerator and denominator by \(n\):
+\[
+\frac{4n-3}{6-5n}=\frac{4-\frac3n}{\frac6n-5}.
+\]
+Since
+\[
+\frac3n\to0,
+\qquad
+\frac6n\to0,
+\]
+we get
+\[
+\lim_{n\to\infty}\frac{4n-3}{6-5n}=\frac{4}{-5}=-\frac45.
+\]
+\end{examplebox}
+
+The method works because lower-order terms become small compared with the highest power of \(n\).
+
+\begin{examplebox}
+Compute
+\[
+\lim_{n\to\infty}\frac{n^2-1}{3-n^3}.
+\]
+The denominator has degree \(3\), while the numerator has degree \(2\). Divide by \(n^3\):
+\[
+\frac{n^2-1}{3-n^3}
+=
+\frac{\frac1n-\frac1{n^3}}{\frac3{n^3}-1}.
+\]
+The numerator tends to \(0\), and the denominator tends to \(-1\). Hence
+\[
+\lim_{n\to\infty}\frac{n^2-1}{3-n^3}=0.
+\]
+\end{examplebox}
+
+This example shows that when the denominator grows faster than the numerator, the quotient may tend to zero.
+
+\subsection*{Using dominant terms}
+
+Sometimes we can read the answer by comparing leading terms. For example,
+\[
+\frac{2n^3-4n-1}{6n+3n^2-n^3}
+\]
+has leading term \(2n^3\) in the numerator and \(-n^3\) in the denominator. Therefore the limit should be
+\[
+\frac{2}{-1}=-2.
+\]
+A careful calculation confirms this:
+\[
+\frac{2n^3-4n-1}{6n+3n^2-n^3}
+=
+\frac{2-\frac4{n^2}-\frac1{n^3}}{\frac6{n^2}+\frac3n-1}	o -2.
+\]
+
+The phrase ``dominant term'' means the term that grows fastest as \(n\to\infty\).
+
+\subsection*{Roots and rationalization}
+
+Expressions with square roots often need to be rewritten before the limit is visible. A standard method is to multiply by the conjugate.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{n\to\infty}\left(\sqrt{n^2+n}-n\right).
+\]
+Direct reading is not enough because both terms grow without bound. Multiply by the conjugate:
+\[
+\sqrt{n^2+n}-n
+=\frac{(\sqrt{n^2+n}-n)(\sqrt{n^2+n}+n)}{\sqrt{n^2+n}+n}.
+\]
+The numerator becomes
+\[
+(n^2+n)-n^2=n.
+\]
+Thus
+\[
+\sqrt{n^2+n}-n=\frac{n}{\sqrt{n^2+n}+n}.
+\]
+Factor \(n\) from the square root:
+\[
+\frac{n}{n\sqrt{1+\frac1n}+n}
+=
+\frac{1}{\sqrt{1+\frac1n}+1}.
+\]
+Therefore
+\[
+\lim_{n\to\infty}\left(\sqrt{n^2+n}-n\right)=\frac12.
+\]
+\end{examplebox}
+
+The conjugate method changes a difference of large quantities into a quotient whose behavior is easier to read.
+
+\subsection*{Alternating signs}
+
+Terms such as \((-1)^n\) should be read carefully. They may cause oscillation, but if they are multiplied by something tending to zero, the whole sequence may still converge.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{n\to\infty}\frac{2n+(-1)^n}{n}.
+\]
+Rewrite as
+\[
+\frac{2n+(-1)^n}{n}=2+\frac{(-1)^n}{n}.
+\]
+The term \(\frac{(-1)^n}{n}\) tends to \(0\), because its absolute value is \(1/n\). Therefore
+\[
+\lim_{n\to\infty}\frac{2n+(-1)^n}{n}=2.
+\]
+\end{examplebox}
+
+The alternating part does not disappear because signs are unimportant. It disappears because its size tends to zero.
+
+\subsection*{Powers and roots}
+
+For expressions involving powers, we compare growth rates. If \(|q|<1\), then
+\[
+q^n\to0.
+\]
+If \(q>1\), then \(q^n\) grows without bound.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{n\to\infty}\frac{4^n-1}{2^{2n}-7}.
+\]
+Since
+\[
+2^{2n}=4^n,
+\]
+we have
+\[
+\frac{4^n-1}{2^{2n}-7}=\frac{4^n-1}{4^n-7}.
+\]
+Divide by \(4^n\):
+\[
+\frac{1-\frac1{4^n}}{1-\frac7{4^n}}\to\frac{1}{1}=1.
+\]
+\end{examplebox}
+
+\begin{summarybox}
+Useful habits for sequence limits:
+\begin{itemize}
+\item For rational expressions, divide by the dominant power of \(n\).
+\item For square-root differences, consider multiplying by the conjugate.
+\item For alternating signs, check whether the size of the alternating term tends to zero.
+\item For powers, compare the dominant exponential terms.
+\item After transforming the expression, interpret which terms vanish and which remain.
+\end{itemize}
+\end{summarybox}
+
+Techniques are useful only when connected with meaning. Each transformation should make the long-term behavior easier to see.
