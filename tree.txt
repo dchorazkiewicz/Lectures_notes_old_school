@@ -240,8 +240,6 @@
 ./mathematical_lectures/probabilistic_methods/chapters/discrete_random_variables/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/overview.tex
-./mathematical_lectures/probabilistic_methods/chapters/events_and_probability
-./mathematical_lectures/probabilistic_methods/chapters/events_and_probability/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/introduction
 ./mathematical_lectures/probabilistic_methods/chapters/introduction/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/limit_theorems_and_inference
