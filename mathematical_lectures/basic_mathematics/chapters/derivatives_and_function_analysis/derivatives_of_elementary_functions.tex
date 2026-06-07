@@ -1,0 +1,120 @@
+\section{Derivatives of elementary functions}
+
+Many functions appear so often that their derivatives should become familiar. The goal is not only to memorize a table, but to recognize the local behavior of standard functions.
+
+\subsection*{Exponential and logarithmic functions}
+
+The exponential function \(e^x\) has a special role: it is its own derivative.
+
+\begin{theorembox}
+\[
+\frac{d}{dx}e^x=e^x.
+\]
+For \(x>0\),
+\[
+\frac{d}{dx}\ln x=\frac1x.
+\]
+\end{theorembox}
+
+\begin{examplebox}
+Differentiate
+\[
+f(x)=3e^x-2\ln x.
+\]
+Using the rules,
+\[
+f'(x)=3e^x-\frac{2}{x},
+\]
+for \(x>0\).
+\end{examplebox}
+
+The logarithm already reminds us to watch the domain. The formula \((\ln x)'=1/x\) is used where \(x>0\).
+
+\subsection*{Trigonometric functions}
+
+The basic trigonometric derivatives are:
+\[
+\frac{d}{dx}\sin x=\cos x,
+\]
+\[
+\frac{d}{dx}\cos x=-\sin x,
+\]
+\[
+\frac{d}{dx}\tan x=\frac{1}{\cos^2 x}.
+\]
+The last expression is also written as \(\sec^2 x\), but this course will mostly use \(1/\cos^2 x\).
+
+\begin{examplebox}
+Differentiate
+\[
+f(x)=2\sin x-5\cos x.
+\]
+Then
+\[
+f'(x)=2\cos x+5\sin x.
+\]
+The sign changes because the derivative of \(\cos x\) is \(-\sin x\).
+\end{examplebox}
+
+\subsection*{Inverse trigonometric functions}
+
+Some later examples require inverse trigonometric functions. The basic derivatives are:
+\[
+\frac{d}{dx}\arctan x=\frac{1}{1+x^2},
+\]
+\[
+\frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}},
+\qquad -1<x<1,
+\]
+\[
+\frac{d}{dx}\arccos x=-\frac{1}{\sqrt{1-x^2}},
+\qquad -1<x<1.
+\]
+
+\begin{examplebox}
+Differentiate
+\[
+f(x)=x\arctan x.
+\]
+This expression is a product, so the product rule will be needed. Once that rule is introduced, we obtain
+\[
+f'(x)=\arctan x+\frac{x}{1+x^2}.
+\]
+\end{examplebox}
+
+This example previews an important point: knowing elementary derivatives is not enough. We must also know how functions are combined.
+
+\subsection*{A compact table}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Function & Derivative \\
+\midrule
+\(c\) & \(0\) \\
+\(x^p\) & \(p x^{p-1}\) \\
+\(e^x\) & \(e^x\) \\
+\(\ln x\) & \(1/x\) \\
+\(\sin x\) & \(\cos x\) \\
+\(\cos x\) & \(-\sin x\) \\
+\(\tan x\) & \(1/\cos^2 x\) \\
+\(\arctan x\) & \(1/(1+x^2)\) \\
+\(\arcsin x\) & \(1/\sqrt{1-x^2}\) \\
+\(\arccos x\) & \(-1/\sqrt{1-x^2}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A derivative table is useful only if it is combined with careful reading of the expression. Before applying a formula, identify the function and its domain.
+
+\begin{summarybox}
+When using elementary derivatives, ask:
+\begin{itemize}
+\item Which elementary function appears?
+\item Is the expression exactly elementary, or is it composed with another function?
+\item What domain restrictions are present?
+\item Are product, quotient, or chain rules also needed?
+\end{itemize}
+\end{summarybox}
+
+Elementary derivatives are building blocks. Most real examples are built by combining them.
