@@ -1,0 +1,114 @@
+\section{What questions can we ask?}
+
+Once we know that functions and sequences are related, we should also understand why they are not studied in exactly the same way. A sequence is a function, but its domain is usually \(\mathbb{N}\). A real function in calculus often has a domain that is an interval or a union of intervals. This changes the natural questions.
+
+The purpose of this section is to organize those questions.
+
+\subsection*{Questions about real functions}
+
+For a real function
+\[
+f:D\to\mathbb{R},
+\qquad
+D\subseteq\mathbb{R},
+\]
+we often ask questions connected with its graph, values, and behavior as the input varies through real numbers.
+
+Typical questions include:
+\begin{itemize}
+\item What is the domain?
+\item What is the range?
+\item What is \(f(a)\) for a given input \(a\)?
+\item For which \(x\) do we have \(f(x)=0\)?
+\item Where is the function positive or negative?
+\item Is the function increasing or decreasing on an interval?
+\item What happens to \(f(x)\) as \(x\) approaches a point?
+\item Is the function continuous?
+\end{itemize}
+
+Not all of these questions are answered in this chapter. Some of them will appear later, especially limits and continuity. But the language needed to ask them begins here.
+
+\subsection*{Questions about sequences}
+
+For a sequence
+\[
+a:\mathbb{N}\to\mathbb{R},
+\]
+we ask questions adapted to natural-number inputs.
+
+Typical questions include:
+\begin{itemize}
+\item What is the starting index?
+\item What are the first few terms?
+\item Is the sequence given by an explicit formula or recursively?
+\item Is the sequence increasing or decreasing as \(n\) grows?
+\item Is the sequence bounded above or below?
+\item What happens to \(a_n\) as \(n\to\infty\)?
+\item Does the sequence approach a limiting value?
+\end{itemize}
+
+The question about \(n\to\infty\) is especially important. Since the inputs of a sequence continue without end, we often want to know the long-term behavior of the terms.
+
+\subsection*{A comparison}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Object & Typical domain & Natural questions \\
+\midrule
+Real function & interval or subset of \(\mathbb{R}\) & graph, zeros, signs, continuity, limits as \(x\to a\) \\
+Sequence & \(\mathbb{N}\) & terms, recursion, monotonicity, boundedness, limits as \(n\to\infty\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This table is not meant to separate functions and sequences completely. It is meant to show that different domains lead to different habits of investigation.
+
+\subsection*{The common idea}
+
+Despite these differences, the common idea remains the same. A function assigns outputs to inputs. A sequence also assigns outputs to inputs. The input set is special, but the structure is still functional.
+
+For a real function, we may write
+\[
+f(x)
+\]
+for the value at input \(x\). For a sequence, we usually write
+\[
+a_n
+\]
+for the value at input \(n\). These notations look different, but they express the same idea: value at an input.
+
+\begin{remarkbox}
+The notation changes because the situation changes. But the underlying idea remains: one input gives one output.
+\end{remarkbox}
+
+\subsection*{Preparing for limits}
+
+The next chapter will study limits and continuity. The present chapter prepares for that in two ways.
+
+First, it gives the language of functions, values, domains, and graphs. Without that language, the expression
+\[
+\lim_{x\to a} f(x)
+\]
+has no clear meaning.
+
+Second, it introduces sequences as functions on \(\mathbb{N}\). This prepares the expression
+\[
+\lim_{n\to\infty} a_n.
+\]
+Both limits involve the idea of approaching. But the input variable approaches in different ways: \(x\) may approach a real point through real values, while \(n\) goes through natural numbers toward infinity.
+
+\begin{summarybox}
+At the end of this chapter, remember:
+\begin{itemize}
+\item A function is an assignment from inputs to outputs.
+\item The domain is part of the function.
+\item The notation \(f(x)\) means the value of \(f\) at \(x\).
+\item A graph is a picture of input-output pairs.
+\item A sequence is a function whose domain is usually \(\mathbb{N}\).
+\item Because sequences have discrete domains, we ask different questions about them.
+\item The type of domain shapes the type of mathematics we do.
+\end{itemize}
+\end{summarybox}
+
+Functions and sequences are not two unrelated topics placed side by side. Sequences are a special case of functions, and this viewpoint will help us understand limits, continuity, and later calculus.
