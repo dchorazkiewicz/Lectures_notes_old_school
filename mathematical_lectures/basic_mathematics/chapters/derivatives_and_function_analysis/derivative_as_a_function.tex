@@ -1,0 +1,89 @@
+\section{The derivative as a function}
+
+The derivative can be computed at a single point. But often we want to know the derivative at many points. When we assign to each input \(x\) the derivative of \(f\) at \(x\), we obtain a new function.
+
+This new function is called the derivative function and is written as
+\[
+f'(x).
+\]
+
+\subsection*{From \(f'(a)\) to \(f'(x)\)}
+
+The number \(f'(a)\) is the derivative at one point. It measures the local rate of change at \(x=a\). The expression \(f'(x)\) describes the derivative at a variable point \(x\). It tells us how the local rate of change depends on the input.
+
+\begin{examplebox}
+For
+\[
+f(x)=x^2,
+\]
+we found from the definition that
+\[
+f'(a)=2a.
+\]
+Since the point \(a\) was arbitrary, we can write
+\[
+f'(x)=2x.
+\]
+This means that the slope of the tangent line to \(y=x^2\) at the point with input \(x\) is \(2x\).
+\end{examplebox}
+
+The derivative function is therefore a function about another function. It describes how the original function changes.
+
+\subsection*{Different notations}
+
+Several notations are commonly used for derivatives. If \(y=f(x)\), then we may write
+\[
+f'(x),
+\qquad
+ y',
+\qquad
+\frac{dy}{dx},
+\qquad
+\frac{d}{dx}f(x).
+\]
+These notations emphasize different aspects of the same idea.
+
+The notation \(f'(x)\) emphasizes that the derivative is a function. The notation \(dy/dx\) emphasizes a ratio of changes in output and input. The notation \(\frac{d}{dx}\) emphasizes the operation of differentiating with respect to \(x\).
+
+\begin{remarkbox}
+The notation changes, but the mathematical object is the same: the derivative describes local rate of change.
+\end{remarkbox}
+
+\subsection*{Where the derivative is defined}
+
+The derivative function may not be defined everywhere that the original function is defined. A function may have corners, cusps, vertical tangents, or discontinuities where the derivative does not exist.
+
+\begin{examplebox}
+The function
+\[
+f(x)=|x|
+\]
+is defined for all real numbers. But its derivative does not exist at \(x=0\), because the left-hand slope is \(-1\) and the right-hand slope is \(1\).
+
+For \(x>0\), the function is \(f(x)=x\), so \(f'(x)=1\). For \(x<0\), the function is \(f(x)=-x\), so \(f'(x)=-1\). At \(x=0\), there is no derivative.
+\end{examplebox}
+
+Thus the domain of \(f'\) can be smaller than the domain of \(f\).
+
+\subsection*{Differentiability and continuity}
+
+If a function is differentiable at a point, then it is continuous at that point. This means that having a derivative is a stronger condition than being continuous.
+
+\begin{theorembox}
+If \(f\) is differentiable at \(a\), then \(f\) is continuous at \(a\).
+\end{theorembox}
+
+The converse is not true. A function may be continuous but not differentiable. The function \(f(x)=|x|\) is continuous at \(0\), but it is not differentiable there.
+
+\begin{summarybox}
+When reading a derivative function, ask:
+\begin{itemize}
+\item Is the derivative being evaluated at one point or treated as a function?
+\item What notation is being used for the derivative?
+\item On which inputs does the derivative exist?
+\item Does the graph have corners or breaks where differentiability may fail?
+\item What does the derivative say about local change?
+\end{itemize}
+\end{summarybox}
+
+The derivative function is a tool for reading how the original function changes from point to point.
