@@ -1,0 +1,120 @@
+\section{Choosing the right plane description}
+
+A plane can be described in several ways. The best description depends on what information is given and what question is being asked.
+
+This is the same lesson that appeared for lines. A formula is not the object itself. A formula is a language for reading the object.
+
+\subsection*{When a normal vector is given}
+
+If a point and a normal vector are given, use the normal form:
+\[
+n\cdot(P-P_0)=0.
+\]
+In coordinates, if \(n=(A,B,C)\), this becomes
+\[
+A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
+\]
+This form is usually the fastest route to the general equation.
+
+\subsection*{When three points are given}
+
+If three non-collinear points are given, first build two direction vectors:
+\[
+B-A,
+\qquad
+C-A.
+\]
+Then choose whether to write the plane parametrically or compute a normal vector using the cross product:
+\[
+n=(B-A)\times(C-A).
+\]
+The normal vector then gives the general equation.
+
+\subsection*{When an equation is given}
+
+If a plane is given by
+\[
+Ax+By+Cz+D=0,
+\]
+then the normal vector is immediately visible:
+\[
+n=(A,B,C).
+\]
+This is useful for distances, angles, parallelism, and perpendicularity.
+
+\subsection*{Which form helps which question?}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Question & Useful description \\
+\midrule
+Plane through point and normal vector & normal form \\
+Plane through three points & two direction vectors and cross product \\
+Generate points on the plane & parametric form \\
+Check whether a point lies on the plane & general equation or parametric form \\
+Find distance from point to plane & general equation \\
+Angle between two planes & normal vectors \\
+Parallel or perpendicular planes & normal vectors \\
+Line-plane intersection & substitute line into plane equation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The table should be read as a guide. A good solution often converts from one description to another.
+
+\subsection*{A complete reading example}
+
+Consider the plane
+\[
+2x-y+z-4=0.
+\]
+From the equation we immediately read a normal vector:
+\[
+n=(2,-1,1).
+\]
+A point on the plane can be found by choosing \(y=0\) and \(z=0\). Then
+\[
+2x-4=0,
+\]
+so
+\[
+x=2.
+\]
+Thus \((2,0,0)\) lies on the plane.
+
+To find two direction vectors, choose any two vectors perpendicular to \(n\). For example,
+\[
+u=(1,2,0)
+\]
+works because
+\[
+(2,-1,1)\cdot(1,2,0)=2-2+0=0.
+\]
+Also,
+\[
+v=(0,1,1)
+\]
+works because
+\[
+(2,-1,1)\cdot(0,1,1)=0-1+1=0.
+\]
+Therefore one parametric description is
+\[
+P=(2,0,0)+s(1,2,0)+t(0,1,1).
+\]
+
+The same plane has been read in two languages: the general equation shows the normal vector, while the parametric equation shows directions inside the plane.
+
+\begin{summarybox}
+At the end of this chapter, remember:
+\begin{itemize}
+\item A plane needs either two independent directions or one normal direction.
+\item The equation \(Ax+By+Cz+D=0\) contains the normal vector \((A,B,C)\).
+\item Three points determine a plane only when they are not collinear.
+\item Distances and angles are easiest with normal vectors.
+\item A line-plane relationship is studied by combining the line parametrization with the plane equation.
+\end{itemize}
+\end{summarybox}
+
+The chapter completes the analytic geometry sequence: points, vectors, lines, and planes are now all described through coordinates and vector language.
