@@ -1,0 +1,151 @@
+\section{Planes through three points}
+
+Three points can determine a plane, but only if they are not collinear. If the three points lie on one line, then infinitely many planes pass through that line, and the plane is not uniquely determined.
+
+This condition is important. In analytic geometry, we must check whether the data really define the object we want.
+
+\subsection*{From three points to two directions}
+
+Let
+\[
+A,
+\qquad
+B,
+\qquad
+C
+\]
+be three points in space. If they are not collinear, then the vectors
+\[
+\overrightarrow{AB}=B-A,
+\qquad
+\overrightarrow{AC}=C-A
+\]
+are two non-parallel direction vectors in the plane.
+
+Then the plane can be written parametrically as
+\[
+P=A+s(B-A)+t(C-A),
+\qquad s,t\in\mathbb{R}.
+\]
+
+\begin{examplebox}
+Find a parametric equation of the plane through
+\[
+A=(1,0,0),
+\qquad
+B=(0,1,0),
+\qquad
+C=(0,0,1).
+\]
+First compute two direction vectors:
+\[
+B-A=(-1,1,0),
+\]
+\[
+C-A=(-1,0,1).
+\]
+Therefore the plane is
+\[
+P=(1,0,0)+s(-1,1,0)+t(-1,0,1).
+\]
+In coordinates,
+\[
+x=1-s-t,
+\qquad
+y=s,
+\qquad
+z=t.
+\]
+\end{examplebox}
+
+This equation says that starting from \(A\), we can move independently toward \(B\) and toward \(C\).
+
+\subsection*{Finding the normal vector}
+
+To obtain the general equation of the plane, we need a normal vector. A normal vector must be perpendicular to both direction vectors in the plane.
+
+If
+\[
+u=B-A,
+\qquad
+v=C-A,
+\]
+then a normal vector is given by the cross product
+\[
+n=u\times v.
+\]
+This vector is perpendicular to both \(u\) and \(v\).
+
+\begin{examplebox}
+Continue with
+\[
+A=(1,0,0),
+\qquad
+B=(0,1,0),
+\qquad
+C=(0,0,1).
+\]
+We found
+\[
+u=(-1,1,0),
+\qquad
+v=(-1,0,1).
+\]
+Compute
+\[
+u\times v=
+\begin{vmatrix}
+\mathbf{i}&\mathbf{j}&\mathbf{k}\\
+-1&1&0\\
+-1&0&1
+\end{vmatrix}.
+\]
+Thus
+\[
+u\times v=(1,1,1).
+\]
+So a normal vector is
+\[
+n=(1,1,1).
+\]
+Using the point \(A=(1,0,0)\), the normal equation is
+\[
+1(x-1)+1(y-0)+1(z-0)=0.
+\]
+Therefore
+\[
+x+y+z-1=0.
+\]
+Equivalently,
+\[
+x+y+z=1.
+\]
+\end{examplebox}
+
+This example is a useful model. Three points give two directions. Two directions give a normal vector. A point and a normal vector give the equation.
+
+\subsection*{Checking non-collinearity}
+
+The points \(A\), \(B\), and \(C\) are collinear exactly when the vectors \(B-A\) and \(C-A\) are parallel. Equivalently, their cross product is the zero vector:
+\[
+(B-A)\times(C-A)=0.
+\]
+
+If the cross product is non-zero, the points determine a unique plane.
+
+\begin{remarkbox}
+A zero cross product means that the two direction vectors are not independent. In that case, the three points do not determine a unique plane.
+\end{remarkbox}
+
+\begin{summarybox}
+To find a plane through three points:
+\begin{enumerate}
+\item Choose one point as an anchor point, for example \(A\).
+\item Compute \(B-A\) and \(C-A\).
+\item Check that these vectors are not parallel.
+\item Use them as direction vectors for parametric form, or compute their cross product to find a normal vector.
+\item Use the normal vector and one point to write the general equation.
+\end{enumerate}
+\end{summarybox}
+
+The method should be understood as a chain of meanings, not as a memorized procedure.
