@@ -1,0 +1,89 @@
+\section{What an integral measures}
+
+Integration begins with a question that is complementary to differentiation. Differentiation asks how a function changes locally. Integration asks how quantities accumulate.
+
+There are two closely related ways to meet integrals. An indefinite integral asks for a function whose derivative is known. A definite integral asks for accumulated signed area or total change over an interval. Both ideas are important, and both will appear in this chapter.
+
+\subsection*{Undoing differentiation}
+
+Suppose we know that
+\[
+F'(x)=f(x).
+\]
+Then \(F\) is called an antiderivative of \(f\). Finding such a function is one meaning of integration.
+
+For example, since
+\[
+\frac{d}{dx}x^2=2x,
+\]
+we say that \(x^2\) is an antiderivative of \(2x\).
+
+But it is not the only one. For every constant \(C\),
+\[
+\frac{d}{dx}(x^2+C)=2x.
+\]
+The derivative of a constant is zero, so differentiation loses constant information.
+
+\begin{remarkbox}
+Integration as antidifferentiation recovers a function from its derivative, but only up to an additive constant.
+\end{remarkbox}
+
+\subsection*{Accumulation}
+
+The second meaning of integration is accumulation. If a quantity changes continuously, an integral can measure the total accumulated amount over an interval.
+
+For a non-negative function, the definite integral
+\[
+\int_a^b f(x)\,dx
+\]
+can be read geometrically as the area under the graph of \(f\) from \(x=a\) to \(x=b\). If the function takes negative values, the integral measures signed area: regions below the horizontal axis contribute negatively.
+
+This interpretation will become more precise later. For now, the important point is that integration adds up infinitely many small contributions.
+
+\subsection*{The notation}
+
+The symbol
+\[
+\int f(x)\,dx
+\]
+denotes an indefinite integral. It asks for all antiderivatives of \(f\).
+
+The symbol
+\[
+\int_a^b f(x)\,dx
+\]
+denotes a definite integral. It has limits of integration \(a\) and \(b\), and its result is a number.
+
+The expression \(dx\) reminds us of the variable of integration. It also hints at the idea of summing small pieces along the \(x\)-axis.
+
+\begin{examplebox}
+The expression
+\[
+\int 2x\,dx
+\]
+asks for functions whose derivative is \(2x\). The answer is
+\[
+x^2+C.
+\]
+The expression
+\[
+\int_0^3 2x\,dx
+\]
+asks for a number: the accumulated value of \(2x\) from \(0\) to \(3\). Later we will compute it as
+\[
+\left[x^2\right]_0^3=9.
+\]
+\end{examplebox}
+
+\begin{summarybox}
+When reading an integral, ask:
+\begin{itemize}
+\item Is the integral indefinite or definite?
+\item Am I looking for a family of antiderivatives or a number?
+\item What is the variable of integration?
+\item Is the integral being used to undo differentiation or to measure accumulation?
+\item What role does the constant of integration play?
+\end{itemize}
+\end{summarybox}
+
+The integral is not only a symbol for a calculation. It is a language for recovering functions and measuring accumulated change.
