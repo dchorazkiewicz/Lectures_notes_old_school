@@ -1,0 +1,133 @@
+\section{Limits at infinity}
+
+Some limits describe behavior near a finite point. Other limits describe behavior far away. When we write
+\[
+\lim_{x\to\infty}f(x),
+\]
+we ask what happens to \(f(x)\) as \(x\) becomes larger and larger. When we write
+\[
+\lim_{x\to-\infty}f(x),
+\]
+we ask what happens as \(x\) becomes very large in the negative direction.
+
+This is closely related to sequence limits, where we ask what happens as \(n\to\infty\). The difference is that \(n\) runs through natural numbers, while \(x\) runs through real values.
+
+\subsection*{A first example}
+
+Consider
+\[
+f(x)=\frac1x.
+\]
+As \(x\) becomes very large and positive, \(1/x\) becomes close to \(0\). Therefore
+\[
+\lim_{x\to\infty}\frac1x=0.
+\]
+As \(x\) becomes very large and negative, \(1/x\) also becomes close to \(0\). Therefore
+\[
+\lim_{x\to-\infty}\frac1x=0.
+\]
+
+The sign is different on the two sides, but the values still approach the same number \(0\).
+
+\subsection*{Rational functions}
+
+For rational functions, limits at infinity are often found by comparing the highest powers of \(x\).
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to\infty}\frac{3x^2-5x+1}{2x^2+7}.
+\]
+Divide numerator and denominator by \(x^2\):
+\[
+\frac{3x^2-5x+1}{2x^2+7}
+=
+\frac{3-\frac5x+\frac1{x^2}}{2+\frac7{x^2}}.
+\]
+As \(x\to\infty\), the terms \(1/x\) and \(1/x^2\) tend to \(0\). Hence
+\[
+\lim_{x\to\infty}\frac{3x^2-5x+1}{2x^2+7}=\frac32.
+\]
+\end{examplebox}
+
+This is the same dominant-term idea used for sequence limits. The largest powers determine the long-term behavior.
+
+\begin{examplebox}
+Compute
+\[
+\lim_{x\to\infty}\frac{2x+1}{x^2+3}.
+\]
+The denominator grows faster than the numerator. Divide by \(x^2\):
+\[
+\frac{2x+1}{x^2+3}=\frac{\frac2x+\frac1{x^2}}{1+\frac3{x^2}}.
+\]
+The numerator tends to \(0\), and the denominator tends to \(1\). Therefore
+\[
+\lim_{x\to\infty}\frac{2x+1}{x^2+3}=0.
+\]
+\end{examplebox}
+
+\subsection*{Horizontal asymptotes}
+
+If
+\[
+\lim_{x\to\infty}f(x)=L
+\]
+or
+\[
+\lim_{x\to-\infty}f(x)=L,
+\]
+then the graph approaches the horizontal line
+\[
+y=L
+\]
+in that direction. This line is called a horizontal asymptote.
+
+\begin{examplebox}
+For
+\[
+f(x)=\frac{3x^2-5x+1}{2x^2+7},
+\]
+we found
+\[
+\lim_{x\to\infty}f(x)=\frac32.
+\]
+Also,
+\[
+\lim_{x\to-\infty}f(x)=\frac32.
+\]
+Thus the graph has horizontal asymptote
+\[
+y=\frac32.
+\]
+\end{examplebox}
+
+The asymptote is not necessarily a line the graph never touches. It is a line the graph approaches far away.
+
+\subsection*{Infinite limits}
+
+Sometimes a function grows without bound as \(x\to\infty\). For example,
+\[
+\lim_{x\to\infty}x^2=\infty.
+\]
+This means the values become larger than any fixed number. It is not convergence to a real number.
+
+Similarly,
+\[
+\lim_{x\to-\infty}x^3=-\infty.
+\]
+The values become negative with arbitrarily large magnitude.
+
+\begin{summarybox}
+When studying limits at infinity, ask:
+\begin{itemize}
+\item Is the input going to \(\infty\) or \(-\infty\)?
+\item Which terms dominate for large \(|x|\)?
+\item Does the function approach a finite number?
+\item Does it grow without bound?
+\item Is there a horizontal asymptote?
+\item Is the behavior different for \(x\to\infty\) and \(x\to-\infty\)?
+\end{itemize}
+\end{summarybox}
+
+Limits at infinity describe long-term behavior. They tell us what the function does far from the origin.
