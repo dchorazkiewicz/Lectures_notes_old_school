@@ -1,3 +1,243 @@
 \section{Gaussian elimination}
 
-This section will develop Gaussian elimination as a method of simplifying a system without changing its solution set. The focus will be on row operations, pivots, and the logic of reducing a complicated system to a readable one.
+Gaussian elimination is a method for simplifying a system of linear equations without changing its solution set. The method uses elementary row operations on the augmented matrix. These operations are not random changes of notation. They correspond to replacing equations by equivalent equations.
+
+The aim is to transform a complicated system into a readable one.
+
+\subsection*{Equivalent systems}
+
+Two systems are equivalent if they have the same solution set. Gaussian elimination works because elementary row operations produce equivalent systems.
+
+The allowed row operations are:
+\begin{itemize}
+\item swapping two rows,
+\item multiplying a row by a non-zero number,
+\item adding a multiple of one row to another row.
+\end{itemize}
+
+These are the same operations introduced earlier for matrices. Here their meaning is sharper: they change the written form of the equations, but not the set of solutions.
+
+\begin{remarkbox}
+The purpose of row operations is not to make the matrix look different. The purpose is to reveal the solution set by simplifying the conditions.
+\end{remarkbox}
+
+\subsection*{A first example}
+
+Consider the system
+\[
+\begin{cases}
+x+y=5,\\
+2x-y=1.
+\end{cases}
+\]
+Its augmented matrix is
+\[
+\left[
+\begin{array}{cc|c}
+1&1&5\\
+2&-1&1
+\end{array}
+\right].
+\]
+We use the first row to eliminate the \(x\)-coefficient in the second row:
+\[
+R_2\leftarrow R_2-2R_1.
+\]
+This gives
+\[
+\left[
+\begin{array}{cc|c}
+1&1&5\\
+0&-3&-9
+\end{array}
+\right].
+\]
+The second row now means
+\[
+-3y=-9,
+\]
+so
+\[
+y=3.
+\]
+Substitute into the first equation:
+\[
+x+3=5,
+\]
+so
+\[
+x=2.
+\]
+Therefore the solution is
+\[
+(x,y)=(2,3).
+\]
+
+This example shows the basic strategy. We simplify the system until the unknowns can be read one by one.
+
+\subsection*{Pivots}
+
+A pivot is an entry used to eliminate other entries in its column. In the previous example, the first pivot was the \(1\) in the upper-left corner. It allowed us to remove the \(2\) below it.
+
+Pivots are not only computational markers. They identify independent information in the system. Each pivot usually corresponds to a variable that can be solved from the system.
+
+\begin{examplebox}
+Consider
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&-1&3\\
+0&1&4&5\\
+0&0&2&6
+\end{array}
+\right].
+\]
+The pivot positions are in the first, second, and third variable columns. The last row gives
+\[
+2z=6,
+\]
+so \(z=3\). The second row then gives
+\[
+y+4z=5,
+\]
+so \(y+12=5\), hence \(y=-7\). The first row gives
+\[
+x+2y-z=3,
+\]
+so \(x+2(-7)-3=3\), and therefore \(x=20\).
+\end{examplebox}
+
+This process is called back substitution. We solve from the bottom upward after the system has been simplified.
+
+\subsection*{Row echelon form}
+
+A matrix is in row echelon form when the leading non-zero entries move to the right as we move downward, and zero rows, if any, are placed at the bottom. Row echelon form is useful because it makes the structure of the system visible.
+
+For example,
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&0&4\\
+0&1&-3&2\\
+0&0&0&0
+\end{array}
+\right]
+\]
+is in row echelon form. The last row represents the equation
+\[
+0=0,
+\]
+which gives no new restriction.
+
+\subsection*{Detecting no solution}
+
+During elimination, a row may become
+\[
+\left[
+\begin{array}{ccc|c}
+0&0&0&5
+\end{array}
+\right].
+\]
+This row represents
+\[
+0=5.
+\]
+That is impossible. Therefore the system has no solution.
+
+\begin{examplebox}
+Consider
+\[
+\begin{cases}
+x+y=1,\\
+2x+2y=5.
+\end{cases}
+\]
+The augmented matrix is
+\[
+\left[
+\begin{array}{cc|c}
+1&1&1\\
+2&2&5
+\end{array}
+\right].
+\]
+Apply
+\[
+R_2\leftarrow R_2-2R_1.
+\]
+We get
+\[
+\left[
+\begin{array}{cc|c}
+1&1&1\\
+0&0&3
+\end{array}
+\right].
+\]
+The second row says
+\[
+0=3,
+\]
+which is impossible. The system has no solution.
+\end{examplebox}
+
+The contradiction is not a technical detail. It is the algebraic sign that the conditions are inconsistent.
+
+\subsection*{Free variables and infinitely many solutions}
+
+If a variable column has no pivot, that variable is free. A free variable can be chosen as a parameter. The remaining variables are expressed in terms of it.
+
+\begin{examplebox}
+Consider the row echelon form
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&-1&3\\
+0&0&1&4
+\end{array}
+\right].
+\]
+This represents
+\[
+\begin{cases}
+x+2y-z=3,\\
+z=4.
+\end{cases}
+\]
+The variable \(y\) has no pivot, so let
+\[
+y=t.
+\]
+Then \(z=4\), and the first equation gives
+\[
+x+2t-4=3,
+\]
+so
+\[
+x=7-2t.
+\]
+Thus the solution set is
+\[
+(x,y,z)=(7-2t,t,4),
+\qquad t\in\mathbb{R}.
+\]
+There are infinitely many solutions.
+\end{examplebox}
+
+A parameter is not a decoration. It records the freedom that remains after all independent conditions have been used.
+
+\subsection*{What elimination tells us}
+
+Gaussian elimination does more than compute answers. It classifies the system.
+
+\begin{summarybox}
+After row reduction, look for these patterns:
+\begin{itemize}
+\item A pivot in every variable column and no contradiction: exactly one solution.
+\item A row of the form \(0=\text{non-zero}\): no solution.
+\item At least one free variable and no contradiction: infinitely many solutions.
+\end{itemize}
+\end{summarybox}
+
+Gaussian elimination is the most flexible method in this chapter. It works for square and non-square systems, and it reveals not only the solution but also the structure of the solution set.
