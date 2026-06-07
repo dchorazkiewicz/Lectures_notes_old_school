@@ -1,0 +1,195 @@
+\section{Real functions and basic examples}
+
+In this course we will often study functions whose inputs and outputs are real numbers. Such functions are called real functions of a real variable. They are central in calculus because they allow us to describe quantities that depend on one real parameter.
+
+A typical notation is
+\[
+f:D\to\mathbb{R},
+\qquad
+D\subseteq\mathbb{R}.
+\]
+This means that the inputs are taken from a set \(D\) of real numbers, and the outputs are real numbers.
+
+\subsection*{Natural domains}
+
+Sometimes the domain is given explicitly. Sometimes it is understood from the formula. When a formula is given and no domain is stated, we often look for the largest set of real inputs for which the formula makes sense. This is called the natural domain.
+
+\begin{examplebox}
+Consider
+\[
+f(x)=2x+1.
+\]
+This formula makes sense for every real number \(x\). Its natural domain is
+\[
+\mathbb{R}.
+\]
+\end{examplebox}
+
+\begin{examplebox}
+Consider
+\[
+g(x)=\frac{1}{x}.
+\]
+This formula does not make sense for \(x=0\), because division by zero is not defined. Therefore the natural domain is
+\[
+\mathbb{R}\setminus\{0\}.
+\]
+\end{examplebox}
+
+\begin{examplebox}
+Consider
+\[
+h(x)=\sqrt{x}.
+\]
+If we work with real numbers, the expression \(\sqrt{x}\) is real only for \(x\ge0\). Therefore the natural domain is
+\[
+[0,\infty).
+\]
+\end{examplebox}
+
+These examples show that the formula is not the whole story. We must also ask where the formula is meaningful.
+
+\subsection*{Linear functions}
+
+A linear function has the form
+\[
+f(x)=mx+b.
+\]
+Its graph is a line, provided we view the function as a function of one real variable. The number \(m\) is the slope, and \(b\) is the value at \(x=0\):
+\[
+f(0)=b.
+\]
+
+\begin{examplebox}
+Let
+\[
+f(x)=3x-2.
+\]
+Then
+\[
+f(0)=-2,
+\qquad
+f(1)=1,
+\qquad
+f(2)=4.
+\]
+When \(x\) increases by \(1\), the value of the function increases by \(3\). This constant rate of change is the slope.
+\end{examplebox}
+
+A linear function is one of the simplest examples of dependence. The output changes at a constant rate as the input changes.
+
+\subsection*{Quadratic functions}
+
+A quadratic function has the form
+\[
+f(x)=ax^2+bx+c,
+\qquad a\ne0.
+\]
+Its graph is a parabola. The simplest example is
+\[
+f(x)=x^2.
+\]
+
+\begin{examplebox}
+For
+\[
+f(x)=x^2,
+\]
+we have
+\[
+f(-2)=4,
+\qquad
+f(-1)=1,
+\qquad
+f(0)=0,
+\qquad
+f(1)=1,
+\qquad
+f(2)=4.
+\]
+The values at \(-2\) and \(2\) are the same because squaring removes the sign.
+\end{examplebox}
+
+Quadratic functions are already more flexible than linear functions. Their graphs can turn around, and their values need not change at a constant rate.
+
+\subsection*{Reciprocal and square root functions}
+
+Two basic functions show why domains matter:
+\[
+f(x)=\frac1x
+\]
+and
+\[
+g(x)=\sqrt{x}.
+\]
+The first excludes \(x=0\). The second excludes negative inputs when we work over the real numbers.
+
+\begin{examplebox}
+For
+\[
+f(x)=\frac1x,
+\]
+we can compute
+\[
+f(2)=\frac12,
+\qquad
+f(-4)=-\frac14.
+\]
+But \(f(0)\) is not defined.
+\end{examplebox}
+
+\begin{examplebox}
+For
+\[
+g(x)=\sqrt{x},
+\]
+we have
+\[
+g(0)=0,
+\qquad
+g(4)=2,
+\qquad
+g(9)=3.
+\]
+But \(g(-1)\) is not a real number.
+\end{examplebox}
+
+These examples are elementary, but they teach an important habit: before evaluating a function, check whether the input belongs to the domain.
+
+\subsection*{Piecewise functions}
+
+A function may use different formulas on different parts of its domain. Such functions are called piecewise-defined functions.
+
+\begin{examplebox}
+Define
+\[
+f(x)=
+\begin{cases}
+x+1, & x<0,\\
+x^2, & x\ge0.
+\end{cases}
+\]
+To compute \(f(-2)\), we use the first rule because \(-2<0\):
+\[
+f(-2)=-2+1=-1.
+\]
+To compute \(f(3)\), we use the second rule because \(3\ge0\):
+\[
+f(3)=3^2=9.
+\]
+\end{examplebox}
+
+The input decides which rule applies. A piecewise definition is still a function as long as each allowed input receives exactly one output.
+
+\begin{summarybox}
+When studying a real function, ask:
+\begin{itemize}
+\item What is the domain?
+\item Is the domain stated explicitly, or should I find the natural domain?
+\item Are there inputs excluded by division by zero, square roots, or other restrictions?
+\item What type of function am I looking at?
+\item If the function is piecewise, which rule applies to the given input?
+\end{itemize}
+\end{summarybox}
+
+Real functions are the main objects of calculus, but their study begins with reading their domains, formulas, and values carefully.
