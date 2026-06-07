@@ -1,0 +1,151 @@
+\section{The substitution method}
+
+The substitution method is the integration counterpart of the chain rule. It is used when the integrand contains a composite expression together with something close to its derivative.
+
+The idea is to rename the inner expression so that the integral becomes simpler.
+
+\subsection*{The basic idea}
+
+Suppose we see an expression such as
+\[
+\int 2x\cos(x^2)\,dx.
+\]
+The inside expression is \(x^2\), and its derivative is \(2x\). This suggests the substitution
+\[
+u=x^2.
+\]
+Then
+\[
+du=2x\,dx.
+\]
+The integral becomes
+\[
+\int \cos u\,du=\sin u+C.
+\]
+Returning to \(x\), we obtain
+\[
+\int 2x\cos(x^2)\,dx=\sin(x^2)+C.
+\]
+
+\begin{remarkbox}
+Substitution works by recognizing an inside function and its derivative. It reverses the chain rule.
+\end{remarkbox}
+
+\subsection*{A step-by-step example}
+
+\begin{examplebox}
+Compute
+\[
+\int x\sqrt{1+x^2}\,dx.
+\]
+The expression under the square root is
+\[
+1+x^2.
+\]
+Its derivative is \(2x\), and the integrand contains \(x\,dx\). Let
+\[
+u=1+x^2.
+\]
+Then
+\[
+du=2x\,dx,
+\qquad
+x\,dx=\frac12du.
+\]
+The integral becomes
+\[
+\int x\sqrt{1+x^2}\,dx
+=\frac12\int u^{1/2}\,du.
+\]
+Using the power rule,
+\[
+\frac12\int u^{1/2}\,du
+=\frac12\cdot\frac{u^{3/2}}{3/2}+C
+=\frac13u^{3/2}+C.
+\]
+Return to \(x\):
+\[
+\int x\sqrt{1+x^2}\,dx=\frac13(1+x^2)^{3/2}+C.
+\]
+\end{examplebox}
+
+The factor \(1/2\) appears because the integrand contains \(x\,dx\), not exactly \(2x\,dx\). Constants can be adjusted.
+
+\subsection*{Substitution with logarithms and exponentials}
+
+Substitution often appears when a logarithm or exponential contains an inner expression.
+
+\begin{examplebox}
+Compute
+\[
+\int \frac{e^x}{2e^x+1}\,dx.
+\]
+Let
+\[
+u=2e^x+1.
+\]
+Then
+\[
+du=2e^x\,dx,
+\qquad
+e^x\,dx=\frac12du.
+\]
+Therefore
+\[
+\int \frac{e^x}{2e^x+1}\,dx
+=\frac12\int \frac1u\,du.
+\]
+Thus
+\[
+\int \frac{e^x}{2e^x+1}\,dx
+=\frac12\ln|u|+C
+=\frac12\ln|2e^x+1|+C.
+\]
+\end{examplebox}
+
+In this example, the denominator became the new variable. Its derivative was present in the numerator up to a constant factor.
+
+\subsection*{Substitution with trigonometric functions}
+
+\begin{examplebox}
+Compute
+\[
+\int \cos x\,e^{\sin x}\,dx.
+\]
+The inside expression is \(\sin x\), and its derivative is \(\cos x\). Let
+\[
+u=\sin x.
+\]
+Then
+\[
+du=\cos x\,dx.
+\]
+The integral becomes
+\[
+\int e^u\,du=e^u+C.
+\]
+Returning to \(x\),
+\[
+\int \cos x\,e^{\sin x}\,dx=e^{\sin x}+C.
+\]
+\end{examplebox}
+
+The method is the same: identify the inside function, check whether its derivative appears, and rewrite the integral in the new variable.
+
+\subsection*{Substitution is a change of language}
+
+A substitution is not just a symbol trick. It changes the variable so that the structure becomes simpler. The final answer must be returned to the original variable unless the problem asks otherwise.
+
+\begin{summarybox}
+When trying substitution, ask:
+\begin{itemize}
+\item Is there an inside expression repeated in the integrand?
+\item Is its derivative present, possibly up to a constant factor?
+\item What should be called \(u\)?
+\item What is \(du\)?
+\item After integrating in \(u\), did I return to the original variable?
+\item Can I check by differentiating the final answer?
+\end{itemize}
+\end{summarybox}
+
+Substitution is one of the most important integration methods because many complicated-looking integrals are simple chain rules read backward.
