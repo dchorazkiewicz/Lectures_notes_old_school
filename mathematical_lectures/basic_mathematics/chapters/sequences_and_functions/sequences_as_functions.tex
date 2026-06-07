@@ -1,0 +1,146 @@
+\section{Sequences as functions}
+
+Sequences are often introduced as lists of numbers:
+\[
+1,\; \frac12,\; \frac13,\; \frac14,\; \ldots
+\]
+or
+\[
+2,\;4,\;6,\;8,\;\ldots
+\]
+This way of writing sequences is useful, but it can hide the most important idea. A sequence is not a completely different kind of object from a function. A sequence is a special kind of function.
+
+The difference is in the domain.
+
+\begin{definitionbox}
+A real sequence is a function
+\[
+a:\mathbb{N}\to\mathbb{R}.
+\]
+For each natural number \(n\), the function assigns a real number \(a(n)\). Instead of writing \(a(n)\), we usually write
+\[
+a_n.
+\]
+Thus
+\[
+a_n=a(n).
+\]
+\end{definitionbox}
+
+The notation changes, but the idea is the same: one input gives one output. For sequences, the inputs are natural numbers. The values are called terms of the sequence.
+
+\subsection*{Terms of a sequence}
+
+If \(a:\mathbb{N}\to\mathbb{R}\), then
+\[
+a_1,
+\quad
+ a_2,
+\quad
+ a_3,
+\quad \ldots
+\]
+are the values of the function at the inputs \(1,2,3,\ldots\). Depending on convention, some sequences start at \(n=0\). What matters is that the starting index must be clear.
+
+\begin{examplebox}
+Let
+\[
+a_n=2n+1,
+\qquad n\in\mathbb{N}.
+\]
+Then
+\[
+a_1=2\cdot1+1=3,
+\]
+\[
+a_2=2\cdot2+1=5,
+\]
+and
+\[
+a_3=2\cdot3+1=7.
+\]
+The sequence begins
+\[
+3,\;5,\;7,\;9,\;\ldots
+\]
+\end{examplebox}
+
+The formula \(a_n=2n+1\) tells us the value of the function \(a\) at the natural number \(n\). It is function notation written in sequence language.
+
+\subsection*{Index and value}
+
+In a sequence, the input is called the index. The output is called the term. These two roles should not be confused.
+
+In the sequence
+\[
+a_n=2n+1,
+\]
+the number \(n\) is the index. The number \(a_n\) is the term at index \(n\). For example, when \(n=4\),
+\[
+a_4=9.
+\]
+The index is \(4\), and the term is \(9\).
+
+\begin{remarkbox}
+The subscript in \(a_n\) is not decoration. It records the input of the sequence-function. The expression \(a_5\) means the value of the sequence at index \(5\).
+\end{remarkbox}
+
+\subsection*{Graphs of sequences}
+
+Since a sequence is a function, it can have a graph. But its graph looks different from the graph of a function defined on an interval. For a sequence \(a:\mathbb{N}\to\mathbb{R}\), the graph consists of points
+\[
+(n,a_n),
+\qquad n\in\mathbb{N}.
+\]
+These points are separated because the inputs are separated.
+
+\begin{examplebox}
+For the sequence
+\[
+a_n=\frac1n,
+\qquad n\ge1,
+\]
+the graph consists of the points
+\[
+\left(1,1\right),
+\quad
+\left(2,\frac12\right),
+\quad
+\left(3,\frac13\right),
+\quad
+\left(4,\frac14\right),
+\quad\ldots
+\]
+We do not automatically draw a continuous curve through these points, because the sequence is not defined for every real number between \(1\) and \(2\). It is defined only at natural-number inputs.
+\end{examplebox}
+
+This is one of the main differences between ordinary real functions on intervals and sequences. A sequence has a discrete domain.
+
+\subsection*{Sequences as ordered data}
+
+Because the domain is \(\mathbb{N}\), the values of a sequence come with a natural order:
+\[
+a_1,
+\quad
+a_2,
+\quad
+a_3,
+\quad\ldots
+\]
+We can ask how the terms change as \(n\) increases. Do they grow? Do they decrease? Do they approach a number? Do they repeat a pattern?
+
+These questions are function questions, but adapted to the special domain \(\mathbb{N}\).
+
+\begin{summarybox}
+When reading a sequence, ask:
+\begin{itemize}
+\item What is the starting index?
+\item What is the domain of the sequence?
+\item What is the formula or rule for \(a_n\)?
+\item What are the first few terms?
+\item What is the difference between the index \(n\) and the value \(a_n\)?
+\item Should the graph be read as separated points rather than a continuous curve?
+\end{itemize}
+\end{summarybox}
+
+A sequence is a function with discrete input. This simple fact explains both why sequences belong in a chapter on functions and why they are studied with some different questions.
