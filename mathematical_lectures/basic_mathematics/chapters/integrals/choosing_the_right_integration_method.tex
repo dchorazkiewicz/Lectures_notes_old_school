@@ -1,0 +1,91 @@
+\section{Choosing the right integration method}
+
+Integration is often harder than differentiation because there is no single rule that always works. The first step is to read the structure of the integrand. The method should be chosen from that structure.
+
+This section summarizes the main choices from the chapter.
+
+\subsection*{Start with rewriting}
+
+Before choosing an advanced method, simplify the integrand if possible. Roots and fractions may become powers. A rational expression may need polynomial division. A trigonometric expression may need an identity.
+
+\begin{examplebox}
+The integral
+\[
+\int \frac{\sqrt{x}}{x^2}\,dx
+\]
+becomes easier after rewriting:
+\[
+\frac{\sqrt{x}}{x^2}=x^{1/2-2}=x^{-3/2}.
+\]
+Then
+\[
+\int x^{-3/2}\,dx=-2x^{-1/2}+C.
+\]
+\end{examplebox}
+
+The method was not hidden. It appeared after the integrand was written in a readable form.
+
+\subsection*{A practical guide}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Structure of the integrand & Possible method \\
+\midrule
+Powers, sums, simple constants & basic rules \\
+Roots and fractions of powers & rewrite as powers \\
+Inside function with its derivative & substitution \\
+Product with polynomial and exponential/logarithm & integration by parts \\
+Rational function & simplify, divide, logarithm/arctangent patterns \\
+Quadratic denominator without real roots & complete the square \\
+Trigonometric powers or products & identities or substitution \\
+Definite integral & find antiderivative and use endpoints \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The table is not a mechanical algorithm. It is a guide for what to look for first.
+
+\subsection*{Checking the result}
+
+For an indefinite integral, differentiate the answer. If the derivative returns the integrand, the answer is correct.
+
+For a definite integral, check whether the answer has the right sign and approximate size. If the integrand is positive on the interval, the integral should not be negative. If the interval has length zero, the integral should be zero.
+
+\begin{examplebox}
+Suppose we compute
+\[
+\int_0^1 x^2\,dx=\frac13.
+\]
+This is reasonable: the function is non-negative on \([0,1]\), and its values lie between \(0\) and \(1\). The accumulated area should be between \(0\) and \(1\), and \(1/3\) fits that expectation.
+\end{examplebox}
+
+Reasonableness checks do not replace exact work, but they help detect mistakes.
+
+\subsection*{Connecting back to derivatives}
+
+Every integration method in this chapter comes from a differentiation rule read backward:
+\begin{itemize}
+\item basic integrals reverse basic derivatives,
+\item substitution reverses the chain rule,
+\item integration by parts reverses the product rule,
+\item logarithmic rational integrals come from \((\ln|g(x)|)'=g'(x)/g(x)\).
+\end{itemize}
+
+This perspective prevents integration from becoming a bag of tricks. Each method has a reason.
+
+\begin{summarybox}
+When choosing an integration method, ask:
+\begin{itemize}
+\item Can the integrand be simplified first?
+\item Is this a basic antiderivative after rewriting?
+\item Is there an inside function whose derivative appears?
+\item Is the integrand a product suggesting integration by parts?
+\item Is the integrand rational, suggesting algebraic decomposition?
+\item Is a trigonometric identity useful?
+\item For a definite integral, what interval and sign information should I keep in mind?
+\item Can I verify the result by differentiating or by a reasonableness check?
+\end{itemize}
+\end{summarybox}
+
+The goal is not to guess the method. The goal is to read the integrand until the method becomes natural.
