@@ -1,0 +1,152 @@
+\section{Two points and direction vectors}
+
+Many line problems begin with two points. This is natural: in Euclidean geometry, two distinct points determine exactly one line. In analytic geometry we translate this statement into coordinates and vectors.
+
+The translation is simple. Two points give a displacement. That displacement gives a direction.
+
+\subsection*{Building the direction vector}
+
+Let
+\[
+A=(a_1,a_2),
+\qquad
+B=(b_1,b_2),
+\]
+and suppose \(A\ne B\). The vector from \(A\) to \(B\) is
+\[
+\overrightarrow{AB}=B-A=(b_1-a_1,\,b_2-a_2).
+\]
+This vector is non-zero because the points are distinct. It is therefore a valid direction vector for the line through \(A\) and \(B\).
+
+The line can then be written as
+\[
+P=A+t(B-A),
+\qquad t\in\mathbb{R}.
+\]
+
+\begin{examplebox}
+Find a parametric equation of the line through
+\[
+A=(1,2),
+\qquad
+B=(4,-1).
+\]
+First compute the direction vector:
+\[
+B-A=(4-1,\,-1-2)=(3,-3).
+\]
+Therefore the line is
+\[
+P=(1,2)+t(3,-3).
+\]
+In coordinate form,
+\[
+x=1+3t,
+\qquad
+y=2-3t.
+\]
+\end{examplebox}
+
+This procedure should be read as a chain of meanings. The two points determine a displacement. The displacement gives a direction. A point and a direction determine the line.
+
+\subsection*{The order of the points}
+
+If we reverse the order of the two points, the direction vector changes sign:
+\[
+A-B=-(B-A).
+\]
+This does not change the line. It only reverses the orientation of the parametrization.
+
+Using the previous example, we found
+\[
+B-A=(3,-3).
+\]
+If we start from \(B\) instead, then
+\[
+A-B=(-3,3).
+\]
+The line may also be written as
+\[
+P=(4,-1)+s(-3,3).
+\]
+This is the same line, but the parameter moves along it in the opposite orientation.
+
+\begin{remarkbox}
+Changing the orientation of the direction vector does not change the geometric line. It changes how the line is traced by the parameter.
+\end{remarkbox}
+
+\subsection*{Non-unique direction vectors}
+
+A direction vector for a line is never unique. If \(v\) is a direction vector, then every non-zero scalar multiple \(\lambda v\) is also a direction vector for the same line.
+
+For instance, the vectors
+\[
+(3,-3),
+\qquad
+(1,-1),
+\qquad
+(-2,2)
+\]
+all describe the same direction. They have different lengths and possibly different orientations, but they are parallel.
+
+\begin{examplebox}
+The line
+\[
+P=(1,2)+t(3,-3)
+\]
+can also be written as
+\[
+P=(1,2)+s(1,-1).
+\]
+The second version uses a shorter direction vector. Both equations describe the same set of points, because \((3,-3)=3(1,-1)\).
+\end{examplebox}
+
+This is often useful. We may simplify a direction vector by dividing out a common factor. The line remains the same, but the notation becomes easier to read.
+
+\subsection*{Finding a point from a parametrization}
+
+A parametric line already contains a point. In
+\[
+P=A+t v,
+\]
+the point \(A\) appears when \(t=0\). But every value of \(t\) gives another point on the same line. We may choose any of them as a new anchor point.
+
+\begin{examplebox}
+Consider
+\[
+P=(2,-1)+t(4,2).
+\]
+For \(t=\frac12\), we get
+\[
+P=(2,-1)+\frac12(4,2)=(4,0).
+\]
+Thus \((4,0)\) is also a point on the line. We could write the same line as
+\[
+P=(4,0)+s(4,2).
+\]
+\end{examplebox}
+
+This flexibility is not a problem. It is part of the geometry. A line has infinitely many points and infinitely many possible non-zero direction vectors.
+
+\subsection*{When the two points are the same}
+
+If the two given points are equal, then they do not determine a unique line. The vector between them is the zero vector:
+\[
+B-A=0.
+\]
+The zero vector cannot be a direction vector, because it gives no direction.
+
+This is a common hidden issue in problems with parameters. If two points depend on a parameter, there may be special parameter values for which the points coincide. Those values must be checked separately.
+
+\begin{summarybox}
+When a line is given by two points, ask:
+\begin{itemize}
+\item Are the two points distinct?
+\item What is the vector from one point to the other?
+\item Can the direction vector be simplified?
+\item Does reversing the order only reverse orientation?
+\item Are there parameter values for which the two points might coincide?
+\end{itemize}
+\end{summarybox}
+
+The formula \(P=A+t(B-A)\) is not just a shortcut. It expresses the idea that a line is obtained by moving from one point in the direction of another.
