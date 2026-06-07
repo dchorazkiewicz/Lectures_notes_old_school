@@ -62,6 +62,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/limits_of_functions.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/limits_of_sequences.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/one_sided_limits.tex
+./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/reading_limits_from_graphs.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/standard_limits.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/types_of_discontinuities.tex
 ./mathematical_lectures/basic_mathematics/chapters/limits_and_continuity/what_a_limit_tries_to_describe.tex
