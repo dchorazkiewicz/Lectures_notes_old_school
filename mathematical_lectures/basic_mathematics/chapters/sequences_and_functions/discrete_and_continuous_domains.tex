@@ -1,0 +1,129 @@
+\section{Discrete and continuous domains}
+
+Sequences and real functions belong to the same general idea: they are functions. But they often have very different domains. This difference changes the kinds of questions we naturally ask.
+
+A function such as
+\[
+f:[0,1]\to\mathbb{R}
+\]
+has inputs from an interval. Between two different inputs in \([0,1]\), there are many other inputs. A sequence
+\[
+a:\mathbb{N}\to\mathbb{R}
+\]
+has inputs \(1,2,3,\ldots\). Between \(1\) and \(2\), there is no natural-number input.
+
+\subsection*{Continuous-looking domains}
+
+Intervals of real numbers are often called continuous domains in elementary calculus. This word means that the inputs are not separated into isolated points. If an interval contains two numbers, it also contains all real numbers between them.
+
+For example, the interval
+\[
+[0,1]
+\]
+contains \(0\), \(1\), and also
+\[
+\frac12,
+\quad
+\frac13,
+\quad
+0.72,
+\quad
+\sqrt{2}-1,
+\]
+and infinitely many other numbers between \(0\) and \(1\).
+
+A function defined on an interval can be studied by asking what happens as \(x\) moves gradually through the domain. This is why graphs of such functions are often drawn as curves.
+
+\subsection*{Discrete domains}
+
+The set of natural numbers is different:
+\[
+\mathbb{N}=\{1,2,3,\ldots\}
+\]
+or, in some conventions,
+\[
+\mathbb{N}=\{0,1,2,3,\ldots\}.
+\]
+The exact convention should be stated when it matters. In either case, the natural numbers are separated. There is a next natural number after \(1\), and there is no natural number halfway between \(1\) and \(2\).
+
+This is why a sequence graph consists of separated points:
+\[
+(n,a_n),
+\qquad n\in\mathbb{N}.
+\]
+The sequence is not automatically defined at \(n=1.5\), because \(1.5\notin\mathbb{N}\).
+
+\begin{examplebox}
+Let
+\[
+a_n=n^2,
+\qquad n\in\mathbb{N}.
+\]
+Then
+\[
+a_1=1,
+\qquad
+a_2=4,
+\qquad
+a_3=9.
+\]
+The expression \(a_{1.5}\) is not part of this sequence, because \(1.5\) is not a natural-number index.
+\end{examplebox}
+
+This does not mean sequences are less important. It means that their input structure is different.
+
+\subsection*{Why this changes the questions}
+
+For functions defined on intervals, we can ask how the function behaves near a point from both sides. We can ask whether a graph has a break, whether values approach a limit as \(x\to a\), or whether the function is continuous at \(a\).
+
+For sequences, the natural local picture is different. The inputs jump from one natural number to the next. Therefore, in an introductory course, we do not usually study continuity of a sequence at a natural-number input in the same way we study continuity of a real function on an interval.
+
+Instead, for sequences we often ask questions such as:
+\begin{itemize}
+\item What happens to \(a_n\) as \(n\to\infty\)?
+\item Is the sequence increasing or decreasing?
+\item Is the sequence bounded?
+\item Does the sequence approach a number?
+\item Is the sequence defined recursively or explicitly?
+\end{itemize}
+
+The object is still a function. The domain changes the natural questions.
+
+\begin{remarkbox}
+A sequence is not outside the world of functions. It is a function with a discrete domain. Because the domain is discrete, we study it with questions adapted to discrete input.
+\end{remarkbox}
+
+\subsection*{Drawing responsibly}
+
+When drawing a function defined on an interval, it may be appropriate to draw a continuous curve if the function behaves continuously. When drawing a sequence, we should usually draw separated points.
+
+Connecting sequence points with line segments may be useful as a visual guide, but it can also be misleading. The line segment between \((1,a_1)\) and \((2,a_2)\) suggests values at non-natural inputs, but the sequence itself does not provide those values.
+
+\begin{examplebox}
+For
+\[
+a_n=\frac1n,
+\]
+the points
+\[
+\left(1,1\right),
+\quad
+\left(2,\frac12\right),
+\quad
+\left(3,\frac13\right)
+\]
+belong to the graph of the sequence. A smooth curve through these points may help the eye see a trend, but the sequence itself is defined only at natural-number inputs.
+\end{examplebox}
+
+\begin{summarybox}
+When comparing ordinary real functions and sequences, ask:
+\begin{itemize}
+\item What is the domain?
+\item Are the inputs separated or do they fill an interval?
+\item Should the graph be drawn as points or as a curve?
+\item Is the natural question about behavior near a real point or behavior as the index goes to infinity?
+\item Does the notation hide the fact that a sequence is still a function?
+\end{itemize}
+\end{summarybox}
+
+The difference between continuous and discrete domains is not cosmetic. It shapes the way we read, draw, and investigate mathematical objects.
