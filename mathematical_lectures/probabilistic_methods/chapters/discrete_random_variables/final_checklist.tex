@@ -1,0 +1,102 @@
+\section{Final checklist}
+
+This chapter introduced discrete random variables as functions on sample spaces.
+The central workflow was
+\[
+\Omega\longrightarrow X(\omega)\longrightarrow P(X=x).
+\]
+The sample space describes possible outcomes of the experiment. The random
+variable extracts a numerical quantity. The distribution describes how
+probability is transferred from outcomes to values.
+
+\subsection*{Checklist for constructing a discrete random variable}
+
+When a problem involves a discrete random variable, proceed as follows.
+
+\begin{enumerate}
+    \item Identify the original experiment.
+    \item Construct or recall the sample space \(\Omega\).
+    \item Define the random variable as a function
+    \[
+    X:\Omega\to\mathbb{R}.
+    \]
+    \item State clearly what \(X(\omega)\) means for an elementary outcome
+    \(\omega\).
+    \item Find the support:
+    \[
+    \operatorname{supp}(X)=\{x:P(X=x)>0\}.
+    \]
+    \item For each support value \(x\), identify the event
+    \[
+    \{X=x\}=\{\omega\in\Omega:X(\omega)=x\}.
+    \]
+    \item Compute the probability mass function
+    \[
+    p_X(x)=P(X=x).
+    \]
+    \item Check that
+    \[
+    \sum_x p_X(x)=1.
+    \]
+\end{enumerate}
+
+\subsection*{Checklist for interpreting the distribution}
+
+After the probability law has been found, ask:
+
+\begin{enumerate}
+    \item What does each value of \(X\) mean in the original experiment?
+    \item Which values are most likely?
+    \item Is the support finite or countably infinite?
+    \item Does the mass function come from counting, weighting, or both?
+    \item What is the cumulative distribution function
+    \[
+    F_X(t)=P(X\leq t)?
+    \]
+    \item How do jumps of the CDF correspond to masses of the PMF?
+\end{enumerate}
+
+\subsection*{Checklist for numerical summaries}
+
+For expectation and variance, use the distribution of \(X\):
+\[
+\E[X]=\sum_x xP(X=x),
+\]
+\[
+\Var(X)=\E[(X-\E[X])^2].
+\]
+For computation, one may also use
+\[
+\Var(X)=\E[X^2]-(\E[X])^2.
+\]
+
+Interpret these quantities carefully:
+\begin{itemize}
+    \item expectation is a weighted average or center of mass;
+    \item expectation need not be a possible value of \(X\);
+    \item variance measures average squared deviation from the expectation;
+    \item standard deviation is the square root of variance and uses the original
+    units of the variable.
+\end{itemize}
+
+\subsection*{Checklist for classical laws}
+
+Before applying a named distribution, identify the mechanism.
+
+\begin{itemize}
+    \item Bernoulli: one success-or-failure trial.
+    \item Binomial: number of successes in a fixed number of independent trials.
+    \item Geometric: waiting time until the first success.
+    \item Hypergeometric: number of successes in sampling without replacement.
+    \item Poisson: count of events in a fixed observation window.
+\end{itemize}
+
+Do not select a distribution because a formula looks familiar. Select it because
+the assumptions of the mechanism match the experiment.
+
+\begin{summarybox}
+A discrete random variable is a numerical view of an experiment. The probability
+law of that variable is obtained by collecting all elementary outcomes that
+produce the same value and adding their probabilities. Classical distributions
+are reusable models of common mechanisms, not isolated formulas.
+\end{summarybox}
