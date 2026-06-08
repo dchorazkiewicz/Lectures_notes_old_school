@@ -1,0 +1,312 @@
+\section{Coin models}
+
+Coin tossing is the simplest family of probability models, but it is not
+trivial. It already contains several ideas that will appear throughout the
+course: a sample space, a recording rule, a probability assignment, repeated
+experiments, product spaces, events described by conditions, and the difference
+between a particular sequence and a numerical summary of that sequence.
+
+The physical object called a coin does not determine a probability model by
+itself. We must say what is recorded and what assumptions are made about the
+mechanism. A coin may be treated as symmetric, or it may be treated as biased.
+A single toss may be recorded, or a whole sequence of tosses may be recorded.
+Each of these choices changes the model or the probabilities inside the model.
+
+\subsection*{One toss of a coin}
+
+Suppose first that a coin is tossed once and that we record which side lands up.
+The elementary outcome is one of two symbols:
+\[
+H \quad\text{or}\quad T,
+\]
+where \(H\) denotes heads and \(T\) denotes tails. The sample space is
+\[
+\Omega=\{H,T\}.
+\]
+
+At this point we have only described the possible outcomes. We have not yet
+assigned probabilities.
+
+If the coin is modelled as symmetric, then the two elementary outcomes are
+given equal probability:
+\[
+P(H)=P(T)=\frac12.
+\]
+This is a modelling assumption based on symmetry. It is not a consequence of the
+fact that the set \(\Omega\) has two elements. The fact that \(|\Omega|=2\) tells
+us how many elementary outcomes there are. It does not by itself tell us how
+likely they are.
+
+If the coin is biased, we may instead write
+\[
+P(H)=p,\qquad P(T)=1-p,
+\]
+where
+\[
+0\leq p\leq 1.
+\]
+The same sample space \(\{H,T\}\) now carries a different probability
+assignment. When \(p=1/2\), the model is symmetric. When \(p\neq 1/2\), one side
+is more likely than the other.
+
+\begin{remarkbox}
+The symbols \(H\) and \(T\) are not probabilities. They are elementary outcomes.
+The numbers assigned to them come from an additional assumption about the coin
+and the tossing mechanism.
+\end{remarkbox}
+
+\subsection*{Events in the one-toss model}
+
+In the one-toss model there are only four events:
+\[
+\varnothing,\qquad \{H\},\qquad \{T\},\qquad \Omega.
+\]
+Their probabilities are determined by the probabilities of \(H\) and \(T\):
+\[
+P(\varnothing)=0,\qquad P(\Omega)=1,
+\]
+\[
+P(\{H\})=p,\qquad P(\{T\})=1-p.
+\]
+For a symmetric coin this becomes
+\[
+P(\{H\})=P(\{T\})=\frac12.
+\]
+
+Even this small example illustrates the general finite rule. If an event is a
+set of elementary outcomes, then its probability is obtained by adding the
+probabilities of the elementary outcomes inside it.
+
+\subsection*{Two tosses: sequences as elementary outcomes}
+
+Now suppose the coin is tossed twice and the complete order of results is
+recorded. An elementary outcome is no longer a single symbol. It is an ordered
+sequence of length two. The sample space is
+\[
+\Omega=\{HH,HT,TH,TT\}.
+\]
+The outcomes \(HT\) and \(TH\) are different because the first position and the
+second position are different. The outcome \(HT\) means heads first and tails
+second. The outcome \(TH\) means tails first and heads second.
+
+If the coin is symmetric and the two tosses are modelled as independent
+repetitions of the same mechanism, then every sequence has probability
+\[
+\frac14.
+\]
+Thus
+\[
+P(HH)=P(HT)=P(TH)=P(TT)=\frac14.
+\]
+
+If the coin has \(P(H)=p\) and \(P(T)=1-p\), then the probabilities of the four
+sequences are
+\[
+P(HH)=p^2,\qquad P(HT)=p(1-p),
+\]
+\[
+P(TH)=(1-p)p,\qquad P(TT)=(1-p)^2.
+\]
+The middle two values are equal because multiplication of numbers is
+commutative:
+\[
+p(1-p)=(1-p)p.
+\]
+But the sequences \(HT\) and \(TH\) remain different elementary outcomes.
+
+\begin{examplebox}
+Let \(p=0.7\). Then
+\[
+P(HH)=0.49,\qquad P(HT)=0.21,\qquad P(TH)=0.21,\qquad P(TT)=0.09.
+\]
+These probabilities add to one:
+\[
+0.49+0.21+0.21+0.09=1.
+\]
+The sample space has four outcomes, but the model is not uniform.
+\end{examplebox}
+
+\subsection*{The event ``exactly one head''}
+
+The event
+\[
+A=\{\text{exactly one head occurs}\}
+\]
+contains two elementary outcomes:
+\[
+A=\{HT,TH\}.
+\]
+Therefore, for a symmetric coin,
+\[
+P(A)=P(HT)+P(TH)=\frac14+\frac14=\frac12.
+\]
+For a biased coin with \(P(H)=p\),
+\[
+P(A)=p(1-p)+(1-p)p=2p(1-p).
+\]
+
+Notice the difference between an elementary outcome and an event. The sequence
+\(HT\) is one elementary outcome. The phrase ``exactly one head'' describes an
+event containing two elementary outcomes. Probability problems often ask for the
+probability of an event, not of a single elementary outcome.
+
+\subsection*{Three tosses and the structure of a product space}
+
+For three tosses, with order recorded, the sample space is
+\[
+\Omega=\{H,T\}^3.
+\]
+This notation means the set of all ordered triples whose entries are \(H\) or
+\(T\). Explicitly,
+\[
+\Omega=\{HHH,HHT,HTH,HTT,THH,THT,TTH,TTT\}.
+\]
+There are
+\[
+2^3=8
+\]
+elementary outcomes, because each of the three positions has two possible
+symbols.
+
+For a symmetric coin, each sequence has probability
+\[
+\frac18.
+\]
+For a biased coin with \(P(H)=p\), the probability of a sequence is obtained by
+multiplying the probabilities of its symbols. For example,
+\[
+P(HTH)=p(1-p)p=p^2(1-p),
+\]
+and
+\[
+P(TTH)=(1-p)(1-p)p=(1-p)^2p.
+\]
+
+The exponent records how many times a symbol appears in the sequence. A sequence
+with \(k\) heads and \(3-k\) tails has probability
+\[
+p^k(1-p)^{3-k}.
+\]
+
+\subsection*{The general model of \(n\) tosses}
+
+For \(n\) tosses, with order recorded, the sample space is
+\[
+\Omega=\{H,T\}^n.
+\]
+An elementary outcome is a sequence
+\[
+\omega=(a_1,a_2,\ldots,a_n),
+\]
+where each \(a_i\) is either \(H\) or \(T\). There are
+\[
+|\Omega|=2^n
+\]
+such sequences.
+
+If the coin is symmetric and each toss is modelled as an independent repetition,
+then the model is uniform:
+\[
+P(\omega)=\frac1{2^n}
+\]
+for every \(\omega\in\Omega\).
+
+If \(P(H)=p\) and \(P(T)=1-p\), then a sequence with \(k\) heads and \(n-k\)
+tails has probability
+\[
+p^k(1-p)^{n-k}.
+\]
+This formula is not yet the probability of ``exactly \(k\) heads''. It is the
+probability of one particular sequence with \(k\) heads.
+
+\begin{examplebox}
+For five tosses, the sequence
+\[
+HHTTH
+\]
+has three heads and two tails. Its probability in the biased model is
+\[
+p^3(1-p)^2.
+\]
+The sequence
+\[
+HTHTH
+\]
+also has three heads and two tails, so it has the same probability
+\[
+p^3(1-p)^2.
+\]
+But the two sequences are different elementary outcomes.
+\end{examplebox}
+
+\subsection*{Exactly \(k\) heads in \(n\) tosses}
+
+Now consider the event
+\[
+A_k=\{\omega\in\{H,T\}^n: \omega\text{ contains exactly }k\text{ heads}\}.
+\]
+This event contains all sequences of length \(n\) in which exactly \(k\) positions
+are occupied by \(H\), and the remaining \(n-k\) positions are occupied by \(T\).
+
+To count these sequences, we do not choose the heads themselves as physical
+objects. We choose the positions at which heads occur. There are \(n\) positions,
+and we choose \(k\) of them to contain \(H\). Once those positions are chosen,
+the remaining positions must contain \(T\). Hence
+\[
+|A_k|=\binom{n}{k}.
+\]
+
+For a symmetric coin, the whole space is uniform, so
+\[
+P(A_k)=\frac{|A_k|}{|\Omega|}=\frac{\binom{n}{k}}{2^n}.
+\]
+
+For a biased coin, the space is generally not uniform. However, every sequence
+in \(A_k\) has the same probability \(p^k(1-p)^{n-k}\). Since there are
+\(\binom{n}{k}\) such sequences, additivity gives
+\[
+P(A_k)=\binom{n}{k}p^k(1-p)^{n-k}.
+\]
+
+\begin{theorembox}
+If a coin with \(P(H)=p\) is tossed \(n\) times independently, then the
+probability of exactly \(k\) heads is
+\[
+\binom{n}{k}p^k(1-p)^{n-k},
+\qquad k=0,1,\ldots,n.
+\]
+\end{theorembox}
+
+This formula has three parts:
+\begin{itemize}
+    \item \(\binom{n}{k}\) counts the positions of the heads;
+    \item \(p^k\) is the contribution of the \(k\) heads;
+    \item \((1-p)^{n-k}\) is the contribution of the \(n-k\) tails.
+\end{itemize}
+
+\subsection*{What this model teaches}
+
+The coin model teaches several lessons that will recur in more complicated
+examples.
+
+First, the sample space depends on what is recorded. One toss gives
+\(\{H,T\}\); \(n\) ordered tosses give \(\{H,T\}^n\); recording only the number of
+heads gives \(\{0,1,\ldots,n\}\).
+
+Second, the probability assignment is separate from the sample space. The same
+space \(\{H,T\}\) can carry the symmetric assignment \(1/2,1/2\) or the biased
+assignment \(p,1-p\).
+
+Third, an event may contain many elementary outcomes. The event ``exactly
+\(k\) heads'' is not one sequence; it is a set of sequences.
+
+Fourth, combinatorics enters probability when we count how many elementary
+outcomes satisfy a condition. The binomial coefficient appears because we count
+positions of successes, not because it is a formula to be memorized in isolation.
+
+\begin{remarkbox}
+The coin model is simple enough to be completely transparent, but rich enough to
+show the entire modelling workflow: choose the recording rule, construct
+\(\Omega\), assign probabilities, define events, count favourable outcomes, and
+interpret the result.
+\end{remarkbox}
