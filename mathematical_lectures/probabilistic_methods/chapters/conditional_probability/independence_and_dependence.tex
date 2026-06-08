@@ -1,0 +1,318 @@
+\section{Independence and dependence}
+
+Conditional probability lets us ask how the probability of one event changes
+after another event is known. The next natural question is therefore:
+\[
+\text{when does information change the probability, and when does it not?}
+\]
+
+This is the conceptual origin of independence. Independence is not first of all
+a multiplication formula. It is a statement that learning one event occurred
+does not change the probability of another event.
+
+\subsection*{Information that changes probability}
+
+Draw one card from a standard deck. Let
+\[
+A=\{\text{the card is an ace}\}.
+\]
+Before any information is given,
+\[
+P(A)=\frac4{52}=\frac1{13}.
+\]
+
+Now suppose we are told that the card is a face card. Let
+\[
+B=\{\text{the card is a face card}\}.
+\]
+Inside the face cards there are no aces, using the standard convention that face
+cards are jacks, queens, and kings. Therefore
+\[
+P(A\mid B)=0.
+\]
+The information \(B\) changes the probability of \(A\). It changes it from
+\(1/13\) to \(0\). In this case, the events are dependent.
+
+\subsection*{Information that does not change probability}
+
+Now let
+\[
+C=\{\text{the card is a heart}\}.
+\]
+If we are told that the card is a heart, the relevant space consists of the
+\(13\) hearts. Among them, exactly one is an ace. Hence
+\[
+P(A\mid C)=\frac1{13}.
+\]
+But this is the same as the original probability \(P(A)\). Knowing that the card
+is a heart does not change the probability that it is an ace.
+
+This is the basic meaning of independence:
+\[
+\text{the information occurred, but it did not change the probability of the event of interest.}
+\]
+
+\begin{definitionbox}
+Events \(A\) and \(B\), with \(P(B)>0\), are \textbf{independent in the
+conditional sense} if
+\[
+P(A\mid B)=P(A).
+\]
+They are \textbf{dependent} if knowing \(B\) changes the probability of \(A\),
+that is, if
+\[
+P(A\mid B)\neq P(A).
+\]
+\end{definitionbox}
+
+This definition expresses the intuitive meaning directly. It says that \(B\)
+brings no probabilistic information about \(A\).
+
+\subsection*{The multiplication form of independence}
+
+The conditional definition is conceptually clear, but it requires \(P(B)>0\).
+Using the definition of conditional probability, the equality
+\[
+P(A\mid B)=P(A)
+\]
+becomes
+\[
+\frac{P(A\cap B)}{P(B)}=P(A).
+\]
+Multiplying both sides by \(P(B)\), we obtain
+\[
+P(A\cap B)=P(A)P(B).
+\]
+
+This gives the standard symmetric definition.
+
+\begin{definitionbox}
+Events \(A\) and \(B\) are \textbf{independent} if
+\[
+P(A\cap B)=P(A)P(B).
+\]
+If this equality fails, the events are \textbf{dependent}.
+\end{definitionbox}
+
+This form is symmetric in \(A\) and \(B\). It makes clear that if \(A\) gives no
+information about \(B\), then \(B\) gives no information about \(A\), provided
+the relevant conditional probabilities are defined.
+
+\begin{remarkbox}
+The product formula should not be treated as the first meaning of independence.
+It is the algebraic form of the idea that conditioning on one event does not
+change the probability of the other.
+\end{remarkbox}
+
+\subsection*{Example: two coin tosses}
+
+Toss a fair coin twice and record the ordered sequence:
+\[
+\Omega=\{HH,HT,TH,TT\}.
+\]
+Let
+\[
+A=\{\text{the first toss is heads}\}=\{HH,HT\},
+\]
+and
+\[
+B=\{\text{the second toss is heads}\}=\{HH,TH\}.
+\]
+Then
+\[
+P(A)=\frac12,\qquad P(B)=\frac12.
+\]
+The intersection is
+\[
+A\cap B=\{HH\},
+\]
+so
+\[
+P(A\cap B)=\frac14.
+\]
+Since
+\[
+P(A)P(B)=\frac12\cdot\frac12=\frac14,
+\]
+we have
+\[
+P(A\cap B)=P(A)P(B).
+\]
+Thus \(A\) and \(B\) are independent.
+
+The conditional interpretation says the same thing. If we know the second toss
+is heads, the remaining possible sequences are
+\[
+HH,TH.
+\]
+Among these, exactly one has first toss heads. Hence
+\[
+P(A\mid B)=\frac12=P(A).
+\]
+The information about the second toss does not change the probability of the
+first toss.
+
+\subsection*{Example: cards and dependence}
+
+Draw one card from a deck. Let
+\[
+A=\{\text{the card is an ace}\},
+\]
+and
+\[
+B=\{\text{the card is a face card}\}.
+\]
+Then
+\[
+A\cap B=\varnothing,
+\]
+so
+\[
+P(A\cap B)=0.
+\]
+But
+\[
+P(A)P(B)=\frac4{52}\cdot\frac{12}{52}>0.
+\]
+Therefore
+\[
+P(A\cap B)\neq P(A)P(B).
+\]
+The events are dependent. Knowing that the card is a face card makes the event
+``ace'' impossible.
+
+\subsection*{Disjointness is not independence}
+
+Students often confuse disjoint events with independent events. These ideas are
+very different.
+
+Events \(A\) and \(B\) are disjoint if
+\[
+A\cap B=\varnothing.
+\]
+This means they cannot occur together.
+
+Events \(A\) and \(B\) are independent if
+\[
+P(A\cap B)=P(A)P(B).
+\]
+This means that knowing one occurred does not change the probability of the
+other.
+
+If \(A\) and \(B\) are disjoint and both have positive probability, then they
+cannot be independent. Indeed,
+\[
+P(A\cap B)=0,
+\]
+but
+\[
+P(A)P(B)>0.
+\]
+So the equality required for independence fails.
+
+\begin{remarkbox}
+If two positive-probability events are disjoint, then learning that one occurred
+makes the other impossible. That is the strongest possible form of dependence,
+not independence.
+\end{remarkbox}
+
+\subsection*{Independence is not causation}
+
+Dependence means that probabilities change under information. It does not by
+itself identify a causal mechanism. If
+\[
+P(A\mid B)\neq P(A),
+\]
+then \(B\) is informative about \(A\), but this does not automatically mean that
+\(B\) causes \(A\).
+
+For example, suppose \(A\) is the event that a randomly selected student passes
+an exam and \(B\) is the event that the student attended review sessions. If
+\(P(A\mid B)>P(A)\), then attendance is associated with a higher pass
+probability in the model or data. But this observation alone does not prove that
+attendance caused the result. There may be other factors, such as preparation,
+motivation, or prior knowledge.
+
+Probability detects changes of likelihood under information. Causation requires
+additional assumptions and is a separate question.
+
+\subsection*{Independence of repeated trials as a modelling assumption}
+
+When we say that repeated coin tosses are independent, we are making a modelling
+assumption. For two tosses, this assumption says, for example, that knowing the
+first toss was heads does not change the probability that the second toss is
+heads.
+
+If \(P(H)=p\) for each toss and the tosses are independent, then
+\[
+P(HH)=p^2,
+\]
+\[
+P(HT)=p(1-p),
+\]
+\[
+P(TH)=(1-p)p,
+\]
+\[
+P(TT)=(1-p)^2.
+\]
+
+Without the independence assumption, we cannot automatically multiply the
+single-toss probabilities. The second toss might depend on the first in some
+artificial mechanism. Independence is not guaranteed by notation such as
+\(\{H,T\}^2\); it must be part of the probability assignment.
+
+\begin{examplebox}
+Suppose a device produces two symbols, each either \(H\) or \(T\), and the sample
+space is \(\{HH,HT,TH,TT\}\). If the device always repeats the first symbol, then
+only \(HH\) and \(TT\) have positive probability. The sample space still uses two
+positions, but the two positions are not independent.
+\end{examplebox}
+
+\subsection*{More than two events}
+
+For several events, independence becomes more subtle. It is not enough that each
+pair behaves independently. For three events \(A,B,C\), full mutual independence
+requires the product rule for every relevant intersection:
+\[
+P(A\cap B)=P(A)P(B),
+\]
+\[
+P(A\cap C)=P(A)P(C),
+\]
+\[
+P(B\cap C)=P(B)P(C),
+\]
+and also
+\[
+P(A\cap B\cap C)=P(A)P(B)P(C).
+\]
+
+At this stage, the main point is conceptual: independence means that information
+from some events does not change probabilities of the others. For many events,
+this must hold consistently across combinations of events.
+
+\subsection*{What independence teaches}
+
+Independence is a statement about information. It says that the occurrence of
+one event does not alter the probability assigned to another event. The product
+formula is important because it gives an algebraic test, but the meaning remains
+conditional:
+\[
+\text{knowing }B\text{ does not change the probability of }A.
+\]
+
+\begin{theorembox}
+For events of positive probability, the following ideas are equivalent:
+\[
+P(A\mid B)=P(A),
+\]
+\[
+P(B\mid A)=P(B),
+\]
+\[
+P(A\cap B)=P(A)P(B).
+\]
+Each expresses the same idea: the events do not provide probabilistic
+information about each other.
+\end{theorembox}
