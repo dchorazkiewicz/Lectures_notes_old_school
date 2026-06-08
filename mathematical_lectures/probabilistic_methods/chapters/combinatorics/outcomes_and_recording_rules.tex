@@ -1,8 +1,8 @@
 \section{Counting begins with elementary outcomes}
 
-Combinatorics is often presented as a list of formulas. In probability this is dangerous. Before a formula can be used, we must know what one elementary outcome is. A physical experiment does not determine a sample space by itself. The sample space depends on what is recorded.
+Combinatorics is often presented as a list of formulas. This is misleading. Before a formula can be used, we must know what one elementary outcome is. A physical situation does not determine a mathematical space of possibilities by itself. The space of possibilities depends on what is recorded.
 
-Suppose that three balls are drawn from a box. If the balls are labelled and the order of drawing is recorded, then an outcome is a sequence of labelled objects. If only the selected balls are recorded, then an outcome is a set. If only the colors are recorded, then labelled balls of the same color may become indistinguishable. If only the number of red balls is recorded, then the outcome is no longer the full draw, but only the value of a random variable.
+Suppose that three balls are drawn from a box. If the balls are labelled and the order of drawing is recorded, then an outcome is a sequence of labelled objects. If only the selected labelled balls are recorded, then an outcome is a set. If only the colors are recorded, then labelled balls of the same color may become indistinguishable. If only the number of red balls is recorded, then the outcome is a numerical summary of the draw rather than the full draw itself.
 
 Thus the first question in a counting problem is not
 \[
@@ -14,10 +14,10 @@ The first question is
 \]
 
 \begin{definitionbox}
-An \textbf{elementary outcome} is a complete description of one possible result of an experiment, according to the recording rule chosen for the model.
+An \textbf{elementary outcome} is a complete description of one possible result of a situation, according to the recording rule chosen for the model.
 \end{definitionbox}
 
-The phrase ``according to the recording rule'' is essential. The same physical situation may produce different mathematical sample spaces if different information is recorded.
+The phrase ``according to the recording rule'' is essential. The same physical situation may produce different mathematical spaces of possibilities if different information is recorded.
 
 \begin{examplebox}
 A box contains three balls labelled \(R_1,R_2,B_1\). Two balls are drawn without replacement.
@@ -38,22 +38,22 @@ If only the number of red balls is recorded, then the possible recorded values a
 \[
 0,1,2.
 \]
-These are not four different answers to the same counting question. They are four different mathematical models of the same physical experiment.
+These are not four different answers to the same counting question. They are four different mathematical models of the same physical situation.
 \end{examplebox}
 
 \begin{remarkbox}
 A counting error often begins before any arithmetic is done. It begins when the outcome type is chosen incorrectly.
 \end{remarkbox}
 
-\section{Recording rules and sample spaces}
+\section{Recording rules and spaces of possibilities}
 
-A recording rule tells us which differences between physical results are mathematically visible. Some differences are recorded; others are ignored. Once the recording rule is fixed, the sample space is the set of all possible recorded outcomes.
+A recording rule tells us which differences between physical results are mathematically visible. Some differences are recorded; others are ignored. Once the recording rule is fixed, the space of possibilities is the set of all possible recorded outcomes.
 
 \begin{definitionbox}
 A \textbf{recording rule} is a decision about what information is included in the mathematical outcome and what information is ignored.
 \end{definitionbox}
 
-For finite experiments, the construction usually follows this pattern:
+For finite situations, the construction usually follows this pattern:
 \[
 \text{physical situation}
 \longrightarrow
@@ -61,7 +61,7 @@ For finite experiments, the construction usually follows this pattern:
 \longrightarrow
 \text{elementary outcome}
 \longrightarrow
-\text{sample space}.
+\text{space of possibilities}.
 \]
 
 The following table shows common outcome types.
@@ -76,10 +76,52 @@ Only membership is recorded & set & \(\{a_1,a_2,\ldots,a_k\}\) \\
 All objects are arranged in a row & linear arrangement & \((a_{\sigma(1)},\ldots,a_{\sigma(n)})\) \\
 Objects are arranged on a circle & circular arrangement & relative order \\
 Only numbers of types are recorded & count vector & \((n_1,n_2,\ldots,n_r)\) \\
-Only a numerical summary is recorded & random variable value & \(X(\omega)\) \\
+Only a numerical summary is recorded & summary value & \(x\) \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\section{Representing the space of possibilities}
+
+Counting is easier when the space of possibilities is represented in a form that matches the structure of the problem. A representation is not decoration. It is part of the reasoning, because it makes visible which outcomes are different, which descriptions are equivalent, and which construction steps are being used.
+
+Different situations call for different representations:
+\begin{itemize}
+    \item a list is useful when the space is small and every outcome can be written explicitly;
+    \item a table is useful when two choices are made and rows and columns organize the possibilities;
+    \item a tree is useful when an outcome is built through successive stages;
+    \item a set notation is useful when only membership matters;
+    \item a tuple notation is useful when positions or order matter;
+    \item a count vector is useful when only the numbers of objects of each type matter.
+\end{itemize}
+
+\begin{examplebox}
+If two letters are chosen from \(\{A,B,C\}\) and order is recorded with repetition allowed, the space can be represented as a table:
+\[
+\begin{array}{c|ccc}
+ & A & B & C \\
+\hline
+A & (A,A) & (A,B) & (A,C) \\
+B & (B,A) & (B,B) & (B,C) \\
+C & (C,A) & (C,B) & (C,C)
+\end{array}
+\]
+The table shows two things at once: there are \(3\) choices for the first position and \(3\) choices for the second position, and the ordered pairs \((A,B)\) and \((B,A)\) are different outcomes.
+\end{examplebox}
+
+\begin{examplebox}
+If two letters are chosen from \(\{A,B,C\}\) and only the selected set is recorded, then
+\[
+\{A,B\}=\{B,A\}.
+\]
+A table of ordered pairs would still be possible as an auxiliary representation, but it would overdescribe the outcomes. The actual outcomes are sets:
+\[
+\{A,B\},\qquad \{A,C\},\qquad \{B,C\}.
+\]
+The change of representation reflects a change of model.
+\end{examplebox}
+
+A useful representation should answer the question: what differences are visible in this model? If the representation hides an important difference, the count may be too small. If it records irrelevant differences, the count may be too large.
 
 \begin{examplebox}
 A committee of three people is chosen from ten people. If the committee is recorded only as a group, then
