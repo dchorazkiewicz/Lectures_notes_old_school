@@ -1,0 +1,120 @@
+\section{From events to observed frequencies}
+
+So far, an event is only a set of outcomes. This is already a substantial achievement: we can now state clearly what a sentence means. But probability theory eventually wants to do something more. It wants to attach numbers to events.
+
+The first honest source of such numbers is observation. If an experiment is repeated many times, and we record how often each outcome or event occurs, then we obtain observed frequencies. These frequencies are not yet theoretical probabilities. They are empirical measurements. Nevertheless, they reveal the shape that a future theory of probability should have.
+
+Suppose a die is rolled \(1000\) times. The elementary outcomes are
+\[
+\Omega=\{1,2,3,4,5,6\}.
+\]
+Assume the recorded numbers are
+\[
+n(\{1\})=168,\quad n(\{2\})=154,\quad n(\{3\})=181,
+\]
+\[
+n(\{4\})=167,\quad n(\{5\})=160,\quad n(\{6\})=170.
+\]
+For an event \(A\subseteq\Omega\), define its observed frequency by
+\[
+f(A)=\frac{n(A)}{1000},
+\]
+where \(n(A)\) is the number of recorded trials whose outcome belongs to \(A\).
+
+\begin{examplebox}
+Let
+\[
+A=\{2,4,6\}.
+\]
+Then \(A\) occurs whenever the recorded die result is \(2\), \(4\), or \(6\). Therefore
+\[
+n(A)=n(\{2\})+n(\{4\})+n(\{6\})=154+167+170=491,
+\]
+and hence
+\[
+f(A)=\frac{491}{1000}=0.491.
+\]
+The addition is justified because the elementary outcomes \(2\), \(4\), and \(6\) are disjoint possibilities. A single roll cannot be both \(2\) and \(4\).
+\end{examplebox}
+
+This example shows a transition. We did not begin with a formula for probability. We began with a set \(A\), observed how many recorded outcomes fell inside that set, and divided by the total number of trials.
+
+\section{What frequencies teach us}
+
+Observed frequencies have structural properties. These properties are not arbitrary. They come from the way sets of outcomes are counted in repeated observations.
+
+First, frequencies are non-negative:
+\[
+f(A)\geq 0.
+\]
+They cannot be negative because counts cannot be negative.
+
+Second, frequencies are at most \(1\):
+\[
+f(A)\leq 1.
+\]
+The event \(A\) cannot occur more often than the total number of trials.
+
+Third, the whole sample space occurs on every trial:
+\[
+f(\Omega)=1.
+\]
+Every recorded outcome belongs to \(\Omega\) by construction.
+
+Fourth, the impossible event never occurs:
+\[
+f(\varnothing)=0.
+\]
+No recorded outcome belongs to the empty set.
+
+The most important structural property concerns disjoint events. If \(A\cap B=\varnothing\), then no trial can contribute to both \(A\) and \(B\). Therefore
+\[
+n(A\cup B)=n(A)+n(B),
+\]
+and after division by the total number of trials,
+\[
+f(A\cup B)=f(A)+f(B).
+\]
+
+\begin{theorembox}
+For observed frequencies on a fixed finite sample space:
+\[
+f(\varnothing)=0,\qquad f(\Omega)=1,
+\]
+\[
+0\leq f(A)\leq 1,
+\]
+and if \(A\cap B=\varnothing\), then
+\[
+f(A\cup B)=f(A)+f(B).
+\]
+\end{theorembox}
+
+These are not yet axioms. They are observations about how empirical frequencies behave. The axioms of probability will later abstract exactly this pattern.
+
+\section{When simple addition fails}
+
+If two events are not disjoint, simple addition counts the overlap twice. This is not a numerical accident; it is a structural fact about sets.
+
+Let
+\[
+M=\{1,2,3\},\qquad N=\{3,4,5\}.
+\]
+Then
+\[
+M\cap N=\{3\}.
+\]
+If we add \(n(M)\) and \(n(N)\), the trials with outcome \(3\) are counted once as part of \(M\) and once as part of \(N\). Therefore
+\[
+n(M\cup N)=n(M)+n(N)-n(M\cap N).
+\]
+At the frequency level,
+\[
+f(M\cup N)=f(M)+f(N)-f(M\cap N).
+\]
+
+\begin{remarkbox}
+The correction term is not a trick. It is the price of overlap. Whenever an outcome has two reasons to be included, addition counts it twice unless the overlap is subtracted once.
+\end{remarkbox}
+
+The philosophy remains the same: the numerical rule is not primary. The structure of the event comes first; the numerical rule follows from that structure.
