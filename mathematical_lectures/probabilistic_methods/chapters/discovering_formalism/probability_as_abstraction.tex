@@ -1,0 +1,149 @@
+\section{From observed frequency to probability}
+
+Observed frequencies are tied to a particular record of trials. If the same experiment is repeated again, the frequencies may change slightly. Yet the structure suggested by frequencies is stable: events receive numbers between \(0\) and \(1\), the whole sample space receives \(1\), the empty event receives \(0\), and disjoint unions receive sums.
+
+This suggests a new mathematical object. Instead of recording what happened in one finite collection of trials, we introduce a function that assigns a number to each event in a way that preserves the structural rules discovered above.
+
+\begin{definitionbox}
+A \textbf{probability assignment} on a finite sample space \(\Omega\) is a function
+\[
+P:\mathcal{P}(\Omega)\to[0,1]
+\]
+that assigns a number \(P(A)\) to each event \(A\subseteq\Omega\).
+\end{definitionbox}
+
+The notation \(\mathcal{P}(\Omega)\) denotes the power set of \(\Omega\), that is, the set of all subsets of \(\Omega\). Since events are subsets of \(\Omega\), the domain of \(P\) is the collection of events.
+
+But not every function from \(\mathcal{P}(\Omega)\) to \([0,1]\) deserves to be called probability. The function must respect the structure of events.
+
+\begin{theorembox}
+In a finite setting, a probability assignment should satisfy:
+\begin{enumerate}
+    \item \textbf{Non-negativity:} for every event \(A\),
+    \[
+    P(A)\geq 0.
+    \]
+    \item \textbf{Normalization:}
+    \[
+    P(\Omega)=1.
+    \]
+    \item \textbf{Additivity for disjoint events:} if \(A\cap B=\varnothing\), then
+    \[
+    P(A\cup B)=P(A)+P(B).
+    \]
+\end{enumerate}
+\end{theorembox}
+
+These properties are not decorative. They are the minimum conditions needed for the numerical language to remain faithful to the set language.
+
+\section{Consequences of the axioms in the finite case}
+
+Once the axioms are accepted, several familiar rules become consequences rather than assumptions.
+
+First, the impossible event has probability zero. Since
+\[
+\Omega=\Omega\cup\varnothing
+\]
+and the union is disjoint, additivity gives
+\[
+P(\Omega)=P(\Omega)+P(\varnothing).
+\]
+Subtracting \(P(\Omega)\) from both sides gives
+\[
+P(\varnothing)=0.
+\]
+
+Second, complements add up to one. For any event \(A\), the events \(A\) and \(A^c\) are disjoint and
+\[
+A\cup A^c=\Omega.
+\]
+Therefore
+\[
+P(A)+P(A^c)=P(\Omega)=1,
+\]
+so
+\[
+P(A^c)=1-P(A).
+\]
+
+Third, if \(A\subseteq B\), then \(P(A)\leq P(B)\). Indeed, \(B\) can be decomposed as
+\[
+B=A\cup(B\setminus A),
+\]
+where the two parts are disjoint. Hence
+\[
+P(B)=P(A)+P(B\setminus A).
+\]
+Since probabilities are non-negative,
+\[
+P(B\setminus A)\geq 0,
+\]
+and therefore
+\[
+P(B)\geq P(A).
+\]
+
+Finally, for arbitrary events \(A\) and \(B\), the union formula follows from splitting the union into disjoint pieces:
+\[
+A\cup B=A\cup(B\setminus A).
+\]
+Thus
+\[
+P(A\cup B)=P(A)+P(B\setminus A).
+\]
+But \(B\) itself decomposes as
+\[
+B=(B\setminus A)\cup(A\cap B),
+\]
+so
+\[
+P(B)=P(B\setminus A)+P(A\cap B).
+\]
+Therefore
+\[
+P(B\setminus A)=P(B)-P(A\cap B),
+\]
+and hence
+\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\]
+
+\begin{remarkbox}
+The formulas are not separate facts to memorize. They are consequences of preserving the structure of events. Once the event algebra is understood, the probability rules become almost inevitable.
+\end{remarkbox}
+
+\section{The axiomatic point of view}
+
+The modern theory of probability is axiomatic. This does not mean that it ignores intuition. It means that it takes the stable part of intuition and turns it into a structure that can be used reliably.
+
+In finite spaces, the essential ideas are already visible:
+\begin{itemize}
+    \item events are subsets of a sample space;
+    \item probability assigns numbers to events;
+    \item the whole space has probability \(1\);
+    \item disjoint alternatives add.
+\end{itemize}
+
+For general probability spaces, the same philosophy is retained, but one must be more careful. Instead of assigning probabilities to all subsets of \(\Omega\), one usually assigns probabilities to a chosen family of events \(\mathcal{F}\). This family must be closed under the operations needed for logical reasoning: complements, countable unions, and therefore also countable intersections. Such a family is called a \(\sigma\)-algebra.
+
+\begin{definitionbox}
+A \textbf{probability space} is a triple
+\[
+(\Omega,\mathcal{F},P),
+\]
+where \(\Omega\) is a sample space, \(\mathcal{F}\) is a \(\sigma\)-algebra of events, and \(P:\mathcal{F}\to[0,1]\) is a probability measure satisfying:
+\begin{enumerate}
+    \item \(P(A)\geq 0\) for all \(A\in\mathcal{F}\),
+    \item \(P(\Omega)=1\),
+    \item if \(A_1,A_2,A_3,\ldots\) are pairwise disjoint events, then
+    \[
+    P\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}P(A_i).
+    \]
+\end{enumerate}
+\end{definitionbox}
+
+The third condition is countable additivity. In finite examples it reduces to the additivity rules already seen. In infinite settings it becomes a deep structural requirement: it says that probability remains compatible with decompositions into countably many disjoint alternatives.
+
+This is the philosophical endpoint of the chapter. We began with informal statements about outcomes. We discovered that statements select sets. We discovered that logical relations between statements become set operations. We observed that frequencies assign numbers to events in a structured way. Finally, we abstracted the stable part of that structure into axioms.
+
+The beauty of the formalism is that it is not imposed from outside. It is discovered by asking, step by step, what must be preserved if reasoning under uncertainty is to become mathematics.
