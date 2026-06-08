@@ -1,0 +1,283 @@
+\section{A first continuous model: uniform distribution on an interval}
+
+All models constructed so far in this chapter were discrete. Some of them were
+finite, such as dice, cards, and urns. One of them was countably infinite: the
+waiting time until the first success. These examples are essential, but they do
+not yet represent the full scope of probability. Many random quantities are
+naturally modelled as points on a continuum.
+
+The purpose of this section is to introduce one continuous model carefully: the
+uniform distribution on an interval. We shall not develop the full measure theory
+behind continuous probability. That would require a separate course. However, we
+must already see the basic change in viewpoint:
+\[
+\text{in a continuous model, individual points are not the right objects to count.}
+\]
+
+Instead of counting elementary outcomes, we measure sizes of sets. For an
+interval on the real line, the relevant size is length.
+
+\subsection*{Choosing a point from an interval}
+
+Suppose an experiment produces a real number between \(0\) and \(1\). For
+example, imagine an idealized pointer that lands somewhere on a line segment of
+unit length. The sample space is
+\[
+\Omega=[0,1].
+\]
+An elementary outcome is a single real number
+\[
+x\in[0,1].
+\]
+
+This sample space is not finite and not countably infinite. It is uncountable.
+There is no list
+\[
+x_1,x_2,x_3,\ldots
+\]
+that contains all real numbers in \([0,1]\). This already makes the model
+qualitatively different from coin tosses, dice rolls, card hands, urn selections,
+and waiting times.
+
+\begin{remarkbox}
+The phrase ``choose a point uniformly from \([0,1]\)'' cannot mean that every
+point receives the same positive probability. There are too many points. The
+probability is spread continuously over the interval.
+\end{remarkbox}
+
+\subsection*{Why points have probability zero}
+
+In a finite uniform model, each elementary outcome has probability
+\[
+\frac1{|\Omega|}.
+\]
+This idea cannot be copied directly to \([0,1]\), because \([0,1]\) has
+uncountably many points. If each point had the same positive probability, then
+the total probability would be far larger than \(1\). If each point had
+probability \(0\), then adding point probabilities one by one cannot recover the
+probability of an interval.
+
+In the continuous uniform model, every individual point has probability zero:
+\[
+P(\{x\})=0
+\]
+for each \(x\in[0,1]\). This does not mean that the experiment cannot produce a
+point. It means that probability is not assigned by counting individual points.
+The probability of landing in a region is determined by the length of that
+region.
+
+For example, the event
+\[
+A=[0.2,0.5]
+\]
+has length \(0.3\), so in the uniform model on \([0,1]\) we assign
+\[
+P(A)=0.3.
+\]
+The event contains infinitely many points, but its probability is controlled by
+how much of the interval it occupies.
+
+\subsection*{Intervals as events}
+
+The simplest events in a continuous interval model are intervals. In the uniform
+model on \([0,1]\), the probability of an interval is its length. Thus
+\[
+P([c,d])=d-c
+\]
+whenever
+\[
+0\leq c\leq d\leq 1.
+\]
+The same value is assigned to
+\[
+(c,d),\qquad [c,d),\qquad (c,d].
+\]
+The endpoints do not change the probability, because individual points have
+probability zero.
+
+\begin{examplebox}
+Let \(X\) be uniformly distributed on \([0,1]\). Then
+\[
+P(0.25\leq X\leq 0.75)=0.75-0.25=0.5.
+\]
+Also,
+\[
+P(0.25<X<0.75)=0.5.
+\]
+The difference between the closed and open interval consists only of endpoints,
+and endpoints have probability zero in this continuous model.
+\end{examplebox}
+
+This is a major difference from discrete probability. In a discrete model,
+removing one elementary outcome may change the probability. In a continuous
+uniform model, removing finitely many points from an interval does not change
+its probability.
+
+\subsection*{Uniform distribution on \([a,b]\)}
+
+The same idea works on any finite interval
+\[
+[a,b],\qquad a<b.
+\]
+The sample space is
+\[
+\Omega=[a,b].
+\]
+The total length of the sample space is
+\[
+b-a.
+\]
+If the model is uniform, then probability is proportional to length. For an
+interval \([c,d]\subseteq[a,b]\), we define
+\[
+P([c,d])=\frac{d-c}{b-a}.
+\]
+
+The denominator is the length of the whole sample space. The numerator is the
+length of the event. Thus the formula is the continuous analogue of the uniform
+finite formula
+\[
+P(A)=\frac{|A|}{|\Omega|}.
+\]
+The symbol \(|A|\) counted outcomes in a finite space. In the interval model,
+length replaces counting.
+
+\begin{definitionbox}
+A random point \(X\) has the \textbf{uniform distribution on \([a,b]\)} if
+probabilities of intervals are proportional to their lengths:
+\[
+P(c\leq X\leq d)=\frac{d-c}{b-a}
+\]
+for every \([c,d]\subseteq[a,b]\).
+\end{definitionbox}
+
+\subsection*{Examples}
+
+Let \(X\) be uniformly distributed on \([2,8]\). The whole interval has length
+\[
+8-2=6.
+\]
+The probability that \(X\) lies between \(3\) and \(5\) is
+\[
+P(3\leq X\leq 5)=\frac{5-3}{8-2}=\frac{2}{6}=\frac13.
+\]
+
+The probability that \(X\) is at least \(6\) is
+\[
+P(X\geq 6)=P(6\leq X\leq 8)=\frac{8-6}{8-2}=\frac13.
+\]
+
+The probability that \(X\) is exactly \(4\) is
+\[
+P(X=4)=0.
+\]
+This last statement is not a contradiction. The experiment produces some exact
+value, but no single prescribed value occupies positive length.
+
+\subsection*{Unions of intervals}
+
+Events need not be single intervals. Suppose \(X\) is uniform on \([0,1]\), and
+consider the event
+\[
+A=[0,0.2]\cup[0.7,1].
+\]
+The two intervals are disjoint. Their lengths are \(0.2\) and \(0.3\). Hence
+\[
+P(A)=0.2+0.3=0.5.
+\]
+This is the same additivity principle used in discrete probability: disjoint
+parts have probabilities that add. The difference is that the probabilities are
+computed from lengths rather than from counts of elementary outcomes.
+
+\subsection*{What are the events in a continuous model?}
+
+For a finite or countable sample space, it is often harmless at this level to
+think of every subset of \(\Omega\) as an event. For continuous sample spaces,
+this becomes too optimistic. The interval \([0,1]\) has extremely complicated
+subsets, and not every subset can be assigned a length in a way that is
+compatible with the usual rules of probability.
+
+Therefore, a continuous probability model is not just
+\[
+\Omega=[0,1].
+\]
+It also requires a specified collection of admissible events. For the interval
+model, the standard choice is the collection of Borel sets, denoted informally by
+\[
+\mathcal{B}([0,1]).
+\]
+These are the sets obtained from intervals by the operations that probability
+needs: complements, countable unions, and countable intersections.
+
+\begin{definitionbox}
+In a continuous model, the event space is usually not taken to be the set of all
+subsets of \(\Omega\). Instead, one specifies a suitable collection of events,
+usually a \textbf{sigma-algebra}. On the real line, the standard event collection
+is the Borel sigma-algebra generated by open intervals.
+\end{definitionbox}
+
+For this course, the technical construction is less important than the modelling
+message. Intervals, finite unions of intervals, countable unions of intervals,
+and sets obtained from them by complements are legitimate events. These are more
+than enough for the elementary continuous examples we need now.
+
+\begin{remarkbox}
+The word ``Borel'' is a signal that continuous probability requires more care
+than discrete probability. We introduce it here so that the model is honest:
+continuous probability spaces need a sample space, an event collection, and a
+probability assignment.
+\end{remarkbox}
+
+\subsection*{The structure of the continuous uniform model}
+
+The continuous uniform model on \([a,b]\) has three pieces:
+\[
+\Omega=[a,b],
+\]
+\[
+\mathcal{F}=\mathcal{B}([a,b]),
+\]
+and
+\[
+P(A)=\frac{\text{length of }A}{b-a}
+\]
+for events \(A\) whose length is defined in the standard sense.
+
+At this stage, we mainly use this rule for intervals and simple unions of
+intervals. The notation \(\mathcal{F}\) reminds us that events form a selected
+collection of subsets of \(\Omega\), not necessarily all subsets.
+
+\subsection*{What this continuous model teaches}
+
+The uniform interval model teaches several lessons that are invisible in purely
+discrete examples.
+
+First, a sample space may be uncountable. The interval \([0,1]\) contains more
+points than any sequence can list.
+
+Second, probability need not be built by assigning positive mass to individual
+elementary outcomes. In the uniform continuous model,
+\[
+P(\{x\})=0
+\]
+for every point \(x\), while intervals can have positive probability.
+
+Third, the probability of an event is measured by geometric size, not by the
+number of points. For the uniform distribution on \([a,b]\), interval
+probabilities are relative lengths.
+
+Fourth, the event collection matters. In continuous probability, we must be more
+careful about which subsets of the sample space are allowed as events. The
+standard answer on the real line is to use Borel sets.
+
+\begin{theorembox}
+The continuous uniform model replaces counting by length:
+\[
+\text{finite uniform model: } P(A)=\frac{|A|}{|\Omega|},
+\]
+\[
+\text{continuous uniform interval model: } P(A)=\frac{\text{length of }A}{\text{length of }\Omega}.
+\]
+The idea is analogous, but the mathematics is different because the sample space
+is uncountable.
+\end{theorembox}
