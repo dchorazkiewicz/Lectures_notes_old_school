@@ -1,0 +1,234 @@
+\section{Checklist for building a probability model}
+
+The examples in this chapter have different physical forms: coins, dice, cards,
+urns, and waiting times. The same modelling discipline appears in all of them.
+We do not begin with a formula. We begin by constructing the probability space.
+
+The purpose of this final checklist is to make that construction explicit.
+When facing a new probability problem, the following questions should be answered
+before any numerical calculation is attempted.
+
+\subsection*{Step 1: What is the experiment?}
+
+Start with the physical or conceptual procedure.
+
+Examples include:
+\begin{itemize}
+    \item toss a coin once;
+    \item toss a coin \(n\) times;
+    \item roll two dice;
+    \item draw five cards from a deck;
+    \item select objects from an urn;
+    \item repeat trials until the first success occurs.
+\end{itemize}
+
+At this stage the description may still be incomplete. The phrase ``draw five
+cards'' does not say whether order is recorded. The phrase ``select from an
+urn'' does not say whether replacement occurs. The phrase ``repeat trials'' does
+not say what is recorded when the process stops.
+
+\subsection*{Step 2: What is recorded?}
+
+The recording rule determines the mathematical outcome.
+
+Ask:
+\begin{itemize}
+    \item Is order recorded?
+    \item Are labels recorded, or only types such as colour or rank?
+    \item Is the whole sequence recorded, or only a numerical summary?
+    \item Is the experiment performed with replacement or without replacement?
+    \item Does the experiment stop after a fixed number of trials, or at a random time?
+\end{itemize}
+
+This step is essential because the same physical procedure can produce different
+sample spaces under different recording rules.
+
+\begin{remarkbox}
+Most elementary probability errors begin when the recording rule is left
+implicit. If it is not clear what is recorded, then it is not clear what one
+elementary outcome is.
+\end{remarkbox}
+
+\subsection*{Step 3: What is one elementary outcome?}
+
+Once the recording rule is fixed, describe one complete elementary outcome.
+
+Typical forms include:
+\begin{itemize}
+    \item a single symbol, such as \(H\) or \(T\);
+    \item a number, such as a die result \(i\in\{1,
+    \ldots,6\}\);
+    \item an ordered pair, such as \((i,j)\) for two dice;
+    \item a sequence, such as \(HTTH\);
+    \item a set, such as a five-card hand;
+    \item a count, such as the number of heads;
+    \item a stopping time, such as the trial number of the first success.
+\end{itemize}
+
+The elementary outcome must be complete relative to the recording rule. If the
+rule records the full sequence of coin tosses, then the number of heads is not a
+complete elementary outcome. If the rule records only the number of heads, then
+the full sequence contains more information than the model keeps.
+
+\subsection*{Step 4: What is the sample space \(\Omega\)?}
+
+The sample space is the set of all elementary outcomes:
+\[
+\Omega=\{\text{all possible elementary outcomes under the chosen recording rule}\}.
+\]
+
+Examples:
+\[
+\{H,T\},\qquad \{H,T\}^n,\qquad \{1,2,3,4,5,6\},
+\]
+\[
+\{1,
+\ldots,6\}^2,\qquad \{S\subseteq D: |S|=5\},
+\]
+\[
+\{1,2,3,
+\ldots\}.
+\]
+
+The sample space may be finite, such as \(\{H,T\}^n\), or countably infinite,
+such as the waiting-time space \(\{1,2,3,\ldots\}\).
+
+\subsection*{Step 5: What events are being considered?}
+
+An event is a subset of \(\Omega\). Translate each verbal statement into a set of
+elementary outcomes.
+
+Examples:
+\[
+\text{exactly }k\text{ heads}
+\]
+becomes
+\[
+\{\omega\in\{H,T\}^n: \omega\text{ contains exactly }k\text{ heads}\}.
+\]
+The statement
+\[
+\text{the sum of two dice is }7
+\]
+becomes
+\[
+\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}.
+\]
+The statement
+\[
+\text{a five-card hand contains at least one ace}
+\]
+becomes a set of five-card subsets of the deck.
+
+\begin{remarkbox}
+Do not count before the event has been written clearly. Counting favourable
+outcomes requires knowing exactly which outcomes are favourable.
+\end{remarkbox}
+
+\subsection*{Step 6: Are elementary outcomes equally likely?}
+
+This is the question that determines whether the classical formula applies.
+
+If \(\Omega\) is finite and all elementary outcomes are equally likely, then
+\[
+P(A)=\frac{|A|}{|\Omega|}.
+\]
+This applies, for example, to:
+\begin{itemize}
+    \item a fair coin tossed \(n\) times, with full sequence recorded;
+    \item two fair dice, with ordered pair recorded;
+    \item a well-shuffled five-card hand, with the hand recorded as a set.
+\end{itemize}
+
+If elementary outcomes are not equally likely, then the formula
+\[
+P(A)=\frac{|A|}{|\Omega|}
+\]
+must not be used. Instead, add the probabilities of the elementary outcomes in
+\(A\):
+\[
+P(A)=\sum_{\omega\in A}P(\omega).
+\]
+
+Examples of non-uniform models include:
+\begin{itemize}
+    \item a biased coin;
+    \item a loaded die;
+    \item sums of two fair dice when the sample space is \(\{2,3,\ldots,12\}\);
+    \item colours recorded from an urn with unequal numbers of different types;
+    \item waiting time until first success.
+\end{itemize}
+
+\subsection*{Step 7: Count or sum carefully}
+
+In a uniform finite model, the main task is often to count:
+\[
+|A| \quad\text{and}\quad |\Omega|.
+\]
+The counting method must match the structure of the sample space.
+
+Use sequences when order matters. Use combinations when only membership matters.
+Use product spaces for repeated independent stages. Use complement events when
+the complement is easier to count.
+
+In a non-uniform model, the main task is not only to count outcomes, but to
+assign and sum their probabilities. For example, for a biased coin,
+\[
+P(\text{exactly }k\text{ heads in }n\text{ tosses})
+=
+\binom nk p^k(1-p)^{n-k}.
+\]
+The binomial coefficient counts the sequences, while the factor
+\(p^k(1-p)^{n-k}\) gives the probability of each such sequence.
+
+\subsection*{Step 8: Interpret the answer}
+
+A final numerical answer is not the end of the solution. It should be connected
+back to the original model.
+
+For example,
+\[
+\frac6{36}=\frac16
+\]
+for the event ``sum seven on two fair dice'' means that six of the thirty-six
+ordered pairs have sum seven. It does not mean that the value seven is one of
+six equally likely sums.
+
+Similarly,
+\[
+\frac35
+\]
+for drawing type \(R\) from an urn with three objects of type \(R\) and two of
+type \(B\) means that three of the five equally selectable labelled objects
+produce the recorded type \(R\). It does not mean that the colour sample space is
+uniform.
+
+\subsection*{A compact modelling checklist}
+
+Before calculating, write down the following:
+
+\begin{enumerate}
+    \item What is the experiment?
+    \item What exactly is recorded?
+    \item What is one elementary outcome?
+    \item What is the sample space \(\Omega\)?
+    \item What event \(A\subseteq\Omega\) is being studied?
+    \item Are elementary outcomes equally likely?
+    \item If yes, what are \(|A|\) and \(|\Omega|\)?
+    \item If no, what are the elementary probabilities \(P(\omega)\)?
+    \item How is \(P(A)\) computed from those outcomes?
+    \item What does the answer mean in the original situation?
+\end{enumerate}
+
+\begin{theorembox}
+The basic rule of this chapter is:
+\[
+\text{construct the probability model first, calculate second.}
+\]
+A correct probability calculation is a calculation inside a clearly described
+sample space with a clearly described probability assignment.
+\end{theorembox}
+
+The examples in this chapter should be read as models of reasoning, not as a
+list of formulas. The formulas are useful because they preserve the structure of
+the model. When the model changes, the formula may change as well.
