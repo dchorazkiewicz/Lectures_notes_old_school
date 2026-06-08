@@ -1,0 +1,212 @@
+\section{Expectation as a weighted average}
+
+A probability mass function tells us how probability is distributed over the
+possible values of a random variable. The next question is how to summarize that
+whole distribution by a single representative number. The most important such
+summary is expectation.
+
+Expectation should not be introduced as a formula to memorize. It is a weighted
+average. Values that occur with larger probability receive larger weight.
+
+\subsection*{Averages with unequal weights}
+
+Suppose a random variable takes values
+\[
+x_1,x_2,\ldots,x_n
+\]
+with probabilities
+\[
+p_1,p_2,\ldots,p_n,
+\]
+where
+\[
+p_i\geq 0,\qquad p_1+p_2+\cdots+p_n=1.
+\]
+If all values were equally likely, their average would be
+\[
+\frac{x_1+x_2+\cdots+x_n}{n}.
+\]
+But if some values are more likely than others, the average should count those
+values more strongly. This leads to the weighted average
+\[
+x_1p_1+x_2p_2+\cdots+x_np_n.
+\]
+
+\begin{definitionbox}
+For a discrete random variable \(X\) with probability mass function \(p_X\), the
+\textbf{expectation} of \(X\) is
+\[
+\E[X]=\sum_{x\in\operatorname{supp}(X)}x\,p_X(x),
+\]
+provided the sum is well-defined.
+\end{definitionbox}
+
+For finite support, the sum is always finite. For countably infinite support,
+one must check convergence; at this stage we mainly work with examples where the
+sum is meaningful.
+
+\subsection*{Expectation from the sample space}
+
+If the original sample space is finite, expectation can also be computed by
+summing over elementary outcomes:
+\[
+\E[X]=\sum_{\omega\in\Omega}X(\omega)P(\{\omega\}).
+\]
+This formula averages the numerical value \(X(\omega)\) over all elementary
+outcomes, weighted by their probabilities.
+
+The formula using the mass function is obtained by grouping together all
+outcomes that produce the same value. If \(X=x\), then all outcomes in the event
+\(\{X=x\}\) contribute the same value \(x\). The total probability of that event
+is \(P(X=x)=p_X(x)\). Thus the grouped contribution is \(x p_X(x)\).
+
+\begin{remarkbox}
+The expectation can be computed either by averaging over elementary outcomes or
+by averaging over values of the random variable. The second method is usually
+more compact because it uses the distribution of \(X\).
+\end{remarkbox}
+
+\subsection*{Example: one fair die}
+
+Let \(X\) be the result of one fair die roll. Then
+\[
+P(X=k)=\frac16,\qquad k=1,2,3,4,5,6.
+\]
+Therefore
+\[
+\E[X]=1\cdot\frac16+2\cdot\frac16+3\cdot\frac16+4\cdot\frac16+5\cdot\frac16+6\cdot\frac16.
+\]
+Hence
+\[
+\E[X]=\frac{1+2+3+4+5+6}{6}=\frac{21}{6}=3.5.
+\]
+The expectation is not necessarily a value that the random variable can take.
+A die never shows \(3.5\). The expectation is a center of balance of the
+probability distribution.
+
+\subsection*{Example: payoff of a game}
+
+Suppose a game has payoff random variable \(X\) defined by
+\[
+X=10 \quad\text{with probability }\frac16,
+\]
+\[
+X=2 \quad\text{with probability }\frac26,
+\]
+and
+\[
+X=-3 \quad\text{with probability }\frac36.
+\]
+Then
+\[
+\E[X]=10\cdot\frac16+2\cdot\frac26+(-3)\cdot\frac36.
+\]
+Thus
+\[
+\E[X]=\frac{10}{6}+\frac{4}{6}-\frac{9}{6}=\frac56.
+\]
+The expected payoff is positive, even though some outcomes produce losses.
+Interpreted over many repetitions, \(5/6\) is the average payoff per play that
+the model predicts in the long run.
+
+\subsection*{Expectation of an indicator}
+
+Let \(I_A\) be the indicator of an event \(A\). Then
+\[
+I_A=1 \quad\text{with probability }P(A),
+\]
+and
+\[
+I_A=0 \quad\text{with probability }1-P(A).
+\]
+Therefore
+\[
+\E[I_A]=1\cdot P(A)+0\cdot(1-P(A))=P(A).
+\]
+
+\begin{theorembox}
+For every event \(A\),
+\[
+\E[I_A]=P(A).
+\]
+\end{theorembox}
+
+This identity is simple but fundamental. It says that probabilities can be read
+as expectations of indicator variables.
+
+\subsection*{Linearity of expectation}
+
+Expectation has an important algebraic property: it is linear. If \(X\) and
+\(Y\) are random variables and \(a,b\) are constants, then
+\[
+\E[aX+bY]=a\E[X]+b\E[Y].
+\]
+In finite models, this follows directly from the sample-space formula:
+\[
+\E[aX+bY]
+=
+\sum_{\omega\in\Omega}(aX(\omega)+bY(\omega))P(\{\omega\}).
+\]
+Distributing the sum gives
+\[
+\E[aX+bY]
+=
+a\sum_{\omega\in\Omega}X(\omega)P(\{\omega\})
++
+b\sum_{\omega\in\Omega}Y(\omega)P(\{\omega\}).
+\]
+Hence
+\[
+\E[aX+bY]=a\E[X]+b\E[Y].
+\]
+
+The remarkable point is that linearity does not require independence. It is a
+property of averaging.
+
+\subsection*{Counting successes by indicators}
+
+Toss a coin \(n\) times. Let
+\[
+X=\text{the number of heads}.
+\]
+Define indicator variables
+\[
+I_k=
+\begin{cases}
+1, & \text{the }k\text{-th toss is heads},\\
+0, & \text{the }k\text{-th toss is tails}.
+\end{cases}
+\]
+Then
+\[
+X=I_1+I_2+\cdots+I_n.
+\]
+If each toss has probability \(p\) of heads, then
+\[
+\E[I_k]=p
+\]
+for every \(k\). By linearity,
+\[
+\E[X]=\E[I_1]+\cdots+\E[I_n]=np.
+\]
+
+This derivation is often clearer than summing the binomial mass function. It
+shows that the expected number of successes is the sum of the expected
+contributions from each trial.
+
+\subsection*{What expectation measures}
+
+Expectation is not the most likely value. It is not necessarily a value that can
+occur. It is a weighted average, or center of mass, of the distribution. In
+applications, it often represents a long-run average under repeated independent
+repetitions of the same model.
+
+\begin{summarybox}
+For a discrete random variable, expectation is computed by
+\[
+\E[X]=\sum_x xP(X=x).
+\]
+It summarizes the distribution by averaging values according to their
+probability weights. It is best understood as a consequence of the probability
+law of \(X\), not as a separate rule detached from the model.
+\end{summarybox}
