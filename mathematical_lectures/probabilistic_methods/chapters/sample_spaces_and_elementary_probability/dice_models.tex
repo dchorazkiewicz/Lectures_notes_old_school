@@ -1,0 +1,357 @@
+\section{Dice models}
+
+Dice models are the natural next step after coin models. A die has more than two
+visible faces, and this makes it easier to see the difference between a uniform
+sample space and a non-uniform probability assignment. Dice also provide one of
+the most important examples in elementary probability: the model of two dice,
+where elementary outcomes are ordered pairs but many questions are about sums,
+comparisons, or other functions of those pairs.
+
+As before, we do not begin with a formula. We begin with the experiment and the
+recording rule.
+
+\subsection*{One roll of one die}
+
+Suppose a die is rolled once and the number on the upper face is recorded. The
+sample space is
+\[
+\Omega=\{1,2,3,4,5,6\}.
+\]
+An elementary outcome is one number from this set.
+
+If the die is modelled as fair, then all six elementary outcomes have the same
+probability:
+\[
+P(1)=P(2)=P(3)=P(4)=P(5)=P(6)=\frac16.
+\]
+This is the uniform model on a six-element sample space.
+
+If the die is not assumed to be fair, then we may write
+\[
+P(i)=p_i,\qquad i=1,2,3,4,5,6,
+\]
+where
+\[
+p_i\geq 0
+\]
+for every \(i\), and
+\[
+p_1+p_2+p_3+p_4+p_5+p_6=1.
+\]
+The sample space is still \(\{1,2,3,4,5,6\}\), but the probability assignment is
+no longer necessarily uniform.
+
+\begin{remarkbox}
+The sentence ``a die has six possible results'' does not imply that each result
+has probability \(1/6\). The value \(1/6\) comes from the additional modelling
+assumption that the die and the rolling mechanism are symmetric enough to treat
+the six faces equally.
+\end{remarkbox}
+
+\subsection*{Events for one die}
+
+Events are subsets of \(\Omega\). For example, the event that the result is even
+is
+\[
+E=\{2,4,6\}.
+\]
+The event that the result is at least \(5\) is
+\[
+A=\{5,6\}.
+\]
+The event that the result is prime is
+\[
+B=\{2,3,5\}.
+\]
+
+In the fair model,
+\[
+P(E)=\frac{|E|}{|\Omega|}=\frac36=\frac12,
+\]
+\[
+P(A)=\frac26=\frac13,
+\]
+and
+\[
+P(B)=\frac36=\frac12.
+\]
+
+In a non-uniform model, we cannot use only the number of favourable outcomes.
+Instead, we must add the probabilities of the elementary outcomes inside the
+event:
+\[
+P(E)=p_2+p_4+p_6,
+\]
+\[
+P(A)=p_5+p_6,
+\]
+\[
+P(B)=p_2+p_3+p_5.
+\]
+
+\begin{examplebox}
+Suppose
+\[
+(p_1,p_2,p_3,p_4,p_5,p_6)=(0.10,0.10,0.15,0.15,0.20,0.30).
+\]
+Then the event \(E=\{2,4,6\}\) has probability
+\[
+P(E)=0.10+0.15+0.30=0.55.
+\]
+Even though \(E\) contains three of the six possible faces, its probability is
+not \(3/6\), because the elementary outcomes are not equally likely.
+\end{examplebox}
+
+\subsection*{Two dice as ordered pairs}
+
+Now suppose two dice are rolled and the number on each die is recorded. If the
+dice are distinguished, for example by colour, then the outcome is an ordered
+pair
+\[
+(i,j),
+\]
+where \(i\) is the result on the first die and \(j\) is the result on the second
+die. The sample space is
+\[
+\Omega=\{1,2,3,4,5,6\}\times\{1,2,3,4,5,6\}.
+\]
+Equivalently,
+\[
+\Omega=\{(i,j):i,j\in\{1,2,3,4,5,6\}\}.
+\]
+It has
+\[
+|\Omega|=6\cdot 6=36
+\]
+elementary outcomes.
+
+If both dice are fair and the rolls are modelled as independent, then every
+ordered pair has probability
+\[
+\frac1{36}.
+\]
+Thus the model is uniform on the set of ordered pairs.
+
+\begin{remarkbox}
+The outcomes \((2,5)\) and \((5,2)\) are different in this model. They represent
+different results on the first and second die. They may lead to the same sum,
+but they are not the same elementary outcome.
+\end{remarkbox}
+
+\subsection*{The event that the sum is seven}
+
+Consider the event
+\[
+S_7=\{\text{the sum of the two dice is }7\}.
+\]
+In the ordered-pair model this event is the set
+\[
+S_7=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}.
+\]
+It contains six elementary outcomes. Since the fair two-dice model is uniform,
+\[
+P(S_7)=\frac{|S_7|}{|\Omega|}=\frac6{36}=\frac16.
+\]
+
+The count \(6\) comes from a structural fact. To obtain sum \(7\), once the first
+coordinate \(i\) is chosen, the second coordinate must be \(7-i\). The possible
+first coordinates are \(1,2,3,4,5,6\), and each gives one valid ordered pair.
+
+\begin{examplebox}
+The event that the sum is \(4\) is
+\[
+S_4=\{(1,3),(2,2),(3,1)\}.
+\]
+Hence
+\[
+P(S_4)=\frac3{36}=\frac1{12}
+\]
+in the fair two-dice model.
+\end{examplebox}
+
+The events \(S_4\) and \(S_7\) are both described by a sum, but they contain
+different numbers of ordered pairs. Therefore they have different probabilities
+in the fair two-dice model.
+
+\subsection*{Representing two dice by a table}
+
+A useful representation of the two-dice sample space is a \(6\times 6\) table:
+\[
+\begin{array}{c|cccccc}
+ &1&2&3&4&5&6\\
+\hline
+1&(1,1)&(1,2)&(1,3)&(1,4)&(1,5)&(1,6)\\
+2&(2,1)&(2,2)&(2,3)&(2,4)&(2,5)&(2,6)\\
+3&(3,1)&(3,2)&(3,3)&(3,4)&(3,5)&(3,6)\\
+4&(4,1)&(4,2)&(4,3)&(4,4)&(4,5)&(4,6)\\
+5&(5,1)&(5,2)&(5,3)&(5,4)&(5,5)&(5,6)\\
+6&(6,1)&(6,2)&(6,3)&(6,4)&(6,5)&(6,6)
+\end{array}
+\]
+Rows record the first die and columns record the second die. This table is not
+just a picture. It makes the elementary outcomes visible and allows events to be
+seen as regions.
+
+For example, the event
+\[
+A=\{(i,j):i=j\}
+\]
+that both dice show the same number is the diagonal of the table:
+\[
+A=\{(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)\}.
+\]
+Thus
+\[
+P(A)=\frac6{36}=\frac16.
+\]
+
+The event
+\[
+B=\{(i,j):i>j\}
+\]
+that the first die shows a larger number than the second die is the region below
+the diagonal. It contains
+\[
+1+2+3+4+5=15
+\]
+elementary outcomes, so
+\[
+P(B)=\frac{15}{36}=\frac5{12}.
+\]
+
+\subsection*{The trap of recording only the sum}
+
+There is another possible recording rule. Instead of recording the ordered pair,
+we might record only the sum. Then the sample space becomes
+\[
+\Omega'=\{2,3,4,5,6,7,8,9,10,11,12\}.
+\]
+This is a legitimate sample space if the recorded outcome is only the sum.
+However, it is not a uniform sample space when the sum comes from rolling two
+fair dice.
+
+The value \(7\) can occur in six ordered ways:
+\[
+(1,6),(2,5),(3,4),(4,3),(5,2),(6,1).
+\]
+The value \(2\) can occur in only one ordered way:
+\[
+(1,1).
+\]
+Therefore
+\[
+P(7)=\frac6{36},
+\qquad
+P(2)=\frac1{36}.
+\]
+They are not equal.
+
+\begin{remarkbox}
+The set \(\{2,3,\ldots,12\}\) has eleven elements, but the sums of two fair dice
+are not equally likely. A smaller or more aggregated sample space may be useful,
+but its probabilities must be inherited from the underlying mechanism, not
+assigned uniformly without justification.
+\end{remarkbox}
+
+The complete distribution of the sum is
+\[
+\begin{array}{c|ccccccccccc}
+s&2&3&4&5&6&7&8&9&10&11&12\\
+\hline
+\#\text{ pairs}&1&2&3&4&5&6&5&4&3&2&1
+\end{array}
+\]
+Hence
+\[
+P(S=s)=\frac{\#\{(i,j):i+j=s\}}{36}.
+\]
+For example,
+\[
+P(S=10)=\frac3{36}=\frac1{12}.
+\]
+
+\subsection*{Non-uniform dice and product assignments}
+
+If one die has probabilities
+\[
+P(1)=p_1,\ldots,P(6)=p_6
+\]
+and another die has probabilities
+\[
+Q(1)=q_1,\ldots,Q(6)=q_6,
+\]
+then, under the assumption that the two rolls are independent, the probability
+of the ordered pair \((i,j)\) is
+\[
+P((i,j))=p_iq_j.
+\]
+The event that the sum is \(7\) then has probability
+\[
+P(S_7)=p_1q_6+p_2q_5+p_3q_4+p_4q_3+p_5q_2+p_6q_1.
+\]
+This expression is longer than \(6/36\), but it says exactly the same kind of
+thing: add the probabilities of the elementary outcomes that belong to the
+event.
+
+\subsection*{Repeated rolls of one die}
+
+For \(n\) rolls of one die, with order recorded, the sample space is
+\[
+\Omega=\{1,2,3,4,5,6\}^n.
+\]
+An elementary outcome is a sequence
+\[
+(a_1,a_2,\ldots,a_n),
+\]
+where each \(a_i\in\{1,2,3,4,5,6\}\). The number of elementary outcomes is
+\[
+6^n.
+\]
+If the die is fair and the rolls are independent, then each sequence has
+probability
+\[
+\frac1{6^n}.
+\]
+If the die has probabilities \(p_1,\ldots,p_6\), then
+\[
+P(a_1,a_2,\ldots,a_n)=p_{a_1}p_{a_2}\cdots p_{a_n}.
+\]
+
+\begin{examplebox}
+For three rolls of a non-uniform die, the sequence \((2,6,2)\) has probability
+\[
+p_2p_6p_2=p_2^2p_6.
+\]
+The event ``exactly two sixes in three rolls'' contains the sequences
+\[
+(6,6,x),\quad (6,x,6),\quad (x,6,6),
+\]
+where \(x\) is not \(6\). In the fair model its probability is
+\[
+\binom32\left(\frac16\right)^2\left(\frac56\right).
+\]
+The binomial coefficient counts the positions occupied by the sixes.
+\end{examplebox}
+
+\subsection*{What dice models teach}
+
+Dice models teach three important lessons.
+
+First, a finite sample space may be uniform or non-uniform. The same set
+\(\{1,2,3,4,5,6\}\) can describe a fair die or a biased die.
+
+Second, when an experiment has several stages, an elementary outcome is often a
+sequence or ordered tuple. For two dice, the natural elementary outcomes are
+ordered pairs.
+
+Third, an aggregated value such as a sum is not automatically uniform. The sum
+of two fair dice has values in \(\{2,3,\ldots,12\}\), but these values have
+different probabilities because they correspond to different numbers of ordered
+pairs.
+
+\begin{remarkbox}
+The safest modelling habit is to construct the detailed sample space first and
+only then decide whether a coarser description, such as the sum, is appropriate.
+Aggregation is useful, but it must preserve the probabilities induced by the
+underlying model.
+\end{remarkbox}
