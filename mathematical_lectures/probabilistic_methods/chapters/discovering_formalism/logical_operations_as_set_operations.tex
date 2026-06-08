@@ -1,0 +1,132 @@
+\section{Logical operations become set operations}
+
+Once statements have become events, logical operations on statements become set operations on events. This is one of the most important structural discoveries in elementary probability theory. The words
+\[
+\text{and},\qquad \text{or},\qquad \text{not}
+\]
+are not informal decorations. They determine precise operations on subsets of \(\Omega\).
+
+Let \(A\subseteq\Omega\) and \(B\subseteq\Omega\) be events.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Language & Set operation & Meaning \\
+\midrule
+\(A\) and \(B\) & \(A\cap B\) & outcomes satisfying both statements \\
+\(A\) or \(B\) & \(A\cup B\) & outcomes satisfying at least one statement \\
+not \(A\) & \(A^c=\Omega\setminus A\) & outcomes not satisfying \(A\) \\
+\(A\) but not \(B\) & \(A\setminus B\) & outcomes satisfying \(A\) and not \(B\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The table is not a dictionary of symbols to memorize. It expresses a deeper fact: logical structure and set structure are the same structure viewed in two languages.
+
+\begin{definitionbox}
+For events \(A,B\subseteq\Omega\):
+\[
+A\cap B=\{\omega\in\Omega:\omega\in A\text{ and }\omega\in B\},
+\]
+\[
+A\cup B=\{\omega\in\Omega:\omega\in A\text{ or }\omega\in B\},
+\]
+\[
+A^c=\{\omega\in\Omega:\omega\notin A\}.
+\]
+\end{definitionbox}
+
+\section{Compound statements in a two-dice universe}
+
+Consider again two dice, with
+\[
+\Omega=\{(i,j):i,j\in\{1,2,3,4,5,6\}\}.
+\]
+Define three events:
+\[
+A=\{(i,j):i+j=7\},
+\]
+\[
+B=\{(i,j):i>j\},
+\]
+\[
+C=\{(i,j):i=6\text{ or }j=6\}.
+\]
+Now each compound statement can be built systematically.
+
+The statement
+\[
+\text{the sum is }7\text{ or at least one die shows }6
+\]
+corresponds to
+\[
+A\cup C.
+\]
+The statement
+\[
+\text{the sum is }7\text{ and at least one die shows }6
+\]
+corresponds to
+\[
+A\cap C.
+\]
+The statement
+\[
+\text{the sum is }7\text{ but the first die is not greater than the second}
+\]
+corresponds to
+\[
+A\cap B^c.
+\]
+The statement
+\[
+\text{at least one die shows }6\text{ but the sum is not }7
+\]
+corresponds to
+\[
+C\setminus A=C\cap A^c.
+\]
+
+This is the beginning of an algebra of events. We are not merely naming sets. We are learning to calculate with statements.
+
+\begin{remarkbox}
+The purpose of the notation is not to replace thought. The purpose is to make the structure of thought inspectable. If a student writes \(A\cap B^c\), they should also be able to say what it means in words and mark the corresponding region in the sample space.
+\end{remarkbox}
+
+\section{Why ``or'' needs care}
+
+In everyday speech, the word ``or'' is sometimes ambiguous. In mathematics, the union \(A\cup B\) means inclusive or: an outcome belongs to \(A\cup B\) if it belongs to \(A\), or to \(B\), or to both.
+
+This matters because the overlap is not automatically empty. If \(A\) and \(B\) overlap, then the union is not obtained by placing two disjoint blocks side by side. The intersection must be seen.
+
+\begin{examplebox}
+Let
+\[
+A=\{(i,j):i+j=7\},\qquad C=\{(i,j):i=6\text{ or }j=6\}.
+\]
+The outcome \((1,6)\) belongs to both \(A\) and \(C\). The outcome \((6,1)\) also belongs to both. Thus
+\[
+A\cap C=\{(1,6),(6,1)\}.
+\]
+The phrase ``sum is \(7\) or at least one die shows \(6\)'' includes these outcomes once, not twice. The union is a set of outcomes, not a list of reasons.
+\end{examplebox}
+
+This is a methodological lesson. A sentence may have several reasons for being true, but an elementary outcome either belongs to the event or it does not. Formalism prevents double counting at the level of meaning before any numerical computation begins.
+
+\section{Complementation and the boundary of the universe}
+
+The complement \(A^c\) is always taken relative to the current sample space \(\Omega\). This is why \(\Omega\) must be fixed before complements are meaningful.
+
+\begin{examplebox}
+If two dice are rolled and
+\[
+A=\{(i,j):i+j=7\},
+\]
+then
+\[
+A^c=\{(i,j)\in\Omega:i+j\neq 7\}.
+\]
+The complement is not an abstract collection of all things in the world for which the sum is not \(7\). It is the collection of outcomes inside the two-dice sample space for which the sum is not \(7\).
+\end{examplebox}
+
+The complement teaches a philosophical lesson hidden inside a technical definition: negation is always negation within a universe. To say ``not \(A\)'' mathematically, one must first say what counts as a possible case.
