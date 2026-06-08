@@ -1,0 +1,217 @@
+\section{Classical discrete probability laws as mechanisms}
+
+Classical discrete distributions should not be learned as a table of formulas.
+Each one is a compact description of a random mechanism. The formula for the
+probability mass function is important, but it should be read as the consequence
+of how the experiment is constructed.
+
+In this section we collect several basic discrete laws and emphasize the
+mechanism behind each one.
+
+\subsection*{Bernoulli law: one success-or-failure trial}
+
+The simplest discrete random variable records whether one event occurred. Let a
+single trial have two possible outcomes: success and failure. Define
+\[
+X=
+\begin{cases}
+1, & \text{success occurs},\\
+0, & \text{failure occurs}.
+\end{cases}
+\]
+If
+\[
+P(\text{success})=p,
+\]
+then
+\[
+P(X=1)=p,\qquad P(X=0)=1-p.
+\]
+
+\begin{definitionbox}
+A random variable \(X\) has a \textbf{Bernoulli distribution} with parameter
+\(p\), written \(X\sim\operatorname{Bernoulli}(p)\), if
+\[
+P(X=1)=p,\qquad P(X=0)=1-p.
+\]
+\end{definitionbox}
+
+The Bernoulli law is the probability law of an indicator variable. If \(X=I_A\),
+then \(X\sim\operatorname{Bernoulli}(P(A))\).
+
+Its expectation and variance are
+\[
+\E[X]=p,\qquad \Var(X)=p(1-p).
+\]
+
+\subsection*{Binomial law: number of successes in fixed independent trials}
+
+Now repeat a Bernoulli trial \(n\) times. Assume that each trial has success
+probability \(p\), and that the trials are independent. Let
+\[
+X=\text{the number of successes in }n\text{ trials}.
+\]
+Then
+\[
+\operatorname{supp}(X)=\{0,1,2,\ldots,n\}.
+\]
+
+To have \(X=k\), exactly \(k\) of the \(n\) positions must be successes. There
+are
+\[
+\binom nk
+\]
+ways to choose those positions. Each sequence with \(k\) successes and \(n-k\)
+failures has probability
+\[
+p^k(1-p)^{n-k}.
+\]
+Therefore
+\[
+P(X=k)=\binom nk p^k(1-p)^{n-k},\qquad k=0,1,\ldots,n.
+\]
+
+\begin{definitionbox}
+A random variable \(X\) has a \textbf{binomial distribution} with parameters
+\(n\) and \(p\), written \(X\sim\operatorname{Binomial}(n,p)\), if
+\[
+P(X=k)=\binom nk p^k(1-p)^{n-k},\qquad k=0,1,\ldots,n.
+\]
+\end{definitionbox}
+
+The mechanism matters. Binomial means fixed number of trials, two outcomes per
+trial, constant success probability, independence, and counting successes.
+
+Using indicators, if
+\[
+X=I_1+I_2+\cdots+I_n,
+\]
+where each \(I_i\sim\operatorname{Bernoulli}(p)\), then
+\[
+\E[X]=np.
+\]
+With independence one also obtains
+\[
+\Var(X)=np(1-p).
+\]
+
+\subsection*{Geometric law: waiting for the first success}
+
+In a binomial model, the number of trials is fixed and the number of successes is
+random. In the geometric model, the number of successes is fixed at one first
+success, and the waiting time is random.
+
+Repeat independent Bernoulli trials with success probability \(p\). Let
+\[
+N=\text{the trial on which the first success occurs}.
+\]
+Then
+\[
+\operatorname{supp}(N)=\{1,2,3,\ldots\}.
+\]
+For \(N=k\), the first \(k-1\) trials must be failures and the \(k\)-th trial
+must be a success. Hence
+\[
+P(N=k)=(1-p)^{k-1}p,\qquad k=1,2,3,\ldots.
+\]
+
+\begin{definitionbox}
+A random variable \(N\) has a \textbf{geometric distribution} with parameter
+\(p\), in the waiting-time convention, if
+\[
+P(N=k)=(1-p)^{k-1}p,\qquad k=1,2,3,\ldots.
+\]
+\end{definitionbox}
+
+The geometric distribution is a model for waiting until the first success. Its
+support is infinite because success may be delayed for any number of trials.
+
+\subsection*{Hypergeometric law: sampling without replacement}
+
+Suppose a population contains \(N\) objects. Among them, \(K\) are classified as
+successes and \(N-K\) as failures. We sample \(n\) objects without replacement and
+ignore order. Let
+\[
+X=\text{the number of successes in the sample}.
+\]
+
+To get \(X=k\), choose \(k\) successes from the \(K\) success objects and choose
+\(n-k\) failures from the \(N-K\) failure objects. The total number of samples is
+\(\binom Nn\). Therefore
+\[
+P(X=k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}.
+\]
+
+\begin{definitionbox}
+A random variable \(X\) has a \textbf{hypergeometric distribution} with
+parameters \(N,K,n\) if
+\[
+P(X=k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}
+\]
+for the admissible values of \(k\).
+\end{definitionbox}
+
+This model differs from the binomial model because sampling is done without
+replacement. The draws are dependent: after one object is selected, the
+composition of the remaining population changes.
+
+\subsection*{Poisson law: counts of rare events}
+
+The Poisson distribution is used to model counts of events occurring in a fixed
+region of time, space, area, or volume, when events occur with a stable average
+rate and without strong clustering beyond what the model allows.
+
+Let
+\[
+X=\text{the number of events in one observation window}.
+\]
+The support is
+\[
+\{0,1,2,\ldots\}.
+\]
+A Poisson model with parameter \(\lambda>0\) has mass function
+\[
+P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!},\qquad k=0,1,2,\ldots.
+\]
+
+\begin{definitionbox}
+A random variable \(X\) has a \textbf{Poisson distribution} with parameter
+\(\lambda>0\), written \(X\sim\operatorname{Poisson}(\lambda)\), if
+\[
+P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!},\qquad k=0,1,2,\ldots.
+\]
+\end{definitionbox}
+
+The parameter \(\lambda\) is both the expectation and the variance:
+\[
+\E[X]=\lambda,\qquad \Var(X)=\lambda.
+\]
+In this chapter, the main point is interpretation: the Poisson law models a
+count, not a waiting time and not a fixed number of trials.
+
+\subsection*{Comparing the mechanisms}
+
+The following table summarizes the roles of the classical laws.
+\[
+\begin{array}{c|c|c}
+\text{Law} & \text{Random variable} & \text{Mechanism}\\
+\hline
+\text{Bernoulli} & 0\text{ or }1 & \text{one success-or-failure trial}\\
+\text{Binomial} & \text{number of successes} & \text{fixed independent trials}\\
+\text{Geometric} & \text{waiting time} & \text{repeat until first success}\\
+\text{Hypergeometric} & \text{number of successes} & \text{sampling without replacement}\\
+\text{Poisson} & \text{count of events} & \text{events in a fixed window}
+\end{array}
+\]
+
+The same numerical value may appear in several models, but the interpretation is
+different. A value \(k\) in a binomial model means \(k\) successes among a fixed
+number of trials. A value \(k\) in a geometric model means the first success
+occurred on trial \(k\). A value \(k\) in a Poisson model means \(k\) events were
+counted in a window.
+
+\begin{remarkbox}
+Choosing a distribution is not choosing a formula. It is choosing a mechanism.
+Before using a classical law, identify what is being counted, what is fixed, what
+is random, and what assumptions connect the experiment to the model.
+\end{remarkbox}
