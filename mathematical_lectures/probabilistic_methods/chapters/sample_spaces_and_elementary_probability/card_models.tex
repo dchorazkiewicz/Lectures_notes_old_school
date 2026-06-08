@@ -1,0 +1,281 @@
+\section{Card models}
+
+Card models are useful because the phrase ``draw cards'' is incomplete. It does
+not say whether we record one card or several cards, whether order matters,
+whether cards are replaced, or whether the final object is a hand, a sequence,
+or only a summary such as the number of aces. Each of these decisions changes
+the sample space.
+
+In this section let \(D\) denote a standard deck of \(52\) distinct cards. The
+cards are distinct because a card is determined by both rank and suit. For
+example, the ace of hearts and the ace of spades are different cards.
+
+\subsection*{Drawing one card}
+
+Suppose one card is drawn from a well-shuffled deck and the exact card is
+recorded. The sample space is
+\[
+\Omega=D.
+\]
+It has
+\[
+|\Omega|=52
+\]
+elementary outcomes. If the deck is well shuffled and no card is favoured, the
+uniform model assigns
+\[
+P(c)=\frac1{52}
+\]
+for every card \(c\in D\).
+
+Events are subsets of the deck. For example, the event that the card is an ace
+is
+\[
+A=\{\text{ace of hearts},\text{ace of diamonds},\text{ace of clubs},
+\text{ace of spades}\}.
+\]
+Therefore
+\[
+P(A)=\frac4{52}=\frac1{13}.
+\]
+
+The event that the card is a heart contains \(13\) cards, so
+\[
+P(\text{heart})=\frac{13}{52}=\frac14.
+\]
+The event that the card is a face card contains the jacks, queens, and kings in
+four suits, hence \(12\) cards, so
+\[
+P(\text{face card})=\frac{12}{52}=\frac3{13}.
+\]
+
+\begin{remarkbox}
+The sample space contains individual cards, not ranks. If we record the exact
+card, then there are \(52\) elementary outcomes. The event ``ace'' is not one
+elementary outcome; it is a set of four elementary outcomes.
+\end{remarkbox}
+
+\subsection*{A five-card hand as a set}
+
+Now suppose five cards are dealt and only the final hand is recorded. The order
+in which the cards arrived is ignored. Then an elementary outcome is a five-card
+subset of the deck:
+\[
+S\subseteq D,\qquad |S|=5.
+\]
+The sample space is
+\[
+\Omega=\{S\subseteq D: |S|=5\}.
+\]
+Its size is
+\[
+|\Omega|=\binom{52}{5}.
+\]
+
+This count appears because a hand is a set. We choose which five cards belong to
+the hand, and the order of listing those cards does not create a new hand. Thus
+\[
+\{A\heartsuit,K\clubsuit,7\diamondsuit,3\spadesuit,2\heartsuit\}
+\]
+is the same hand no matter in which order we write its elements.
+
+If the deck is well shuffled and every five-card hand is equally likely, then
+the uniform formula applies:
+\[
+P(E)=\frac{|E|}{\binom{52}{5}}
+\]
+for any event \(E\) consisting of five-card hands.
+
+\begin{examplebox}
+Let \(E\) be the event that the hand contains exactly one ace. To construct such
+a hand, choose one of the four aces and choose the remaining four cards from the
+\(48\) non-aces. Hence
+\[
+|E|=\binom41\binom{48}{4}.
+\]
+Therefore
+\[
+P(E)=\frac{\binom41\binom{48}{4}}{\binom{52}{5}}.
+\]
+This is a probability of an event, not of a single hand. The event contains many
+hands.
+\end{examplebox}
+
+\subsection*{Five cards drawn in order}
+
+Suppose instead that five cards are drawn one after another and the order is
+recorded. Then an elementary outcome is a sequence
+\[
+(c_1,c_2,c_3,c_4,c_5),
+\]
+where all five cards are distinct. The sample space is
+\[
+\Omega_{\mathrm{seq}}=\{(c_1,c_2,c_3,c_4,c_5): c_i\in D,\ c_i\neq c_j
+\text{ for }i\neq j\}.
+\]
+Its size is
+\[
+52\cdot 51\cdot 50\cdot 49\cdot 48.
+\]
+The first position has \(52\) choices, the second has \(51\) choices because one
+card has already been used, and so on.
+
+This sample space is different from the five-card hand space. A hand ignores
+order; a sequence records order. The same five cards can appear in
+\[
+5!
+\]
+different orders. Therefore
+\[
+52\cdot 51\cdot 50\cdot 49\cdot 48=5!\binom{52}{5}.
+\]
+
+\begin{remarkbox}
+The phrase ``draw five cards'' is not enough to determine the sample space. If
+order is ignored, the elementary outcome is a set. If order is recorded, the
+elementary outcome is a sequence. Both models are legitimate, but they answer
+different questions.
+\end{remarkbox}
+
+\subsection*{The same event in two sample spaces}
+
+Consider the statement
+\[
+\text{the five cards contain exactly one ace.}
+\]
+In the hand model, the event is a set of five-card subsets. In the sequence
+model, the event is a set of ordered five-tuples. The verbal statement is the
+same, but the formal event lives in a different sample space.
+
+In the hand model we already counted
+\[
+\binom41\binom{48}{4}
+\]
+favourable hands.
+
+In the ordered model, we may count favourable sequences directly. First choose
+which position contains the ace: \(5\) choices. Choose the ace: \(4\) choices.
+Then fill the remaining four ordered positions with non-aces without repetition:
+\[
+48\cdot47\cdot46\cdot45
+\]
+choices. Thus the number of favourable sequences is
+\[
+5\cdot4\cdot48\cdot47\cdot46\cdot45.
+\]
+The total number of ordered sequences is
+\[
+52\cdot51\cdot50\cdot49\cdot48.
+\]
+So the probability in the ordered model is
+\[
+\frac{5\cdot4\cdot48\cdot47\cdot46\cdot45}
+{52\cdot51\cdot50\cdot49\cdot48}.
+\]
+This value is equal to
+\[
+\frac{\binom41\binom{48}{4}}{\binom{52}{5}},
+\]
+because both models describe the same random dealing mechanism at different
+levels of detail.
+
+The equality is not magic. Each unordered hand corresponds to exactly \(5!\)
+ordered sequences. The factor \(5!\) appears in both the favourable count and
+the total count, so it cancels.
+
+\subsection*{Drawing with replacement}
+
+A different model appears if each drawn card is returned to the deck before the
+next draw. Suppose five draws are made, the exact card is recorded each time,
+and replacement occurs after every draw. Then the same card may appear several
+times in the recorded sequence. The sample space is
+\[
+\Omega_{\mathrm{rep}}=D^5.
+\]
+Its size is
+\[
+|\Omega_{\mathrm{rep}}|=52^5.
+\]
+If the deck is well shuffled before each draw, every sequence in \(D^5\) has
+probability
+\[
+\frac1{52^5}.
+\]
+
+This is not the same as drawing five cards without replacement. For example,
+under replacement the sequence
+\[
+(A\heartsuit,A\heartsuit,7\clubsuit,2\diamondsuit,K\spadesuit)
+\]
+is possible. Without replacement it is impossible, because the same physical
+card cannot be drawn twice.
+
+\begin{examplebox}
+In five draws with replacement, what is the probability that all five cards are
+aces?
+
+Each draw has probability \(4/52=1/13\) of producing an ace. Since replacement
+makes the same probability available at each draw, the probability is
+\[
+\left(\frac{4}{52}\right)^5=\left(\frac1{13}\right)^5.
+\]
+Equivalently, there are \(4^5\) ace-only sequences and \(52^5\) total sequences,
+so
+\[
+P(\text{all aces})=\frac{4^5}{52^5}.
+\]
+\end{examplebox}
+
+Without replacement, the probability that five drawn cards are all aces is zero,
+because the deck contains only four aces. The change in the physical procedure
+changes the sample space and therefore changes the probabilities.
+
+\subsection*{At least one ace}
+
+Card models are also useful for showing the complement method. In a five-card
+hand, let
+\[
+A=\{\text{the hand contains at least one ace}\}.
+\]
+Counting hands with at least one ace directly would require cases: exactly one
+ace, exactly two aces, exactly three aces, exactly four aces. It is often simpler
+to count the complement.
+
+The complement is
+\[
+A^c=\{\text{the hand contains no aces}\}.
+\]
+There are \(48\) non-aces, so
+\[
+|A^c|=\binom{48}{5}.
+\]
+Therefore
+\[
+P(A^c)=\frac{\binom{48}{5}}{\binom{52}{5}},
+\]
+and
+\[
+P(A)=1-P(A^c)=1-\frac{\binom{48}{5}}{\binom{52}{5}}.
+\]
+
+The complement method is not a trick. It is event algebra: instead of counting
+all hands that satisfy the event, we count the hands that fail it and subtract
+from the whole space.
+
+\subsection*{What card models teach}
+
+Card models emphasize that the same everyday phrase can hide several different
+mathematical structures.
+
+If one card is drawn and the exact card is recorded, then \(\Omega=D\). If five
+cards are recorded as a hand, then \(\Omega\) is a set of five-element subsets.
+If five cards are recorded in order without replacement, then \(\Omega\) is a
+set of sequences with no repeated card. If cards are drawn with replacement,
+then \(\Omega=D^5\), and repeated cards become possible.
+
+\begin{remarkbox}
+Before solving a card problem, always identify whether the elementary outcome is
+a single card, a set of cards, an ordered sequence of cards, or a summary of the
+cards. Most card-counting errors are errors about the sample space, not errors
+about arithmetic.
+\end{remarkbox}
