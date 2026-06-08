@@ -1,0 +1,296 @@
+\section{Waiting for the first success}
+
+All examples so far have used finite sample spaces. We now return to the coin
+model, but change the experiment. Instead of deciding in advance how many tosses
+will be made, we toss until a certain event happens. This produces a sample
+space that is infinite but still discrete.
+
+This example is important because it shows that a sample space does not have to
+be finite. It also shows why a probability model must describe not only the
+possible outcomes, but also the rule that generates them.
+
+\subsection*{The experiment}
+
+Suppose a coin is tossed repeatedly until the first head appears. We stop as
+soon as the first head occurs. Assume
+\[
+P(H)=p,\qquad P(T)=1-p,\qquad 0<p\leq 1.
+\]
+Here heads will be interpreted as success and tails as failure.
+
+The physical experiment is not a fixed number of tosses. It may stop after one
+toss, or after two tosses, or after three tosses, and so on. There is no largest
+possible stopping time.
+
+\subsection*{Recording the whole sequence}
+
+One natural recording rule is to record the whole sequence observed up to and
+including the first head. Then the possible elementary outcomes are
+\[
+H,\quad TH,\quad TTH,\quad TTTH,\quad \ldots
+\]
+The sample space is
+\[
+\Omega=\{H,TH,TTH,TTTH,\ldots\}.
+\]
+Equivalently,
+\[
+\Omega=\{T^{k-1}H:k=1,2,3,\ldots\},
+\]
+where \(T^{k-1}H\) means \(k-1\) tails followed by one head.
+
+For example:
+\[
+k=1 \quad\Rightarrow\quad H,
+\]
+\[
+k=2 \quad\Rightarrow\quad TH,
+\]
+\[
+k=5 \quad\Rightarrow\quad TTTTH.
+\]
+
+This sample space is countably infinite. Its elements can be listed in a
+sequence, but the list never ends.
+
+\subsection*{Recording the stopping time}
+
+Another natural recording rule is to record only the number of the toss on which
+the first head appears. Let
+\[
+N=\text{the number of tosses needed to obtain the first head}.
+\]
+Then the sample space is
+\[
+\Omega' = \{1,2,3,\ldots\}.
+\]
+The outcome \(N=1\) corresponds to the sequence \(H\). The outcome \(N=2\)
+corresponds to \(TH\). The outcome \(N=k\) corresponds to
+\[
+\underbrace{TT\cdots T}_{k-1\text{ tails}}H.
+\]
+
+The two descriptions are equivalent for this experiment. Recording the full
+stopped sequence and recording the stopping time contain the same information,
+because once the stopping time is known, the sequence must consist of failures
+before the last toss and a success at the last toss.
+
+\begin{remarkbox}
+The sample space \(\{1,2,3,
+\ldots\}\) is not the set of all possible numbers in the world. It is the set of
+possible stopping times for this particular experiment.
+\end{remarkbox}
+
+\subsection*{Deriving the probability formula}
+
+We now derive the probability that the first head appears on toss \(k\). The
+condition
+\[
+N=k
+\]
+means that the first \(k-1\) tosses are tails and the \(k\)-th toss is heads.
+Thus the corresponding sequence is
+\[
+\underbrace{TT\cdots T}_{k-1\text{ times}}H.
+\]
+
+The probability of one tail is \(1-p\), and the probability of one head is
+\(p\). Therefore
+\[
+P(N=k)=\underbrace{(1-p)(1-p)\cdots(1-p)}_{k-1\text{ factors}}p.
+\]
+Hence
+\[
+P(N=k)=(1-p)^{k-1}p,\qquad k=1,2,3,\ldots.
+\]
+
+\begin{theorembox}
+If independent tosses are repeated until the first success, and each toss has
+success probability \(p\), then the probability that the first success occurs on
+trial \(k\) is
+\[
+P(N=k)=(1-p)^{k-1}p,\qquad k=1,2,3,\ldots.
+\]
+\end{theorembox}
+
+This is called the geometric model. In this chapter we do not need the name as
+much as the construction. The formula appears because the outcome \(N=k\)
+requires exactly \(k-1\) failures followed by one success.
+
+\subsection*{Examples}
+
+\begin{examplebox}
+Suppose the coin is fair, so \(p=1/2\). Then
+\[
+P(N=1)=\frac12,
+\]
+\[
+P(N=2)=\frac12\cdot\frac12=\frac14,
+\]
+\[
+P(N=3)=\frac12\cdot\frac12\cdot\frac12=\frac18,
+\]
+and in general
+\[
+P(N=k)=\left(\frac12\right)^k.
+\]
+For a fair coin, the probability halves each time we delay the first head by one
+more toss.
+\end{examplebox}
+
+\begin{examplebox}
+Suppose \(P(H)=0.3\). Then \(P(T)=0.7\), and
+\[
+P(N=4)=0.7^3\cdot0.3.
+\]
+This is the probability of the sequence
+\[
+TTTH.
+\]
+The first three tosses must fail, and the fourth toss must succeed.
+\end{examplebox}
+
+\subsection*{Checking that the probabilities add to one}
+
+A probability assignment on a countable sample space should assign total
+probability one to the whole space. Here the elementary probabilities are
+\[
+p,\quad (1-p)p,\quad (1-p)^2p,\quad (1-p)^3p,\quad \ldots
+\]
+Their sum is
+\[
+p+(1-p)p+(1-p)^2p+(1-p)^3p+\cdots.
+\]
+Factor out \(p\):
+\[
+p\left[1+(1-p)+(1-p)^2+(1-p)^3+\cdots\right].
+\]
+The expression in brackets is a geometric series with ratio \(1-p\). Since
+\(0<p\leq 1\), we have \(0\leq 1-p<1\), and
+\[
+1+(1-p)+(1-p)^2+\cdots=\frac1{1-(1-p)}=\frac1p.
+\]
+Therefore
+\[
+p\cdot\frac1p=1.
+\]
+Thus the probabilities of all possible stopping times add to one.
+
+\begin{remarkbox}
+This calculation also explains why we require \(p>0\). If \(p=0\), success never
+occurs, and the experiment ``wait until the first success'' does not produce a
+finite stopping time.
+\end{remarkbox}
+
+\subsection*{Events involving the stopping time}
+
+Once the stopping time model is built, events are subsets of
+\[
+\{1,2,3,\ldots\}.
+\]
+For example, the event that the first success occurs no later than the third
+trial is
+\[
+\{N\leq 3\}=\{1,2,3\}.
+\]
+Its probability is
+\[
+P(N\leq 3)=p+(1-p)p+(1-p)^2p.
+\]
+There is also a faster way to compute it. The complement of \(\{N\leq 3\}\) is
+\[
+\{N>3\},
+\]
+which means that the first three trials are all failures. Hence
+\[
+P(N>3)=(1-p)^3.
+\]
+Therefore
+\[
+P(N\leq 3)=1-(1-p)^3.
+\]
+
+More generally,
+\[
+P(N\leq m)=1-(1-p)^m.
+\]
+This is the probability that at least one success occurs in the first \(m\)
+trials.
+
+Similarly,
+\[
+P(N>m)=(1-p)^m,
+\]
+because the first \(m\) trials must all be failures.
+
+\subsection*{Waiting for the \(r\)-th success}
+
+A natural extension is to wait not for the first success, but for the \(r\)-th
+success. Let
+\[
+N_r=\text{the trial on which the }r\text{-th success occurs}.
+\]
+For \(N_r=n\) to happen, the \(n\)-th trial must be a success, and among the
+first \(n-1\) trials there must be exactly \(r-1\) successes.
+
+The first \(n-1\) trials may contain those \(r-1\) successes in
+\[
+\binom{n-1}{r-1}
+\]
+ways. Each full sequence with \(r\) successes and \(n-r\) failures has
+probability
+\[
+p^r(1-p)^{n-r}.
+\]
+Therefore
+\[
+P(N_r=n)=\binom{n-1}{r-1}p^r(1-p)^{n-r},
+\qquad n=r,r+1,r+2,\ldots.
+\]
+
+\begin{examplebox}
+Suppose we wait for the second head. The event \(N_2=5\) means that the fifth
+toss is heads and exactly one of the first four tosses is heads. The position of
+that earlier head can be chosen in
+\[
+\binom41=4
+\]
+ways. Hence
+\[
+P(N_2=5)=\binom41 p^2(1-p)^3.
+\]
+\end{examplebox}
+
+This extension is included to show that the first-success model is not an
+isolated trick. It is the first member of a family of waiting-time models. The
+logic is always the same: describe what must happen before the stopping trial,
+describe what must happen at the stopping trial, count the possible positions of
+earlier successes, and multiply the appropriate probabilities.
+
+\subsection*{What waiting-time models teach}
+
+The waiting-time model teaches several new lessons.
+
+First, a sample space may be infinite. The set \(\{1,2,3,\ldots\}\) is a valid
+discrete sample space when it records a stopping time.
+
+Second, an infinite sample space still requires probabilities that add to one.
+In the first-success model, this is guaranteed by the geometric series.
+
+Third, the elementary outcome may be represented in different but equivalent
+ways. We may record the stopped sequence \(T^{k-1}H\), or we may record the
+number \(k\). The choice depends on which description is more useful.
+
+Fourth, a formula such as
+\[
+P(N=k)=(1-p)^{k-1}p
+\]
+should be read as a description of the required pattern: failures before the
+stopping trial and success at the stopping trial.
+
+\begin{remarkbox}
+Waiting-time models are a bridge between elementary finite probability and later
+probability distributions. They show that probability spaces can be built from a
+process that stops at a random time, and that even an infinite model can be
+handled by careful construction from elementary outcomes.
+\end{remarkbox}
