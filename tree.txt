@@ -274,6 +274,7 @@
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/histograms_and_binning.tex
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/overview.tex
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/sample_mean_as_empirical_expectation.tex
+./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/sample_variance_and_standard_deviation.tex
 ./mathematical_lectures/probabilistic_methods/chapters/empirical_distributions/samples_and_observations.tex
 ./mathematical_lectures/probabilistic_methods/chapters/introduction
 ./mathematical_lectures/probabilistic_methods/chapters/introduction/overview.tex
