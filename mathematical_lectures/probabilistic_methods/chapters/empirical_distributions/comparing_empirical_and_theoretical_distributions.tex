@@ -1,0 +1,121 @@
+\section{Comparing empirical and theoretical distributions}
+
+A central purpose of this chapter is to make the relationship between data and
+models visible. Empirical summaries are computed from a finite sample. Theoretical
+quantities belong to a probability law. The two levels can be compared, but they
+should not be confused.
+
+\subsection*{Theoretical CDF and empirical CDF}
+
+Let \(F_X\) be the CDF of a theoretical model:
+\[
+F_X(x)=P(X\leq x).
+\]
+Let \(F_n\) be the empirical CDF of observed data:
+\[
+F_n(x)=\frac1n\sum_{i=1}^n\mathbf{1}_{\{x_i\leq x\}}.
+\]
+The function \(F_X\) gives probabilities according to the model. The function
+\(F_n\) gives observed proportions according to the sample.
+
+If the sample is generated from the model, then \(F_n(x)\) may be close to
+\(F_X(x)\) for many values of \(x\), especially when \(n\) is large. But \(F_n\) is
+still a step function built from data, while \(F_X\) is the theoretical CDF.
+
+\subsection*{Theoretical mean and sample mean}
+
+The theoretical mean is
+\[
+\mu=\E[X].
+\]
+The sample mean is
+\[
+\bar{x}=\frac1n\sum_{i=1}^n x_i.
+\]
+If the data are generated from a model with mean \(\mu\), then \(\bar{x}\) is an
+empirical approximation to \(\mu\). For a small sample, the difference may be
+large. For larger samples, the difference often becomes smaller under suitable
+assumptions.
+
+At this stage, the correct language is:
+\begin{quote}
+The sample mean is a data-based summary that may approximate the theoretical
+mean.
+\end{quote}
+It is not correct to say that the sample mean is the theoretical mean.
+
+\subsection*{Theoretical variance and sample variance}
+
+The same distinction applies to variance. The model variance is
+\[
+\Var(X).
+\]
+The empirical variance is computed from data:
+\[
+v_n=\frac1n\sum_{i=1}^n(x_i-\bar{x})^2.
+\]
+The corrected sample variance
+\[
+s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2
+\]
+will become important when the aim is to estimate a population variance. But both
+\(v_n\) and \(s^2\) are computed from the observed sample. They are not equal by
+definition to the theoretical variance.
+
+\subsection*{Histogram and density}
+
+A histogram is built from data and depends on bin choices. A density is a
+function from a probability model. A density-scaled histogram can be compared
+with a density curve, but the comparison must be interpreted carefully.
+
+If the histogram follows the shape of the density, then the sample is visually
+consistent with the model. If the histogram is very different from the density,
+then this may suggest that the model is inappropriate, the sample is small, the
+binning is misleading, or the data contain structure not captured by the model.
+
+A visual comparison is a starting point, not a final conclusion.
+
+\subsection*{A guiding table}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Question & Model object & Data object \\
+\midrule
+How much lies below \(x\)? & \(F_X(x)\) & \(F_n(x)\) \\
+Where is the center? & \(\E[X]\) & \(\bar{x}\), median \\
+How spread out is it? & \(\Var(X),\sigma_X\) & empirical variance, sample standard deviation, IQR \\
+What is the shape? & density or PMF & histogram, frequency table \\
+Where are probability positions? & theoretical quantiles & empirical quantiles \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This table summarizes the conceptual bridge built in this chapter. The next
+chapters will study this bridge more deeply by treating sample summaries
+as random variables.
+
+\subsection*{Preparing for sampling distributions}
+
+Once a sample is viewed as the realization of random variables
+\[
+X_1,
+\ldots,X_n,
+\]
+statistics such as the sample mean also become random variables before the data
+are observed:
+\[
+\bar{X}=\frac1n\sum_{i=1}^n X_i.
+\]
+After observation, \(\bar{X}\) takes the value \(\bar{x}\).
+
+This is the next conceptual step. Descriptive statistics summarize the observed
+sample. Sampling distributions describe how those summaries vary from sample to
+sample before observation.
+
+\begin{summarybox}
+Empirical summaries connect data to probability models. They are not the same as
+theoretical quantities, but they are designed to approximate, visualize, or
+summarize the corresponding model concepts when data are generated from a model.
+The next step is to study the randomness of the summaries themselves.
+\end{summarybox}
