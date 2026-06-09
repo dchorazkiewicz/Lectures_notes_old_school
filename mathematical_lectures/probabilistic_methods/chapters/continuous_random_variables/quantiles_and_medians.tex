@@ -1,0 +1,166 @@
+\section{Quantiles and medians}
+
+Expectation and variance summarize a distribution by numerical averages. Another
+important way to summarize a continuous distribution is to ask where a given
+amount of probability has accumulated. This leads to quantiles.
+
+The cumulative distribution function is the natural tool here. Since
+\[
+F_X(x)=P(X\leq x),
+\]
+the value \(F_X(x)\) tells us how much probability lies to the left of \(x\).
+A quantile reverses this question.
+
+\begin{definitionbox}
+Let \(X\) be a random variable with CDF \(F_X\). A number \(q_p\) is called a
+\textbf{\(p\)-quantile} of \(X\), where \(0<p<1\), if
+\[
+P(X\leq q_p)\geq p
+\]
+and
+\[
+P(X\geq q_p)\geq 1-p.
+\]
+When the CDF is continuous and strictly increasing, this is equivalent to
+\[
+F_X(q_p)=p.
+\]
+\end{definitionbox}
+
+The second formulation, \(F_X(q_p)=p\), is often the one used in calculations.
+The more careful definition is included because not every distribution has a
+strictly increasing CDF. In this chapter, most examples are simple continuous
+models where the equation \(F_X(q_p)=p\) gives the intended quantile.
+
+\subsection*{Median}
+
+The most important quantile is the median. A median is a point that splits the
+distribution into two parts of probability at least one half on each side. For a
+continuous distribution with strictly increasing CDF, the median \(m\) satisfies
+\[
+F_X(m)=\frac12.
+\]
+Equivalently,
+\[
+P(X\leq m)=\frac12.
+\]
+
+The median is not the same concept as the expectation. The expectation is a
+center of balance. The median is a point of probability balance: half of the
+probability lies to the left and half to the right.
+
+\subsection*{Example: uniform distribution on \([0,1]\)}
+
+For \(X\sim\operatorname{Unif}(0,1)\), the CDF is
+\[
+F_X(x)=x,
+\]
+for \(0\leq x\leq1\). The \(p\)-quantile satisfies
+\[
+q_p=p.
+\]
+For example, the median is
+\[
+q_{0.5}=0.5,
+\]
+and the first and third quartiles are
+\[
+q_{0.25}=0.25,
+\qquad
+q_{0.75}=0.75.
+\]
+This agrees with the interpretation of probability as length.
+
+\subsection*{Example: triangular density}
+
+Let
+\[
+f_X(x)=
+\begin{cases}
+2x, & 0\leq x\leq1,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+The CDF on \([0,1]\) is
+\[
+F_X(x)=x^2.
+\]
+The \(p\)-quantile solves
+\[
+x^2=p.
+\]
+Since \(x\geq0\),
+\[
+q_p=\sqrt p.
+\]
+The median is therefore
+\[
+q_{0.5}=\sqrt{0.5}=\frac1{\sqrt2}\approx0.707.
+\]
+This median is greater than \(0.5\). That makes sense because the density is
+larger near \(1\), so probability accumulates more slowly at first and more
+quickly later.
+
+\subsection*{Expectation versus median}
+
+For symmetric distributions, expectation and median often coincide. For skewed
+distributions, they may differ.
+
+In the triangular example with density \(f_X(x)=2x\) on \([0,1]\), we found
+\[
+\E[X]=\frac23\approx0.667,
+\]
+while the median is
+\[
+\frac1{\sqrt2}\approx0.707.
+\]
+These numbers are close but not equal. They summarize the distribution in
+different ways. The expectation balances the density as a physical mass would be
+balanced. The median divides probability into two equal halves.
+
+\subsection*{Quartiles and interquartile range}
+
+The quartiles are quantiles corresponding to probabilities \(0.25\), \(0.5\), and
+\(0.75\). The first quartile \(Q_1\) satisfies approximately
+\[
+F_X(Q_1)=0.25,
+\]
+the median \(Q_2\) satisfies
+\[
+F_X(Q_2)=0.5,
+\]
+and the third quartile \(Q_3\) satisfies
+\[
+F_X(Q_3)=0.75.
+\]
+The interquartile range is
+\[
+IQR=Q_3-Q_1.
+\]
+It measures the length of the central interval containing about half of the
+probability.
+
+These ideas will return when empirical distributions and descriptive statistics
+are studied. There, quantiles are computed from data. Here, quantiles are
+computed from a theoretical distribution.
+
+\subsection*{Reading quantiles as probability statements}
+
+A quantile should always be interpreted probabilistically. If \(q_{0.9}=12\),
+then the statement means that approximately \(90\%\) of the probability lies at
+or below \(12\), and approximately \(10\%\) lies above \(12\), assuming a
+continuous model with no ambiguity at the quantile.
+
+It does not mean that \(12\) is likely as an exact value. In a continuous model,
+\(P(X=12)=0\) when \(X\) has a density. The quantile is important because of the
+area accumulated up to it.
+
+\begin{summarybox}
+Quantiles invert the cumulative distribution function. For continuous models
+with strictly increasing CDF,
+\[
+F_X(q_p)=p.
+\]
+The median corresponds to \(p=0.5\). Quantiles describe probability positions,
+not point probabilities.
+\end{summarybox}
