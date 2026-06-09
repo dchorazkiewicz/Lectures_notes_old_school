@@ -1,0 +1,125 @@
+\section{Samples and observations}
+
+A dataset is usually written as a finite list
+\[
+x_1,x_2,\ldots,x_n.
+\]
+The number \(n\) is called the sample size. Each \(x_i\) is one observed value.
+For example, if five waiting times are recorded, then a dataset might be
+\[
+2.1,\quad 3.4,\quad 1.8,\quad 4.0,\quad 2.7.
+\]
+Here \(n=5\), and each number is one observation.
+
+\begin{definitionbox}
+A \textbf{sample} is a finite collection of observed values
+\[
+x_1,x_2,\ldots,x_n.
+\]
+The values \(x_i\) are called \textbf{observations}, and \(n\) is the
+\textbf{sample size}.
+\end{definitionbox}
+
+This definition is deliberately simple. At the descriptive level, the data are
+already observed. We can sort them, count them, average them, plot them, and
+summarize them.
+
+\subsection*{Random variables before observation, numbers after observation}
+
+In probability modelling, before data are observed, we often write
+\[
+X_1,X_2,\ldots,X_n.
+\]
+These symbols represent random variables. After observation, their realized
+values are written as
+\[
+x_1,x_2,\ldots,x_n.
+\]
+This distinction is small in notation but large in meaning.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Notation & Meaning & Level \\
+\midrule
+\(X_i\) & random variable before observation & model \\
+\(x_i\) & observed numerical value & data \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For instance, before measuring tomorrow's temperature at noon, the temperature
+can be modelled as a random variable \(X\). After the measurement is made, the
+recorded value, say \(18.6\), is a number. The random variable describes
+uncertainty before observation; the observed value is what actually appeared.
+
+\begin{remarkbox}
+The same letter in uppercase and lowercase often marks this difference:
+uppercase for the random variable, lowercase for the observed value.
+\end{remarkbox}
+
+\subsection*{Samples from a population}
+
+In applications, data are often interpreted as observations from a larger
+population. The population may be a real finite population, such as all students
+in a university, or an idealized population represented by a probability model.
+
+For example:
+\begin{itemize}
+    \item a sample of heights may be taken from a population of people;
+    \item a sample of delivery times may be taken from a logistics process;
+    \item a sample of simulated values may be generated from a normal
+    distribution;
+    \item a sample of measurement errors may be collected from repeated
+    measurements of the same quantity.
+\end{itemize}
+
+In each case, the observed data are finite. The population or probability model
+is usually larger than the sample and may not be fully known.
+
+\subsection*{Independent and identically distributed observations}
+
+A common modelling assumption is that observations arise from random variables
+\[
+X_1,X_2,
+\ldots,X_n
+\]
+that are independent and have the same probability law. This is often abbreviated
+as \textbf{i.i.d.}, meaning \textbf{independent and identically distributed}.
+
+This assumption means two things:
+\begin{itemize}
+    \item the observations are produced by the same probabilistic mechanism;
+    \item knowing one observation does not change the probability law of the
+    others.
+\end{itemize}
+
+The i.i.d. assumption is powerful, but it is an assumption. It should not be
+silently imposed on every dataset. Measurements over time may be dependent.
+People in the same household may be similar. Repeated measurements may be
+affected by the same instrument error. The model must be checked against the
+context.
+
+\subsection*{Real data and computer-generated data}
+
+This chapter uses both real-data language and computer-generated samples. A
+computer-generated sample is not real-world evidence by itself, but it is useful
+for learning. It allows us to see how definitions behave when the underlying
+model is known.
+
+For example, a computer may generate values from a uniform distribution on
+\([0,1]\). Then we know the theoretical CDF is
+\[
+F(x)=x,
+\qquad 0\leq x\leq1.
+\]
+After generating a finite sample, we can compute the empirical CDF and compare it
+with the theoretical one. This comparison helps us understand the relationship
+between a model and a finite sample from that model.
+
+\begin{summarybox}
+At the model level, we work with random variables \(X_1,\ldots,X_n\). At the data
+level, we work with observed values \(x_1,\ldots,x_n\). Descriptive statistics are
+computed from the observed values, while probability laws describe the random
+mechanism that may have produced them.
+\end{summarybox}
