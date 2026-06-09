@@ -1,0 +1,193 @@
+\section{Probability density functions}
+
+The continuous analogue of a probability mass function is a probability density
+function. This sentence is useful, but it can also be misleading if it is read
+too quickly. A mass function gives probabilities of individual values:
+\[
+p_X(x)=P(X=x).
+\]
+A density function does not usually do that. A density describes how probability
+is spread along the real line so that probabilities of intervals can be obtained
+by integration.
+
+\begin{definitionbox}
+A random variable \(X\) is called \textbf{continuous with density} \(f_X\) if
+there is a non-negative function \(f_X:\mathbb{R}\to[0,\infty)\) such that for
+every interval \([a,b]\),
+\[
+P(a\leq X\leq b)=\int_a^b f_X(x)\,dx.
+\]
+The function \(f_X\) is called a \textbf{probability density function} of \(X\).
+\end{definitionbox}
+
+There are two requirements hidden in this definition. First,
+\[
+f_X(x)\geq 0
+\]
+for every \(x\), because probabilities cannot be negative. Second, the total
+area under the density must be \(1\):
+\[
+\int_{-\infty}^{\infty} f_X(x)\,dx=1.
+\]
+This expresses the fact that \(X\) must take some real value with total
+probability \(1\).
+
+\begin{remarkbox}
+A proposed density is not valid until it is non-negative and has total integral
+\(1\). These are the continuous analogues of the two basic properties of a
+probability mass function.
+\end{remarkbox}
+
+\subsection*{Density is not probability}
+
+The value \(f_X(x)\) is a height. It is not, by itself, the probability that
+\(X=x\). The probability of an interval is an area:
+\[
+P(a\leq X\leq b)=\int_a^b f_X(x)\,dx.
+\]
+A height becomes a probability only after it is accumulated over a region.
+
+This distinction is essential. If \(f_X(2)=0.4\), this does not mean
+\[
+P(X=2)=0.4.
+\]
+It means that near \(x=2\), probability is being distributed with local density
+approximately \(0.4\) per unit of length. To turn this into a probability, one
+must choose an interval, for instance
+\[
+P(2\leq X\leq 2.1)=\int_2^{2.1} f_X(x)\,dx.
+\]
+If the density is nearly constant on that small interval, this probability is
+approximately
+\[
+0.4\cdot 0.1=0.04.
+\]
+
+\subsection*{Example: uniform density on \([0,1]\)}
+
+For a point chosen uniformly from \([0,1]\), the density is
+\[
+f_X(x)=
+\begin{cases}
+1, & 0\leq x\leq 1,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+The total area is
+\[
+\int_{-\infty}^{\infty} f_X(x)\,dx=\int_0^1 1\,dx=1.
+\]
+For an interval \([a,b]\subseteq[0,1]\),
+\[
+P(a\leq X\leq b)=\int_a^b 1\,dx=b-a.
+\]
+Thus
+\[
+P(0.2\leq X\leq 0.5)=\int_{0.2}^{0.5}1\,dx=0.3.
+\]
+This reproduces the length interpretation from the previous section.
+
+\subsection*{Example: uniform density on \([2,6]\)}
+
+Suppose \(X\) is uniformly distributed on \([2,6]\). The interval has length
+\(4\), so the density must have constant height \(1/4\) on that interval:
+\[
+f_X(x)=
+\begin{cases}
+\frac14, & 2\leq x\leq 6,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+The total area is
+\[
+\int_2^6 \frac14\,dx=\frac14(6-2)=1.
+\]
+For example,
+\[
+P(3\leq X\leq 5)=\int_3^5 \frac14\,dx=\frac12.
+\]
+The height \(1/4\) is not a probability. The probability \(1/2\) comes from the
+area of a rectangle with width \(2\) and height \(1/4\).
+
+\subsection*{Can a density be larger than one?}
+
+Yes. A density value can be larger than \(1\). This often surprises students
+because probabilities cannot be larger than \(1\). But density is not
+probability.
+
+For example, consider the uniform distribution on \([0,0.2]\). The interval has
+length \(0.2\), so the constant density must be
+\[
+f_X(x)=5,
+\]
+for \(0\leq x\leq 0.2\). The total area is still
+\[
+\int_0^{0.2}5\,dx=5\cdot 0.2=1.
+\]
+The height is \(5\), but no probability has exceeded \(1\). The probability of a
+smaller interval, say \([0,0.05]\), is
+\[
+P(0\leq X\leq 0.05)=\int_0^{0.05}5\,dx=0.25.
+\]
+
+\begin{remarkbox}
+The units of a density are ``probability per unit of \(x\)''. If \(x\) is measured
+in hours, the density is measured per hour. This is another reason why a density
+height is not itself a probability.
+\end{remarkbox}
+
+\subsection*{Example: a triangular density}
+
+Let
+\[
+f_X(x)=
+\begin{cases}
+2x, & 0\leq x\leq 1,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+This is a valid density because it is non-negative and
+\[
+\int_0^1 2x\,dx=\left[x^2\right]_0^1=1.
+\]
+The density is small near \(0\) and larger near \(1\), so values close to \(1\)
+are more likely to occur than values close to \(0\), in the sense that intervals
+near \(1\) have larger probability than intervals of the same length near \(0\).
+
+For example,
+\[
+P(0\leq X\leq 0.5)=\int_0^{0.5}2x\,dx=0.25,
+\]
+whereas
+\[
+P(0.5\leq X\leq 1)=\int_{0.5}^{1}2x\,dx=0.75.
+\]
+Both intervals have the same length, but the second has larger probability
+because the density is higher there.
+
+\subsection*{What the graph of a density tells us}
+
+A density graph should be read by areas, not by point heights alone. High parts
+of the graph indicate regions where probability accumulates quickly. Low parts
+indicate regions where probability accumulates slowly. Regions outside the
+support, where the density is zero, receive no probability.
+
+When looking at a density, ask:
+\begin{itemize}
+    \item where is the density non-zero?
+    \item is the density constant, increasing, decreasing, or concentrated in a
+    particular region?
+    \item does the total area under the curve equal \(1\)?
+    \item which intervals should have large probability?
+    \item which intervals should have small probability?
+\end{itemize}
+
+\begin{theorembox}
+For a continuous random variable with density \(f_X\), probabilities are computed
+by area:
+\[
+P(X\in A)=\int_A f_X(x)\,dx
+\]
+for intervals and, more generally, for sets for which the integral is defined.
+The value \(f_X(x)\) is a density height, not a point probability.
+\end{theorembox}
