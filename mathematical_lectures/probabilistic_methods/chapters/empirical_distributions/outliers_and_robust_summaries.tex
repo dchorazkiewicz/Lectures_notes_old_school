@@ -1,0 +1,110 @@
+\section{Outliers and robust summaries}
+
+An outlier is an observation that is far from the main body of the data. Outliers
+matter because they can strongly affect some summaries, especially the sample
+mean and standard deviation.
+
+There is no single mathematical definition of an outlier that is correct in all
+contexts. Whether an observation is unusual depends on the scale of the data, the
+measurement process, and the question being asked.
+
+\subsection*{A simple example}
+
+Compare the datasets
+\[
+1,\quad 2,\quad 2,\quad 3,\quad 4
+\]
+and
+\[
+1,\quad 2,\quad 2,\quad 3,\quad 100.
+\]
+In the second dataset, the value \(100\) is far from the other observations. It
+has a large effect on the mean:
+\[
+\frac{1+2+2+3+4}{5}=2.4,
+\]
+whereas
+\[
+\frac{1+2+2+3+100}{5}=21.6.
+\]
+The median, however, is \(2\) in both datasets.
+
+This example shows that the mean is sensitive to extreme values, while the
+median is more robust.
+
+\subsection*{Robustness}
+
+A summary is called robust if it is not strongly affected by a small number of
+extreme observations. The median is more robust than the mean. The interquartile
+range is more robust than the standard deviation.
+
+This does not make robust summaries automatically superior. If extreme values
+are genuine and important, then a sensitive summary may reveal something that a
+robust summary hides. If extreme values are measurement errors, then a robust
+summary may better represent the main part of the data.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Feature & Sensitive summary & More robust summary \\
+\midrule
+Center & mean & median \\
+Spread & standard deviation & interquartile range \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{The 1.5 IQR rule}
+
+A common descriptive convention marks observations as potential outliers if they
+fall below
+\[
+Q_1-1.5IQR
+\]
+or above
+\[
+Q_3+1.5IQR.
+\]
+This rule is useful for exploratory analysis, especially in boxplots. It is not a
+law of probability. It is a convention for flagging observations that deserve
+attention.
+
+\begin{remarkbox}
+Calling an observation an outlier does not mean it should automatically be
+removed. It means the observation should be investigated, interpreted, and
+checked in context.
+\end{remarkbox}
+
+\subsection*{Outliers and modelling}
+
+Outliers may have different explanations:
+\begin{itemize}
+    \item a data entry error;
+    \item a measurement error;
+    \item a rare but genuine event;
+    \item a mixture of different populations;
+    \item an inappropriate theoretical model.
+\end{itemize}
+
+For example, if most delivery times are between \(20\) and \(40\) minutes but one
+recorded delivery time is \(400\) minutes, then the value might be a recording
+error, a severe disruption, or evidence that the process has occasional extreme
+delays. The correct interpretation cannot be decided from the number alone.
+
+\subsection*{Relation to probability models}
+
+Some probability models naturally produce extreme observations. Heavy-tailed
+models produce large deviations more often than light-tailed models. Therefore an
+observation that looks like an outlier under one model may be unsurprising under
+another model.
+
+This is another reason to distinguish data description from modelling. A boxplot
+or IQR rule can flag a value as unusual in the dataset. A probability model can
+then help decide whether such a value is plausible under a proposed mechanism.
+
+\begin{summarybox}
+Outliers are observations far from the main body of the data. They can strongly
+affect means and standard deviations. Robust summaries such as the median and IQR
+help describe the central part of the data, but unusual observations should be
+interpreted in context rather than removed mechanically.
+\end{summarybox}
