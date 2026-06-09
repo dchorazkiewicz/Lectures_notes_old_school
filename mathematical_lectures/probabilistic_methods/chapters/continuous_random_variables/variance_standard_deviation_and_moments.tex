@@ -1,0 +1,196 @@
+\section{Variance, standard deviation, and moments}
+
+Expectation describes a center of balance of a distribution. It does not describe
+how spread out the distribution is. Two continuous random variables can have the
+same expectation and very different variability. To measure spread, we use
+variance and standard deviation.
+
+\subsection*{Deviation from the mean}
+
+Let
+\[
+\mu=\E[X].
+\]
+The quantity
+\[
+X-\mu
+\]
+measures how far the random variable is from its mean. But the average deviation
+\(\E[X-\mu]\) is always zero whenever the expectation exists, because
+\[
+\E[X-\mu]=\E[X]-\mu=0.
+\]
+Positive and negative deviations cancel each other. To measure size of deviation
+without cancellation, we square it.
+
+\begin{definitionbox}
+Let \(X\) be a continuous random variable with density \(f_X\) and finite mean
+\(\mu=\E[X]\). The \textbf{variance} of \(X\) is
+\[
+\Var(X)=\E[(X-
+\mu)^2]=\int_{-\infty}^{\infty}(x-\mu)^2f_X(x)\,dx,
+\]
+provided the integral is finite. The \textbf{standard deviation} is
+\[
+\sigma_X=\sqrt{\Var(X)}.
+\]
+\end{definitionbox}
+
+Variance is measured in squared units of \(X\). Standard deviation returns to the
+original units, which often makes it easier to interpret.
+
+\subsection*{Computational formula}
+
+Variance can also be computed using
+\[
+\Var(X)=\E[X^2]-(\E[X])^2,
+\]
+provided the relevant expectations exist.
+
+Indeed,
+\[
+\E[(X-
+\mu)^2]=\E[X^2-2\mu X+
+\mu^2].
+\]
+By linearity of expectation,
+\[
+\E[(X-
+\mu)^2]=\E[X^2]-2\mu\E[X]+
+\mu^2.
+\]
+Since \(\E[X]=\mu\), this becomes
+\[
+\Var(X)=\E[X^2]-2\mu^2+
+\mu^2=\E[X^2]-
+\mu^2.
+\]
+
+\begin{remarkbox}
+The formula \(\Var(X)=\E[X^2]-(\E[X])^2\) is useful for computation, but the
+definition \(\Var(X)=\E[(X-
+\mu)^2]\) explains the meaning: variance is the
+average squared distance from the mean.
+\end{remarkbox}
+
+\subsection*{Example: uniform distribution on \([0,1]\)}
+
+Let \(X\) be uniformly distributed on \([0,1]\). We already know that
+\[
+\E[X]=\frac12.
+\]
+Also,
+\[
+\E[X^2]=\int_0^1 x^2\,dx=\frac13.
+\]
+Therefore
+\[
+\Var(X)=\frac13-\left(\frac12\right)^2=
+\frac13-\frac14=\frac1{12}.
+\]
+The standard deviation is
+\[
+\sigma_X=\sqrt{\frac1{12}}=\frac1{2\sqrt3}.
+\]
+
+\subsection*{Example: uniform distribution on \([a,b]\)}
+
+For \(X\sim \operatorname{Unif}(a,b)\),
+\[
+\E[X]=\frac{a+b}{2}.
+\]
+The second moment is
+\[
+\E[X^2]=\int_a^b x^2\frac1{b-a}\,dx
+=\frac1{b-a}\left[\frac{x^3}{3}\right]_a^b
+=\frac{b^3-a^3}{3(b-a)}.
+\]
+Using
+\[
+b^3-a^3=(b-a)(a^2+ab+b^2),
+\]
+we obtain
+\[
+\E[X^2]=\frac{a^2+ab+b^2}{3}.
+\]
+Hence
+\[
+\Var(X)=\frac{a^2+ab+b^2}{3}-\left(\frac{a+b}{2}\right)^2.
+\]
+After simplifying,
+\[
+\Var(X)=\frac{(b-a)^2}{12}.
+\]
+This formula shows that spread depends only on the length of the interval, not
+on its location.
+
+\subsection*{Example: triangular density}
+
+Let
+\[
+f_X(x)=
+\begin{cases}
+2x, & 0\leq x\leq1,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+We previously found
+\[
+\E[X]=\frac23.
+\]
+Now
+\[
+\E[X^2]=\int_0^1 x^2\cdot2x\,dx=\int_0^1 2x^3\,dx=\frac12.
+\]
+Thus
+\[
+\Var(X)=\frac12-\left(\frac23\right)^2
+=\frac12-\frac49=\frac1{18}.
+\]
+The density is concentrated toward the right side of the interval, so the mean is
+larger than \(1/2\), while the variance reflects the remaining spread around
+that shifted center.
+
+\subsection*{Moments}
+
+Moments summarize different aspects of a distribution. The \(k\)-th raw moment,
+when it exists, is
+\[
+\E[X^k]=\int_{-\infty}^{\infty}x^k f_X(x)\,dx.
+\]
+The first raw moment is the expectation. The second raw moment helps compute
+variance. Higher moments describe additional features of the shape of the
+distribution.
+
+Central moments are moments around the mean:
+\[
+\E[(X-
+\mu)^k].
+\]
+The second central moment is variance. Higher central moments are used to study
+asymmetry and tail behaviour, although this course mainly uses the first two
+moments.
+
+\subsection*{What variance does and does not say}
+
+Variance measures average squared distance from the mean. A small variance means
+that values tend to stay close to the mean. A large variance means that values
+are more spread out. However, variance alone does not determine the entire shape
+of a distribution. Different distributions may have the same mean and variance
+but very different densities.
+
+\begin{summarybox}
+For a continuous random variable with density \(f_X\),
+\[
+\Var(X)=\int_{-\infty}^{\infty}(x-
+\mu)^2f_X(x)\,dx,
+\qquad
+\mu=\E[X].
+\]
+Equivalently,
+\[
+\Var(X)=\E[X^2]-(\E[X])^2.
+\]
+Variance measures average squared spread around the mean; standard deviation is
+its square root and is expressed in the original units.
+\end{summarybox}
