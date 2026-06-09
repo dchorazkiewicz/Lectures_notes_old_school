@@ -1,0 +1,161 @@
+\section{Expectation as a continuous weighted average}
+
+Expectation was introduced in the discrete case as a weighted average:
+\[
+\E[X]=\sum_x xP(X=x).
+\]
+Each possible value contributes its value multiplied by its probability mass. For
+a continuous random variable, individual values usually have probability zero, so
+this formula cannot be copied literally. The idea of a weighted average remains,
+but the weights are supplied by density and accumulated by integration.
+
+\begin{definitionbox}
+Let \(X\) be a continuous random variable with density \(f_X\). If the integral is
+well-defined, the \textbf{expectation} of \(X\) is
+\[
+\E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx.
+\]
+\end{definitionbox}
+
+This formula should be read as a continuous weighted average. The value \(x\) is
+weighted by the density near \(x\), and the integral adds all those infinitesimal
+contributions.
+
+\subsection*{Why the formula uses \(x f_X(x)\)}
+
+In a small interval near \(x\) of width \(dx\), the probability is approximately
+\[
+f_X(x)\,dx.
+\]
+Values in that very small interval are approximately equal to \(x\). Therefore
+the contribution of that small interval to the average is approximately
+\[
+x f_X(x)\,dx.
+\]
+Adding such contributions across all possible values gives
+\[
+\int_{-\infty}^{\infty}x f_X(x)\,dx.
+\]
+This is not a proof at the level of measure theory, but it gives the correct
+interpretation: expectation is still an average, and density provides the
+continuous weights.
+
+\subsection*{Example: uniform distribution on \([0,1]\)}
+
+Let \(X\) be uniformly distributed on \([0,1]\). Then
+\[
+f_X(x)=1
+\]
+for \(0\leq x\leq1\). Hence
+\[
+\E[X]=\int_0^1 x\,dx=\left[\frac{x^2}{2}\right]_0^1=\frac12.
+\]
+This agrees with the geometric intuition: the interval \([0,1]\) is symmetric,
+and its center is \(1/2\).
+
+\subsection*{Example: uniform distribution on \([a,b]\)}
+
+If \(X\) is uniformly distributed on \([a,b]\), then
+\[
+f_X(x)=\frac1{b-a},\qquad a\leq x\leq b.
+\]
+Therefore
+\[
+\E[X]=\int_a^b x\frac1{b-a}\,dx
+=\frac1{b-a}\left[\frac{x^2}{2}\right]_a^b.
+\]
+Thus
+\[
+\E[X]=\frac{b^2-a^2}{2(b-a)}=\frac{(b-a)(a+b)}{2(b-a)}=\frac{a+b}{2}.
+\]
+The expected value is the midpoint of the interval. This is not because the
+midpoint is the most likely value; in a continuous uniform distribution no single
+point has positive probability. It is the center of balance of the whole
+interval.
+
+\subsection*{Example: triangular density}
+
+Let
+\[
+f_X(x)=
+\begin{cases}
+2x, & 0\leq x\leq1,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+Then
+\[
+\E[X]=\int_0^1 x\cdot 2x\,dx=\int_0^1 2x^2\,dx.
+\]
+Hence
+\[
+\E[X]=\left[\frac{2x^3}{3}\right]_0^1=\frac23.
+\]
+This expectation is larger than \(1/2\), which matches the shape of the density.
+The density is higher near \(1\), so the distribution places more probability on
+larger values.
+
+\subsection*{Expectation of a function of a random variable}
+
+Often we need the expectation of a transformed quantity, such as \(X^2\),
+\(\sqrt X\), or \(e^X\). If \(g\) is a suitable function and \(X\) has density
+\(f_X\), then
+\[
+\E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)\,dx,
+\]
+provided the integral is well-defined.
+
+For example, if \(X\) is uniformly distributed on \([0,1]\), then
+\[
+\E[X^2]=\int_0^1 x^2\,dx=\frac13.
+\]
+This is different from \((\E[X])^2=(1/2)^2=1/4\). In general,
+\[
+\E[X^2]\neq (\E[X])^2.
+\]
+The first quantity averages squared values. The second squares the average.
+These are different operations.
+
+\subsection*{Linearity of expectation}
+
+Linearity remains true in the continuous case. If the expectations exist, then
+\[
+\E[aX+bY]=a\E[X]+b\E[Y].
+\]
+This property does not require independence. It is a property of averaging, not
+a property of separate random mechanisms.
+
+For a single continuous random variable and constants \(a,b\), one can see this
+from the integral formula:
+\[
+\E[aX+b]=\int_{-\infty}^{\infty}(ax+b)f_X(x)\,dx.
+\]
+Distributing the integral gives
+\[
+\E[aX+b]=a\int_{-\infty}^{\infty}x f_X(x)\,dx
++b\int_{-\infty}^{\infty}f_X(x)\,dx.
+\]
+Since the total integral of the density is \(1\),
+\[
+\E[aX+b]=a\E[X]+b.
+\]
+
+\subsection*{Expectation may not exist}
+
+The integral defining expectation must be meaningful. Some distributions have
+heavy tails, and the integral of \(|x|f_X(x)\) may be infinite. In such cases,
+the expectation is not finite. This is not a technical detail to ignore: writing
+down the formula is not enough; one must know whether the integral converges.
+
+In this introductory course, most examples will have finite expectation. Still,
+the condition is part of the mathematical definition.
+
+\begin{summarybox}
+For a continuous random variable, expectation is a continuous weighted average:
+\[
+\E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx.
+\]
+The density supplies the weights, and the integral accumulates them. The
+interpretation is the same as in the discrete case, but sums are replaced by
+integrals and point masses are replaced by density.
+\end{summarybox}
