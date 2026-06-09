@@ -1,0 +1,110 @@
+\section{The empirical distribution}
+
+A dataset can be turned into a probability distribution of its own. This does not
+mean that the dataset becomes the true population law. It means that we define a
+probability measure that gives equal weight to each observed data point.
+
+Suppose the data are
+\[
+x_1,x_2,\ldots,x_n.
+\]
+The empirical distribution assigns mass \(1/n\) to each observation. If the same
+value occurs several times, the masses at that value add together.
+
+\begin{definitionbox}
+For a dataset \(x_1,\ldots,x_n\), the \textbf{empirical distribution} \(P_n\) is
+defined by
+\[
+P_n(A)=\frac1n\sum_{i=1}^n \mathbf{1}_{\{x_i\in A\}}
+\]
+for every set \(A\) of values under consideration.
+\end{definitionbox}
+
+The indicator \(\mathbf{1}_{\{x_i\in A\}}\) equals \(1\) if the observation \(x_i\)
+lies in \(A\), and equals \(0\) otherwise. Therefore the sum counts how many
+observations fall in \(A\). Dividing by \(n\) gives the observed proportion.
+
+\subsection*{Example: repeated values}
+
+Consider the dataset
+\[
+2,\quad 3,\quad 2,\quad 5,\quad 3,\quad 3,\quad 4,\quad 2.
+\]
+The empirical distribution assigns mass \(1/8\) to each observation. Since the
+value \(2\) appears three times, its total empirical mass is
+\[
+P_n(\{2\})=\frac38.
+\]
+Similarly,
+\[
+P_n(\{3\})=\frac38,
+\qquad
+P_n(\{4\})=\frac18,
+\qquad
+P_n(\{5\})=\frac18.
+\]
+The empirical distribution is therefore a discrete probability law concentrated
+on the observed values.
+
+\subsection*{A continuous sample still gives a discrete empirical distribution}
+
+Suppose the data are measurements from a continuous process:
+\[
+1.82,\quad 2.17,\quad 1.96,\quad 2.04,\quad 2.31.
+\]
+Even if the theoretical model is continuous, the empirical distribution of this
+finite dataset is discrete. It puts mass \(1/5\) at each of the five observed
+numbers.
+
+This is an important point. A continuous model may generate data, but once we
+observe a finite sample, the empirical distribution is a finite discrete object.
+The continuity belongs to the model, not to the finite list of observed values.
+
+\begin{remarkbox}
+Every finite empirical distribution is discrete. This remains true even when the
+data are measurements from a continuous phenomenon.
+\end{remarkbox}
+
+\subsection*{Relation to the theoretical distribution}
+
+If data are generated from a random variable \(X\) with theoretical probability
+law \(P\), then \(P\) describes the mechanism before observation. The empirical
+distribution \(P_n\) describes the observed sample after observation.
+
+For a set \(A\), compare
+\[
+P(X\in A)
+\]
+with
+\[
+P_n(A)=\frac{\#\{i:x_i\in A\}}{n}.
+\]
+The first is a model probability. The second is an observed proportion. If the
+model is correct and the sample is large, the observed proportion may be close to
+the model probability. But closeness is not automatic for every finite sample.
+
+\subsection*{Empirical distribution as a model of the data}
+
+The empirical distribution is a perfect probability model for the observed data
+in the following limited sense: if one chooses one of the recorded observations
+uniformly at random, then the probability of choosing a value in \(A\) is exactly
+\(P_n(A)\).
+
+For example, if the dataset has \(100\) observations and \(23\) of them lie in the
+interval \([0,1]\), then choosing one observation uniformly at random from the
+recorded dataset gives probability
+\[
+\frac{23}{100}
+\]
+of selecting an observation in \([0,1]\).
+
+This interpretation is useful, but it is not the same as saying that the true
+population probability of \([0,1]\) is \(23/100\). The empirical distribution is
+about the sample.
+
+\begin{summarybox}
+The empirical distribution assigns mass \(1/n\) to each observation. It is the
+probability law of a randomly selected observed data point. It summarizes the
+sample exactly, while a theoretical distribution describes an idealized random
+mechanism that may have generated the sample.
+\end{summarybox}
