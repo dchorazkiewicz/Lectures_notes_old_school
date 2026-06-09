@@ -1,0 +1,113 @@
+\section{The sample mean as an empirical expectation}
+
+The theoretical expectation \(\E[X]\) is a property of a probability law. It was
+introduced as a weighted average of possible values. For observed data, the
+corresponding quantity is the sample mean.
+
+\begin{definitionbox}
+For a dataset \(x_1,x_2,\ldots,x_n\), the \textbf{sample mean} is
+\[
+\bar{x}=\frac1n\sum_{i=1}^n x_i.
+\]
+\end{definitionbox}
+
+The sample mean adds all observed values and divides by the number of
+observations. It is a center of the observed data.
+
+\subsection*{A small example}
+
+For the data
+\[
+2,\quad 4,\quad 4,\quad 7,\quad 9,
+\]
+the sample mean is
+\[
+\bar{x}=\frac{2+4+4+7+9}{5}=\frac{26}{5}=5.2.
+\]
+The number \(5.2\) is not one of the observed values. This is not a problem. The
+mean is a balance point of the data, not necessarily a value that appears in the
+dataset.
+
+\subsection*{Connection with the empirical distribution}
+
+The sample mean can be interpreted as the expectation with respect to the
+empirical distribution. If the empirical distribution assigns mass \(1/n\) to
+each observation, then its expectation is
+\[
+\sum_{i=1}^n x_i\frac1n=\frac1n\sum_{i=1}^n x_i=\bar{x}.
+\]
+Thus the sample mean is not a new mysterious formula. It is the same idea of
+expectation applied to the empirical distribution of the data.
+
+If the data have repeated values, the same idea can be written using frequencies.
+Suppose the distinct observed values are \(a_1,\ldots,a_k\), with counts
+\(n_{a_1},\ldots,n_{a_k}\). Then
+\[
+\bar{x}=\sum_{j=1}^k a_j\frac{n_{a_j}}{n}.
+\]
+This is a weighted average of the distinct observed values, where the weights are
+relative frequencies.
+
+\subsection*{Sample mean versus theoretical expectation}
+
+The sample mean \(\bar{x}\) and the theoretical expectation \(\E[X]\) are related
+but different.
+
+The expression
+\[
+\E[X]
+\]
+belongs to a probability model. It is computed from a probability mass function,
+a density, or another description of the law of \(X\). The expression
+\[
+\bar{x}
+\]
+belongs to observed data. It is computed from a finite list of numbers.
+
+If the sample is generated from a model with expectation \(\mu=\E[X]\), then
+\(\bar{x}\) may be close to \(\mu\), especially for large samples under suitable
+assumptions. But for any particular finite sample, \(\bar{x}\) need not equal
+\(\mu\).
+
+\begin{remarkbox}
+The statement \(\bar{x}=\mu\) is usually false for a finite random sample. The
+sample mean is an observed summary; the theoretical mean is a model quantity.
+Later chapters explain why sample means often become close to theoretical means
+as sample size grows.
+\end{remarkbox}
+
+\subsection*{Sensitivity to extreme values}
+
+The sample mean uses all observed values, and each value enters linearly. This
+makes it sensitive to extreme observations.
+
+Compare the two datasets
+\[
+1,\quad 2,\quad 2,\quad 3,\quad 4
+\]
+and
+\[
+1,\quad 2,\quad 2,\quad 3,\quad 100.
+\]
+The first mean is
+\[
+\frac{1+2+2+3+4}{5}=\frac{12}{5}=2.4.
+\]
+The second mean is
+\[
+\frac{1+2+2+3+100}{5}=\frac{108}{5}=21.6.
+\]
+Changing one observation from \(4\) to \(100\) dramatically changes the mean.
+This is not a defect of the arithmetic; it is a property of what the mean
+measures. The mean is a balance point, and a large value pulls the balance point
+toward itself.
+
+\begin{summarybox}
+The sample mean
+\[
+\bar{x}=\frac1n\sum_{i=1}^n x_i
+\]
+is the expectation of the empirical distribution. It is the data-based
+counterpart of \(\E[X]\), but it is not identical to the theoretical expectation
+of a probability model.
+\end{summarybox}
