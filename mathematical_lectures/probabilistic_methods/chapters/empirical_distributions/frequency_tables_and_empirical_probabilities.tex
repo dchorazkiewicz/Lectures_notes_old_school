@@ -1,0 +1,133 @@
+\section{Frequency tables and empirical probabilities}
+
+For discrete or grouped data, the first natural summary is a frequency table. A
+frequency table records how often each value, or each class of values, occurs in
+the dataset.
+
+Suppose the observed values are
+\[
+2,\quad 3,\quad 2,\quad 5,\quad 3,\quad 3,\quad 4,\quad 2.
+\]
+There are \(n=8\) observations. The value \(2\) appears three times, the value
+\(3\) appears three times, the value \(4\) appears once, and the value \(5\)
+appears once.
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Value \(a\) & Count \(n_a\) & Relative frequency \(n_a/n\) \\
+\midrule
+2 & 3 & \(3/8\) \\
+3 & 3 & \(3/8\) \\
+4 & 1 & \(1/8\) \\
+5 & 1 & \(1/8\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}
+For a dataset \(x_1,\ldots,x_n\), the \textbf{frequency} of a value \(a\) is
+\[
+n_a=\#\{i:x_i=a\}.
+\]
+The \textbf{relative frequency} of \(a\) is
+\[
+\frac{n_a}{n}.
+\]
+\end{definitionbox}
+
+The relative frequencies add to \(1\), because every observation contributes to
+exactly one observed value:
+\[
+\sum_a \frac{n_a}{n}=1.
+\]
+This makes relative frequencies look like probabilities. Indeed, they define an
+empirical probability law on the observed values.
+
+\subsection*{Empirical probability}
+
+The empirical probability of observing the value \(a\) in the dataset is the
+relative frequency
+\[
+P_n(\{a\})=\frac{n_a}{n}.
+\]
+The notation \(P_n\) emphasizes that this probability is built from a sample of
+size \(n\). It is not necessarily the true probability from the population or
+from the theoretical model.
+
+For the example above,
+\[
+P_n(\{2\})=\frac38,
+\qquad
+P_n(\{4\})=\frac18.
+\]
+These are exact statements about the observed data. They do not prove that the
+true probability of observing \(2\) is \(3/8\). They say that \(3/8\) of this
+particular sample consists of the value \(2\).
+
+\begin{remarkbox}
+Relative frequency is data-based. Probability in a model is theory-based. The
+relationship between them is one of the central themes of statistics, but the two
+objects should not be identified without explanation.
+\end{remarkbox}
+
+\subsection*{Grouped frequencies}
+
+For continuous data, exact repeated values may be rare. If waiting times are
+recorded with many decimal places, it may happen that no two observations are
+exactly equal. A table of exact values is then not very informative.
+
+Instead, values are often grouped into intervals. For example, suppose waiting
+times are grouped into bins
+\[
+[0,2),\quad [2,4),\quad [4,6),\quad [6,8).
+\]
+For each bin, we count how many observations fall inside it:
+\[
+n_j=\#\{i:a_j\leq x_i<a_{j+1}\}.
+\]
+The relative frequency of the bin is
+\[
+\frac{n_j}{n}.
+\]
+This is the empirical proportion of observations in that interval.
+
+\subsection*{Connection with probability laws}
+
+If a theoretical model says that a random variable \(X\) has probability law
+\(P\), then the model probability of a set \(A\) is
+\[
+P(X\in A).
+\]
+For a dataset, the empirical counterpart is
+\[
+P_n(A)=\frac{\#\{i:x_i\in A\}}{n}.
+\]
+Thus, for an interval \([a,b]\),
+\[
+P_n([a,b])=\frac{\#\{i:a\leq x_i\leq b\}}{n}.
+\]
+This number tells us what proportion of the observed data lies in the interval.
+It is the data-based analogue of the theoretical probability
+\[
+P(a\leq X\leq b).
+\]
+
+\subsection*{A warning about small samples}
+
+In a small sample, relative frequencies can be unstable. If a coin is tossed ten
+times and heads appears seven times, the relative frequency of heads is \(0.7\).
+This does not by itself prove that the probability of heads is \(0.7\). It says
+that in this sample, heads appeared in \(70\%\) of the trials.
+
+As sample size increases, relative frequencies often stabilize under appropriate
+probabilistic assumptions. The mathematical explanation of that stabilization
+belongs to later chapters on sampling and limit theorems. Here we use relative
+frequencies descriptively.
+
+\begin{summarybox}
+A frequency counts observations. A relative frequency divides that count by the
+sample size. Relative frequencies form an empirical probability law on the data,
+but they should not be confused with the unknown probabilities of the population
+or model.
+\end{summarybox}
