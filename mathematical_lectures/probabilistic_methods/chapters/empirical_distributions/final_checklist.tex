@@ -1,0 +1,106 @@
+\section{Final checklist}
+
+This chapter introduced empirical distributions and descriptive statistics as
+ways of summarizing observed data. The most important idea is the distinction
+between theoretical objects from probability models and empirical objects
+computed from finite samples.
+
+\subsection*{Conceptual understanding}
+
+You should be able to explain the following distinctions:
+\begin{itemize}
+    \item a probability law versus a finite dataset;
+    \item a random variable \(X_i\) before observation versus an observed value
+    \(x_i\) after observation;
+    \item theoretical probability \(P(X\in A)\) versus empirical probability
+    \(P_n(A)\);
+    \item theoretical CDF \(F_X\) versus empirical CDF \(F_n\);
+    \item density versus histogram;
+    \item theoretical expectation \(\E[X]\) versus sample mean \(\bar{x}\);
+    \item theoretical variance \(\Var(X)\) versus empirical or corrected sample
+    variance;
+    \item theoretical quantiles versus empirical quantiles.
+\end{itemize}
+
+\subsection*{Definitions and formulas}
+
+You should know the meaning of the following formulas:
+\[
+P_n(A)=\frac1n\sum_{i=1}^n\mathbf{1}_{\{x_i\in A\}},
+\]
+\[
+F_n(x)=\frac1n\sum_{i=1}^n\mathbf{1}_{\{x_i\leq x\}},
+\]
+\[
+\bar{x}=\frac1n\sum_{i=1}^n x_i,
+\]
+\[
+v_n=\frac1n\sum_{i=1}^n(x_i-\bar{x})^2,
+\]
+\[
+s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2,
+\]
+\[
+IQR=Q_3-Q_1.
+\]
+You should also understand why the denominator \(n\) describes the empirical
+distribution, while the denominator \(n-1\) is connected with later inferential
+use.
+
+\subsection*{Typical tasks}
+
+After studying this chapter, you should be able to:
+\begin{itemize}
+    \item build a frequency table from discrete data;
+    \item compute relative frequencies and interpret them as empirical
+    probabilities;
+    \item compute values of the empirical CDF by hand for a small dataset;
+    \item explain why the empirical CDF is a step function;
+    \item draw or interpret a histogram;
+    \item explain why bin choice affects a histogram;
+    \item compute the sample mean, empirical variance, standard deviation,
+    median, quartiles, and IQR;
+    \item identify how outliers affect means and standard deviations;
+    \item explain why computer-generated samples help illustrate the relationship
+    between a model and data;
+    \item compare empirical summaries with theoretical quantities without
+    confusing them.
+\end{itemize}
+
+\subsection*{Common mistakes}
+
+Avoid the following mistakes:
+\begin{itemize}
+    \item saying that a sample is itself a normal distribution, exponential
+    distribution, or other theoretical law;
+    \item treating \(\bar{x}\) as if it were automatically equal to \(\E[X]\);
+    \item treating an empirical histogram as if it were exactly a density;
+    \item forgetting that histograms depend on bin choices;
+    \item ignoring the difference between \(n\) and \(n-1\) in variance formulas;
+    \item removing outliers mechanically without understanding their context;
+    \item treating simulation as proof rather than illustration.
+\end{itemize}
+
+\subsection*{Questions for self-explanation}
+
+A good test of understanding is whether you can answer these questions clearly:
+\begin{enumerate}
+    \item What is the empirical distribution of a dataset?
+    \item Why is every finite empirical distribution discrete?
+    \item What does \(F_n(x)\) measure?
+    \item How is a histogram related to a density, and how is it different?
+    \item Why can two samples from the same model have different sample means?
+    \item What is the difference between describing a sample and estimating a
+    population quantity?
+    \item Why do computer-generated samples help us understand probability models?
+    \item What will change in the next chapter when statistics such as \(\bar{X}\)
+    are treated as random variables?
+\end{enumerate}
+
+\begin{summarybox}
+Empirical distributions and descriptive statistics translate the language of
+probability into the language of observed data. They show how the concepts of
+distribution, center, spread, and quantiles begin to work when only a finite
+sample is available. The next chapter studies the randomness of these summaries
+under repeated sampling.
+\end{summarybox}
