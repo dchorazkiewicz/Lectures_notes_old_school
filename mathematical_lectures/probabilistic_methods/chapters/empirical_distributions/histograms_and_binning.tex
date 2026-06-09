@@ -1,0 +1,125 @@
+\section{Histograms and binning}
+
+A histogram is a graphical summary of data. It is especially useful for
+continuous or nearly continuous observations, where exact repeated values may be
+rare and a table of exact values may not show the shape of the data clearly.
+
+The basic idea is to divide the range of the data into intervals, called bins,
+and count how many observations fall into each bin.
+
+\subsection*{Bins and counts}
+
+Suppose the bins are
+\[
+[a_0,a_1),\quad [a_1,a_2),\quad \ldots,\quad [a_{m-1},a_m).
+\]
+The count in the \(j\)-th bin is
+\[
+n_j=\#\{i:a_{j-1}\leq x_i<a_j\}.
+\]
+The relative frequency in that bin is
+\[
+\frac{n_j}{n}.
+\]
+This is the proportion of observations that fall in the bin.
+
+For example, if \(n=100\) and \(18\) observations fall in the interval
+\([2,4)\), then the relative frequency of that bin is
+\[
+\frac{18}{100}=0.18.
+\]
+This means that \(18\%\) of the observed data lie in that interval.
+
+\subsection*{Frequency histograms and relative-frequency histograms}
+
+A frequency histogram uses bar heights equal to bin counts \(n_j\). A
+relative-frequency histogram uses bar heights equal to \(n_j/n\). Both are useful,
+but they answer slightly different visual questions.
+
+Frequency histograms show how many observations are in each bin. Relative-
+frequency histograms show what proportion of the sample is in each bin. When
+comparing samples of different sizes, relative frequencies are usually easier to
+compare than raw counts.
+
+\subsection*{Density-scaled histograms}
+
+When a histogram is compared with a probability density, the bar heights should
+usually be scaled so that bar areas represent relative frequencies. If the
+\(j\)-th bin has width
+\[
+\Delta_j=a_j-a_{j-1},
+\]
+then the density-scaled height is
+\[
+h_j=\frac{n_j}{n\Delta_j}.
+\]
+The area of the bar is then
+\[
+h_j\Delta_j=\frac{n_j}{n}.
+\]
+Thus the area of the bar equals the empirical probability of that bin.
+
+\begin{remarkbox}
+A density-scaled histogram should be read by areas, just as a probability density
+is read by areas. The height of a bar depends on the bin width; the area of a bar
+represents the proportion of observations in that bin.
+\end{remarkbox}
+
+\subsection*{Histogram versus density}
+
+A histogram is computed from data. A density is part of a theoretical probability
+model. They may be compared, but they are not the same object.
+
+For example, if a sample is generated from a normal distribution, its histogram
+may look bell-shaped. The normal density is a smooth theoretical curve. The
+histogram is a finite-sample visual summary. If another sample is generated from
+the same model, the histogram will usually look slightly different.
+
+This variability is not an error. It is the natural effect of finite sampling.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Object & Built from & Meaning \\
+\midrule
+Histogram & observed data & empirical visual summary \\
+Density & probability model & theoretical distribution shape \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{The choice of bins matters}
+
+A histogram depends on the choice of bins. Wide bins produce a smoother but less
+detailed picture. Narrow bins show more detail but may look irregular, especially
+for small samples.
+
+Therefore a histogram is not a purely mechanical truth about a dataset. It is a
+summary that depends on a modelling choice: how the data are grouped. Good bin
+choices make important structure visible without creating misleading patterns.
+
+\subsection*{A computer experiment}
+
+A useful way to understand histograms is to generate samples from a known model.
+For example, one may generate \(1000\) values from a standard normal distribution
+and draw a density-scaled histogram. The histogram will usually resemble the
+normal density, but it will not be identical to it.
+
+A typical Python-style workflow is:
+\begin{verbatim}
+import numpy as np
+
+sample = np.random.normal(loc=0, scale=1, size=1000)
+sample_mean = np.mean(sample)
+sample_std = np.std(sample)
+\end{verbatim}
+
+The computer experiment does not prove a theorem. It creates a controlled
+example where the theoretical model is known, so that the relationship between a
+finite sample and the underlying distribution can be observed.
+
+\begin{summarybox}
+A histogram groups data into bins. A density-scaled histogram is designed so that
+bar areas equal relative frequencies. Histograms are empirical and depend on bin
+choice; densities are theoretical objects from probability models.
+\end{summarybox}
