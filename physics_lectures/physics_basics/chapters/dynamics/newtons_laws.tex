@@ -1,0 +1,161 @@
+\section{Newton's laws of motion}
+
+Newton's laws connect the language of motion with the language of forces. They are not isolated formulas. Together they describe how motion behaves when no net force acts, how acceleration is related to net force, and how interactions occur between pairs of bodies.
+
+\subsection{Newton's first law}
+
+Everyday experience may suggest that a body needs a continuous force in order to keep moving. A sliding object eventually stops, a rolling ball slows down, and a pushed box stops when the push ends. However, these examples include friction, air resistance, and other interactions. They do not show what happens when the net force is zero.
+
+Newton's first law separates motion from the need for a sustaining force.
+
+\begin{theorembox}
+\textbf{Newton's first law.} If the net force acting on a body is zero, then the body remains at rest or moves with constant velocity in a straight line.
+\end{theorembox}
+
+In symbols, if
+\[
+\sum \mathbf{F}=\mathbf{0},
+\]
+then
+\[
+\mathbf{a}=\mathbf{0},
+\]
+and therefore
+\[
+\mathbf{v}(t)=\mathbf{v}_0,
+\qquad
+\mathbf{r}(t)=\mathbf{r}_0+\mathbf{v}_0t
+\]
+when the initial time is chosen as \(t=0\).
+
+The law says that rest and uniform straight-line motion are dynamically equivalent. Both correspond to zero acceleration. The difference is only the value of the constant velocity.
+
+\begin{remarkbox}
+A force is not required to maintain velocity. A nonzero net force is required to change velocity.
+\end{remarkbox}
+
+\subsection{Inertial frames}
+
+Newton's first law is also used to identify a special class of reference frames.
+
+\begin{definitionbox}
+An inertial frame of reference is a frame in which a body with zero net force moves with constant velocity.
+\end{definitionbox}
+
+In elementary mechanics we usually assume that the laboratory frame or the surface of the Earth is approximately inertial. This is an approximation, because the Earth rotates and moves around the Sun. For many everyday motions the approximation is sufficiently accurate.
+
+If a frame accelerates relative to an inertial frame, Newton's laws in their simplest form do not apply directly. Additional apparent or fictitious forces may be introduced, but this belongs to a later discussion. In this chapter, unless stated otherwise, we work in an inertial frame.
+
+\subsection{Newton's second law}
+
+Newton's second law is the central law of dynamics. It gives the quantitative relation between net force and acceleration.
+
+\begin{theorembox}
+\textbf{Newton's second law.} In an inertial frame, the net external force acting on a body equals the mass of the body times its acceleration:
+\[
+\sum \mathbf{F}=m\mathbf{a}.
+\]
+\end{theorembox}
+
+The symbol \(\sum \mathbf{F}\) means the vector sum of all external forces acting on the body. It is not one selected force unless only one force acts.
+
+If the mass is constant and nonzero, the acceleration is
+\[
+\mathbf{a}=\frac{1}{m}\sum \mathbf{F}.
+\]
+This equation shows two important facts:
+\begin{itemize}
+\item acceleration has the same direction as the net force,
+\item for a given net force, larger mass gives smaller acceleration.
+\end{itemize}
+
+In components, Newton's second law becomes separate scalar equations. In two dimensions,
+\[
+\sum F_x=ma_x,
+\qquad
+\sum F_y=ma_y.
+\]
+In three dimensions,
+\[
+\sum F_x=ma_x,
+\qquad
+\sum F_y=ma_y,
+\qquad
+\sum F_z=ma_z.
+\]
+
+These component equations are often the most useful form in calculations. They allow us to choose axes adapted to the problem.
+
+\begin{examplebox}
+A body of mass \(2\,\mathrm{kg}\) is acted on by a net horizontal force of \(6\,\mathrm{N}\). Newton's second law gives
+\[
+a=\frac{F_{\mathrm{net}}}{m}
+=\frac{6\,\mathrm{N}}{2\,\mathrm{kg}}
+=3\,\mathrm{m/s^2}.
+\]
+The acceleration is in the direction of the net force.
+\end{examplebox}
+
+\subsection{Newton's second law as an equation of motion}
+
+The equation
+\[
+\sum \mathbf{F}=m\mathbf{a}
+\]
+becomes an equation of motion when acceleration is written as the second derivative of position:
+\[
+\mathbf{a}=\frac{d^2\mathbf{r}}{dt^2}.
+\]
+Therefore
+\[
+ m\frac{d^2\mathbf{r}}{dt^2}=\sum \mathbf{F}.
+\]
+This is often the most important form of Newton's second law. It connects forces directly with the unknown position function \(\mathbf{r}(t)\).
+
+If the forces depend on time, position, or velocity, then the equation may be a differential equation:
+\[
+ m\frac{d^2\mathbf{r}}{dt^2}=\mathbf{F}(t,\mathbf{r},\mathbf{v}).
+\]
+Solving this equation with initial conditions gives the motion.
+
+\begin{remarkbox}
+Dynamics predicts motion by producing acceleration. Kinematics then reconstructs velocity and position from acceleration and initial conditions.
+\end{remarkbox}
+
+\subsection{Newton's third law}
+
+Forces arise from interactions between bodies. Newton's third law describes the pair structure of these interactions.
+
+\begin{theorembox}
+\textbf{Newton's third law.} If body \(A\) exerts a force on body \(B\), then body \(B\) exerts a force on body \(A\) of equal magnitude and opposite direction.
+\end{theorembox}
+
+If \(\mathbf{F}_{A\to B}\) is the force exerted by \(A\) on \(B\), and \(\mathbf{F}_{B\to A}\) is the force exerted by \(B\) on \(A\), then
+\[
+\mathbf{F}_{A\to B}=-\mathbf{F}_{B\to A}.
+\]
+
+The two forces in a third-law pair act on different bodies. For this reason, they do not cancel in the equation of motion of one body. They may cancel only when both bodies are included in the same system and we are summing forces on the whole system.
+
+\begin{remarkbox}
+Action-reaction forces have equal magnitudes and opposite directions, but they act on different bodies. They should not be drawn as cancelling forces on a single free-body diagram.
+\end{remarkbox}
+
+\begin{examplebox}
+A book rests on a table. The table exerts an upward normal force on the book. The book exerts a downward force on the table. These two forces form a third-law pair, but they act on different bodies.
+
+For the book alone, the upward normal force is balanced by the downward gravitational force exerted by the Earth. The downward force exerted by the book on the table is not a force on the book, so it does not appear in the book's equation of motion.
+\end{examplebox}
+
+\subsection{The three laws as a modelling system}
+
+The three laws should be read together:
+\begin{itemize}
+\item the first law identifies uniform motion as the natural motion when the net force is zero;
+\item the second law relates net force to acceleration;
+\item the third law reminds us that forces arise from interactions between bodies.
+\end{itemize}
+
+A typical dynamics problem therefore asks us to identify the body, identify the interactions, draw the forces acting on that body, sum those forces, and use Newton's second law to find the acceleration.
+
+This is the point where physical reasoning becomes mathematical. We translate a situation into force vectors, translate force vectors into equations, and interpret the resulting acceleration as a prediction about motion.
