@@ -362,6 +362,7 @@
 ./physics_lectures/physics_basics/chapters/cosmology
 ./physics_lectures/physics_basics/chapters/cosmology/introduction.tex
 ./physics_lectures/physics_basics/chapters/dynamics
+./physics_lectures/physics_basics/chapters/dynamics/force_mass_and_interaction.tex
 ./physics_lectures/physics_basics/chapters/dynamics/introduction.tex
 ./physics_lectures/physics_basics/chapters/dynamics/what_dynamics_studies.tex
 ./physics_lectures/physics_basics/chapters/electromagnetism
