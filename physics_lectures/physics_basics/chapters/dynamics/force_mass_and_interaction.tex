@@ -1,0 +1,147 @@
+\section{Force, mass, and interaction}
+
+Dynamics introduces new physical concepts that were deliberately absent from kinematics. In kinematics we could speak about acceleration without asking where it came from. In dynamics this is no longer enough. We need a language for interactions.
+
+\subsection{Force as a model of interaction}
+
+In elementary physics the word \emph{force} is sometimes used as if it were an object that a body contains. This is misleading. A force is not stored inside an isolated body. A force represents an interaction between bodies.
+
+\begin{definitionbox}
+A force is a vector quantity used to model an interaction that can change the motion of a body or deform it.
+\end{definitionbox}
+
+Forces have magnitude and direction. They are therefore represented by vectors. If a force acts on a body, then we must know not only how large the force is, but also in which direction it acts.
+
+Examples of interactions include:
+\begin{itemize}
+\item the gravitational interaction between the Earth and a falling body,
+\item the contact interaction between a table and a book,
+\item the tension interaction between a rope and a body attached to it,
+\item the friction interaction between two surfaces,
+\item the elastic interaction between a spring and an attached body.
+\end{itemize}
+
+In each case, the force is not merely a name. It is a modelling decision: we decide which interaction is relevant and how it should be represented mathematically.
+
+\begin{remarkbox}
+A force always belongs to an interaction. When naming a force, it is useful to say which body exerts it and which body receives it.
+\end{remarkbox}
+
+For example, instead of saying only ``the normal force'', it is clearer to say ``the force exerted by the table on the book''. Instead of saying only ``gravity'', it is clearer to say ``the gravitational force exerted by the Earth on the body''.
+
+\subsection{External and internal forces}
+
+The distinction between external and internal forces depends on the chosen system.
+
+\begin{definitionbox}
+An external force on a system is a force exerted on the system by something outside the system. An internal force is a force between parts of the system.
+\end{definitionbox}
+
+If the system is a single block pulled by a rope, then the rope is outside the system and the rope's pull is an external force on the block. If the system is the block together with the rope, then the interaction between the block and the rope is internal to the larger system.
+
+For the motion of a single body, we usually write Newton's second law using the external forces acting on that body. Internal forces become important when we study systems of many bodies, collisions, or extended objects.
+
+\subsection{Mass and inertia}
+
+Force alone is not enough to determine acceleration. The same net force does not produce the same acceleration for every body. A small cart is easier to accelerate than a loaded truck. The quantity that measures this resistance to acceleration is mass.
+
+\begin{definitionbox}
+Mass is a measure of inertia: the resistance of a body to changes in its velocity.
+\end{definitionbox}
+
+A body with larger mass requires a larger net force to obtain the same acceleration. Equivalently, if the same net force acts on two bodies, the body with larger mass has smaller acceleration.
+
+This meaning of mass is dynamic. It does not begin with the question ``how much material is present?'' but with the question ``how strongly does the body resist acceleration?'' In Newtonian mechanics, this inertial mass is the quantity that appears in Newton's second law.
+
+\subsection{Units}
+
+In the SI system, mass is measured in kilograms:
+\[
+[m]=\mathrm{kg}.
+\]
+Acceleration is measured in metres per second squared:
+\[
+[a]=\mathrm{m/s^2}.
+\]
+Since force is related to mass times acceleration, the SI unit of force is
+\[
+\mathrm{kg\,m/s^2}.
+\]
+This unit is called the newton:
+\[
+1\,\mathrm{N}=1\,\mathrm{kg\,m/s^2}.
+\]
+
+\begin{definitionbox}
+One newton is the force that gives a body of mass \(1\,\mathrm{kg}\) an acceleration of \(1\,\mathrm{m/s^2}\), when it is the net force acting on that body.
+\end{definitionbox}
+
+This definition already suggests the form of Newton's second law. A force of \(1\,\mathrm{N}\) is not defined as a mysterious primitive number. It is connected with the measurable effect of acceleration.
+
+\subsection{Forces are vectors}
+
+Because forces are vectors, they add as vectors. If two forces act along the same line and in the same direction, their magnitudes add. If they act in opposite directions, their effects partially or completely cancel. If they act in different directions, their vector sum must be found by component addition or by geometric vector addition.
+
+In two dimensions, if
+\[
+\mathbf{F}_1=(F_{1x},F_{1y}),
+\qquad
+\mathbf{F}_2=(F_{2x},F_{2y}),
+\]
+then
+\[
+\mathbf{F}_1+\mathbf{F}_2
+=
+(F_{1x}+F_{2x},F_{1y}+F_{2y}).
+\]
+For several forces,
+\[
+\sum \mathbf{F}
+=
+\left(\sum F_x,\sum F_y\right)
+\]
+in two dimensions, and similarly in three dimensions.
+
+\begin{examplebox}
+Suppose two horizontal forces act on a cart. One force has magnitude \(10\,\mathrm{N}\) to the right, and the other has magnitude \(4\,\mathrm{N}\) to the left. If the positive direction is chosen to the right, then
+\[
+F_{\mathrm{net}}=10\,\mathrm{N}-4\,\mathrm{N}=6\,\mathrm{N}.
+\]
+The net force is \(6\,\mathrm{N}\) to the right.
+\end{examplebox}
+
+\begin{examplebox}
+Suppose a body is pulled by two perpendicular forces:
+\[
+\mathbf{F}_1=(3,0)\,\mathrm{N},
+\qquad
+\mathbf{F}_2=(0,4)\,\mathrm{N}.
+\]
+Then
+\[
+\mathbf{F}_{\mathrm{net}}=(3,4)\,\mathrm{N},
+\]
+and its magnitude is
+\[
+|\mathbf{F}_{\mathrm{net}}|=\sqrt{3^2+4^2}\,\mathrm{N}=5\,\mathrm{N}.
+\]
+The net force does not point in the direction of either single force. It points in the direction of their vector sum.
+\end{examplebox}
+
+\subsection{What a force model can and cannot say}
+
+A force model describes one selected aspect of a physical situation. For example, when we write the gravitational force near Earth's surface as
+\[
+\mathbf{F}_g=m\mathbf{g},
+\]
+we are using an approximation: the acceleration due to gravity is treated as constant, and the height changes are assumed small compared with Earth's radius. This is a useful model, not a complete description of the Earth-body interaction.
+
+Similarly, when we use a friction model such as
+\[
+F_f=\mu N,
+\]
+we are not describing every microscopic detail of two surfaces. We are using a simple macroscopic model that works reasonably well in many elementary situations, but not in all situations.
+
+\begin{remarkbox}
+Every force formula has assumptions. A formula should be read together with the physical model that justifies it.
+\end{remarkbox}
