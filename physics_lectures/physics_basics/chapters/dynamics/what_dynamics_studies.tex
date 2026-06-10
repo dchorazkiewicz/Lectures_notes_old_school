@@ -1,0 +1,113 @@
+\section{What dynamics studies}
+
+Kinematics described motion without asking for its cause. We introduced position, velocity, acceleration, derivatives, integrals, and initial conditions. The central kinematic question was:
+\[
+\text{How can motion be described mathematically?}
+\]
+Dynamics begins where this question becomes incomplete. Once acceleration has been defined, we naturally ask why acceleration appears and how it can be predicted.
+
+\begin{definitionbox}
+Dynamics is the part of mechanics that studies how interactions change motion.
+\end{definitionbox}
+
+The central question of dynamics is therefore:
+\[
+\text{What causes acceleration?}
+\]
+This question should not be understood only as a search for a formula. It is a modelling question. We must decide what body is being studied, what other bodies interact with it, which interactions are relevant, which effects may be neglected, and what mathematical description follows from these choices.
+
+In kinematics, a motion may be given directly, for example by a position function \(\mathbf{r}(t)\). Then velocity and acceleration follow by differentiation:
+\[
+\mathbf{v}(t)=\frac{d\mathbf{r}}{dt},
+\qquad
+\mathbf{a}(t)=\frac{d\mathbf{v}}{dt}.
+\]
+In dynamics, the direction of reasoning is different. We usually do not start with the motion already known. Instead, we start from interactions and try to predict the acceleration. After that, the methods of kinematics allow us to reconstruct velocity and position from acceleration and initial conditions.
+
+A schematic form of this idea is
+\[
+\text{interactions}
+\quad \longrightarrow \quad
+\text{forces}
+\quad \longrightarrow \quad
+\text{acceleration}
+\quad \longrightarrow \quad
+\text{motion}.
+\]
+The last arrow is already familiar from kinematics: if acceleration is known and initial conditions are given, then velocity and position can be found by integration.
+
+\subsection{From description to explanation}
+
+Consider a body moving along a straight line. Kinematics may tell us that its position is
+\[
+x(t)=x_0+v_0t+\frac{1}{2}At^2.
+\]
+From this expression we can find
+\[
+v(t)=v_0+At,
+\qquad
+ a(t)=A.
+\]
+This is a complete kinematic description of the motion. But it does not explain why the acceleration is equal to \(A\). Dynamics asks what interaction produces this acceleration.
+
+For example, the acceleration may be caused by gravity, by a stretched spring, by friction, by an engine, by an electric field, or by several effects at once. The same mathematical pattern of accelerated motion can therefore come from different physical models. Dynamics connects the mathematical description of acceleration with the physical interactions that produce it.
+
+\begin{remarkbox}
+Kinematics can describe acceleration. Dynamics explains how acceleration is related to forces and interactions.
+\end{remarkbox}
+
+\subsection{The system and its surroundings}
+
+The first decision in a dynamics problem is the choice of system.
+
+\begin{definitionbox}
+The system is the body or collection of bodies whose motion we want to study. Everything outside the system is called the surroundings.
+\end{definitionbox}
+
+This choice is not a technical detail. Forces describe interactions between the system and other bodies, or between parts of the system. If we choose the system differently, the list of forces may change.
+
+For example, suppose a book lies on a table. If the system is the book, then the table is part of the surroundings and exerts a contact force on the book. The Earth is also part of the surroundings and exerts the gravitational force on the book. If the system is the book together with the Earth, then the gravitational interaction is internal to the chosen system. The description changes because the system has changed.
+
+\begin{remarkbox}
+Before writing an equation of motion, always ask: What is the system?
+\end{remarkbox}
+
+\subsection{Net force as the cause of acceleration}
+
+Dynamics does not say that every force automatically produces motion in the direction of that force. Several forces may act on the same body at the same time. What matters for the acceleration of one body is the combined effect of all external forces acting on that body.
+
+\begin{definitionbox}
+The net force acting on a body is the vector sum of all external forces acting on that body:
+\[
+\mathbf{F}_{\mathrm{net}}=\sum \mathbf{F}.
+\]
+\end{definitionbox}
+
+If two equal forces act in opposite directions on the same body, their sum is zero. The body may then have no acceleration, even though forces are present. Conversely, if the vector sum is not zero, the velocity of the body changes.
+
+This is one of the most important conceptual points of dynamics. We do not ask only whether forces exist. We ask what their vector sum is.
+
+\subsection{Prediction and modelling}
+
+A typical dynamics problem follows a sequence of decisions:
+\[
+\text{choose system}
+\quad \longrightarrow \quad
+\text{identify interactions}
+\quad \longrightarrow \quad
+\text{write forces}
+\quad \longrightarrow \quad
+\text{sum forces}
+\quad \longrightarrow \quad
+\text{find acceleration}.
+\]
+After this, kinematics takes over:
+\[
+\text{acceleration}
+\quad \longrightarrow \quad
+\text{velocity and position from initial conditions}.
+\]
+
+The chapter will develop this sequence slowly. We will first discuss force, interaction, mass, and inertia. Then we will state Newton's laws. After that we will learn how to draw free-body diagrams and how to translate them into equations of motion.
+
+The goal is not to collect many force formulas. The goal is to understand how a physical situation becomes a mathematical model of motion.
