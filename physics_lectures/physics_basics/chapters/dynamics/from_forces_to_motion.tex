@@ -1,0 +1,234 @@
+\section{From forces to motion}
+
+The purpose of dynamics is not only to name forces. The purpose is to use forces to predict motion. This requires a connection between the physical model and the kinematic quantities introduced earlier.
+
+The central chain of reasoning is
+\[
+\text{physical situation}
+\quad \longrightarrow \quad
+\text{force model}
+\quad \longrightarrow \quad
+\sum \mathbf{F}=m\mathbf{a}
+\quad \longrightarrow \quad
+\mathbf{a}(t)
+\quad \longrightarrow \quad
+\mathbf{v}(t),\mathbf{r}(t).
+\]
+
+This chain is the basic workflow of Newtonian mechanics.
+
+\subsection{The equation of motion}
+
+Newton's second law becomes an equation for motion when acceleration is replaced by the second derivative of position:
+\[
+\mathbf{a}(t)=\frac{d^2\mathbf{r}}{dt^2}.
+\]
+Thus
+\[
+ m\frac{d^2\mathbf{r}}{dt^2}=\sum \mathbf{F}.
+\]
+This equation is called an equation of motion.
+
+\begin{definitionbox}
+An equation of motion is an equation that determines how the position of a body changes in time, usually after forces and initial conditions have been specified.
+\end{definitionbox}
+
+If the net force is known as a function of time, then the acceleration is known as a function of time. If the force depends on position or velocity, then the equation is a differential equation for the unknown motion.
+
+\subsection{Constant net force}
+
+The simplest important case occurs when the net force is constant. Suppose a body of mass \(m\) is acted on by a constant net force \(\mathbf{F}_{\mathrm{net}}\). Then Newton's second law gives
+\[
+\mathbf{a}=\frac{\mathbf{F}_{\mathrm{net}}}{m}.
+\]
+The acceleration is constant. If the initial conditions at \(t=0\) are
+\[
+\mathbf{r}(0)=\mathbf{r}_0,
+\qquad
+\mathbf{v}(0)=\mathbf{v}_0,
+\]
+then kinematics gives
+\[
+\mathbf{v}(t)=\mathbf{v}_0+\frac{\mathbf{F}_{\mathrm{net}}}{m}t,
+\]
+and
+\[
+\mathbf{r}(t)=\mathbf{r}_0+\mathbf{v}_0t+rac{1}{2}\frac{\mathbf{F}_{\mathrm{net}}}{m}t^2.
+\]
+
+This is not a new kinematic formula. It is the result of combining Newton's second law with the kinematics of constant acceleration.
+
+\begin{examplebox}
+A cart of mass \(m=2\,\mathrm{kg}\) is pulled horizontally by a constant net force of \(6\,\mathrm{N}\). The acceleration is
+\[
+a=\frac{6\,\mathrm{N}}{2\,\mathrm{kg}}=3\,\mathrm{m/s^2}.
+\]
+If the cart starts from rest at \(x_0=0\), then
+\[
+v(t)=3t,
+\qquad
+x(t)=\frac{1}{2}\cdot 3t^2=1.5t^2.
+\]
+At \(t=4\,\mathrm{s}\),
+\[
+v(4)=12\,\mathrm{m/s},
+\qquad
+x(4)=24\,\mathrm{m}.
+\]
+\end{examplebox}
+
+\subsection{Free fall near Earth's surface}
+
+Near Earth's surface, if air resistance is neglected, the only force on a falling body is its weight:
+\[
+\mathbf{F}_g=m\mathbf{g}.
+\]
+Newton's second law gives
+\[
+ m\mathbf{a}=m\mathbf{g}.
+\]
+If \(m\neq 0\), then
+\[
+\mathbf{a}=\mathbf{g}.
+\]
+The mass cancels. In this idealized model, all bodies have the same acceleration due to gravity, independent of their masses.
+
+If the vertical axis is chosen upward, then \(g>0\) denotes the magnitude of gravitational acceleration and
+\[
+a_y=-g.
+\]
+With initial conditions \(y(0)=y_0\) and \(v_y(0)=v_0\), we obtain
+\[
+v_y(t)=v_0-gt,
+\]
+and
+\[
+y(t)=y_0+v_0t-\frac{1}{2}gt^2.
+\]
+
+\begin{remarkbox}
+The cancellation of mass in ideal free fall is a result of the model \(\mathbf{F}_g=m\mathbf{g}\). It does not mean that mass is irrelevant in every gravitational or resistive situation.
+\end{remarkbox}
+
+\subsection{Motion with friction on a horizontal surface}
+
+Consider a block of mass \(m\) sliding on a horizontal surface. Suppose a horizontal pulling force \(P\) acts to the right and kinetic friction acts to the left. If the block has no vertical acceleration, then the vertical equation gives
+\[
+N=mg.
+\]
+The kinetic friction magnitude is
+\[
+F_k=\mu_k N=\mu_k mg.
+\]
+The horizontal equation is
+\[
+P-F_k=ma.
+\]
+Therefore
+\[
+a=\frac{P-\mu_k mg}{m}.
+\]
+
+This expression should be interpreted carefully. If \(P>\mu_k mg\), the acceleration is to the right. If \(P<\mu_k mg\), the acceleration is to the left, which means the block slows down if it is moving to the right. If \(P=\mu_k mg\), the acceleration is zero and the block moves with constant velocity if it was already moving.
+
+\begin{examplebox}
+Let \(m=5\,\mathrm{kg}\), \(P=20\,\mathrm{N}\), \(\mu_k=0.2\), and \(g=10\,\mathrm{m/s^2}\). Then
+\[
+F_k=\mu_k mg=0.2\cdot 5\cdot 10=10\,\mathrm{N}.
+\]
+The net horizontal force is
+\[
+F_{\mathrm{net}}=20\,\mathrm{N}-10\,\mathrm{N}=10\,\mathrm{N},
+\]
+so
+\[
+a=\frac{10\,\mathrm{N}}{5\,\mathrm{kg}}=2\,\mathrm{m/s^2}.
+\]
+\end{examplebox}
+
+\subsection{Spring force as a first example of a position-dependent force}
+
+Some forces are not constant. A simple and important example is the force exerted by an ideal spring. In one dimension, if \(x\) measures displacement from the equilibrium position, the spring force is modelled by Hooke's law:
+\[
+F_s=-kx,
+\]
+where \(k>0\) is the spring constant.
+
+The negative sign has physical meaning. If \(x>0\), the force is negative and pulls the body back toward equilibrium. If \(x<0\), the force is positive and again pulls the body back toward equilibrium.
+
+Newton's second law gives
+\[
+ma=-kx.
+\]
+Since
+\[
+a=\frac{d^2x}{dt^2},
+\]
+we obtain
+\[
+m\frac{d^2x}{dt^2}=-kx.
+\]
+Equivalently,
+\[
+\frac{d^2x}{dt^2}+\frac{k}{m}x=0.
+\]
+This is a differential equation. Its solution is not developed here in detail, but its form already shows an important point: when the force depends on position, dynamics naturally leads to differential equations.
+
+\begin{remarkbox}
+A constant force gives constant acceleration. A position-dependent force usually gives an acceleration that changes with position, so the motion must be found from a differential equation.
+\end{remarkbox}
+
+\subsection{A general problem-solving pattern}
+
+The following pattern should be used repeatedly in dynamics:
+\begin{enumerate}
+\item Read the physical situation and identify the body or system of interest.
+\item Choose a coordinate system.
+\item Draw a free-body diagram.
+\item Write Newton's second law in vector or component form.
+\item Substitute force models, such as \(mg\), \(\mu N\), or \(-kx\), only after the forces have been identified.
+\item Solve for the acceleration or for the equation of motion.
+\item Use initial conditions to find velocity and position when needed.
+\item Check units, signs, limiting cases, and physical meaning.
+\end{enumerate}
+
+This pattern is more important than any single formula. The same pattern works for a falling body, a sliding block, a projectile, a spring, or a numerical simulation.
+
+\subsection{Connection with computation}
+
+For many force models, exact symbolic solutions are difficult or unnecessary. A computer can approximate the motion step by step. The idea is simple. At a given time, we know an approximate position and velocity. From the position and velocity we compute the force. From the force we compute the acceleration. Then we update velocity and position over a small time step.
+
+A simple schematic algorithm is:
+\[
+\mathbf{F}_n
+\quad \longrightarrow \quad
+\mathbf{a}_n=\frac{\mathbf{F}_n}{m}
+\quad \longrightarrow \quad
+\mathbf{v}_{n+1}\approx \mathbf{v}_n+\mathbf{a}_n\Delta t
+\quad \longrightarrow \quad
+\mathbf{r}_{n+1}\approx \mathbf{r}_n+\mathbf{v}_n\Delta t.
+\]
+
+This is not the only numerical method, and it is not always the most accurate one. But it shows the structure of computational dynamics. The computer repeats the same physical reasoning many times: forces determine acceleration, acceleration updates velocity, and velocity updates position.
+
+\begin{remarkbox}
+A simulation is useful only when the force model and initial conditions are understood. Computation does not replace physical reasoning; it extends it.
+\end{remarkbox}
+
+\subsection{Summary of the chapter}
+
+Dynamics explains why acceleration appears. The essential relation is
+\[
+\boxed{\sum \mathbf{F}=m\mathbf{a}}.
+\]
+Together with the kinematic identity
+\[
+\mathbf{a}=\frac{d^2\mathbf{r}}{dt^2},
+\]
+it becomes
+\[
+\boxed{m\frac{d^2\mathbf{r}}{dt^2}=\sum \mathbf{F}}.
+\]
+This is the central mathematical form of Newtonian dynamics.
+
+The meaning of this equation is not only computational. It says that motion is predicted by modelling interactions, translating them into forces, summing those forces, and interpreting the resulting acceleration. Initial conditions then determine the particular motion.
