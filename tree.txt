@@ -364,6 +364,7 @@
 ./physics_lectures/physics_basics/chapters/dynamics
 ./physics_lectures/physics_basics/chapters/dynamics/force_mass_and_interaction.tex
 ./physics_lectures/physics_basics/chapters/dynamics/free_body_diagrams.tex
+./physics_lectures/physics_basics/chapters/dynamics/from_forces_to_motion.tex
 ./physics_lectures/physics_basics/chapters/dynamics/introduction.tex
 ./physics_lectures/physics_basics/chapters/dynamics/newtons_laws.tex
 ./physics_lectures/physics_basics/chapters/dynamics/what_dynamics_studies.tex
