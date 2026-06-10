@@ -1,0 +1,158 @@
+\section{Free-body diagrams}
+
+Newton's second law uses the net force acting on a body. Before we can write this net force mathematically, we must identify all forces acting on the chosen system. A free-body diagram is the standard tool for doing this carefully.
+
+\begin{definitionbox}
+A free-body diagram is a diagram of one chosen system showing all external forces acting on that system.
+\end{definitionbox}
+
+The purpose of a free-body diagram is not artistic representation. Its purpose is conceptual bookkeeping. It helps us avoid two common mistakes: forgetting a force that acts on the system, or drawing a force that acts on another body instead of on the chosen system.
+
+\subsection{How to construct a free-body diagram}
+
+A useful procedure is the following:
+\begin{enumerate}
+\item Choose the system.
+\item Represent the system by a point or a simple shape.
+\item Identify all bodies in the surroundings that interact with the system.
+\item Draw one force vector for each external force acting on the system.
+\item Choose coordinate axes.
+\item Resolve forces into components if needed.
+\item Write Newton's second law in component form.
+\end{enumerate}
+
+The first step is the most important. If the system is a block, draw only forces acting on the block. If the system is a cart, draw only forces acting on the cart. If the system is two connected bodies together, draw forces acting on that combined system.
+
+\begin{remarkbox}
+A free-body diagram should contain forces acting on the chosen system, not forces exerted by the chosen system on other bodies.
+\end{remarkbox}
+
+\subsection{Weight and normal force}
+
+Consider a book resting on a horizontal table. Let the system be the book. The Earth exerts a gravitational force on the book, directed downward. This force is called the weight of the book:
+\[
+\mathbf{F}_g=m\mathbf{g}.
+\]
+Near Earth's surface, \(\mathbf{g}\) is approximately constant and directed downward, with magnitude about \(9.81\,\mathrm{m/s^2}\).
+
+The table also exerts a contact force on the book. If the surface is horizontal and there is no tendency to slide sideways, this contact force is perpendicular to the surface and directed upward. It is called the normal force and is often denoted by \(\mathbf{N}\).
+
+If the book is at rest and the vertical direction is chosen upward, Newton's second law gives
+\[
+\sum F_y=ma_y.
+\]
+Since the book is at rest, \(a_y=0\). Therefore
+\[
+N-mg=0,
+\]
+and hence
+\[
+N=mg.
+\]
+
+This equality is not a definition of the normal force. It is the result of Newton's second law for this particular situation. In other situations, the normal force may not be equal to \(mg\).
+
+\begin{remarkbox}
+Do not memorize \(N=mg\) as a universal rule. The normal force is whatever contact force is needed by the contact interaction, subject to the constraints of the physical situation and Newton's laws.
+\end{remarkbox}
+
+\subsection{Tension}
+
+A rope, string, or cable can exert a pulling force on a body. In elementary models, a light inextensible rope transmits a force along its length. This force is called tension.
+
+\begin{definitionbox}
+Tension is a pulling contact force transmitted by a rope, string, or cable along its direction.
+\end{definitionbox}
+
+If a block is pulled horizontally by a rope, the free-body diagram for the block includes the tension force exerted by the rope on the block. The direction of the tension is along the rope, away from the block.
+
+In idealized problems, a massless rope over a frictionless pulley has the same tension throughout its length. This is a model assumption. Real ropes may have mass, elasticity, and frictional interactions with pulleys.
+
+\subsection{Friction}
+
+Friction is a contact interaction that opposes relative motion or the tendency of relative motion between surfaces.
+
+There are two common elementary friction models. Kinetic friction acts when surfaces slide relative to each other. Its magnitude is often approximated by
+\[
+F_k=\mu_k N,
+\]
+where \(\mu_k\) is the coefficient of kinetic friction and \(N\) is the magnitude of the normal force.
+
+Static friction acts when surfaces do not slide relative to each other. Its magnitude adjusts up to a maximum value:
+\[
+F_s\leq \mu_s N.
+\]
+The direction of static friction opposes the tendency of relative motion.
+
+\begin{remarkbox}
+The equation \(F_s=\mu_s N\) is not generally true for static friction. The correct elementary statement is \(F_s\leq \mu_s N\). Equality holds only at the threshold of slipping.
+\end{remarkbox}
+
+\subsection{Choosing axes}
+
+After drawing the forces, choose coordinate axes. The axes do not have to be horizontal and vertical. They should make the equations simple.
+
+For motion on an inclined plane, it is often convenient to choose one axis parallel to the plane and the other perpendicular to the plane. Then acceleration often has only one component along the plane, and the normal force lies along the perpendicular axis.
+
+The force of gravity may then be decomposed into components:
+\[
+mg\sin\theta
+\]
+parallel to the plane, and
+\[
+mg\cos\theta
+\]
+perpendicular to the plane, where \(\theta\) is the angle of inclination.
+
+This decomposition is not a new physical force. It is only a mathematical rewriting of the same gravitational force in a convenient coordinate system.
+
+\subsection{From diagram to equations}
+
+Once the free-body diagram is complete, Newton's second law is written component by component. In two dimensions:
+\[
+\sum F_x=ma_x,
+\qquad
+\sum F_y=ma_y.
+\]
+The signs of the force components depend on the chosen axes. A force pointing in the positive direction contributes positively. A force pointing in the negative direction contributes negatively.
+
+\begin{examplebox}
+A block of mass \(m\) lies on a horizontal surface and is pulled to the right by a horizontal force \(P\). Kinetic friction of magnitude \(F_k=\mu_k N\) acts to the left. The vertical forces are the normal force \(N\) upward and the weight \(mg\) downward.
+
+If the block does not accelerate vertically, then
+\[
+\sum F_y=0,
+\qquad
+N-mg=0,
+\]
+so
+\[
+N=mg.
+\]
+In the horizontal direction,
+\[
+\sum F_x=ma_x,
+\qquad
+P-F_k=ma_x.
+\]
+Using \(F_k=\mu_k N=\mu_k mg\), we get
+\[
+a_x=\frac{P-\mu_k mg}{m}.
+\]
+\end{examplebox}
+
+\subsection{Common mistakes}
+
+Several mistakes appear repeatedly in dynamics problems.
+
+First, students often draw the force that the system exerts on another body. For example, if the system is a book, the force exerted by the book on the table should not appear in the book's free-body diagram.
+
+Second, students sometimes draw a velocity vector as if it were a force. Velocity is not a force. A body can move to the right while the net force is zero, or even while the net force points to the left.
+
+Third, students sometimes add a separate ``force of motion''. There is no such force in Newtonian mechanics. Motion itself does not require a force. A force is required to change motion.
+
+Fourth, students often assume that the normal force is always equal to \(mg\). This is true only in certain simple cases, such as a body at rest on a horizontal surface with no other vertical forces.
+
+\begin{remarkbox}
+A free-body diagram is a test of understanding. If the diagram is wrong, the equations that follow from it will also be wrong.
+\end{remarkbox}
