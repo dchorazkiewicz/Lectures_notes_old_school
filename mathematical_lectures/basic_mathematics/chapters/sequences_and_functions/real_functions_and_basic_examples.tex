@@ -15,146 +15,208 @@ This means that the inputs are taken from a set \(D\) of real numbers, and the o
 Sometimes the domain is given explicitly. Sometimes it is understood from the formula. When a formula is given and no domain is stated, we often look for the largest set of real inputs for which the formula makes sense. This is called the natural domain.
 
 \begin{examplebox}
-Consider
+For
 \[
-f(x)=2x+1.
+f(x)=2x+1,
 \]
-This formula makes sense for every real number \(x\). Its natural domain is
+the natural domain is \(\mathbb{R}\). For
 \[
-\mathbb{R}.
+g(x)=\frac1x,
 \]
-\end{examplebox}
-
-\begin{examplebox}
-Consider
+the natural domain is \(\mathbb{R}\setminus\{0\}\). For
 \[
-g(x)=\frac{1}{x}.
+h(x)=\sqrt{x},
 \]
-This formula does not make sense for \(x=0\), because division by zero is not defined. Therefore the natural domain is
-\[
-\mathbb{R}\setminus\{0\}.
-\]
-\end{examplebox}
-
-\begin{examplebox}
-Consider
-\[
-h(x)=\sqrt{x}.
-\]
-If we work with real numbers, the expression \(\sqrt{x}\) is real only for \(x\ge0\). Therefore the natural domain is
-\[
-[0,\infty).
-\]
+the natural domain over the real numbers is \([0,\infty)\).
 \end{examplebox}
 
 These examples show that the formula is not the whole story. We must also ask where the formula is meaningful.
 
-\subsection*{Linear functions}
+\subsection*{Affine and linear functions}
 
-A linear function has the form
+A function of the form
 \[
-f(x)=mx+b.
+f(x)=mx+b
 \]
-Its graph is a line, provided we view the function as a function of one real variable. The number \(m\) is the slope, and \(b\) is the value at \(x=0\):
+is called an affine function. Its graph is a line. The number \(m\) is the slope, and \(b=f(0)\) is the vertical intercept.
+
+In elementary school terminology, functions of the form \(mx+b\) are often called linear. In the strict language of linear algebra, however, a real function of one variable is linear only when
 \[
-f(0)=b.
+f(x)=mx,
 \]
+so that \(f(0)=0\).
+
+\begin{remarkbox}
+This distinction matters because this book also studies matrices and linear algebra. We use \emph{affine} for \(f(x)=mx+b\), and reserve \emph{linear} in the strict sense for \(f(x)=mx\).
+\end{remarkbox}
 
 \begin{examplebox}
-Let
+The function
 \[
-f(x)=3x-2.
+f(x)=3x-2
 \]
-Then
+is affine but not linear in the strict sense, because
 \[
-f(0)=-2,
-\qquad
-f(1)=1,
-\qquad
-f(2)=4.
+f(0)=-2\ne0.
 \]
-When \(x\) increases by \(1\), the value of the function increases by \(3\). This constant rate of change is the slope.
+Its slope is \(3\), so the output increases by \(3\) whenever the input increases by \(1\).
 \end{examplebox}
 
-A linear function is one of the simplest examples of dependence. The output changes at a constant rate as the input changes.
-
-\subsection*{Quadratic functions}
+\subsection*{Quadratic, reciprocal, and square root functions}
 
 A quadratic function has the form
 \[
 f(x)=ax^2+bx+c,
 \qquad a\ne0.
 \]
-Its graph is a parabola. The simplest example is
-\[
-f(x)=x^2.
-\]
+Its graph is a parabola. The reciprocal function \(1/x\) illustrates a domain exclusion and a vertical asymptote, while \(\sqrt{x}\) illustrates a function whose real domain begins at an endpoint.
 
 \begin{examplebox}
-For
+For \(f(x)=x^2\),
 \[
-f(x)=x^2,
+f(-2)=f(2)=4.
 \]
-we have
-\[
-f(-2)=4,
-\qquad
-f(-1)=1,
-\qquad
-f(0)=0,
-\qquad
-f(1)=1,
-\qquad
-f(2)=4.
-\]
-The values at \(-2\) and \(2\) are the same because squaring removes the sign.
+For \(g(x)=1/x\), the value \(g(0)\) is not defined. For \(h(x)=\sqrt{x}\), negative real inputs are excluded.
 \end{examplebox}
 
-Quadratic functions are already more flexible than linear functions. Their graphs can turn around, and their values need not change at a constant rate.
+\subsection*{Angles and trigonometric functions}
 
-\subsection*{Reciprocal and square root functions}
-
-Two basic functions show why domains matter:
+Calculus formulas use angles measured in radians. For a circle of radius \(r\), an angle \(\theta\) measured in radians satisfies
 \[
-f(x)=\frac1x
+s=r\theta,
+\]
+where \(s\) is the corresponding arc length. In particular,
+\[
+2\pi\text{ radians}=360^\circ,
+\qquad
+\pi\text{ radians}=180^\circ.
+\]
+
+On the unit circle, the point determined by an angle \(x\) has coordinates
+\[
+(\cos x,\sin x).
+\]
+Both sine and cosine are defined on \(\mathbb{R}\), take values in \([-1,1]\), and satisfy
+\[
+\sin(x+2\pi)=\sin x,
+\qquad
+\cos(x+2\pi)=\cos x,
 \]
 and
 \[
-g(x)=\sqrt{x}.
+\sin^2x+\cos^2x=1.
 \]
-The first excludes \(x=0\). The second excludes negative inputs when we work over the real numbers.
+
+The tangent function is
+\[
+\tan x=\frac{\sin x}{\cos x}.
+\]
+It is defined only when \(\cos x\ne0\), so its natural domain is
+\[
+\mathbb{R}\setminus
+\left\{
+\frac{\pi}{2}+k\pi:k\in\mathbb{Z}
+\right\}.
+\]
+
+\begin{remarkbox}
+The standard limit
+\[
+\lim_{x\to0}\frac{\sin x}{x}=1
+\]
+and the usual derivative formulas for trigonometric functions have their standard form only when angles are measured in radians.
+\end{remarkbox}
+
+\subsection*{Exponential functions}
+
+For \(a>0\), \(a\ne1\), the exponential function with base \(a\) is
+\[
+f(x)=a^x.
+\]
+Its domain is \(\mathbb{R}\), and its values are positive. The exponent laws include
+\[
+a^{x+y}=a^xa^y,
+\qquad
+a^{x-y}=\frac{a^x}{a^y},
+\qquad
+(a^x)^y=a^{xy}.
+\]
+If \(a>1\), the function is increasing. If \(0<a<1\), it is decreasing.
+
+A distinguished base is
+\[
+e\approx2.71828.
+\]
+The natural exponential function \(e^x\) has a central role in calculus because its derivative is itself. It also appears in the standard limit
+\[
+\lim_{x\to0}(1+x)^{1/x}=e.
+\]
 
 \begin{examplebox}
-For
+The model
 \[
-f(x)=\frac1x,
+N(t)=N_0e^{kt}
 \]
-we can compute
-\[
-f(2)=\frac12,
-\qquad
-f(-4)=-\frac14.
-\]
-But \(f(0)\) is not defined.
+describes exponential growth when \(k>0\) and exponential decay when \(k<0\). Its initial value is \(N(0)=N_0\).
 \end{examplebox}
 
-\begin{examplebox}
-For
-\[
-g(x)=\sqrt{x},
-\]
-we have
-\[
-g(0)=0,
-\qquad
-g(4)=2,
-\qquad
-g(9)=3.
-\]
-But \(g(-1)\) is not a real number.
-\end{examplebox}
+\subsection*{Logarithmic functions}
 
-These examples are elementary, but they teach an important habit: before evaluating a function, check whether the input belongs to the domain.
+The logarithm with base \(a>0\), \(a\ne1\), is the inverse of the exponential function \(a^x\). The statement
+\[
+y=\log_a x
+\]
+means
+\[
+a^y=x.
+\]
+Because exponential values are positive, logarithms are defined only for \(x>0\).
+
+The logarithm with base \(e\) is the natural logarithm \(\ln x\). The inverse relationships are
+\[
+\ln(e^x)=x
+\]
+for every real \(x\), and
+\[
+e^{\ln x}=x
+\]
+for \(x>0\). The basic laws include
+\[
+\ln(xy)=\ln x+\ln y,
+\qquad
+\ln\frac{x}{y}=\ln x-\ln y,
+\]
+and
+\[
+\ln(x^p)=p\ln x,
+\]
+whenever all expressions are defined.
+
+\begin{remarkbox}
+The condition \(x>0\) is essential for \(\ln x\). In antiderivatives, \(\ln|x|\) appears because its derivative is \(1/x\) on both intervals \((-\infty,0)\) and \((0,\infty)\).
+\end{remarkbox}
+
+\subsection*{Inverse trigonometric functions}
+
+Trigonometric functions are periodic, so restricted domains are needed before inverse functions can be defined. The standard choices are
+\[
+\arcsin:[-1,1]\to
+\left[-\frac{\pi}{2},\frac{\pi}{2}\right],
+\]
+\[
+\arccos:[-1,1]\to[0,\pi],
+\]
+and
+\[
+\arctan:\mathbb{R}\to
+\left(-\frac{\pi}{2},\frac{\pi}{2}\right).
+\]
+For example,
+\[
+\arcsin\frac12=\frac{\pi}{6},
+\qquad
+\arctan1=\frac{\pi}{4}.
+\]
 
 \subsection*{Piecewise functions}
 
@@ -169,27 +231,20 @@ x+1, & x<0,\\
 x^2, & x\ge0.
 \end{cases}
 \]
-To compute \(f(-2)\), we use the first rule because \(-2<0\):
-\[
-f(-2)=-2+1=-1.
-\]
-To compute \(f(3)\), we use the second rule because \(3\ge0\):
-\[
-f(3)=3^2=9.
-\]
+Then \(f(-2)=-1\), while \(f(3)=9\). The input determines which rule applies.
 \end{examplebox}
-
-The input decides which rule applies. A piecewise definition is still a function as long as each allowed input receives exactly one output.
 
 \begin{summarybox}
 When studying a real function, ask:
 \begin{itemize}
 \item What is the domain?
-\item Is the domain stated explicitly, or should I find the natural domain?
-\item Are there inputs excluded by division by zero, square roots, or other restrictions?
-\item What type of function am I looking at?
-\item If the function is piecewise, which rule applies to the given input?
+\item Is the function algebraic, trigonometric, exponential, logarithmic, or piecewise?
+\item If its graph is a line, is the function affine or linear in the strict sense?
+\item Are angles measured in radians?
+\item Are logarithmic arguments positive?
+\item What restricted range defines an inverse trigonometric function?
+\item Which rule applies to a piecewise-defined input?
 \end{itemize}
 \end{summarybox}
 
-Real functions are the main objects of calculus, but their study begins with reading their domains, formulas, and values carefully.
+Real functions are the main objects of calculus. Their study begins with reading domains, formulas, inverse relationships, and graph structure carefully.
