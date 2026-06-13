@@ -1,4 +1,4 @@
-\section{Discrete and continuous domains}
+\section{Discrete and interval domains}
 
 Sequences and real functions belong to the same general idea: they are functions. But they often have very different domains. This difference changes the kinds of questions we naturally ask.
 
@@ -12,9 +12,13 @@ a:\mathbb{N}\to\mathbb{R}
 \]
 has inputs \(1,2,3,\ldots\). Between \(1\) and \(2\), there is no natural-number input.
 
-\subsection*{Continuous-looking domains}
+\subsection*{Interval domains}
 
-Intervals of real numbers are often called continuous domains in elementary calculus. This word means that the inputs are not separated into isolated points. If an interval contains two numbers, it also contains all real numbers between them.
+Intervals of real numbers are sometimes informally called continuous domains in elementary calculus. This phrase describes the structure of the input set: its points are not isolated. It does not imply that every function defined on the interval is continuous.
+
+\begin{remarkbox}
+A domain may be an interval while the function itself has discontinuities. Continuity of a function is a separate property defined using limits.
+\end{remarkbox}
 
 For example, the interval
 \[
@@ -32,7 +36,7 @@ contains \(0\), \(1\), and also
 \]
 and infinitely many other numbers between \(0\) and \(1\).
 
-A function defined on an interval can be studied by asking what happens as \(x\) moves gradually through the domain. This is why graphs of such functions are often drawn as curves.
+A function defined on an interval can be studied by asking what happens as \(x\) moves through nearby real inputs. A connected curve is appropriate only when the behavior of the function justifies that picture.
 
 \subsection*{Discrete domains}
 
@@ -95,7 +99,7 @@ A sequence is not outside the world of functions. It is a function with a discre
 
 \subsection*{Drawing responsibly}
 
-When drawing a function defined on an interval, it may be appropriate to draw a continuous curve if the function behaves continuously. When drawing a sequence, we should usually draw separated points.
+When drawing a function defined on an interval, it may be appropriate to draw a connected curve if the function behaves continuously. When drawing a sequence, we should usually draw separated points.
 
 Connecting sequence points with line segments may be useful as a visual guide, but it can also be misleading. The line segment between \((1,a_1)\) and \((2,a_2)\) suggests values at non-natural inputs, but the sequence itself does not provide those values.
 
@@ -120,10 +124,11 @@ When comparing ordinary real functions and sequences, ask:
 \begin{itemize}
 \item What is the domain?
 \item Are the inputs separated or do they fill an interval?
+\item Am I describing the domain, or continuity of the function?
 \item Should the graph be drawn as points or as a curve?
 \item Is the natural question about behavior near a real point or behavior as the index goes to infinity?
 \item Does the notation hide the fact that a sequence is still a function?
 \end{itemize}
 \end{summarybox}
 
-The difference between continuous and discrete domains is not cosmetic. It shapes the way we read, draw, and investigate mathematical objects.
+The difference between interval and discrete domains is not cosmetic. It shapes the way we read, draw, and investigate mathematical objects.
