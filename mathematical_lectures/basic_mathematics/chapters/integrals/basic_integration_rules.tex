@@ -9,11 +9,14 @@ For powers of \(x\), the main rule is:
 \begin{theorembox}
 If \(p\ne -1\), then
 \[
-\int x^p\,dx=\frac{x^{p+1}}{p+1}+C.
+\int x^p\,dx=\frac{x^{p+1}}{p+1}+C
 \]
+on every interval on which the real power \(x^p\) and the displayed antiderivative are defined.
 \end{theorembox}
 
-The condition \(p\ne -1\) is essential. When \(p=-1\), the integrand is \(1/x\), and its integral is logarithmic:
+For an arbitrary real exponent, the safest common domain is \(x>0\). Integer powers extend to their usual real domains, while rational powers require their domains to be checked separately.
+
+The condition \(p\ne -1\) is essential. When \(p=-1\), the integrand is \(1/x\), and its integral is logarithmic on any interval not crossing zero:
 \[
 \int \frac1x\,dx=\ln|x|+C.
 \]
@@ -67,10 +70,10 @@ Therefore
 
 \subsection*{Rewriting before integrating}
 
-Many integrals become simple only after rewriting roots and fractions as powers.
+Many integrals become simple only after rewriting roots and fractions as powers. The domain of the original expression must remain visible.
 
 \begin{examplebox}
-Compute
+For \(x>0\), compute
 \[
 \int \frac{x\sqrt{x}}{\sqrt[3]{x}}\,dx.
 \]
@@ -89,7 +92,7 @@ Thus
 \]
 \end{examplebox}
 
-The integral was not difficult after the expression was read correctly. The main work was rewriting the integrand into a power.
+The integral was not difficult after the expression was read correctly. The main work was rewriting the integrand into a power without forgetting its domain.
 
 \subsection*{Elementary integrals}
 
@@ -100,7 +103,7 @@ The following basic antiderivatives should become familiar:
 \toprule
 Integrand & Antiderivative \\
 \midrule
-\(x^p\), \(p\ne -1\) & \(\dfrac{x^{p+1}}{p+1}+C\) \\
+\(x^p\), \(p\ne -1\) & \(\dfrac{x^{p+1}}{p+1}+C\) on a valid interval \\
 \(1/x\) & \(\ln|x|+C\) \\
 \(e^x\) & \(e^x+C\) \\
 \(\sin x\) & \(-\cos x+C\) \\
@@ -111,16 +114,17 @@ Integrand & Antiderivative \\
 \end{tabular}
 \end{center}
 
-A table is useful only after the integrand has been read. Sometimes the integrand must first be rewritten or transformed.
+A table is useful only after the integrand and its domain have been read. Sometimes the integrand must first be rewritten or transformed.
 
 \begin{summarybox}
 When applying basic integration rules, ask:
 \begin{itemize}
+\item What is the domain of the integrand?
 \item Can the integrand be rewritten as powers of \(x\)?
 \item Is there a term \(1/x\), which gives a logarithm?
 \item Can I integrate term by term?
 \item Did I include the constant \(C\)?
-\item Can I check the result by differentiating?
+\item Can I check the result by differentiating on the stated interval?
 \end{itemize}
 \end{summarybox}
 
