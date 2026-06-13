@@ -299,6 +299,7 @@
 ./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/from_data_summaries_to_random_quantities.tex
 ./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/from_samples_to_sampling_distributions.tex
 ./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/overview.tex
+./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/sample_mean_and_sample_proportion.tex
 ./mathematical_lectures/probabilistic_methods/chapters/sampling_distributions/samples_as_random_objects.tex
 ./mathematical_lectures/probabilistic_methods/figures
 ./mathematical_lectures/probabilistic_methods/figures/README.md
