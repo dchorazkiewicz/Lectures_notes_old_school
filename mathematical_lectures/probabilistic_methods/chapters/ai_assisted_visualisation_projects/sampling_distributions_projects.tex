@@ -1,0 +1,52 @@
+\section{Projects for Chapter 8: Sampling and Distributions of Statistics}
+
+This chapter is one of the richest sources of simulation projects. The essential animation should show a complete random sample being transformed into one statistic, followed by repetition of that process.
+
+\subsection*{Project: repeated-sampling laboratory}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create a repeated-sampling laboratory. Let the user select a population law, its parameters, the sample size \(n\), and a statistic. Include at least the sample mean, sample proportion when appropriate, sample median, empirical variance, and corrected sample variance.
+
+Use three linked panels. The first panel shows the population law. The second shows one newly generated sample and calculates the selected statistic. The third accumulates the statistic over repeated samples and displays its sampling distribution as a histogram or discrete PMF.
+
+Provide controls for one sample, ten samples, one thousand samples, continuous animation, pause, and clear. Display the empirical mean and standard deviation of the simulated statistics. When theory is available, display the theoretical centre and standard error and overlay them on the simulation.
+\end{quote}
+\end{examplebox}
+
+The application must distinguish the histogram of observations inside one sample from the histogram of a statistic across many samples.
+
+\subsection*{Project: exact small-sample enumeration}
+
+For small finite populations or mechanisms, the sampling distribution can be found exactly rather than simulated.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build an exact sampling-distribution constructor for small Bernoulli samples and small samples of die outcomes. Enumerate all ordered samples for a user-selected small \(n\), calculate the chosen statistic for every sample, and group samples that produce the same statistic value.
+
+Show each statistic value, its complete preimage of samples, and its exact probability. Then run a Monte Carlo simulation beside the exact distribution and display the discrepancy. Include sample mean, number of successes, sample proportion, maximum, and range as selectable statistics.
+\end{quote}
+\end{examplebox}
+
+A strong extension is a transition animation:
+\[
+(X_1,\ldots,X_n)
+\longrightarrow
+T=g(X_1,\ldots,X_n)
+\longrightarrow
+\text{one point in the sampling distribution}.
+\]
+
+\begin{summarybox}
+The student should be able to identify what is random at each level:
+\[
+\text{observations},\qquad
+\text{complete sample},\qquad
+\text{statistic},\qquad
+\text{sampling distribution}.
+\]
+\end{summarybox}

@@ -1,0 +1,52 @@
+\section{Projects for Chapter 5: Discrete Random Variables and Probability Laws}
+
+This chapter is ideal for interactive graphics because a discrete law has several equivalent representations: a mechanism, a mapping from outcomes to numbers, a probability mass function, a cumulative distribution function, and numerical summaries such as expectation and variance.
+
+\subsection*{Project: outcome-to-random-variable mapper}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create an interactive application that begins with a finite sample space and lets the user define a random variable by assigning a numerical value to each elementary outcome. Group all outcomes that receive the same value and construct the support, probability mass function, and cumulative distribution function automatically.
+
+When the user clicks a value of the random variable, highlight its complete inverse image in the sample space. Display
+\[
+P(X=x),\qquad F_X(t)=P(X\leq t),\qquad \E[X],\qquad \Var(X).
+\]
+Include preset mappings for the number of heads in coin tosses, the sum of two dice, a payoff, and an indicator variable. Verify that PMF values sum to one and that CDF jumps equal point masses.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Project: discrete-law explorer}
+
+The application should include Bernoulli, binomial, geometric, and Poisson laws. Parameters should be controlled by sliders, while support, PMF, CDF, mean, and variance update immediately.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build a discrete probability-law explorer for Bernoulli, binomial, geometric, and Poisson distributions. For each law, show the random mechanism, parameter restrictions, support, PMF, CDF, expectation, and variance.
+
+Use linked PMF and CDF plots. Clicking a PMF bar should highlight the corresponding jump in the CDF. Add a Monte Carlo panel with controls for one sample and many samples. Overlay empirical relative frequencies on the exact PMF and report the maximum absolute difference.
+
+For the binomial law, allow \(n\) and \(p\) to change and verify that \(n=1\) gives a Bernoulli law. For the geometric law, state clearly whether the support begins at zero or one and keep that convention consistent.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Possible extension: expectation as a balance point}
+
+Draw the PMF as masses placed on a number line and mark \(\E[X]\) as the balancing location. The student should be able to move probability mass while preserving total mass one and observe how expectation and variance change.
+
+\begin{summarybox}
+A good discrete-law application links four views:
+\[
+\text{mechanism}
+\longrightarrow
+\text{random variable}
+\longrightarrow
+\text{PMF and CDF}
+\longrightarrow
+\text{moments}.
+\]
+\end{summarybox}

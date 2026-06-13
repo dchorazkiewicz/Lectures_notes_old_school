@@ -1,0 +1,63 @@
+\section{Projects for Chapter 9: Limit Theorems and Statistical Inference}
+
+This chapter supports several complementary simulations. No single animation should try to represent the law of large numbers, the central limit theorem, confidence intervals, and hypothesis tests at once. Separate applications make the distinct logical roles clearer.
+
+\subsection*{Project: law of large numbers and central limit theorem}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create a split-screen application comparing the law of large numbers with the central limit theorem. Let the user select Bernoulli, uniform, exponential, or another finite-variance population law.
+
+On the left, generate one long sequence and plot the running mean against the sample size, together with the population mean. On the right, for a selected \(n\), generate many independent samples and plot the histogram of
+\[
+\frac{\overline X_n-\mu}{\sigma/\sqrt n}.
+\]
+Overlay the standard normal density. Let the user change \(n\), the number of repetitions, and the population parameters.
+
+Explain that the left panel concerns convergence of the average, while the right panel concerns the shape and scale of fluctuations. Do not describe either panel as a proof.
+\end{quote}
+\end{examplebox}
+
+An optional cautionary example may use a distribution without a finite mean or variance, provided the application clearly states which theorem assumption fails.
+
+\subsection*{Project: confidence-interval coverage}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create a confidence-interval coverage simulator. Include a population-mean mode with known standard deviation and a population-proportion mode using the Wald interval. Let the user set the true parameter, sample size, confidence level, and number of repetitions.
+
+For each repetition, draw the interval on a horizontal line and mark whether it contains the fixed true parameter. Keep a running coverage count and compare it with the nominal confidence level. Display interval width and show how it changes with sample size.
+
+Explain that the parameter remains fixed while the intervals vary from sample to sample. In the proportion mode, warn that the Wald interval may have poor coverage for small samples or probabilities near zero or one.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Project: hypothesis test and p-value simulator}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build a hypothesis-testing simulator for a Bernoulli proportion. Let the user specify \(H_0:p=p_0\), choose a two-sided, upper-sided, or lower-sided alternative, select \(n\), and enter or simulate an observed number of successes.
+
+Display the null sampling distribution, mark the observed statistic, shade the tail or tails defined by the alternative, and calculate the exact binomial p-value together with a normal approximation when appropriate. Explain every set of outcomes included in the p-value.
+
+Add a repeated-experiment mode in which the true probability may equal or differ from \(p_0\). Estimate the rejection rate. When the null is true, interpret this as an empirical type I error rate; when it is false, interpret it as empirical power.
+\end{quote}
+\end{examplebox}
+
+A further extension may compare confidence intervals and corresponding two-sided tests, showing when a proposed parameter value is excluded by the interval and rejected by the test.
+
+\begin{summarybox}
+The projects should preserve the logical separation:
+\[
+\text{LLN: stability},\qquad
+\text{CLT: fluctuation shape},\qquad
+\text{interval: coverage procedure},\qquad
+\text{test: compatibility with a proposed model}.
+\]
+\end{summarybox}

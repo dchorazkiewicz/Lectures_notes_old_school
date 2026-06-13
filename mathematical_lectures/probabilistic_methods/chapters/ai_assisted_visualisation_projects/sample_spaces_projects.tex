@@ -1,0 +1,44 @@
+\section{Projects for Chapter 3: Sample Spaces and Elementary Probability}
+
+This chapter supports several interactive projects because the same experiment can be represented by lists, tables, trees, geometric regions, or symbolic notation.
+
+\subsection*{Project: experiment-to-sample-space builder}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create an experiment-to-sample-space builder with selectable models for repeated coin tosses, two dice, card selection, urn sampling, waiting for the first success, and a continuous uniform point on an interval.
+
+For every model, ask the user to choose the recording rule before displaying the sample space. Include controls for order, replacement, labels, and stopping rules when relevant. Show the same model as a list, table, tree, or symbolic set whenever those representations are meaningful. Let the user define an event and highlight all elementary outcomes in it.
+
+For finite uniform models, calculate probability by counting and display both the favourable count and the total count. For non-uniform discrete models, sum outcome probabilities. Do not use counting for the continuous interval model.
+\end{quote}
+\end{examplebox}
+
+The student should be able to change one modelling decision and observe that the sample space, not merely the numerical answer, changes.
+
+\subsection*{Project: continuous uniform geometry}
+
+Use a horizontal interval \([a,b]\) and a draggable event interval \([c,d]\). Display
+\[
+P(c\leq X\leq d)=\frac{d-c}{b-a}.
+\]
+The visualisation should show that a single point has length zero, although every realised observation is a point.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build a continuous-uniform probability visualiser. Let the user set the endpoints of the sample interval and drag the endpoints of an event interval. Shade the event region and show its length, total length, and exact probability.
+
+Add a discretisation control that replaces the interval by an increasingly fine grid. Compare counting on the grid with the limiting length ratio, and explain why the continuous model does not assign positive probability to individual points.
+\end{quote}
+\end{examplebox}
+
+\begin{summarybox}
+The application should reinforce the rule
+\[
+\text{define the outcome and event first, assign probability second}.
+\]
+\end{summarybox}

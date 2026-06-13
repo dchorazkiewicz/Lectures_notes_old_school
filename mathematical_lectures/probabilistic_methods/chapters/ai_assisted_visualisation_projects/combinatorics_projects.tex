@@ -1,0 +1,59 @@
+\section{Projects for Chapter 1: Elements of Combinatorics}
+
+Combinatorics is especially suitable for interactive work because a program can display the objects being counted, not only the final formula. The central learning objective is to connect a recording rule with the correct class of mathematical objects.
+
+\subsection*{Project: counting-model laboratory}
+
+The student should choose whether order matters, whether repetition is allowed, whether objects are distinguishable, and how many positions or selected objects are involved. For small parameters, the application should list every admissible object. For larger parameters, it should show only the count and explain which formula applies.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create a combinatorics laboratory with controls for the number of available objects, the number selected, whether order matters, whether repetition is allowed, and whether repeated object types are distinguishable. Display the mathematical model selected by these choices, the corresponding counting formula, and the resulting number.
+
+For small cases, enumerate all outcomes and show them as sequences, subsets, or multisets according to the recording rule. Provide a side-by-side comparison of two models that use the same numerical parameters but different recording rules. Include warnings when the user attempts to apply a formula to the wrong type of object.
+\end{quote}
+\end{examplebox}
+
+The application should make visible the difference between
+\[
+n^k,\qquad
+\frac{n!}{(n-k)!},\qquad
+\binom nk,
+\qquad
+\binom{n+k-1}{k}.
+\]
+It should not merely display these formulas; it should explain which mathematical objects each formula counts.
+
+\subsection*{Project: overcounting microscope}
+
+This project should begin with labelled arrangements and then hide labels or identify arrangements that become equivalent. The display should group labelled outcomes into equivalence classes and show why division by factorials removes overcounting.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build an overcounting visualiser for arrangements of a multiset. Let the user choose multiplicities, for example three objects of one type, two of another type, and one of a third type. First generate all arrangements as if every object had a private label. Then remove the private labels and group arrangements that become identical.
+
+Show the size of every equivalence class, the total labelled count, the number of distinct visible arrangements, and the formula
+\[
+\frac{n!}{n_1!n_2!\cdots n_r!}.
+\]
+Allow one equivalence class to be opened so the student can inspect all labelled arrangements that collapse to the same visible arrangement.
+\end{quote}
+\end{examplebox}
+
+A useful extension is a path-counting view of Pascal's triangle. Each entry should count lattice paths, and clicking an entry should show the recursion
+\[
+\binom nk=\binom{n-1}{k-1}+\binom{n-1}{k}.
+\]
+
+\begin{summarybox}
+The program should always answer two questions:
+\[
+\text{What objects are being counted?}
+\qquad
+\text{Why is each object counted exactly once?}
+\]
+\end{summarybox}

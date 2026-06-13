@@ -1,0 +1,48 @@
+\section{Projects for Chapter 6: Continuous Random Variables and Probability Laws}
+
+Continuous laws are particularly well suited to linked density and CDF plots. The application should make clear that density is not point probability and that interval probability is area.
+
+\subsection*{Project: density, CDF, and quantile explorer}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create an interactive explorer for uniform, exponential, normal, gamma, and beta distributions. Provide suitable parameter controls and display the parameter restrictions. Draw the density and CDF in linked panels.
+
+Let the user drag interval endpoints \(a\) and \(b\). Shade the density area over the interval and display
+\[
+P(a\leq X\leq b)=F_X(b)-F_X(a).
+\]
+Mark the mean, median, selected quantiles, and one standard deviation around the mean when defined. Add a probability control that moves a quantile marker to the value \(q_p\) satisfying \(F_X(q_p)=p\).
+
+Use numerical integration when a closed-form CDF is not implemented. State the numerical method, display an estimated integration error, and verify that total density area is approximately one.
+\end{quote}
+\end{examplebox}
+
+The application should explicitly show that changing the value of a density at one isolated point does not change interval probabilities.
+
+\subsection*{Project: theoretical law and generated sample}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Extend the continuous-distribution explorer with random sampling. Generate samples from the selected distribution and display a histogram and empirical CDF beside the theoretical density and CDF. Provide controls for sample size, histogram bin width, and repeated resampling.
+
+Show the sample mean, sample variance, empirical median, and selected empirical quantiles next to their theoretical counterparts. Do not imply that the histogram is the density or that the empirical CDF is the theoretical CDF. Label every object precisely.
+\end{quote}
+\end{examplebox}
+
+A useful cautionary mode may compare distributions with similar means but different shapes, or similar variances but different tail behaviour.
+
+\begin{summarybox}
+The central visual relation is
+\[
+\text{density}
+\xrightarrow{\text{integration}}
+\text{CDF}
+\xrightarrow{\text{differences}}
+\text{interval probabilities}.
+\]
+\end{summarybox}

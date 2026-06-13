@@ -1,0 +1,39 @@
+\section{Projects for Chapter 4: Conditional Probability, Independence, and Bayes' Theorem}
+
+Conditional probability is one of the strongest candidates for visualisation because conditioning changes the reference population. The denominator should visibly change when new information is imposed.
+
+\subsection*{Project: conditioning changes the space}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create an interactive finite probability space displayed as a grid of weighted elementary outcomes. Let the user define events \(A\) and \(B\). Show \(P(A)\), \(P(B)\), \(P(A\cap B)\), \(P(A\mid B)\), and \(P(B\mid A)\).
+
+When the user activates conditioning on \(B\), visually fade all outcomes outside \(B\), renormalise the remaining weights, and show that
+\[
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}.
+\]
+Include presets for disjoint events, nested events, independent events, and dependent events. Display whether the equality \(P(A\cap B)=P(A)P(B)\) holds.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Project: Bayes diagnostic-test laboratory}
+
+This project should use prevalence, sensitivity, and specificity as adjustable parameters. A tree diagram and an icon array should display the same model.
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Build a Bayes theorem laboratory for a diagnostic test. Provide sliders for prevalence, sensitivity, specificity, and population size. Show a probability tree, an expected-count table, and an icon array. Calculate the positive predictive value and negative predictive value from exact probabilities.
+
+Highlight the difference between \(P(\text{positive}\mid\text{condition})\) and \(P(\text{condition}\mii\text{positive})\). Add a simulation mode that generates individuals and compares empirical proporitions with the exact Bayes calculation. Include a button that changes only prevalence so the student can see why predictive values change even when the test characteristics remain fixed.
+\end{quote}
+\end{examplebox}
+
+An extension may display a partition \(B_1,\ldots,B_k\) and animate the law of total probability before reversing the reasoning with Bayes' theorem.
+
+\begin{summarybox}
+The key visual principle is that conditioning restricts the space and then rescales probability inside the restricted space.
+\end{summarybox}

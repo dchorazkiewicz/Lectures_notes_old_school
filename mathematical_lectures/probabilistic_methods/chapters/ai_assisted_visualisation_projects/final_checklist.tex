@@ -1,0 +1,70 @@
+\section{Final Checklist for an AI-Assisted Project}
+
+A visually attractive application is not automatically a correct mathematical application. Before submitting or relying on a generated project, check the following points.
+
+\subsection*{Mathematical model}
+
+\begin{enumerate}
+    \item Is the experiment and recording rule stated?
+    \item Is the sample space or population law identified?
+    \item Are all parameters and assumptions visible?
+    \item Is independence used only when it is part of the model?
+    \item Are exact formulas distinguished from numerical approximations?
+    \item Are theoretical distributions distinguished from empirical and sampling distributions?
+\end{enumerate}
+
+\subsection*{Simulation}
+
+\begin{enumerate}
+    \item Can one repetition be inspected before many repetitions are run?
+    \item Is the simulated object clearly identified?
+    \item Is the number of repetitions displayed?
+    \item Can the simulation be cleared and reproduced?
+    \item Are Monte Carlo estimates compared with exact values when exact values exist?
+    \item Does the program avoid presenting numerical agreement as proof?
+\end{enumerate}
+
+\subsection*{Visual communication}
+
+\begin{enumerate}
+    \item Are axes, units, events, and parameters labelled?
+    \item Does every histogram state what values are being counted?
+    \item Are density, probability mass, frequency, and relative frequency kept distinct?
+    \item Do controls prevent invalid parameter combinations?
+    \item Does the application explain what changes and what remains fixed?
+\end{enumerate}
+
+\subsection*{Validation}
+
+Test boundary and special cases. Examples include:
+\[
+P(A\mid A)=1,\qquad
+P(A\mid B)=0\text{ for disjoint }A,B,
+\]
+\[
+\sum_x p_X(x)=1,\qquad
+F_X(\infty)=1,
+\]
+\[
+n=1\text{ for a binomial model},\qquad
+\E[S^2]=\sigma^2\text{ under the stated sampling assumptions}.
+\]
+For inference projects, check whether empirical coverage or type I error approaches the nominal value only when the assumptions and implementation are appropriate.
+
+\subsection*{Student explanation}
+
+A student should be able to answer:
+
+\begin{itemize}
+    \item What mathematical question does the application investigate?
+    \item Which formulas are implemented?
+    \item Which output is exact and which is simulated?
+    \item Which assumptions are required?
+    \item Which test cases were used?
+    \item What did the AI assistant generate, and what did the student verify or modify?
+    \item What can the experiment suggest, and what still requires proof?
+\end{itemize}
+
+\begin{theorembox}
+AI can reduce the cost of building an experiment, but it does not remove the need for mathematical judgement. The educational value of the project lies in specifying the model, checking the implementation, interpreting the output, and explaining its limitations.
+\end{theorembox}

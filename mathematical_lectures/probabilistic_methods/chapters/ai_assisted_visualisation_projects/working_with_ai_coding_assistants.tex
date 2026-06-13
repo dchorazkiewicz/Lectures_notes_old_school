@@ -1,0 +1,47 @@
+\section{How to Work with an AI Coding Assistant}
+
+An AI coding assistant responds better to a specification than to a request such as ``make an animation about probability''. A useful specification identifies:
+
+\begin{enumerate}
+    \item the probability model and its assumptions;
+    \item the learning question;
+    \item the parameters controlled by the user;
+    \item the exact and simulated quantities to display;
+    \item test cases with known answers.
+\end{enumerate}
+
+Generated software should be treated as a mathematical claim expressed through code. A convincing graph may still use an incorrect distribution, denominator, or independence assumption.
+
+\subsection*{Reusable requirements}
+
+The following instructions may be appended to any project prompt in this chapter.
+
+\begin{examplebox}
+\textbf{Prompt fragment}
+
+\begin{quote}\small
+Build a single-page educational application using HTML, CSS, and vanilla JavaScript. It should open directly in a browser without a server. Use a responsive layout and SVG or Canvas for graphs.
+
+Include a title, learning objective, model assumptions, labelled controls, Reset and Clear buttons, and a short explanation of every display. When simulation is used, provide controls for one repetition and many repetitions. Show theoretical values and simulation estimates side by side, and label them clearly.
+
+Validate the input parameters and handle boundary cases. Before presenting the implementation, restate the model, formulas, and planned correctness checks. After the implementation, give mathematical test cases and the expected result of each test.
+\end{quote}
+\end{examplebox}
+
+\subsection*{A disciplined sequence}
+
+\begin{enumerate}
+    \item Read the relevant chapter and identify one central mechanism.
+    \item Ask the assistant to restate the model before producing the application.
+    \item Verify the formulas and assumptions.
+    \item Begin with a minimal version containing one diagram and essential controls.
+    \item Test special cases whose answers are already known.
+    \item Add animation or further models only after the minimal version is correct.
+    \item Ask for an explanation detailed enough to modify the program independently.
+\end{enumerate}
+
+A binomial application should be checked at \(n=1\). A conditional-probability application should be checked for disjoint, identical, and independent events. A confidence-interval simulator should be checked over many repetitions to see whether empirical coverage approaches the stated level under the assumed model.
+
+\begin{remarkbox}
+A visualisation is not a proof. Monte Carlo computation can reveal patterns and test an implementation, but it does not replace a derivation or theorem. Every project should distinguish exact mathematics from numerical evidence.
+\end{remarkbox}

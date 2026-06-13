@@ -1,0 +1,50 @@
+\section{Projects for Chapter 7: Empirical Distributions and Descriptive Statistics}
+
+This chapter naturally leads to a data laboratory in which one dataset can be viewed through a frequency table, histogram, empirical CDF, numerical summaries, and robust summaries.
+
+\subsection*{Project: interactive descriptive-statistics laboratory}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Create an interactive descriptive-statistics laboratory. Let the user enter, paste, edit, or generate a numerical dataset. Display the raw observations, sorted observations, frequency table, histogram, empirical CDF, boxplot, mean, median, empirical variance, corrected sample variance, standard deviation, quartiles, interquartile range, and outlier fences.
+
+Provide a histogram bin-width slider and explain that changing bins changes the picture but not the data. Let the user drag one observation or add an extreme observation. Update all summaries immediately and highlight which statistics are sensitive to the change.
+
+Display both
+\[
+v_n=\frac1n\sum_{i=1}^n(x_i-\bar x)^2
+\]
+and
+\[
+s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2
+\]
+with a short explanation of their different roles.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Project: empirical versus theoretical distribution}
+
+\begin{examplebox}
+\textbf{Prompt to give an AI coding assistant}
+
+\begin{quote}\small
+Add a panel that generates data from a selected theoretical distribution. Overlay the histogram with the theoretical density or PMF, and overlay the empirical CDF with the theoretical CDF. Let the user change the sample size and resample repeatedly.
+
+Display numerical discrepancies such as the difference between empirical and theoretical means, variances, and selected CDF values. Emphasize that one sample may differ substantially from the model even when it was generated from that model.
+\end{quote}
+\end{examplebox}
+
+\subsection*{Suggested investigation}
+
+Students may record how the mean and median react to one moving outlier, how histogram shape changes with bin width, and how the empirical CDF changes one jump at a time when an observation is added.
+
+\begin{summarybox}
+The project should keep three levels separate:
+\[
+\text{observed values},\qquad
+\text{empirical distribution},\qquad
+\text{theoretical probability law}.
+\]
+\end{summarybox}
