@@ -1,84 +1,58 @@
 \section{Parallel, perpendicular, and intersecting lines}
 
-Once we can describe one line, we can compare two lines. The comparison depends on the information we choose to read. Direction vectors make parallelism natural. Dot products make perpendicularity natural. Implicit equations make intersections natural because they become systems of linear equations.
-
-The point is not to memorize a separate test for every situation. The point is to understand what each description makes visible.
+Once we can describe one line, we can compare two lines. Direction vectors make parallelism natural. Dot products make perpendicularity natural. Implicit equations make intersections natural because they become systems of linear equations.
 
 \subsection*{Parallel lines from direction vectors}
 
-Two lines are parallel when their directions are the same. In vector language, this means that their direction vectors are scalar multiples of one another.
+Two lines are parallel when their non-zero direction vectors are scalar multiples of one another.
 
 \begin{definitionbox}
-Let \(\ell_1\) and \(\ell_2\) have non-zero direction vectors \(v_1\) and \(v_2\). The lines are parallel if there exists a non-zero real number \(\lambda\) such that
+Let \(\ell_1\) and \(\ell_2\) have direction vectors \(v_1\) and \(v_2\). They are parallel if there exists a non-zero scalar \(\lambda\) such that
 \[
 v_2=\lambda v_1.
 \]
 \end{definitionbox}
 
 \begin{examplebox}
-Consider the lines
+For
 \[
-\ell_1: P=(1,2)+t(2,-3),
+\ell_1:P=(1,2)+t(2,-3)
 \]
 and
 \[
-\ell_2: P=(-4,0)+s(-4,6).
+\ell_2:P=(-4,0)+s(-4,6),
 \]
-Their direction vectors are
-\[
-v_1=(2,-3),
-\qquad
-v_2=(-4,6).
-\]
-Since
-\[
-v_2=-2v_1,
-\]
-the lines are parallel.
+we have \((-4,6)=-2(2,-3)\), so the lines are parallel.
 \end{examplebox}
 
-Parallel lines may be distinct, or they may be the same line. To decide which case occurs, we must check whether a point from one line lies on the other.
-
-\subsection*{The same line or distinct parallel lines}
-
-If two lines are parallel and share at least one point, then they are the same line. If they are parallel and share no point, then they are distinct parallel lines.
+Parallel lines may be distinct or may describe the same line. If they share a point, they are the same line; otherwise they are distinct parallel lines.
 
 \begin{examplebox}
-Let
+The lines
 \[
-\ell_1: P=(1,2)+t(2,-3)
+\ell_1:P=(1,2)+t(2,-3)
 \]
 and
 \[
-\ell_2: P=(3,-1)+s(4,-6).
+\ell_2:P=(3,-1)+s(4,-6)
 \]
-The direction vectors are parallel because
-\[
-(4,-6)=2(2,-3).
-\]
-Now check the point \((3,-1)\) from \(\ell_2\). On \(\ell_1\), when \(t=1\),
-\[
-(1,2)+(2,-3)=(3,-1).
-\]
-Thus \((3,-1)\) lies on \(\ell_1\). The two equations describe the same line.
+have parallel directions. Moreover, \((3,-1)\) is obtained from \(\ell_1\) when \(t=1\). Therefore the two parametrizations describe the same line.
 \end{examplebox}
-
-This example illustrates a common principle: parallel directions alone do not tell us whether the lines are equal. We also need position.
 
 \subsection*{Perpendicular lines}
 
-Two lines are perpendicular when their direction vectors are perpendicular. The dot product gives the test.
+In the plane, two non-parallel lines automatically intersect. In space, position must also be checked: skew lines can have perpendicular direction vectors without meeting.
 
 \begin{definitionbox}
-Let \(\ell_1\) and \(\ell_2\) have direction vectors \(v_1\) and \(v_2\). If
+Let \(\ell_1\) and \(\ell_2\) be intersecting lines with non-zero direction vectors \(v_1\) and \(v_2\). The lines are perpendicular if
 \[
-v_1\cdot v_2=0,
+v_1\cdot v_2=0.
 \]
-then the lines are perpendicular.
+For lines in the plane, perpendicular direction vectors already guarantee that the lines intersect.
 \end{definitionbox}
 
 \begin{examplebox}
-Let the direction vectors of two lines be
+Let two lines in the plane have directions
 \[
 v_1=(3,1),
 \qquad
@@ -86,132 +60,92 @@ v_2=(2,-6).
 \]
 Then
 \[
-v_1\cdot v_2=3\cdot2+1\cdot(-6)=6-6=0.
+v_1\cdot v_2=3\cdot2+1\cdot(-6)=0.
 \]
-Therefore the lines are perpendicular.
+The directions are perpendicular, and the plane lines therefore meet at a right angle.
 \end{examplebox}
 
-This is not only a computational shortcut. It is exactly the meaning of perpendicularity translated into algebra.
+\begin{remarkbox}
+For lines in \(\mathbb{R}^3\), the equation \(v_1\cdot v_2=0\) describes perpendicular directions. To call the lines themselves perpendicular, one must additionally verify that they intersect.
+\end{remarkbox}
 
-\subsection*{Using normal vectors}
+\subsection*{Using normal vectors in the plane}
 
-If lines are written in general form,
+For lines
 \[
-\ell_1: A_1x+B_1y+C_1=0,
+\ell_1:A_1x+B_1y+C_1=0,
+\qquad
+\ell_2:A_2x+B_2y+C_2=0,
 \]
-\[
-\ell_2: A_2x+B_2y+C_2=0,
-\]
-then their normal vectors are
+the normal vectors are
 \[
 n_1=(A_1,B_1),
 \qquad
 n_2=(A_2,B_2).
 \]
-
 The lines are parallel when their normal vectors are parallel. They are perpendicular when their normal vectors are perpendicular.
 
 \begin{examplebox}
-Consider
+For
 \[
-\ell_1: 2x-3y+1=0,
-\]
-and
-\[
-\ell_2: 4x-6y-5=0.
-\]
-The normal vectors are
-\[
-n_1=(2,-3),
+\ell_1:2x-3y+1=0,
 \qquad
-n_2=(4,-6).
+\ell_2:4x-6y-5=0,
 \]
-Since
+we have
 \[
-n_2=2n_1,
+(4,-6)=2(2,-3),
 \]
-the lines are parallel.
+so the lines are parallel.
 \end{examplebox}
 
 \begin{examplebox}
-Consider
+For
 \[
-\ell_1: x+2y-4=0,
-\]
-and
-\[
-\ell_2: 2x-y+3=0.
-\]
-The normal vectors are
-\[
-n_1=(1,2),
+\ell_1:x+2y-4=0,
 \qquad
-n_2=(2,-1).
+\ell_2:2x-y+3=0,
 \]
-Their dot product is
+the normals satisfy
 \[
-n_1\cdot n_2=1\cdot2+2\cdot(-1)=0.
+(1,2)\cdot(2,-1)=0.
 \]
-Therefore the normal vectors are perpendicular. The lines themselves are also perpendicular.
+Therefore the lines are perpendicular.
 \end{examplebox}
-
-For lines in the plane, using direction vectors or normal vectors gives equivalent information, but the most convenient choice depends on the form in which the line is given.
 
 \subsection*{Intersecting lines as a system of equations}
 
-Two non-parallel lines in the plane intersect in exactly one point. If the lines are written in general form, the intersection point is found by solving a system of two linear equations.
+Two non-parallel lines in the plane intersect in exactly one point. Their intersection is found by solving their equations simultaneously.
 
 \begin{examplebox}
-Find the intersection of
+For
 \[
-\ell_1: x+y-3=0,
+\ell_1:x+y-3=0,
+\qquad
+\ell_2:2x-y=0,
 \]
-and
-\[
-\ell_2: 2x-y=0.
-\]
-The system is
+we solve
 \[
 \begin{cases}
 x+y=3,\\
 2x-y=0.
 \end{cases}
 \]
-Adding the equations gives
-\[
-3x=3,
-\]
-so
-\[
-x=1.
-\]
-Then from \(2x-y=0\),
-\[
-y=2.
-\]
-Thus the lines intersect at
+Adding the equations gives \(3x=3\), so \(x=1\), and then \(y=2\). The intersection point is
 \[
 (1,2).
 \]
 \end{examplebox}
 
-This example connects analytic geometry with systems of linear equations. The intersection point is the point whose coordinates satisfy both line equations at once.
-
-\subsection*{Reading the result}
-
-When comparing two lines, the answer should include interpretation. It is not enough to say that a determinant is zero or that two vectors are proportional. We should say what that means geometrically.
-
 \begin{summarybox}
 When comparing two lines, ask:
 \begin{itemize}
-\item Which form are the lines given in?
-\item Are direction vectors visible?
-\item Are normal vectors visible?
-\item Are the directions parallel?
-\item Are the relevant vectors perpendicular?
-\item If the lines are parallel, are they the same line or distinct lines?
-\item If they are not parallel, what is their intersection point?
+\item Are the lines in the plane or in space?
+\item Are their direction vectors parallel or perpendicular?
+\item In space, do lines with perpendicular directions actually intersect?
+\item If the lines are parallel, are they identical or distinct?
+\item If plane lines are not parallel, what is their intersection point?
 \end{itemize}
 \end{summarybox}
 
-The relative position of lines is not a separate topic from line descriptions. It is one of the main reasons those descriptions are useful.
+Direction, position, and dimension must all be read before the geometric relationship is named.
