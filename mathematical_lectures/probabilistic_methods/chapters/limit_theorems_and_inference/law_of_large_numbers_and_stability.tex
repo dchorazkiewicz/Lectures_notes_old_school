@@ -1,0 +1,189 @@
+\section{The law of large numbers and the stability of averages}
+
+Let
+\[
+X_1,X_2,\ldots,X_n
+\]
+be independent observations from the same distribution, with
+\[
+\E[X_i]=\mu
+\qquad\text{and}\qquad
+\Var(X_i)=\sigma^2<\infty.
+\]
+The sample mean is
+\[
+\overline X_n=\frac1n\sum_{i=1}^nX_i.
+\]
+The subscript emphasizes that the statistic changes when the sample size changes.
+
+From the previous chapter,
+\[
+\E[\overline X_n]=\mu
+\]
+and
+\[
+\Var(\overline X_n)=\frac{\sigma^2}{n}.
+\]
+The centre of the sampling distribution stays at \(\mu\), while its variance
+decreases as \(n\) increases.
+
+This already suggests a fundamental regularity: averages from large samples
+should usually lie close to the population mean.
+
+\subsection*{Randomness remains, but averages become stable}
+
+Increasing the sample size does not make the individual observations less
+random. Each \(X_i\) still follows the same probability law. What changes is the
+behaviour of their average.
+
+For a small sample, one unusually large or small observation may strongly affect
+\(\overline X_n\). In a large sample, the same observation is combined with many
+others and has less influence on the final average.
+
+The reduction in variance gives the scale of this stabilization:
+\[
+\operatorname{SD}(\overline X_n)=\frac{\sigma}{\sqrt n}.
+\]
+Thus doubling the sample size does not halve the standard deviation of the
+sample mean. To halve it, the sample size must be multiplied by four.
+
+\begin{examplebox}
+Suppose individual observations have standard deviation \(20\). Then
+\[
+\operatorname{SD}(\overline X_{25})=\frac{20}{5}=4,
+\]
+while
+\[
+\operatorname{SD}(\overline X_{100})=\frac{20}{10}=2.
+\]
+The observations themselves remain equally variable, but averages based on one
+hundred observations fluctuate less than averages based on twenty-five.
+\end{examplebox}
+
+\subsection*{The law of large numbers}
+
+The law of large numbers makes the stabilization precise. For every fixed
+\(\varepsilon>0\),
+\[
+P\left(|\overline X_n-\mu|>\varepsilon\right)
+\longrightarrow 0
+\qquad\text{as }n\to\infty.
+\]
+Equivalently,
+\[
+P\left(|\overline X_n-\mu|\leq\varepsilon\right)
+\longrightarrow 1.
+\]
+
+\begin{theorembox}
+For independent identically distributed observations with finite expectation,
+the sample mean converges in probability to the population mean:
+\[
+\overline X_n\xrightarrow{P}\mu.
+\]
+This statement is called the \textbf{law of large numbers}.
+\end{theorembox}
+
+The notation
+\[
+\overline X_n\xrightarrow{P}\mu
+\]
+means that the probability of a noticeable difference between \(\overline X_n\)
+and \(\mu\) becomes small when the sample size becomes large.
+
+The theorem does not say that the sample mean eventually becomes equal to
+\(\mu\). It says that substantial deviations become increasingly unlikely.
+
+\subsection*{Why the result is plausible}
+
+When the variance is finite, Chebyshev's inequality gives
+\[
+P\left(|\overline X_n-\mu|\geq\varepsilon\right)
+\leq
+\frac{\Var(\overline X_n)}{\varepsilon^2}.
+\]
+Using
+\[
+\Var(\overline X_n)=\frac{\sigma^2}{n},
+\]
+we obtain
+\[
+P\left(|\overline X_n-\mu|\geq\varepsilon\right)
+\leq
+\frac{\sigma^2}{n\varepsilon^2}.
+\]
+The right-hand side tends to zero as \(n\) increases.
+
+This short argument shows the essential mechanism. The sampling distribution of
+the mean becomes concentrated because its variance decreases like \(1/n\).
+
+\begin{remarkbox}
+The law of large numbers is not a statement that random errors cancel perfectly.
+It is a probability statement saying that large deviations of the average become
+less likely as the sample size grows.
+\end{remarkbox}
+
+\subsection*{Sample proportions as a special case}
+
+For Bernoulli observations,
+\[
+X_i=
+\begin{cases}
+1,&\text{success},\\
+0,&\text{failure},
+\end{cases}
+\qquad
+P(X_i=1)=p,
+\]
+the sample proportion is
+\[
+\widehat p_n=\frac1n\sum_{i=1}^nX_i.
+\]
+Because \(\E[X_i]=p\), the law of large numbers gives
+\[
+\widehat p_n\xrightarrow{P}p.
+\]
+
+This explains why relative frequencies are used to estimate probabilities. In a
+long sequence of independent repetitions, the observed proportion of successes
+becomes increasingly stable around the underlying success probability.
+
+For example, if a mechanism has success probability \(p=0.4\), small samples may
+produce proportions such as
+\[
+0.2,\qquad 0.5,\qquad 0.7.
+\]
+With larger samples, proportions far from \(0.4\) become less common.
+
+\subsection*{What the law does and does not provide}
+
+The law of large numbers provides the first foundation for estimation. If
+\[
+\overline X_n\xrightarrow{P}\mu,
+\]
+then a large-sample mean is a reasonable estimator of \(\mu\). Similarly,
+\(\widehat p_n\) is a reasonable estimator of \(p\).
+
+But the law does not answer several important questions:
+
+\begin{itemize}
+    \item How large must \(n\) be in a particular problem?
+    \item What is the approximate probability of a specified estimation error?
+    \item What is the shape of the remaining random fluctuations?
+    \item How should uncertainty be reported after one sample is observed?
+\end{itemize}
+
+The law tells us that the estimator becomes close to the parameter. It does not
+yet describe the detailed pattern of the difference
+\[
+\overline X_n-\mu.
+\]
+That is the role of the central limit theorem.
+
+\begin{summarybox}
+The law of large numbers explains why averages and proportions can be used to
+learn about a probability model. As the sample size grows, their sampling
+distributions become concentrated around the corresponding population
+parameters. This produces stability, but it does not yet quantify the full shape
+of the remaining uncertainty.
+\end{summarybox}
