@@ -32,11 +32,9 @@ F(x)=kx.
 \]
 The work is
 \[
-W=\int_0^L kx\,dx.
-\]
-Compute:
-\[
-W=k\left[\frac{x^2}{2}\right]_0^L=\frac12kL^2.
+W=\int_0^L kx\,dx
+=k\left[\frac{x^2}{2}\right]_0^L
+=\frac12kL^2.
 \]
 \end{examplebox}
 
@@ -44,7 +42,7 @@ The force is small near the natural length and larger when the spring is stretch
 
 \subsection*{Flow as accumulated rate}
 
-If water flows out of a tank at rate \(r(t)\), then the total amount of water that flows out between times \(a\) and \(b\) is
+If water flows out of a tank at a non-negative rate \(r(t)\), then the amount of water leaving between times \(a\) and \(b\) is
 \[
 \int_a^b r(t)\,dt.
 \]
@@ -52,18 +50,18 @@ If water flows out of a tank at rate \(r(t)\), then the total amount of water th
 \begin{examplebox}
 Suppose water flows out of a tank at rate
 \[
-r(t)=2t-10
+r(t)=10-2t
 \]
-liters per minute for \(0\le t\le5\). The signed amount over the first three minutes is
+liters per minute for \(0\le t\le5\). This rate is non-negative on the stated interval. The amount leaving during the first three minutes is
 \[
-\int_0^3 (2t-10)\,dt
-=\left[t^2-10t\right]_0^3
-=9-30=-21.
+\int_0^3 (10-2t)\,dt
+=\left[10t-t^2\right]_0^3
+=30-9=21.
 \]
-The negative sign indicates that, with this sign convention, the rate is directed opposite to the chosen positive direction. If the problem asks for physical amount of water leaving, the model should use a non-negative outflow rate or the absolute value of the flow direction.
+Therefore \(21\) liters leave the tank during the first three minutes.
 \end{examplebox}
 
-This example shows why interpretation matters. An integral follows the sign convention of the model.
+If instead \(r(t)\) is defined as a signed net flow rate, its sign must be tied explicitly to a chosen direction. A negative integral then represents flow opposite to that positive direction, not a negative physical amount of water.
 
 \subsection*{Average value}
 
@@ -85,7 +83,7 @@ For physical accumulation problems, ask:
 \item What rate or force is being accumulated?
 \item What is the variable of accumulation: time, position, or another quantity?
 \item What are the correct bounds?
-\item Are signs physically meaningful, or is an absolute amount needed?
+\item Is the rate an unsigned amount or a signed directional quantity?
 \item What units should the final answer have?
 \end{itemize}
 \end{summarybox}
