@@ -13,8 +13,20 @@ The goal is
 [A\mid I] \longrightarrow [I\mid A^{-1}].
 \]
 
+\begin{definitionbox}
+An elementary matrix is a matrix obtained from an identity matrix by performing exactly one elementary row operation. If \(E\) represents that operation, then multiplying \(EA\) applies the same row operation to \(A\).
+\end{definitionbox}
+
 \begin{remarkbox}
-The method does not work by magic. Row operations correspond to multiplying by elementary matrices. If a sequence of row operations transforms \(A\) into \(I\), then the same sequence transforms \(I\) into the matrix that reverses \(A\), namely \(A^{-1}\).
+The method does not work by magic. Each row operation corresponds to multiplication by an elementary matrix. If
+\[
+E_k\cdots E_2E_1A=I,
+\]
+then
+\[
+E_k\cdots E_2E_1=A^{-1}.
+\]
+Applying the same operations to the identity block therefore constructs the matrix that reverses \(A\).
 \end{remarkbox}
 
 \subsection{A complete \(2\times2\) example}
