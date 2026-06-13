@@ -47,6 +47,7 @@
 ./mathematical_lectures/basic_mathematics/chapters/chapter_10_derivatives_and_function_analysis.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_11_integrals.tex
 ./mathematical_lectures/basic_mathematics/chapters/chapter_12_applications_of_calculus.tex
+./mathematical_lectures/basic_mathematics/chapters/chapter_13_problem_sets.tex
 ./mathematical_lectures/basic_mathematics/chapters/derivatives_and_function_analysis
 ./mathematical_lectures/basic_mathematics/chapters/derivatives_and_function_analysis/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/derivatives_and_function_analysis/asymptotes_and_global_function_analysis.tex
