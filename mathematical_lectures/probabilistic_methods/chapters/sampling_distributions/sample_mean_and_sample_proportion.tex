@@ -1,0 +1,199 @@
+\section{The sample mean and the sample proportion}
+
+The previous section constructed a sampling distribution by listing all possible
+samples. This works well for very small models, but the number of possible samples
+grows quickly. For larger samples, we often study a statistic through a few
+important characteristics of its distribution.
+
+The two most important questions are:
+\[
+\text{Where is the sampling distribution centred?}
+\]
+and
+\[
+\text{How much does the statistic vary from sample to sample?}
+\]
+Expectation describes the centre, while variance and standard deviation describe
+the spread.
+
+\subsection*{The sample mean}
+
+Let
+\[
+X_1,X_2,\ldots,X_n
+\]
+be independent observations from the same distribution. Suppose
+\[
+\E[X_i]=\mu
+\qquad\text{and}\qquad
+\Var(X_i)=\sigma^2
+\]
+for every \(i\). The sample mean is
+\[
+\overline X=\frac1n\sum_{i=1}^n X_i.
+\]
+It is a random variable because it depends on the random sample.
+
+Using linearity of expectation,
+\[
+\E[\overline X]
+=
+\E\left[\frac1n\sum_{i=1}^n X_i\right]
+=
+\frac1n\sum_{i=1}^n\E[X_i].
+\]
+Since every observation has expectation \(\mu\),
+\[
+\E[\overline X]
+=
+\frac1n(n\mu)
+=
+\mu.
+\]
+
+\begin{theorembox}
+If the observations all have expectation \(\mu\), then
+\[
+\E[\overline X]=\mu.
+\]
+Thus the sampling distribution of the sample mean is centred at the population
+mean.
+\end{theorembox}
+
+This does not mean that every observed sample mean equals \(\mu\). Different
+samples usually produce different values. The statement concerns the centre of
+the entire sampling distribution.
+
+Now consider its variance. Because the observations are independent,
+\[
+\Var(X_1+\cdots+X_n)
+=
+\Var(X_1)+\cdots+\Var(X_n).
+\]
+Therefore
+\[
+\Var(\overline X)
+=
+\Var\left(\frac1n\sum_{i=1}^nX_i\right)
+=
+\frac1{n^2}\sum_{i=1}^n\Var(X_i).
+\]
+Since every observation has variance \(\sigma^2\),
+\[
+\Var(\overline X)
+=
+\frac1{n^2}(n\sigma^2)
+=
+\frac{\sigma^2}{n}.
+\]
+Hence
+\[
+\operatorname{SD}(\overline X)
+=
+\frac{\sigma}{\sqrt n}.
+\]
+
+\begin{theorembox}
+For independent observations with common variance \(\sigma^2\),
+\[
+\Var(\overline X)=\frac{\sigma^2}{n}.
+\]
+As the sample size increases, the sampling distribution of the mean becomes less
+spread out.
+\end{theorembox}
+
+The individual observations do not become less variable when \(n\) increases.
+The population law has not changed. What becomes less variable is their average.
+A single unusually large or small observation has less influence when it is
+combined with many other observations.
+
+\begin{examplebox}
+Suppose individual observations have
+\[
+\mu=50,
+\qquad
+\sigma=12.
+\]
+For samples of size \(n=4\),
+\[
+\E[\overline X]=50,
+\qquad
+\operatorname{SD}(\overline X)=\frac{12}{\sqrt4}=6.
+\]
+For samples of size \(n=36\),
+\[
+\E[\overline X]=50,
+\qquad
+\operatorname{SD}(\overline X)=\frac{12}{\sqrt{36}}=2.
+\]
+Both sampling distributions are centred at \(50\), but means from samples of
+size \(36\) vary less from sample to sample.
+\end{examplebox}
+
+At this stage we are describing the centre and spread of the sampling
+distribution. We are not yet claiming that the distribution is normal. The shape
+of the distribution and normal approximations belong to the next chapter.
+
+\subsection*{The sample proportion}
+
+Suppose each observation records success or failure:
+\[
+X_i=
+\begin{cases}
+1,&\text{if the }i\text{-th observation is a success},\\
+0,&\text{if the }i\text{-th observation is a failure}.
+\end{cases}
+\]
+If
+\[
+P(X_i=1)=p,
+\]
+then
+\[
+\E[X_i]=p
+\qquad\text{and}\qquad
+\Var(X_i)=p(1-p).
+\]
+
+The sample proportion of successes is
+\[
+\widehat p
+=
+\frac{X_1+\cdots+X_n}{n}.
+\]
+This is exactly the sample mean of zero--one observations. Therefore the general
+results for the sample mean apply immediately:
+\[
+\E[\widehat p]=p
+\]
+and
+\[
+\Var(\widehat p)=\frac{p(1-p)}{n}.
+\]
+Consequently,
+\[
+\operatorname{SD}(\widehat p)
+=
+\sqrt{\frac{p(1-p)}{n}}.
+\]
+
+\begin{summarybox}
+The sample mean and the sample proportion illustrate the same principle:
+\[
+\text{a statistic varies because the sample varies.}
+\]
+For the sample mean,
+\[
+\E[\overline X]=\mu,
+\qquad
+\Var(\overline X)=\frac{\sigma^2}{n}.
+\]
+For the sample proportion,
+\[
+\E[\widehat p]=p,
+\qquad
+\Var(\widehat p)=\frac{p(1-p)}{n}.
+\]
+In both cases, increasing the sample size reduces sampling variability without
+changing the centre of the distribution.
+\end{summarybox}
