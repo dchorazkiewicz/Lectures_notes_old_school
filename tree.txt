@@ -133,6 +133,8 @@
 ./mathematical_lectures/basic_mathematics/chapters/planes/parametric_description_of_planes.tex
 ./mathematical_lectures/basic_mathematics/chapters/planes/planes_through_three_points.tex
 ./mathematical_lectures/basic_mathematics/chapters/planes/what_information_defines_a_plane.tex
+./mathematical_lectures/basic_mathematics/chapters/problem_sets
+./mathematical_lectures/basic_mathematics/chapters/problem_sets/algebra_problem_sets.tex
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/.gitkeep
 ./mathematical_lectures/basic_mathematics/chapters/sequences_and_functions/discrete_and_continuous_domains.tex
