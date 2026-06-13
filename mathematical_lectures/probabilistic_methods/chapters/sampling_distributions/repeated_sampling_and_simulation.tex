@@ -1,0 +1,153 @@
+\section{Repeated sampling and simulation}
+
+For a very small model, a sampling distribution can be constructed exactly by
+listing all possible samples. For larger models, this list may be too long to
+write down. The idea of a sampling distribution remains the same, but it can be
+explored by repeating the sampling procedure many times.
+
+Suppose the model and the sample size are fixed. One repetition produces one
+sample and therefore one value of a statistic:
+\[
+(X_1,\ldots,X_n)
+\longrightarrow
+T=g(X_1,\ldots,X_n).
+\]
+Repeating the entire procedure produces many values:
+\[
+T_1,T_2,T_3,\ldots.
+\]
+A histogram or frequency table of these values gives an empirical picture of the
+sampling distribution of \(T\).
+
+\subsection*{One dataset and many repeated samples}
+
+Consider a Bernoulli model with success probability \(p\). From one sample of
+size \(n\), we compute the sample proportion
+\[
+\widehat p=\frac{X_1+\cdots+X_n}{n}.
+\]
+If the observed sample is
+\[
+(1,0,1,1,0),
+\]
+then the observed proportion is
+\[
+\widehat p=\frac35.
+\]
+This is one value obtained from one sample.
+
+If the experiment is repeated with new samples of size \(5\), other values may
+appear:
+\[
+0,\quad \frac15,\quad \frac25,\quad \frac35,\quad \frac45,\quad 1.
+\]
+The sampling distribution tells us how likely these values are before any
+particular sample is observed.
+
+In this example the distribution can also be found exactly. The event
+\[
+\widehat p=\frac{k}{n}
+\]
+means that exactly \(k\) successes occurred. Therefore
+\[
+P\left(\widehat p=\frac{k}{n}\right)
+=
+\binom nk p^k(1-p)^{n-k},
+\qquad k=0,1,\ldots,n.
+\]
+The binomial formula is not a new rule for sampling distributions. It appears
+because all samples with exactly \(k\) successes are grouped into the same value
+\(k/n\).
+
+\subsection*{A simulation procedure}
+
+A computer can imitate repeated sampling. To explore the sampling distribution
+of a statistic \(T\), we may use the following procedure:
+
+\begin{enumerate}
+    \item Generate a sample of size \(n\) from the chosen probability model.
+    \item Compute the statistic \(T\) from that sample.
+    \item Store the value of \(T\).
+    \item Repeat the first three steps many times.
+    \item Summarize the stored values by a table, histogram, mean, and standard
+    deviation.
+\end{enumerate}
+
+The resulting histogram is not a histogram of all observations from one large
+sample. Each plotted value is one statistic computed from one complete sample.
+For example, if \(T=\overline X\), then every entry in the histogram is a sample
+mean.
+
+\begin{remarkbox}
+Repeating one experiment many times and taking one large sample are related but
+not identical descriptions. A sampling distribution is built by repeatedly
+forming samples of a fixed size and recomputing the statistic for each sample.
+\end{remarkbox}
+
+\subsection*{Three distributions that should not be confused}
+
+Suppose a model generates observations \(X\), and we repeatedly take samples of
+size \(n\). Three different distributions may appear.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Distribution & What varies? & What it describes \\
+\midrule
+Population distribution & one observation \(X\) & the model for individual values \\
+Empirical distribution & values in one dataset & what was observed in one sample \\
+Sampling distribution & a statistic \(T\) & variation across repeated samples \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These distributions answer different questions. A population distribution asks
+what individual observations may look like. An empirical distribution describes
+the values actually seen. A sampling distribution asks how a summary would
+change if the sampling process were repeated.
+
+For example, individual observations may be strongly skewed while averages of
+samples have a different shape. Conversely, a nearly symmetric observed
+histogram from one sample does not prove that a statistic has a symmetric
+sampling distribution. The levels must be kept separate.
+
+\subsection*{Other statistics also have sampling distributions}
+
+The same repeated-sampling idea applies to any statistic. From each sample we may
+compute:
+\[
+\overline X,
+\qquad
+\widehat p,
+\qquad
+S^2,
+\qquad
+M,
+\]
+where these symbols may represent the sample mean, sample proportion, sample
+variance, and sample median.
+
+Their sampling distributions need not have the same shape or variability. Some
+statistics react strongly to unusual observations; others are more resistant.
+Some distributions can be derived exactly; others are easier to study by
+simulation or approximation.
+
+This chapter does not attempt to derive every possible distribution. Its purpose
+is to establish the level of reasoning:
+\[
+\text{model}
+\longrightarrow
+\text{random samples}
+\longrightarrow
+\text{statistic values}
+\longrightarrow
+\text{sampling distribution}.
+\]
+
+\begin{summarybox}
+Simulation makes the idea of a sampling distribution visible. It does not change
+the definition and it does not replace mathematical reasoning. The theoretical
+sampling distribution belongs to the probability model. A simulation produces
+an empirical approximation by generating many possible samples and recomputing
+the statistic each time.
+\end{summarybox}
