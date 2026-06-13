@@ -1,0 +1,197 @@
+\section{From sampling distributions to statistical inference}
+
+The previous chapter introduced a second level of randomness. A probability model
+describes individual observations, but it also determines the probability law of
+the entire sample and of every statistic computed from that sample.
+
+If
+\[
+X_1,X_2,\ldots,X_n
+\]
+is a random sample and
+\[
+T=g(X_1,X_2,\ldots,X_n)
+\]
+is a statistic, then \(T\) has a sampling distribution. Before the data are
+observed, the statistic is random. After the sample has been collected, it takes
+one concrete value
+\[
+t=g(x_1,x_2,\ldots,x_n).
+\]
+
+This chapter asks how the observed value \(t\) can be used to learn about the
+unknown mechanism that generated the data.
+
+\subsection*{Probability and inference move in opposite directions}
+
+In a probability problem, the model is known. We begin with assumptions such as
+\[
+X_i\sim F
+\]
+or
+\[
+P(X_i=1)=p,
+\]
+and ask what kinds of samples and statistic values the model may produce.
+
+The direction of reasoning is
+\[
+\text{model}
+\longrightarrow
+\text{possible samples}
+\longrightarrow
+\text{possible statistic values}.
+\]
+
+In statistical inference, the situation is reversed. We observe one sample and
+one statistic value, while some part of the model is unknown. We then ask what
+this observed result suggests about the mechanism that produced it.
+
+The direction now appears to be
+\[
+\text{observed sample}
+\longrightarrow
+\text{information about the model}.
+\]
+
+This reversal is not automatic. One observed sample does not determine the model
+uniquely. Different models may produce similar data, and even a correct model may
+occasionally produce unusual samples. Statistical inference must therefore use
+probability to measure uncertainty rather than pretend that uncertainty has
+disappeared.
+
+\begin{summarybox}
+Probability asks what data a model may generate. Statistical inference asks what
+an observed dataset allows us to say about the model that generated it.
+\end{summarybox}
+
+\subsection*{Parameters and statistics}
+
+A probability model often contains an unknown numerical characteristic called a
+\textbf{parameter}. We denote it by a symbol such as
+\[
+\theta,
+\qquad
+\mu,
+\qquad
+\sigma^2,
+\qquad
+\text{or}
+\qquad
+p.
+\]
+The parameter belongs to the model. It is not computed from the observed sample.
+
+A statistic is computed from the sample and may be used to estimate the
+parameter. We often write
+\[
+\widehat\theta=g(X_1,\ldots,X_n).
+\]
+Before observation, \(\widehat\theta\) is random. After observation, it becomes a
+number
+\[
+\widehat\theta_{\mathrm{obs}}=g(x_1,\ldots,x_n).
+\]
+
+For example, in a Bernoulli model the unknown parameter is the success
+probability \(p\). The sample proportion
+\[
+\widehat p=\frac1n\sum_{i=1}^nX_i
+\]
+is a statistic used to estimate it. Similarly, the sample mean
+\[
+\overline X=\frac1n\sum_{i=1}^nX_i
+\]
+may be used to estimate the population mean \(\mu\).
+
+\begin{remarkbox}
+A parameter and a statistic may play similar roles in a formula, but they are
+mathematically different. The parameter is a fixed but unknown feature of the
+model. The statistic is a random quantity before the sample is observed.
+\end{remarkbox}
+
+\subsection*{Why large samples matter}
+
+The sampling distribution of a statistic may be complicated for small samples.
+As the sample size increases, however, important regularities begin to appear.
+Sample averages become more stable, their random fluctuations occur on a
+predictable scale, and in many situations their standardized distributions take
+an approximately universal form.
+
+These regularities are the bridge from probability to inference. They allow us
+to answer questions such as:
+
+\begin{itemize}
+    \item How close is a sample mean likely to be to the population mean?
+    \item How much can a sample proportion vary from sample to sample?
+    \item Which parameter values are compatible with the observed statistic?
+    \item Would the observed result be plausible under a proposed model?
+\end{itemize}
+
+The first major regularity is the law of large numbers. It explains why averages
+and proportions become stable. The second is the central limit theorem. It
+describes the scale and approximate shape of their remaining fluctuations.
+
+\subsection*{Inference is based on hypothetical repetition}
+
+Usually we observe only one dataset. Nevertheless, statistical reasoning asks
+what would happen if the same sampling procedure were repeated many times.
+
+This does not mean that the actual experiment must literally be repeated. The
+repetition is part of the probability model. It allows us to describe how the
+statistic would vary across all samples that could have been observed.
+
+Suppose a model with parameter \(\theta\) implies that a statistic \(T\) is
+usually close to a certain value. After observing \(T=t_{\mathrm{obs}}\), we may
+ask whether this result is typical or unusual under that model. If it is typical,
+the data are compatible with the model. If it is extremely unusual, the data
+provide evidence against it.
+
+The same sampling behaviour can also be used in the opposite way. If a statistic
+is usually close to the parameter it estimates, then an observed statistic can
+be surrounded by a range of plausible parameter values.
+
+These two ideas lead to the main forms of inference developed later in the
+chapter:
+
+\[
+\text{estimation and confidence intervals},
+\]
+
+and
+
+\[
+\text{statistical hypotheses and tests}.
+\]
+
+\begin{theorembox}
+Statistical inference is possible because statistics have predictable sampling
+behaviour. Large-sample regularities connect the unknown model parameter with the
+random statistic computed from observed data.
+\end{theorembox}
+
+\subsection*{The logical structure of the chapter}
+
+The reasoning developed in this chapter follows the chain
+\[
+\text{probability model}
+\longrightarrow
+\text{sampling distribution}
+\longrightarrow
+\text{large-sample regularity}
+\longrightarrow
+\text{observed statistic}
+\longrightarrow
+\text{statistical conclusion}.
+\]
+
+The conclusion is never obtained from the observed number alone. It depends on
+the sampling model, the assumptions, and the mathematical description of how the
+statistic behaves across possible samples.
+
+\begin{summarybox}
+Statistical inference does not replace probability theory. It uses probability
+theory in reverse. We first understand how a model generates samples and
+statistics. Only then can one observed statistic be used to estimate an unknown
+parameter or assess the compatibility of a proposed model with the data.
+\end{summarybox}
