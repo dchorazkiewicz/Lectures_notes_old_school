@@ -1,0 +1,209 @@
+\section{Cross product and normal vectors}
+
+The dot product produces a number and measures directional agreement. In three-dimensional space there is another important operation: the cross product. It takes two vectors and produces a new vector perpendicular to both of them.
+
+This operation is specific to three-dimensional vector geometry in the form used here. It will provide the missing link between vectors and equations of planes.
+
+\subsection*{Definition in coordinates}
+
+Let
+\[
+u=(u_1,u_2,u_3),
+\qquad
+v=(v_1,v_2,v_3).
+\]
+Their cross product is defined by
+\[
+u\times v
+=
+\bigl(
+u_2v_3-u_3v_2,\,
+u_3v_1-u_1v_3,\,
+u_1v_2-u_2v_1
+\bigr).
+\]
+
+\begin{definitionbox}
+For vectors \(u,v\in\mathbb{R}^3\), the cross product \(u\times v\) is the vector
+\[
+u\times v
+=
+\begin{pmatrix}
+u_2v_3-u_3v_2\\
+u_3v_1-u_1v_3\\
+u_1v_2-u_2v_1
+\end{pmatrix}.
+\]
+It is perpendicular to both \(u\) and \(v\).
+\end{definitionbox}
+
+A common mnemonic writes this computation as
+\[
+u\times v=
+\begin{vmatrix}
+\mathbf{i}&\mathbf{j}&\mathbf{k}\\
+u_1&u_2&u_3\\
+v_1&v_2&v_3
+\end{vmatrix},
+\]
+with the usual alternating signs in the expansion. The coordinate formula above is the definition; the determinant notation is only a compact memory aid.
+
+\begin{examplebox}
+Let
+\[
+u=(1,2,3),
+\qquad
+v=(2,-1,1).
+\]
+Then
+\[
+u\times v
+=
+\bigl(
+2\cdot1-3(-1),\,
+3\cdot2-1\cdot1,\,
+1(-1)-2\cdot2
+\bigr),
+\]
+so
+\[
+u\times v=(5,5,-5).
+\]
+We can check perpendicularity:
+\[
+(5,5,-5)\cdot(1,2,3)=5+10-15=0,
+\]
+and
+\[
+(5,5,-5)\cdot(2,-1,1)=10-5-5=0.
+\]
+Thus the resulting vector is perpendicular to both original vectors.
+\end{examplebox}
+
+\subsection*{Order and orientation}
+
+The order of the vectors matters:
+\[
+v\times u=-(u\times v).
+\]
+Reversing the order reverses the direction of the resulting normal vector, but it does not change the plane perpendicular to that normal direction.
+
+\begin{remarkbox}
+The vectors \(u\times v\) and \(v\times u\) have opposite orientations. In plane equations, either one may be used as a normal vector because multiplying a normal vector by a non-zero scalar does not change the plane.
+\end{remarkbox}
+
+\subsection*{Parallel vectors and the zero cross product}
+
+If \(u\) and \(v\) are parallel, they do not determine two independent directions. In that case,
+\[
+u\times v=0.
+\]
+Conversely, for non-zero vectors in \(\mathbb{R}^3\),
+\[
+u\times v=0
+\]
+implies that the vectors are parallel.
+
+\begin{theorembox}
+For \(u,v\in\mathbb{R}^3\),
+\[
+u\times v=0
+\]
+if and only if \(u\) and \(v\) are linearly dependent.
+\end{theorembox}
+
+This criterion will be useful when deciding whether three points are collinear and whether two direction vectors really span a plane.
+
+\subsection*{Geometric size}
+
+If \(\theta\) is the angle between non-zero vectors \(u\) and \(v\), then
+\[
+\lVert u\times v\rVert
+=
+\lVert u\rVert\lVert v\rVert\sin\theta.
+\]
+Therefore \(\lVert u\times v\rVert\) is the area of the parallelogram spanned by \(u\) and \(v\).
+
+This formula also explains why the cross product is zero for parallel vectors: their angle is \(0\) or \(\pi\), so \(\sin\theta=0\).
+
+\subsection*{Finding a normal vector to a plane}
+
+Suppose a plane contains two non-parallel direction vectors \(u\) and \(v\). A normal vector must be perpendicular to both directions. Therefore
+\[
+n=u\times v
+\]
+is a natural choice.
+
+\begin{examplebox}
+Consider the three points
+\[
+A=(1,0,0),
+\qquad
+B=(0,1,0),
+\qquad
+C=(0,0,1).
+\]
+Two direction vectors in their plane are
+\[
+u=B-A=(-1,1,0),
+\]
+and
+\[
+v=C-A=(-1,0,1).
+\]
+Their cross product is
+\[
+u\times v
+=
+\bigl(
+1\cdot1-0\cdot0,\,
+0(-1)-(-1)\cdot1,\,
+(-1)\cdot0-1(-1)
+\bigr)
+=
+(1,1,1).
+\]
+Thus a normal vector is
+\[
+n=(1,1,1).
+\]
+Using the point \(A\), the plane equation is
+\[
+n\cdot(P-A)=0,
+\]
+which becomes
+\[
+(x-1)+y+z=0,
+\]
+or
+\[
+x+y+z=1.
+\]
+\end{examplebox}
+
+The chain of ideas is now complete:
+\[
+\text{three points}
+\longrightarrow
+\text{two direction vectors}
+\longrightarrow
+\text{cross product}
+\longrightarrow
+\text{normal vector}
+\longrightarrow
+\text{plane equation}.
+\]
+
+\begin{summarybox}
+When using the cross product, ask:
+\begin{itemize}
+\item Are the vectors in \(\mathbb{R}^3\)?
+\item Do I need a vector perpendicular to two given directions?
+\item Have I preserved the alternating signs in the coordinate formula?
+\item Does reversing the order only reverse orientation?
+\item Is the cross product zero, indicating dependent directions?
+\item Can the result be used as a normal vector to a plane?
+\end{itemize}
+\end{summarybox}
+
+The cross product turns two independent directions inside a plane into one direction perpendicular to the plane.
