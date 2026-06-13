@@ -1,0 +1,279 @@
+\section{The central limit theorem and the shape of fluctuations}
+
+The law of large numbers says that
+\[
+\overline X_n
+\]
+becomes close to
+\[
+\mu
+\]
+when the sample size is large. It explains stability, but it does not describe the
+remaining error
+\[
+\overline X_n-\mu.
+\]
+
+To use an observed sample mean for inference, we need more information. We need
+to know the typical size of this error and the approximate shape of its sampling
+distribution.
+
+The central limit theorem provides this second regularity.
+
+\subsection*{The scale of the fluctuations}
+
+Suppose
+\[
+X_1,X_2,\ldots,X_n
+\]
+are independent and identically distributed, with
+\[
+\E[X_i]=\mu
+\qquad\text{and}\qquad
+\Var(X_i)=\sigma^2<\infty.
+\]
+Then
+\[
+\E[\overline X_n]=\mu
+\]
+and
+\[
+\operatorname{SD}(\overline X_n)=\frac{\sigma}{\sqrt n}.
+\]
+
+Therefore the natural scale of the difference
+\[
+\overline X_n-\mu
+\]
+is not \(1\), and not \(1/n\), but
+\[
+\frac1{\sqrt n}.
+\]
+
+The standardized fluctuation is
+\[
+Z_n
+=
+\frac{\overline X_n-\mu}{\sigma/\sqrt n}.
+\]
+This quantity measures how many standard deviations the sample mean lies above
+or below the population mean.
+
+\subsection*{The central limit theorem}
+
+Under the assumptions above, the distribution of \(Z_n\) approaches the standard
+normal distribution as \(n\) increases:
+\[
+Z_n
+=
+\frac{\overline X_n-\mu}{\sigma/\sqrt n}
+\xrightarrow{d}
+N(0,1).
+\]
+
+\begin{theorembox}
+For independent identically distributed observations with finite mean \(\mu\) and
+finite positive variance \(\sigma^2\),
+\[
+\frac{\overline X_n-\mu}{\sigma/\sqrt n}
+\xrightarrow{d}N(0,1).
+\]
+This statement is called the \textbf{central limit theorem}.
+\end{theorembox}
+
+The notation
+\[
+\xrightarrow{d}
+\]
+means convergence in distribution. For this course, the essential interpretation
+is that the standardized sampling distribution becomes approximately normal for
+large \(n\).
+
+Equivalently, the unstandardized sample mean is approximately distributed as
+\[
+\overline X_n
+\approx
+N\left(\mu,\frac{\sigma^2}{n}\right).
+\]
+This is an approximation, not an exact identity in general.
+
+\subsection*{What the theorem adds to the law of large numbers}
+
+The two limit theorems answer different questions.
+
+The law of large numbers says
+\[
+\overline X_n\approx\mu
+\]
+for large \(n\). It identifies the value around which the statistic stabilizes.
+
+The central limit theorem says
+\[
+\overline X_n-\mu
+\]
+usually has size approximately
+\[
+\frac{\sigma}{\sqrt n},
+\]
+and that after dividing by this scale, the resulting distribution is
+approximately standard normal.
+
+Thus:
+\[
+\text{law of large numbers}
+\quad\longrightarrow\quad
+\text{location of the statistic},
+\]
+while
+\[
+\text{central limit theorem}
+\quad\longrightarrow\quad
+\text{shape and scale of its fluctuations}.
+\]
+
+\begin{summarybox}
+The law of large numbers explains why the sample mean approaches \(\mu\). The
+central limit theorem explains how the sample mean continues to fluctuate around
+\(\mu\) when the sample size is large.
+\end{summarybox}
+
+\subsection*{The population need not be normal}
+
+A common misunderstanding is that the central limit theorem requires the
+individual observations to have a normal distribution. It does not.
+
+The population distribution may be discrete, skewed, or otherwise non-normal.
+The theorem concerns the sampling distribution of the standardized mean, not the
+distribution of each individual observation.
+
+For example, suppose
+\[
+X_i\sim\operatorname{Bernoulli}(p).
+\]
+Each \(X_i\) takes only the values \(0\) and \(1\), so its distribution is not
+continuous and is certainly not normal. Nevertheless, the sample proportion
+\[
+\widehat p_n=\frac1n\sum_{i=1}^nX_i
+\]
+is a sample mean. Since
+\[
+\E[X_i]=p
+\qquad\text{and}\qquad
+\Var(X_i)=p(1-p),
+\]
+the central limit theorem gives
+\[
+\frac{\widehat p_n-p}
+{\sqrt{p(1-p)/n}}
+\approx N(0,1)
+\]
+for sufficiently large \(n\).
+
+Equivalently,
+\[
+\widehat p_n
+\approx
+N\left(p,\frac{p(1-p)}{n}\right).
+\]
+
+\subsection*{A numerical interpretation}
+
+Suppose a Bernoulli model has
+\[
+p=0.4
+\]
+and the sample size is
+\[
+n=400.
+\]
+Then
+\[
+\E[\widehat p]=0.4
+\]
+and
+\[
+\operatorname{SD}(\widehat p)
+=
+\sqrt{\frac{0.4(0.6)}{400}}
+\approx 0.0245.
+\]
+
+The central limit theorem suggests that the standardized quantity
+\[
+\frac{\widehat p-0.4}{0.0245}
+\]
+is approximately standard normal.
+
+A sample proportion such as
+\[
+\widehat p=0.42
+\]
+is less than one standard deviation above \(0.4\), so it is not surprising under
+the model. A value such as
+\[
+\widehat p=0.50
+\]
+is more than four standard deviations above \(0.4\), so it would be highly
+unusual under the same model.
+
+This is the beginning of statistical inference. The observed statistic is judged
+relative to the sampling distribution predicted by a proposed model.
+
+\subsection*{When the approximation may be poor}
+
+The phrase ``for large \(n\)'' does not refer to one universal sample size. The
+quality of the approximation depends on the population distribution.
+
+The normal approximation may be inaccurate when:
+
+\begin{itemize}
+    \item the sample is small;
+    \item the population distribution is extremely skewed;
+    \item very rare and very large observations strongly affect the mean;
+    \item the variance is infinite;
+    \item the observations are strongly dependent.
+\end{itemize}
+
+For Bernoulli data, the approximation is usually more reliable when both
+\[
+np
+\qquad\text{and}\qquad
+n(1-p)
+\]
+are not too small. These quantities represent the expected numbers of successes
+and failures.
+
+The central limit theorem is powerful because its conclusion is widely
+applicable, but every application still depends on assumptions about the sampling
+mechanism.
+
+\begin{remarkbox}
+A large sample does not repair every defective model. Limit theorems describe the
+consequences of assumptions; they do not justify independence, identical
+distributions, or good data collection.
+\end{remarkbox}
+
+\subsection*{From approximation to inference}
+
+The approximation
+\[
+\frac{\overline X_n-\mu}{\sigma/\sqrt n}
+\approx N(0,1)
+\]
+allows probabilities about the statistic to be computed using the standard
+normal distribution.
+
+It tells us which deviations from \(\mu\) are ordinary and which are unusual. It
+also provides a way to construct ranges of parameter values that are compatible
+with an observed statistic.
+
+To use this idea systematically, we need a name for the standard deviation of a
+sampling distribution. This quantity is called the standard error.
+
+\begin{summarybox}
+The central limit theorem provides a common approximate shape for many sampling
+distributions. After centring by the parameter and scaling by the standard
+deviation of the statistic, the remaining fluctuation is approximately standard
+normal. This regularity turns sampling distributions into practical tools for
+measuring uncertainty.
+\end{summarybox}
