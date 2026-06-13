@@ -11,226 +11,131 @@ sampling distribution:
 \]
 \end{definitionbox}
 
-The term does not describe an error caused by incorrect computation. It describes
-the random variation produced by the sampling process.
+The term does not describe a computational mistake. It describes variation
+created by random sampling.
 
 \subsection*{Standard deviation and standard error}
 
-The standard deviation of the population describes variation among individual
-observations. The standard error describes variation among values of a statistic
-computed from repeated samples.
+The population standard deviation describes variation among individual
+observations. The standard error describes variation among statistics computed
+from repeated samples.
 
-For example, if individual observations have standard deviation \(\sigma\), then
+If individual observations have standard deviation \(\sigma\), then
 \[
-\operatorname{SD}(X_i)=\sigma.
+\operatorname{SD}(X_i)=\sigma,
+\qquad
+\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n}.
 \]
-For the sample mean,
-\[
-\operatorname{SE}(\overline X_n)
-=
-\operatorname{SD}(\overline X_n)
-=
-\frac{\sigma}{\sqrt n}.
-\]
+A population may remain highly variable while its mean is estimated much more
+precisely.
 
-The two quantities answer different questions:
-
-\begin{center}
-\begin{tabular}{lll}
-\toprule
-Quantity & What varies? & What it measures \\
-\midrule
-\(\sigma\) & individual observations & spread of the population \\
-\(\sigma/\sqrt n\) & sample means & sampling variability of the mean \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-A population may remain highly variable while the sample mean is estimated with
-considerably greater stability.
-
-\subsection*{Standard errors of the main statistics}
+\subsection*{Standard errors of common statistics}
 
 For independent observations with common variance \(\sigma^2\),
 \[
-\operatorname{SE}(\overline X_n)=\frac{\sigma}{\sqrt n}.
+\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n}.
 \]
-
 For a sample proportion based on independent Bernoulli observations,
 \[
-\operatorname{SE}(\widehat p_n)
+\operatorname{SE}(\widehat p)
 =
 \sqrt{\frac{p(1-p)}{n}}.
 \]
-
-Both formulas contain \(1/\sqrt n\). This is the characteristic scale of
-large-sample fluctuations for averages.
-
-If the sample size is multiplied by four, the standard error is divided by two.
-If the sample size is multiplied by one hundred, the standard error is divided by
-ten.
+Both formulas contain the scale \(1/\sqrt n\). Multiplying the sample size by four
+divides the standard error by two.
 
 \begin{remarkbox}
-Larger samples reduce random sampling variability, but with diminishing returns.
-Substantially greater precision may require a much larger sample.
+Larger samples reduce random sampling variation, but they do not automatically
+remove bias, dependence, measurement error, or model misspecification.
 \end{remarkbox}
 
 \subsection*{Normal approximation in standard-error units}
 
-The central limit theorem suggests that, for large samples,
+The central limit theorem suggests that, for sufficiently large samples,
 \[
-\frac{\overline X_n-\mu}
-{\operatorname{SE}(\overline X_n)}
+\frac{\overline X-\mu}{\operatorname{SE}(\overline X)}
 \approx N(0,1).
 \]
-This can be written informally as
+Equivalently,
 \[
-\overline X_n
+\overline X
 \approx
-\mu
-+
-\operatorname{SE}(\overline X_n)Z,
+\mu+\operatorname{SE}(\overline X)Z,
 \qquad Z\sim N(0,1).
 \]
-
-The formula separates three components:
-
-\begin{itemize}
-    \item \(\mu\), the centre of the sampling distribution;
-    \item \(\operatorname{SE}(\overline X_n)\), the scale of the random
-    fluctuation;
-    \item \(Z\), the approximately standard normal shape of that fluctuation.
-\end{itemize}
-
-The same idea applies to a sample proportion:
+The same form applies to a sample proportion:
 \[
-\frac{\widehat p_n-p}
-{\operatorname{SE}(\widehat p_n)}
+\frac{\widehat p-p}{\operatorname{SE}(\widehat p)}
 \approx N(0,1).
 \]
-
-A difference should therefore be interpreted relative to its standard error. A
-numerical difference of \(0.02\) may be negligible in one problem and highly
-unusual in another, depending on the sampling variability.
+A numerical difference should therefore be interpreted relative to its standard
+error.
 
 \subsection*{Typical normal ranges}
 
-For a standard normal random variable \(Z\), approximately
+For \(Z\sim N(0,1)\),
 \[
-P(-1.96\leq Z\leq 1.96)=0.95.
+P(-1.96\leq Z\leq1.96)\approx0.95.
 \]
-Consequently, when a normal approximation is appropriate,
-\[
-P\left(
--1.96
-\leq
-\frac{T-\theta}{\operatorname{SE}(T)}
-\leq
-1.96
-\right)
-\approx 0.95.
-\]
-
-This is equivalent to
+Consequently, when the approximation is appropriate,
 \[
 P\left(
 \theta-1.96\operatorname{SE}(T)
 \leq T\leq
 \theta+1.96\operatorname{SE}(T)
 \right)
-\approx 0.95.
+\approx0.95,
 \]
-
-Thus the statistic usually lies within about two standard errors of its centre.
-This is a property of the sampling procedure before the data are observed.
-
-\begin{examplebox}
-Suppose
-\[
-\mu=100,
-\qquad
-\sigma=15,
-\qquad
-n=100.
-\]
-Then
-\[
-\operatorname{SE}(\overline X)=\frac{15}{10}=1.5.
-\]
-The central limit theorem suggests that approximately \(95\%\) of sample means
-lie in
-\[
-100\pm 1.96(1.5),
-\]
-which is approximately
-\[
-[97.06,102.94].
-\]
-This interval describes the long-run behaviour of the random sample mean when
-the population mean is \(100\).
-\end{examplebox}
+provided that the sampling distribution of \(T\) is centred at \(\theta\).
+This is a statement about the random statistic before the sample is observed.
 
 \subsection*{Known and estimated standard errors}
 
-The formulas above may contain unknown parameters. For the mean,
+The theoretical standard error may contain unknown parameters. For the mean,
 \[
-\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n}
+\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n}.
 \]
-depends on the population standard deviation \(\sigma\). For a proportion,
+The population standard deviation is commonly estimated using
 \[
-\operatorname{SE}(\widehat p)=
-\sqrt{\frac{p(1-p)}{n}}
+S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2,
 \]
-depends on the unknown probability \(p\).
+so that
+\[
+\widehat{\operatorname{SE}}(\overline X)=\frac{S}{\sqrt n}.
+\]
+The denominator \(n-1\) is used because, under independent identical sampling
+with finite variance,
+\[
+\E[S^2]=\sigma^2.
+\]
 
-In practice, unknown quantities are often replaced by estimates computed from
-the sample. For example,
-\[
-\widehat{\operatorname{SE}}(\overline X)
-=
-\frac{S}{\sqrt n},
-\]
-where \(S\) is the sample standard deviation, and
+For a proportion, the plug-in estimate is
 \[
 \widehat{\operatorname{SE}}(\widehat p)
 =
 \sqrt{\frac{\widehat p(1-\widehat p)}{n}}.
 \]
+An estimated standard error is itself random. It varies from sample to sample and
+approximates the theoretical standard error only under the stated assumptions.
 
-The estimated standard error is itself computed from random data, so it also
-varies from sample to sample. For sufficiently large samples, it often provides a
-good approximation to the true standard error.
+\subsection*{From standardized distances to inference}
 
-This replacement should not be hidden. The theoretical standard error belongs to
-the model, while the estimated standard error is obtained from the observed
-sample.
-
-\subsection*{What a normal approximation permits}
-
-Once a statistic is approximately normal after standardization, probabilities
-can be interpreted through distances measured in standard errors.
-
-For a proposed parameter value \(\theta_0\), the standardized difference
+For a proposed parameter value \(\theta_0\),
 \[
 Z_{\mathrm{obs}}
 =
 \frac{T_{\mathrm{obs}}-\theta_0}
 {\operatorname{SE}_{\theta_0}(T)}
 \]
-measures how far the observed statistic lies from the value predicted by the
-model.
+measures the observed difference in standard-error units. Values near zero are
+ordinary under the proposed model; values far into a tail are unusual.
 
-A value near zero is typical. A value far into a tail of the standard normal
-distribution is unusual.
-
-The same approximation can also be rearranged to produce a range of parameter
-values compatible with the observed statistic. This leads to confidence
-intervals.
+A standardized sampling statement may also be inverted to form a range of
+parameter values, provided that the dependence of the standard error on the
+parameter is handled correctly. This leads to confidence intervals.
 
 \begin{summarybox}
-A standard error is the standard deviation of a sampling distribution. It gives
-the natural unit for measuring the difference between an observed statistic and
-a parameter value. Together with the central limit theorem, it turns random
-sampling variation into a scale that can be used for confidence intervals and
-hypothesis tests.
+A standard error is the standard deviation of a sampling distribution. It is the
+natural scale for comparing an observed statistic with a parameter value, and it
+connects limit theorems with confidence intervals and hypothesis tests.
 \end{summarybox}

@@ -8,45 +8,48 @@ outcome.
 
 This is the central idea:
 \[
-\text{a random variable is a function on the sample space.}
+\text{a random variable is a measurable function on the sample space.}
 \]
-It is not a mysterious number that is random by itself. Its randomness comes from
-the randomness of the elementary outcome to which the function is applied.
+Its randomness comes from the random elementary outcome to which the function is
+applied.
 
 \begin{definitionbox}
-Let \(\Omega\) be a sample space. A \textbf{random variable} is a function
+Let \((\Omega,\mathcal F,P)\) be a probability space. A \textbf{random variable}
+is a measurable function
 \[
-X:\Omega\to\mathbb{R}.
+X:\Omega\to\mathbb R.
 \]
 For each elementary outcome \(\omega\in\Omega\), the value \(X(\omega)\) is a
 real number extracted from that outcome.
 \end{definitionbox}
 
-The notation may look simple, but it changes the way we organize probability.
-Instead of asking only which event occurred, we can now ask which number was
-produced by a function of the outcome.
+Measurability means that numerical conditions such as
+\[
+\{\omega\in\Omega:X(\omega)\leq t\}
+\]
+are events in \(\mathcal F\), so their probabilities are defined. In the finite
+and countable examples of this chapter, this condition is automatic when every
+subset of \(\Omega\) is an event. It becomes important in continuous models,
+where the event collection need not contain every subset of \(\Omega\).
 
 \subsection*{Why introduce random variables?}
 
-Many experiments produce outcomes that are richer than the numerical quantity we
-want to study. For example, if a coin is tossed five times, one elementary
-outcome may be
+Many experiments produce outcomes that contain more information than the
+numerical quantity we want to study. If a coin is tossed five times, one outcome
+may be
 \[
 \omega=HHTTH.
 \]
-The full outcome records the order of all tosses. But in many questions we care
-only about the number of heads. Then we define a function
+The outcome records the complete order, while the random variable
 \[
-X(\omega)=\text{the number of heads in }\omega.
+X(\omega)=\text{the number of heads in }\omega
 \]
-For this outcome,
+extracts only the count. For this outcome,
 \[
 X(HHTTH)=3.
 \]
 
 The random variable does not replace the sample space. It is built on top of it.
-The sample space contains detailed outcomes; the random variable extracts the
-numerical feature we want to analyze.
 
 \subsection*{Example: the sum of two dice}
 
@@ -54,57 +57,49 @@ Roll two fair dice and record the ordered pair. The sample space is
 \[
 \Omega=\{(i,j):i,j\in\{1,2,3,4,5,6\}\}.
 \]
-An elementary outcome is a pair \((i,j)\). If we are interested in the sum, we
-define
+Define
 \[
-S:\Omega\to\mathbb{R},
+S:\Omega\to\mathbb R,
 \qquad
 S(i,j)=i+j.
 \]
-Thus
+Then
 \[
-S(1,6)=7,\qquad S(3,4)=7,\qquad S(6,6)=12.
+S(1,6)=7,
+\qquad
+S(3,4)=7,
+\qquad
+S(6,6)=12.
 \]
-Different elementary outcomes may give the same value of the random variable.
-This is important. The value \(7\) is not one elementary outcome in the two-dice
-model. It is the value of the function \(S\) on several elementary outcomes.
+Different elementary outcomes may produce the same value of the random variable.
+The value \(7\) is not one elementary outcome in this model; it is the common
+value of \(S\) on several outcomes.
 
 \begin{remarkbox}
-A random variable often aggregates information. The sample space may distinguish
-\((1,6)\) from \((6,1)\), but the sum random variable assigns both outcomes the
-same value, namely \(7\).
+A random variable often aggregates information. The sample space distinguishes
+\((1,6)\) from \((6,1)\), but the sum assigns both outcomes the value \(7\).
 \end{remarkbox}
 
-\subsection*{Example: a payoff}
+\subsection*{Example: a numerical consequence}
 
-Random variables are not limited to counts. Suppose a game is played by rolling
-one die. The player wins \(10\) units if the die shows \(6\), wins \(2\) units if
-the die shows an even number different from \(6\), and loses \(3\) units
-otherwise.
-
-The sample space is
+Suppose one observation has sample space
 \[
 \Omega=\{1,2,3,4,5,6\}.
 \]
-The payoff random variable \(X\) is defined by
+A numerical consequence \(Y\) may be defined by
 \[
-X(6)=10,
+Y(6)=10,
+\qquad
+Y(2)=Y(4)=2,
+\qquad
+Y(1)=Y(3)=Y(5)=-3.
 \]
-\[
-X(2)=X(4)=2,
-\]
-and
-\[
-X(1)=X(3)=X(5)=-3.
-\]
-Here the values of the random variable represent gains and losses. The
-probability model describes the die; the random variable describes the numerical
-consequence of each die result.
+The probability model describes which outcome occurs. The random variable
+describes the numerical value attached to that outcome.
 
 \subsection*{Indicator random variables}
 
-One of the most useful random variables comes from a single event. Let \(A\) be
-an event in \(\Omega\). The indicator of \(A\) is the function
+Let \(A\in\mathcal F\) be an event. Its indicator is
 \[
 I_A(\omega)=
 \begin{cases}
@@ -112,68 +107,52 @@ I_A(\omega)=
 0, & \omega\notin A.
 \end{cases}
 \]
-This random variable records whether the event \(A\) occurred.
+It records numerically whether \(A\) occurred.
 
-\begin{examplebox}
-Roll one die and let
+Indicators are powerful because counts can be written as sums. For example, the
+number of heads in \(n\) tosses is a sum of \(n\) indicators, one for each toss.
+
+\subsection*{Inverse images of numerical conditions}
+
+If \(B\) is a Borel subset of \(\mathbb R\), then
 \[
-A=\{2,4,6\}
+\{X\in B\}
+=
+\{\omega\in\Omega:X(\omega)\in B\}
 \]
-be the event that the result is even. The indicator \(I_A\) satisfies
-\[
-I_A(1)=0,\quad I_A(2)=1,\quad I_A(3)=0,\quad I_A(4)=1,\quad I_A(5)=0,\quad I_A(6)=1.
-\]
-It turns a yes-or-no event into a numerical variable.
-\end{examplebox}
+is the inverse image of \(B\) under \(X\). Measurability guarantees that this set
+belongs to \(\mathcal F\).
 
-Indicators are simple, but they are powerful. Later, they will help us express
-counts as sums. For example, the number of heads in \(n\) coin tosses can be
-written as a sum of \(n\) indicators, one for each toss.
-
-\subsection*{The inverse image of a numerical condition}
-
-If \(X:\Omega\to\mathbb{R}\) is a random variable and \(B\subseteq\mathbb{R}\),
-then the statement
-\[
-X\in B
-\]
-corresponds to an event in the original sample space:
-\[
-\{\omega\in\Omega:X(\omega)\in B\}.
-\]
-This set is called the inverse image of \(B\) under \(X\).
-
-For example, if \(S(i,j)=i+j\) is the sum of two dice, then
+For the sum of two dice,
 \[
 \{S=7\}=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}.
 \]
-The event \(\{S=7\}\) is not a new kind of object. It is a subset of the original
-sample space.
+Thus an expression such as \(P(S=7)\) is the probability of an event in the
+original sample space.
 
 \begin{remarkbox}
-Every expression such as \(P(X=x)\), \(P(X\leq t)\), or \(P(X\in B)\) is really
-a probability of an event in \(\Omega\). The random variable translates numerical
+Every expression such as \(P(X=x)\), \(P(X\leq t)\), or \(P(X\in B)\) is a
+probability of an event in \(\Omega\). A random variable translates numerical
 conditions into events.
 \end{remarkbox}
 
-\subsection*{From outcomes to values to distributions}
+\subsection*{From outcomes to distributions}
 
-The workflow for random variables is:
+The workflow is
 \[
-\text{experiment}\longrightarrow \Omega\longrightarrow X(\omega)\longrightarrow
-\text{probabilities of values of }X.
+\text{experiment}
+\longrightarrow
+(\Omega,\mathcal F,P)
+\longrightarrow
+X(\omega)
+\longrightarrow
+\text{probabilities of numerical values or regions}.
 \]
-The first arrow constructs the sample space. The second defines the numerical
-quantity of interest. The third asks how probability is transferred from
-outcomes to numerical values.
-
-This transferred probability law is called the distribution of the random
-variable. The rest of the chapter develops the basic tools for describing such
-laws in the discrete case.
+The probability law transferred from outcomes to numerical values is called the
+distribution of \(X\).
 
 \begin{theorembox}
-A random variable does not create probability from nothing. It pushes the
-probability already defined on \(\Omega\) onto numerical values. To understand a
-random variable, first understand the sample space and then understand the
-function defined on it.
+A random variable does not create probability. It transfers the probability
+already defined on \((\Omega,\mathcal F)\) to numerical events through a
+measurable function.
 \end{theorembox}

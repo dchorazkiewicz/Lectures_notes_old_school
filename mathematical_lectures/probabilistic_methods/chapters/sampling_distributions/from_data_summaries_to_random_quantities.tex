@@ -1,178 +1,78 @@
 \section{From data summaries to random quantities}
 
-In the previous chapter, a dataset was treated as a finite list of observed
-values. If the observations were
+The previous chapter studied an observed dataset
 \[
-x_1,x_2,\ldots,x_n,
+x_1,\ldots,x_n.
 \]
-then quantities such as the sample mean, sample variance, median, empirical
-quantiles, or empirical cumulative distribution function were computed from that
-particular list. Once the data had been observed, these quantities were ordinary
-numbers or ordinary functions.
-
-This chapter changes the point of view again. We now ask what happens before the
-sample is observed. Before observation, the entries in the sample are not fixed
-numbers. They are random variables. Consequently, any summary computed from them
-is also random.
-
-For example, after observing five values we might compute
+After observation, its mean, variance, median, and empirical CDF are fixed
+summaries. Before observation, the entries are random variables
 \[
-\bar{x}=2.8.
+X_1,\ldots,X_n,
 \]
-This is a number. But before the five observations are known, the sample mean is
+so a summary calculated from them is also random.
+
+\begin{definitionbox}
+A \textbf{statistic} is a function of a random sample:
 \[
-\overline X=\frac{1}{5}(X_1+X_2+X_3+X_4+X_5),
+T=g(X_1,\ldots,X_n).
 \]
-and this is a random variable. It depends on the random sample
+For observed values \(x_1,\ldots,x_n\), the same rule gives the realized value
 \[
-X_1,X_2,X_3,X_4,X_5.
+t=g(x_1,\ldots,x_n).
 \]
-A different sample may produce a different value of \(\overline X\).
+\end{definitionbox}
 
-\begin{summarybox}
-A statistic computed from observed data is a number. The same statistic computed
-from a random sample, before the sample is observed, is a random variable.
-\end{summarybox}
-
-\subsection*{Two stages of the same object}
-
-It is useful to distinguish two stages.
-
-\begin{enumerate}
-    \item Before sampling, the observations are random variables
-    \[
-    X_1,X_2,\ldots,X_n.
-    \]
-    A statistic such as
-    \[
-    T=g(X_1,X_2,\ldots,X_n)
-    \]
-    is also a random variable.
-
-    \item After sampling, the observations become concrete values
-    \[
-    x_1,x_2,\ldots,x_n.
-    \]
-    The same rule gives the observed value
-    \[
-    t=g(x_1,x_2,\ldots,x_n).
-    \]
-\end{enumerate}
-
-The formula may look almost identical in both cases, but the mathematical status
-is different. Before observation, \(T\) has a probability law. After observation,
-\(t\) is one realized value.
-
-\begin{remarkbox}
-The distinction between \(T\) and \(t\) is not a typographical detail. It is the
-basic distinction between a random procedure and the numerical result produced by
-one execution of that procedure.
-\end{remarkbox}
-
-\subsection*{A first example: the sample mean}
-
-Suppose a population model is represented by a random variable \(X\) with
-expectation \(\mu\). Imagine that we take a sample of size \(4\). Before the
-sample is observed, we write
+For the sample mean,
 \[
-X_1,X_2,X_3,X_4.
+\overline X=\frac1n\sum_{i=1}^nX_i
 \]
-The sample mean is then
+is a random variable, while
 \[
-\overline X=\frac{X_1+X_2+X_3+X_4}{4}.
+\bar x=\frac1n\sum_{i=1}^n x_i
 \]
-This quantity is random because each term in the numerator is random.
+is one observed number.
 
-If one particular sample gives
+\subsection*{Sampling variation}
+
+Another sample from the same probability model generally produces another value
+of the statistic. Statistical reasoning therefore requires a description of this
+sample-to-sample variation.
+
+\begin{definitionbox}
+The \textbf{sampling distribution} of \(T\) is the probability law of
 \[
-2.1,\quad 3.4,\quad 1.8,\quad 4.7,
+T=g(X_1,\ldots,X_n)
 \]
-then the observed sample mean is
-\[
-\bar{x}=\frac{2.1+3.4+1.8+4.7}{4}=3.0.
-\]
-Another sample of size \(4\) from the same model might give a different value,
-for example \(\bar{x}=2.6\) or \(\bar{x}=3.3\). The randomness is not in the
-arithmetic rule. The randomness is in the sample to which the rule is applied.
+under the specified sampling model.
+\end{definitionbox}
 
-\begin{examplebox}
-If the data have already been collected, the sample mean is a descriptive
-summary of those data. If the data are still to be collected, the sample mean is
-a random variable whose possible values depend on the sampling process.
-\end{examplebox}
+\subsection*{Two distributions}
 
-\subsection*{Why this change of viewpoint matters}
-
-This change of viewpoint is the beginning of statistical inference. Descriptive
-statistics tell us what happened in one observed dataset. Inference asks what can
-be concluded about an underlying model, population, or parameter from that one
-dataset.
-
-To answer such questions responsibly, we must understand how much a statistic can
-vary from sample to sample. For instance, if two samples have different means,
-there are at least two possible explanations:
-\begin{itemize}
-    \item the underlying populations or mechanisms may genuinely be different;
-    \item the observed difference may be a consequence of random sampling
-    variation.
-\end{itemize}
-
-Sampling distributions provide the mathematical language for separating these
-possibilities. They describe how a statistic behaves under repeated sampling from
-a specified model.
-
-\subsection*{Observed distribution versus sampling distribution}
-
-A common source of confusion is the word ``distribution''. In this part of the
-course, two different distributions must be kept separate.
-
-The empirical distribution describes the observed data values
-\[
-x_1,x_2,\ldots,x_n.
-\]
-It tells us where the observations are located and how they are spread.
-
-A sampling distribution describes the possible values of a statistic such as
-\[
-\overline X,\qquad \widehat p,\qquad S^2,\qquad \text{or}\qquad M,
-\]
-where \(\widehat p\) may denote a sample proportion, \(S^2\) a sample variance,
-and \(M\) a sample median. It tells us how that statistic would vary if the
-sampling procedure were repeated many times.
+The empirical distribution describes the values inside one observed dataset. A
+sampling distribution describes possible values of a statistic across possible
+samples.
 
 \begin{center}
 \begin{tabular}{lll}
 \toprule
-Object & Level & Typical question \\
+Object & Level & Main question \\
 \midrule
-Observed data \(x_1,\ldots,x_n\) & data level & What did we observe? \\
-Empirical distribution & data level & How are the observed values distributed? \\
-Statistic \(T=g(X_1,\ldots,X_n)\) & sampling level & How does the summary vary? \\
-Sampling distribution of \(T\) & sampling level & What values of \(T\) are likely? \\
+Empirical distribution & observed data & How are the observations distributed? \\
+Sampling distribution & random sampling & How does the statistic vary? \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The empirical distribution belongs to one dataset. The sampling distribution
-belongs to a random procedure.
-
-\subsection*{The guiding idea of the chapter}
-
-The central idea of this chapter can now be stated in one sentence: every
-statistic that is computed from a random sample has its own probability law.
-
-This law may sometimes be found exactly. In other cases, it may be approximated
-mathematically or explored by simulation. In all cases, the purpose is the same:
-to understand the random variability of summaries computed from samples.
+The next section studies the complete random sample. A later section then obtains
+the sampling distribution by applying a statistic to every possible sample.
 
 \begin{theorembox}
-The main conceptual step in this chapter is to move from
+The central transition is
 \[
-\text{data } \longrightarrow \text{ summaries of data}
+\text{observed data}\longrightarrow\text{fixed summaries}
 \]
-to
+and then
 \[
-\text{random samples } \longrightarrow \text{ random summaries}.
+\text{random samples}\longrightarrow\text{random summaries}.
 \]
-This step is what makes statistical inference possible.
 \end{theorembox}

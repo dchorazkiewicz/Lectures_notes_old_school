@@ -1,7 +1,6 @@
 \section{Final checklist}
 
-This chapter completed the transition from probability models to statistical
-inference. The essential chain is
+The essential chain of statistical inference is
 \[
 \text{model}
 \longrightarrow
@@ -11,192 +10,125 @@ inference. The essential chain is
 \longrightarrow
 \text{observed statistic}
 \longrightarrow
-\text{statistical conclusion}.
+\text{conclusion}.
 \]
+The conclusion depends on the sampling mechanism and assumptions, not on the
+observed number alone.
 
-The conclusion is never produced by the observed number alone. It depends on the
-sampling mechanism, the assumptions, and the probability law used to describe
-how the statistic would vary across possible samples.
+\subsection*{Limit theorems}
 
-\subsection*{Conceptual understanding}
-
-You should be able to explain the following distinctions:
-
-\begin{itemize}
-    \item probability reasoning versus statistical inference;
-    \item a model parameter \(\theta\) versus an estimator \(\widehat\theta\);
-    \item convergence of a statistic versus exact equality with the parameter;
-    \item the law of large numbers versus the central limit theorem;
-    \item population standard deviation versus standard error;
-    \item a theoretical standard error versus an estimated standard error;
-    \item a confidence level versus a probability assigned to a fixed parameter;
-    \item failure to reject a hypothesis versus proof that it is true;
-    \item statistical significance versus practical importance.
-\end{itemize}
-
-\subsection*{The main regularities}
-
-For independent identically distributed observations with finite mean \(\mu\),
-the law of large numbers gives
+For independent identically distributed observations with mean \(\mu\) and finite
+variance \(\sigma^2\),
 \[
 \overline X_n\xrightarrow{P}\mu.
 \]
-It explains why large-sample averages become stable around the population mean.
+This finite-variance law of large numbers explains stabilization. More general
+versions require only a finite expectation.
 
-If the observations also have finite positive variance \(\sigma^2\), the central
-limit theorem gives
+If \(0<\sigma^2<\infty\), the central limit theorem gives
 \[
 \frac{\overline X_n-\mu}{\sigma/\sqrt n}
 \xrightarrow{d}N(0,1).
 \]
-It describes the scale and approximate shape of the remaining fluctuations.
-
-The two results have different roles:
-\[
-\text{LLN: where the statistic stabilizes,}
-\]
-\[
-\text{CLT: how the statistic fluctuates around that value.}
-\]
+The law of large numbers identifies where the statistic stabilizes. The central
+limit theorem describes the scale and approximate shape of its remaining
+fluctuations.
 
 \subsection*{Standard errors}
 
-The standard error of a statistic is the standard deviation of its sampling
-distribution:
+The standard error is the standard deviation of a sampling distribution:
 \[
 \operatorname{SE}(T)=\sqrt{\Var(T)}.
 \]
-
-For a sample mean,
+For a sample mean and a sample proportion,
 \[
-\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n}.
+\operatorname{SE}(\overline X)=\frac{\sigma}{\sqrt n},
+\qquad
+\operatorname{SE}(\widehat p)=\sqrt{\frac{p(1-p)}{n}}.
 \]
-
-For a sample proportion,
+Unknown quantities are often replaced by estimates. For the mean,
 \[
-\operatorname{SE}(\widehat p)
-=
-\sqrt{\frac{p(1-p)}{n}}.
+S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2
 \]
-
-Standard errors measure uncertainty caused by random sampling. They do not
-measure all possible errors in data collection or modelling.
+is used because \(\E[S^2]=\sigma^2\) under independent identical sampling with
+finite variance.
 
 \subsection*{Confidence intervals}
 
-A large-sample confidence interval has the general form
+A large-sample confidence interval often has the form
 \[
 \text{estimate}
 \pm
 \text{critical value}\times\text{estimated standard error}.
 \]
-
-For an approximate \(95\%\) interval, the normal critical value is often
-\[
-1.96.
-\]
-The confidence level describes the long-run coverage of the interval-producing
-procedure under repeated sampling.
-
-A confidence interval can also be viewed as a range of parameter values reasonably
-compatible with the observed statistic and the assumed sampling model.
+The confidence level is the long-run coverage of the interval-producing
+procedure. Direct inversion is straightforward when the standard error is known
+and does not depend on the unknown parameter. A plug-in standard error creates an
+additional approximation.
 
 \subsection*{Hypothesis tests}
 
-A null hypothesis has the form
+A test specifies both
 \[
-H_0:\theta=\theta_0.
+H_0:\theta=\theta_0
 \]
-The hypothesis determines a sampling distribution for a test statistic. The
-observed statistic is then compared with this null distribution.
+and an alternative such as
+\[
+H_1:\theta\neq\theta_0,
+\qquad
+H_1:\theta>\theta_0,
+\qquad\text{or}\qquad
+H_1:\theta<\theta_0.
+\]
+The alternative determines the relevant tail or tails of the null distribution.
 
 A standardized statistic often has the form
 \[
-Z
-=
-\frac{T-\theta_0}{\operatorname{SE}_{H_0}(T)}.
+Z=\frac{T-\theta_0}{\operatorname{SE}_{H_0}(T)}.
 \]
-
-The p-value is the probability, under \(H_0\), of obtaining a result at least as
-extreme as the observed one. A small p-value indicates incompatibility between
-the data and the null model.
-
-Remember:
+The p-value is the probability under \(H_0\) of a result at least as extreme as
+the observed result in the direction specified by \(H_1\). It is not
 \[
-p\text{-value}
-\neq
 P(H_0\text{ is true}\mid\text{data}).
 \]
+Failure to reject \(H_0\) is not proof that it is true.
 
 \subsection*{Typical tasks}
 
-After studying this chapter, you should be able to:
-
+You should be able to:
 \begin{itemize}
-    \item explain why stable large-sample behaviour makes inference possible;
-    \item distinguish the conclusions of the law of large numbers and the central
-    limit theorem;
-    \item standardize a sample mean or sample proportion;
-    \item interpret a difference in standard-error units;
-    \item calculate an approximate standard error for a mean or proportion;
+    \item distinguish the law of large numbers from the central limit theorem;
+    \item calculate and interpret standard errors;
+    \item explain why corrected sample variance uses \(n-1\);
     \item construct and interpret a basic large-sample confidence interval;
-    \item formulate a simple null hypothesis;
-    \item construct a standardized test statistic under the null model;
-    \item interpret a p-value as a probability about hypothetical data;
-    \item distinguish evidence against a model from logical proof;
-    \item identify assumptions on which an inferential conclusion depends.
+    \item identify when a standard error has been estimated rather than known;
+    \item state both a null and an alternative hypothesis;
+    \item select the correct tail or tails from the alternative;
+    \item interpret a p-value as a probability about hypothetical data under the
+    null model;
+    \item distinguish statistical detectability from practical importance;
+    \item identify the assumptions supporting an inferential conclusion.
 \end{itemize}
 
 \subsection*{Common mistakes}
 
-Avoid the following mistakes:
-
+Avoid:
 \begin{itemize}
-    \item saying that the law of large numbers makes an average exactly equal to
-    the parameter;
-    \item saying that the central limit theorem makes the population normal;
-    \item using a normal approximation without considering sample size or model
-    assumptions;
-    \item confusing the standard deviation of observations with the standard
-    error of a statistic;
-    \item interpreting a \(95\%\) confidence interval as assigning probability
-    \(0.95\) to a fixed parameter after the interval is observed;
-    \item interpreting a p-value as the probability that the null hypothesis is
-    true;
-    \item treating failure to reject as proof of no difference;
-    \item treating statistical significance as evidence of practical importance;
-    \item believing that a large sample removes bias, dependence, measurement
-    error, or poor modelling.
+    \item claiming that a large-sample average becomes exactly equal to its mean;
+    \item claiming that the central limit theorem makes the population normal;
+    \item confusing population standard deviation with standard error;
+    \item treating an estimated standard error as if it were known exactly;
+    \item interpreting confidence level as posterior probability for a fixed
+    parameter;
+    \item defining a p-value without specifying the alternative direction;
+    \item treating a large p-value as proof of the null hypothesis;
+    \item treating statistical significance as practical importance;
+    \item believing that a large sample repairs bias or an incorrect model.
 \end{itemize}
 
-\subsection*{Questions for self-explanation}
-
-A good test of understanding is whether you can answer these questions clearly:
-
-\begin{enumerate}
-    \item Why does statistical inference reverse the direction of probability
-    reasoning?
-    \item Why can one observed statistic contain information about an unknown
-    parameter?
-    \item What does the law of large numbers say about sample averages?
-    \item What additional information is supplied by the central limit theorem?
-    \item Why does \(1/\sqrt n\) appear in standard errors?
-    \item What is random in a confidence-interval procedure?
-    \item What does a \(95\%\) confidence level mean under repeated sampling?
-    \item How does a null hypothesis determine a sampling distribution?
-    \item Why is an observed result several standard errors from the null centre
-    evidence against the null model?
-    \item What does a p-value measure, and what does it not measure?
-    \item Why can a very large sample make an unimportant difference statistically
-    significant?
-    \item How can a failure of modelling assumptions affect a confidence interval
-    or hypothesis test?
-\end{enumerate}
-
 \begin{summarybox}
-Statistical inference is possible because statistics have predictable sampling
-behaviour. The law of large numbers produces stability, the central limit theorem
-describes fluctuations, and standard errors express their scale. Confidence
-intervals and hypothesis tests use these regularities to connect one observed
-sample with claims about an unknown model while keeping uncertainty explicit.
+Inference is possible because statistics have predictable sampling behaviour.
+Limit theorems provide stability and approximate shape, standard errors provide a
+scale, and interval and testing procedures connect these regularities with one
+observed sample while keeping assumptions explicit.
 \end{summarybox}

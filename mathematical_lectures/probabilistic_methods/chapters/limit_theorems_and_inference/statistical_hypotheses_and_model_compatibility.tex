@@ -1,256 +1,166 @@
 \section{Statistical hypotheses and model compatibility}
 
-A confidence interval produces a range of parameter values compatible with an
-observed statistic. A hypothesis test begins with one proposed parameter value
-and asks whether the observed statistic is compatible with it.
+A confidence interval reports a range of parameter values compatible with an
+observed statistic. A hypothesis test begins with one proposed value and asks
+whether the observed statistic is compatible with it.
 
-Suppose a model contains a parameter \(\theta\). A null hypothesis has the form
+The null hypothesis has the form
 \[
 H_0:\theta=\theta_0.
 \]
-The hypothesis specifies a model under which the sampling distribution of a
-statistic can be studied.
+It determines the sampling distribution used for comparison.
 
-The central question is:
+\subsection*{The alternative hypothesis}
 
-\begin{center}
-If \(H_0\) were true, would the observed statistic be ordinary or unusually
-extreme?
-\end{center}
+A test must also specify which departures from \(\theta_0\) are relevant. Common
+alternatives are
+\[
+H_1:\theta\neq\theta_0,
+\]
+\[
+H_1:\theta>\theta_0,
+\qquad\text{or}\qquad
+H_1:\theta<\theta_0.
+\]
+The alternative determines which values of a test statistic count as more
+extreme than the observed value. A two-sided alternative treats large deviations
+in either direction as evidence. A one-sided alternative uses only the direction
+specified in advance.
+
+\begin{remarkbox}
+The direction of the alternative should be chosen from the scientific question,
+not after the data have been inspected.
+\end{remarkbox}
 
 \subsection*{The null distribution}
 
 Let \(T\) be a statistic whose distribution depends on \(\theta\). Under
-\[
-H_0:\theta=\theta_0,
-\]
-the model determines a particular sampling distribution for \(T\). After
-observing the sample, we compute
-\[
-t_{\mathrm{obs}}.
-\]
-We then locate this value within the distribution predicted by \(H_0\).
-
+\(H_0\), the model gives a particular sampling distribution for \(T\). After
+observation, we calculate \(t_{\mathrm{obs}}\) and locate it in that distribution.
 The reasoning is
 \[
 H_0
 \longrightarrow
-\text{sampling distribution under }H_0
+\text{null sampling distribution}
 \longrightarrow
-\text{observed statistic}
+ t_{\mathrm{obs}}
 \longrightarrow
 \text{assessment of compatibility}.
 \]
+An unusual observation is evidence against the null model, not a logical
+contradiction.
 
-A value near the centre of the null distribution is not surprising. A value far
-into a tail is difficult to explain as ordinary sampling variation under the
-proposed model.
+\subsection*{A standardized statistic}
 
-\begin{remarkbox}
-A probability model may produce rare outcomes. An unusual observation is evidence
-against a model, not a logical contradiction.
-\end{remarkbox}
-
-\subsection*{A standardized test statistic}
-
-When a normal approximation is appropriate, the distance between the observed
-statistic and the null value is measured in standard-error units:
+When a normal approximation is appropriate,
 \[
-Z
-=
-\frac{T-\theta_0}{\operatorname{SE}_{H_0}(T)}.
+Z=\frac{T-\theta_0}{\operatorname{SE}_{H_0}(T)}
 \]
-After observation,
+is approximately standard normal under \(H_0\). The observed value is
 \[
 z_{\mathrm{obs}}
 =
-\frac{t_{\mathrm{obs}}-\theta_0}
-{\operatorname{SE}_{H_0}(T)}.
+\frac{t_{\mathrm{obs}}-\theta_0}{\operatorname{SE}_{H_0}(T)}.
 \]
-
-Under the null hypothesis, this standardized statistic is approximately
-\[
-N(0,1).
-\]
-Values near zero are typical. Large positive or negative values are unusual.
-The sign gives the direction of the difference, while the magnitude gives the
-distance from the null model in standard-error units.
-
-The raw difference
-\[
-t_{\mathrm{obs}}-\theta_0
-\]
-is not sufficient by itself. The same numerical difference may be ordinary when
-the standard error is large and highly unusual when it is small.
+The sign gives the direction of the difference, and the magnitude gives the
+distance from the null centre in standard-error units.
 
 \subsection*{The p-value}
 
 \begin{definitionbox}
-The \textbf{p-value} is the probability, calculated under the null hypothesis, of
-obtaining a test statistic at least as extreme as the observed one.
+The \textbf{p-value} is the probability, calculated under \(H_0\), of obtaining a
+test statistic at least as extreme as the observed one in the direction or
+directions specified by \(H_1\).
 \end{definitionbox}
 
-For a two-sided normal test,
+For \(Z\sim N(0,1)\), the three common forms are
 \[
-p\text{-value}
-=
-P\left(|Z|\geq |z_{\mathrm{obs}}|\right),
-\qquad Z\sim N(0,1).
+P(|Z|\geq|z_{\mathrm{obs}}|)
+\quad\text{for }H_1:\theta\neq\theta_0,
 \]
-
-A small \(p\)-value means that the observed result, or something still more
-extreme, would be rare under the null model. It therefore provides evidence
-against \(H_0\).
-
-A large \(p\)-value means that the observed result is not unusual under \(H_0\).
-It does not prove that the null hypothesis is true.
-
-In particular,
 \[
-p\text{-value}
-\neq
-P(H_0\text{ is true}\mid\text{data}).
-\]
-The p-value is a probability about hypothetical data under the null model, not a
-probability assigned to the hypothesis itself.
-
-\subsection*{A test for a population proportion}
-
-Suppose independent Bernoulli observations have unknown success probability
-\(p\). Consider
-\[
-H_0:p=p_0.
-\]
-The sample proportion is
-\[
-\widehat p=\frac1n\sum_{i=1}^nX_i.
-\]
-Under the null hypothesis,
-\[
-\E_{H_0}[\widehat p]=p_0
+P(Z\geq z_{\mathrm{obs}})
+\quad\text{for }H_1:\theta>\theta_0,
 \]
 and
 \[
-\operatorname{SE}_{H_0}(\widehat p)
-=
-\sqrt{\frac{p_0(1-p_0)}{n}}.
+P(Z\leq z_{\mathrm{obs}})
+\quad\text{for }H_1:\theta<\theta_0.
 \]
-Therefore the standardized test statistic is
-\[
-Z
-=
-\frac{\widehat p-p_0}
-{\sqrt{p_0(1-p_0)/n}}.
-\]
-For a sufficiently large sample, its distribution under \(H_0\) is approximately
-standard normal.
 
-\begin{examplebox}
-Suppose \(n=400\) independent trials produce \(240\) successes. Then
+A small p-value means that the observed statistic, or a value more extreme in the
+prespecified direction, would be unusual under \(H_0\). A large p-value means
+that the observation is not unusual under \(H_0\); it does not prove that the
+null hypothesis is true.
+
+In particular,
 \[
-\widehat p=0.6.
+p\text{-value}\neq P(H_0\text{ is true}\mid\text{data}).
 \]
-We examine
+
+\subsection*{Example: a population proportion}
+
+For independent Bernoulli observations, consider
 \[
-H_0:p=0.5.
+H_0:p=p_0.
 \]
-Under this hypothesis,
+Under the null hypothesis,
 \[
 \operatorname{SE}_{H_0}(\widehat p)
 =
-\sqrt{\frac{0.5(0.5)}{400}}
-=0.025.
+\sqrt{\frac{p_0(1-p_0)}{n}},
 \]
-Thus
+so
 \[
-z_{\mathrm{obs}}
-=
-\frac{0.6-0.5}{0.025}
-=4.
+Z=
+\frac{\widehat p-p_0}{\sqrt{p_0(1-p_0)/n}}.
 \]
-A value four standard errors from the null centre is very unusual under a standard
-normal approximation. The two-sided p-value is very small, so the data provide
-strong evidence against \(H_0:p=0.5\).
-\end{examplebox}
-
-The conclusion is not a proof with absolute certainty. It says that the observed
-proportion is difficult to explain as ordinary sampling variation under the
-proposed value \(p=0.5\).
-
-\subsection*{Significance levels and decisions}
-
-A testing procedure may specify a significance level \(\alpha\), often
+For a two-sided question, the alternative is
 \[
-\alpha=0.05.
+H_1:p\neq p_0
 \]
-A conventional decision rule is
+and the p-value uses both tails. For an upper-sided or lower-sided question, only
+the corresponding tail is used.
+
+\subsection*{Decision rules and possible errors}
+
+A procedure may specify a significance level \(\alpha\). A conventional rule is
 \[
 p\text{-value}\leq\alpha
 \quad\Longrightarrow\quad
 \text{reject }H_0.
 \]
-If the p-value is larger than \(\alpha\), we say that the data do not provide
-sufficient evidence to reject \(H_0\).
+Otherwise the correct statement is that the data do not provide sufficient
+evidence to reject \(H_0\).
 
-This is not the same as accepting or proving the null hypothesis. A test may fail
-to detect a real difference when the sample is too small or the statistic is too
-variable.
-
-Because the decision is based on a random sample, errors are possible. A type I
-error occurs when a true null hypothesis is rejected. A type II error occurs when
-a false null hypothesis is not rejected.
-
-The significance level controls the probability of a type I error under the null
-model. Larger samples generally make it easier to detect systematic departures
-from the null value.
+A type I error is rejection of a true null hypothesis. A type II error is failure
+to reject a false null hypothesis. The significance level controls the type I
+error probability under the null model. The type II error probability depends on
+the particular alternative and the sample size.
 
 \subsection*{Statistical and practical importance}
 
-A very large sample may make a small difference statistically detectable. This
-does not imply that the difference is important in practice.
+A large sample may make a small difference detectable. Statistical significance
+therefore does not imply practical importance. A complete analysis should report
+the estimated effect and its uncertainty, not only a threshold decision.
 
-Statistical significance asks whether the observed difference is large relative
-to sampling variation. Practical importance asks whether the size and
-consequences of the difference matter in the context of the problem.
+\subsection*{Relation to confidence intervals}
 
-\begin{remarkbox}
-A complete analysis should report the estimated effect and its uncertainty, not
-only whether a p-value crossed a conventional threshold.
-\end{remarkbox}
+For corresponding two-sided large-sample procedures, a value \(\theta_0\) is
+excluded by an approximate \(95\%\) confidence interval exactly when the
+corresponding level-\(0.05\) test regards it as incompatible with the data.
+One-sided tests correspond to one-sided confidence bounds rather than ordinary
+two-sided intervals.
 
-\subsection*{Confidence intervals and tests}
+\subsection*{Dependence on the model}
 
-For a two-sided large-sample procedure, a parameter value \(\theta_0\) is usually
-rejected at significance level \(0.05\) precisely when it lies outside the
-corresponding approximate \(95\%\) confidence interval.
-
-The confidence interval asks
-\[
-\text{Which parameter values are compatible with the observed statistic?}
-\]
-The hypothesis test asks
-\[
-\text{Is this particular parameter value compatible with the observed statistic?}
-\]
-Both use the same sampling distribution and the same standardized distance.
-
-\subsection*{Every conclusion depends on the model}
-
-A small p-value may indicate that the parameter value in \(H_0\) is wrong. It may
-also reveal a failure of another assumption used to construct the null
-distribution. Dependence, biased sampling, measurement error, or an inappropriate
-probability law can also make a statistic look unusual.
-
-A statistical conclusion should therefore be read conditionally:
-
-\begin{center}
-Under the stated sampling model and assumptions, the observed data are more or
-less compatible with the proposed hypothesis.
-\end{center}
+A small p-value can reflect an incorrect parameter value or failure of another
+assumption used to construct the null distribution. Dependence, biased sampling,
+measurement error, or an inappropriate probability model can all affect the
+conclusion.
 
 \begin{summarybox}
-A hypothesis test compares an observed statistic with the sampling distribution
-predicted by a proposed model. A small p-value means that the observed result
-would be unusual under that model. Testing does not remove uncertainty; it uses
-probability to measure how strongly the data challenge a specified hypothesis.
+A hypothesis test compares an observed statistic with the distribution predicted
+by \(H_0\). The alternative hypothesis determines the relevant tail or tails, so
+it is part of the definition of extremeness and of the p-value.
 \end{summarybox}
