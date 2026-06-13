@@ -9,7 +9,7 @@ The zero matrix is the matrix whose entries are all zero. It behaves like zero f
 A+0=A.
 \]
 
-The identity matrix plays a similar role for multiplication, but only for square matrices.
+An identity matrix is always square. The size needed in a product is determined by the dimensions of the other matrix.
 
 \begin{definitionbox}
 The \(n\times n\) identity matrix is
@@ -22,15 +22,71 @@ I_n=
 0 & 0 & \cdots & 1
 \end{pmatrix}.
 \]
-For compatible matrices,
+If \(A\in\mathbb{R}^{m\times n}\), then
 \[
-I_nA=A,
+I_mA=A,
 \qquad
 AI_n=A.
 \]
 \end{definitionbox}
 
-The identity matrix is important because it represents doing nothing. This phrase is informal, but helpful. Multiplying by the identity preserves the object, just as multiplying a number by \(1\) preserves the number.
+The two identity matrices in these products need not have the same size. The left identity must have \(m\) rows and columns, while the right identity must have \(n\) rows and columns.
+
+The identity matrix is important because it represents doing nothing. This phrase is informal, but helpful. Multiplying by the correctly sized identity preserves the matrix, just as multiplying a number by \(1\) preserves the number.
+
+\subsection*{Transpose}
+
+The transpose interchanges rows and columns. If
+\[
+A=(a_{ij})\in\mathbb{R}^{m\times n},
+\]
+then its transpose is the \(n\times m\) matrix
+\[
+A^{\mathsf T}=(a_{ji}).
+\]
+
+\begin{definitionbox}
+For
+\[
+A=
+\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{m1}&a_{m2}&\cdots&a_{mn}
+\end{pmatrix},
+\]
+the transpose is
+\[
+A^{\mathsf T}=
+\begin{pmatrix}
+a_{11}&a_{21}&\cdots&a_{m1}\\
+a_{12}&a_{22}&\cdots&a_{m2}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{1n}&a_{2n}&\cdots&a_{mn}
+\end{pmatrix}.
+\]
+\end{definitionbox}
+
+For example,
+\[
+\begin{pmatrix}
+1&2&3\\
+4&5&6
+\end{pmatrix}^{\mathsf T}
+=
+\begin{pmatrix}
+1&4\\
+2&5\\
+3&6
+\end{pmatrix}.
+\]
+
+A square matrix is called symmetric if
+\[
+A^{\mathsf T}=A.
+\]
+This means that its entries are mirrored across the main diagonal.
 
 \subsection*{Diagonal matrices}
 
@@ -74,7 +130,7 @@ and the same result is obtained in the opposite order because ordinary numbers c
 
 \subsection*{Patterns worth noticing}
 
-When a matrix appears in a problem, it is useful to ask whether it has visible structure. Is it diagonal? Does it contain many zeros? Are two rows equal? Are rows or columns multiples of one another? Does it look symmetric? Such observations can simplify computations, but more importantly they help us understand the object.
+When a matrix appears in a problem, it is useful to ask whether it has visible structure. Is it diagonal? Does it contain many zeros? Are two rows equal? Are rows or columns multiples of one another? Is it symmetric? Such observations can simplify computations, but more importantly they help us understand the object.
 
 \begin{remarkbox}
 A calculation often becomes easier after we notice structure. But noticing structure is not a trick; it is part of mathematical understanding. We learn not only to compute with objects, but also to see them.
