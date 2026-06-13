@@ -1,0 +1,250 @@
+\section{Confidence intervals from sampling behaviour}
+
+Suppose a statistic \(T\) estimates an unknown parameter \(\theta\). If the
+sampling distribution of \(T\) is approximately normal, then
+\[
+\frac{T-\theta}{\operatorname{SE}(T)}
+\approx N(0,1).
+\]
+For a standard normal random variable, approximately \(95\%\) of the probability
+lies between \(-1.96\) and \(1.96\). Therefore
+\[
+P\left(
+-1.96
+\leq
+\frac{T-\theta}{\operatorname{SE}(T)}
+\leq
+1.96
+\right)
+\approx 0.95.
+\]
+
+This is a probability statement about the random statistic \(T\), made before the
+sample is observed. It says that repeated samples usually produce statistics
+within about two standard errors of the parameter.
+
+The same inequalities can be rearranged:
+\[
+P\left(
+T-1.96\operatorname{SE}(T)
+\leq
+\theta
+\leq
+T+1.96\operatorname{SE}(T)
+\right)
+\approx 0.95.
+\]
+This rearrangement is the source of a confidence interval.
+
+\subsection*{From a random interval to an observed interval}
+
+Before the sample is collected, both endpoints
+\[
+T-1.96\operatorname{SE}(T)
+\qquad\text{and}\qquad
+T+1.96\operatorname{SE}(T)
+\]
+are random. Different samples produce different intervals.
+
+After the data are observed, the statistic becomes \(t_{\mathrm{obs}}\), and the
+random interval becomes one numerical interval:
+\[
+\left[
+ t_{\mathrm{obs}}-1.96\widehat{\operatorname{SE}}(T),
+ t_{\mathrm{obs}}+1.96\widehat{\operatorname{SE}}(T)
+\right].
+\]
+
+\begin{definitionbox}
+A \textbf{confidence interval} is an interval computed by a procedure designed to
+capture the unknown parameter with a stated long-run frequency under repeated
+sampling.
+\end{definitionbox}
+
+A \(95\%\) confidence procedure is intended to produce intervals containing the
+true parameter in approximately \(95\%\) of repeated samples, provided the model
+and approximation are appropriate.
+
+\subsection*{What the confidence level means}
+
+The confidence level describes the procedure, not a probability distribution for
+the fixed parameter.
+
+Imagine repeatedly performing the following steps:
+
+\begin{enumerate}
+    \item draw a new sample of size \(n\);
+    \item compute the statistic and its estimated standard error;
+    \item construct the confidence interval;
+    \item record whether the interval contains the true parameter.
+\end{enumerate}
+
+A well-calibrated \(95\%\) procedure should succeed in approximately \(95\%\) of
+these repetitions.
+
+Once one particular sample has been observed, the resulting interval either
+contains the parameter or it does not. In the classical interpretation, the
+parameter is fixed and the interval-producing procedure is random.
+
+\begin{remarkbox}
+It is common to say informally that we are ``\(95\%\) confident'' that the
+parameter lies in the reported interval. The precise repeated-sampling meaning is
+that the procedure used to construct the interval has approximately \(95\%\)
+coverage under the assumed model.
+\end{remarkbox}
+
+\subsection*{A confidence interval for a population mean}
+
+Suppose
+\[
+X_1,\ldots,X_n
+\]
+are independent observations with population mean \(\mu\), and suppose the sample
+is large enough for a normal approximation to the sample mean.
+
+Since
+\[
+\overline X
+\approx
+N\left(\mu,\frac{\sigma^2}{n}\right),
+\]
+a \(95\%\) confidence interval has the general form
+\[
+\overline X
+\pm
+1.96\frac{\sigma}{\sqrt n}.
+\]
+
+Usually \(\sigma\) is unknown, so it is replaced by the sample standard deviation
+\(S\):
+\[
+\overline X
+\pm
+1.96\frac{S}{\sqrt n}.
+\]
+For large samples this gives a useful approximation. For small samples from a
+normal population, a more accurate procedure uses the Student \(t\) distribution,
+but that refinement is not developed here.
+
+\begin{examplebox}
+Suppose a sample of size \(100\) gives
+\[
+\bar{x}=52.4
+\qquad\text{and}\qquad
+s=10.
+\]
+The estimated standard error is
+\[
+\frac{s}{\sqrt n}
+=
+\frac{10}{10}
+=1.
+\]
+An approximate \(95\%\) confidence interval for \(\mu\) is
+\[
+52.4\pm1.96,
+\]
+so
+\[
+[50.44,54.36].
+\]
+The interval reports both an estimate and the sampling uncertainty associated
+with that estimate.
+\end{examplebox}
+
+\subsection*{A confidence interval for a proportion}
+
+For independent Bernoulli observations, the sample proportion satisfies
+\[
+\widehat p
+\approx
+N\left(p,\frac{p(1-p)}{n}\right)
+\]
+when the sample is sufficiently large and the expected numbers of successes and
+failures are not too small.
+
+Because \(p\) is unknown, a simple approximate standard error replaces it by
+\(\widehat p\):
+\[
+\widehat{\operatorname{SE}}(\widehat p)
+=
+\sqrt{\frac{\widehat p(1-\widehat p)}{n}}.
+\]
+This gives the familiar approximate interval
+\[
+\widehat p
+\pm
+1.96
+\sqrt{\frac{\widehat p(1-\widehat p)}{n}}.
+\]
+
+\begin{examplebox}
+Suppose \(240\) successes are observed in \(400\) independent trials. Then
+\[
+\widehat p=\frac{240}{400}=0.6.
+\]
+The estimated standard error is
+\[
+\sqrt{\frac{0.6(0.4)}{400}}
+\approx0.0245.
+\]
+An approximate \(95\%\) confidence interval is
+\[
+0.6\pm1.96(0.0245),
+\]
+which is approximately
+\[
+[0.552,0.648].
+\]
+The observed proportion is \(0.6\), but the interval expresses that other nearby
+values of the underlying probability are also compatible with the sampling
+variation.
+\end{examplebox}
+
+The simple interval above is useful for explaining the logic, although more
+accurate intervals may be preferred when the sample is small or the observed
+proportion is close to \(0\) or \(1\).
+
+\subsection*{Precision and sample size}
+
+A confidence interval becomes narrower when the standard error becomes smaller.
+For means and proportions, the standard error decreases at the rate
+\[
+\frac1{\sqrt n}.
+\]
+Thus larger samples usually give more precise intervals.
+
+But precision should not be confused with correctness. A very narrow confidence
+interval may still be misleading if:
+
+\begin{itemize}
+    \item the observations are not representative of the intended population;
+    \item the measurements are systematically biased;
+    \item the independence assumption is inappropriate;
+    \item the probability model does not describe the data-generating process;
+    \item the normal approximation is poor.
+\end{itemize}
+
+Increasing \(n\) reduces random sampling error. It does not automatically remove
+systematic error or repair a defective model.
+
+\subsection*{Confidence intervals as model compatibility}
+
+A confidence interval can be read as a set of parameter values that are reasonably
+compatible with the observed statistic under the assumed sampling model.
+
+Values near the centre of the interval make the observed statistic unsurprising.
+Values far outside the interval would place the observed statistic several
+standard errors away from what those values predict.
+
+This interpretation connects confidence intervals with hypothesis tests. A
+hypothesis test begins with one proposed parameter value and asks whether the
+observed statistic would be unusually far from the value predicted by that
+hypothesis.
+
+\begin{summarybox}
+A confidence interval is obtained by turning a probability statement about a
+random statistic into an interval-valued procedure for an unknown parameter. Its
+validity comes from the sampling distribution and its long-run coverage, not from
+the interval formula alone.
+\end{summarybox}
