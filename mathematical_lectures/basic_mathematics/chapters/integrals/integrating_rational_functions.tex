@@ -20,9 +20,9 @@ Compute
 \]
 The denominator is
 \[
-g(x)=x^2-x+1.
+g(x)=x^2-x+1,
 \]
-Its derivative is
+and its derivative is
 \[
 g'(x)=2x-1.
 \]
@@ -43,11 +43,7 @@ Compute
 \[
 \int \frac{x+1}{x^2-x+1}\,dx.
 \]
-The derivative of the denominator is
-\[
-2x-1.
-\]
-Write the numerator \(x+1\) in terms of \(2x-1\):
+The derivative of the denominator is \(2x-1\). Write
 \[
 x+1=\frac12(2x-1)+\frac32.
 \]
@@ -57,18 +53,47 @@ Thus
 =\frac12\int \frac{2x-1}{x^2-x+1}\,dx
 +\frac32\int \frac{dx}{x^2-x+1}.
 \]
-The first integral is logarithmic:
+The first integral is
 \[
-\frac12\ln|x^2-x+1|.
+\frac12\ln(x^2-x+1),
 \]
-For the second integral, complete the square:
+because
 \[
-x^2-x+1=\left(x-\frac12\right)^2+\frac34.
+x^2-x+1=\left(x-\frac12\right)^2+\frac34>0.
 \]
-Therefore the remaining part leads to an arctangent form.
+For the second integral, write
+\[
+x^2-x+1
+=
+\left(x-\frac12\right)^2+\left(\frac{\sqrt3}{2}\right)^2.
+\]
+Using
+\[
+\int \frac{du}{u^2+a^2}
+=
+\frac1a\arctan\frac{u}{a}+C,
+\]
+with \(u=x-1/2\) and \(a=\sqrt3/2\), we obtain
+\[
+\int \frac{dx}{x^2-x+1}
+=
+\frac{2}{\sqrt3}
+\arctan\left(\frac{2x-1}{\sqrt3}\right)+C.
+\]
+Therefore
+\[
+\boxed{
+\int \frac{x+1}{x^2-x+1}\,dx
+=
+\frac12\ln(x^2-x+1)
++
+\sqrt3\arctan\left(\frac{2x-1}{\sqrt3}\right)
++C
+}.
+\]
 \end{examplebox}
 
-This example shows the general idea. A rational integral may contain both logarithmic and arctangent pieces.
+This example shows that one rational integral may contain both logarithmic and arctangent pieces.
 
 \subsection*{Completing the square}
 
@@ -91,11 +116,7 @@ x^2+4x+8=(x+2)^2+4.
 Thus
 \[
 \int \frac{dx}{x^2+4x+8}
-=\int \frac{dx}{(x+2)^2+2^2}.
-\]
-Using the arctangent pattern,
-\[
-\int \frac{dx}{(x+2)^2+2^2}
+=\int \frac{dx}{(x+2)^2+2^2}
 =\frac12\arctan\frac{x+2}{2}+C.
 \]
 \end{examplebox}
@@ -116,9 +137,9 @@ Divide:
 Therefore
 \[
 \int \frac{x^2+1}{x-1}\,dx
-=\int (x+1)\,dx+2\int \frac{dx}{x-1}.
+=\int (x+1)\,dx+2\int \frac{dx}{x-1},
 \]
-Hence
+so
 \[
 \int \frac{x^2+1}{x-1}\,dx
 =\frac{x^2}{2}+x+2\ln|x-1|+C.
