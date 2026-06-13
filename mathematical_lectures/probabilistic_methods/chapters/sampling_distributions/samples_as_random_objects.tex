@@ -1,0 +1,173 @@
+\section{The sample itself is a random object}
+
+In descriptive statistics, we begin with observed values
+\[
+x_1,x_2,\ldots,x_n.
+\]
+These values are already known. We can arrange them, draw a histogram, compute
+their mean, or describe their empirical distribution.
+
+Before the observations are collected, however, there is no fixed list of
+numbers. There is a random procedure that will produce such a list. We represent
+its possible results by
+\[
+X_1,X_2,\ldots,X_n.
+\]
+The whole sample is therefore the random vector
+\[
+(X_1,X_2,\ldots,X_n).
+\]
+It is one random object with many possible values.
+
+\begin{definitionbox}
+A \textbf{random sample} is a collection of random observations
+\[
+X_1,X_2,\ldots,X_n
+\]
+generated according to a specified probabilistic model. Before observation, the
+sample has many possible values. After observation, one of these possibilities
+becomes the observed sample
+\[
+(x_1,x_2,\ldots,x_n).
+\]
+\end{definitionbox}
+
+The word ``sample'' is therefore used at two related levels. Before the data are
+known, it means a random object. After the data are known, it means one realized
+list of values. The notation helps us keep these levels separate:
+\[
+(X_1,\ldots,X_n)
+\quad\longrightarrow\quad
+(x_1,\ldots,x_n).
+\]
+The arrow represents observation. It does not mean that randomness disappears
+from the model. It means that one possible random sample has become the sample
+we actually saw.
+
+\subsection*{A small sample has a distribution}
+
+Consider a mechanism that produces either failure, recorded as \(0\), or success,
+recorded as \(1\). Suppose that the probability of success is
+\[
+P(X_i=1)=p,
+\]
+and the probability of failure is
+\[
+P(X_i=0)=1-p.
+\]
+Now take two observations and record their order. The random sample is
+\[
+(X_1,X_2).
+\]
+Its possible values are
+\[
+(0,0),\qquad (0,1),\qquad (1,0),\qquad (1,1).
+\]
+
+If the two observations are independent repetitions of the same mechanism, then
+these possible samples have probabilities
+\[
+P((X_1,X_2)=(0,0))=(1-p)^2,
+\]
+\[
+P((X_1,X_2)=(0,1))=(1-p)p,
+\]
+\[
+P((X_1,X_2)=(1,0))=p(1-p),
+\]
+\[
+P((X_1,X_2)=(1,1))=p^2.
+\]
+They add to one:
+\[
+(1-p)^2+(1-p)p+p(1-p)+p^2=1.
+\]
+
+This is a probability distribution on possible samples. The elementary outcomes
+are no longer single zeros or ones. They are complete samples of size two.
+
+\begin{examplebox}
+Let \(p=0.6\). Then
+\[
+P((0,0))=0.16,\qquad P((0,1))=0.24,
+\]
+\[
+P((1,0))=0.24,\qquad P((1,1))=0.36.
+\]
+Before sampling, all four samples are possible. After the experiment, we may
+observe, for example,
+\[
+(x_1,x_2)=(1,0).
+\]
+The observed pair is one realization of the random pair \((X_1,X_2)\).
+\end{examplebox}
+
+The samples \((0,1)\) and \((1,0)\) contain the same number of successes, but they
+are different ordered samples. They become indistinguishable only if we decide to
+record a summary such as the total number of successes.
+
+\subsection*{The sampling model determines the law of the sample}
+
+The probabilities above did not come from the list of possible samples alone.
+They came from assumptions about how the observations were generated. We assumed
+that each observation had the same success probability \(p\) and that the two
+observations were independent.
+
+In introductory models, we often assume that
+\[
+X_1,X_2,\ldots,X_n
+\]
+are independent and have the same probability law. This is commonly abbreviated
+by saying that the observations are \textbf{iid}: independent and identically
+distributed.
+
+These assumptions are useful, but they should not be treated as automatic. If
+observations influence one another, or if objects are sampled without
+replacement from a small population, then the possible samples or their
+probabilities may change. The law of the sample always belongs to a specified
+sampling mechanism.
+
+\begin{remarkbox}
+A dataset does not carry its sampling model inside itself. The model must state
+how the observations were generated. The same observed values may arise from
+different random mechanisms.
+\end{remarkbox}
+
+\subsection*{Three different distributions}
+
+At this point it is important to separate three objects.
+
+First, the \textbf{population law} describes one random observation, for example
+\[
+P(X_i=1)=p.
+\]
+
+Second, the \textbf{law of the sample} describes the random vector
+\[
+(X_1,\ldots,X_n).
+\]
+It assigns probabilities to possible complete samples.
+
+Third, after one sample has been observed, its \textbf{empirical distribution}
+describes the values that occurred in that particular dataset.
+
+For example, if the observed sample is
+\[
+(1,0,1,1,0),
+\]
+then its empirical distribution assigns relative frequency \(3/5\) to \(1\) and
+\(2/5\) to \(0\). This empirical distribution describes one realized sample. It
+is not the probability law of all possible samples.
+
+\begin{summarybox}
+The sampling process creates a new probability space:
+\[
+\text{probability model for one observation}
+\longrightarrow
+\text{probability law for complete samples}
+\longrightarrow
+\text{one observed dataset}.
+\]
+A statistic will be obtained by applying a rule to each possible sample. Because
+the sample is random, the statistic will also be random.
+\end{summarybox}
