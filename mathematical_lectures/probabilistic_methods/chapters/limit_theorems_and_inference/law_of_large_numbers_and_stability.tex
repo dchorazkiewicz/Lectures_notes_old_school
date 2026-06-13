@@ -76,12 +76,15 @@ P\left(|\overline X_n-\mu|\leq\varepsilon\right)
 \]
 
 \begin{theorembox}
-For independent identically distributed observations with finite expectation,
-the sample mean converges in probability to the population mean:
+For independent identically distributed observations with finite mean \(\mu\) and
+finite variance \(\sigma^2\), the sample mean converges in probability to the
+population mean:
 \[
 \overline X_n\xrightarrow{P}\mu.
 \]
-This statement is called the \textbf{law of large numbers}.
+This statement is the finite-variance form of the \textbf{law of large numbers}.
+More general versions require only a finite expectation, but their proof needs
+methods beyond the variance argument used here.
 \end{theorembox}
 
 The notation
@@ -96,7 +99,7 @@ The theorem does not say that the sample mean eventually becomes equal to
 
 \subsection*{Why the result is plausible}
 
-When the variance is finite, Chebyshev's inequality gives
+Chebyshev's inequality gives
 \[
 P\left(|\overline X_n-\mu|\geq\varepsilon\right)
 \leq
