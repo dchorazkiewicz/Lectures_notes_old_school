@@ -1,176 +1,68 @@
 \section{Basic differentiation rules}
 
-The derivative is defined by a limit, but we do not want to compute that limit from the beginning every time. Differentiation rules allow us to compute derivatives efficiently. These rules should be read as shortcuts justified by the limit definition, not as unrelated formulas.
+Differentiation rules are shortcuts justified by the limit definition.
 
-\subsection*{Constant functions}
+\subsection*{Constants and powers}
 
-A constant function does not change. Therefore its derivative is zero.
-
-\begin{theorembox}
-If
+A constant function has derivative zero. For every real exponent \(p\), the power rule is valid on \(x>0\):
 \[
-f(x)=c,
+\frac{d}{dx}x^p=px^{p-1}.
 \]
-where \(c\) is constant, then
-\[
-f'(x)=0.
-\]
-\end{theorembox}
+For integer exponents, the formula extends to all points where the power is defined. Fractional powers require their real domains to be checked separately.
 
 \begin{examplebox}
-If
+We have
 \[
-f(x)=7,
+\frac{d}{dx}x^5=5x^4,
 \]
-then
 \[
-f'(x)=0.
-\]
-The graph is a horizontal line, and its slope is zero everywhere.
-\end{examplebox}
-
-\subsection*{The power rule}
-
-One of the most important rules is the power rule.
-
-\begin{theorembox}
-For a real power \(p\), where the expression is defined,
-\[
-\frac{d}{dx}x^p=p x^{p-1}.
-\]
-\end{theorembox}
-
-For positive integers, this rule follows from expanding the difference quotient. In practice, it is used for many powers, including negative and fractional powers, on appropriate domains.
-
-\begin{examplebox}
-Differentiate
-\[
-f(x)=x^5.
-\]
-By the power rule,
-\[
-f'(x)=5x^4.
-\]
-\end{examplebox}
-
-\begin{examplebox}
-Differentiate
-\[
-g(x)=\frac{1}{x^3}.
-\]
-First rewrite
-\[
-g(x)=x^{-3}.
-\]
-Then
-\[
-g'(x)=-3x^{-4}=-\frac{3}{x^4}.
-\]
-\end{examplebox}
-
-\begin{examplebox}
-Differentiate
-\[
-h(x)=\sqrt{x}.
-\]
-Rewrite
-\[
-h(x)=x^{1/2}.
-\]
-Then
-\[
-h'(x)=\frac12x^{-1/2}=\frac{1}{2\sqrt{x}},
-\]
-for \(x>0\).
-\end{examplebox}
-
-The rewriting step is often the main work. Roots and fractions become easier to differentiate when written as powers.
-
-\subsection*{Constant multiple rule}
-
-Constants can be pulled out of differentiation.
-
-\begin{theorembox}
-If \(c\) is constant, then
-\[
-\frac{d}{dx}\bigl(c f(x)\bigr)=c f'(x).
-\]
-\end{theorembox}
-
-\begin{examplebox}
-If
-\[
-f(x)=5x^7,
-\]
-then
-\[
-f'(x)=5\cdot7x^6=35x^6.
-\]
-\end{examplebox}
-
-The constant scales the function, so it also scales the rate of change.
-
-\subsection*{Sum and difference rules}
-
-The derivative of a sum is the sum of the derivatives.
-
-\begin{theorembox}
-If \(f\) and \(g\) are differentiable, then
-\[
-(f+g)'=f'+g'
+\frac{d}{dx}x^{-3}=-3x^{-4},
+\qquad x\ne0,
 \]
 and
 \[
+\frac{d}{dx}\sqrt{x}=\frac1{2\sqrt{x}},
+\qquad x>0.
+\]
+Although \(\sqrt{x}\) is defined at zero, its derivative is not finite there.
+\end{examplebox}
+
+\subsection*{Constant multiples, sums, and differences}
+
+For a constant \(c\),
+\[
+(cf)'=cf'.
+\]
+For differentiable functions \(f\) and \(g\),
+\[
+(f+g)'=f'+g',
+\qquad
 (f-g)'=f'-g'.
 \]
-\end{theorembox}
 
 \begin{examplebox}
-Differentiate
+For
 \[
-y=5x^{15}-x^2+\frac13x-2.
+y=5x^{15}-x^2+\frac13x-2,
 \]
-Differentiate term by term:
+we obtain
 \[
 y'=75x^{14}-2x+\frac13.
 \]
-The derivative of the constant \(-2\) is zero.
 \end{examplebox}
 
-This example is typical for polynomial expressions. We read the function term by term, apply the power rule, and combine the results.
+\subsection*{Rewrite before differentiating}
 
-\subsection*{A useful habit}
-
-Before differentiating, rewrite the expression into a form that matches the rules. Fractions and roots often become powers.
-
-\begin{examplebox}
-Differentiate
+Roots and fractions often become powers, but the original domain must remain visible. On \(x>0\),
 \[
-y=\frac{2}{\sqrt{x}}-\frac{3}{\sqrt{x^3}}.
+y=\frac2{\sqrt{x}}-\frac3{\sqrt{x^3}}
+=2x^{-1/2}-3x^{-3/2},
 \]
-Rewrite:
-\[
-y=2x^{-1/2}-3x^{-3/2}.
-\]
-Now apply the power rule:
-\[
-y'=2\left(-\frac12\right)x^{-3/2}-3\left(-\frac32\right)x^{-5/2}.
-\]
-Thus
+so
 \[
 y'=-x^{-3/2}+\frac92x^{-5/2}.
 \]
-\end{examplebox}
 
 \begin{summarybox}
-For basic differentiation, ask:
-\begin{itemize}
-\item Can roots or fractions be rewritten as powers?
-\item Is there a constant factor?
-\item Can I differentiate term by term?
-\item Which rule applies to each term?
-\item On what domain does the derivative formula make sense?
-\end{itemize}
+Before differentiating, identify the domain, rewrite roots and fractions when useful, and check that every formula is valid on the interval being studied.
 \end{summarybox}
-
-Differentiation rules are efficient because they preserve the meaning of the derivative while avoiding repeated limit computations.
