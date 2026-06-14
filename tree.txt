@@ -186,6 +186,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/opening.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/theme.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_1.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_2.tex
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/03_matrix_inversion
