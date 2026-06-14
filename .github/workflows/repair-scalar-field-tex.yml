@@ -1,0 +1,135 @@
+name: Repair scalar field TeX sources
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/repair-scalar-field-tex.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Repair control characters and restore text
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path("physics_lectures/classical_field_theory/chapters/the_real_scalar_field")
+          files = sorted(root.glob("*.tex"))
+
+          replacements = (
+              (bytes([12]) + b"rac", b"\\frac"),
+              (bytes([11]) + b"arepsilon", b"\\varepsilon"),
+              (bytes([9]) + b"ext", b"\\text"),
+          )
+
+          changed = []
+          replacement_counts = {"form_feed_frac": 0, "vertical_tab_varepsilon": 0, "tab_text": 0}
+
+          for path in files:
+              data = path.read_bytes()
+              original = data
+
+              for index, (old, new) in enumerate(replacements):
+                  count = data.count(old)
+                  if count:
+                      data = data.replace(old, new)
+                      key = tuple(replacement_counts)[index]
+                      replacement_counts[key] += count
+
+              text = data.decode("utf-8")
+
+              if path.name == "02_massless_and_massive_field_equations.tex":
+                  old = (
+                      "\\boxed{\n"
+                      "\\phi=a\\phi_{1}+b\\phi_{2}\n"
+                      "}.\n"
+                      "\\]\n\n"
+                      "This property allows"
+                  )
+                  new = (
+                      "\\boxed{\n"
+                      "\\phi=a\\phi_{1}+b\\phi_{2}\n"
+                      "}\n"
+                      "\\]\n\n"
+                      "is also a solution.\n\n"
+                      "This property allows"
+                  )
+                  if old in text:
+                      text = text.replace(old, new, 1)
+
+              if path.name == "03_plane_wave_solutions.tex":
+                  old = (
+                      "\\boxed{\n"
+                      "\\phi=a\\phi_{1}+b\\phi_{2}\n"
+                      "}.\n"
+                      "\\]\n\n"
+                      "A general free field may"
+                  )
+                  new = (
+                      "\\boxed{\n"
+                      "\\phi=a\\phi_{1}+b\\phi_{2}\n"
+                      "}\n"
+                      "\\]\n\n"
+                      "is also a solution.\n\n"
+                      "A general free field may"
+                  )
+                  if old in text:
+                      text = text.replace(old, new, 1)
+
+              data = text.encode("utf-8")
+              if data != original:
+                  path.write_bytes(data)
+                  changed.append(str(path))
+
+          forbidden = []
+          for path in files:
+              data = path.read_bytes()
+              for offset, value in enumerate(data):
+                  if value < 32 and value not in (10, 13):
+                      forbidden.append((str(path), offset, value))
+                  if value == 127:
+                      forbidden.append((str(path), offset, value))
+
+          if forbidden:
+              for item in forbidden:
+                  print("Forbidden control byte:", item)
+              raise SystemExit("Control-character verification failed")
+
+          expected_phrases = {
+              root / "02_massless_and_massive_field_equations.tex": "is also a solution.",
+              root / "03_plane_wave_solutions.tex": "is also a solution.",
+          }
+          for path, phrase in expected_phrases.items():
+              if phrase not in path.read_text(encoding="utf-8"):
+                  raise SystemExit(f"Missing restored phrase in {path}")
+
+          print("Changed files:")
+          for path in changed:
+              print(path)
+          print("Replacement counts:", replacement_counts)
+          PY
+
+      - name: Commit repaired sources
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No repairs were necessary."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add physics_lectures/classical_field_theory/chapters/the_real_scalar_field
+          git commit -m "Repair scalar field TeX control characters"
+          git push origin HEAD:main
