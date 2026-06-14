@@ -1,1 +1,571 @@
 \section{Energy and Momentum of Scalar Fields}
+\label{sec:energy_and_momentum_of_scalar_fields}
+
+A scalar field stores energy in its time dependence, spatial gradients, and potential. It can also transport energy and momentum through space. These quantities can be obtained from the Hamiltonian density and organized covariantly in an energy--momentum tensor.
+
+A systematic derivation from translation symmetry will be given later. Here the goal is practical: calculate the densities, verify their local conservation, and apply them to simple field configurations.
+
+\subsection{Free scalar Lagrangian}
+
+The free density is
+
+\[
+\mathcal{L}_{0}
+=
+\frac{1}{2c^{2}}\phi_{t}^{2}
+-
+\frac{1}{2}|\nabla\phi|^{2}
+-
+\frac{1}{2}\mu^{2}\phi^{2}.
+\]
+
+The field equation is
+
+\[
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
++
+\mu^{2}\phi
+=0.
+\]
+
+An overall constant multiplying \(\mathcal{L}_{0}\) would not change this equation, but it would rescale all energy and momentum densities. The normalization used here is kept fixed throughout the chapter.
+
+\subsection{Canonical momentum}
+
+The momentum conjugate to the field is
+
+\[
+\boxed{
+\pi
+=
+\frac{\partial\mathcal{L}_{0}}
+{\partial\phi_{t}}
+=
+\frac{1}{c^{2}}\phi_{t}
+}.
+\]
+
+The field and its conjugate momentum are functions of position:
+
+\[
+\phi=\phi(\mathbf{x},t),
+\qquad
+\pi=\pi(\mathbf{x},t).
+\]
+
+A field theory therefore has one canonical pair at every spatial point.
+
+\subsection{Hamiltonian density}
+
+The Hamiltonian density is the Legendre transform
+
+\[
+\mathcal{H}
+=
+\pi\phi_{t}-\mathcal{L}_{0}.
+\]
+
+Substitution gives
+
+\[
+\begin{aligned}
+\mathcal{H}
+&=
+\frac{1}{c^{2}}\phi_{t}^{2}
+-
+\left[
+\frac{1}{2c^{2}}\phi_{t}^{2}
+-
+\frac{1}{2}|\nabla\phi|^{2}
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+\right]\\
+&=
+\frac{1}{2c^{2}}\phi_{t}^{2}
++
+\frac{1}{2}|\nabla\phi|^{2}
++
+\frac{1}{2}\mu^{2}\phi^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\mathcal{E}
+=
+\mathcal{H}
+=
+\frac{1}{2c^{2}}\phi_{t}^{2}
++
+\frac{1}{2}|\nabla\phi|^{2}
++
+\frac{1}{2}\mu^{2}\phi^{2}
+}.
+\]
+
+The three contributions are respectively temporal, gradient, and mass-potential energy densities.
+
+\subsection{Positivity}
+
+For a real field and real parameter
+
+\[
+\mu^{2}\geq0,
+\]
+
+each term in \(\mathcal{E}\) is nonnegative. Therefore
+
+\[
+\boxed{
+\mathcal{E}\geq0
+}.
+\]
+
+The total energy is
+
+\[
+\boxed{
+E(t)
+=
+\int_{\Sigma}
+\mathcal{E}(\mathbf{x},t)
+\,\mathrm{d}^{3}x
+}.
+\]
+
+Under suitable boundary or fall-off conditions, this energy is conserved.
+
+If the coefficient of \(\phi^{2}\) were negative, sufficiently large uniform fields could make the quadratic energy arbitrarily negative. That sign signals instability of the configuration \(\phi=0\).
+
+\subsection{Local energy conservation}
+
+Multiply the field equation by \(\phi_{t}\):
+
+\[
+\frac{1}{c^{2}}\phi_{tt}\phi_{t}
+-
+(\nabla^{2}\phi)\phi_{t}
++
+\mu^{2}\phi\phi_{t}
+=0.
+\]
+
+The first and third terms are time derivatives:
+
+\[
+\frac{1}{c^{2}}\phi_{tt}\phi_{t}
+=
+\frac{\partial}{\partial t}
+\left(
+\frac{1}{2c^{2}}\phi_{t}^{2}
+\right),
+\]
+
+and
+
+\[
+\mu^{2}\phi\phi_{t}
+=
+\frac{\partial}{\partial t}
+\left(
+\frac{1}{2}\mu^{2}\phi^{2}
+\right).
+\]
+
+For the gradient term, use
+
+\[
+\nabla\cdot
+(\phi_{t}\nabla\phi)
+=
+\nabla\phi_{t}\cdot\nabla\phi
++
+\phi_{t}\nabla^{2}\phi.
+\]
+
+Therefore
+
+\[
+-\phi_{t}\nabla^{2}\phi
+=
+-\nabla\cdot
+(\phi_{t}\nabla\phi)
++
+\frac{\partial}{\partial t}
+\left(
+\frac{1}{2}|\nabla\phi|^{2}
+\right).
+\]
+
+Combining the terms gives
+
+\[
+\boxed{
+\frac{\partial\mathcal{E}}{\partial t}
++
+\nabla\cdot\mathbf{S}
+=0
+},
+\]
+
+where the energy flux is
+
+\[
+\boxed{
+\mathbf{S}
+=
+-\phi_{t}\nabla\phi
+}.
+\]
+
+This is a local continuity equation.
+
+\subsection{Integral energy balance}
+
+Integrate over a spatial region \(V\):
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\int_{V}\mathcal{E}\,\mathrm{d}^{3}x
++
+\int_{V}\nabla\cdot\mathbf{S}\,\mathrm{d}^{3}x
+=0.
+\]
+
+Using the divergence theorem,
+
+\[
+\boxed{
+\frac{\mathrm{d}E_{V}}{\mathrm{d}t}
+=
+-
+\int_{\partial V}
+\mathbf{S}\cdot\mathbf{n}
+\,\mathrm{d}A
+}.
+\]
+
+The energy inside the region changes only through flux across its boundary.
+
+If
+
+\[
+\mathbf{S}\cdot\mathbf{n}=0
+\]
+
+on the boundary, the energy inside the region is constant.
+
+\subsection{Canonical energy--momentum tensor}
+
+For the free scalar field, define
+
+\[
+\boxed{
+T^{\mu\nu}
+=
+\partial^{\mu}\phi
+\partial^{\nu}\phi
+-
+\eta^{\mu\nu}\mathcal{L}_{0}
+}.
+\]
+
+For this theory the tensor is symmetric:
+
+\[
+T^{\mu\nu}=T^{\nu\mu}.
+\]
+
+Using the field equation, one finds
+
+\[
+\boxed{
+\partial_{\mu}T^{\mu\nu}=0
+}.
+\]
+
+This compact equation contains local energy conservation in the \(\nu=0\) component and local momentum conservation in the spatial components.
+
+The general relation between translation symmetry and this tensor will be derived in later chapters.
+
+\subsection{Energy-density component}
+
+The component
+
+\[
+T^{00}
+=
+\partial^{0}\phi\partial^{0}\phi
+-
+\eta^{00}\mathcal{L}_{0}
+\]
+
+is
+
+\[
+\begin{aligned}
+T^{00}
+&=
+\frac{1}{c^{2}}\phi_{t}^{2}
+-
+\mathcal{L}_{0}\\
+&=
+\frac{1}{2c^{2}}\phi_{t}^{2}
++
+\frac{1}{2}|\nabla\phi|^{2}
++
+\frac{1}{2}\mu^{2}\phi^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{T^{00}=\mathcal{E}}.
+\]
+
+\subsection{Energy flux and momentum density}
+
+For a spatial index \(i\),
+
+\[
+T^{0i}
+=
+\partial^{0}\phi\partial^{i}\phi.
+\]
+
+Using
+
+\[
+\partial^{0}\phi
+=
+\frac{1}{c}\phi_{t},
+\qquad
+\partial^{i}\phi
+=
+-\partial_{i}\phi,
+\]
+
+we obtain
+
+\[
+\boxed{
+T^{0i}
+=
+-
+\frac{1}{c}
+\phi_{t}\partial_{i}\phi
+}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathbf{S}=c\,(T^{01},T^{02},T^{03})
+}.
+\]
+
+The momentum density is
+
+\[
+\boxed{
+\mathbf{g}
+=
+\frac{1}{c^{2}}\mathbf{S}
+=
+-
+\frac{1}{c^{2}}\phi_{t}\nabla\phi
+}.
+\]
+
+The equality between energy flux divided by \(c^{2}\) and momentum density is characteristic of relativistic fields.
+
+\subsection{Spatial stress components}
+
+The spatial components are
+
+\[
+T^{ij}
+=
+\partial_{i}\phi\partial_{j}\phi
++
+\delta^{ij}\mathcal{L}_{0}.
+\]
+
+They describe momentum flux and mechanical stress carried by the field.
+
+A complete analysis of pressure, stress, and forces on boundaries will be developed later. At this stage, the important point is that energy density, momentum density, and stress are components of one Lorentz tensor.
+
+\subsection{Plane-wave energy density}
+
+Consider the real mode
+
+\[
+\phi
+=
+A\cos(
+\mathbf{k}\cdot\mathbf{x}-\omega t
+).
+\]
+
+Then
+
+\[
+\phi_{t}
+=
+A\omega\sin(
+\mathbf{k}\cdot\mathbf{x}-\omega t
+),
+\]
+
+and
+
+\[
+\nabla\phi
+=
+-A\mathbf{k}
+\sin(
+\mathbf{k}\cdot\mathbf{x}-\omega t
+).
+\]
+
+The time-averaged energy density is
+
+\[
+\langle\mathcal{E}\rangle
+=
+\frac{A^{2}\omega^{2}}{2c^{2}}.
+\]
+
+Using the dispersion relation,
+
+\[
+\boxed{
+\langle\mathcal{E}\rangle
+=
+\frac{A^{2}}{2}
+(k^{2}+\mu^{2})
+}.
+\]
+
+\subsection{Plane-wave energy flux}
+
+For the same mode,
+
+\[
+\mathbf{S}
+=
+A^{2}\omega\mathbf{k}
+\sin^{2}(
+\mathbf{k}\cdot\mathbf{x}-\omega t
+).
+\]
+
+Averaging over one period gives
+
+\[
+\boxed{
+\langle\mathbf{S}\rangle
+=
+\frac{A^{2}}{2}
+\omega\mathbf{k}
+}.
+\]
+
+The ratio of the flux magnitude to the average energy density is
+
+\[
+\frac{|\langle\mathbf{S}\rangle|}
+{\langle\mathcal{E}\rangle}
+=
+\frac{c^{2}k}{\omega}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{|\langle\mathbf{S}\rangle|}
+{\langle\mathcal{E}\rangle}
+=
+v_{\mathrm{g}}
+}.
+\]
+
+The average energy of a monochromatic massive mode is transported at the group velocity, not at the phase velocity.
+
+\subsection{Standing-wave energy}
+
+For a standing wave, energy is not transported steadily in one direction. Instead, energy oscillates locally between temporal and gradient or potential contributions.
+
+At times when the field displacement is extremal, the temporal contribution may vanish. A quarter period later, the field may pass through zero while the temporal contribution is maximal.
+
+The total energy remains constant when there is no boundary flux.
+
+\subsection{Finite-energy conditions}
+
+On an unbounded spatial region, finite total energy requires
+
+\[
+\int_{\mathbb{R}^{3}}
+\left[
+\frac{1}{c^{2}}\phi_{t}^{2}
++
+|\nabla\phi|^{2}
++
+\mu^{2}\phi^{2}
+\right]
+\mathrm{d}^{3}x
+<\infty.
+\]
+
+The field and its derivatives must therefore fall off sufficiently rapidly at spatial infinity.
+
+A perfect plane wave has infinite total energy because it fills all space. It is an idealized mode, not a localized finite-energy configuration.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item identifying the Lagrangian density with the energy density;
+    \item forgetting the positive sign of the gradient contribution to energy;
+    \item deriving global conservation without checking the boundary flux;
+    \item identifying phase velocity with energy-transport velocity;
+    \item assigning finite total energy to an infinite plane wave;
+    \item treating \(T^{00}\), \(T^{0i}\), and \(T^{ij}\) as unrelated quantities;
+    \item overlooking that an overall action normalization rescales all canonical densities.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The free scalar field has energy density
+
+\[
+\mathcal{E}
+=
+\frac{1}{2c^{2}}\phi_{t}^{2}
++
+\frac{1}{2}|\nabla\phi|^{2}
++
+\frac{1}{2}\mu^{2}\phi^{2},
+\]
+
+energy flux
+
+\[
+\mathbf{S}=-\phi_{t}\nabla\phi,
+\]
+
+and momentum density
+
+\[
+\mathbf{g}=\mathbf{S}/c^{2}.
+\]
+
+These quantities are components of the conserved tensor \(T^{\mu\nu}\). Positivity follows when \(\mu^{2}\geq0\), and a plane wave transports average energy at its group velocity. The next section replaces the quadratic potential by nonlinear interactions.
