@@ -181,7 +181,9 @@
 ./mathematical_lectures/basic_mathematics/prezentation/00_introduction/main.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.pdf
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/theme.tex
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/03_matrix_inversion
