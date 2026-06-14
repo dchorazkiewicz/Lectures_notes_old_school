@@ -175,6 +175,8 @@
 ./mathematical_lectures/basic_mathematics/prezentation/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/00_introduction
 ./mathematical_lectures/basic_mathematics/prezentation/00_introduction/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/.gitignore
 ./mathematical_lectures/basic_mathematics/problems
 ./mathematical_lectures/basic_mathematics/problems/algebra
 ./mathematical_lectures/basic_mathematics/problems/algebra/01_matrices_and_operations.md
