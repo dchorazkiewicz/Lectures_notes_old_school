@@ -1,1 +1,629 @@
 \section{Linearization and Small Perturbations}
+\label{sec:linearization_and_small_perturbations}
+
+Nonlinear field equations are rarely solvable in complete generality. A standard method is to identify a known background solution, add a small perturbation, and retain only terms linear in the perturbation.
+
+This procedure converts a nonlinear theory into an approximate linear theory whose coefficients depend on the chosen background. It reveals normal modes, effective masses, and the first signs of stability or instability.
+
+\subsection{The nonlinear equation}
+
+Consider
+
+\[
+\boxed{
+\Box\phi
++
+V'(\phi)
+=
+J
+}.
+\]
+
+Let \(\bar\phi(x)\) be a background field satisfying
+
+\[
+\boxed{
+\Box\bar\phi
++
+V'(\bar\phi)
+=
+\bar J
+}.
+\]
+
+We perturb both the field and, if needed, the source:
+
+\[
+\boxed{
+\phi
+=
+\bar\phi
++
+\varepsilon\psi
+}
+\]
+
+and
+
+\[
+J
+=
+\bar J
++
+\varepsilon\delta J.
+\]
+
+The parameter \(\varepsilon\) records the order of smallness. At the end of the calculation it may be set to one, provided \(\psi\) remains small enough for the approximation to be valid.
+
+\subsection{Taylor expansion of the nonlinear force}
+
+Expand the potential derivative around the background:
+
+\[
+\begin{aligned}
+V'(\bar\phi+\varepsilon\psi)
+&=
+V'(\bar\phi)
++
+\varepsilon
+V''(\bar\phi)\psi\\
+&\quad+
+\frac{\varepsilon^{2}}{2}
+V'''(\bar\phi)\psi^{2}
++
+O(\varepsilon^{3}).
+\end{aligned}
+\]
+
+The wave operator is linear:
+
+\[
+\Box(
+\bar\phi+arepsilon\psi
+)
+=
+\Box\bar\phi
++
+\varepsilon\Box\psi.
+\]
+
+Substitution into the full equation gives
+
+\[
+\begin{aligned}
+&\Box\bar\phi
++
+V'(\bar\phi)\\
+&\quad+
+\varepsilon
+\left[
+\Box\psi
++
+V''(\bar\phi)\psi
+\right]\\
+&\quad+
+O(\varepsilon^{2})
+=
+\bar J
++
+\varepsilon\delta J.
+\end{aligned}
+\]
+
+The zeroth-order terms cancel because the background satisfies its equation.
+
+\subsection{The linearized equation}
+
+Keeping only first-order terms gives
+
+\[
+\boxed{
+\Box\psi
++
+V''(\bar\phi)\psi
+=
+\delta J
+}.
+\]
+
+This is the linearized field equation.
+
+The coefficient
+
+\[
+V''(\bar\phi)
+\]
+
+is the curvature of the potential evaluated on the background. If the background varies in spacetime, this coefficient is itself a function of position and time.
+
+\subsection{Constant equilibrium background}
+
+Suppose the source vanishes and the background is a constant equilibrium:
+
+\[
+\bar\phi=\phi_{0},
+\qquad
+V'(\phi_{0})=0.
+\]
+
+Then the linearized equation is
+
+\[
+\boxed{
+\Box\psi
++
+\mu_{\mathrm{eff}}^{2}\psi
+=0
+},
+\]
+
+where
+
+\[
+\boxed{
+\mu_{\mathrm{eff}}^{2}
+:=
+V''(\phi_{0})
+}.
+\]
+
+The curvature of the nonlinear potential acts as the squared mass parameter for small fluctuations.
+
+\subsection{Plane-wave perturbations}
+
+Try
+
+\[
+\psi
+=
+A e^{-ik\cdot x}.
+\]
+
+The linearized equation gives
+
+\[
+-k^{2}\psi
++
+\mu_{\mathrm{eff}}^{2}\psi
+=0.
+\]
+
+Thus
+
+\[
+\boxed{
+k^{2}=\mu_{\mathrm{eff}}^{2}
+}
+\]
+
+and
+
+\[
+\boxed{
+\omega^{2}
+=
+c^{2}
+\left(
+k^{2}+\mu_{\mathrm{eff}}^{2}
+\right)
+}.
+\]
+
+The sign of \(\mu_{\mathrm{eff}}^{2}\) determines whether sufficiently long-wavelength perturbations oscillate or grow.
+
+\subsection{Positive curvature}
+
+If
+
+\[
+V''(\phi_{0})>0,
+\]
+
+then
+
+\[
+\omega^{2}>0
+\]
+
+for every real wave vector. Each Fourier mode oscillates, and the equilibrium is linearly stable against sufficiently small perturbations.
+
+The quadratic perturbation energy is
+
+\[
+\boxed{
+E^{(2)}
+=
+\int
+\left[
+\frac{1}{2c^{2}}\psi_{t}^{2}
++
+\frac{1}{2}|\nabla\psi|^{2}
++
+\frac{1}{2}
+V''(\phi_{0})\psi^{2}
+\right]
+\,\mathrm{d}^{3}x
+}.
+\]
+
+All terms are nonnegative under suitable boundary conditions.
+
+\subsection{Zero curvature}
+
+If
+
+\[
+V''(\phi_{0})=0,
+\]
+
+the leading linearized equation is massless:
+
+\[
+\Box\psi=0.
+\]
+
+This does not by itself prove stability. Higher-order terms in the potential may control the evolution because the quadratic restoring term vanishes.
+
+For example, if the first nonzero correction is quartic and positive, the equilibrium may still be stable but the linear approximation cannot determine the complete nonlinear response.
+
+\subsection{Negative curvature}
+
+If
+
+\[
+V''(\phi_{0})<0,
+\]
+
+write
+
+\[
+V''(\phi_{0})=-\sigma^{2},
+\qquad
+\sigma>0.
+\]
+
+The dispersion relation becomes
+
+\[
+\omega^{2}
+=
+c^{2}(k^{2}-\sigma^{2}).
+\]
+
+For modes with
+
+\[
+k^{2}<\sigma^{2},
+\]
+
+we have
+
+\[
+\omega^{2}<0.
+\]
+
+Set
+
+\[
+\omega=i\Gamma.
+\]
+
+Then
+
+\[
+\Gamma
+=
+c\sqrt{\sigma^{2}-k^{2}},
+\]
+
+and the time dependence includes
+
+\[
+\boxed{
+e^{\Gamma t}}
+\]
+
+as well as a decaying exponential. The growing mode signals linear instability.
+
+\subsection{Quartic theory around the origin}
+
+For
+
+\[
+V(\phi)
+=
+\frac{1}{2}\mu^{2}\phi^{2}
++
+\frac{\lambda}{4}\phi^{4},
+\]
+
+we have
+
+\[
+V''(\phi)
+=
+\mu^{2}
++
+3\lambda\phi^{2}.
+\]
+
+At the equilibrium
+
+\[
+\phi_{0}=0,
+\]
+
+the effective squared mass is
+
+\[
+\boxed{
+\mu_{\mathrm{eff}}^{2}=\mu^{2}
+}.
+\]
+
+The quartic interaction does not affect the linearized equation around the origin because its first contribution is cubic in the perturbation.
+
+It does affect larger-amplitude motion and interactions among modes.
+
+\subsection{Double-well theory around its equilibria}
+
+For
+
+\[
+V(\phi)
+=
+\frac{\lambda}{4}
+(\phi^{2}-v^{2})^{2},
+\]
+
+we found
+
+\[
+V''(\phi)
+=
+\lambda(3\phi^{2}-v^{2}).
+\]
+
+Around
+
+\[
+\phi_{0}=0,
+\]
+
+we have
+
+\[
+\boxed{
+\mu_{\mathrm{eff}}^{2}
+=
+-\lambda v^{2}<0
+}.
+\]
+
+The central equilibrium is unstable.
+
+Around either minimum,
+
+\[
+\phi_{0}=\pm v,
+\]
+
+we have
+
+\[
+\boxed{
+\mu_{\mathrm{eff}}^{2}
+=
+2\lambda v^{2}>0
+}.
+\]
+
+Small perturbations around either minimum satisfy a stable massive Klein--Gordon equation.
+
+\subsection{Expanding the Lagrangian}
+
+The same result can be obtained from the Lagrangian. Write
+
+\[
+\phi=\phi_{0}+\psi
+\]
+
+with constant \(\phi_{0}\). Expand the potential:
+
+\[
+\begin{aligned}
+V(\phi_{0}+\psi)
+&=
+V(\phi_{0})
++
+V'(\phi_{0})\psi\\
+&\quad+
+\frac{1}{2}
+V''(\phi_{0})\psi^{2}\\
+&\quad+
+\frac{1}{6}
+V'''(\phi_{0})\psi^{3}
++
+\cdots.
+\end{aligned}
+\]
+
+At an equilibrium,
+
+\[
+V'(\phi_{0})=0.
+\]
+
+The quadratic perturbation density is
+
+\[
+\boxed{
+\mathcal{L}^{(2)}
+=
+\frac{1}{2}
+\partial_{\mu}\psi
+\partial^{\mu}\psi
+-
+\frac{1}{2}
+V''(\phi_{0})\psi^{2}
+}.
+\]
+
+Higher powers describe interactions among the perturbations.
+
+\subsection{Backgrounds that vary in space}
+
+If \(\bar\phi=\bar\phi(\mathbf{x})\) is a nonuniform static solution, then
+
+\[
+\boxed{
+\Box\psi
++
+V''(\bar\phi(\mathbf{x}))
+\psi
+=0
+}.
+\]
+
+The perturbation moves in a position-dependent effective potential.
+
+For separated time dependence
+
+\[
+\psi(\mathbf{x},t)
+=
+f(\mathbf{x})e^{-i\omega t},
+\]
+
+the spatial equation is
+
+\[
+\boxed{
+\left[
+-\nabla^{2}
++
+V''(\bar\phi)
+\right]
+f
+=
+\frac{\omega^{2}}{c^{2}}f
+}.
+\]
+
+Stability becomes an eigenvalue problem for the spatial operator.
+
+\subsection{Translation zero mode of a static solution}
+
+Suppose a one-dimensional static solution is
+
+\[
+\bar\phi(x-x_{0}).
+\]
+
+Changing \(x_{0}\) produces another solution because translations are a symmetry. Differentiating with respect to \(x_{0}\) gives a perturbation proportional to
+
+\[
+\boxed{
+\psi_{0}(x)
+=
+\frac{\mathrm{d}\bar\phi}{\mathrm{d}x}
+}.
+\]
+
+This perturbation has
+
+\[
+\omega^{2}=0.
+\]
+
+It is a zero mode corresponding to shifting the position of the static configuration rather than deforming its shape.
+
+\subsection{Several coupled fields}
+
+Let the fields be \(\phi^{a}\) with potential
+
+\[
+V(\phi^{1},\ldots,\phi^{N}).
+\]
+
+Around a constant equilibrium \(\phi_{0}^{a}\), write
+
+\[
+\phi^{a}
+=
+\phi_{0}^{a}
++
+\psi^{a}.
+\]
+
+The linearized equations are
+
+\[
+\boxed{
+\Box\psi^{a}
++
+M^{2}_{ab}\psi^{b}
+=0
+},
+\]
+
+where
+
+\[
+\boxed{
+M^{2}_{ab}
+=
+\left.
+\frac{\partial^{2}V}
+{\partial\phi^{a}\partial\phi^{b}}
+\right|_{\phi_{0}}
+}.
+\]
+
+The symmetric matrix \(M^{2}_{ab}\) is the Hessian of the potential. Diagonalizing it identifies independent linear combinations of fields and their effective squared masses.
+
+A negative eigenvalue signals an unstable direction in field space.
+
+\subsection{Validity of the approximation}
+
+Linearization is valid only while neglected terms remain small compared with retained terms. Schematically, one requires
+
+\[
+|V'''(\bar\phi)\psi^{2}|
+\ll
+|V''(\bar\phi)\psi|
+\]
+
+when the quadratic term is nonzero.
+
+Even a very small unstable perturbation can eventually grow until the linear approximation fails. Linear theory predicts the onset and rate of instability, not the final nonlinear state.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item expanding around a configuration that does not satisfy the background equation;
+    \item keeping selected quadratic terms while discarding others of the same order;
+    \item confusing \(V'(\phi_{0})\) with the effective squared mass;
+    \item calling negative \(V''\) an ordinary real mass rather than an instability signal;
+    \item assuming that zero curvature proves nonlinear stability;
+    \item forgetting that a nonuniform background produces position-dependent coefficients;
+    \item treating a growing linear mode as valid after its amplitude becomes large.
+\end{enumerate}
+
+\subsection{What has been established}
+
+For a perturbation
+
+\[
+\phi=\bar\phi+\varepsilon\psi,
+\]
+
+the linearized equation is
+
+\[
+\Box\psi+V''(\bar\phi)\psi=\delta J.
+\]
+
+Around a constant equilibrium, the potential curvature is the effective squared mass. Positive curvature gives oscillatory modes, negative curvature gives long-wavelength exponential growth, and zero curvature requires examination of higher-order terms. For several fields, the Hessian matrix determines the normal perturbation modes. The final section combines these results with boundary conditions and spectral stability tests.
