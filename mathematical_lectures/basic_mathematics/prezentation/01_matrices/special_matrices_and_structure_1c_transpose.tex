@@ -1,0 +1,43 @@
+\begin{frame}{Transpose: rows become columns}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.40\textwidth}
+      \[
+      A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}
+      \]
+      \centering $2\times3$
+    \end{column}
+    \begin{column}{0.10\textwidth}
+      \centering\vspace{0.85cm}\Large $\longrightarrow$
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \[
+      A^{\mathsf T}=\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}
+      \]
+      \centering $3\times2$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Transpose rules and symmetry}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      \[
+      (A^{\mathsf T})^{\mathsf T}=A
+      \]
+      \[
+      (A+B)^{\mathsf T}=A^{\mathsf T}+B^{\mathsf T}
+      \]
+      \[
+      (AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}
+      \]
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{exampleblock}{Symmetry}
+        \[
+        A^{\mathsf T}=A
+        \]
+        mirror pattern across the main diagonal
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
