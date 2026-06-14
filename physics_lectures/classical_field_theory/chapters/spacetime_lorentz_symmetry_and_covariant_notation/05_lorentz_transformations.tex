@@ -1,1 +1,794 @@
 \section{Lorentz Transformations}
+\label{sec:lorentz_transformations}
+
+Lorentz transformations relate the coordinates assigned to the same event by different inertial observers. They replace Galilean transformations when the invariant speed \(c\) must be preserved.
+
+The basic example is a boost: two frames whose spatial axes are parallel and whose origins move uniformly relative to one another. Rotations are also Lorentz transformations, but boosts reveal the specifically relativistic mixing of space and time.
+
+\subsection{Standard configuration}
+
+Let frames \(S\) and \(S'\) satisfy the following conditions:
+
+\begin{itemize}
+    \item their spatial axes are parallel;
+    \item the frame \(S'\) moves with constant speed \(v\) in the positive \(x\)-direction relative to \(S\);
+    \item the origins coincide at
+    \[
+    t=t'=0.
+    \]
+\end{itemize}
+
+The transformation affects only the coordinates \(ct\) and \(x\). The transverse coordinates remain unchanged:
+
+\[
+y'=y,
+\qquad
+z'=z.
+\]
+
+Define
+
+\[
+\boxed{
+\beta=\frac{v}{c}
+}
+\]
+
+and
+
+\[
+\boxed{
+\gamma
+=
+\frac{1}{\sqrt{1-\beta^{2}}}
+=
+\frac{1}{\sqrt{1-v^{2}/c^{2}}}
+}.
+\]
+
+For a physical inertial frame,
+
+\[
+|v|<c,
+\]
+
+so \(\gamma\) is real and satisfies
+
+\[
+\gamma\geq1.
+\]
+
+\subsection{The standard Lorentz boost}
+
+The coordinate transformation is
+
+\[
+\boxed{
+ct'
+=
+\gamma(ct-\beta x)
+}
+\]
+
+and
+
+\[
+\boxed{
+x'
+=
+\gamma(x-\beta ct)
+}.
+\]
+
+Equivalently, using time rather than \(ct\),
+
+\[
+\boxed{
+t'
+=
+\gamma\left(t-
+\frac{vx}{c^{2}}
+\right)
+}
+\]
+
+and
+
+\[
+\boxed{
+x'
+=
+\gamma(x-vt)
+}.
+\]
+
+The transverse coordinates satisfy
+
+\[
+y'=y,
+\qquad
+z'=z.
+\]
+
+Space and time are mixed. The transformed time depends on both \(t\) and \(x\), while the transformed position depends on both \(x\) and \(t\).
+
+\subsection{Matrix form}
+
+For
+
+\[
+x^{\mu}=(ct,x,y,z),
+\]
+
+the boost is
+
+\[
+\boxed{
+x'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}x^{\nu}
+}
+\]
+
+with
+
+\[
+\boxed{
+\Lambda^{\mu}{}_{\nu}
+=
+\begin{pmatrix}
+\gamma&-\beta\gamma&0&0\\
+-\beta\gamma&\gamma&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}
+}.
+\]
+
+The first row gives the transformed time coordinate, and the second row gives the transformed longitudinal spatial coordinate.
+
+\subsection{Why this describes a moving frame}
+
+The origin of \(S'\) is defined by
+
+\[
+x'=0.
+\]
+
+Using
+
+\[
+x'=\gamma(x-vt),
+\]
+
+we find
+
+\[
+x=vt.
+\]
+
+Thus the origin of \(S'\) moves with speed \(v\) in the positive \(x\)-direction as measured in \(S\).
+
+Similarly, the origin of \(S\), defined by \(x=0\), moves in \(S'\) according to
+
+\[
+x'=-vt'.
+\]
+
+The relative speed has the same magnitude and opposite direction.
+
+\subsection{The inverse transformation}
+
+The inverse boost is obtained by replacing
+
+\[
+v\longrightarrow -v,
+\qquad
+\beta\longrightarrow -\beta.
+\]
+
+Therefore
+
+\[
+\boxed{
+ct
+=
+\gamma(ct'+\beta x')
+}
+\]
+
+and
+
+\[
+\boxed{
+x
+=
+\gamma(x'+\beta ct')
+}.
+\]
+
+Equivalently,
+
+\[
+t
+=
+\gamma\left(t'+
+\frac{vx'}{c^{2}}
+\right),
+\]
+
+and
+
+\[
+x
+=
+\gamma(x'+vt').
+\]
+
+This symmetry reflects the absence of a preferred inertial frame.
+
+\subsection{Direct verification of interval invariance}
+
+Consider the transformed temporal and longitudinal coordinates:
+
+\[
+ct'=\gamma(ct-\beta x),
+\]
+
+\[
+x'=\gamma(x-\beta ct).
+\]
+
+Calculate
+
+\[
+\begin{aligned}
+(ct')^{2}-(x')^{2}
+&=
+\gamma^{2}
+\left[(ct-\beta x)^{2}
+-(x-\beta ct)^{2}
+\right]\\
+&=
+\gamma^{2}
+\left[
+(c^{2}t^{2}-2\beta ctx+\beta^{2}x^{2})
+-(x^{2}-2\beta ctx+\beta^{2}c^{2}t^{2})
+\right]\\
+&=
+\gamma^{2}(1-\beta^{2})
+(c^{2}t^{2}-x^{2}).
+\end{aligned}
+\]
+
+Since
+
+\[
+\gamma^{2}(1-\beta^{2})=1,
+\]
+
+we obtain
+
+\[
+(ct')^{2}-(x')^{2}
+=
+c^{2}t^{2}-x^{2}.
+\]
+
+Because
+
+\[
+y'=y,
+\qquad
+z'=z,
+\]
+
+it follows that
+
+\[
+\boxed{
+c^{2}t'^{2}-x'^{2}-y'^{2}-z'^{2}
+=
+c^{2}t^{2}-x^{2}-y^{2}-z^{2}
+}.
+\]
+
+The spacetime interval is invariant.
+
+\subsection{The metric-preservation condition}
+
+In matrix notation, interval invariance is
+
+\[
+(\Lambda x)^{\mathsf{T}}
+\eta
+(\Lambda x)
+=
+x^{\mathsf{T}}\eta x.
+\]
+
+Since this must hold for every \(x\),
+
+\[
+\boxed{
+\Lambda^{\mathsf{T}}\eta\Lambda
+=
+\eta
+}.
+\]
+
+This equation defines the Lorentz group. It is the Minkowski analogue of the Euclidean condition
+
+\[
+R^{\mathsf{T}}R=I
+\]
+
+for rotation matrices.
+
+\subsection{Transformation of a four-vector}
+
+Every contravariant four-vector transforms with the same Lorentz matrix:
+
+\[
+A'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}A^{\nu}.
+\]
+
+For a boost in the \(x\)-direction,
+
+\[
+\boxed{
+A'^{0}
+=
+\gamma(A^{0}-\beta A^{1})
+}
+\]
+
+and
+
+\[
+\boxed{
+A'^{1}
+=
+\gamma(A^{1}-\beta A^{0})
+}.
+\]
+
+The transverse components are unchanged:
+
+\[
+A'^{2}=A^{2},
+\qquad
+A'^{3}=A^{3}.
+\]
+
+This applies to displacement, four-velocity, four-momentum, four-current, and every other contravariant four-vector.
+
+\subsection{Worked example: transforming an event}
+
+An event has coordinates in \(S\)
+
+\[
+t=5.0\,\mu\mathrm{s},
+\qquad
+x=900\,\mathrm{m}.
+\]
+
+Let \(S'\) move at
+
+\[
+v=0.60c.
+\]
+
+Then
+
+\[
+\beta=0.60,
+\qquad
+\gamma=
+\frac{1}{\sqrt{1-0.60^{2}}}
+=1.25.
+\]
+
+First compute
+
+\[
+ct
+=
+(3.00\times10^{8}\,\mathrm{m\,s^{-1}})
+(5.0\times10^{-6}\,\mathrm{s})
+=
+1500\,\mathrm{m}.
+\]
+
+The transformed coordinates are
+
+\[
+\begin{aligned}
+ct'
+&=
+1.25(1500\,\mathrm{m}-0.60\times900\,\mathrm{m})\\
+&=
+1.25(960\,\mathrm{m})\\
+&=
+1200\,\mathrm{m},
+\end{aligned}
+\]
+
+and
+
+\[
+\begin{aligned}
+x'
+&=
+1.25(900\,\mathrm{m}-0.60\times1500\,\mathrm{m})\\
+&=
+0.
+\end{aligned}
+\]
+
+Thus
+
+\[
+t'
+=
+\frac{1200\,\mathrm{m}}{3.00\times10^{8}\,\mathrm{m\,s^{-1}}}
+=
+4.0\,\mu\mathrm{s}.
+\]
+
+The event lies on the worldline of the origin of \(S'\), as confirmed by \(x'=0\).
+
+\subsection{Time dilation from the Lorentz transformation}
+
+Consider two events occurring at the same place in \(S'\):
+
+\[
+\Delta x'=0.
+\]
+
+Their time separation in \(S'\) is the proper time
+
+\[
+\Delta t'=\Delta\tau.
+\]
+
+Using the inverse transformation,
+
+\[
+\Delta t
+=
+\gamma\left(
+\Delta t'
++
+\frac{v\Delta x'}{c^{2}}
+\right),
+\]
+
+we obtain
+
+\[
+\boxed{
+\Delta t
+=
+\gamma\Delta\tau
+}.
+\]
+
+The coordinate time between the events in a frame where the clock moves is larger than the proper time recorded by the clock.
+
+\subsection{Length contraction}
+
+Let a rod be at rest in \(S'\). Its proper length is
+
+\[
+L_{0}
+=
+\Delta x',
+\]
+
+measured between its endpoints at the same time in \(S'\):
+
+\[
+\Delta t'=0.
+\]
+
+To measure the rod's length in \(S\), the endpoint positions must be recorded simultaneously in \(S\):
+
+\[
+\Delta t=0.
+\]
+
+Using
+
+\[
+\Delta x'
+=
+\gamma(\Delta x-v\Delta t),
+\]
+
+we find
+
+\[
+L_{0}
+=
+\gamma L.
+\]
+
+Therefore
+
+\[
+\boxed{
+L
+=
+\frac{L_{0}}{\gamma}
+}.
+\]
+
+The moving rod is shorter along the direction of motion. The simultaneity condition is essential; measuring the two endpoints at different times does not define the rod's length in one frame.
+
+\subsection{Relativity of simultaneity}
+
+Suppose two events are simultaneous in \(S\):
+
+\[
+\Delta t=0.
+\]
+
+Their time difference in \(S'\) is
+
+\[
+\begin{aligned}
+\Delta t'
+&=
+\gamma\left(
+\Delta t-
+\frac{v\Delta x}{c^{2}}
+\right)\\
+&=
+-\gamma
+\frac{v\Delta x}{c^{2}}.
+\end{aligned}
+\]
+
+If
+
+\[
+\Delta x\neq0,
+\]
+
+then generally
+
+\[
+\boxed{
+\Delta t'\neq0
+}.
+\]
+
+Distant simultaneity is frame dependent. Events at the same spacetime point remain coincident in every frame.
+
+\subsection{Transformation of velocities}
+
+Let a particle have longitudinal velocity
+
+\[
+u_{x}=rac{\mathrm{d}x}{\mathrm{d}t}
+\]
+
+in \(S\). Differentiate the Lorentz transformation:
+
+\[
+\mathrm{d}x'
+=
+\gamma(\mathrm{d}x-v\,\mathrm{d}t),
+\]
+
+and
+
+\[
+\mathrm{d}t'
+=
+\gamma\left(
+\mathrm{d}t-
+\frac{v\,\mathrm{d}x}{c^{2}}
+\right).
+\]
+
+Therefore
+
+\[
+\boxed{
+u'_{x}
+=
+\frac{u_{x}-v}
+{1-u_{x}v/c^{2}}
+}.
+\]
+
+For the transverse components,
+
+\[
+\boxed{
+u'_{y}
+=
+\frac{u_{y}}
+{\gamma(1-u_{x}v/c^{2})}
+}
+\]
+
+and
+
+\[
+\boxed{
+u'_{z}
+=
+\frac{u_{z}}
+{\gamma(1-u_{x}v/c^{2})}
+}.
+\]
+
+These formulas replace Galilean velocity addition.
+
+\subsection{Light-speed check}
+
+If a light ray moves in the positive \(x\)-direction in \(S\), then
+
+\[
+u_{x}=c.
+\]
+
+The transformed speed is
+
+\[
+\begin{aligned}
+u'_{x}
+&=
+\frac{c-v}{1-v/c}\\
+&=
+c.
+\end{aligned}
+\]
+
+Thus every inertial frame measures the same light speed.
+
+\subsection{Nonrelativistic limit}
+
+When
+
+\[
+|v|\ll c,
+\]
+
+we have
+
+\[
+\beta\ll1,
+\qquad
+\gamma\approx1.
+\]
+
+The Lorentz transformation reduces approximately to
+
+\[
+x'
+\approx
+x-vt,
+\]
+
+and
+
+\[
+t'
+\approx
+t.
+\]
+
+These are the Galilean transformation formulas. Relativistic corrections become important when speeds are not small compared with \(c\).
+
+\subsection{Composition of collinear boosts}
+
+Suppose \(S'\) moves at speed \(v\) relative to \(S\), and \(S''\) moves at speed \(u'\) relative to \(S'\), all along the same axis. The speed of \(S''\) relative to \(S\) is
+
+\[
+\boxed{
+u
+=
+\frac{u'+v}
+{1+u'v/c^{2}}
+}.
+\]
+
+If
+
+\[
+|u'|<c,
+\qquad
+|v|<c,
+\]
+
+then
+
+\[
+|u|<c.
+\]
+
+No composition of subluminal boosts produces a superluminal relative speed.
+
+\subsection{Rapidity}
+
+A useful parameter for a boost is the rapidity \(\chi\), defined by
+
+\[
+\tanh\chi=\beta.
+\]
+
+Then
+
+\[
+\cosh\chi=\gamma,
+\qquad
+\sinh\chi=\beta\gamma.
+\]
+
+The boost matrix in the \((ct,x)\)-plane becomes
+
+\[
+\Lambda(\chi)
+=
+\begin{pmatrix}
+\cosh\chi&-\sinh\chi\\
+-\sinh\chi&\cosh\chi
+\end{pmatrix}.
+\]
+
+Collinear boosts add rapidities:
+
+\[
+\chi_{\mathrm{total}}
+=
+\chi_{1}+\chi_{2}.
+\]
+
+This makes a boost resemble a hyperbolic rotation in Minkowski spacetime.
+
+\subsection{Structural checks}
+
+A Lorentz-transformation calculation should satisfy:
+
+\begin{enumerate}
+    \item setting \(v=0\) gives the identity transformation;
+    \item replacing \(v\) by \(-v\) gives the inverse;
+    \item the interval is preserved;
+    \item a light ray remains a light ray;
+    \item the origin of \(S'\) follows \(x=vt\) in \(S\);
+    \item the nonrelativistic limit reproduces Galilean kinematics.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using the same sign for the forward and inverse boosts;
+    \item forgetting the factor \(c^{2}\) in the transformation of time;
+    \item applying length contraction without imposing simultaneity in the measuring frame;
+    \item treating time dilation as a statement about one isolated event rather than two events on one clock's worldline;
+    \item using Galilean velocity addition at relativistic speeds;
+    \item assuming that simultaneity is invariant;
+    \item confusing the Lorentz matrix with the Minkowski metric.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A standard boost along the \(x\)-axis is
+
+\[
+ct'=\gamma(ct-\beta x),
+\qquad
+x'=\gamma(x-\beta ct).
+\]
+
+It preserves the Minkowski interval and transforms every contravariant four-vector through the same matrix \(\Lambda^{\mu}{}_{\nu}\). Time dilation, length contraction, relativity of simultaneity, and relativistic velocity addition follow from this transformation.
+
+The next section develops four-dimensional differentiation and constructs the d'Alembert operator used in covariant wave and field equations.
