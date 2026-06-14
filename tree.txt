@@ -416,7 +416,10 @@
 ./physics_lectures/classical_field_theory/figures
 ./physics_lectures/classical_field_theory/figures/README.md
 ./physics_lectures/classical_field_theory/macros.tex
+./physics_lectures/classical_field_theory/main.pdf
 ./physics_lectures/classical_field_theory/main.tex
+./physics_lectures/classical_field_theory/notes
+./physics_lectures/classical_field_theory/notes/canonical_books_research.md
 ./physics_lectures/classical_field_theory/preamble.tex
 ./physics_lectures/classical_field_theory/problems
 ./physics_lectures/classical_field_theory/problems/.gitkeep
