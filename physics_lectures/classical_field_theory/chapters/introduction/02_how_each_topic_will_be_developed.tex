@@ -1,0 +1,85 @@
+\section*{How Each Topic Will Be Developed}
+\addcontentsline{toc}{section}{How Each Topic Will Be Developed}
+
+To keep the exposition consistent, most substantial topics will be developed according to a common pattern. The details will vary, but the reader should repeatedly encounter the same sequence of questions: what problem are we solving, what structures are needed, how is the result derived, and how can it be used?
+
+\subsection*{1. The motivating problem}
+
+A section should begin with a recognizable task or conceptual difficulty. We may want to describe a continuous system, derive a differential equation from an action, express a conservation law locally, solve a field equation with a source, or understand why two different potentials represent the same electromagnetic field. This opening question determines the purpose of the formalism that follows.
+
+The motivation should be specific enough to guide the calculation. Instead of saying only that fields are important, we will ask how a system with one degree of freedom at every point in space can be described. Instead of saying only that symmetries imply conservation laws, we will ask how an infinitesimal transformation changes the action and how that change produces a divergence equation.
+
+\subsection*{2. The objects, assumptions, and conventions}
+
+Before calculating, the relevant objects must be defined. Their domains, codomains, indices, units, transformation rules, and regularity assumptions should be clear. In relativistic calculations, the metric signature and index conventions must be fixed. In variational calculations, the allowed variations and boundary conditions must be stated. In Green-function methods, the differential operator and boundary conditions must be identified.
+
+This stage is essential because many apparent contradictions in field theory are actually differences of convention. A sign in the metric changes signs in scalar products. A definition of the field-strength tensor changes the placement of signs in its components. A choice of units changes the constants appearing in Maxwell's equations. The notes will not hide these choices.
+
+\subsection*{3. The derivation}
+
+The main relation will then be derived step by step. The derivation should show every operation that carries conceptual information. If a derivative is moved from a variation to another factor, the integration by parts will be written. If dummy indices are renamed, the reason will be visible. If antisymmetry causes a term to vanish, the antisymmetry will be used explicitly. If a boundary term is discarded, the corresponding boundary condition will be stated.
+
+A representative example is the field-theoretic action
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}\bigl(\phi,\partial_{\mu}\phi,x\bigr)
+\,\mathrm{d}^{4}x.
+\]
+
+The notes will not jump directly from this expression to the Euler--Lagrange field equation. They will define a varied field \(\phi+\varepsilon\eta\), differentiate with respect to \(\varepsilon\), separate the variation of the field from the variation of its derivative, integrate by parts, analyze the boundary contribution, and only then infer the differential equation.
+
+\subsection*{4. A proof, verification, or structural check}
+
+Once a formula has been derived, it will be checked. The nature of the check depends on the result. A proposed current may be shown to have zero divergence on solutions of the field equation. A covariant Maxwell equation may be expanded into its three-dimensional components. A gauge transformation may be applied directly to verify that the field tensor remains unchanged. A stress-energy tensor may be tested by computing its energy-density component.
+
+These checks serve two purposes. They confirm the algebra, and they reveal what the abstract expression contains. A tensor formula becomes much easier to understand after one calculates its individual components and recovers a familiar physical law.
+
+\subsection*{5. A fully worked example}
+
+General formulas become useful only when they are applied. Each major construction should therefore be followed by at least one complete example, and usually by several examples of increasing complexity.
+
+For a scalar field, we may begin with the free massless field, derive the wave equation, substitute a plane wave, and obtain the dispersion relation. We may then add a mass term and compare the result. For Noether's theorem, we may first treat spacetime translations and then a global phase transformation of a complex scalar field. For Green functions, we may begin with a point source and then pass to a distributed source by integration.
+
+A worked example should include the setup, the calculation, and the interpretation. It should not end immediately after the final algebraic expression. The reader should be told what the answer says about propagation, conservation, symmetry, or physical measurement.
+
+\subsection*{6. Limiting cases and alternative forms}
+
+An important result should be examined in limits where its meaning is already known. A relativistic formula may be reduced to a nonrelativistic one. A massive scalar field may be compared with the massless case. A retarded solution may be compared with a static solution. A tensor equation may be rewritten in vector notation.
+
+Alternative forms will also be compared when this improves understanding. The electromagnetic field may be described using \(\mathbf{E}\) and \(\mathbf{B}\), the four-potential \(A_{\mu}\), the antisymmetric tensor \(F_{\mu\nu}\), or a differential two-form. These descriptions are not competing theories; they emphasize different structural features of the same theory.
+
+\subsection*{7. Common mistakes and diagnostic questions}
+
+Where a calculation is especially sensitive to signs, indices, or assumptions, the notes will identify typical errors. Examples include confusing raised and lowered components, varying a derivative incorrectly, discarding a boundary term without justification, treating gauge-dependent quantities as observables, or using a static Green function for a time-dependent problem.
+
+The reader should learn not only a successful calculation, but also how to detect an unsuccessful one. Useful questions include:
+
+\begin{itemize}
+    \item Are the free indices the same on both sides of the equation?
+    \item Do the dimensions agree?
+    \item Is the expression invariant under the symmetry it is supposed to respect?
+    \item Does the result reduce correctly in a simple limit?
+    \item Have all boundary conditions been used consistently?
+    \item Is the conserved quantity really independent of time?
+\end{itemize}
+
+\subsection*{8. A concise conclusion}
+
+A section should close by identifying what has been established and what will be used next. This final paragraph is important in a cumulative subject. The student should know which result is a definition, which is a derived equation, which is a conservation law, and which is a method of solution.
+
+The notes will therefore distinguish clearly between several kinds of statements:
+
+\begin{itemize}
+    \item definitions that introduce notation or structure;
+    \item assumptions that restrict the model;
+    \item identities that hold algebraically;
+    \item field equations that hold for physical solutions;
+    \item conservation laws that follow from symmetries;
+    \item examples that illustrate a method;
+    \item approximations that hold only in a specified regime.
+\end{itemize}
+
+This distinction prevents formulas from appearing as an undifferentiated list. It allows the reader to understand not only what an equation says, but why it is valid and when it may be used.
