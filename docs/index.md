@@ -6,6 +6,8 @@ PDF links intentionally avoid third-party CDN URLs. The download links use GitHu
 
 ## Mathematics
 
+[Basic Mathematics — Beamer presentations](basic_mathematics_presentations.md)
+
 | Project | Download | View in new tab | Source |
 | --- | --- | --- | --- |
 | Basic Mathematics | [Download PDF](https://raw.githubusercontent.com/dchorazkiewicz/Lectures_notes_old_school/main/mathematical_lectures/basic_mathematics/main.pdf) | <a href="https://github.com/dchorazkiewicz/Lectures_notes_old_school/blob/main/mathematical_lectures/basic_mathematics/main.pdf" target="_blank">View PDF</a> | [Folder](https://github.com/dchorazkiewicz/Lectures_notes_old_school/tree/main/mathematical_lectures/basic_mathematics) |
