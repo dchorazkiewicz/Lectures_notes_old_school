@@ -1,1 +1,507 @@
 \section{The Four-Potential}
+\label{sec:four_potential}
+
+Relativity combines space and time into spacetime. The electromagnetic scalar and vector potentials must therefore be components of one Lorentz-covariant object. This object is the electromagnetic four-potential.
+
+\subsection{Definition}
+
+With
+
+\[
+x^{\mu}
+=
+(ct,\mathbf{x})
+\]
+
+and metric
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1),
+\]
+
+define the contravariant four-potential by
+
+\[
+\boxed{
+A^{\mu}
+=
+\left(
+\frac{\Phi}{c},
+\mathbf{A}
+\right)
+}.
+\]
+
+In components,
+
+\[
+A^{0}
+=
+\frac{\Phi}{c},
+\qquad
+A^{i}=A_i^{\mathrm{(3D)}}.
+\]
+
+Lowering the index gives
+
+\[
+\boxed{
+A_{\mu}
+=
+\left(
+\frac{\Phi}{c},
+-\mathbf{A}
+\right)
+}.
+\]
+
+Thus
+
+\[
+A_0=A^0,
+\qquad
+A_i=-A^i.
+\]
+
+The minus sign on the spatial components follows from the metric signature.
+
+\subsection{Dimensional consistency}
+
+The time component has units
+
+\[
+\left[
+\frac{\Phi}{c}
+\right]
+=
+\frac{\mathrm{V}}{\mathrm{m\,s^{-1}}}
+=
+\mathrm{V\,s\,m^{-1}}.
+\]
+
+These are the same units as the vector potential:
+
+\[
+[\mathbf{A}]
+=
+\mathrm{V\,s\,m^{-1}}.
+\]
+
+All four components can therefore belong to one geometric vector.
+
+\subsection{Lorentz transformation law}
+
+The four-potential transforms as a contravariant four-vector:
+
+\[
+\boxed{
+A'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}A^{\nu}
+}.
+\]
+
+This means that the scalar and vector potentials are not separately invariant. A Lorentz boost mixes them.
+
+For a boost with velocity \(v\) in the positive \(x\)-direction,
+
+\[
+\beta
+=
+\frac{v}{c},
+\qquad
+\gamma
+=
+\frac{1}{\sqrt{1-\beta^2}}.
+\]
+
+The transformed components are
+
+\[
+A'^0
+=
+\gamma
+\left(
+A^0-
+\beta A^1
+\right),
+\]
+
+and
+
+\[
+A'^1
+=
+\gamma
+\left(
+A^1-
+\beta A^0
+\right).
+\]
+
+Therefore
+
+\[
+\boxed{
+\Phi'
+=
+\gamma
+\left(
+\Phi-vA_x
+\right)
+}.
+\]
+
+The parallel vector-potential component transforms as
+
+\[
+\boxed{
+A'_x
+=
+\gamma
+\left(
+A_x-
+\frac{v}{c^2}\Phi
+\right)
+}.
+\]
+
+The transverse components are unchanged:
+
+\[
+A'_y=A_y,
+\qquad
+A'_z=A_z.
+\]
+
+A configuration that is described using only a scalar potential in one inertial frame can therefore require both scalar and vector potentials in another frame.
+
+\subsection{Covariant gauge transformation}
+
+The three-dimensional gauge transformation is
+
+\[
+\Phi'
+=
+\Phi-
+\frac{\partial\chi}{\partial t},
+\qquad
+\mathbf{A}'
+=
+\mathbf{A}+
+\nabla\chi.
+\]
+
+Using
+
+\[
+\partial^{\mu}
+=
+\left(
+\frac{1}{c}
+\frac{\partial}{\partial t},
+-\nabla
+\right),
+\]
+
+this becomes
+
+\[
+\boxed{
+A'^{\mu}
+=
+A^{\mu}
+-
+\partial^{\mu}\chi
+}.
+\]
+
+Equivalently, with lowered indices,
+
+\[
+\boxed{
+A'_{\mu}
+=
+A_{\mu}
+-
+\partial_{\mu}\chi
+}.
+\]
+
+The compact four-dimensional formula reproduces both three-dimensional transformations with the correct signs.
+
+\subsection{The Lorenz gauge in covariant form}
+
+The Lorenz gauge condition is
+
+\[
+\nabla\cdot\mathbf{A}
++
+\frac{1}{c^2}
+\frac{\partial\Phi}{\partial t}
+=0.
+\]
+
+Compute the four-divergence:
+
+\[
+\begin{aligned}
+\partial_{\mu}A^{\mu}
+&=
+\partial_0A^0
++
+\partial_iA^i\\
+&=
+\frac{1}{c}
+\frac{\partial}{\partial t}
+\left(
+\frac{\Phi}{c}
+\right)
++
+\nabla\cdot\mathbf{A}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\partial_{\mu}A^{\mu}=0
+}.
+\]
+
+The Lorenz gauge is manifestly Lorentz covariant because it is the vanishing of a four-scalar.
+
+\subsection{Residual Lorenz-gauge freedom}
+
+Under
+
+\[
+A'^{\mu}
+=
+A^{\mu}-\partial^{\mu}\chi,
+\]
+
+the divergence changes as
+
+\[
+\partial_{\mu}A'^{\mu}
+=
+\partial_{\mu}A^{\mu}
+-
+\partial_{\mu}\partial^{\mu}\chi.
+\]
+
+Therefore
+
+\[
+\partial_{\mu}A'^{\mu}
+=
+\partial_{\mu}A^{\mu}
+-
+\Box\chi.
+\]
+
+If the original potential satisfies the Lorenz gauge, the transformed potential also satisfies it when
+
+\[
+\boxed{
+\Box\chi=0
+}.
+\]
+
+\subsection{Four-current and source coupling}
+
+Electric charge density and current density form the four-current
+
+\[
+\boxed{
+J^{\mu}
+=
+\left(
+c\rho,
+\mathbf{J}
+\right)
+}.
+\]
+
+Lowering the index gives
+
+\[
+J_{\mu}
+=
+\left(
+c\rho,
+-\mathbf{J}
+\right).
+\]
+
+The Lorentz scalar formed from the current and potential is
+
+\[
+\begin{aligned}
+J_{\mu}A^{\mu}
+&=
+(c\rho)
+\frac{\Phi}{c}
+-
+\mathbf{J}\cdot\mathbf{A}\\
+&=
+\rho\Phi
+-
+\mathbf{J}\cdot\mathbf{A}.
+\end{aligned}
+\]
+
+The interaction density used in the electromagnetic action is
+
+\[
+\boxed{
+\mathcal{L}_{\mathrm{int}}
+=
+-J_{\mu}A^{\mu}
+=
+-\rho\Phi
++
+\mathbf{J}\cdot\mathbf{A}
+}.
+\]
+
+This coupling will be varied in the next chapter.
+
+\subsection{Gauge transformation of the source coupling}
+
+Under a gauge transformation,
+
+\[
+\delta A^{\mu}
+=
+-\partial^{\mu}\chi.
+\]
+
+The interaction term changes by
+
+\[
+\delta\mathcal{L}_{\mathrm{int}}
+=
+J_{\mu}\partial^{\mu}\chi.
+\]
+
+Using the product rule,
+
+\[
+J_{\mu}\partial^{\mu}\chi
+=
+\partial^{\mu}
+\left(
+J_{\mu}\chi
+\right)
+-
+\chi\partial^{\mu}J_{\mu}.
+\]
+
+If charge is locally conserved,
+
+\[
+\partial_{\mu}J^{\mu}=0,
+\]
+
+then the change is a total divergence. Gauge invariance of the source coupling is therefore tied to charge conservation.
+
+\subsection{The potential norm is gauge dependent}
+
+The contraction
+
+\[
+A_{\mu}A^{\mu}
+=
+\frac{\Phi^2}{c^2}
+-
+|\mathbf{A}|^2
+\]
+
+is a Lorentz scalar for a fixed four-potential, but it is not gauge invariant. Under
+
+\[
+A^{\mu}
+\longrightarrow
+A^{\mu}-\partial^{\mu}\chi,
+\]
+
+the value generally changes.
+
+Lorentz invariance and gauge invariance are distinct requirements. A quantity can transform as a scalar under changes of inertial frame and still depend on the gauge representative.
+
+\subsection{Plane-wave potential}
+
+A vacuum plane-wave potential can be written as
+
+\[
+A^{\mu}(x)
+=
+\varepsilon^{\mu}
+\cos(k_{\nu}x^{\nu}),
+\]
+
+where \(\varepsilon^{\mu}\) is the polarization four-vector.
+
+The Lorenz gauge requires
+
+\[
+\partial_{\mu}A^{\mu}=0.
+\]
+
+Differentiating gives
+
+\[
+-k_{\mu}\varepsilon^{\mu}
+\sin(k_{\nu}x^{\nu})=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+k_{\mu}\varepsilon^{\mu}=0
+}.
+\]
+
+The polarization is four-dimensionally transverse to the wave vector. Residual gauge freedom can remove an additional unphysical component.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item writing \(A_{\mu}=(\Phi/c,\mathbf{A})\) instead of changing the signs of the spatial components;
+    \item treating \(\Phi\) and \(\mathbf{A}\) as separately Lorentz invariant;
+    \item using \(A'^{\mu}=A^{\mu}+\partial^{\mu}\chi\) with the three-dimensional conventions adopted here;
+    \item forgetting the factor \(1/c\) in the time component;
+    \item confusing Lorentz covariance with gauge invariance;
+    \item assuming that the Lorenz condition removes all gauge freedom.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The scalar and vector potentials combine into
+
+\[
+A^{\mu}
+=
+\left(
+\frac{\Phi}{c},
+\mathbf{A}
+\right).
+\]
+
+They mix under Lorentz transformations and transform under gauge changes as
+
+\[
+A'^{\mu}
+=
+A^{\mu}-\partial^{\mu}\chi.
+\]
+
+The Lorenz gauge is the covariant condition \(\partial_{\mu}A^{\mu}=0\), and the source coupling is the Lorentz scalar \(-J_{\mu}A^{\mu}\). The next section constructs the gauge-invariant field tensor from derivatives of the four-potential.
