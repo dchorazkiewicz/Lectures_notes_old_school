@@ -1,1 +1,588 @@
 \section{The Wave Equation from an Action}
+\label{sec:wave_equation_from_action}
+
+The vibrating string provides the simplest complete example of a dynamical field equation derived from an action. Its Lagrangian density contains a time-derivative term describing inertia and a spatial-gradient term describing elastic restoring forces.
+
+We will derive the equation, identify the boundary assumptions, verify a plane-wave solution, and interpret the coefficients.
+
+\subsection{The field and the model}
+
+Let
+
+\[
+u=u(x,t)
+\]
+
+be the small transverse displacement of a string whose equilibrium position is the interval
+
+\[
+0\leq x\leq L.
+\]
+
+We assume:
+
+\begin{enumerate}
+    \item the displacement is small;
+    \item the string has constant mass density per unit length \(\mu\);
+    \item the tension \(T\) is constant;
+    \item the motion is transverse;
+    \item damping and external forces are absent.
+\end{enumerate}
+
+The field history is defined on
+
+\[
+\Omega=[t_{1},t_{2}]\times[0,L].
+\]
+
+\subsection{The Lagrangian density}
+
+The kinetic-energy density is
+
+\[
+\mathcal{T}
+=
+\frac{\mu}{2}u_{t}^{2},
+\]
+
+where
+
+\[
+u_{t}=\frac{\partial u}{\partial t}.
+\]
+
+For small slopes, the elastic-energy density is
+
+\[
+\mathcal{V}
+=
+\frac{T}{2}u_{x}^{2},
+\]
+
+where
+
+\[
+u_{x}=\frac{\partial u}{\partial x}.
+\]
+
+The Lagrangian density is kinetic minus potential energy density:
+
+\[
+\boxed{
+\mathcal{L}
+=
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
+}.
+\]
+
+The action is
+
+\[
+\boxed{
+S[u]
+=
+\int_{t_{1}}^{t_{2}}
+\int_{0}^{L}
+\left[
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
+\right]
+\,\mathrm{d}x\,\mathrm{d}t
+}.
+\]
+
+\subsection{Derivation using the Euler--Lagrange field equation}
+
+The density does not depend explicitly on \(u\), so
+
+\[
+\frac{\partial\mathcal{L}}{\partial u}=0.
+\]
+
+For the time derivative,
+
+\[
+\frac{\partial\mathcal{L}}{\partial u_{t}}
+=
+\mu u_{t}.
+\]
+
+Therefore
+
+\[
+\frac{\partial}{\partial t}
+\left(
+\frac{\partial\mathcal{L}}{\partial u_{t}}
+\right)
+=
+\mu u_{tt}.
+\]
+
+For the spatial derivative,
+
+\[
+\frac{\partial\mathcal{L}}{\partial u_{x}}
+=
+-Tu_{x}.
+\]
+
+Therefore
+
+\[
+\frac{\partial}{\partial x}
+\left(
+\frac{\partial\mathcal{L}}{\partial u_{x}}
+\right)
+=
+-Tu_{xx}.
+\]
+
+The field Euler--Lagrange equation is
+
+\[
+\frac{\partial}{\partial t}
+\left(
+\frac{\partial\mathcal{L}}{\partial u_{t}}
+\right)
++
+\frac{\partial}{\partial x}
+\left(
+\frac{\partial\mathcal{L}}{\partial u_{x}}
+\right)
+-
+\frac{\partial\mathcal{L}}{\partial u}
+=0.
+\]
+
+Substitution gives
+
+\[
+\mu u_{tt}-Tu_{xx}=0.
+\]
+
+Thus
+
+\[
+\boxed{
+\mu
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+T
+\frac{\partial^{2}u}{\partial x^{2}}
+}.
+\]
+
+Defining
+
+\[
+c^{2}=\frac{T}{\mu},
+\]
+
+we obtain
+
+\[
+\boxed{
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}}
+}.
+\]
+
+This is the one-dimensional wave equation.
+
+\subsection{Direct variation as a check}
+
+Let
+
+\[
+u_{\varepsilon}=u+\varepsilon\eta.
+\]
+
+Then
+
+\[
+\delta u=\eta,
+\qquad
+\delta u_{t}=\eta_{t},
+\qquad
+\delta u_{x}=\eta_{x}.
+\]
+
+The first variation is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\int_{0}^{L}
+\left(
+\mu u_{t}\eta_{t}
+-
+T u_{x}\eta_{x}
+\right)
+\,\mathrm{d}x\,\mathrm{d}t.
+\]
+
+After integration by parts in time and space,
+
+\[
+\begin{aligned}
+\delta S
+&=
+\left[
+\int_{0}^{L}
+\mu u_{t}\eta
+\,\mathrm{d}x
+\right]_{t_{1}}^{t_{2}}\\
+&\quad-
+\int_{t_{1}}^{t_{2}}
+\left[
+T u_{x}\eta
+\right]_{0}^{L}
+\,\mathrm{d}t\\
+&\quad+
+\int_{t_{1}}^{t_{2}}
+\int_{0}^{L}
+(-\mu u_{tt}+Tu_{xx})
+\eta
+\,\mathrm{d}x\,\mathrm{d}t.
+\end{aligned}
+\]
+
+For fixed initial and final configurations and fixed string endpoints, all boundary variations vanish. Stationarity for arbitrary interior \(\eta\) gives
+
+\[
+-\mu u_{tt}+Tu_{xx}=0,
+\]
+
+which is equivalent to the equation obtained from the compact formula.
+
+\subsection{Physical interpretation}
+
+The term
+
+\[
+\mu u_{tt}
+\]
+
+is mass per unit length multiplied by transverse acceleration. It represents local inertia.
+
+The term
+
+\[
+T u_{xx}
+\]
+
+is proportional to local curvature. A straight segment has \(u_{xx}=0\) and no net transverse restoring force. A curved segment is accelerated toward a straighter configuration.
+
+The equation therefore expresses local force balance:
+
+\[
+\text{inertial response}
+=
+\text{elastic restoring force}.
+\]
+
+\subsection{Dimensional check}
+
+The dimensions of tension are
+
+\[
+[T]=\mathrm{N}=\mathrm{kg\,m\,s^{-2}},
+\]
+
+and the dimensions of linear mass density are
+
+\[
+[\mu]=\mathrm{kg\,m^{-1}}.
+\]
+
+Therefore
+
+\[
+\left[\frac{T}{\mu}\right]
+=
+\mathrm{m^{2}\,s^{-2}}.
+\]
+
+Hence
+
+\[
+[c]
+=
+\mathrm{m\,s^{-1}},
+\]
+
+so \(c\) has the dimensions of speed.
+
+The wave speed is
+
+\[
+\boxed{
+c=\sqrt{\frac{T}{\mu}}
+}.
+\]
+
+Increasing the tension increases the propagation speed, while increasing the mass density decreases it.
+
+\subsection{Plane-wave verification}
+
+Consider the complex trial solution
+
+\[
+u(x,t)
+=
+A e^{i(kx-\omega t)}.
+\]
+
+Its second derivatives are
+
+\[
+u_{tt}
+=
+-\omega^{2}u,
+\]
+
+and
+
+\[
+u_{xx}
+=
+-k^{2}u.
+\]
+
+Substitution into
+
+\[
+u_{tt}=c^{2}u_{xx}
+\]
+
+gives
+
+\[
+-\omega^{2}u
+=
+-c^{2}k^{2}u.
+\]
+
+For a nonzero wave amplitude,
+
+\[
+\boxed{
+\omega^{2}=c^{2}k^{2}
+}.
+\]
+
+Thus
+
+\[
+\omega=c|k|
+\]
+
+for positive frequency. The phase speed is
+
+\[
+\frac{\omega}{|k|}=c.
+\]
+
+The real and imaginary parts of the complex exponential are real solutions because the wave equation is linear with real coefficients.
+
+\subsection{General travelling waves}
+
+The wave equation admits solutions of the form
+
+\[
+u(x,t)=f(x-ct),
+\]
+
+where \(f\) is twice differentiable. Indeed,
+
+\[
+u_{t}=-cf'(x-ct),
+\qquad
+u_{tt}=c^{2}f''(x-ct),
+\]
+
+while
+
+\[
+u_{x}=f'(x-ct),
+\qquad
+u_{xx}=f''(x-ct).
+\]
+
+Therefore
+
+\[
+u_{tt}=c^{2}u_{xx}.
+\]
+
+Similarly,
+
+\[
+u(x,t)=g(x+ct)
+\]
+
+is a left-moving solution. The general solution on an unbounded line can be written as
+
+\[
+\boxed{
+u(x,t)=f(x-ct)+g(x+ct)
+}.
+\]
+
+Boundary conditions restrict which combinations are allowed on a finite interval.
+
+\subsection{Boundary conditions}
+
+For fixed endpoints,
+
+\[
+u(0,t)=0,
+\qquad
+u(L,t)=0.
+\]
+
+For free endpoints, stationarity gives
+
+\[
+u_{x}(0,t)=0,
+\qquad
+u_{x}(L,t)=0.
+\]
+
+Periodic boundary conditions take the form
+
+\[
+u(0,t)=u(L,t),
+\]
+
+and
+
+\[
+u_{x}(0,t)=u_{x}(L,t).
+\]
+
+The differential equation alone does not determine a unique physical motion. Initial data and boundary data are part of the model.
+
+\subsection{Energy density}
+
+The energy density associated with the string is
+
+\[
+\boxed{
+\mathcal{E}
+=
+\frac{\mu}{2}u_{t}^{2}
++
+\frac{T}{2}u_{x}^{2}
+}.
+\]
+
+The signs differ from the Lagrangian density because energy is kinetic plus potential, whereas the Lagrangian is kinetic minus potential.
+
+The total energy is
+
+\[
+E(t)
+=
+\int_{0}^{L}
+\mathcal{E}(x,t)
+\,\mathrm{d}x.
+\]
+
+Differentiating,
+
+\[
+\frac{\mathrm{d}E}{\mathrm{d}t}
+=
+\int_{0}^{L}
+\left(
+\mu u_{t}u_{tt}
++
+T u_{x}u_{xt}
+\right)
+\,\mathrm{d}x.
+\]
+
+Using the field equation and integrating the second term by parts gives
+
+\[
+\boxed{
+\frac{\mathrm{d}E}{\mathrm{d}t}
+=
+\left[T u_{x}u_{t}\right]_{0}^{L}
+}.
+\]
+
+The change of energy inside the string is determined by energy flow through its endpoints. For fixed endpoints, \(u_{t}=0\) there, and the total energy is conserved.
+
+\subsection{Adding an external source}
+
+A distributed external force density \(J(x,t)\) can be included through
+
+\[
+\mathcal{L}
+=
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
++
+J u.
+\]
+
+The source is prescribed, so \(\delta J=0\). The field equation becomes
+
+\[
+\boxed{
+\mu u_{tt}-Tu_{xx}=J
+}.
+\]
+
+The homogeneous wave equation describes free propagation. The sourced equation describes waves generated or driven by an external influence.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using energy density instead of Lagrangian density in the action;
+    \item losing the minus sign in the gradient term;
+    \item forgetting to vary both \(u_{t}\) and \(u_{x}\);
+    \item discarding time and spatial boundary terms without separate justifications;
+    \item assuming a plane wave is allowed without checking the boundary conditions;
+    \item writing \(c=T/\mu\) instead of \(c^{2}=T/\mu\);
+    \item confusing the source-free and driven equations.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The action
+
+\[
+S[u]
+=
+\int\!\int
+\left[
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
+\right]
+\,\mathrm{d}x\,\mathrm{d}t
+\]
+
+produces the wave equation
+
+\[
+u_{tt}=c^{2}u_{xx},
+\qquad
+c^{2}=\frac{T}{\mu}.
+\]
+
+The derivation identifies the interior dynamics and the boundary conditions within one variational calculation. Plane waves satisfy the dispersion relation \(\omega^{2}=c^{2}k^{2}\), and the associated energy changes only through boundary flux.
+
+The next section turns to static variational problems and derives the Laplace and Poisson equations from energy functionals.
