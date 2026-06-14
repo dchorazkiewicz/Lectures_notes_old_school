@@ -1,1 +1,415 @@
 \section{Basic Physical Examples of Fields}
+\label{sec:basic_physical_field_examples}
+
+The concept of a field is useful because the same mathematical structure appears in many different physical systems. The symbols and units change, but the underlying questions remain similar:
+
+\begin{enumerate}
+    \item What is the domain of the field?
+    \item What type of value is attached to each point?
+    \item Is the field static or time dependent?
+    \item Is it prescribed, or must it be solved for?
+    \item What produces it, and how is it measured?
+\end{enumerate}
+
+This section applies these questions to several important examples. The purpose is not to develop the complete theory of each field. It is to learn how to recognize the mathematical and physical role played by a field.
+
+\subsection{Temperature as a scalar field}
+
+A temperature field assigns one real number to every point of a material body:
+
+\[
+T=T(\mathbf{x},t).
+\]
+
+Its domain is the body together with the time interval under consideration. Its value is a scalar measured in kelvin.
+
+Consider a thin rod of length \(L\) with the model temperature
+
+\[
+T(x,t)
+=
+T_{\mathrm{eq}}
++
+\Delta T\,
+e^{-t/\tau}
+\cos\left(\frac{\pi x}{L}\right).
+\]
+
+Here \(T_{\mathrm{eq}}\) is an equilibrium temperature, \(\Delta T\) is the initial temperature variation, and \(\tau\) is a characteristic decay time.
+
+At the left end,
+
+\[
+T(0,t)
+=
+T_{\mathrm{eq}}
++
+\Delta T e^{-t/\tau}.
+\]
+
+At the midpoint,
+
+\[
+T\left(\frac{L}{2},t\right)
+=
+T_{\mathrm{eq}}
++
+\Delta T e^{-t/\tau}
+\cos\left(\frac{\pi}{2}\right)
+=
+T_{\mathrm{eq}}.
+\]
+
+At the right end,
+
+\[
+T(L,t)
+=
+T_{\mathrm{eq}}
+-
+\Delta T e^{-t/\tau}.
+\]
+
+The formula therefore represents a rod whose left and right ends initially lie above and below equilibrium by equal amounts. The exponential factor causes the variation to decrease with time.
+
+The field can be sampled with thermometers, but a finite set of measurements gives only an approximation to the complete field. A theoretical temperature field interpolates between measurements and predicts values at unmeasured points.
+
+The spatial gradient
+
+\[
+\nabla T
+\]
+
+points in the direction of the most rapid temperature increase. In heat conduction, this gradient helps determine the local heat flux. Thus derivatives of the field have direct physical meaning.
+
+\subsection{Density and velocity fields in a fluid}
+
+A fluid requires more than one field. Its mass density is a scalar field,
+
+\[
+\rho=\rho(\mathbf{x},t),
+\]
+
+while its velocity is a vector field,
+
+\[
+\mathbf{v}=\mathbf{v}(\mathbf{x},t).
+\]
+
+The density tells us how much mass is stored locally. If \(V\) is a region of space, the total mass inside it is
+
+\[
+M_{V}(t)
+=
+\int_{V}ho(\mathbf{x},t)\,\mathrm{d}^{3}x.
+\]
+
+For a uniform density \(\rho_{0}\) inside a rectangular box of side lengths \(a\), \(b\), and \(c\),
+
+\[
+M
+=
+\int_{0}^{a}
+\int_{0}^{b}
+\int_{0}^{c}
+\rho_{0}
+\,\mathrm{d}z\,\mathrm{d}y\,\mathrm{d}x
+=
+\rho_{0}abc.
+\]
+
+This calculation shows how a local field quantity produces a global observable by integration.
+
+The velocity field gives the velocity of the fluid element passing through each point. As an example, consider
+
+\[
+\mathbf{v}(x,y)
+=
+\alpha x\,\mathbf{e}_{x}
+-
+\alpha y\,\mathbf{e}_{y},
+\]
+
+where \(\alpha\) has units of inverse time.
+
+At \((x,y)=(2\,\mathrm{m},1\,\mathrm{m})\),
+
+\[
+\mathbf{v}
+=
+2\alpha\,\mathrm{m}\,\mathbf{e}_{x}
+-
+\alpha\,\mathrm{m}\,\mathbf{e}_{y}.
+\]
+
+The flow stretches material in the \(x\)-direction and compresses it in the \(y\)-direction. The divergence is
+
+\[
+\nabla\cdot\mathbf{v}
+=
+\frac{\partial v_{x}}{\partial x}
++
+\frac{\partial v_{y}}{\partial y}
+=
+\alpha-\alpha
+=
+0.
+\]
+
+The vanishing divergence indicates that local expansion in one direction is balanced by compression in the other. This is an example of how a derivative of a vector field describes a local property of a flow.
+
+A complete fluid model may also contain pressure, temperature, and concentration fields. These fields interact through local differential equations.
+
+\subsection{Displacement of a string}
+
+The transverse displacement of a string is a scalar field on a one-dimensional spatial domain:
+
+\[
+u=u(x,t),
+\qquad 0\leq x\leq L.
+\]
+
+Although the physical string lies in space, the coordinate \(x\) labels position along its equilibrium length, and \(u\) records displacement in a chosen transverse direction.
+
+A travelling wave may be written as
+
+\[
+u(x,t)
+=
+A\cos(kx-\omega t).
+\]
+
+Its local transverse velocity is
+
+\[
+\frac{\partial u}{\partial t}
+=
+A\omega\sin(kx-\omega t),
+\]
+
+and its local slope is
+
+\[
+\frac{\partial u}{\partial x}
+=
+-Ak\sin(kx-\omega t).
+\]
+
+The two quantities are proportional for this right-moving wave:
+
+\[
+\frac{\partial u}{\partial t}
+=
+-\frac{\omega}{k}
+\frac{\partial u}{\partial x}.
+\]
+
+If the dispersion relation is \(\omega=ck\), then
+
+\[
+\frac{\partial u}{\partial t}
+=
+-c\frac{\partial u}{\partial x}.
+\]
+
+This relation expresses the rigid translation of the wave profile to the right with speed \(c\). A local time change is linked to the local spatial slope because the same shape is moving through the coordinate system.
+
+The string example also shows that a scalar field need not represent a scalar quantity in all of three-dimensional space. The field value is scalar relative to the reduced one-dimensional model because only one transverse component has been retained.
+
+\subsection{Electric potential and electric field}
+
+Electrostatics uses both a scalar field and a vector field. The electric potential is a scalar field
+
+\[
+\Phi=\Phi(\mathbf{x}),
+\]
+
+while the electric field is a vector field
+
+\[
+\mathbf{E}=\mathbf{E}(\mathbf{x}).
+\]
+
+They are related by
+
+\[
+\mathbf{E}=-\nabla\Phi.
+\]
+
+For a point charge \(Q\) at the origin, the electrostatic potential in vacuum is
+
+\[
+\Phi(r)
+=
+\frac{1}{4\pi\varepsilon_{0}}
+\frac{Q}{r},
+\]
+
+where \(r=\lVert\mathbf{x}\rVert\).
+
+Because the potential depends only on the radial coordinate, its gradient is
+
+\[
+\nabla\Phi
+=
+\frac{\mathrm{d}\Phi}{\mathrm{d}r}\,\widehat{\mathbf{r}}.
+\]
+
+Differentiating,
+
+\[
+\frac{\mathrm{d}\Phi}{\mathrm{d}r}
+=
+-\frac{1}{4\pi\varepsilon_{0}}
+\frac{Q}{r^{2}}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathbf{E}(\mathbf{x})
+=
+\frac{1}{4\pi\varepsilon_{0}}
+\frac{Q}{r^{2}}
+\widehat{\mathbf{r}}
+}.
+\]
+
+For \(Q>0\), the field points radially outward. For \(Q<0\), it points inward.
+
+This calculation illustrates how a vector field can be generated from the spatial variation of a scalar field. The potential describes an energy-like quantity per unit charge, while its gradient determines the local force direction.
+
+A test charge \(q\) placed at \(\mathbf{x}\) experiences
+
+\[
+\mathbf{F}=q\mathbf{E}(\mathbf{x}).
+\]
+
+The response is local: the charge responds to the field evaluated at its own position.
+
+\subsection{The electromagnetic field}
+
+When electric and magnetic effects vary with time, the theory requires the electric vector field \(\mathbf{E}(\mathbf{x},t)\) and magnetic vector field \(\mathbf{B}(\mathbf{x},t)\). These fields are coupled: a changing magnetic field is related to the circulation of the electric field, and a changing electric field contributes to the magnetic field.
+
+In relativistic notation, \(\mathbf{E}\) and \(\mathbf{B}\) are not independent geometric objects. They are components of one antisymmetric rank-two tensor field,
+
+\[
+F_{\mu\nu}(x).
+\]
+
+Different inertial observers may divide the same tensor into electric and magnetic components differently. This is one reason tensor notation is not merely a compressed way of writing equations; it reveals which quantities belong to one relativistic field.
+
+The detailed construction of \(F_{\mu\nu}\) from the electromagnetic potential will be carried out in Chapter 7.
+
+\subsection{Gravitational potential and gravitational field}
+
+In Newtonian gravity, a mass distribution produces a scalar potential \(\Phi_{g}\). For a point mass \(M\),
+
+\[
+\Phi_{g}(r)
+=
+-\frac{GM}{r}.
+\]
+
+The gravitational acceleration field is
+
+\[
+\mathbf{g}=-\nabla\Phi_{g}.
+\]
+
+Since
+
+\[
+\frac{\mathrm{d}\Phi_{g}}{\mathrm{d}r}
+=
+\frac{GM}{r^{2}},
+\]
+
+we obtain
+
+\[
+\boxed{
+\mathbf{g}
+=
+-\frac{GM}{r^{2}}
+\widehat{\mathbf{r}}
+}.
+\]
+
+The minus sign indicates that the field points toward the mass.
+
+The mathematical resemblance to electrostatics is clear. Both theories use a scalar potential whose gradient produces a force field. The physical interpretation differs: electric charges can have either sign, while ordinary mass is positive and Newtonian gravity is attractive.
+
+General relativity replaces the Newtonian gravitational field by a dynamical spacetime metric tensor. The metric determines intervals, motion, and curvature. The final chapter will outline this geometric field description.
+
+\subsection{Stress as a tensor field}
+
+In a continuous material, the force acting across an internal surface depends on the orientation of that surface. A single force vector at each point is therefore insufficient. The stress tensor field
+
+\[
+\boldsymbol{\sigma}=\boldsymbol{\sigma}(\mathbf{x},t)
+\]
+
+assigns a linear map to each point. Given a unit normal \(\mathbf{n}\), it produces the traction vector
+
+\[
+\mathbf{t}(\mathbf{n})
+=
+\boldsymbol{\sigma}\mathbf{n}.
+\]
+
+The field value is a tensor because it relates one direction, the surface normal, to another vector, the force per unit area. The same tensor describes the traction on every possible surface orientation through the point.
+
+This example demonstrates why tensors arise naturally in continuum physics. They encode directional relationships that cannot be represented by one scalar or one vector.
+
+\subsection{One system may require several coupled fields}
+
+Consider a heated fluid moving through a pipe. A useful model may require
+
+\[
+\rho(\mathbf{x},t),
+\qquad
+p(\mathbf{x},t),
+\qquad
+T(\mathbf{x},t),
+\qquad
+\mathbf{v}(\mathbf{x},t).
+\]
+
+The density \(\rho\), pressure \(p\), and temperature \(T\) are scalar fields. The velocity \(\mathbf{v}\) is a vector field.
+
+These fields are not separate descriptions of unrelated phenomena. The density and velocity are connected by mass conservation. Pressure gradients influence acceleration. Temperature may change density and pressure. Motion transports heat.
+
+A field theory often consists of a coupled system of equations rather than one equation for one field. The first task is to identify the required fields and the physical principles that connect them.
+
+\subsection{A practical field-identification procedure}
+
+When a new field appears, analyze it in the following order.
+
+\begin{enumerate}
+    \item \textbf{Name the field variable.} For example, \(T\), \(\rho\), \(\mathbf{v}\), or \(F_{\mu\nu}\).
+    \item \textbf{State the domain.} Is it a line, surface, spatial region, or spacetime?
+    \item \textbf{Identify the value type.} Is it scalar, vector, or tensor?
+    \item \textbf{Give the physical units.}
+    \item \textbf{Decide whether it is prescribed or dynamical.}
+    \item \textbf{Identify sources and boundary data.}
+    \item \textbf{State how the field is measured or how it affects matter.}
+    \item \textbf{Identify the relevant derivatives or integrals.}
+\end{enumerate}
+
+This procedure prevents a field from becoming an unexplained symbol. It connects the mathematical object with the physical problem it is meant to describe.
+
+\subsection{Chapter summary}
+
+This chapter established the basic language of classical field theory.
+
+A field assigns physical or mathematical information to every point of a domain. Depending on the value assigned, the field may be scalar, vector, or tensor. The classification is determined by transformation behaviour, not merely by the number of written components.
+
+A field may depend on space and time. Its physical problem is not specified by a differential equation alone; the domain, initial data, and boundary conditions are also required. Local field equations relate values and derivatives at the same point, while sources drive the field and local coupling laws determine how matter responds.
+
+Continuous systems contain infinitely many degrees of freedom in the sense that a configuration is a function rather than a finite coordinate vector. This structure can be understood by discretizing space or by expanding the field in infinitely many normal modes.
+
+Most importantly, the wave equation was derived from a chain of coupled oscillators. Finite differences became derivatives, sums became integrals, and microscopic parameters combined into the continuum quantities \(\mu\) and \(T\). The derivation showed how a local field equation and a field energy emerge from ordinary mechanics.
+
+The next chapter develops the action principle for particles. That may appear to be a temporary return from fields to mechanics, but it provides the variational language needed to derive field equations systematically. Once the mechanical argument is understood in detail, it can be extended from finitely many coordinates to an entire field.
