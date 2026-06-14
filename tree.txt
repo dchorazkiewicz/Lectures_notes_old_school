@@ -176,6 +176,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/00_introduction
 ./mathematical_lectures/basic_mathematics/prezentation/00_introduction/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/00_introduction/main.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants
