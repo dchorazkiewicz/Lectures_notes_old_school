@@ -182,6 +182,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/basic_matrix_operations_1.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/basic_matrix_operations_2a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.pdf
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/opening.tex
