@@ -1,1 +1,819 @@
 \section{Worked Particle Models}
+\label{sec:worked_particle_models}
+
+The purpose of this section is to apply the variational method as a complete calculation. For each model, we identify the coordinate, write the Lagrangian, derive the Euler--Lagrange equation, solve or simplify the equation, and interpret the result.
+
+The examples are deliberately standard. Their value lies not in novelty but in making the procedure operational.
+
+\subsection{Model 1: the free particle}
+
+Consider a particle of mass \(m\) moving on a line with no potential energy. The generalized coordinate is \(q(t)\), and the Lagrangian is
+
+\[
+L(q,\dot q)
+=
+\frac{m}{2}\dot q^{2}.
+\]
+
+The required derivatives are
+
+\[
+\frac{\partial L}{\partial q}=0,
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial\dot q}
+=
+m\dot q.
+\]
+
+Therefore
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+=
+m\ddot q.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+m\ddot q=0,
+\]
+
+or
+
+\[
+\boxed{
+\ddot q=0
+}.
+\]
+
+Integrating once,
+
+\[
+\dot q=v_{0},
+\]
+
+where \(v_{0}\) is constant. Integrating again,
+
+\[
+\boxed{
+q(t)=q_{0}+v_{0}t
+}.
+\]
+
+The canonical momentum is
+
+\[
+p
+=
+\frac{\partial L}{\partial\dot q}
+=
+m\dot q,
+\]
+
+and the equation of motion states
+
+\[
+\dot p=0.
+\]
+
+Thus free motion corresponds to constant momentum and constant velocity.
+
+\subsubsection{Fixed-endpoint solution}
+
+Suppose
+
+\[
+q(t_{1})=q_{1},
+\qquad
+q(t_{2})=q_{2}.
+\]
+
+The solution satisfying these conditions is
+
+\[
+\boxed{
+q(t)
+=
+q_{1}
++
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}}
+(t-t_{1})
+}.
+\]
+
+The physical path is the straight line in the \((t,q)\)-plane connecting the two endpoint events.
+
+\subsubsection{Check by substitution}
+
+Differentiating twice,
+
+\[
+\dot q
+=
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}},
+\qquad
+\ddot q=0.
+\]
+
+The trajectory therefore satisfies the Euler--Lagrange equation exactly.
+
+\subsection{Model 2: a particle in a general potential}
+
+Let
+
+\[
+L(q,\dot q)
+=
+\frac{m}{2}\dot q^{2}-V(q).
+\]
+
+Then
+
+\[
+\frac{\partial L}{\partial q}
+=
+-V'(q),
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial\dot q}
+=
+m\dot q.
+\]
+
+The Euler--Lagrange equation is
+
+\[
+m\ddot q+V'(q)=0.
+\]
+
+Defining the force by
+
+\[
+F(q)
+=
+-V'(q),
+\]
+
+we obtain
+
+\[
+\boxed{
+m\ddot q=F(q)
+}.
+\]
+
+This is Newton's second law. The Lagrangian and Newtonian formulations therefore describe the same dynamics for conservative forces.
+
+\subsubsection{Energy check}
+
+Multiply the equation of motion by \(\dot q\):
+
+\[
+m\ddot q\dot q
++
+V'(q)\dot q
+=0.
+\]
+
+Using
+
+\[
+m\ddot q\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{m}{2}\dot q^{2}
+\right),
+\]
+
+and
+
+\[
+V'(q)\dot q
+=
+\frac{\mathrm{d}V}{\mathrm{d}t},
+\]
+
+we find
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{m}{2}\dot q^{2}+V(q)
+\right)
+=0.
+\]
+
+Thus
+
+\[
+\boxed{
+E
+=
+\frac{m}{2}\dot q^{2}+V(q)
+=
+\text{constant}
+}.
+\]
+
+This conservation law provides a useful independent check of solutions.
+
+\subsection{Model 3: motion in a uniform gravitational field}
+
+Choose the vertical coordinate \(y\), positive upward. The potential energy is
+
+\[
+V(y)=mgy.
+\]
+
+The Lagrangian is
+
+\[
+L(y,\dot y)
+=
+\frac{m}{2}\dot y^{2}-mgy.
+\]
+
+We calculate
+
+\[
+\frac{\partial L}{\partial y}
+=
+-mg,
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial\dot y}
+=
+m\dot y.
+\]
+
+Therefore
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot y}
+\right)
+=
+m\ddot y.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+m\ddot y+mg=0.
+\]
+
+Dividing by \(m\),
+
+\[
+\boxed{
+\ddot y=-g
+}.
+\]
+
+Integrating,
+
+\[
+\dot y(t)=v_{0}-gt,
+\]
+
+and
+
+\[
+\boxed{
+y(t)=y_{0}+v_{0}t-rac{g}{2}t^{2}
+}.
+\]
+
+\subsubsection{Physical interpretation}
+
+The mass cancels from the equation of motion. In this idealized model, all particles have the same gravitational acceleration regardless of mass.
+
+The conserved energy is
+
+\[
+E
+=
+\frac{m}{2}\dot y^{2}+mgy.
+\]
+
+Substituting the solution verifies that the decrease in kinetic energy during upward motion equals the increase in gravitational potential energy.
+
+\subsection{Model 4: the harmonic oscillator}
+
+Consider a particle attached to a spring with spring constant \(k\). The potential energy is
+
+\[
+V(q)
+=
+\frac{k}{2}q^{2}.
+\]
+
+The Lagrangian is
+
+\[
+L(q,\dot q)
+=
+\frac{m}{2}\dot q^{2}
+-
+\frac{k}{2}q^{2}.
+\]
+
+We have
+
+\[
+\frac{\partial L}{\partial q}
+=
+-kq,
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial\dot q}
+=
+m\dot q.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+m\ddot q+kq=0.
+\]
+
+Define
+
+\[
+\omega^{2}
+=
+\frac{k}{m}.
+\]
+
+Then
+
+\[
+\boxed{
+\ddot q+\omega^{2}q=0
+}.
+\]
+
+The general solution is
+
+\[
+\boxed{
+q(t)
+=
+A\cos(\omega t)
++
+B\sin(\omega t)
+}.
+\]
+
+Equivalently,
+
+\[
+q(t)
+=
+C\cos(\omega t-\varphi).
+\]
+
+\subsubsection{Verification}
+
+Differentiating twice,
+
+\[
+\ddot q(t)
+=
+-\omega^{2}
+\left[
+A\cos(\omega t)
++
+B\sin(\omega t)
+\right]
+=
+-\omega^{2}q(t).
+\]
+
+Thus the proposed solution satisfies the equation.
+
+\subsubsection{Energy}
+
+The conserved energy is
+
+\[
+E
+=
+\frac{m}{2}\dot q^{2}
++
+\frac{k}{2}q^{2}.
+\]
+
+For
+
+\[
+q(t)=C\cos(\omega t-\varphi),
+\]
+
+we have
+
+\[
+\dot q(t)
+=
+-C\omega\sin(\omega t-\varphi).
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+E
+&=
+\frac{m}{2}
+C^{2}\omega^{2}
+\sin^{2}(\omega t-\varphi)
++
+\frac{k}{2}
+C^{2}
+\cos^{2}(\omega t-\varphi)\\
+&=
+\frac{kC^{2}}{2}
+\left[
+\sin^{2}(\omega t-\varphi)
++
+\cos^{2}(\omega t-\varphi)
+\right]\\
+&=
+\boxed{
+\frac{kC^{2}}{2}
+}.
+\end{aligned}
+\]
+
+The total energy remains constant while kinetic and potential energies exchange periodically.
+
+\subsection{Model 5: a particle in two-dimensional polar coordinates}
+
+Consider a particle moving in a plane. Introduce polar coordinates
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta.
+\]
+
+The velocity components are
+
+\[
+\dot x
+=
+\dot r\cos\theta-r\dot\theta\sin\theta,
+\]
+
+and
+
+\[
+\dot y
+=
+\dot r\sin\theta+r\dot\theta\cos\theta.
+\]
+
+Squaring and adding,
+
+\[
+\dot x^{2}+\dot y^{2}
+=
+\dot r^{2}+r^{2}\dot\theta^{2}.
+\]
+
+For a central potential \(V(r)\), the Lagrangian is
+
+\[
+\boxed{
+L(r,\theta,\dot r,\dot\theta)
+=
+\frac{m}{2}
+\left(
+\dot r^{2}+r^{2}\dot\theta^{2}
+\right)
+-
+V(r)
+}.
+\]
+
+\subsubsection{Angular equation}
+
+The coordinate \(\theta\) does not appear explicitly in \(L\):
+
+\[
+\frac{\partial L}{\partial\theta}=0.
+\]
+
+The conjugate momentum is
+
+\[
+p_{\theta}
+=
+\frac{\partial L}{\partial\dot\theta}
+=
+mr^{2}\dot\theta.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(mr^{2}\dot\theta\right)
+=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+mr^{2}\dot\theta
+=\ell
+=\text{constant}
+}.
+\]
+
+The conserved quantity \(\ell\) is the angular momentum about the origin.
+
+\subsubsection{Radial equation}
+
+For the radial coordinate,
+
+\[
+\frac{\partial L}{\partial\dot r}
+=
+m\dot r,
+\]
+
+so
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot r}
+\right)
+=
+m\ddot r.
+\]
+
+Also,
+
+\[
+\frac{\partial L}{\partial r}
+=
+mr\dot\theta^{2}-V'(r).
+\]
+
+The radial Euler--Lagrange equation is
+
+\[
+m\ddot r
+-
+mr\dot\theta^{2}
++
+V'(r)
+=0.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+m\ddot r
+=
+mr\dot\theta^{2}
+-
+V'(r)
+}.
+\]
+
+The term
+
+\[
+mr\dot\theta^{2}
+\]
+
+arises from the coordinate dependence of the kinetic energy. It is not inserted as an additional force by hand.
+
+\subsubsection{Effective potential}
+
+Using
+
+\[
+\dot\theta
+=
+\frac{\ell}{mr^{2}},
+\]
+
+the energy becomes
+
+\[
+E
+=
+\frac{m}{2}\dot r^{2}
++
+\frac{\ell^{2}}{2mr^{2}}
++
+V(r).
+\]
+
+Define the effective potential
+
+\[
+\boxed{
+V_{\mathrm{eff}}(r)
+=
+V(r)
++
+\frac{\ell^{2}}{2mr^{2}}
+}.
+\]
+
+Then the radial motion takes the one-dimensional energy form
+
+\[
+E
+=
+\frac{m}{2}\dot r^{2}
++
+V_{\mathrm{eff}}(r).
+\]
+
+This reduction shows how a multidimensional problem can be simplified using a cyclic coordinate and its conserved momentum.
+
+\subsection{Model 6: the simple pendulum and the small-angle limit}
+
+For a pendulum of length \(\ell\) and mass \(m\), the Lagrangian is
+
+\[
+L
+=
+\frac{m\ell^{2}}{2}\dot\theta^{2}
+-
+mg\ell(1-\cos\theta).
+\]
+
+The equation of motion is
+
+\[
+\boxed{
+\ddot\theta
++
+\frac{g}{\ell}
+\sin\theta
+=0
+}.
+\]
+
+This equation is nonlinear because of the sine function.
+
+For small angular displacements,
+
+\[
+|\theta|\ll 1,
+\]
+
+we use
+
+\[
+\sin\theta
+\approx
+\theta.
+\]
+
+The equation becomes
+
+\[
+\ddot\theta
++
+\frac{g}{\ell}\theta
+=0.
+\]
+
+This is the harmonic-oscillator equation with
+
+\[
+\omega_{0}
+=
+\sqrt{\frac{g}{\ell}}.
+\]
+
+The approximate solution is
+
+\[
+\boxed{
+\theta(t)
+=
+A\cos(\omega_{0}t)
++
+B\sin(\omega_{0}t)
+}.
+\]
+
+The corresponding small-amplitude period is
+
+\[
+\boxed{
+T
+=
+2\pi
+\sqrt{\frac{\ell}{g}}
+}.
+\]
+
+This example illustrates linearization: a nonlinear equation is approximated near an equilibrium by retaining only the leading term in a series expansion.
+
+\subsection{Comparing the models}
+
+The examples reveal a common pattern.
+
+\begin{enumerate}
+    \item The free particle has a cyclic position coordinate and conserved linear momentum.
+    \item A potential introduces a generalized force through \(-V'(q)\).
+    \item A quadratic potential produces linear harmonic motion.
+    \item Curvilinear coordinates make the kinetic energy coordinate dependent.
+    \item A cyclic angular coordinate produces conserved angular momentum.
+    \item A nonlinear system may reduce to a linear oscillator near equilibrium.
+\end{enumerate}
+
+These are not isolated tricks. The same structural ideas recur in field theory: kinetic terms, potentials, symmetries, conserved quantities, coordinate choices, and linearization around simple backgrounds.
+
+\subsection{A complete checking procedure}
+
+For every model derived from an action, one should check:
+
+\begin{enumerate}
+    \item Are all terms in the Lagrangian dimensionally consistent?
+    \item Were the generalized coordinates and constraints identified correctly?
+    \item Was the total time derivative in the Euler--Lagrange equation calculated fully?
+    \item Does the sign of the force agree with the physical potential?
+    \item Does a proposed solution satisfy the differential equation?
+    \item Are conserved quantities constant along the solution?
+    \item Does the result reduce correctly in a simple limit?
+\end{enumerate}
+
+These checks often reveal errors more quickly than repeating the entire derivation.
+
+\subsection{Chapter summary}
+
+This chapter developed the action principle first as a mathematical construction and then as a practical method of deriving dynamics.
+
+The action is a functional of the complete trajectory:
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q,\dot q,t)
+\,\mathrm{d}t.
+\]
+
+A varied path is written as
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t),
+\]
+
+and fixed endpoint positions imply
+
+\[
+\eta(t_{1})=\eta(t_{2})=0.
+\]
+
+Integration by parts separates the variation into a boundary term and an interior term. Stationarity for arbitrary admissible deformations produces the Euler--Lagrange equation
+
+\[
+\boxed{
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{i}}
+\right)
+-
+\frac{\partial L}{\partial q^{i}}
+=0
+}.
+\]
+
+Generalized coordinates incorporate constraints and adapt the description to the geometry of the system. The worked models showed how the same procedure produces free motion, uniform acceleration, harmonic oscillation, angular-momentum conservation, effective radial dynamics, and the small-angle pendulum.
+
+The next chapter extends every part of this construction from particle trajectories to fields. The generalized coordinate \(q(t)\) becomes a field \(\phi(x)\), the Lagrangian becomes a Lagrangian density, the time integral becomes a spacetime integral, and ordinary integration by parts becomes spacetime integration by parts.
