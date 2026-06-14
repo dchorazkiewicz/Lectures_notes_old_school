@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/repair-scalar-field-tex.yml
+      - physics_lectures/classical_field_theory/chapters/chapter_05_the_real_scalar_field.tex
 
 permissions:
   contents: write
@@ -32,10 +33,16 @@ jobs:
               (bytes([12]) + b"rac", b"\\frac"),
               (bytes([11]) + b"arepsilon", b"\\varepsilon"),
               (bytes([9]) + b"ext", b"\\text"),
+              (bytes([9]) + b"anh", b"\\tanh"),
           )
 
           changed = []
-          replacement_counts = {"form_feed_frac": 0, "vertical_tab_varepsilon": 0, "tab_text": 0}
+          replacement_counts = {
+              "form_feed_frac": 0,
+              "vertical_tab_varepsilon": 0,
+              "tab_text": 0,
+              "tab_tanh": 0,
+          }
 
           for path in files:
               data = path.read_bytes()
@@ -133,5 +140,3 @@ jobs:
           git add physics_lectures/classical_field_theory/chapters/the_real_scalar_field
           git commit -m "Repair scalar field TeX control characters"
           git push origin HEAD:main
-
-# Trigger repair after workflow registration
