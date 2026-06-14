@@ -1,1 +1,389 @@
 \section{Global and Internal Symmetries}
+\label{sec:global_internal_symmetries}
+
+Continuous transformations can be classified according to what they act on and whether their parameters are constant or spacetime dependent. This classification separates spacetime symmetries, internal symmetries, global symmetries, and local redundancies.
+
+\subsection{Spacetime symmetries}
+
+A spacetime symmetry changes the spacetime coordinates:
+
+\[
+x^{\mu}
+\longrightarrow
+x'^{\mu}(x).
+\]
+
+Translations, rotations, and Lorentz boosts belong to this class. A scalar field changes because the point at which it is evaluated changes. Vector and tensor fields may also undergo an intrinsic transformation of their components.
+
+For a translation,
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon a^{\mu}.
+\]
+
+For an infinitesimal Lorentz transformation,
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\frac{1}{2}
+\varepsilon
+\omega^{\mu}{}_{\nu}x^{\nu},
+\]
+
+with
+
+\[
+\omega_{\mu\nu}
+=
+-\omega_{\nu\mu}.
+\]
+
+Spacetime symmetries lead to currents associated with energy, momentum, angular momentum, and boosts.
+
+\subsection{Internal symmetries}
+
+An internal symmetry changes the field values without moving the spacetime point:
+
+\[
+x'^{\mu}=x^{\mu},
+\qquad
+\phi_a(x)
+\longrightarrow
+\phi'_a(x).
+\]
+
+The transformation acts in a space of field components. A phase rotation of a complex scalar field is an internal symmetry:
+
+\[
+\phi
+\longrightarrow
+e^{-i\alpha}\phi.
+\]
+
+Equivalently, write
+
+\[
+\phi
+=
+\frac{1}{\sqrt{2}}
+\left(
+\phi_1+i\phi_2
+\right).
+\]
+
+Then the phase transformation becomes a rotation of the real pair \((\phi_1,\phi_2)\). The internal space is not ordinary physical space. Its coordinates label field components.
+
+\subsection{Global symmetries}
+
+A transformation is global when its parameter is the same at every spacetime point. For example,
+
+\[
+\phi(x)
+\longrightarrow
+e^{-i\alpha}\phi(x),
+\]
+
+with constant \(\alpha\), is a global \(U(1)\) transformation.
+
+The constancy condition is
+
+\[
+\partial_{\mu}\alpha=0.
+\]
+
+A global continuous symmetry is the standard setting of Noether's first theorem. Under appropriate boundary conditions, it produces a locally conserved current and a conserved integrated charge.
+
+\subsection{Local transformations}
+
+A local transformation uses a parameter that depends on spacetime:
+
+\[
+\alpha
+=
+\alpha(x).
+\]
+
+The phase transformation becomes
+
+\[
+\phi(x)
+\longrightarrow
+e^{-i\alpha(x)}\phi(x).
+\]
+
+Its derivative transforms as
+
+\[
+\partial_{\mu}\phi
+\longrightarrow
+e^{-i\alpha(x)}
+\left(
+\partial_{\mu}\phi
+-
+i
+(\partial_{\mu}\alpha)\phi
+\right).
+\]
+
+The extra term proportional to \(\partial_{\mu}\alpha\) means that the ordinary derivative does not transform in the same way as the field. A theory that is invariant under a global phase rotation is therefore not automatically invariant under a local phase rotation.
+
+Gauge theory introduces a compensating connection so that a covariant derivative transforms homogeneously. At this stage, the important distinction is:
+
+\begin{center}
+global symmetry \(\neq\) local gauge redundancy.
+\end{center}
+
+The first produces an ordinary Noether charge. The second reflects a redundancy in the description and is governed by a more subtle identity.
+
+\subsection{Symmetry of the action}
+
+The central object is the action
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}
+\bigl(
+\phi_a,
+\partial_{\mu}\phi_a,
+x
+\bigr)
+\,\mathrm{d}^{4}x.
+\]
+
+A transformation is a symmetry when the action is unchanged:
+
+\[
+S[\phi']
+=
+S[\phi],
+\]
+
+or, more generally, when the change is a boundary term:
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\partial_{\mu}K^{\mu}
+\,\mathrm{d}^{4}x.
+\]
+
+A total divergence does not alter the Euler--Lagrange equations when the associated boundary contribution is fixed or vanishes.
+
+It is not necessary for the Lagrangian density itself to be pointwise unchanged. The action is the physically decisive quantity.
+
+\subsection{Symmetry of the equations of motion}
+
+A transformation may map solutions to solutions even when the action is not strictly invariant. Conversely, two Lagrangian densities that differ by a total divergence produce the same Euler--Lagrange equations.
+
+Noether's theorem is most naturally formulated as a statement about the action. A symmetry of the equations alone does not automatically provide the standard Noether current unless it can be related to a variational symmetry.
+
+\subsection{Exact and explicitly broken symmetries}
+
+Consider a real scalar field with
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi.
+\]
+
+The shift
+
+\[
+\phi
+\longrightarrow
+\phi+\varepsilon
+\]
+
+is an exact symmetry because derivatives remove the constant shift.
+
+Adding a potential
+
+\[
+V(\phi)
+=
+\frac{1}{2}\mu^{2}\phi^{2}
+\]
+
+changes the Lagrangian by
+
+\[
+\delta\mathcal{L}
+=
+-\mu^{2}\phi\varepsilon
++
+O(\varepsilon^{2}),
+\]
+
+so the symmetry is explicitly broken.
+
+More generally, if the divergence of a would-be current satisfies
+
+\[
+\partial_{\mu}j^{\mu}
+=
+\mathcal{B},
+\]
+
+then \(\mathcal{B}\) measures the local breaking of the symmetry.
+
+\subsection{Continuous and discrete internal symmetries}
+
+The double-well potential
+
+\[
+V(\phi)
+=
+\frac{\lambda}{4}
+\left(
+\phi^{2}-v^{2}
+\right)^{2}
+\]
+
+is invariant under
+
+\[
+\phi
+\longrightarrow
+-\phi.
+\]
+
+This is an internal but discrete symmetry. It constrains the allowed powers of \(\phi\), but it does not generate a Noether current.
+
+By contrast, the two-field potential
+
+\[
+V(\phi_1,\phi_2)
+=
+V
+\left(
+\phi_1^{2}+\phi_2^{2}
+\right)
+\]
+
+is invariant under continuous rotations in the \((\phi_1,\phi_2)\) plane. This continuous internal symmetry does produce a conserved current.
+
+\subsection{Backgrounds and spontaneous symmetry breaking}
+
+A theory can possess a symmetry even when a particular solution does not. Suppose the equations are invariant under
+
+\[
+\phi
+\longrightarrow
+-\phi,
+\]
+
+but a chosen equilibrium is
+
+\[
+\phi_0=v.
+\]
+
+The transformed equilibrium is
+
+\[
+\phi_0=-v.
+\]
+
+The theory remains symmetric, but the individual background is not invariant. This distinction is called spontaneous symmetry breaking.
+
+For a continuous internal symmetry, a family of symmetry-related minima can lead to low-energy directions in field space. A detailed treatment belongs to more advanced field theory, but the logical distinction is already important:
+
+\begin{itemize}
+    \item explicit breaking modifies the action;
+    \item spontaneous breaking selects a nonsymmetric solution of a symmetric action.
+\end{itemize}
+
+\subsection{Worked comparison}
+
+Consider the complex scalar density
+
+\[
+\mathcal{L}
+=
+\partial_{\mu}\phi^{*}
+\partial^{\mu}\phi
+-
+\mu^{2}\phi^{*}\phi.
+\]
+
+Under a constant phase transformation,
+
+\[
+\phi'
+=
+e^{-i\alpha}\phi,
+\qquad
+\phi'^{*}
+=
+e^{i\alpha}\phi^{*},
+\]
+
+we have
+
+\[
+\phi'^{*}\phi'
+=
+\phi^{*}\phi,
+\]
+
+and
+
+\[
+\partial_{\mu}\phi'^{*}
+\partial^{\mu}\phi'
+=
+\partial_{\mu}\phi^{*}
+\partial^{\mu}\phi.
+\]
+
+Therefore
+
+\[
+\mathcal{L}'=\mathcal{L}.
+\]
+
+If \(\alpha=\alpha(x)\), then derivatives of \(\alpha\) appear and the equality fails. The theory has a global phase symmetry but not a local phase invariance when written with ordinary derivatives.
+
+\subsection{Diagnostic questions}
+
+When examining a proposed symmetry, ask:
+
+\begin{enumerate}
+    \item Does the transformation move spacetime points, field values, or both?
+    \item Is the parameter constant or spacetime dependent?
+    \item Is the action invariant, or does it change by a total divergence?
+    \item Is the transformation continuous and connected to the identity?
+    \item Does the transformation act on the theory, on a particular solution, or merely on the description?
+    \item Are external sources transformed consistently?
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item calling a local gauge redundancy an ordinary global physical symmetry;
+    \item checking only the potential while ignoring derivative terms;
+    \item demanding \(\delta\mathcal{L}=0\) when a total divergence is sufficient;
+    \item confusing symmetry of the equations with variational symmetry of the action;
+    \item assuming that a symmetric action forces every solution to be symmetric;
+    \item applying Noether's first theorem directly to a discrete transformation.
+\end{enumerate}
+
+\subsection{What has been established}
+
+Spacetime symmetries act on coordinates, while internal symmetries act in field space. A global continuous symmetry uses a constant parameter and is the principal setting for Noether currents and charges. A local transformation uses arbitrary functions of spacetime and prepares the transition to gauge theory. The next section computes how a general infinitesimal transformation changes the action.
