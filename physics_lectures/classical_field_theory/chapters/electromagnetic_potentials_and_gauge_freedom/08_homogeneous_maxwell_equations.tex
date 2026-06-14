@@ -1,1 +1,594 @@
 \section{Homogeneous Maxwell Equations}
+\label{sec:homogeneous_maxwell_equations}
+
+The homogeneous Maxwell equations are
+
+\[
+\boxed{
+\nabla\cdot\mathbf{B}=0
+}
+\]
+
+and
+
+\[
+\boxed{
+\nabla\times\mathbf{E}
++
+\frac{\partial\mathbf{B}}{\partial t}
+=0
+}.
+\]
+
+They contain no electric charge density or electric current density. In the potential formulation, they are identities that follow from the definition of the electromagnetic field tensor.
+
+\subsection{The cyclic identity}
+
+The field tensor is
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+Consider the cyclic derivative
+
+\[
+\partial_{\lambda}F_{\mu\nu}
++
+\partial_{\mu}F_{\nu\lambda}
++
+\partial_{\nu}F_{\lambda\mu}.
+\]
+
+Substituting the potential gives
+
+\[
+\begin{aligned}
+&\partial_{\lambda}\partial_{\mu}A_{\nu}
+-
+\partial_{\lambda}\partial_{\nu}A_{\mu}
++
+\partial_{\mu}\partial_{\nu}A_{\lambda}
+-
+\partial_{\mu}\partial_{\lambda}A_{\nu}
+\\
+&\quad+
+\partial_{\nu}\partial_{\lambda}A_{\mu}
+-
+\partial_{\nu}\partial_{\mu}A_{\lambda}.
+\end{aligned}
+\]
+
+Every term cancels with another term when partial derivatives commute. Therefore
+
+\[
+\boxed{
+\partial_{\lambda}F_{\mu\nu}
++
+\partial_{\mu}F_{\nu\lambda}
++
+\partial_{\nu}F_{\lambda\mu}
+=0
+}.
+\]
+
+This is the electromagnetic Bianchi identity.
+
+\subsection{Antisymmetrized notation}
+
+The cyclic identity can be written compactly as
+
+\[
+\boxed{
+\partial_{[\lambda}F_{\mu\nu]}=0
+}.
+\]
+
+The brackets denote complete antisymmetrization over the enclosed indices. In expanded form, this equation is exactly the cyclic sum above, up to an overall numerical normalization that is irrelevant when the result is zero.
+
+\subsection{Dual-tensor form}
+
+Define
+
+\[
+\widetilde{F}^{\mu\nu}
+=
+\frac{1}{2}
+\epsilon^{\mu\nu\rho\sigma}
+F_{\rho\sigma},
+\qquad
+\epsilon^{0123}=+1.
+\]
+
+Contracting the cyclic identity with the Levi--Civita symbol gives
+
+\[
+\boxed{
+\partial_{\mu}
+\widetilde{F}^{\mu\nu}
+=0
+}.
+\]
+
+This single four-vector equation contains the two homogeneous Maxwell equations.
+
+\subsection{Recovering magnetic Gauss law}
+
+Set
+
+\[
+\nu=0.
+\]
+
+Then
+
+\[
+\partial_{\mu}
+\widetilde{F}^{\mu0}
+=0.
+\]
+
+Because
+
+\[
+\widetilde{F}^{00}=0
+\]
+
+and
+
+\[
+\widetilde{F}^{i0}=B_i,
+\]
+
+we obtain
+
+\[
+\partial_iB_i=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\nabla\cdot\mathbf{B}=0
+}.
+\]
+
+\subsection{Recovering Faraday's law}
+
+Set
+
+\[
+\nu=i.
+\]
+
+The covariant equation is
+
+\[
+\partial_0
+\widetilde{F}^{0i}
++
+\partial_j
+\widetilde{F}^{ji}
+=0.
+\]
+
+Using
+
+\[
+\widetilde{F}^{0i}=-B_i
+\]
+
+and
+
+\[
+\widetilde{F}^{ij}
+=
+\frac{1}{c}
+\epsilon_{ijk}E_k,
+\]
+
+we have
+
+\[
+\partial_0
+\widetilde{F}^{0i}
+=
+-
+\frac{1}{c}
+\frac{\partial B_i}{\partial t},
+\]
+
+and
+
+\[
+\partial_j
+\widetilde{F}^{ji}
+=
+-
+\frac{1}{c}
+\epsilon_{ijk}
+\partial_jE_k
+=
+-
+\frac{1}{c}
+(\nabla\times\mathbf{E})_i.
+\]
+
+Thus
+
+\[
+-
+\frac{1}{c}
+\left[
+\frac{\partial B_i}{\partial t}
++
+(\nabla\times\mathbf{E})_i
+\right]
+=0.
+\]
+
+Multiplying by \(-c\) gives
+
+\[
+\boxed{
+\nabla\times\mathbf{E}
++
+\frac{\partial\mathbf{B}}{\partial t}
+=0
+}.
+\]
+
+\subsection{A direct index choice}
+
+The magnetic Gauss law can also be extracted directly from the cyclic identity by choosing three spatial indices:
+
+\[
+\partial_1F_{23}
++
+\partial_2F_{31}
++
+\partial_3F_{12}
+=0.
+\]
+
+Since
+
+\[
+F_{23}=-B_x,
+\qquad
+F_{31}=-B_y,
+\qquad
+F_{12}=-B_z,
+\]
+
+we obtain
+
+\[
+-
+\partial_xB_x
+-
+\partial_yB_y
+-
+\partial_zB_z
+=0.
+\]
+
+Therefore
+
+\[
+\nabla\cdot\mathbf{B}=0.
+\]
+
+Choosing one time index and two spatial indices gives the components of Faraday's law.
+
+\subsection{Differential-form statement}
+
+The potential one-form is
+
+\[
+A
+=
+A_{\mu}\,\mathrm{d}x^{\mu}.
+\]
+
+The electromagnetic field two-form is
+
+\[
+F
+=
+\mathrm{d}A.
+\]
+
+Applying the exterior derivative again gives
+
+\[
+\boxed{
+\mathrm{d}F
+=
+\mathrm{d}^{2}A
+=0
+}.
+\]
+
+This is the geometric form of the homogeneous Maxwell equations.
+
+The identity
+
+\[
+\mathrm{d}^{2}=0
+\]
+
+plays the same role as
+
+\[
+\nabla\times\nabla\Phi=0
+\]
+
+and
+
+\[
+\nabla\cdot
+\left(
+\nabla\times\mathbf{A}
+\right)=0
+\]
+
+in three-dimensional vector calculus.
+
+\subsection{Integral magnetic Gauss law}
+
+Integrate
+
+\[
+\nabla\cdot\mathbf{B}=0
+\]
+
+over a volume \(V\). The divergence theorem gives
+
+\[
+\oint_{\partial V}
+\mathbf{B}\cdot\mathbf{n}
+\,\mathrm{d}A
+=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\Phi_B(\partial V)=0
+}.
+\]
+
+The net magnetic flux through every closed surface vanishes. Magnetic field lines do not begin or end on ordinary magnetic charges in Maxwell theory.
+
+\subsection{Integral Faraday law}
+
+Integrate
+
+\[
+\nabla\times\mathbf{E}
+=
+-
+\frac{\partial\mathbf{B}}{\partial t}
+\]
+
+over an oriented surface \(S\). Stokes' theorem gives
+
+\[
+\oint_{\partial S}
+\mathbf{E}\cdot\mathrm{d}\boldsymbol{\ell}
+=
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\int_S
+\mathbf{B}\cdot\mathbf{n}
+\,\mathrm{d}A.
+\]
+
+Thus
+
+\[
+\boxed{
+\mathcal{E}
+=
+-
+\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
+}.
+\]
+
+Here \(\mathcal{E}\) is the electromotive force around the loop and \(\Phi_B\) is the magnetic flux through the surface.
+
+The minus sign expresses Lenz's law: the induced circulation opposes the change in magnetic flux.
+
+\subsection{Local existence of the potential}
+
+Suppose an antisymmetric tensor \(F_{\mu\nu}\) satisfies
+
+\[
+\partial_{[\lambda}F_{\mu\nu]}=0
+\]
+
+on a contractible spacetime region. The Poincare lemma then implies that there exists a local potential one-form \(A\) such that
+
+\[
+F=\mathrm{d}A.
+\]
+
+In components,
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+Thus the homogeneous Maxwell equations are both a consequence of the potential representation and, locally, the condition that permits such a representation.
+
+\subsection{Topology and global potentials}
+
+The implication from
+
+\[
+\mathrm{d}F=0
+\]
+
+to
+
+\[
+F=\mathrm{d}A
+\]
+
+is local. On a region with nontrivial topology, a closed field two-form need not be globally exact.
+
+One may need several overlapping potentials related by gauge transformations on their common regions. This geometric fact is central in advanced gauge theory and in descriptions involving magnetic flux through excluded regions.
+
+\subsection{Absence of magnetic monopoles}
+
+The equation
+
+\[
+\nabla\cdot\mathbf{B}=0
+\]
+
+expresses the absence of magnetic charge in ordinary Maxwell theory. If magnetic monopoles were introduced, the homogeneous equations would acquire magnetic source terms and a single globally regular potential could fail to exist even in otherwise simple geometries.
+
+The standard theory developed here assumes no magnetic charge.
+
+\subsection{Comparison with the inhomogeneous equations}
+
+The homogeneous equations are
+
+\[
+\boxed{
+\partial_{\mu}
+\widetilde{F}^{\mu\nu}=0
+}.
+\]
+
+The inhomogeneous Maxwell equations will take the form
+
+\[
+\boxed{
+\partial_{\mu}F^{\mu\nu}
+=
+\mu_0J^{\nu}
+}.
+\]
+
+The first set follows identically from
+
+\[
+F=\mathrm{d}A.
+\]
+
+The second set follows dynamically by varying the electromagnetic action with respect to \(A_{\mu}\).
+
+This distinction is fundamental:
+
+\begin{itemize}
+    \item homogeneous equations are geometric identities of the potential representation;
+    \item inhomogeneous equations are field equations sourced by charge and current.
+\end{itemize}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item treating the homogeneous Maxwell equations as independent dynamical equations after defining \(F=\mathrm{d}A\);
+    \item losing the cyclic order of indices in the Bianchi identity;
+    \item using \(\partial_{\mu}F^{\mu\nu}=0\) for the homogeneous equations instead of the dual tensor;
+    \item reversing the sign in Faraday's law;
+    \item assuming that local existence of a potential guarantees global existence;
+    \item interpreting \(\nabla\cdot\mathbf{B}=0\) as the statement that the magnetic field itself vanishes.
+\end{enumerate}
+
+\subsection{Chapter summary}
+
+The electromagnetic potentials are defined by
+
+\[
+\mathbf{E}
+=
+-\nabla\Phi
+-
+\frac{\partial\mathbf{A}}{\partial t},
+\qquad
+\mathbf{B}
+=
+\nabla\times\mathbf{A}.
+\]
+
+They possess the gauge freedom
+
+\[
+\Phi'
+=
+\Phi-
+\frac{\partial\chi}{\partial t},
+\qquad
+\mathbf{A}'
+=
+\mathbf{A}+
+\nabla\chi.
+\]
+
+The potentials combine into the four-vector
+
+\[
+A^{\mu}
+=
+\left(
+\frac{\Phi}{c},
+\mathbf{A}
+\right),
+\]
+
+and the gauge-invariant electromagnetic field tensor is
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+Its components contain \(\mathbf{E}\) and \(\mathbf{B}\), while its scalar contractions give
+
+\[
+\frac{1}{2}
+F_{\mu\nu}F^{\mu\nu}
+=
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+\]
+
+and
+
+\[
+-
+\frac{c}{4}
+F_{\mu\nu}
+\widetilde{F}^{\mu\nu}
+=
+\mathbf{E}\cdot\mathbf{B}.
+\]
+
+Finally, the identity
+
+\[
+\partial_{\mu}
+\widetilde{F}^{\mu\nu}=0
+\]
+
+contains magnetic Gauss law and Faraday's law. The next chapter uses the electromagnetic action to derive the sourced Maxwell equations and the Lorentz force.
