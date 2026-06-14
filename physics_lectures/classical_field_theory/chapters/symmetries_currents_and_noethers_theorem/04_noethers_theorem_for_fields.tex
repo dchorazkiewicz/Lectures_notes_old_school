@@ -1,1 +1,503 @@
 \section{Noether's Theorem for Fields}
+\label{sec:noether_theorem_fields}
+
+Noether's theorem converts a continuous variational symmetry into a local conservation law. The theorem is not a separate guess for each theory. It follows from the universal variational identity established in the previous section.
+
+\subsection{Statement of the theorem}
+
+Let
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}
+\bigl(
+\phi_a,
+\partial_{\mu}\phi_a,
+x
+\bigr)
+\,\mathrm{d}^{4}x
+\]
+
+be an action for fields \(\phi_a\). Consider the infinitesimal transformation
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon\xi^{\mu},
+\]
+
+\[
+\phi'_a(x')
+=
+\phi_a(x)
++
+\varepsilon\Psi_a.
+\]
+
+Define
+
+\[
+Q_a
+=
+\Psi_a
+-
+\xi^{\nu}\partial_{\nu}\phi_a,
+\]
+
+and suppose the action changes by a divergence:
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\partial_{\mu}K^{\mu}
+\,\mathrm{d}^{4}x.
+\]
+
+Then the Noether current is
+
+\[
+\boxed{
+j^{\mu}
+=
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi_a)}
+Q_a
++
+\mathcal{L}\xi^{\mu}
+-
+K^{\mu}
+}.
+\]
+
+Its divergence satisfies the off-shell identity
+
+\[
+\boxed{
+\partial_{\mu}j^{\mu}
+=
+-\mathcal{E}_aQ_a
+},
+\]
+
+where
+
+\[
+\mathcal{E}_a
+=
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+-
+\partial_{\mu}
+\left[
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi_a)}
+\right].
+\]
+
+Therefore, on solutions of the field equations,
+
+\[
+\boxed{
+\partial_{\mu}j^{\mu}=0
+}.
+\]
+
+\subsection{Derivation}
+
+The general variational identity is
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+\right)
+\right]
+\mathrm{d}^{4}x.
+\]
+
+For a variational symmetry,
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\partial_{\mu}K^{\mu}
+\,\mathrm{d}^{4}x.
+\]
+
+Subtracting the two expressions gives
+
+\[
+\int_{\Omega}
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+-
+K^{\mu}
+\right)
+\right]
+\mathrm{d}^{4}x
+=
+0.
+\]
+
+Because the relation holds locally for arbitrary subregions compatible with the transformation,
+
+\[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}j^{\mu}
+=
+0.
+\]
+
+On shell,
+
+\[
+\mathcal{E}_a=0,
+\]
+
+so
+
+\[
+\partial_{\mu}j^{\mu}=0.
+\]
+
+\subsection{Internal-symmetry form}
+
+For a transformation that does not move coordinates,
+
+\[
+\xi^{\mu}=0.
+\]
+
+If the Lagrangian density is strictly invariant,
+
+\[
+K^{\mu}=0.
+\]
+
+The current becomes
+
+\[
+\boxed{
+j^{\mu}
+=
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi_a)}
+\Psi_a
+}.
+\]
+
+This is the form used for the global phase symmetry of a complex scalar field.
+
+\subsection{Spacetime-symmetry form}
+
+For a scalar field under a coordinate transformation, there may be no intrinsic field change:
+
+\[
+\Psi=0.
+\]
+
+Then
+
+\[
+Q
+=
+-\xi^{\nu}\partial_{\nu}\phi.
+\]
+
+The current is
+
+\[
+j^{\mu}
+=
+-\pi^{\mu}
+\xi^{\nu}\partial_{\nu}\phi
++
+\mathcal{L}\xi^{\mu}
+-
+K^{\mu}.
+\]
+
+For constant translations, this expression contains the canonical energy-momentum tensor.
+
+\subsection{Quasi-symmetries}
+
+A transformation may change the Lagrangian by a total divergence:
+
+\[
+\delta\mathcal{L}
+=
+\varepsilon\partial_{\mu}K^{\mu}.
+\]
+
+Such a transformation is sometimes called a quasi-symmetry. It produces a conserved current just as a strictly invariant Lagrangian does.
+
+The term \(K^{\mu}\) must be included in the current. Omitting it can produce a current whose divergence does not vanish.
+
+\subsection{Worked example: massless scalar shift symmetry}
+
+Take
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi.
+\]
+
+The transformation is
+
+\[
+\phi
+\longrightarrow
+\phi+\varepsilon.
+\]
+
+Thus
+
+\[
+\Psi=1,
+\qquad
+\xi^{\mu}=0,
+\qquad
+K^{\mu}=0.
+\]
+
+The canonical derivative momentum is
+
+\[
+\pi^{\mu}
+=
+\partial^{\mu}\phi.
+\]
+
+The Noether current is
+
+\[
+\boxed{
+j^{\mu}
+=
+\partial^{\mu}\phi
+}.
+\]
+
+Its divergence is
+
+\[
+\partial_{\mu}j^{\mu}
+=
+\Box\phi.
+\]
+
+The Euler--Lagrange equation is
+
+\[
+\Box\phi=0,
+\]
+
+so
+
+\[
+\boxed{
+\partial_{\mu}j^{\mu}=0
+}.
+\]
+
+\subsection{Explicit breaking of the shift current}
+
+Add a potential:
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi
+-
+V(\phi).
+\]
+
+Under the same shift,
+
+\[
+\delta\mathcal{L}
+=
+-\varepsilon V'(\phi).
+\]
+
+The transformation is not a symmetry unless \(V'(\phi)\) vanishes identically. The would-be current still satisfies
+
+\[
+\partial_{\mu}j^{\mu}
+=
+\Box\phi.
+\]
+
+Using the field equation
+
+\[
+\Box\phi+V'(\phi)=0,
+\]
+
+we find
+
+\[
+\boxed{
+\partial_{\mu}j^{\mu}
+=
+-V'(\phi)
+}.
+\]
+
+The nonzero divergence measures the explicit breaking of the shift symmetry.
+
+\subsection{Current improvement}
+
+A conserved current is not unique. Let
+
+\[
+B^{\mu\nu}
+=
+-B^{\nu\mu}.
+\]
+
+Define
+
+\[
+j'^{\mu}
+=
+j^{\mu}
++
+\partial_{\nu}B^{\mu\nu}.
+\]
+
+Then
+
+\[
+\partial_{\mu}j'^{\mu}
+=
+\partial_{\mu}j^{\mu}
++
+\partial_{\mu}\partial_{\nu}B^{\mu\nu}.
+\]
+
+Because partial derivatives commute and \(B^{\mu\nu}\) is antisymmetric,
+
+\[
+\partial_{\mu}\partial_{\nu}B^{\mu\nu}=0.
+\]
+
+Therefore
+
+\[
+\partial_{\mu}j'^{\mu}
+=
+\partial_{\mu}j^{\mu}.
+\]
+
+The added term is called an improvement term. It can change the local appearance of a current without changing its conservation law or, under suitable boundary conditions, its integrated charge.
+
+\subsection{On-shell and off-shell statements}
+
+The identity
+
+\[
+\partial_{\mu}j^{\mu}
+=
+-\mathcal{E}_aQ_a
+\]
+
+is off shell: it holds for arbitrary field configurations.
+
+The conservation law
+
+\[
+\partial_{\mu}j^{\mu}=0
+\]
+
+is on shell: it holds only when the Euler--Lagrange equations are satisfied.
+
+This distinction is important in formal manipulations and in numerical checks. A trial field that does not satisfy the equations of motion need not produce a conserved Noether current.
+
+\subsection{A practical algorithm}
+
+For a proposed continuous symmetry:
+
+\begin{enumerate}
+    \item write the infinitesimal coordinate change \(\xi^{\mu}\);
+    \item write the intrinsic field change \(\Psi_a\);
+    \item form the characteristic \(Q_a=\Psi_a-\xi^{\nu}\partial_{\nu}\phi_a\);
+    \item compute the derivative momenta \(\pi_a^{\mu}\);
+    \item determine whether the Lagrangian changes by \(\partial_{\mu}K^{\mu}\);
+    \item construct
+    \[
+    j^{\mu}
+    =
+    \pi_a^{\mu}Q_a
+    +
+    \mathcal{L}\xi^{\mu}
+    -
+    K^{\mu};
+    \]
+    \item compute \(\partial_{\mu}j^{\mu}\);
+    \item use the field equations only at the final step.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item identifying a candidate transformation without checking the action;
+    \item forgetting the coordinate contribution \(\mathcal{L}\xi^{\mu}\);
+    \item omitting the boundary vector \(K^{\mu}\);
+    \item claiming conservation off shell;
+    \item treating two currents that differ by an improvement as physically distinct without checking their charges;
+    \item replacing a local continuity equation by a global statement without specifying boundary conditions.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A continuous variational symmetry produces a current
+
+\[
+j^{\mu}
+=
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+-
+K^{\mu},
+\]
+
+whose divergence is proportional to the Euler--Lagrange expressions. On physical solutions,
+
+\[
+\partial_{\mu}j^{\mu}=0.
+\]
+
+The next section explains how this local equation becomes a conserved charge and what boundary conditions are required.
