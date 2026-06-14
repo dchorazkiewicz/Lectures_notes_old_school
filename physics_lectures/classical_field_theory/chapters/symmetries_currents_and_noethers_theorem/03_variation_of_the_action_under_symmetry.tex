@@ -1,1 +1,515 @@
-\section{Variation of the Action under a Symmetry}
+\section{Variation of the Action Under a Symmetry}
+\label{sec:variation_action_symmetry}
+
+Noether's theorem follows from a variational identity. The identity separates the change of the action into a term proportional to the Euler--Lagrange equations and a spacetime divergence. Once this separation is visible, a symmetry immediately produces a conserved current.
+
+\subsection{General field-theory action}
+
+Consider \(N\) fields \(\phi_a\), with
+
+\[
+a=1,\ldots,N,
+\]
+
+and action
+
+\[
+\boxed{
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}
+\bigl(
+\phi_a,
+\partial_{\mu}\phi_a,
+x
+\bigr)
+\,\mathrm{d}^{4}x
+}.
+\]
+
+Define the canonical derivative momenta
+
+\[
+\boxed{
+\pi_a^{\mu}
+=
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi_a)}
+}.
+\]
+
+The Euler--Lagrange expressions are
+
+\[
+\boxed{
+\mathcal{E}_a
+=
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+-
+\partial_{\mu}\pi_a^{\mu}
+}.
+\]
+
+Physical fields satisfy
+
+\[
+\mathcal{E}_a=0.
+\]
+
+\subsection{Infinitesimal transformation}
+
+Let
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon\xi^{\mu}(x),
+\]
+
+and
+
+\[
+\phi'_a(x')
+=
+\phi_a(x)
++
+\varepsilon\Psi_a(x,\phi).
+\]
+
+The characteristic is
+
+\[
+Q_a
+=
+\Psi_a
+-
+\xi^{\nu}\partial_{\nu}\phi_a,
+\]
+
+so the fixed-point field variation is
+
+\[
+\delta_0\phi_a
+=
+\varepsilon Q_a.
+\]
+
+Because differentiation is linear,
+
+\[
+\delta_0
+\left(
+\partial_{\mu}\phi_a
+\right)
+=
+\partial_{\mu}
+\left(
+\delta_0\phi_a
+\right)
+=
+\varepsilon\partial_{\mu}Q_a.
+\]
+
+\subsection{Variation of the volume element}
+
+The Jacobian matrix is
+
+\[
+\frac{\partial x'^{\mu}}
+{\partial x^{\nu}}
+=
+\delta^{\mu}{}_{\nu}
++
+\varepsilon
+\partial_{\nu}\xi^{\mu}.
+\]
+
+For small \(\varepsilon\),
+
+\[
+\det
+\left(
+I+\varepsilon A
+\right)
+=
+1+\varepsilon\operatorname{tr}A
++
+O(\varepsilon^{2}).
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathrm{d}^{4}x'
+=
+\left(
+1+
+\varepsilon\partial_{\mu}\xi^{\mu}
+\right)
+\mathrm{d}^{4}x
++
+O(\varepsilon^{2})
+}.
+\]
+
+The change of the measure is essential for spacetime transformations.
+
+\subsection{Fixed-point variation of the Lagrangian density}
+
+At fixed coordinates,
+
+\[
+\delta_0\mathcal{L}
+=
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+\delta_0\phi_a
++
+\pi_a^{\mu}
+\delta_0
+\left(
+\partial_{\mu}\phi_a
+\right).
+\]
+
+Substituting
+
+\[
+\delta_0\phi_a
+=
+\varepsilon Q_a,
+\]
+
+gives
+
+\[
+\delta_0\mathcal{L}
+=
+\varepsilon
+\left[
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+Q_a
++
+\pi_a^{\mu}\partial_{\mu}Q_a
+\right].
+\]
+
+Use the product rule:
+
+\[
+\pi_a^{\mu}\partial_{\mu}Q_a
+=
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a
+\right)
+-
+\left(
+\partial_{\mu}\pi_a^{\mu}
+\right)Q_a.
+\]
+
+Hence
+
+\[
+\delta_0\mathcal{L}
+=
+\varepsilon
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a
+\right)
+\right].
+\]
+
+This is the field-theory analogue of integration by parts in the derivation of the Euler--Lagrange equations.
+
+\subsection{Combining field and coordinate variations}
+
+The transformed action is integrated over the transformed region. To first order, the change of the action can be written over the original region as
+
+\[
+\delta S
+=
+\int_{\Omega}
+\left[
+\delta_0\mathcal{L}
++
+\varepsilon
+\partial_{\mu}
+\left(
+\mathcal{L}\xi^{\mu}
+\right)
+\right]
+\mathrm{d}^{4}x.
+\]
+
+The divergence term contains both the Jacobian change and the displacement of the integration domain.
+
+Substituting the fixed-point variation gives
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+\right)
+\right]
+\mathrm{d}^{4}x.
+\]
+
+Therefore the fundamental variational identity is
+
+\[
+\boxed{
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\Theta^{\mu}
+\right]
+\mathrm{d}^{4}x
+},
+\]
+
+where
+
+\[
+\boxed{
+\Theta^{\mu}
+=
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+}.
+\]
+
+\subsection{Transformations at fixed coordinates}
+
+For an internal transformation,
+
+\[
+\xi^{\mu}=0.
+\]
+
+Then
+
+\[
+Q_a=\Psi_a,
+\]
+
+and the identity reduces to
+
+\[
+\boxed{
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+\mathcal{E}_a\Psi_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}\Psi_a
+\right)
+\right]
+\mathrm{d}^{4}x
+}.
+\]
+
+This is the form used for shift symmetries and global phase transformations.
+
+\subsection{Boundary-term symmetries}
+
+A transformation need not satisfy
+
+\[
+\delta\mathcal{L}=0
+\]
+
+pointwise. It is sufficient that the total action variation be a divergence:
+
+\[
+\boxed{
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\partial_{\mu}K^{\mu}
+\,\mathrm{d}^{4}x
+}.
+\]
+
+Comparing this with the variational identity gives
+
+\[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\Theta^{\mu}-K^{\mu}
+\right)
+=
+0.
+\]
+
+The current suggested by the symmetry is therefore
+
+\[
+\boxed{
+j^{\mu}
+=
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}
+-
+K^{\mu}
+}.
+\]
+
+The next section will state the theorem precisely and analyze this identity on solutions of the field equations.
+
+\subsection{Worked example: the shift variation}
+
+For the massless scalar density
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi,
+\]
+
+consider
+
+\[
+\delta_0\phi
+=
+\varepsilon.
+\]
+
+Then
+
+\[
+Q=1,
+\qquad
+\xi^{\mu}=0,
+\qquad
+K^{\mu}=0.
+\]
+
+The canonical momentum is
+
+\[
+\pi^{\mu}
+=
+\partial^{\mu}\phi.
+\]
+
+The variational identity becomes
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+-\Box\phi
++
+\partial_{\mu}\partial^{\mu}\phi
+\right]
+\mathrm{d}^{4}x
+=
+0.
+\]
+
+The two terms cancel identically. On shell, the divergence term alone vanishes:
+
+\[
+\partial_{\mu}
+\left(
+\partial^{\mu}\phi
+\right)
+=
+\Box\phi
+=
+0.
+\]
+
+\subsection{Structural check: explicit coordinate dependence}
+
+If
+
+\[
+\frac{\partial\mathcal{L}}
+{\partial x^{\nu}}
+\neq 0
+\]
+
+explicitly, a translation generally changes the action. This signals that the external background distinguishes spacetime points. Translation currents then need not be conserved.
+
+For example, an externally prescribed source term
+
+\[
+J(x)\phi(x)
+\]
+
+breaks translation symmetry unless the source is transformed as part of the system or is constant in the relevant direction.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item varying the field but forgetting the variation of its derivative;
+    \item using \(\Psi_a\) where the characteristic \(Q_a\) is required;
+    \item omitting the Jacobian contribution for coordinate transformations;
+    \item discarding a total divergence before identifying the associated current;
+    \item assuming that \(K^{\mu}=0\) for every symmetry;
+    \item applying the field equations too early and thereby hiding the off-shell identity.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The variation of a field-theory action under a general infinitesimal transformation separates as
+
+\[
+\delta S
+=
+\varepsilon
+\int_{\Omega}
+\left[
+\mathcal{E}_aQ_a
++
+\partial_{\mu}
+\left(
+\pi_a^{\mu}Q_a+\mathcal{L}\xi^{\mu}
+\right)
+\right]
+\mathrm{d}^{4}x.
+\]
+
+This identity is valid before the equations of motion are imposed. When the transformation changes the action only by a divergence, the difference between the two boundary terms is the Noether current.
