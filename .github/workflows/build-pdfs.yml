@@ -36,6 +36,72 @@ jobs:
           ref: ${{ github.ref_name }}
           fetch-depth: 0
 
+      - name: Repair scalar-field TeX control characters
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path("physics_lectures/classical_field_theory/chapters/the_real_scalar_field")
+          files = sorted(root.glob("*.tex"))
+          replacements = (
+              (bytes([12]) + b"rac", b"\\frac"),
+              (bytes([11]) + b"arepsilon", b"\\varepsilon"),
+              (bytes([9]) + b"ext", b"\\text"),
+          )
+
+          for path in files:
+              data = path.read_bytes()
+              original = data
+              for old, new in replacements:
+                  data = data.replace(old, new)
+              text = data.decode("utf-8")
+
+              if path.name == "02_massless_and_massive_field_equations.tex":
+                  text = text.replace(
+                      "\\boxed{\n\\phi=a\\phi_{1}+b\\phi_{2}\n}.\n\\]\n\nThis property allows",
+                      "\\boxed{\n\\phi=a\\phi_{1}+b\\phi_{2}\n}\n\\]\n\nis also a solution.\n\nThis property allows",
+                      1,
+                  )
+              if path.name == "03_plane_wave_solutions.tex":
+                  text = text.replace(
+                      "\\boxed{\n\\phi=a\\phi_{1}+b\\phi_{2}\n}.\n\\]\n\nA general free field may",
+                      "\\boxed{\n\\phi=a\\phi_{1}+b\\phi_{2}\n}\n\\]\n\nis also a solution.\n\nA general free field may",
+                      1,
+                  )
+
+              data = text.encode("utf-8")
+              if data != original:
+                  path.write_bytes(data)
+
+          forbidden = []
+          for path in files:
+              for offset, value in enumerate(path.read_bytes()):
+                  if (value < 32 and value not in (10, 13)) or value == 127:
+                      forbidden.append((str(path), offset, value))
+
+          if forbidden:
+              for item in forbidden:
+                  print("Forbidden control byte:", item)
+              raise SystemExit("Control-character verification failed")
+
+          for name in (
+              "02_massless_and_massive_field_equations.tex",
+              "03_plane_wave_solutions.tex",
+          ):
+              if "is also a solution." not in (root / name).read_text(encoding="utf-8"):
+                  raise SystemExit(f"Missing restored sentence in {name}")
+          PY
+
+          if ! git diff --quiet -- physics_lectures/classical_field_theory/chapters/the_real_scalar_field; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add physics_lectures/classical_field_theory/chapters/the_real_scalar_field
+            git commit -m "Repair scalar field TeX control characters"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
+
       - name: Detect projects to build
         id: detect
         run: |
