@@ -1,0 +1,57 @@
+\begin{frame}{One output entry}
+  \centering
+  \Large
+  \[
+  \underbrace{\begin{pmatrix}a_{i1}&a_{i2}&\cdots&a_{in}\end{pmatrix}}_{\text{row }i\text{ of }A}
+  \underbrace{\begin{pmatrix}b_{1j}\\b_{2j}\\\vdots\\b_{nj}\end{pmatrix}}_{\text{column }j\text{ of }B}
+  =c_{ij}
+  \]
+  \vspace{0.45cm}
+  \[
+  c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}
+  \]
+\end{frame}
+
+\begin{frame}{The whole product is a grid of local interactions}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      \[
+      C=AB=\begin{pmatrix}
+      c_{11}&c_{12}&\cdots&c_{1p}\\
+      c_{21}&c_{22}&\cdots&c_{2p}\\
+      \vdots&\vdots&\ddots&\vdots\\
+      c_{m1}&c_{m2}&\cdots&c_{mp}
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Each location}
+        $c_{ij}$ records row $i$ of $A$ interacting with column $j$ of $B$.
+      \end{block}
+      \begin{exampleblock}{Global from local}
+        The product is assembled from these row--column answers.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Worked example: set up the product}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.42\textwidth}
+      \[
+      A=\begin{pmatrix}1&3\\-2&4\end{pmatrix},\qquad
+      B=\begin{pmatrix}2&0\\5&-1\end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \begin{block}{Shape check}
+        \[
+        (2\times2)(2\times2)=2\times2
+        \]
+      \end{block}
+      \begin{exampleblock}{Plan}
+        Four output entries require four row--column products.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
