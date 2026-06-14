@@ -1,1 +1,525 @@
 \section{Plane-Wave Solutions}
+\label{sec:plane_wave_solutions}
+
+The free scalar-field equation is linear and translation invariant. These properties suggest solutions with definite frequency and wave vector. Plane waves provide such solutions and form the basic building blocks for more general free fields.
+
+Although the physical field is real, complex exponentials are convenient during the calculation. The real-field condition will be imposed explicitly.
+
+\subsection{The plane-wave ansatz}
+
+Consider
+
+\[
+\boxed{
+\phi(x)=A e^{-ik_{\mu}x^{\mu}}
+}.
+\]
+
+With
+
+\[
+k^{\mu}
+=
+\left(
+\frac{\omega}{c},
+\mathbf{k}
+\right),
+\qquad
+k_{\mu}
+=
+\left(
+\frac{\omega}{c},
+-\mathbf{k}
+\right),
+\]
+
+the phase is
+
+\[
+k_{\mu}x^{\mu}
+=
+\omega t-
+\mathbf{k}\cdot\mathbf{x}.
+\]
+
+Thus
+
+\[
+\phi(\mathbf{x},t)
+=
+A e^{i(\mathbf{k}\cdot\mathbf{x}-\omega t)}.
+\]
+
+\subsection{Differentiating the mode}
+
+The first derivative is
+
+\[
+\partial_{\mu}\phi
+=
+-ik_{\mu}\phi.
+\]
+
+Applying the d'Alembertian gives
+
+\[
+\begin{aligned}
+\Box\phi
+&=
+\partial_{\mu}\partial^{\mu}\phi\\
+&=
+-k_{\mu}k^{\mu}\phi.
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+\Box\phi=-k^{2}\phi
+},
+\]
+
+where
+
+\[
+k^{2}:=k_{\mu}k^{\mu}.
+\]
+
+\subsection{Substitution into the field equation}
+
+The free equation is
+
+\[
+(\Box+\mu^{2})\phi=0.
+\]
+
+Substitution gives
+
+\[
+(-k^{2}+\mu^{2})\phi=0.
+\]
+
+For a nonzero mode,
+
+\[
+\boxed{
+k^{2}=\mu^{2}
+}.
+\]
+
+Expanding the contraction,
+
+\[
+\boxed{
+\frac{\omega^{2}}{c^{2}}
+-
+|\mathbf{k}|^{2}
+=
+\mu^{2}
+}.
+\]
+
+Hence
+
+\[
+\boxed{
+\omega^{2}
+=
+c^{2}
+\left(
+|\mathbf{k}|^{2}+\mu^{2}
+\right)
+}.
+\]
+
+This relation selects the allowed frequency for each wave vector.
+
+\subsection{Massless modes}
+
+For
+
+\[
+\mu=0,
+\]
+
+the wave four-vector is null:
+
+\[
+k^{2}=0.
+\]
+
+The positive-frequency branch is
+
+\[
+\boxed{
+\omega=c|\mathbf{k}|
+}.
+\]
+
+The constant-phase surfaces move in the direction of \(\mathbf{k}\) with speed \(c\).
+
+\subsection{Massive modes}
+
+For
+
+\[
+\mu>0,
+\]
+
+the wave four-vector is timelike:
+
+\[
+k^{2}=\mu^{2}>0.
+\]
+
+The positive-frequency branch is
+
+\[
+\boxed{
+\omega
+=
+c
+\sqrt{|\mathbf{k}|^{2}+\mu^{2}}
+}.
+\]
+
+At zero wave number,
+
+\[
+\boxed{
+\omega_{0}=c\mu
+}.
+\]
+
+Thus a spatially uniform massive mode still oscillates in time.
+
+\subsection{Real plane waves}
+
+A real solution can be written as
+
+\[
+\boxed{
+\phi(\mathbf{x},t)
+=
+A_{0}
+\cos
+\left(
+\mathbf{k}\cdot\mathbf{x}
+-
+\omega t
++
+\delta
+\right)
+}.
+\]
+
+Equivalently,
+
+\[
+\phi(x)
+=
+A e^{-ik\cdot x}
++
+A^{*}e^{ik\cdot x}.
+\]
+
+The second expression is real because the two terms are complex conjugates.
+
+\subsection{Superposition}
+
+The operator
+
+\[
+L=\Box+\mu^{2}
+\]
+
+is linear. Therefore, if
+
+\[
+L\phi_{1}=0
+\qquad\text{and}\qquad
+L\phi_{2}=0,
+\]
+
+then
+
+\[
+\boxed{
+\phi=a\phi_{1}+b\phi_{2}
+}
+\]
+
+is also a solution.
+
+A general free field may therefore be represented as a Fourier superposition of plane-wave modes whose frequencies satisfy the dispersion relation.
+
+For a real field, the Fourier coefficients of opposite modes must be complex conjugates.
+
+\subsection{One-dimensional massless waves}
+
+In one spatial dimension, the massless equation is
+
+\[
+\phi_{tt}-c^{2}\phi_{xx}=0.
+\]
+
+Its general solution is
+
+\[
+\boxed{
+\phi(x,t)
+=
+f(x-ct)+g(x+ct)
+}.
+\]
+
+The function \(f\) moves to the right and \(g\) moves to the left without changing shape.
+
+A sinusoidal example is
+
+\[
+\phi(x,t)=A\cos(kx-ckt).
+\]
+
+For a massive field, different wave numbers have different propagation velocities, so a general profile does not retain its shape in this simple way.
+
+\subsection{Standing waves}
+
+Adding waves moving in opposite directions gives
+
+\[
+\begin{aligned}
+&\cos(kx-\omega t)
++
+\cos(kx+\omega t)\\
+&\qquad=
+2\cos(kx)\cos(\omega t).
+\end{aligned}
+\]
+
+Thus a standing mode may be written as
+
+\[
+\boxed{
+\phi(x,t)
+=
+B\cos(kx)\cos(\omega t)
+}.
+\]
+
+Its nodes remain fixed while the field amplitude oscillates.
+
+\subsection{Fixed boundaries on an interval}
+
+Let
+
+\[
+0\leq x\leq L
+\]
+
+and impose
+
+\[
+\phi(0,t)=0,
+\qquad
+\phi(L,t)=0.
+\]
+
+The spatial modes are
+
+\[
+\sin(k_{n}x),
+\]
+
+where
+
+\[
+\boxed{
+k_{n}=rac{n\pi}{L},
+\qquad
+n=1,2,3,\ldots
+}.
+\]
+
+The corresponding frequencies are
+
+\[
+\boxed{
+\omega_{n}
+=
+c
+\sqrt{
+\left(
+\frac{n\pi}{L}
+\right)^{2}
++
+\mu^{2}
+}
+}.
+\]
+
+The boundary conditions convert the continuous wave-vector spectrum into a discrete set of normal modes.
+
+\subsection{Periodic boundaries}
+
+For
+
+\[
+\phi(x+L,t)=\phi(x,t),
+\]
+
+a mode \(e^{ikx}\) must satisfy
+
+\[
+e^{ikL}=1.
+\]
+
+Therefore
+
+\[
+\boxed{
+k_{n}=rac{2\pi n}{L},
+\qquad
+n\in\mathbb{Z}
+}.
+\]
+
+Periodic boundaries are especially useful for Fourier analysis.
+
+\subsection{Initial data and normal modes}
+
+For each allowed wave vector, the time-dependent amplitude satisfies
+
+\[
+\ddot q_{\mathbf{k}}
++
+\omega_{\mathbf{k}}^{2}
+q_{\mathbf{k}}
+=0,
+\]
+
+with
+
+\[
+\omega_{\mathbf{k}}
+=
+c\sqrt{|\mathbf{k}|^{2}+\mu^{2}}.
+\]
+
+Thus
+
+\[
+q_{\mathbf{k}}(t)
+=
+A_{\mathbf{k}}
+\cos(\omega_{\mathbf{k}}t)
++
+B_{\mathbf{k}}
+\sin(\omega_{\mathbf{k}}t).
+\]
+
+The initial field and initial time derivative determine the coefficients of all modes.
+
+\subsection{Lorentz covariance of the mode condition}
+
+The phase
+
+\[
+k_{\mu}x^{\mu}
+\]
+
+is a Lorentz scalar. Under a Lorentz transformation,
+
+\[
+k'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}k^{\nu}.
+\]
+
+Because
+
+\[
+k'^{2}=k^{2},
+\]
+
+the transformed frequency and wave vector satisfy the same condition
+
+\[
+k'^{2}=\mu^{2}.
+\]
+
+A plane wave is therefore mapped to another allowed plane wave.
+
+\subsection{Component verification}
+
+For
+
+\[
+\phi
+=
+A\cos(\mathbf{k}\cdot\mathbf{x}-\omega t),
+\]
+
+we have
+
+\[
+\phi_{tt}=-\omega^{2}\phi,
+\qquad
+\nabla^{2}\phi=-|\mathbf{k}|^{2}\phi.
+\]
+
+Substitution into
+
+\[
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
++
+\mu^{2}\phi=0
+\]
+
+gives
+
+\[
+\left[
+-
+\frac{\omega^{2}}{c^{2}}
++
+|\mathbf{k}|^{2}
++
+\mu^{2}
+\right]
+\phi=0.
+\]
+
+The same dispersion relation follows.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item forgetting the minus sign from the second derivative of a plane wave;
+    \item treating arbitrary \(\omega\) and \(\mathbf{k}\) as an allowed solution;
+    \item using one complex exponential as a real physical field;
+    \item applying the arbitrary-profile massless solution to the massive equation;
+    \item ignoring boundary conditions when selecting wave numbers;
+    \item assuming that frequency and wave vector are separately Lorentz invariant.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A free scalar plane wave satisfies
+
+\[
+\phi(x)=A e^{-ik\cdot x}
+\]
+
+with the invariant mode condition
+
+\[
+k^{2}=\mu^{2}.
+\]
+
+Real fields are formed from real trigonometric modes or complex-conjugate pairs. Superposition builds general free solutions, while boundaries select discrete normal modes. The next section examines the physical content of the dispersion relation, including phase velocity, group velocity, and wave-packet propagation.
