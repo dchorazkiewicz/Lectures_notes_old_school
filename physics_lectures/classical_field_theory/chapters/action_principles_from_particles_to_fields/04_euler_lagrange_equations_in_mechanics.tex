@@ -1,1 +1,611 @@
 \section{Euler--Lagrange Equations in Mechanics}
+\label{sec:euler_lagrange_mechanics}
+
+We now derive the differential equation satisfied by a stationary trajectory. The derivation begins with the action, varies the complete path, isolates the boundary contribution, and then uses the arbitrariness of the interior deformation.
+
+The result is the Euler--Lagrange equation. It is the basic equation of motion in Lagrangian mechanics and the direct prototype of the field equations derived later.
+
+\subsection{The variational problem}
+
+Consider one generalized coordinate \(q(t)\) with action
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q,\dot q,t)
+\,\mathrm{d}t.
+\]
+
+We compare the reference trajectory with the family
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t),
+\]
+
+where the endpoint positions are fixed:
+
+\[
+\eta(t_{1})=0,
+\qquad
+\eta(t_{2})=0.
+\]
+
+The stationary-action condition is
+
+\[
+\left.
+\frac{\mathrm{d}}{\mathrm{d}\varepsilon}
+S[q_{\varepsilon}]
+\right|_{\varepsilon=0}
+=0
+\]
+
+for every admissible deformation \(\eta(t)\).
+
+\subsection{Differentiating the action}
+
+The varied action is
+
+\[
+S[q_{\varepsilon}]
+=
+\int_{t_{1}}^{t_{2}}
+L(q_{\varepsilon},\dot q_{\varepsilon},t)
+\,\mathrm{d}t.
+\]
+
+Differentiating with respect to \(\varepsilon\) gives
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}\varepsilon}
+S[q_{\varepsilon}]
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}
+\frac{\partial q_{\varepsilon}}{\partial\varepsilon}
++
+\frac{\partial L}{\partial\dot q}
+\frac{\partial\dot q_{\varepsilon}}{\partial\varepsilon}
+\right)
+\,\mathrm{d}t.
+\]
+
+At \(\varepsilon=0\),
+
+\[
+\left.
+\frac{\partial q_{\varepsilon}}{\partial\varepsilon}
+\right|_{\varepsilon=0}
+=
+\eta,
+\]
+
+and
+
+\[
+\left.
+\frac{\partial\dot q_{\varepsilon}}{\partial\varepsilon}
+\right|_{\varepsilon=0}
+=
+\dot\eta.
+\]
+
+Therefore the first variation is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\eta
++
+\frac{\partial L}{\partial\dot q}\dot\eta
+\right)
+\,\mathrm{d}t.
+\]
+
+All derivatives of \(L\) are evaluated along the reference trajectory \(q(t)\).
+
+\subsection{Integration by parts}
+
+The term containing \(\dot\eta\) must be rewritten so that the arbitrary function appears without a derivative. Integration by parts gives
+
+\[
+\int_{t_{1}}^{t_{2}}
+\frac{\partial L}{\partial\dot q}\dot\eta
+\,\mathrm{d}t
+=
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\eta
+\,\mathrm{d}t.
+\]
+
+Substituting this result into \(\delta S\),
+
+\[
+\delta S
+=
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
++
+\int_{t_{1}}^{t_{2}}
+\left[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\right]
+\eta
+\,\mathrm{d}t.
+\]
+
+Because the endpoint positions are fixed,
+
+\[
+\eta(t_{1})=\eta(t_{2})=0,
+\]
+
+so the boundary term vanishes. Hence
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\right]
+\eta(t)
+\,\mathrm{d}t.
+\]
+
+\subsection{The fundamental lemma}
+
+We now use a basic result from the calculus of variations.
+
+If a continuous function \(f(t)\) satisfies
+
+\[
+\int_{t_{1}}^{t_{2}}
+f(t)\eta(t)
+\,\mathrm{d}t
+=0
+\]
+
+for every sufficiently smooth function \(\eta(t)\) that vanishes at the endpoints, then
+
+\[
+f(t)=0
+\]
+
+throughout the interior of the interval.
+
+The reason is that \(\eta\) can be chosen to be localized in any small region. If \(f\) were positive or negative in some neighbourhood, one could choose \(\eta\) with the same sign there and obtain a nonzero integral.
+
+Applying the lemma to the first variation yields
+
+\[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+=0.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+-
+\frac{\partial L}{\partial q}
+=0
+}.
+\]
+
+This is the Euler--Lagrange equation for one generalized coordinate.
+
+\subsection{Canonical momentum and generalized force}
+
+Define the canonical momentum conjugate to \(q\) by
+
+\[
+p
+:=
+\frac{\partial L}{\partial\dot q}.
+\]
+
+Then the Euler--Lagrange equation becomes
+
+\[
+\dot p
+=
+\frac{\partial L}{\partial q}.
+\]
+
+The quantity \(\partial L/\partial q\) plays the role of a generalized force. For standard Cartesian coordinates with
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2}-V(q),
+\]
+
+we have
+
+\[
+p=m\dot q
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial q}
+=
+-\frac{\mathrm{d}V}{\mathrm{d}q}.
+\]
+
+Thus
+
+\[
+m\ddot q
+=
+-\frac{\mathrm{d}V}{\mathrm{d}q},
+\]
+
+which is Newton's second law with force
+
+\[
+F(q)
+=
+-\frac{\mathrm{d}V}{\mathrm{d}q}.
+\]
+
+The variational principle therefore reproduces the familiar mechanical equation.
+
+\subsection{Several generalized coordinates}
+
+For a system with coordinates
+
+\[
+q^{1}(t),\ldots,q^{N}(t),
+\]
+
+the action is
+
+\[
+S[\mathbf{q}]
+=
+\int_{t_{1}}^{t_{2}}
+L(q^{1},\ldots,q^{N},
+\dot q^{1},\ldots,\dot q^{N},t)
+\,\mathrm{d}t.
+\]
+
+We vary each coordinate independently:
+
+\[
+q^{i}_{\varepsilon}(t)
+=
+q^{i}(t)+\varepsilon\eta^{i}(t).
+\]
+
+The first variation is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\sum_{i=1}^{N}
+\left(
+\frac{\partial L}{\partial q^{i}}\eta^{i}
++
+\frac{\partial L}{\partial\dot q^{i}}\dot\eta^{i}
+\right)
+\,\mathrm{d}t.
+\]
+
+After integration by parts and use of the endpoint conditions,
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\sum_{i=1}^{N}
+\left[
+\frac{\partial L}{\partial q^{i}}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{i}}
+\right)
+\right]
+\eta^{i}
+\,\mathrm{d}t.
+\]
+
+Since the functions \(\eta^{i}\) are independent, each coefficient must vanish:
+
+\[
+\boxed{
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{i}}
+\right)
+-
+\frac{\partial L}{\partial q^{i}}
+=0,
+\qquad i=1,\ldots,N
+}.
+\]
+
+Thus one generalized coordinate produces one Euler--Lagrange equation.
+
+\subsection{Example: particle in one dimension}
+
+Let
+
+\[
+L(q,\dot q)
+=
+\frac{m}{2}\dot q^{2}-V(q).
+\]
+
+We calculate
+
+\[
+\frac{\partial L}{\partial\dot q}
+=
+m\dot q,
+\]
+
+so
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+=
+m\ddot q.
+\]
+
+Also,
+
+\[
+\frac{\partial L}{\partial q}
+=
+-\frac{\mathrm{d}V}{\mathrm{d}q}.
+\]
+
+The Euler--Lagrange equation is therefore
+
+\[
+m\ddot q
++
+\frac{\mathrm{d}V}{\mathrm{d}q}
+=0.
+\]
+
+For the harmonic potential
+
+\[
+V(q)
+=
+\frac{k}{2}q^{2},
+\]
+
+we obtain
+
+\[
+m\ddot q+kq=0.
+\]
+
+For the linear potential
+
+\[
+V(q)=mgq,
+\]
+
+we obtain
+
+\[
+m\ddot q+mg=0,
+\]
+
+or
+
+\[
+\ddot q=-g.
+\]
+
+\subsection{Cyclic coordinates}
+
+If the Lagrangian does not depend explicitly on a coordinate \(q^{j}\), then
+
+\[
+\frac{\partial L}{\partial q^{j}}=0.
+\]
+
+The corresponding Euler--Lagrange equation becomes
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{j}}
+\right)
+=0.
+\]
+
+Therefore the conjugate momentum is conserved:
+
+\[
+\boxed{
+p_{j}
+=
+\frac{\partial L}{\partial\dot q^{j}}
+=
+\text{constant}
+}.
+\]
+
+Such a coordinate is called cyclic or ignorable. This is an early example of the relation between absence of coordinate dependence and a conservation law. The general connection between continuous symmetries and conserved quantities will later be developed through Noether's theorem.
+
+\subsection{Explicit time dependence}
+
+The Euler--Lagrange equation remains valid when the Lagrangian depends explicitly on time:
+
+\[
+L=L(q,\dot q,t).
+\]
+
+The partial derivatives \(\partial L/\partial q\) and \(\partial L/\partial\dot q\) are taken while holding the other arguments fixed. The total time derivative
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\]
+
+then includes all time dependence along the trajectory.
+
+If \(L\) has no explicit time dependence, an energy-like quantity is conserved. That result will be established later using symmetry arguments.
+
+\subsection{A practical derivation algorithm}
+
+Given a mechanical Lagrangian, the equations of motion may be obtained as follows:
+
+\begin{enumerate}
+    \item identify the generalized coordinates \(q^{i}\);
+    \item write the Lagrangian \(L(q^{i},\dot q^{i},t)\);
+    \item compute \(\partial L/\partial q^{i}\);
+    \item compute \(\partial L/\partial\dot q^{i}\);
+    \item take the total time derivative of \(\partial L/\partial\dot q^{i}\);
+    \item substitute into the Euler--Lagrange equation;
+    \item simplify and check dimensions, signs, and limiting cases.
+\end{enumerate}
+
+One should not replace the total derivative in step 5 by a partial derivative. The quantity \(\partial L/\partial\dot q^{i}\) is evaluated along the trajectory and may depend on coordinates, velocities, and time.
+
+\subsection{Verification of a proposed solution}
+
+After deriving an equation of motion, a proposed trajectory must be checked by substitution.
+
+For the free particle,
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2},
+\]
+
+and the Euler--Lagrange equation gives
+
+\[
+\ddot q=0.
+\]
+
+The general solution is
+
+\[
+q(t)=A+Bt.
+\]
+
+Indeed,
+
+\[
+\dot q=B,
+\qquad
+\ddot q=0.
+\]
+
+If endpoint values are specified, the constants \(A\) and \(B\) are determined by those data.
+
+This final check is part of the calculation. Deriving the differential equation and solving it are distinct steps.
+
+\subsection{Common errors}
+
+The most frequent mistakes in the derivation are:
+
+\begin{enumerate}
+    \item omitting the variation of \(\dot q\);
+    \item writing \(\delta\dot q=\delta q\) instead of \(\delta\dot q=\mathrm{d}(\delta q)/\mathrm{d}t\);
+    \item discarding the boundary term without stating the endpoint conditions;
+    \item treating \(\eta(t)\) as one special function rather than an arbitrary admissible deformation;
+    \item confusing the total derivative \(\mathrm{d}/\mathrm{d}t\) with a partial derivative;
+    \item reversing the sign of \(\partial L/\partial q\).
+\end{enumerate}
+
+A reliable derivation should make each of these operations visible.
+
+\subsection{Preparation for field equations}
+
+The particle equation
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+-
+\frac{\partial L}{\partial q}
+=0
+\]
+
+becomes, in field theory,
+
+\[
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\right)
+-
+\frac{\partial\mathcal{L}}{\partial\phi}
+=0.
+\]
+
+The time derivative is replaced by a spacetime divergence, the trajectory is replaced by a field, and the Lagrangian is replaced by a Lagrangian density. The logical structure of the derivation remains unchanged.
+
+\subsection{What has been established}
+
+Stationarity of the action under all smooth fixed-endpoint variations implies the Euler--Lagrange equation
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+-
+\frac{\partial L}{\partial q}
+=0.
+\]
+
+The derivation depends on four explicit ingredients: the varied path, the commutation of variation with the time derivative, integration by parts, and the vanishing of the endpoint variation. For several independent coordinates, one equation is obtained for each coordinate.
+
+The next section explains why generalized coordinates are useful and how constraints can be incorporated into the choice of variables.
