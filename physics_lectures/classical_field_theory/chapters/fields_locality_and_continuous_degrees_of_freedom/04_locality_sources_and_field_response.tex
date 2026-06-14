@@ -1,1 +1,296 @@
 \section{Locality, Sources, and Field Response}
+\label{sec:locality_sources_response}
+
+A field theory becomes especially useful when it replaces a direct interaction between distant objects by a local description. Instead of saying that one object acts immediately on another object far away, we introduce a field that exists throughout the intervening region. The source changes the field near itself, the field propagates or adjusts according to a differential equation, and another object responds to the field at its own position.
+
+This viewpoint separates three questions:
+
+\begin{enumerate}
+    \item What produces the field?
+    \item How does the field behave between sources?
+    \item How does matter respond to the field locally?
+\end{enumerate}
+
+The answers are encoded in sources, field equations, and coupling laws.
+
+\subsection{What locality means}
+
+A field equation is called local when the behaviour at a point is determined by the field and a finite number of its derivatives evaluated at that point. A schematic local equation has the form
+
+\[
+\mathcal{F}
+\bigl(
+\phi(x),
+\partial_{\mu}\phi(x),
+\partial_{\mu}\partial_{\nu}\phi(x),
+\ldots
+\bigr)
+=
+J(x),
+\]
+
+where \(J(x)\) represents a source.
+
+The equation may involve neighbouring values indirectly through derivatives, but it does not require an independent instruction involving every distant point. A derivative is local because it is determined by how the field changes in an arbitrarily small neighbourhood.
+
+For example, the one-dimensional wave equation
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}}(x,t)
+=
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}}(x,t)
+\]
+
+relates the acceleration of the string at \((x,t)\) to the curvature of the string at the same point and time. The curvature is calculated from nearby points, not from the entire string at once.
+
+Locality does not mean that distant regions never influence one another. It means that the influence is transmitted through successive local interactions. A disturbance created near one end of a string changes neighbouring parts of the string, and the disturbance then travels along it.
+
+\subsection{Sources}
+
+A source is a quantity that drives or generates a field. The source may be concentrated at isolated points, distributed throughout a region, or imposed at a boundary.
+
+Examples include:
+
+\begin{itemize}
+    \item electric charge density as a source of the electromagnetic field;
+    \item mass-energy as a source of the gravitational field;
+    \item an external force density as a source of displacement in an elastic medium;
+    \item heat production as a source in a temperature equation.
+\end{itemize}
+
+A simple linear field equation may be written as
+
+\[
+\mathcal{L}\phi=J,
+\]
+
+where \(\mathcal{L}\) is a differential operator, \(\phi\) is the field, and \(J\) is the source.
+
+This notation is compact, but each symbol has a different role. The operator tells us how the field responds, the source tells us what drives it, and the boundary or initial data select the physical solution.
+
+\subsection{A worked static example}
+
+Consider a scalar field \(\phi(x)\) on the interval
+
+\[
+0\leq x\leq L.
+\]
+
+Suppose that it satisfies
+
+\[
+\frac{\mathrm{d}^{2}\phi}{\mathrm{d}x^{2}}
+=
+-\rho_{0},
+\]
+
+where \(\rho_{0}\) is a constant source density. We impose the boundary conditions
+
+\[
+\phi(0)=0,
+\qquad
+\phi(L)=0.
+\]
+
+The equation can be solved by integrating twice. First,
+
+\[
+\frac{\mathrm{d}\phi}{\mathrm{d}x}
+=
+-\rho_{0}x+C_{1}.
+\]
+
+Integrating again gives
+
+\[
+\phi(x)
+=
+-\frac{\rho_{0}}{2}x^{2}
++C_{1}x
++C_{2}.
+\]
+
+The first boundary condition gives
+
+\[
+\phi(0)=C_{2}=0.
+\]
+
+The second boundary condition gives
+
+\[
+0
+=
+-\frac{\rho_{0}}{2}L^{2}
++C_{1}L,
+\]
+
+so
+
+\[
+C_{1}=\frac{\rho_{0}L}{2}.
+\]
+
+The field is therefore
+
+\[
+\boxed{
+\phi(x)
+=
+\frac{\rho_{0}}{2}x(L-x)
+}.
+\]
+
+We can verify the result directly:
+
+\[
+\frac{\mathrm{d}\phi}{\mathrm{d}x}
+=
+\frac{\rho_{0}}{2}(L-2x),
+\]
+
+and
+
+\[
+\frac{\mathrm{d}^{2}\phi}{\mathrm{d}x^{2}}
+=
+-\rho_{0}.
+\]
+
+The solution also satisfies \(\phi(0)=\phi(L)=0\).
+
+This example shows several important features of a field problem. The source fixes the local curvature of the field, while the boundary conditions determine the integration constants and therefore the global shape. Neither the source nor the boundary conditions alone are sufficient.
+
+If \(\rho_{0}>0\), the field is largest at the centre. Setting the derivative equal to zero,
+
+\[
+\frac{\mathrm{d}\phi}{\mathrm{d}x}=0,
+\]
+
+gives
+
+\[
+x=\frac{L}{2}.
+\]
+
+At that point,
+
+\[
+\phi\left(\frac{L}{2}\right)
+=
+\frac{\rho_{0}L^{2}}{8}.
+\]
+
+Thus the differential equation, the source, and the boundary conditions together determine not only the formula but also qualitative features such as where the maximum occurs.
+
+\subsection{Source-free does not mean field-free}
+
+In a region where the source vanishes, the field may satisfy a homogeneous equation,
+
+\[
+\mathcal{L}\phi=0.
+\]
+
+This does not imply \(\phi=0\). A source located outside the region may produce a nonzero field inside it. Boundary data may also sustain a nonzero solution. Electromagnetic waves can travel through a region containing no charge or current.
+
+The distinction is important:
+
+\begin{itemize}
+    \item \emph{source-free} means that the local source term vanishes;
+    \item \emph{field-free} means that the field itself vanishes.
+\end{itemize}
+
+These are different statements.
+
+\subsection{Static response and dynamical propagation}
+
+A static equation describes a field configuration after time dependence has been neglected. A dynamical equation describes how disturbances evolve.
+
+A static source-field relation may have the form
+
+\[
+\nabla^{2}\phi=-\rho.
+\]
+
+A corresponding dynamical equation may have the form
+
+\[
+\frac{\partial^{2}\phi}{\partial t^{2}}
+-c^{2}\nabla^{2}\phi
+=J.
+\]
+
+The dynamical equation contains a propagation speed \(c\). If the source changes, the response at a distant point does not appear immediately; it arrives after the disturbance has propagated.
+
+Static solutions are still useful, but they must be interpreted correctly. They describe time-independent configurations or approximations in which propagation effects are negligible. A static formula should not automatically be read as evidence of instantaneous action at a distance.
+
+\subsection{Fields replace direct distant action}
+
+Newton's law of gravitation and Coulomb's law can be written as forces depending directly on the separation between two objects. Such formulas are effective and often sufficient for static problems. Field theory reorganizes the description.
+
+For electromagnetism, the source produces an electromagnetic field. A test charge at position \(\mathbf{x}\) responds to the field evaluated at that same position. The force law is local in this sense:
+
+\[
+\mathbf{F}(t)
+=
+q\bigl[
+\mathbf{E}(\mathbf{x}(t),t)
++
+\mathbf{v}(t)\times\mathbf{B}(\mathbf{x}(t),t)
+\bigr].
+\]
+
+The charge does not need direct access to the current state of a distant source. It responds to the field where it is located. Maxwell's equations determine how changes in the sources affect the field and how those changes propagate.
+
+This separation becomes essential when sources move rapidly or radiation is emitted. A direct static force law is then insufficient.
+
+\subsection{Linear response and superposition}
+
+If the field equation is linear,
+
+\[
+\mathcal{L}\phi=J,
+\]
+
+and two sources \(J_{1}\) and \(J_{2}\) produce fields \(\phi_{1}\) and \(\phi_{2}\), then
+
+\[
+\mathcal{L}\phi_{1}=J_{1},
+\qquad
+\mathcal{L}\phi_{2}=J_{2}.
+\]
+
+By linearity,
+
+\[
+\mathcal{L}(\phi_{1}+\phi_{2})
+=
+J_{1}+J_{2}.
+\]
+
+Thus the combined source produces the combined field
+
+\[
+\phi=\phi_{1}+\phi_{2}.
+\]
+
+This is the principle of superposition. It allows complicated sources to be decomposed into simpler pieces. Later, Green functions will turn this principle into a systematic method of solution.
+
+Nonlinear field equations do not generally satisfy superposition. In that case, two individual solutions cannot simply be added. Recognizing whether an equation is linear is therefore one of the first practical checks in a field problem.
+
+\subsection{Local laws and global solutions}
+
+A local differential equation constrains the field point by point, but its solution is a global object defined over the entire domain. The global solution depends on local laws together with initial and boundary data.
+
+This distinction explains why local theories can produce rich large-scale behaviour. Waves, resonances, standing patterns, and long-range fields emerge from local differential equations applied across a domain.
+
+The local equation tells us how neighbouring values are related. The domain and boundary conditions determine how those local relations fit together into one complete configuration.
+
+\subsection{What has been established}
+
+A local field theory describes the behaviour at a point using the field, its derivatives, and sources at that point. Distant influence is transmitted through the field rather than imposed as an independent instantaneous rule.
+
+Sources drive fields, but source-free regions may still contain nonzero fields. Static equations describe configurations, while dynamical equations describe propagation. Linear equations admit superposition, which will later support powerful solution methods.
+
+The next section examines why a field represents a system with continuously many degrees of freedom and how this statement should be understood without treating neighbouring field values as completely unrelated.
