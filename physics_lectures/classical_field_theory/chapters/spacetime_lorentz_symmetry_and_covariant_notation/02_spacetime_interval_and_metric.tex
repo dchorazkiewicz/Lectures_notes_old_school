@@ -1,1 +1,656 @@
 \section{Spacetime Interval and Metric}
+\label{sec:spacetime_interval_and_metric}
+
+Different inertial observers assign different coordinate differences to the same pair of events. A relativistic geometry therefore requires a quantity that combines temporal and spatial separations and has the same value in every inertial frame.
+
+That quantity is the spacetime interval. It is defined using the Minkowski metric, which also establishes the sign convention used throughout the remainder of these notes.
+
+\subsection{The metric convention}
+
+We adopt the mostly-minus signature
+
+\[
+\boxed{
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1)
+}.
+\]
+
+In matrix form,
+
+\[
+\eta_{\mu\nu}
+=
+\begin{pmatrix}
+1&0&0&0\\
+0&-1&0&0\\
+0&0&-1&0\\
+0&0&0&-1
+\end{pmatrix}.
+\]
+
+The symbol \(\eta_{\mu\nu}\) denotes the metric of flat Minkowski spacetime. Greek indices run over
+
+\[
+\mu,\nu=0,1,2,3.
+\]
+
+The temporal component carries a positive sign, while each spatial component carries a negative sign.
+
+This convention must be used consistently. A text using the opposite signature
+
+\[
+(-,+,+,+)
+\]
+
+will display sign changes in norms, raised derivatives, the d'Alembert operator, and some Lagrangian densities, even though the physical predictions are unchanged.
+
+\subsection{The spacetime interval}
+
+For an infinitesimal displacement
+
+\[
+\mathrm{d}x^{\mu}
+=
+(c\,\mathrm{d}t,\mathrm{d}x,\mathrm{d}y,\mathrm{d}z),
+\]
+
+the spacetime interval is
+
+\[
+\boxed{
+\mathrm{d}s^{2}
+=
+\eta_{\mu\nu}
+\mathrm{d}x^{\mu}
+\mathrm{d}x^{\nu}
+}.
+\]
+
+Expanding the components gives
+
+\[
+\boxed{
+\mathrm{d}s^{2}
+=
+c^{2}\mathrm{d}t^{2}
+-
+\mathrm{d}x^{2}
+-
+\mathrm{d}y^{2}
+-
+\mathrm{d}z^{2}
+}.
+\]
+
+Using
+
+\[
+\mathrm{d}\mathbf{x}^{2}
+=
+\mathrm{d}x^{2}
++
+\mathrm{d}y^{2}
++
+\mathrm{d}z^{2},
+\]
+
+we may write
+
+\[
+\mathrm{d}s^{2}
+=
+c^{2}\mathrm{d}t^{2}
+-
+\mathrm{d}\mathbf{x}^{2}.
+\]
+
+For two finite events, define
+
+\[
+\Delta x^{\mu}
+=
+x_{2}^{\mu}-x_{1}^{\mu}.
+\]
+
+Their squared separation is
+
+\[
+\boxed{
+\Delta s^{2}
+=
+\eta_{\mu\nu}
+\Delta x^{\mu}
+\Delta x^{\nu}
+=
+c^{2}(\Delta t)^{2}
+-
+|\Delta\mathbf{x}|^{2}
+}.
+\]
+
+\subsection{Why the interval is not an ordinary Euclidean distance}
+
+In Euclidean space, the squared distance between nearby points is
+
+\[
+\mathrm{d}\ell^{2}
+=
+\mathrm{d}x^{2}
++
+\mathrm{d}y^{2}
++
+\mathrm{d}z^{2}.
+\]
+
+Every nonzero Euclidean squared distance is positive. In Minkowski spacetime, by contrast,
+
+\[
+\mathrm{d}s^{2}
+=
+c^{2}\mathrm{d}t^{2}-\mathrm{d}\mathbf{x}^{2}
+\]
+
+may be positive, zero, or negative.
+
+This indefinite sign is not a technical inconvenience. It encodes causal structure. Temporal and spatial directions are geometrically different, and the sign of \(\Delta s^{2}\) determines which events can be causally connected.
+
+\subsection{Timelike, null, and spacelike separations}
+
+With the chosen signature, the three cases are:
+
+\begin{enumerate}
+    \item Timelike separation:
+    \[
+    \boxed{\Delta s^{2}>0}.
+    \]
+    Then
+    \[
+    c^{2}(\Delta t)^{2}>|\Delta\mathbf{x}|^{2}.
+    \]
+    A massive particle moving slower than light can connect the events.
+
+    \item Null or lightlike separation:
+    \[
+    \boxed{\Delta s^{2}=0}.
+    \]
+    Then
+    \[
+    |\Delta\mathbf{x}|=c|\Delta t|.
+    \]
+    A light signal can connect the events.
+
+    \item Spacelike separation:
+    \[
+    \boxed{\Delta s^{2}<0}.
+    \]
+    Then
+    \[
+    |\Delta\mathbf{x}|>c|\Delta t|.
+    \]
+    Connecting the events would require a signal faster than light.
+\end{enumerate}
+
+The sign assignments reverse when the opposite metric signature is used. The causal classification itself does not change.
+
+\subsection{Lorentz invariance of the interval}
+
+A Lorentz transformation is a linear coordinate transformation
+
+\[
+x'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}x^{\nu}
+\]
+
+that preserves the Minkowski metric:
+
+\[
+\boxed{
+\Lambda^{\mathsf{T}}\eta\Lambda
+=
+\eta
+}.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+\Delta s'^{2}
+&=
+\eta_{\mu\nu}
+\Delta x'^{\mu}
+\Delta x'^{\nu}\\
+&=
+\eta_{\mu\nu}
+\Lambda^{\mu}{}_{\alpha}
+\Lambda^{\nu}{}_{\beta}
+\Delta x^{\alpha}
+\Delta x^{\beta}\\
+&=
+\eta_{\alpha\beta}
+\Delta x^{\alpha}
+\Delta x^{\beta}\\
+&=
+\Delta s^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\Delta s'^{2}=\Delta s^{2}
+}.
+\]
+
+The explicit form of \(\Lambda^{\mu}{}_{\nu}\) and a direct component verification will be given later. Here the defining geometric property is already visible: Lorentz transformations preserve the interval.
+
+\subsection{Lowering the coordinate index}
+
+The metric converts a contravariant coordinate into a covariant coordinate:
+
+\[
+x_{\mu}
+=
+\eta_{\mu\nu}x^{\nu}.
+\]
+
+For
+
+\[
+x^{\mu}=(ct,x,y,z),
+\]
+
+we obtain
+
+\[
+\boxed{
+x_{\mu}=(ct,-x,-y,-z)
+}.
+\]
+
+The interval may then be written compactly as
+
+\[
+\Delta s^{2}
+=
+\Delta x_{\mu}\Delta x^{\mu}.
+\]
+
+This is a contraction: the repeated index appears once upstairs and once downstairs and is summed over all four values.
+
+The procedure of raising and lowering general vector indices will be developed fully in the next section.
+
+\subsection{Proper time}
+
+For a timelike worldline, the proper time \(\tau\) is defined by
+
+\[
+\boxed{
+c^{2}\mathrm{d}\tau^{2}
+=
+\mathrm{d}s^{2}
+}.
+\]
+
+Using
+
+\[
+\mathrm{d}\mathbf{x}
+=
+\mathbf{v}\,\mathrm{d}t,
+\]
+
+we find
+
+\[
+\begin{aligned}
+c^{2}\mathrm{d}\tau^{2}
+&=
+c^{2}\mathrm{d}t^{2}
+-
+|\mathbf{v}|^{2}\mathrm{d}t^{2}\\
+&=
+c^{2}\mathrm{d}t^{2}
+\left(1-
+\frac{v^{2}}{c^{2}}
+\right).
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathrm{d}\tau
+=
+\mathrm{d}t
+\sqrt{1-
+\frac{v^{2}}{c^{2}}}
+}.
+\]
+
+Define the Lorentz factor
+
+\[
+\boxed{
+\gamma
+=
+\frac{1}{\sqrt{1-v^{2}/c^{2}}}
+}.
+\]
+
+Then
+
+\[
+\boxed{
+\mathrm{d}t
+=
+\gamma\,\mathrm{d}\tau
+}.
+\]
+
+Proper time is the time measured by a clock moving along the worldline. It is invariant because it is constructed from the invariant interval.
+
+\subsection{Coordinate time and proper time}
+
+If a clock is at rest in an inertial frame, then
+
+\[
+\mathrm{d}\mathbf{x}=0,
+\]
+
+so
+
+\[
+\mathrm{d}\tau=\mathrm{d}t.
+\]
+
+If the clock moves with speed \(v\), then
+
+\[
+\mathrm{d}\tau<\mathrm{d}t
+\]
+
+for \(v\neq0\). The moving clock accumulates less proper time between the same two events than the coordinate time measured in that frame.
+
+This is time dilation expressed geometrically. The statement follows directly from the interval rather than from a separate dynamical assumption.
+
+\subsection{Worked example: proper time of a moving particle}
+
+A particle moves at constant speed
+
+\[
+v=0.80c
+\]
+
+for a coordinate time interval
+
+\[
+\Delta t=10.0\,\mathrm{s}.
+\]
+
+The Lorentz factor is
+
+\[
+\gamma
+=
+\frac{1}{\sqrt{1-0.80^{2}}}
+=
+\frac{1}{0.60}
+=
+\frac{5}{3}.
+\]
+
+The elapsed proper time is
+
+\[
+\Delta\tau
+=
+\frac{\Delta t}{\gamma}
+=
+\frac{10.0\,\mathrm{s}}{5/3}
+=
+6.0\,\mathrm{s}.
+\]
+
+Thus the particle's comoving clock records
+
+\[
+\boxed{
+\Delta\tau=6.0\,\mathrm{s}
+}
+\]
+
+between the departure and arrival events.
+
+A direct interval calculation gives the same result. Since
+
+\[
+\Delta x=v\Delta t=0.80c\Delta t,
+\]
+
+we have
+
+\[
+\begin{aligned}
+\Delta s^{2}
+&=
+c^{2}(\Delta t)^{2}
+-(0.80c\Delta t)^{2}\\
+&=
+0.36c^{2}(\Delta t)^{2}\\
+&=
+c^{2}(6.0\,\mathrm{s})^{2}.
+\end{aligned}
+\]
+
+Hence
+
+\[
+\Delta\tau=\frac{\sqrt{\Delta s^{2}}}{c}=6.0\,\mathrm{s}.
+\]
+
+\subsection{Worked example: classifying a separation}
+
+Suppose
+
+\[
+\Delta t=3.0\,\mu\mathrm{s},
+\qquad
+|\Delta\mathbf{x}|=1.20\,\mathrm{km}.
+\]
+
+The temporal contribution is
+
+\[
+c\Delta t
+=
+(3.00\times10^{8}\,\mathrm{m\,s^{-1}})
+(3.0\times10^{-6}\,\mathrm{s})
+=
+900\,\mathrm{m}.
+\]
+
+Therefore
+
+\[
+\Delta s^{2}
+=
+(900\,\mathrm{m})^{2}
+-(1200\,\mathrm{m})^{2}.
+\]
+
+Calculating,
+
+\[
+\Delta s^{2}
+=
+810000\,\mathrm{m}^{2}
+-
+1440000\,\mathrm{m}^{2}
+=
+-630000\,\mathrm{m}^{2}.
+\]
+
+Since
+
+\[
+\Delta s^{2}<0,
+\]
+
+the separation is spacelike.
+
+\subsection{Proper distance for spacelike separation}
+
+For a spacelike separation, one may define the invariant proper distance
+
+\[
+\boxed{
+\ell_{\mathrm{proper}}
+=
+\sqrt{-\Delta s^{2}}
+}.
+\]
+
+The minus sign is needed because \(\Delta s^{2}<0\) with our signature.
+
+There exists an inertial frame in which the two spacelike-separated events are simultaneous:
+
+\[
+\Delta t'=0.
+\]
+
+In that frame,
+
+\[
+\Delta s^{2}
+=
+-|\Delta\mathbf{x}'|^{2},
+\]
+
+so
+
+\[
+\ell_{\mathrm{proper}}
+=
+|\Delta\mathbf{x}'|.
+\]
+
+This is the invariant spatial separation measured in the frame where the events are simultaneous.
+
+\subsection{Null intervals}
+
+For light,
+
+\[
+\Delta s^{2}=0.
+\]
+
+Therefore the proper time along a light ray is
+
+\[
+\Delta\tau=0.
+\]
+
+This does not mean that a physical rest frame can be attached to light. A massive clock cannot move at speed \(c\), and no inertial frame exists in which a photon is at rest.
+
+The vanishing interval means only that the lightlike path has zero Minkowski length according to the metric.
+
+\subsection{The inverse metric}
+
+The inverse metric \(\eta^{\mu\nu}\) is defined by
+
+\[
+\eta^{\mu\alpha}\eta_{\alpha\nu}
+=
+\delta^{\mu}{}_{\nu},
+\]
+
+where
+
+\[
+\delta^{\mu}{}_{\nu}
+=
+\begin{cases}
+1,&\mu=\nu,\\
+0,&\mu\neq\nu.
+\end{cases}
+\]
+
+For the Minkowski metric in Cartesian inertial coordinates,
+
+\[
+\boxed{
+\eta^{\mu\nu}
+=
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1)
+}.
+\]
+
+The equality of the numerical matrices is special to this diagonal convention. The positions of the indices still carry mathematical meaning.
+
+\subsection{Structural checks}
+
+A calculation involving the interval should satisfy:
+
+\begin{enumerate}
+    \item every term in \(\Delta s^{2}\) has dimensions of length squared;
+    \item the temporal term is positive and spatial terms are negative in the chosen convention;
+    \item timelike, null, and spacelike classifications agree with the light-cone picture;
+    \item proper time is real only for timelike motion;
+    \item the interval remains unchanged after a Lorentz transformation.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item mixing the signatures \((+,-,-,-)\) and \((-,+,+,+)\) in one derivation;
+    \item writing the spatial terms with positive signs after choosing the mostly-minus metric;
+    \item confusing \(\Delta s\) with \(\Delta s^{2}\);
+    \item taking \(\sqrt{\Delta s^{2}}\) for a spacelike interval without accounting for its negative sign;
+    \item treating proper time as a coordinate attached to every observer rather than the invariant time along a timelike worldline;
+    \item claiming that light has a rest frame because its proper time vanishes;
+    \item forgetting the factor \(c\) when comparing time and distance.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The Minkowski metric is fixed throughout these notes as
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1).
+\]
+
+It defines the invariant interval
+
+\[
+\Delta s^{2}
+=
+c^{2}(\Delta t)^{2}
+-
+|\Delta\mathbf{x}|^{2},
+\]
+
+whose sign classifies separations as timelike, null, or spacelike. For a timelike worldline, the interval defines proper time through
+
+\[
+c^{2}\mathrm{d}\tau^{2}=\mathrm{d}s^{2},
+\]
+
+leading to
+
+\[
+\mathrm{d}t=\gamma\mathrm{d}\tau.
+\]
+
+The next section generalizes the coordinate displacement to arbitrary four-vectors and introduces covectors, scalar products, and systematic index raising and lowering.
