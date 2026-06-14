@@ -1,1 +1,708 @@
 \section{Sign Conventions and Units}
+\label{sec:sign_conventions_and_units}
+
+Relativistic formulas are sensitive to conventions. Two references may describe the same physics while displaying different signs or factors of \(c\). A calculation is reliable only when its metric signature, coordinate convention, index placement, and unit system are stated and used consistently.
+
+This section collects the conventions adopted in these notes, compares them with common alternatives, and provides a systematic procedure for translating formulas.
+
+\subsection{Conventions used in these notes}
+
+The spacetime coordinates are
+
+\[
+\boxed{
+x^{\mu}=(ct,x,y,z)
+}.
+\]
+
+Greek indices run over
+
+\[
+\mu,\nu,\alpha,\beta=0,1,2,3,
+\]
+
+while Latin spatial indices run over
+
+\[
+i,j,k=1,2,3.
+\]
+
+The Minkowski metric is
+
+\[
+\boxed{
+\eta_{\mu\nu}
+=
+\eta^{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1)
+}.
+\]
+
+This is the mostly-minus or time-positive signature.
+
+The interval is
+
+\[
+\boxed{
+\mathrm{d}s^{2}
+=
+c^{2}\mathrm{d}t^{2}
+-
+\mathrm{d}\mathbf{x}^{2}
+}.
+\]
+
+Timelike vectors have positive squared norm, null vectors have zero squared norm, and spacelike vectors have negative squared norm.
+
+\subsection{Raising and lowering signs}
+
+For a contravariant four-vector
+
+\[
+A^{\mu}=(A^{0},\mathbf{A}),
+\]
+
+the corresponding covector is
+
+\[
+\boxed{
+A_{\mu}=(A^{0},-\mathbf{A})
+}.
+\]
+
+Thus
+
+\[
+A_{0}=A^{0},
+\qquad
+A_{i}=-A^{i}.
+\]
+
+Every raised or lowered spatial index contributes a minus sign in Cartesian Minkowski coordinates.
+
+For a rank-two tensor, the number of sign changes depends on the number of spatial indices. For example,
+
+\[
+T_{00}=T^{00},
+\]
+
+\[
+T_{0i}=-T^{0i},
+\]
+
+and
+
+\[
+T_{ij}=T^{ij}.
+\]
+
+The last equality contains two spatial sign changes, which cancel.
+
+\subsection{Derivative conventions}
+
+Because
+
+\[
+x^{0}=ct,
+\]
+
+the covariant four-gradient is
+
+\[
+\boxed{
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+\nabla
+\right)
+}.
+\]
+
+Raising the index gives
+
+\[
+\boxed{
+\partial^{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+-\nabla
+\right)
+}.
+\]
+
+The d'Alembertian is
+
+\[
+\boxed{
+\Box
+=
+\partial_{\mu}\partial^{\mu}
+=
+\frac{1}{c^{2}}\partial_{t}^{2}
+-
+\nabla^{2}
+}.
+\]
+
+These formulas are fixed by the coordinate choice and metric signature. They should not be memorized independently of those conventions.
+
+\subsection{The opposite metric signature}
+
+Many texts use
+
+\[
+\widetilde{\eta}_{\mu\nu}
+=
+\operatorname{diag}(-1,+1,+1,+1).
+\]
+
+Then the interval is
+
+\[
+\mathrm{d}\widetilde{s}^{2}
+=
+-c^{2}\mathrm{d}t^{2}
++
+\mathrm{d}\mathbf{x}^{2}.
+\]
+
+Timelike vectors have negative norm and spacelike vectors have positive norm. The raised derivative becomes
+
+\[
+\widetilde{\partial}^{\mu}
+=
+\left(
+-\frac{1}{c}\partial_{t},
+\nabla
+\right),
+\]
+
+and the contracted operator is
+
+\[
+\widetilde{\partial}_{\mu}
+\widetilde{\partial}^{\mu}
+=
+-\frac{1}{c^{2}}\partial_{t}^{2}
++
+\nabla^{2}.
+\]
+
+Thus
+
+\[
+\widetilde{\Box}=-\Box
+\]
+
+if both authors define the d'Alembertian directly as the metric contraction.
+
+The two signatures describe the same physics. Problems arise only when formulas from different conventions are combined without translation.
+
+\subsection{Translating a scalar-field kinetic term}
+
+With the mostly-minus signature, the Lorentz scalar is
+
+\[
+\partial_{\mu}\phi\partial^{\mu}\phi
+=
+\frac{1}{c^{2}}\phi_{t}^{2}
+-
+|\nabla\phi|^{2}.
+\]
+
+A standard scalar-field Lagrangian density therefore contains
+
+\[
+\mathcal{L}_{\mathrm{kin}}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi.
+\]
+
+With the mostly-plus signature, the contraction has the opposite sign:
+
+\[
+\widetilde{\partial}_{\mu}\phi
+\widetilde{\partial}^{\mu}\phi
+=
+-rac{1}{c^{2}}\phi_{t}^{2}
++
+|\nabla\phi|^{2}.
+\]
+
+To preserve a positive time-derivative contribution in the Lagrangian, one commonly writes
+
+\[
+\widetilde{\mathcal{L}}_{\mathrm{kin}}
+=
+-\frac{1}{2}
+\widetilde{\partial}_{\mu}\phi
+\widetilde{\partial}^{\mu}\phi.
+\]
+
+The difference is conventional. The expanded physical kinetic and gradient terms agree.
+
+\subsection{The position of indices is part of the formula}
+
+The expressions
+
+\[
+A^{\mu},
+\qquad
+A_{\mu}
+\]
+
+represent related but different component arrays. Likewise,
+
+\[
+\partial_{\mu}
+\qquad\text{and}\qquad
+\partial^{\mu}
+\]
+
+are not interchangeable.
+
+An equation such as
+
+\[
+A^{\mu}=B_{\mu}
+\]
+
+is not a valid tensor equation merely because both sides have four components. Their transformation types differ.
+
+A valid equality must have matching free indices in matching positions, for example
+
+\[
+A^{\mu}=B^{\mu}
+\]
+
+or
+
+\[
+A_{\mu}=B_{\mu}.
+\]
+
+If the metric is used explicitly, one may write
+
+\[
+A_{\mu}=\eta_{\mu\nu}A^{\nu}.
+\]
+
+\subsection{Explicit factors of \(c\)}
+
+Keeping \(c\) explicit clarifies dimensions. Important formulas include
+
+\[
+x^{0}=ct,
+\]
+
+\[
+U^{\mu}=\gamma(c,\mathbf{v}),
+\]
+
+\[
+p^{\mu}
+=
+\left(
+\frac{E}{c},
+\mathbf{p}
+\right),
+\]
+
+\[
+E^{2}
+=
+|\mathbf{p}|^{2}c^{2}
++
+m^{2}c^{4},
+\]
+
+and
+
+\[
+\Box
+=
+\frac{1}{c^{2}}\partial_{t}^{2}
+-
+\nabla^{2}.
+\]
+
+The factor \(c\) converts time units to length units and energy units to momentum-times-speed units.
+
+\subsection{Natural units with \(c=1\)}
+
+In relativistic theory, it is common to choose units in which
+
+\[
+\boxed{c=1}.
+\]
+
+Then time and length have the same units, velocity is dimensionless, and the coordinates become
+
+\[
+x^{\mu}=(t,\mathbf{x}).
+\]
+
+The four-velocity becomes
+
+\[
+U^{\mu}=\gamma(1,\mathbf{v}),
+\]
+
+and the four-momentum becomes
+
+\[
+p^{\mu}=(E,\mathbf{p}).
+\]
+
+The energy-momentum relation simplifies to
+
+\[
+\boxed{
+E^{2}=|\mathbf{p}|^{2}+m^{2}
+}.
+\]
+
+The d'Alembertian becomes
+
+\[
+\boxed{
+\Box=\partial_{t}^{2}-\nabla^{2}
+}.
+\]
+
+These formulas are compact, but the dimensions have not disappeared. The unit convention identifies quantities whose SI dimensions differ by powers of \(c\).
+
+\subsection{Restoring powers of \(c\)}
+
+A formula written with \(c=1\) can be translated back by dimensional analysis.
+
+For example,
+
+\[
+E^{2}=p^{2}+m^{2}
+\]
+
+cannot be an SI equation because its three terms have different SI dimensions. The required factors are
+
+\[
+E^{2}
+=
+p^{2}c^{2}
++
+m^{2}c^{4}.
+\]
+
+Likewise,
+
+\[
+x^{0}=t
+\]
+
+in natural units becomes
+
+\[
+x^{0}=ct
+\]
+
+when all coordinates are assigned dimensions of length.
+
+A reliable restoration procedure is:
+
+\begin{enumerate}
+    \item identify the target physical dimension of every term;
+    \item insert powers of \(c\) until all terms match;
+    \item check a familiar limit or special case;
+    \item compare with the definition of the corresponding four-vector.
+\end{enumerate}
+
+\subsection{Units with \(\hbar=1\)}
+
+Quantum and high-energy field theory often also uses
+
+\[
+\hbar=1.
+\]
+
+Then energy, inverse time, inverse length, mass, and momentum are related by the same unit scale. For example,
+
+\[
+E=\hbar\omega
+\]
+
+becomes
+
+\[
+E=\omega,
+\]
+
+and
+
+\[
+\mathbf{p}=\hbar\mathbf{k}
+\]
+
+becomes
+
+\[
+\mathbf{p}=\mathbf{k}.
+\]
+
+The present classical course will usually keep \(c\) explicit in derivations. Later chapters may occasionally mention natural-unit forms, but the convention will be stated when used.
+
+\subsection{Dimensions of common relativistic objects}
+
+With \(x^{0}=ct\),
+
+\[
+[x^{\mu}]=\mathrm{m}.
+\]
+
+Therefore
+
+\[
+[\partial_{\mu}]=\mathrm{m}^{-1},
+\]
+
+and
+
+\[
+[\Box]=\mathrm{m}^{-2}.
+\]
+
+The four-velocity has dimensions
+
+\[
+[U^{\mu}]=\mathrm{m\,s^{-1}},
+\]
+
+because proper time is measured in seconds.
+
+The four-momentum components all have momentum dimensions:
+
+\[
+[p^{\mu}]=\mathrm{kg\,m\,s^{-1}}.
+\]
+
+Indeed,
+
+\[
+\left[\frac{E}{c}\right]
+=
+\frac{\mathrm{kg\,m^{2}\,s^{-2}}}
+{\mathrm{m\,s^{-1}}}
+=
+\mathrm{kg\,m\,s^{-1}}.
+\]
+
+\subsection{Spatial-index conventions}
+
+When spatial indices are used, the Euclidean Kronecker delta
+
+\[
+\delta_{ij}
+\]
+
+is often used to contract ordinary three-vectors:
+
+\[
+|\mathbf{A}|^{2}
+=
+\delta_{ij}A^{i}A^{j}.
+\]
+
+The spatial part of the Minkowski metric is
+
+\[
+\eta_{ij}=-\delta_{ij}.
+\]
+
+Therefore
+
+\[
+\eta_{ij}A^{i}A^{j}
+=
+-|\mathbf{A}|^{2}.
+\]
+
+One must distinguish a three-dimensional Euclidean contraction from a four-dimensional Minkowski contraction.
+
+\subsection{Levi--Civita conventions}
+
+Later electromagnetic calculations may use the antisymmetric Levi--Civita symbol. A convention must specify the sign of
+
+\[
+\epsilon^{0123}.
+\]
+
+With the mostly-minus metric, lowering all four indices changes the sign because
+
+\[
+\det(\eta)=-1.
+\]
+
+Thus, if
+
+\[
+\epsilon^{0123}=+1,
+\]
+
+then
+
+\[
+\epsilon_{0123}=-1.
+\]
+
+Whenever the Levi--Civita symbol appears later, this sign convention will be stated explicitly rather than assumed silently.
+
+\subsection{A convention-translation example}
+
+Suppose one reference using the mostly-minus signature writes
+
+\[
+\Box\phi+m^{2}\phi=0
+\]
+
+in units with \(c=1\).
+
+Another reference uses the mostly-plus signature and defines
+
+\[
+\widetilde{\Box}
+=
+\widetilde{\partial}_{\mu}
+\widetilde{\partial}^{\mu}
+=-\Box.
+\]
+
+The same equation is then written as
+
+\[
+-\widetilde{\Box}\phi+m^{2}\phi=0,
+\]
+
+or equivalently
+
+\[
+\widetilde{\Box}\phi-m^{2}\phi=0.
+\]
+
+The apparent sign disagreement disappears once the definitions are translated consistently.
+
+\subsection{A diagnostic checklist}
+
+Before accepting a relativistic formula, ask:
+
+\begin{enumerate}
+    \item Which metric signature is being used?
+    \item Is the zeroth coordinate \(t\) or \(ct\)?
+    \item Are factors of \(c\) explicit or has \(c=1\) been adopted?
+    \item Are upper and lower indices distinguished?
+    \item Does every contraction pair one upper and one lower index?
+    \item What is the author's definition of \(\Box\)?
+    \item Are spatial contractions Euclidean or inherited from the Minkowski metric?
+    \item Do all terms have consistent physical dimensions?
+\end{enumerate}
+
+Most sign disputes can be resolved by answering these questions before manipulating the formula.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item copying a formula from the opposite signature without translating it;
+    \item forgetting that lowering a spatial index changes its sign;
+    \item mixing \(x^{0}=t\) with formulas derived for \(x^{0}=ct\);
+    \item setting \(c=1\) in only part of an equation;
+    \item restoring powers of \(c\) by memory rather than dimensional analysis;
+    \item treating \(\delta_{ij}\) and \(\eta_{ij}\) as the same object;
+    \item assuming all authors use the same d'Alembertian convention;
+    \item declaring two formulas inconsistent before comparing their conventions.
+\end{enumerate}
+
+\subsection{Chapter summary}
+
+This chapter established the geometric and notational language required for relativistic field theory.
+
+An event is represented in an inertial frame by
+
+\[
+x^{\mu}=(ct,\mathbf{x}),
+\]
+
+and the Minkowski metric
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1)
+\]
+
+defines the invariant interval
+
+\[
+\mathrm{d}s^{2}
+=
+c^{2}\mathrm{d}t^{2}
+-
+\mathrm{d}\mathbf{x}^{2}.
+\]
+
+Four-vectors transform as
+
+\[
+A'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}A^{\nu},
+\]
+
+while the metric raises and lowers indices. Complete contractions such as
+
+\[
+A_{\mu}B^{\mu}
+\]
+
+are Lorentz scalars.
+
+The standard boost mixes time and the longitudinal spatial coordinate while preserving the interval. Four-dimensional differentiation is organized through
+
+\[
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+\nabla
+\right),
+\]
+
+and
+
+\[
+\Box
+=
+\partial_{\mu}\partial^{\mu}
+=
+\frac{1}{c^{2}}\partial_{t}^{2}
+-
+\nabla^{2}.
+\]
+
+The principal invariants include
+
+\[
+\Delta x^{2},
+\qquad
+U^{2}=c^{2},
+\qquad
+p^{2}=m^{2}c^{2},
+\qquad
+k_{\mu}x^{\mu}.
+\]
+
+The chapter also established a working discipline: every relativistic calculation must state its signature, coordinate convention, index rules, and units before signs are compared.
+
+The next chapter applies this formalism to the real scalar field. Lorentz-invariant derivative and potential terms will be assembled into an action, and the massless and massive Klein--Gordon equations will be derived and analyzed.
