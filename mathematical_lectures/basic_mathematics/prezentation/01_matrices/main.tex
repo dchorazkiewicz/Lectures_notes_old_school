@@ -1,0 +1,1138 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[circle]
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc}
+
+\definecolor{matrixblue}{RGB}{35,92,145}
+\definecolor{matrixred}{RGB}{165,55,55}
+\definecolor{matrixgreen}{RGB}{45,125,80}
+\definecolor{matrixorange}{RGB}{190,115,25}
+
+\setbeamercolor{structure}{fg=matrixblue}
+\setbeamerfont{frametitle}{size=\large}
+
+\title{Basic Mathematics}
+\subtitle{Lecture 1: Matrices}
+\author{Damian Chorążkiewicz}
+\date{}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\blue}[1]{\textcolor{matrixblue}{#1}}
+\newcommand{\red}[1]{\textcolor{matrixred}{#1}}
+\newcommand{\green}[1]{\textcolor{matrixgreen}{#1}}
+\newcommand{\orange}[1]{\textcolor{matrixorange}{#1}}
+\newcommand{\keyword}[1]{\textbf{#1}}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% Title and roadmap
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Where matrices lead}
+  \centering
+  \begin{tikzpicture}[node distance=1.1cm, every node/.style={font=\large}]
+    \node[draw, rounded corners, minimum width=2.7cm, minimum height=0.9cm] (m) {Matrices};
+    \node[draw, rounded corners, minimum width=2.7cm, minimum height=0.9cm, right=of m] (d) {Determinants};
+    \node[draw, rounded corners, minimum width=2.7cm, minimum height=0.9cm, right=of d] (i) {Inversion};
+    \node[draw, rounded corners, minimum width=3.4cm, minimum height=0.9cm, right=of i] (s) {Linear systems};
+    \draw[-{Latex},thick] (m) -- (d);
+    \draw[-{Latex},thick] (d) -- (i);
+    \draw[-{Latex},thick] (i) -- (s);
+  \end{tikzpicture}
+
+  \vspace{0.9cm}
+  \Large
+  Today: learn to \keyword{read}, \keyword{combine}, and \keyword{see structure}.
+\end{frame}
+
+\begin{frame}{Three lecture blocks}
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{ccl}
+    \textbf{I} & 45 min & Reading matrices and basic operations \\
+    \textbf{II} & 45 min & Matrix multiplication \\
+    \textbf{III} & 45 min & Structure, transpose, row operations
+  \end{tabular}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% PART I
+% -----------------------------------------------------------------------------
+
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\Huge Part I}
+
+  \vspace{0.5cm}
+  {\LARGE Reading matrices}
+  \vfill
+\end{frame}
+
+\begin{frame}{A matrix is more than a table}
+  \centering
+  \begin{tikzpicture}[node distance=1.6cm, every node/.style={font=\large}]
+    \node[draw, rounded corners, minimum width=3.1cm, minimum height=1cm] (data) {data};
+    \node[draw, rounded corners, minimum width=3.1cm, minimum height=1cm, right=of data] (coeff) {coefficients};
+    \node[draw, rounded corners, minimum width=3.1cm, minimum height=1cm, below=of data] (rel) {relations};
+    \node[draw, rounded corners, minimum width=3.1cm, minimum height=1cm, right=of rel] (map) {transformation};
+    \node[draw, very thick, rounded corners, minimum width=3.2cm, minimum height=1.1cm] at ($(data)!0.5!(map)$) (matrix) {\keyword{matrix}};
+    \draw[-{Latex}] (matrix) -- (data);
+    \draw[-{Latex}] (matrix) -- (coeff);
+    \draw[-{Latex}] (matrix) -- (rel);
+    \draw[-{Latex}] (matrix) -- (map);
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{General form}
+  \Large
+  \[
+    A=\begin{pmatrix}
+      a_{11} & a_{12} & \cdots & a_{1n}\\
+      a_{21} & a_{22} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      a_{m1} & a_{m2} & \cdots & a_{mn}
+    \end{pmatrix}
+    \in \R^{m\times n}.
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  \Large
+  \blue{$m$ rows}\qquad \red{$n$ columns}
+\end{frame}
+
+\begin{frame}{Dimensions are part of the object}
+  \centering
+  \Large
+  \[
+    A\in\R^{\blue{m}\times\red{n}}
+  \]
+
+  \vspace{0.4cm}
+  \begin{tikzpicture}[scale=0.95]
+    \draw[thick] (0,0) rectangle (5,3);
+    \foreach \y in {1,2} \draw[gray] (0,\y) -- (5,\y);
+    \foreach \x in {1,2,3,4} \draw[gray] (\x,0) -- (\x,3);
+    \draw[<->,very thick,matrixblue] (-0.5,0) -- (-0.5,3) node[midway,left] {$m$};
+    \draw[<->,very thick,matrixred] (0,-0.5) -- (5,-0.5) node[midway,below] {$n$};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Index discipline}
+  \centering
+  \Huge
+  \[
+    a_{\blue{i}\red{j}}
+  \]
+
+  \vspace{0.3cm}
+  \Large
+  \blue{first index: row}\qquad \red{second index: column}
+
+  \vspace{0.8cm}
+  \Large
+  vertical first, horizontal second
+\end{frame}
+
+\begin{frame}{Read before calculating}
+  \Large
+  \[
+    M=\begin{pmatrix}
+      4 & -2 & 0\\
+      7 & 1 & 5
+    \end{pmatrix}
+  \]
+
+  \vspace{0.5cm}
+  \begin{columns}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \[
+        M\in\R^{2\times3}
+      \]
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \[
+        m_{11}=4,\quad m_{12}=-2,\quad m_{23}=5
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Rows and columns}
+  \Large
+  \[
+    M=\begin{pmatrix}
+      \blue{4 & -2 & 0}\\
+      7 & 1 & 5
+    \end{pmatrix}
+  \]
+
+  \vspace{0.4cm}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      first row
+      \[
+        \begin{pmatrix}4&-2&0\end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      third column
+      \[
+        \begin{pmatrix}0\\5\end{pmatrix}
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Common shapes}
+  \begin{columns}[T]
+    \begin{column}{0.24\textwidth}
+      \centering
+      \keyword{row}
+      \[
+        \begin{pmatrix}a&b&c\end{pmatrix}
+      \]
+      $1\times3$
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \centering
+      \keyword{column}
+      \[
+        \begin{pmatrix}a\\b\\c\end{pmatrix}
+      \]
+      $3\times1$
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \centering
+      \keyword{square}
+      \[
+        \begin{pmatrix}a&b\\c&d\end{pmatrix}
+      \]
+      $2\times2$
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \centering
+      \keyword{rectangular}
+      \[
+        \begin{pmatrix}a&b&c\\d&e&f\end{pmatrix}
+      \]
+      $2\times3$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{One array, different meanings}
+  \Large
+  \[
+    A=\begin{pmatrix}
+      2&1\\
+      -1&3
+    \end{pmatrix}
+  \]
+
+  \vspace{0.4cm}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+      \centering
+      data
+      \[
+        \begin{matrix}
+        \text{feature 1}\\[-1mm]
+        \text{feature 2}
+        \end{matrix}
+      \]
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \centering
+      system
+      \[
+        \begin{cases}
+        2x+y=\cdots\\
+        -x+3y=\cdots
+        \end{cases}
+      \]
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \centering
+      map
+      \[
+        \bm{x}\mapsto A\bm{x}
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{First question}
+  \centering
+  \Huge
+  What is the shape?
+
+  \vspace{0.7cm}
+  \Large
+  Only then ask: which operation makes sense?
+\end{frame}
+
+\begin{frame}{Matrix addition: compatibility}
+  \centering
+  \Large
+  \[
+    A+B\quad\text{exists only if}\quad
+    \operatorname{size}(A)=\operatorname{size}(B).
+  \]
+
+  \vspace{0.7cm}
+  \[
+    (m\times n)+(m\times n)=m\times n
+  \]
+\end{frame}
+
+\begin{frame}{Matrix addition: entry by entry}
+  \Large
+  \[
+    A=(a_{ij}),\qquad B=(b_{ij})
+  \]
+  \[
+    A+B=(a_{ij}+b_{ij})
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  same position $\longleftrightarrow$ same position
+\end{frame}
+
+\begin{frame}{Addition example}
+  \Large
+  \[
+    \begin{pmatrix}2&-1\\0&3\end{pmatrix}
+    +
+    \begin{pmatrix}5&4\\-2&1\end{pmatrix}
+    =
+    \begin{pmatrix}
+      2+5 & -1+4\\
+      0-2 & 3+1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}7&3\\-2&4\end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{Subtraction and scalar multiplication}
+  \Large
+  \[
+    A-B=(a_{ij}-b_{ij})
+  \]
+
+  \vspace{0.5cm}
+  \[
+    \lambda A=(\lambda a_{ij})
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  both preserve the matrix shape
+\end{frame}
+
+\begin{frame}{Scalar example}
+  \Large
+  \[
+    A=\begin{pmatrix}2&-1\\0&3\end{pmatrix}
+  \]
+  \[
+    -3A=
+    \begin{pmatrix}
+      -6&3\\
+      0&-9
+    \end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{Linear combinations of matrices}
+  \Large
+  \[
+    \alpha A+\beta B
+  \]
+
+  \vspace{0.5cm}
+  \[
+    2\begin{pmatrix}1&0\\-1&2\end{pmatrix}
+    -
+    \begin{pmatrix}3&1\\2&0\end{pmatrix}
+    =
+    \begin{pmatrix}-1&-1\\-4&4\end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{Familiar laws survive}
+  \Large
+  \[
+    A+B=B+A
+  \]
+  \[
+    (A+B)+C=A+(B+C)
+  \]
+  \[
+    \lambda(A+B)=\lambda A+\lambda B
+  \]
+
+  \vspace{0.4cm}
+  \centering
+  because these operations are entrywise
+\end{frame}
+
+\begin{frame}{Defined or not?}
+  \Large
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \green{defined}
+      \[
+        (2\times3)+(2\times3)
+      \]
+      \[
+        5(4\times2)
+      \]
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \red{not defined}
+      \[
+        (2\times3)+(3\times2)
+      \]
+      \[
+        (1\times4)-(4\times1)
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Part I checkpoint}
+  \Large
+  \begin{itemize}
+    \item size of the matrix
+    \item meaning of $a_{ij}$
+    \item rows versus columns
+    \item compatible entrywise operations
+  \end{itemize}
+
+  \vspace{0.6cm}
+  \centering
+  \Huge
+  Read the object first.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% PART II
+% -----------------------------------------------------------------------------
+
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\Huge Part II}
+
+  \vspace{0.5cm}
+  {\LARGE Matrix multiplication}
+  \vfill
+\end{frame}
+
+\begin{frame}{Multiplication is different}
+  \centering
+  \Large
+  Addition:
+  \[
+    \text{position} + \text{matching position}
+  \]
+
+  \vspace{0.5cm}
+  Multiplication:
+  \[
+    \blue{\text{row}}\cdot\red{\text{column}}
+  \]
+\end{frame}
+
+\begin{frame}{Dimension rule}
+  \centering
+  \Huge
+  \[
+    (\blue{m}\times\orange{n})(\orange{n}\times\red{p})
+    =\blue{m}\times\red{p}
+  \]
+
+  \vspace{0.5cm}
+  \Large
+  inner dimensions match; outer dimensions remain
+\end{frame}
+
+\begin{frame}{Dimension examples}
+  \Large
+  \begin{align*}
+    (2\times3)(3\times4)&=2\times4,\\
+    (1\times5)(5\times1)&=1\times1,\\
+    (4\times2)(2\times1)&=4\times1.
+  \end{align*}
+
+  \vspace{0.4cm}
+  \centering
+  \red{$(2\times3)(2\times4)$ is not defined}
+\end{frame}
+
+\begin{frame}{The entry formula}
+  \Large
+  \[
+    C=AB,\qquad C=(c_{ij})
+  \]
+  \[
+    c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  row $i$ of $A$ meets column $j$ of $B$
+\end{frame}
+
+\begin{frame}{Row meets column}
+  \centering
+  \Large
+  \[
+    \blue{\begin{pmatrix}a_{i1}&a_{i2}&\cdots&a_{in}\end{pmatrix}}
+    \red{\begin{pmatrix}b_{1j}\\b_{2j}\\\vdots\\b_{nj}\end{pmatrix}}
+    =
+    \sum_{k=1}^{n}a_{ik}b_{kj}
+  \]
+
+  \vspace{0.5cm}
+  one row $\times$ one column $=$ one number
+\end{frame}
+
+\begin{frame}{Example setup}
+  \Large
+  \[
+    A=\begin{pmatrix}1&3\\-2&4\end{pmatrix},
+    \qquad
+    B=\begin{pmatrix}2&0\\5&-1\end{pmatrix}
+  \]
+
+  \vspace{0.5cm}
+  \[
+    AB\in\R^{2\times2}
+  \]
+\end{frame}
+
+\begin{frame}{First row of the product}
+  \Large
+  \[
+    c_{11}=\blue{\begin{pmatrix}1&3\end{pmatrix}}
+    \red{\begin{pmatrix}2\\5\end{pmatrix}}
+    =1\cdot2+3\cdot5=17
+  \]
+
+  \vspace{0.6cm}
+  \[
+    c_{12}=\blue{\begin{pmatrix}1&3\end{pmatrix}}
+    \red{\begin{pmatrix}0\\-1\end{pmatrix}}
+    =1\cdot0+3(-1)=-3
+  \]
+\end{frame}
+
+\begin{frame}{Second row of the product}
+  \Large
+  \[
+    c_{21}=\begin{pmatrix}-2&4\end{pmatrix}
+    \begin{pmatrix}2\\5\end{pmatrix}
+    =-4+20=16
+  \]
+
+  \vspace{0.6cm}
+  \[
+    c_{22}=\begin{pmatrix}-2&4\end{pmatrix}
+    \begin{pmatrix}0\\-1\end{pmatrix}
+    =-4
+  \]
+\end{frame}
+
+\begin{frame}{The product}
+  \Huge
+  \[
+    AB=
+    \begin{pmatrix}
+      17&-3\\
+      16&-4
+    \end{pmatrix}
+  \]
+\end{frame}
+
+\begin{frame}{Reverse the order}
+  \Large
+  \[
+    BA=
+    \begin{pmatrix}2&0\\5&-1\end{pmatrix}
+    \begin{pmatrix}1&3\\-2&4\end{pmatrix}
+    =
+    \begin{pmatrix}2&6\\7&11\end{pmatrix}.
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  \Huge
+  $AB\neq BA$
+\end{frame}
+
+\begin{frame}{Why order matters}
+  \centering
+  \begin{tikzpicture}[node distance=1.2cm, every node/.style={font=\large}]
+    \node[draw,rounded corners,minimum width=1.8cm] (x1) {$\bm{x}$};
+    \node[draw,rounded corners,minimum width=2.4cm,right=of x1] (b) {$B\bm{x}$};
+    \node[draw,rounded corners,minimum width=2.8cm,right=of b] (ab) {$A(B\bm{x})$};
+    \draw[-{Latex},thick] (x1) -- node[above] {$B$} (b);
+    \draw[-{Latex},thick] (b) -- node[above] {$A$} (ab);
+
+    \node[draw,rounded corners,minimum width=1.8cm,below=1.5cm of x1] (x2) {$\bm{x}$};
+    \node[draw,rounded corners,minimum width=2.4cm,right=of x2] (a) {$A\bm{x}$};
+    \node[draw,rounded corners,minimum width=2.8cm,right=of a] (ba) {$B(A\bm{x})$};
+    \draw[-{Latex},thick] (x2) -- node[above] {$A$} (a);
+    \draw[-{Latex},thick] (a) -- node[above] {$B$} (ba);
+  \end{tikzpicture}
+
+  \vspace{0.5cm}
+  different order $=$ different process
+\end{frame}
+
+\begin{frame}{Sometimes only one order exists}
+  \Large
+  \[
+    A\in\R^{2\times3},\qquad B\in\R^{3\times1}
+  \]
+  \[
+    AB\in\R^{2\times1}
+  \]
+
+  \vspace{0.6cm}
+  \centering
+  \red{$BA$ is not defined}
+\end{frame}
+
+\begin{frame}{A rectangular product}
+  \Large
+  \[
+    \begin{pmatrix}
+      1&0&2\\
+      -1&3&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\
+      0&-1\\
+      4&2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      10&5\\
+      2&-2
+    \end{pmatrix}.
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  $(2\times3)(3\times2)=2\times2$
+\end{frame}
+
+\begin{frame}{Matrix times vector}
+  \Large
+  \[
+    A\in\R^{m\times n},\qquad \bm{x}\in\R^{n\times1}
+  \]
+  \[
+    A\bm{x}\in\R^{m\times1}
+  \]
+
+  \vspace{0.6cm}
+  \centering
+  a matrix transforms an input vector into an output vector
+\end{frame}
+
+\begin{frame}{Columns explain $A\bm{x}$}
+  \Large
+  Let
+  \[
+    A=\begin{pmatrix}\bm{a}_1&\bm{a}_2&\cdots&\bm{a}_n\end{pmatrix},
+    \qquad
+    \bm{x}=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}.
+  \]
+  Then
+  \[
+    A\bm{x}=x_1\bm{a}_1+x_2\bm{a}_2+\cdots+x_n\bm{a}_n.
+  \]
+\end{frame}
+
+\begin{frame}{Columns are images of basis vectors}
+  \Large
+  \[
+    A\bm{e}_1=\bm{a}_1,\qquad
+    A\bm{e}_2=\bm{a}_2,\qquad\ldots\qquad
+    A\bm{e}_n=\bm{a}_n.
+  \]
+
+  \vspace{0.7cm}
+  \centering
+  the columns show what the transformation does to basic directions
+\end{frame}
+
+\begin{frame}{Identity matrices in products}
+  \Large
+  For $A\in\R^{m\times n}$:
+  \[
+    I_mA=A,
+    \qquad
+    AI_n=A.
+  \]
+
+  \vspace{0.6cm}
+  \centering
+  left identity: $m\times m$\qquad right identity: $n\times n$
+\end{frame}
+
+\begin{frame}{Associativity and distributivity}
+  \Large
+  \[
+    (AB)C=A(BC)
+  \]
+  \[
+    A(B+C)=AB+AC
+  \]
+  \[
+    (A+B)C=AC+BC
+  \]
+
+  \vspace{0.4cm}
+  \centering
+  grouping may change; order may not
+\end{frame}
+
+\begin{frame}{Matrix powers}
+  \Large
+  \[
+    A^2=AA,\qquad A^3=AAA,\qquad A^0=I
+  \]
+
+  \vspace{0.6cm}
+  \centering
+  powers require a square matrix
+\end{frame}
+
+\begin{frame}{Multiplication checklist}
+  \Large
+  \begin{enumerate}
+    \item read both shapes;
+    \item check inner dimensions;
+    \item predict the output shape;
+    \item compute row by column;
+    \item keep the order fixed.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Part II checkpoint}
+  \centering
+  \Huge
+  \[
+    (m\times n)(n\times p)=m\times p
+  \]
+
+  \vspace{0.8cm}
+  \Large
+  Every output entry is one row--column interaction.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% PART III
+% -----------------------------------------------------------------------------
+
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\Huge Part III}
+
+  \vspace{0.5cm}
+  {\LARGE Visible structure and row operations}
+  \vfill
+\end{frame}
+
+\begin{frame}{Zero and identity}
+  \Large
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \keyword{zero matrix}
+      \[
+        A+0=A
+      \]
+      \[
+        0_{m\times n}
+      \]
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \keyword{identity matrix}
+      \[
+        AI=A
+      \]
+      \[
+        I_n=\operatorname{diag}(1,\ldots,1)
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Transpose}
+  \Large
+  \[
+    A=(a_{ij})\in\R^{m\times n}
+  \]
+  \[
+    A^{\mathsf T}=(a_{ji})\in\R^{n\times m}
+  \]
+
+  \vspace{0.6cm}
+  \centering
+  rows become columns
+\end{frame}
+
+\begin{frame}{Transpose example}
+  \Large
+  \[
+    \begin{pmatrix}
+      1&2&3\\
+      4&5&6
+    \end{pmatrix}^{\mathsf T}
+    =
+    \begin{pmatrix}
+      1&4\\
+      2&5\\
+      3&6
+    \end{pmatrix}.
+  \]
+
+  \vspace{0.5cm}
+  \centering
+  $2\times3\longrightarrow3\times2$
+\end{frame}
+
+\begin{frame}{Transpose rules}
+  \Large
+  \[
+    (A^{\mathsf T})^{\mathsf T}=A
+  \]
+  \[
+    (A+B)^{\mathsf T}=A^{\mathsf T}+B^{\mathsf T}
+  \]
+  \[
+    (AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}
+  \]
+
+  \vspace{0.4cm}
+  \centering
+  transpose reverses multiplication order
+\end{frame}
+
+\begin{frame}{Symmetric matrices}
+  \Large
+  \[
+    A^{\mathsf T}=A
+  \]
+
+  \vspace{0.4cm}
+  \[
+    \begin{pmatrix}
+      2&-1&4\\
+      -1&3&0\\
+      4&0&5
+    \end{pmatrix}
+  \]
+
+  \centering
+  mirror symmetry across the main diagonal
+\end{frame}
+
+\begin{frame}{Diagonal matrices}
+  \Large
+  \[
+    D=\operatorname{diag}(d_1,d_2,\ldots,d_n)
+  \]
+  \[
+    D=\begin{pmatrix}
+      d_1&0&\cdots&0\\
+      0&d_2&\cdots&0\\
+      \vdots&\vdots&\ddots&\vdots\\
+      0&0&\cdots&d_n
+    \end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{Powers of a diagonal matrix}
+  \Large
+  \[
+    D=\operatorname{diag}(3,-1,2)
+  \]
+  \[
+    D^2=\operatorname{diag}(9,1,4)
+  \]
+  \[
+    D^3=\operatorname{diag}(27,-1,8)
+  \]
+
+  \vspace{0.3cm}
+  \centering
+  no mixing between coordinates
+\end{frame}
+
+\begin{frame}{Diagonal matrices commute}
+  \Large
+  \[
+    D_1=\operatorname{diag}(a_1,\ldots,a_n),
+    \quad
+    D_2=\operatorname{diag}(b_1,\ldots,b_n)
+  \]
+  \[
+    D_1D_2=D_2D_1
+    =\operatorname{diag}(a_1b_1,\ldots,a_nb_n).
+  \]
+\end{frame}
+
+\begin{frame}{Visible structure}
+  \Large
+  Look for:
+  \begin{itemize}
+    \item many zeros;
+    \item equal rows or columns;
+    \item proportional rows or columns;
+    \item diagonal or triangular patterns;
+    \item symmetry;
+    \item repeated blocks.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Elementary row operations}
+  \Large
+  \begin{enumerate}
+    \item swap two rows;
+    \item multiply a row by a non-zero number;
+    \item add a multiple of one row to another.
+  \end{enumerate}
+
+  \vspace{0.6cm}
+  \centering
+  controlled transformations, not random changes
+\end{frame}
+
+\begin{frame}{Row-operation notation}
+  \Large
+  \[
+    R_i\leftrightarrow R_j
+  \]
+  \[
+    R_i\leftarrow \lambda R_i,\qquad \lambda\neq0
+  \]
+  \[
+    R_i\leftarrow R_i+\lambda R_j
+  \]
+\end{frame}
+
+\begin{frame}{Row-operation example}
+  \Large
+  \[
+    A=\begin{pmatrix}
+      1&2&-1\\
+      2&4&3\\
+      0&1&5
+    \end{pmatrix}
+  \]
+
+  \vspace{0.4cm}
+  \[
+    R_2\leftarrow R_2-2R_1
+  \]
+\end{frame}
+
+\begin{frame}{The transformed matrix}
+  \Large
+  \[
+    (2,4,3)-2(1,2,-1)=(0,0,5)
+  \]
+  \[
+    \begin{pmatrix}
+      1&2&-1\\
+      2&4&3\\
+      0&1&5
+    \end{pmatrix}
+    \longrightarrow
+    \begin{pmatrix}
+      1&2&-1\\
+      0&0&5\\
+      0&1&5
+    \end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{Three layers of a row operation}
+  \centering
+  \begin{tikzpicture}[node distance=1.2cm, every node/.style={font=\large}]
+    \node[draw,rounded corners,minimum width=2.8cm,minimum height=0.9cm] (a) {arithmetic};
+    \node[draw,rounded corners,minimum width=2.8cm,minimum height=0.9cm,right=of a] (t) {transformation};
+    \node[draw,rounded corners,minimum width=2.8cm,minimum height=0.9cm,right=of t] (i) {interpretation};
+    \draw[-{Latex},thick] (a) -- (t);
+    \draw[-{Latex},thick] (t) -- (i);
+  \end{tikzpicture}
+
+  \vspace{0.8cm}
+  \Large
+  the new row reveals what was hidden in the old one
+\end{frame}
+
+\begin{frame}{Column vectors are matrices}
+  \Large
+  \[
+    \bm{u}=\begin{pmatrix}2\\-1\\4\end{pmatrix}
+    \in\R^{3\times1}
+  \]
+  \[
+    \bm{u}^{\mathsf T}=\begin{pmatrix}2&-1&4\end{pmatrix}
+    \in\R^{1\times3}
+  \]
+\end{frame}
+
+\begin{frame}{$\bm{u}^{\mathsf T}\bm{u}$ versus $\bm{u}\bm{u}^{\mathsf T}$}
+  \Large
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \[
+        (1\times3)(3\times1)
+      \]
+      \[
+        \bm{u}^{\mathsf T}\bm{u}\in\R^{1\times1}
+      \]
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \[
+        (3\times1)(1\times3)
+      \]
+      \[
+        \bm{u}\bm{u}^{\mathsf T}\in\R^{3\times3}
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Same vector, two products}
+  \Large
+  For $\bm{u}=(2,-1,4)^{\mathsf T}$:
+  \[
+    \bm{u}^{\mathsf T}\bm{u}=2^2+(-1)^2+4^2=21
+  \]
+
+  \vspace{0.5cm}
+  \[
+    \bm{u}\bm{u}^{\mathsf T}
+    =
+    \begin{pmatrix}
+      4&-2&8\\
+      -2&1&-4\\
+      8&-4&16
+    \end{pmatrix}.
+  \]
+\end{frame}
+
+\begin{frame}{A reliable problem-solving workflow}
+  \Large
+  \begin{enumerate}
+    \item identify every matrix shape;
+    \item decide which operations exist;
+    \item predict the result shape;
+    \item use the correct local rule;
+    \item exploit visible structure;
+    \item interpret the result.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Common errors}
+  \Large
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \red{avoid}
+      \begin{itemize}
+        \item mixing row and column indices;
+        \item adding different shapes;
+        \item multiplying entrywise;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \green{replace with}
+      \begin{itemize}
+        \item read $a_{ij}$ carefully;
+        \item check dimensions first;
+        \item use row--column products.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Concept map}
+  \centering
+  \begin{tikzpicture}[node distance=1.1cm, every node/.style={font=\normalsize}]
+    \node[draw,very thick,rounded corners,minimum width=2.5cm] (m) {Matrices};
+    \node[draw,rounded corners,above left=of m] (shape) {shape};
+    \node[draw,rounded corners,above right=of m] (entries) {entries};
+    \node[draw,rounded corners,left=of m] (ops) {operations};
+    \node[draw,rounded corners,right=of m] (mult) {multiplication};
+    \node[draw,rounded corners,below left=of m] (struct) {structure};
+    \node[draw,rounded corners,below right=of m] (rows) {row operations};
+    \foreach \n in {shape,entries,ops,mult,struct,rows} {
+      \draw[-{Latex}] (m) -- (\n);
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Final questions}
+  \Large
+  \begin{itemize}
+    \item What is the shape?
+    \item What does each index mean?
+    \item Which operations are defined?
+    \item What is the output shape?
+    \item Does order matter?
+    \item What structure can I see?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\Huge Read the shape.}
+
+  \vspace{0.5cm}
+  {\Huge Then calculate.}
+  \vfill
+\end{frame}
+
+\end{document}
