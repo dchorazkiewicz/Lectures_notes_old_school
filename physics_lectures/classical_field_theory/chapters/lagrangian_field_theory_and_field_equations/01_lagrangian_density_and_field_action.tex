@@ -1,1 +1,379 @@
 \section{Lagrangian Density and Field Action}
+\label{sec:lagrangian_density_and_field_action}
+
+The action principle developed for particles can be extended to systems with continuously many degrees of freedom. The essential change is that a particle trajectory is replaced by a field configuration, and the mechanical Lagrangian is replaced by a Lagrangian density.
+
+The purpose of this section is to make that transition explicit. We will identify the dynamical variables, define the field action, explain why a density is required, and compare the structure of particle mechanics with the structure of field theory.
+
+\subsection{From finitely many coordinates to a field}
+
+A mechanical system with generalized coordinates
+
+\[
+q^{1}(t),\ldots,q^{N}(t)
+\]
+
+has finitely many configuration variables at each instant. Its action is
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q^{i},\dot q^{i},t)
+\,\mathrm{d}t.
+\]
+
+A field assigns a value to every point of space. For a real scalar field in three spatial dimensions, we write
+
+\[
+\phi=\phi(\mathbf{x},t),
+\qquad
+\mathbf{x}=(x^{1},x^{2},x^{3}).
+\]
+
+At a fixed time, the complete function
+
+\[
+\mathbf{x}\longmapsto\phi(\mathbf{x},t)
+\]
+
+is the configuration of the field. Each spatial point carries its own field value, so the field may be viewed informally as a system with one generalized coordinate at every point of space.
+
+This viewpoint explains why the mechanical sum over degrees of freedom becomes a spatial integral. A discrete chain contains a sum of local contributions,
+
+\[
+L_{\mathrm{discrete}}
+=
+\sum_{n}L_{n},
+\]
+
+whereas a continuum contains a contribution from every spatial point,
+
+\[
+L_{\mathrm{field}}(t)
+=
+\int_{\Sigma}
+\mathcal{L}(\mathbf{x},t)
+\,\mathrm{d}^{3}x.
+\]
+
+Here \(\Sigma\) denotes the spatial region occupied by the system, and \(\mathcal{L}\) is the Lagrangian density.
+
+\subsection{Why a density is needed}
+
+The mechanical Lagrangian \(L\) has dimensions of energy. A Lagrangian density must therefore have dimensions of energy per unit volume:
+
+\[
+[\mathcal{L}]
+=
+\frac{\mathrm{J}}{\mathrm{m}^{3}}
+\]
+
+in three spatial dimensions.
+
+Integrating over space gives the ordinary Lagrangian at time \(t\):
+
+\[
+L(t)
+=
+\int_{\Sigma}
+\mathcal{L}(\phi,\partial_{t}\phi,\nabla\phi,\mathbf{x},t)
+\,\mathrm{d}^{3}x.
+\]
+
+The action is then obtained by integrating over time:
+
+\[
+\begin{aligned}
+S[\phi]
+&=
+\int_{t_{1}}^{t_{2}}L(t)\,\mathrm{d}t\\
+&=
+\int_{t_{1}}^{t_{2}}
+\int_{\Sigma}
+\mathcal{L}
+\,\mathrm{d}^{3}x\,\mathrm{d}t.
+\end{aligned}
+\]
+
+Thus the action is an integral over a spacetime region.
+
+\subsection{The field action}
+
+Let \(\Omega\) denote the spacetime region
+
+\[
+\Omega=[t_{1},t_{2}]\times\Sigma.
+\]
+
+Using spacetime coordinates
+
+\[
+x^{\mu}=(x^{0},x^{1},x^{2},x^{3}),
+\]
+
+we write
+
+\[
+\partial_{\mu}\phi
+:=
+\frac{\partial\phi}{\partial x^{\mu}}.
+\]
+
+At this stage, the index notation is only a compact way to list derivatives with respect to all spacetime coordinates. The metric and relativistic conventions will be introduced in the next chapter.
+
+The action of one real field is written as
+
+\[
+\boxed{
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}(\phi,\partial_{\mu}\phi,x)
+\,\mathrm{d}^{4}x
+}.
+\]
+
+The square brackets emphasize that \(S\) depends on the complete field history, not on the field value at one point.
+
+If the system contains several fields \(\phi^{a}(x)\), the action becomes
+
+\[
+S[\phi^{1},\ldots,\phi^{N}]
+=
+\int_{\Omega}
+\mathcal{L}(\phi^{a},\partial_{\mu}\phi^{a},x)
+\,\mathrm{d}^{4}x.
+\]
+
+The label \(a\) distinguishes the fields, while \(\mu\) labels the spacetime derivative.
+
+\subsection{Local Lagrangian densities}
+
+A local field theory uses a Lagrangian density evaluated from the field and a finite number of its derivatives at the same spacetime point. The simplest class has the form
+
+\[
+\mathcal{L}
+=
+\mathcal{L}(\phi,\partial_{\mu}\phi,x).
+\]
+
+The value of \(\mathcal{L}\) at \(x\) depends on
+
+\begin{itemize}
+    \item the field value \(\phi(x)\);
+    \item the derivatives \(\partial_{\mu}\phi(x)\);
+    \item prescribed background quantities or sources at \(x\);
+    \item possibly the point \(x\) explicitly.
+\end{itemize}
+
+It does not directly depend on the field value at a distant point \(y\). Spatial coupling is nevertheless present because gradient terms compare neighbouring values through derivatives.
+
+A nonlocal action could contain terms such as
+
+\[
+\int\!\int
+K(x,y)\phi(x)\phi(y)
+\,\mathrm{d}^{4}x\,\mathrm{d}^{4}y,
+\]
+
+but such theories are not the subject of the basic variational derivation developed here.
+
+\subsection{Typical terms in a Lagrangian density}
+
+A useful nonrelativistic scalar-field model has the form
+
+\[
+\boxed{
+\mathcal{L}
+=
+\frac{\rho}{2}
+\left(\frac{\partial\phi}{\partial t}\right)^{2}
+-
+\frac{\kappa}{2}
+|\nabla\phi|^{2}
+-
+V(\phi)
++
+J\phi
+}.
+\]
+
+The four terms have distinct roles.
+
+\begin{enumerate}
+    \item The time-derivative term describes local inertia or kinetic behaviour.
+    \item The gradient term penalizes spatial variation and couples neighbouring points.
+    \item The potential term determines local restoring forces or self-interactions.
+    \item The source term describes an externally prescribed influence on the field.
+\end{enumerate}
+
+The signs are part of the model. They are chosen so that the associated energy has the expected positive kinetic and gradient contributions. The physical dimensions of \(\rho\), \(\kappa\), \(V\), and \(J\) depend on the dimensions assigned to \(\phi\).
+
+\subsection{Example: the vibrating string}
+
+For a string with transverse displacement \(u(x,t)\), mass density per unit length \(\mu\), and tension \(T\), the Lagrangian density per unit length is
+
+\[
+\boxed{
+\mathcal{L}
+=
+\frac{\mu}{2}
+\left(\frac{\partial u}{\partial t}\right)^{2}
+-
+\frac{T}{2}
+\left(\frac{\partial u}{\partial x}\right)^{2}
+}.
+\]
+
+The first term is the kinetic-energy density of the string. The second is minus the elastic-energy density associated with the local slope.
+
+The Lagrangian at time \(t\) is
+
+\[
+L(t)
+=
+\int_{0}^{L}
+\left[
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
+\right]
+\,\mathrm{d}x,
+\]
+
+where
+
+\[
+u_{t}=\frac{\partial u}{\partial t},
+\qquad
+u_{x}=\frac{\partial u}{\partial x}.
+\]
+
+The field action is
+
+\[
+S[u]
+=
+\int_{t_{1}}^{t_{2}}
+\int_{0}^{L}
+\left[
+\frac{\mu}{2}u_{t}^{2}
+-
+\frac{T}{2}u_{x}^{2}
+\right]
+\,\mathrm{d}x\,\mathrm{d}t.
+\]
+
+Later in this chapter, varying this action will produce the wave equation.
+
+\subsection{The action as a functional}
+
+A field action maps a complete field history to one number:
+
+\[
+\phi(x)
+\longmapsto
+S[\phi].
+\]
+
+Two fields may agree at one point and still have different actions because they differ elsewhere. They may also have the same field values but different derivatives, producing different values of the gradient or kinetic terms.
+
+The field action therefore depends on the shape of the field throughout \(\Omega\). The physical field is selected by a stationarity condition,
+
+\[
+\delta S=0,
+\]
+
+for every allowed infinitesimal field variation satisfying the specified boundary conditions.
+
+As in mechanics, stationary does not necessarily mean globally minimal. It means that the first-order change of the action vanishes.
+
+\subsection{Adding a spacetime divergence}
+
+Suppose the Lagrangian density is changed by a total divergence:
+
+\[
+\mathcal{L}'
+=
+\mathcal{L}
++
+\partial_{\mu}K^{\mu}.
+\]
+
+The actions differ by
+
+\[
+S'-S
+=
+\int_{\Omega}
+\partial_{\mu}K^{\mu}
+\,\mathrm{d}^{4}x.
+\]
+
+By the divergence theorem, this becomes a boundary integral over \(\partial\Omega\). Under boundary conditions that keep this surface contribution fixed, \(\mathcal{L}\) and \(\mathcal{L}'\) produce the same interior field equations.
+
+This is the field-theoretic analogue of adding a total time derivative to a mechanical Lagrangian.
+
+\subsection{Particle mechanics and field theory compared}
+
+The basic correspondence is
+
+\[
+q^{i}(t)
+\quad\longrightarrow\quad
+\phi^{a}(\mathbf{x},t),
+\]
+
+\[
+L(q,\dot q,t)
+\quad\longrightarrow\quad
+\mathcal{L}(\phi,\partial_{\mu}\phi,x),
+\]
+
+and
+
+\[
+\int\mathrm{d}t
+\quad\longrightarrow\quad
+\int\mathrm{d}^{4}x.
+\]
+
+The ordinary derivative of a generalized coordinate becomes a collection of spacetime derivatives. The endpoint conditions of mechanics become boundary conditions on the spacetime region.
+
+The conceptual logic remains unchanged:
+
+\begin{enumerate}
+    \item choose a candidate history;
+    \item evaluate its action;
+    \item compare it with nearby admissible histories;
+    \item require the first-order change to vanish.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Several distinctions should be maintained.
+
+\begin{enumerate}
+    \item The Lagrangian density \(\mathcal{L}\) is not the same object as the spatially integrated Lagrangian \(L(t)\).
+    \item The action is a functional of the complete field, not an ordinary function of one field value.
+    \item A local theory may contain derivatives without being nonlocal; derivatives encode behaviour in an arbitrarily small neighbourhood.
+    \item The dimensions of \(\mathcal{L}\) depend on the integration measure.
+    \item A total divergence affects the boundary contribution even when it does not change the interior equations.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A field theory replaces finitely many generalized coordinates by one or more functions defined throughout space and time. Its action is
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}(\phi,\partial_{\mu}\phi,x)
+\,\mathrm{d}^{4}x.
+\]
+
+The Lagrangian density contains local kinetic, gradient, potential, and source contributions. Spatial integration produces the mechanical Lagrangian at each time, and time integration produces the action.
+
+The next section constructs a family of neighbouring fields and defines the first variation of the field action.
