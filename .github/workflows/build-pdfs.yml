@@ -119,11 +119,11 @@ jobs:
 
             for project in "${projects[@]}"; do
               echo "::group::Building ${project}"
-              if [[ ! -x "${project}/build.sh" ]]; then
-                echo "Missing executable build script: ${project}/build.sh" >&2
+              if [[ ! -f "${project}/build.sh" ]]; then
+                echo "Missing build script: ${project}/build.sh" >&2
                 exit 1
               fi
-              "${project}/build.sh"
+              bash "${project}/build.sh"
               pdf="${project}/main.pdf"
               if [[ ! -s "${pdf}" ]]; then
                 echo "Expected PDF was not generated or is empty: ${pdf}" >&2
