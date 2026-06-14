@@ -1,1 +1,722 @@
 \section{Four-Vectors and Covectors}
+\label{sec:four_vectors_and_covectors}
+
+A relativistic law should retain its form when one inertial observer is replaced by another. This requirement is easiest to express using objects with known Lorentz-transformation rules.
+
+Four-vectors generalize ordinary spatial vectors to Minkowski spacetime. Covectors are the corresponding dual objects. The metric connects the two, and their contraction produces Lorentz scalars.
+
+\subsection{Contravariant four-vectors}
+
+A contravariant four-vector is an ordered set of four components
+
+\[
+A^{\mu}
+=
+(A^{0},A^{1},A^{2},A^{3})
+\]
+
+that transforms under a Lorentz transformation according to
+
+\[
+\boxed{
+A'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}A^{\nu}
+}.
+\]
+
+The superscript is not an exponent. It identifies the component and indicates the transformation type.
+
+A collection of four numbers is not automatically a four-vector. The defining condition is the transformation law. Four quantities assembled into one column become a four-vector only if they transform together through the Lorentz matrix.
+
+\subsection{Examples of contravariant four-vectors}
+
+Important examples include:
+
+\begin{itemize}
+    \item the position four-vector
+    \[
+    x^{\mu}=(ct,\mathbf{x});
+    \]
+
+    \item the displacement four-vector
+    \[
+    \Delta x^{\mu}=x_{2}^{\mu}-x_{1}^{\mu};
+    \]
+
+    \item the four-velocity
+    \[
+    U^{\mu}=\frac{\mathrm{d}x^{\mu}}{\mathrm{d}\tau};
+    \]
+
+    \item the four-momentum
+    \[
+    p^{\mu}=mU^{\mu};
+    \]
+
+    \item a four-current
+    \[
+    J^{\mu};
+    \]
+
+    \item the electromagnetic four-potential
+    \[
+    A^{\mu}.
+    \]
+\end{itemize}
+
+The last two examples will be developed in later chapters.
+
+\subsection{Covectors}
+
+A covector has components
+
+\[
+A_{\mu}
+=
+(A_{0},A_{1},A_{2},A_{3})
+\]
+
+and transforms with the inverse Lorentz transformation:
+
+\[
+\boxed{
+A'_{\mu}
+=
+(\Lambda^{-1})^{\nu}{}_{\mu}A_{\nu}
+}.
+\]
+
+Covectors are linear maps from vectors to scalars. Given a vector \(V^{\mu}\), the covector \(A_{\mu}\) produces the contraction
+
+\[
+A_{\mu}V^{\mu}.
+\]
+
+This quantity is invariant under Lorentz transformations.
+
+In Euclidean Cartesian coordinates, vectors and covectors often have the same numerical components, so their distinction can remain hidden. In Minkowski spacetime, lowering a spatial index changes its sign, making the distinction immediately visible.
+
+\subsection{Lowering an index}
+
+The Minkowski metric converts a contravariant vector into a covector:
+
+\[
+\boxed{
+A_{\mu}
+=
+\eta_{\mu\nu}A^{\nu}
+}.
+\]
+
+For
+
+\[
+A^{\mu}
+=
+(A^{0},A^{1},A^{2},A^{3}),
+\]
+
+and
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1),
+\]
+
+we obtain
+
+\[
+\boxed{
+A_{\mu}
+=
+(A^{0},-A^{1},-A^{2},-A^{3})
+}.
+\]
+
+Thus
+
+\[
+A_{0}=A^{0},
+\qquad
+A_{i}=-A^{i}
+\]
+
+for spatial indices \(i=1,2,3\).
+
+\subsection{Raising an index}
+
+The inverse metric raises a covariant index:
+
+\[
+\boxed{
+A^{\mu}
+=
+\eta^{\mu\nu}A_{\nu}
+}.
+\]
+
+Since
+
+\[
+\eta^{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1),
+\]
+
+raising a spatial index changes its sign again:
+
+\[
+A^{0}=A_{0},
+\qquad
+A^{i}=-A_{i}.
+\]
+
+Applying lowering followed by raising returns the original vector:
+
+\[
+\eta^{\mu\alpha}\eta_{\alpha\nu}A^{\nu}
+=
+\delta^{\mu}{}_{\nu}A^{\nu}
+=
+A^{\mu}.
+\]
+
+\subsection{The Minkowski scalar product}
+
+The scalar product of four-vectors \(A^{\mu}\) and \(B^{\mu}\) is
+
+\[
+\boxed{
+A\cdot B
+=
+\eta_{\mu\nu}A^{\mu}B^{\nu}
+=
+A_{\mu}B^{\mu}
+}.
+\]
+
+Expanding the components,
+
+\[
+\boxed{
+A\cdot B
+=
+A^{0}B^{0}
+-
+A^{1}B^{1}
+-
+A^{2}B^{2}
+-
+A^{3}B^{3}
+}.
+\]
+
+Using spatial vector notation,
+
+\[
+A\cdot B
+=
+A^{0}B^{0}
+-
+\mathbf{A}\cdot\mathbf{B}.
+\]
+
+The contraction is a Lorentz scalar. Its numerical value is the same in every inertial frame.
+
+\subsection{The norm of a four-vector}
+
+The squared norm is
+
+\[
+\boxed{
+A^{2}
+:=
+A\cdot A
+=
+A_{\mu}A^{\mu}
+}.
+\]
+
+Explicitly,
+
+\[
+A^{2}
+=
+(A^{0})^{2}
+-
+|\mathbf{A}|^{2}.
+\]
+
+Unlike a Euclidean norm, this quantity can be positive, zero, or negative.
+
+A four-vector is called
+
+\begin{itemize}
+    \item timelike if \(A^{2}>0\);
+    \item null if \(A^{2}=0\);
+    \item spacelike if \(A^{2}<0\).
+\end{itemize}
+
+For the displacement four-vector, this classification reproduces the causal classification of spacetime separations.
+
+\subsection{Worked example: lowering a vector index}
+
+Let
+
+\[
+A^{\mu}=(5,2,-1,3).
+\]
+
+Then
+
+\[
+A_{\mu}
+=
+\eta_{\mu\nu}A^{\nu}
+=
+(5,-2,1,-3).
+\]
+
+The squared norm is
+
+\[
+\begin{aligned}
+A_{\mu}A^{\mu}
+&=
+5(5)
++(-2)(2)
++(1)(-1)
++(-3)(3)\\
+&=
+25-4-1-9\\
+&=
+11.
+\end{aligned}
+\]
+
+Equivalently,
+
+\[
+A^{2}
+=
+5^{2}-2^{2}-(-1)^{2}-3^{2}
+=11.
+\]
+
+Since
+
+\[
+A^{2}>0,
+\]
+
+the vector is timelike.
+
+\subsection{Worked example: scalar product}
+
+Let
+
+\[
+A^{\mu}=(4,1,2,0),
+\qquad
+B^{\mu}=(3,-2,1,5).
+\]
+
+Then
+
+\[
+\begin{aligned}
+A\cdot B
+&=
+A^{0}B^{0}
+-A^{1}B^{1}
+-A^{2}B^{2}
+-A^{3}B^{3}\\
+&=
+4(3)-1(-2)-2(1)-0(5)\\
+&=
+12+2-2\\
+&=
+12.
+\end{aligned}
+\]
+
+Using the lowered vector
+
+\[
+A_{\mu}=(4,-1,-2,0),
+\]
+
+we obtain the same result:
+
+\[
+A_{\mu}B^{\mu}
+=
+4(3)+(-1)(-2)+(-2)(1)+0(5)
+=12.
+\]
+
+\subsection{The position four-vector}
+
+The position four-vector is
+
+\[
+\boxed{
+x^{\mu}=(ct,\mathbf{x})
+}.
+\]
+
+Its covariant components are
+
+\[
+\boxed{
+x_{\mu}=(ct,-\mathbf{x})
+}.
+\]
+
+The contraction
+
+\[
+x_{\mu}x^{\mu}
+=
+c^{2}t^{2}-|\mathbf{x}|^{2}
+\]
+
+is the squared interval from the coordinate origin to the event.
+
+The coordinate origin itself has no physical privilege. Translating the origin changes \(x^{\mu}\), but differences
+
+\[
+\Delta x^{\mu}
+\]
+
+between events transform as four-vectors and carry direct geometric meaning.
+
+\subsection{The four-velocity}
+
+For a massive particle, the four-velocity is defined using proper time:
+
+\[
+\boxed{
+U^{\mu}
+=
+\frac{\mathrm{d}x^{\mu}}{\mathrm{d}\tau}
+}.
+\]
+
+Since
+
+\[
+\frac{\mathrm{d}t}{\mathrm{d}\tau}
+=
+\gamma,
+\]
+
+we obtain
+
+\[
+\begin{aligned}
+U^{0}
+&=
+\frac{\mathrm{d}(ct)}{\mathrm{d}\tau}
+=
+\gamma c,\\
+\mathbf{U}
+&=
+\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}\tau}
+=
+\gamma\frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t}
+=
+\gamma\mathbf{v}.
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+U^{\mu}
+=
+\gamma(c,\mathbf{v})
+}.
+\]
+
+The four-velocity is not simply \((c,\mathbf{v})\). The factor \(\gamma\) is required for the object to transform as a four-vector.
+
+\subsection{Normalization of the four-velocity}
+
+The squared norm is
+
+\[
+\begin{aligned}
+U_{\mu}U^{\mu}
+&=
+\gamma^{2}
+(c^{2}-v^{2})\\
+&=
+\gamma^{2}c^{2}
+\left(1-
+\frac{v^{2}}{c^{2}}
+\right)\\
+&=
+c^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+U_{\mu}U^{\mu}=c^{2}
+}.
+\]
+
+Every massive particle has the same four-velocity norm, even though different observers assign different three-velocities to it.
+
+This provides an important structural check. Any proposed formula for a four-velocity should satisfy this normalization.
+
+\subsection{The four-momentum}
+
+For a particle of invariant mass \(m\), define
+
+\[
+\boxed{
+p^{\mu}=mU^{\mu}
+}.
+\]
+
+Using the four-velocity components,
+
+\[
+p^{\mu}
+=
+(\gamma mc,\gamma m\mathbf{v}).
+\]
+
+The relativistic three-momentum is
+
+\[
+\mathbf{p}
+=
+\gamma m\mathbf{v},
+\]
+
+and the relativistic energy is
+
+\[
+E
+=
+\gamma mc^{2}.
+\]
+
+Therefore
+
+\[
+\boxed{
+p^{\mu}
+=
+\left(
+\frac{E}{c},
+\mathbf{p}
+\right)
+}.
+\]
+
+Lowering the index gives
+
+\[
+\boxed{
+p_{\mu}
+=
+\left(
+\frac{E}{c},
+-\mathbf{p}
+\right)
+}.
+\]
+
+\subsection{Norm of the four-momentum}
+
+Since
+
+\[
+p^{\mu}=mU^{\mu},
+\]
+
+we have
+
+\[
+\begin{aligned}
+p_{\mu}p^{\mu}
+&=
+m^{2}U_{\mu}U^{\mu}\\
+&=
+m^{2}c^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+p_{\mu}p^{\mu}=m^{2}c^{2}
+}.
+\]
+
+Using
+
+\[
+p^{\mu}=\left(E/c,\mathbf{p}\right),
+\]
+
+this becomes
+
+\[
+\frac{E^{2}}{c^{2}}
+-|
+\mathbf{p}|^{2}
+=
+m^{2}c^{2}.
+\]
+
+Multiplying by \(c^{2}\),
+
+\[
+\boxed{
+E^{2}
+=
+|
+\mathbf{p}|^{2}c^{2}
++
+m^{2}c^{4}
+}.
+\]
+
+This relation will be revisited in the section on relativistic invariants.
+
+\subsection{Massless four-momentum}
+
+For a massless particle,
+
+\[
+m=0,
+\]
+
+so
+
+\[
+p_{\mu}p^{\mu}=0.
+\]
+
+The energy-momentum relation reduces to
+
+\[
+E^{2}=|
+\mathbf{p}|^{2}c^{2},
+\]
+
+or, for positive energy,
+
+\[
+\boxed{
+E=c|
+\mathbf{p}|
+}.
+\]
+
+A massless particle has null four-momentum. Its four-momentum is well defined even though proper time and four-velocity are not defined along a null worldline in the same way as for a massive particle.
+
+\subsection{Basis-vector interpretation}
+
+A four-vector is a geometric object independent of coordinates. In a basis \(\{\mathbf{e}_{\mu}\}\), it may be written as
+
+\[
+\mathbf{A}
+=
+A^{\mu}\mathbf{e}_{\mu}.
+\]
+
+When the inertial frame changes, both the components and the basis change in compensating ways, leaving the geometric vector unchanged.
+
+A covector belongs to the dual basis \(\{\boldsymbol{\theta}^{\mu}\}\):
+
+\[
+\boldsymbol{\alpha}
+=
+\alpha_{\mu}\boldsymbol{\theta}^{\mu}.
+\]
+
+The dual pairing satisfies
+
+\[
+\boldsymbol{\theta}^{\mu}(\mathbf{e}_{\nu})
+=
+\delta^{\mu}{}_{\nu}.
+\]
+
+This geometric viewpoint explains why upper and lower indices transform differently.
+
+\subsection{Structural checks}
+
+A proposed four-vector calculation should satisfy:
+
+\begin{enumerate}
+    \item the object has four components;
+    \item its components transform with the Lorentz matrix;
+    \item lowering or raising an index uses the metric exactly once;
+    \item scalar products contain one upper and one lower occurrence of the contracted index;
+    \item the norm has the correct sign for its causal type;
+    \item the four-velocity satisfies \(U^{2}=c^{2}\);
+    \item the four-momentum satisfies \(p^{2}=m^{2}c^{2}\).
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item treating the index as an exponent;
+    \item assuming that every list of four numbers is a four-vector;
+    \item lowering an index without changing the spatial signs;
+    \item using the Euclidean scalar product instead of the Minkowski scalar product;
+    \item writing \(U^{\mu}=(c,\mathbf{v})\) and omitting \(\gamma\);
+    \item confusing the invariant mass \(m\) with the frame-dependent energy \(E\);
+    \item defining a four-velocity for a light ray using proper time, even though \(\mathrm{d}\tau=0\) on a null worldline.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A contravariant four-vector transforms as
+
+\[
+A'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}A^{\nu},
+\]
+
+while the metric produces the corresponding covector
+
+\[
+A_{\mu}
+=
+\eta_{\mu\nu}A^{\nu}.
+\]
+
+Their contraction defines the Lorentz-invariant scalar product. The position, four-velocity, and four-momentum are central examples:
+
+\[
+x^{\mu}=(ct,\mathbf{x}),
+\]
+
+\[
+U^{\mu}=\gamma(c,\mathbf{v}),
+\]
+
+and
+
+\[
+p^{\mu}=(E/c,\mathbf{p}).
+\]
+
+The next section develops the index notation needed to manipulate these objects reliably, including free indices, dummy indices, contractions, and tensor equations.
