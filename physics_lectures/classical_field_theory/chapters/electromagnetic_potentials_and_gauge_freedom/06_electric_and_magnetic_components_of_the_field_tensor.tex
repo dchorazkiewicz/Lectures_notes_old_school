@@ -1,1 +1,584 @@
 \section{Electric and Magnetic Components of the Field Tensor}
+\label{sec:electric_magnetic_tensor_components}
+
+The six independent components of the antisymmetric tensor \(F_{\mu\nu}\) are the three electric-field components and the three magnetic-field components. Because signs depend on index position and metric convention, the identification must be derived rather than memorized in isolation.
+
+\subsection{Conventions}
+
+We use
+
+\[
+A^{\mu}
+=
+\left(
+\frac{\Phi}{c},
+A_x,
+A_y,
+A_z
+\right),
+\]
+
+\[
+A_{\mu}
+=
+\left(
+\frac{\Phi}{c},
+-A_x,
+-A_y,
+-A_z
+\right),
+\]
+
+and
+
+\[
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\partial_t,
+\partial_x,
+\partial_y,
+\partial_z
+\right).
+\]
+
+The field tensor is
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+\subsection{Time-space components}
+
+For a spatial index \(i\),
+
+\[
+\begin{aligned}
+F_{0i}
+&=
+\partial_0A_i
+-
+\partial_iA_0\\
+&=
+\frac{1}{c}
+\frac{\partial}{\partial t}
+(-A_i)
+-
+\partial_i
+\left(
+\frac{\Phi}{c}
+\right)\\
+&=
+-
+\frac{1}{c}
+\left(
+\frac{\partial A_i}{\partial t}
++
+\partial_i\Phi
+\right).
+\end{aligned}
+\]
+
+Since
+
+\[
+E_i
+=
+-
+\partial_i\Phi
+-
+\frac{\partial A_i}{\partial t},
+\]
+
+we obtain
+
+\[
+\boxed{
+F_{0i}
+=
+\frac{E_i}{c}
+}.
+\]
+
+By antisymmetry,
+
+\[
+\boxed{
+F_{i0}
+=
+-
+\frac{E_i}{c}
+}.
+\]
+
+Raising both indices changes the sign of a time-space component:
+
+\[
+\boxed{
+F^{0i}
+=
+-
+\frac{E_i}{c}
+},
+\qquad
+\boxed{
+F^{i0}
+=
+rac{E_i}{c}
+}.
+\]
+
+\subsection{Purely spatial components}
+
+For spatial indices \(i,j\),
+
+\[
+\begin{aligned}
+F_{ij}
+&=
+\partial_iA_j
+-
+\partial_jA_i\\
+&=
+-
+\partial_iA_j^{\mathrm{(3D)}}
++
+\partial_jA_i^{\mathrm{(3D)}}.
+\end{aligned}
+\]
+
+Using
+
+\[
+B_k
+=
+\epsilon_{kij}
+\partial_iA_j^{\mathrm{(3D)}},
+\]
+
+we find
+
+\[
+\boxed{
+F_{ij}
+=
+-\epsilon_{ijk}B_k
+}.
+\]
+
+Raising two spatial indices produces two minus signs, so
+
+\[
+\boxed{
+F^{ij}=F_{ij}
+=
+-\epsilon_{ijk}B_k
+}.
+\]
+
+Explicitly,
+
+\[
+F_{12}=-B_z,
+\qquad
+F_{23}=-B_x,
+\qquad
+F_{31}=-B_y.
+\]
+
+\subsection{Matrix with lowered indices}
+
+The complete covariant matrix is
+
+\[
+\boxed{
+F_{\mu\nu}
+=
+\begin{pmatrix}
+0 & E_x/c & E_y/c & E_z/c\\
+-E_x/c & 0 & -B_z & B_y\\
+-E_y/c & B_z & 0 & -B_x\\
+-E_z/c & -B_y & B_x & 0
+\end{pmatrix}
+}.
+\]
+
+The matrix is manifestly antisymmetric.
+
+\subsection{Matrix with raised indices}
+
+Raising both indices gives
+
+\[
+\boxed{
+F^{\mu\nu}
+=
+\begin{pmatrix}
+0 & -E_x/c & -E_y/c & -E_z/c\\
+E_x/c & 0 & -B_z & B_y\\
+E_y/c & B_z & 0 & -B_x\\
+E_z/c & -B_y & B_x & 0
+\end{pmatrix}
+}.
+\]
+
+Only the time-space entries change sign when both indices are raised.
+
+\subsection{Recovering the fields from the tensor}
+
+The electric field is extracted using
+
+\[
+\boxed{
+E_i
+=
+cF_{0i}
+=
+-cF^{0i}
+}.
+\]
+
+The magnetic field is extracted using
+
+\[
+\boxed{
+B_i
+=
+-
+\frac{1}{2}
+\epsilon_{ijk}F_{jk}
+}.
+\]
+
+To verify the second formula, substitute
+
+\[
+F_{jk}
+=
+-\epsilon_{jkl}B_l.
+\]
+
+Then
+
+\[
+-
+\frac{1}{2}
+\epsilon_{ijk}F_{jk}
+=
+\frac{1}{2}
+\epsilon_{ijk}
+\epsilon_{jkl}B_l
+=
+B_i.
+\]
+
+\subsection{The dual tensor in components}
+
+With
+
+\[
+\widetilde{F}^{\mu\nu}
+=
+\frac{1}{2}
+\epsilon^{\mu\nu\rho\sigma}
+F_{\rho\sigma}
+\]
+
+and
+
+\[
+\epsilon^{0123}=+1,
+\]
+
+the contravariant dual tensor is
+
+\[
+\boxed{
+\widetilde{F}^{\mu\nu}
+=
+\begin{pmatrix}
+0 & -B_x & -B_y & -B_z\\
+B_x & 0 & E_z/c & -E_y/c\\
+B_y & -E_z/c & 0 & E_x/c\\
+B_z & E_y/c & -E_x/c & 0
+\end{pmatrix}
+}.
+\]
+
+The dual operation exchanges the electric and magnetic sectors, together with the signs and factors of \(c\) required by the chosen units and orientation.
+
+\subsection{Example: purely electric field}
+
+Let
+
+\[
+\mathbf{E}
+=
+E_0\mathbf{e}_x,
+\qquad
+\mathbf{B}=0.
+\]
+
+Then
+
+\[
+F^{\mu\nu}
+=
+\begin{pmatrix}
+0 & -E_0/c & 0 & 0\\
+E_0/c & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+\]
+
+Only the \(0\)-\(1\) spacetime plane is involved.
+
+\subsection{Example: purely magnetic field}
+
+Let
+
+\[
+\mathbf{B}
+=
+B_0\mathbf{e}_z,
+\qquad
+\mathbf{E}=0.
+\]
+
+Then
+
+\[
+F^{\mu\nu}
+=
+\begin{pmatrix}
+0 & 0 & 0 & 0\\
+0 & 0 & -B_0 & 0\\
+0 & B_0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+\]
+
+The magnetic field occupies the spatial \(x\)-\(y\) plane perpendicular to \(\mathbf{B}\).
+
+\subsection{Lorentz mixing of electric and magnetic fields}
+
+For a boost with velocity
+
+\[
+\mathbf{v}
+=
+v\mathbf{e}_x,
+\]
+
+the tensor transformation law gives
+
+\[
+\boxed{
+E'_x=E_x
+},
+\]
+
+\[
+\boxed{
+E'_y
+=
+\gamma
+\left(
+E_y-vB_z
+\right)
+},
+\]
+
+\[
+\boxed{
+E'_z
+=
+\gamma
+\left(
+E_z+vB_y
+\right)
+}.
+\]
+
+The magnetic components transform as
+
+\[
+\boxed{
+B'_x=B_x
+},
+\]
+
+\[
+\boxed{
+B'_y
+=
+\gamma
+\left(
+B_y+
+\frac{v}{c^2}E_z
+\right)
+},
+\]
+
+\[
+\boxed{
+B'_z
+=
+\gamma
+\left(
+B_z-
+\frac{v}{c^2}E_y
+\right)
+}.
+\]
+
+The components parallel to the boost remain unchanged, while transverse electric and magnetic components mix.
+
+\subsection{Vector form of the boost transformation}
+
+Separate each field into components parallel and perpendicular to \(\mathbf{v}\). Then
+
+\[
+\boxed{
+\mathbf{E}'_{\parallel}
+=
+\mathbf{E}_{\parallel}
+},
+\]
+
+\[
+\boxed{
+\mathbf{B}'_{\parallel}
+=
+\mathbf{B}_{\parallel}
+},
+\]
+
+\[
+\boxed{
+\mathbf{E}'_{\perp}
+=
+\gamma
+\left(
+\mathbf{E}_{\perp}
++
+\mathbf{v}\times\mathbf{B}
+\right)
+},
+\]
+
+and
+
+\[
+\boxed{
+\mathbf{B}'_{\perp}
+=
+\gamma
+\left(
+\mathbf{B}_{\perp}
+-
+\frac{1}{c^2}
+\mathbf{v}\times\mathbf{E}
+\right)
+}.
+\]
+
+These relations show directly that the division into electric and magnetic fields depends on the observer, while the tensor \(F_{\mu\nu}\) is the frame-independent geometric object.
+
+\subsection{Nonrelativistic limits}
+
+When
+
+\[
+v\ll c,
+\]
+
+we have
+
+\[
+\gamma\approx1.
+\]
+
+To first order in \(v/c\),
+
+\[
+\mathbf{E}'
+\approx
+\mathbf{E}
++
+\mathbf{v}\times\mathbf{B},
+\]
+
+and
+
+\[
+\mathbf{B}'
+\approx
+\mathbf{B}
+-
+\frac{1}{c^2}
+\mathbf{v}\times\mathbf{E}.
+\]
+
+The electric correction \(\mathbf{v}\times\mathbf{B}\) is familiar from the magnetic part of the Lorentz force under a change of frame.
+
+\subsection{Index-position diagnostic}
+
+With the conventions of this chapter,
+
+\[
+F_{0i}
+=
+\frac{E_i}{c},
+\]
+
+but
+
+\[
+F^{0i}
+=
+-
+\frac{E_i}{c}.
+\]
+
+By contrast,
+
+\[
+F_{ij}=F^{ij}.
+\]
+
+Whenever a sign appears inconsistent, the first diagnostic step is to check whether the indices are raised or lowered and which metric signature is being used.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using the same matrix for \(F_{\mu\nu}\) and \(F^{\mu\nu}\);
+    \item forgetting the factor \(1/c\) in the electric components;
+    \item assigning \(F_{12}=+B_z\) with the conventions used here;
+    \item treating \(\mathbf{E}\) and \(\mathbf{B}\) as independently transforming three-vectors under Lorentz boosts;
+    \item losing the antisymmetry when writing the matrix;
+    \item applying formulas from a different metric convention without translating the signs.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The electromagnetic tensor contains the fields according to
+
+\[
+F_{0i}
+=
+\frac{E_i}{c},
+\qquad
+F_{ij}
+=
+-\epsilon_{ijk}B_k.
+\]
+
+The explicit matrices display all signs and factors of \(c\). Lorentz boosts mix transverse electric and magnetic components, confirming that \(F_{\mu\nu}\), rather than \(\mathbf{E}\) or \(\mathbf{B}\) separately, is the fundamental relativistic field. The next section constructs scalar invariants from this tensor.
