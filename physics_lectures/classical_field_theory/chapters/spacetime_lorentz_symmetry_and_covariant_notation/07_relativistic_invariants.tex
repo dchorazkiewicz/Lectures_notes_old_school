@@ -1,1 +1,670 @@
 \section{Relativistic Invariants}
+\label{sec:relativistic_invariants}
+
+The components of a four-vector depend on the inertial frame, but certain combinations of components do not. These frame-independent quantities are Lorentz invariants. They encode physical information that every inertial observer agrees upon.
+
+The most common invariants are obtained by complete contraction of tensor indices. This section develops a practical method for identifying them and applies it to spacetime separation, four-velocity, four-momentum, plane-wave phase, and systems of particles.
+
+\subsection{Lorentz scalars}
+
+A Lorentz scalar \(S\) has the same value in every inertial frame:
+
+\[
+\boxed{
+S'=S
+}.
+\]
+
+A scalar may be a fundamental scalar field,
+
+\[
+\phi'(x')=\phi(x),
+\]
+
+or it may be constructed by contracting tensor indices.
+
+Examples include
+
+\[
+A_{\mu}B^{\mu},
+\]
+
+\[
+T^{\mu}{}_{\mu},
+\]
+
+and
+
+\[
+F_{\mu\nu}F^{\mu\nu}.
+\]
+
+A formula containing no free indices is a candidate scalar, but the objects being contracted must themselves transform tensorially.
+
+\subsection{The invariant interval}
+
+The displacement between two events is
+
+\[
+\Delta x^{\mu}
+=
+(c\Delta t,\Delta\mathbf{x}).
+\]
+
+Its squared norm is
+
+\[
+\boxed{
+\Delta x_{\mu}\Delta x^{\mu}
+=
+\Delta s^{2}
+=
+c^{2}(\Delta t)^{2}
+-
+|\Delta\mathbf{x}|^{2}
+}.
+\]
+
+Although \(\Delta t\) and \(\Delta\mathbf{x}\) change under a boost, their Minkowski combination does not.
+
+The sign of the interval is therefore invariant. All inertial observers agree whether two events are timelike, null, or spacelike separated.
+
+\subsection{Invariant causal order}
+
+For timelike-separated events, there exists a rest frame in which the events occur at the same spatial position. Their order in time cannot be reversed by a proper orthochronous Lorentz transformation.
+
+For spacelike-separated events, different inertial observers may disagree about which event occurred first. This does not violate causality because no subluminal signal can connect the events.
+
+Thus the invariant interval separates physically meaningful causal ordering from frame-dependent coordinate ordering.
+
+\subsection{Four-velocity norm}
+
+For a massive particle,
+
+\[
+U^{\mu}
+=
+\gamma(c,\mathbf{v}).
+\]
+
+Its invariant norm is
+
+\[
+\boxed{
+U_{\mu}U^{\mu}=c^{2}
+}.
+\]
+
+Expanding,
+
+\[
+\begin{aligned}
+U_{\mu}U^{\mu}
+&=
+\gamma^{2}(c^{2}-v^{2})\\
+&=
+c^{2}.
+\end{aligned}
+\]
+
+The three-velocity is frame dependent, while the four-velocity norm is not.
+
+\subsection{Four-momentum and invariant mass}
+
+The four-momentum is
+
+\[
+p^{\mu}
+=
+\left(
+\frac{E}{c},
+\mathbf{p}
+\right).
+\]
+
+Its squared norm is
+
+\[
+\begin{aligned}
+p_{\mu}p^{\mu}
+&=
+\frac{E^{2}}{c^{2}}
+-
+|\mathbf{p}|^{2}.
+\end{aligned}
+\]
+
+For a particle of invariant mass \(m\),
+
+\[
+\boxed{
+p_{\mu}p^{\mu}=m^{2}c^{2}
+}.
+\]
+
+Therefore
+
+\[
+\boxed{
+E^{2}
+=
+|\mathbf{p}|^{2}c^{2}
++
+m^{2}c^{4}
+}.
+\]
+
+Energy and three-momentum change under a boost, but the combination on the left side of
+
+\[
+\frac{E^{2}}{c^{2}}-|\mathbf{p}|^{2}
+=
+m^{2}c^{2}
+\]
+
+is invariant.
+
+\subsection{Rest energy}
+
+In the particle's rest frame,
+
+\[
+\mathbf{p}=0.
+\]
+
+The energy-momentum relation gives
+
+\[
+E^{2}=m^{2}c^{4}.
+\]
+
+For positive energy,
+
+\[
+\boxed{
+E_{0}=mc^{2}
+}.
+\]
+
+This is the rest energy. It is not the total energy in every frame; rather, it is the energy measured in the frame where the particle's spatial momentum vanishes.
+
+\subsection{Massless particles}
+
+For a massless particle,
+
+\[
+m=0.
+\]
+
+Hence
+
+\[
+\boxed{
+p_{\mu}p^{\mu}=0
+}.
+\]
+
+The energy-momentum relation becomes
+
+\[
+\boxed{
+E=c|\mathbf{p}|
+}.
+\]
+
+The four-momentum is null. Its individual energy and momentum components remain frame dependent.
+
+\subsection{Worked example: recovering the mass}
+
+A particle has energy
+
+\[
+E=5.0\,\mathrm{GeV}
+\]
+
+and momentum magnitude
+
+\[
+|\mathbf{p}|=4.0\,\mathrm{GeV}/c.
+\]
+
+Using
+
+\[
+m^{2}c^{4}
+=
+E^{2}-|\mathbf{p}|^{2}c^{2},
+\]
+
+we obtain
+
+\[
+\begin{aligned}
+m^{2}c^{4}
+&=
+(5.0\,\mathrm{GeV})^{2}
+-
+(4.0\,\mathrm{GeV})^{2}\\
+&=
+25\,\mathrm{GeV}^{2}
+-
+16\,\mathrm{GeV}^{2}\\
+&=
+9\,\mathrm{GeV}^{2}.
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+mc^{2}=3.0\,\mathrm{GeV}
+}.
+\]
+
+Every inertial observer obtains the same invariant mass even though the measured values of \(E\) and \(\mathbf{p}\) differ.
+
+\subsection{Total four-momentum of a system}
+
+For several particles, define the total four-momentum
+
+\[
+\boxed{
+P^{\mu}
+=
+\sum_{a}p_{a}^{\mu}
+}.
+\]
+
+Because sums of four-vectors are four-vectors, \(P^{\mu}\) transforms covariantly.
+
+The invariant mass \(M\) of the complete system is defined by
+
+\[
+\boxed{
+P_{\mu}P^{\mu}=M^{2}c^{2}
+}.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+M^{2}c^{4}
+=
+E_{\mathrm{tot}}^{2}
+-
+|\mathbf{P}_{\mathrm{tot}}|^{2}c^{2}
+}.
+\]
+
+The system invariant mass is not generally the sum of the individual masses. It also includes kinetic and interaction energy measured in the center-of-momentum frame.
+
+\subsection{Worked example: two photons}
+
+Consider two photons with equal energy \(E\), moving in opposite directions along the \(x\)-axis. Their four-momenta are
+
+\[
+p_{1}^{\mu}
+=
+\left(
+\frac{E}{c},
+\frac{E}{c},0,0
+\right),
+\]
+
+and
+
+\[
+p_{2}^{\mu}
+=
+\left(
+\frac{E}{c},
+-\frac{E}{c},0,0
+\right).
+\]
+
+Each photon is massless:
+
+\[
+p_{1}^{2}=p_{2}^{2}=0.
+\]
+
+The total four-momentum is
+
+\[
+P^{\mu}
+=
+p_{1}^{\mu}+p_{2}^{\mu}
+=
+\left(
+\frac{2E}{c},0,0,0
+\right).
+\]
+
+Therefore
+
+\[
+P_{\mu}P^{\mu}
+=
+\frac{4E^{2}}{c^{2}}.
+\]
+
+The invariant mass of the two-photon system is
+
+\[
+\boxed{
+M
+=
+\frac{2E}{c^{2}}
+}.
+\]
+
+A system composed entirely of massless particles can have nonzero invariant mass when its total four-momentum is timelike.
+
+\subsection{Scalar products of four-momenta}
+
+For two particles,
+
+\[
+p_{1}\cdot p_{2}
+=
+p_{1\mu}p_{2}^{\mu}
+\]
+
+is invariant.
+
+Using
+
+\[
+(p_{1}+p_{2})^{2}
+=
+p_{1}^{2}+p_{2}^{2}+2p_{1}\cdot p_{2},
+\]
+
+one can relate the invariant mass of a system to pairwise scalar products.
+
+These combinations are central in collision and scattering kinematics because they can be evaluated in whichever frame makes the calculation simplest.
+
+\subsection{The center-of-momentum frame}
+
+If the total four-momentum is timelike, there exists a frame in which
+
+\[
+\mathbf{P}_{\mathrm{tot}}=0.
+\]
+
+This is the center-of-momentum frame. In that frame,
+
+\[
+P^{\mu}
+=
+(Mc,\mathbf{0}),
+\]
+
+and
+
+\[
+E_{\mathrm{tot}}=Mc^{2}.
+\]
+
+The invariant mass is therefore the total energy of the system in its center-of-momentum frame divided by \(c^{2}\).
+
+\subsection{Invariant plane-wave phase}
+
+Define the wave four-vector
+
+\[
+k^{\mu}
+=
+\left(
+\frac{\omega}{c},
+\mathbf{k}
+\right).
+\]
+
+The phase of a plane wave may be written as
+
+\[
+\boxed{
+k_{\mu}x^{\mu}
+=
+\omega t-
+\mathbf{k}\cdot\mathbf{x}
+}.
+\]
+
+Because this is a contraction of a covector and vector, it is invariant:
+
+\[
+k'_{\mu}x'^{\mu}
+=
+k_{\mu}x^{\mu}.
+\]
+
+Different observers measure different frequency and wave vector, but they agree on the phase assigned to a physical event.
+
+\subsection{Frequency and wave-vector transformation}
+
+Since \(k^{\mu}\) is a four-vector, a boost in the \(x\)-direction gives
+
+\[
+\boxed{
+\frac{\omega'}{c}
+=
+\gamma\left(
+\frac{\omega}{c}-\beta k_{x}
+\right)
+}
+\]
+
+and
+
+\[
+\boxed{
+k'_{x}
+=
+\gamma\left(
+k_{x}-\beta\frac{\omega}{c}
+\right)
+}.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+\omega'
+=
+\gamma(\omega-vk_{x})
+}.
+\]
+
+This is the relativistic origin of the Doppler effect.
+
+\subsection{Invariant wave-vector norm}
+
+The squared norm is
+
+\[
+k_{\mu}k^{\mu}
+=
+\frac{\omega^{2}}{c^{2}}
+-
+|\mathbf{k}|^{2}.
+\]
+
+For a massless wave satisfying
+
+\[
+\omega^{2}=c^{2}|\mathbf{k}|^{2},
+\]
+
+we have
+
+\[
+\boxed{
+k_{\mu}k^{\mu}=0
+}.
+\]
+
+For a massive relativistic field, the corresponding wave four-vector has a nonzero timelike norm related to the mass parameter.
+
+\subsection{Invariant derivative combinations}
+
+For a scalar field \(\phi\), the contraction
+
+\[
+\boxed{
+\partial_{\mu}\phi\,
+\partial^{\mu}\phi
+}
+\]
+
+is invariant.
+
+Expanding,
+
+\[
+\partial_{\mu}\phi\,
+\partial^{\mu}\phi
+=
+\frac{1}{c^{2}}
+\phi_{t}^{2}
+-
+|\nabla\phi|^{2}.
+\]
+
+This explains why the relativistic scalar-field Lagrangian uses the particular difference between time-derivative and spatial-gradient terms.
+
+Likewise,
+
+\[
+\boxed{
+\Box\phi
+=
+\partial_{\mu}\partial^{\mu}\phi
+}
+\]
+
+is a scalar if \(\phi\) is a scalar.
+
+\subsection{Invariant integration measure}
+
+For a proper Lorentz transformation,
+
+\[
+\det\Lambda=1.
+\]
+
+The Jacobian of the coordinate change therefore satisfies
+
+\[
+\mathrm{d}^{4}x'
+=
+|\det\Lambda|\,\mathrm{d}^{4}x
+=
+\mathrm{d}^{4}x.
+\]
+
+Thus
+
+\[
+\boxed{
+\mathrm{d}^{4}x
+}
+\]
+
+is invariant under proper Lorentz transformations.
+
+If the Lagrangian density \(\mathcal{L}\) is a Lorentz scalar, then the action
+
+\[
+S
+=
+\int\mathcal{L}\,\mathrm{d}^{4}x
+\]
+
+is Lorentz invariant.
+
+This provides the structural principle used to construct relativistic field theories.
+
+\subsection{Scalar, covariant, and invariant}
+
+The terms are related but not identical.
+
+\begin{itemize}
+    \item A covariant equation is written using objects that transform consistently, so its form is valid in every inertial frame.
+    \item A Lorentz scalar is a quantity whose numerical value is unchanged.
+    \item An invariant may be a scalar or another frame-independent property, such as the sign of an interval.
+\end{itemize}
+
+For example,
+
+\[
+A^{\mu}=B^{\mu}
+\]
+
+is a covariant vector equation, but the individual components are not invariant. The contraction
+
+\[
+A_{\mu}A^{\mu}
+\]
+
+is an invariant scalar.
+
+\subsection{A practical invariant-checking procedure}
+
+To determine whether an expression is a Lorentz scalar:
+
+\begin{enumerate}
+    \item identify the transformation type of every factor;
+    \item write all tensor indices explicitly;
+    \item confirm that every index is fully contracted;
+    \item verify that no free index remains;
+    \item check that fixed background quantities do not secretly select a preferred frame;
+    \item expand the expression in components as a structural check;
+    \item when useful, calculate it in a second frame or use the Lorentz-matrix identity.
+\end{enumerate}
+
+Complete contraction is the main diagnostic, but it is valid only when the factors are genuine tensors.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item calling one component of a four-vector invariant;
+    \item assuming energy or three-momentum is separately frame independent;
+    \item confusing invariant mass with the sum of constituent rest masses;
+    \item forming a Euclidean square instead of a Minkowski contraction;
+    \item treating an expression with a free index as a scalar;
+    \item forgetting that a system of massless particles may have nonzero invariant mass;
+    \item assuming that a coordinate formula is invariant merely because it looks the same in one frame.
+\end{enumerate}
+
+\subsection{What has been established}
+
+Lorentz invariants are observer-independent quantities constructed most commonly through complete tensor contractions. Central examples are
+
+\[
+\Delta x_{\mu}\Delta x^{\mu},
+\qquad
+U_{\mu}U^{\mu},
+\qquad
+p_{\mu}p^{\mu},
+\qquad
+k_{\mu}x^{\mu},
+\qquad
+\partial_{\mu}\phi\partial^{\mu}\phi.
+\]
+
+The invariant norm of four-momentum gives
+
+\[
+E^{2}=|\mathbf{p}|^{2}c^{2}+m^{2}c^{4},
+\]
+
+while the invariant phase organizes the relativistic transformation of frequency and wave vector.
+
+The final section consolidates the sign, index, and unit conventions used throughout the chapter and shows how formulas change when alternative conventions are adopted.
