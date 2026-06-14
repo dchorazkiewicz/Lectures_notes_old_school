@@ -1,1 +1,394 @@
 \section{Action as a Functional}
+\label{sec:action_as_a_functional}
+
+The equations of mechanics are often introduced through forces. One specifies the forces acting on a particle and then uses Newton's second law to determine its acceleration. The action principle organizes the same dynamics in a different way. Instead of asking for the force at each instant, it assigns one number to an entire possible history of the system and then identifies the physical history through a stationarity condition.
+
+This change of viewpoint is essential for field theory. A field configuration is already a function of space and time, so the natural dynamical object is not an ordinary function of a few variables but a \emph{functional}: an object whose input is itself a function.
+
+\subsection{From instantaneous states to complete trajectories}
+
+Consider a particle moving on a line. Its position is described by a function
+
+\[
+q=q(t),
+\qquad t_{1}\leq t\leq t_{2}.
+\]
+
+At one instant, the value \(q(t)\) tells us where the particle is. The complete function \(q\) tells us the whole trajectory between the initial time \(t_{1}\) and the final time \(t_{2}\).
+
+It is important to distinguish these two kinds of input:
+
+\begin{itemize}
+    \item an ordinary function may take a number as input, for example \(V(q)\);
+    \item a functional takes an entire function as input, for example \(S[q]\).
+\end{itemize}
+
+The square brackets in \(S[q]\) emphasize that the argument is the complete trajectory, not merely the value of the coordinate at one time.
+
+For example, the expression
+
+\[
+F[q]=\int_{t_{1}}^{t_{2}} q(t)\,\mathrm{d}t
+\]
+
+is a functional. Once a complete function \(q(t)\) is supplied, the integral produces one number.
+
+If
+
+\[
+q_{1}(t)=t,
+\qquad 0\leq t\leq 1,
+\]
+
+then
+
+\[
+F[q_{1}]
+=
+\int_{0}^{1} t\,\mathrm{d}t
+=
+\frac{1}{2}.
+\]
+
+For a different trajectory,
+
+\[
+q_{2}(t)=t^{2},
+\qquad 0\leq t\leq 1,
+\]
+
+we obtain
+
+\[
+F[q_{2}]
+=
+\int_{0}^{1} t^{2}\,\mathrm{d}t
+=
+\frac{1}{3}.
+\]
+
+The output is one number in each case, but that number depends on the entire shape of the input function over the interval.
+
+\subsection{The Lagrangian}
+
+In ordinary mechanics, the dynamical information is encoded in a function called the Lagrangian. For one generalized coordinate, it is usually written as
+
+\[
+L=L(q,\dot q,t),
+\]
+
+where
+
+\[
+\dot q=\frac{\mathrm{d}q}{\mathrm{d}t}.
+\]
+
+For a large class of mechanical systems,
+
+\[
+L=T-V,
+\]
+
+where \(T\) is the kinetic energy and \(V\) is the potential energy.
+
+For a particle of mass \(m\) moving in a potential \(V(q)\), the Lagrangian is
+
+\[
+L(q,\dot q)
+=
+\frac{m}{2}\dot q^{2}-V(q).
+\]
+
+The Lagrangian is an ordinary function. At a specified time, it can be evaluated once the instantaneous position and velocity are known. Along a complete trajectory \(q(t)\), however, it becomes a function of time:
+
+\[
+t\longmapsto L\bigl(q(t),\dot q(t),t\bigr).
+\]
+
+The action is obtained by integrating this quantity over the time interval.
+
+\subsection{Definition of the action}
+
+The action functional is defined by
+
+\[
+\boxed{
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L\bigl(q(t),\dot q(t),t\bigr)
+\,\mathrm{d}t
+}.
+\]
+
+The input of \(S\) is a trajectory \(q(t)\). The output is a single number. Different candidate trajectories generally produce different values of the action.
+
+The action depends not only on the geometric curve traced by the particle but also on how the trajectory is parametrized in time, because the velocity \(\dot q(t)\) enters the Lagrangian.
+
+The endpoints and the time interval are part of the variational problem. When we later compare nearby trajectories, we must state whether the initial and final times are fixed and whether the endpoint positions are fixed. These choices determine which variations are allowed.
+
+\subsection{Dimensions of the action}
+
+Because the Lagrangian has the dimensions of energy,
+
+\[
+[L]=\mathrm{J},
+\]
+
+the action has dimensions
+
+\[
+[S]
+=
+[L][t]
+=
+\mathrm{J\,s}.
+\]
+
+In base SI units,
+
+\[
+[S]
+=
+\mathrm{kg\,m^{2}\,s^{-1}}.
+\]
+
+This dimensional check is useful. Every term in a Lagrangian must have the dimensions of energy, and every contribution to the action must have the dimensions of energy multiplied by time.
+
+The same dimensions are carried by Planck's constant \(\hbar\). Classical mechanics does not require \(\hbar\), but the comparison becomes important in quantum mechanics, where the dimensionless ratio \(S/\hbar\) appears naturally.
+
+\subsection{Example: a free particle along a prescribed path}
+
+For a free particle moving on a line,
+
+\[
+V(q)=0,
+\]
+
+so the Lagrangian is
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2}.
+\]
+
+Consider the prescribed linear trajectory
+
+\[
+q(t)
+=
+q_{1}
++
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}}
+(t-t_{1}).
+\]
+
+Its velocity is constant:
+
+\[
+\dot q(t)
+=
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}}.
+\]
+
+Substitution into the action gives
+
+\[
+\begin{aligned}
+S[q]
+&=
+\int_{t_{1}}^{t_{2}}
+\frac{m}{2}
+\left(
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}}
+\right)^{2}
+\,\mathrm{d}t\\
+&=
+\frac{m}{2}
+\left(
+\frac{q_{2}-q_{1}}{t_{2}-t_{1}}
+\right)^{2}
+(t_{2}-t_{1})\\
+&=
+\boxed{
+\frac{m(q_{2}-q_{1})^{2}}{2(t_{2}-t_{1})}
+}.
+\end{aligned}
+\]
+
+This calculation does not yet prove that the linear trajectory is physical. It only evaluates the action for one candidate path. To identify the physical trajectory, we must compare it with nearby paths and determine whether the first-order change of the action vanishes.
+
+\subsection{Example: action of a trial trajectory}
+
+To see explicitly that the action depends on the whole path, consider a free particle on the interval
+
+\[
+0\leq t\leq T
+\]
+
+with fixed endpoints
+
+\[
+q(0)=0,
+\qquad
+q(T)=a.
+\]
+
+One admissible path is the linear trajectory
+
+\[
+q_{0}(t)=\frac{a}{T}t.
+\]
+
+A family of alternative paths with the same endpoints is
+
+\[
+q_{\varepsilon}(t)
+=
+\frac{a}{T}t
++
+\varepsilon
+\sin\left(\frac{\pi t}{T}\right),
+\]
+
+because the sine term vanishes at both endpoints. The velocity is
+
+\[
+\dot q_{\varepsilon}(t)
+=
+\frac{a}{T}
++
+\varepsilon\frac{\pi}{T}
+\cos\left(\frac{\pi t}{T}\right).
+\]
+
+For the free-particle Lagrangian,
+
+\[
+S[q_{\varepsilon}]
+=
+\frac{m}{2}
+\int_{0}^{T}
+\dot q_{\varepsilon}^{2}(t)
+\,\mathrm{d}t.
+\]
+
+Expanding the square,
+
+\[
+\dot q_{\varepsilon}^{2}
+=
+\frac{a^{2}}{T^{2}}
++
+2\varepsilon\frac{a\pi}{T^{2}}
+\cos\left(\frac{\pi t}{T}\right)
++
+\varepsilon^{2}\frac{\pi^{2}}{T^{2}}
+\cos^{2}\left(\frac{\pi t}{T}\right).
+\]
+
+The term linear in \(\varepsilon\) integrates to zero because
+
+\[
+\int_{0}^{T}
+\cos\left(\frac{\pi t}{T}\right)
+\,\mathrm{d}t
+=
+0.
+\]
+
+Also,
+
+\[
+\int_{0}^{T}
+\cos^{2}\left(\frac{\pi t}{T}\right)
+\,\mathrm{d}t
+=
+\frac{T}{2}.
+\]
+
+Therefore
+
+\[
+\boxed{
+S[q_{\varepsilon}]
+=
+\frac{ma^{2}}{2T}
++
+\frac{m\pi^{2}}{4T}\varepsilon^{2}
+}.
+\]
+
+The action changes only at second order in \(\varepsilon\) near \(\varepsilon=0\). This is the simplest preview of stationarity: the first derivative of the action with respect to the deformation parameter vanishes at the linear path.
+
+\subsection{Stationary does not always mean minimal}
+
+The physical trajectory is characterized by a stationary action, not universally by the smallest possible action. In symbols, the condition is written
+
+\[
+\delta S=0.
+\]
+
+This means that the first-order change of the action vanishes for all allowed infinitesimal variations of the trajectory. Depending on the system and the time interval, the stationary trajectory may correspond to a local minimum, a local maximum, or a saddle point of the action.
+
+The phrase ``principle of least action'' is historically common, but ``principle of stationary action'' is more precise. The essential statement is not
+
+\[
+S[q_{\mathrm{physical}}]
+<
+S[q]
+\]
+
+for every other path. The essential statement is that sufficiently small admissible changes of the physical path produce no first-order change in \(S\).
+
+\subsection{Local dynamics from a global quantity}
+
+The action is an integral over an entire time interval, so it may appear to define dynamics globally. Nevertheless, when the action is stationary under arbitrary local deformations of the trajectory, the result is a differential equation that holds at every time.
+
+This is one of the central structural facts of variational mechanics:
+
+\begin{quote}
+A condition imposed on the action of a complete trajectory produces a local equation of motion.
+\end{quote}
+
+The mechanism behind this statement will be developed in the next sections. We will introduce a varied trajectory, calculate the first variation of the action, use integration by parts, control the boundary term, and derive the Euler--Lagrange equation.
+
+\subsection{Why this formulation is useful for field theory}
+
+For a particle, the action is a functional of a trajectory \(q(t)\). For a field, the action will be a functional of a field configuration \(\phi(x)\) over spacetime:
+
+\[
+S[\phi]
+=
+\int
+\mathcal{L}\bigl(\phi,\partial_{\mu}\phi,x\bigr)
+\,\mathrm{d}^{4}x.
+\]
+
+The mechanical Lagrangian \(L\) is replaced by a Lagrangian density \(\mathcal{L}\), and the time integral is replaced by a spacetime integral. The conceptual structure remains the same:
+
+\begin{enumerate}
+    \item choose a candidate history;
+    \item evaluate its action;
+    \item compare it with nearby admissible histories;
+    \item require the first-order change of the action to vanish.
+\end{enumerate}
+
+This is why the variational principle is first developed for particles. The particle calculation contains, in a simpler setting, the same ideas that will later be applied to fields.
+
+\subsection{What has been established}
+
+A functional maps an entire function to a number. In mechanics, the action functional assigns a number to every admissible trajectory:
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q,\dot q,t)
+\,\mathrm{d}t.
+\]
+
+The Lagrangian is evaluated locally along the path, while the action summarizes the complete history over the chosen time interval. The physical path is not selected by evaluating one instantaneous state; it is selected through the stationarity of the action under allowed variations.
+
+The next section constructs those variations explicitly and explains how a one-parameter family of nearby trajectories is used to calculate the first variation of the action.
