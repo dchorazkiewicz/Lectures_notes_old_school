@@ -1,1 +1,657 @@
 \section{Index Notation and Contractions}
+\label{sec:index_notation_and_contractions}
+
+Tensor notation compresses many component equations into one expression. Its usefulness depends on strict bookkeeping. A misplaced, repeated, or missing index changes the mathematical meaning of a formula and may make the expression invalid.
+
+This section develops a practical syntax for relativistic calculations: the Einstein summation convention, free and dummy indices, contractions, traces, symmetry, and diagnostic checks.
+
+\subsection{The Einstein summation convention}
+
+When an index appears exactly twice in one term, once upstairs and once downstairs, summation over that index is understood:
+
+\[
+A_{\mu}B^{\mu}
+:=
+\sum_{\mu=0}^{3}
+A_{\mu}B^{\mu}.
+\]
+
+Thus
+
+\[
+A_{\mu}B^{\mu}
+=
+A_{0}B^{0}
++A_{1}B^{1}
++A_{2}B^{2}
++A_{3}B^{3}.
+\]
+
+With the mostly-minus metric, if \(A_{\mu}\) is obtained by lowering \(A^{\mu}\), this becomes
+
+\[
+A_{\mu}B^{\mu}
+=
+A^{0}B^{0}
+-
+A^{1}B^{1}
+-
+A^{2}B^{2}
+-
+A^{3}B^{3}.
+\]
+
+The summation convention removes explicit summation symbols, but it does not remove the need to know which indices are being summed.
+
+\subsection{Dummy indices}
+
+A repeated index that is summed is called a dummy index. Its name has no intrinsic meaning. For example,
+
+\[
+A_{\mu}B^{\mu}
+=
+A_{\nu}B^{\nu}
+=
+A_{\alpha}B^{\alpha}.
+\]
+
+All three expressions represent the same scalar.
+
+Renaming a dummy index is allowed provided the new symbol does not conflict with another index already present in the term.
+
+For example,
+
+\[
+T^{\mu}{}_{\nu}V^{\nu}
+=
+T^{\mu}{}_{\alpha}V^{\alpha}
+\]
+
+is valid. The index \(\mu\) must not be renamed independently because it is not summed.
+
+\subsection{Free indices}
+
+An index that appears once in a term is called a free index. It labels the components of the resulting tensor.
+
+In
+
+\[
+W^{\mu}
+=
+T^{\mu}{}_{\nu}V^{\nu},
+\]
+
+the index \(\nu\) is dummy, while \(\mu\) is free. The equation represents four component equations, one for each value of \(\mu\).
+
+Every term in a valid tensor equation must have the same free indices in the same positions. Thus
+
+\[
+A^{\mu}+B^{\mu}=C^{\mu}
+\]
+
+is structurally valid, while
+
+\[
+A^{\mu}+B^{\nu}=C^{\mu}
+\]
+
+is invalid because the second term has a different free index.
+
+\subsection{One term, one index pattern}
+
+Consider
+
+\[
+X^{\mu}
+=
+A^{\mu}
++
+T^{\mu}{}_{\nu}B^{\nu}.
+\]
+
+Both terms on the right have one free upper index \(\mu\). The second term also contains the summed index \(\nu\), but after contraction its result is a vector with the same index structure as \(A^{\mu}\).
+
+By contrast,
+
+\[
+A^{\mu}
++
+T^{\mu\nu}
+\]
+
+cannot be added because the first object is a vector and the second is a rank-two tensor.
+
+The index pattern reveals the tensor type before any components are calculated.
+
+\subsection{An index may not appear three times}
+
+Within a single monomial term, an index should not appear more than twice. The expression
+
+\[
+A_{\mu}B^{\mu}C^{\mu}
+\]
+
+is invalid because \(\mu\) appears three times.
+
+A correct expression would need distinct contractions, for example
+
+\[
+A_{\mu}B^{\mu}C^{\nu},
+\]
+
+which is a vector with free index \(\nu\), or
+
+\[
+A_{\mu}B^{\mu}C_{\nu}D^{\nu},
+\]
+
+which is a scalar.
+
+\subsection{Contraction}
+
+A contraction pairs one upper and one lower index and sums over them. It reduces the tensor rank by two.
+
+For a rank-two tensor,
+
+\[
+T^{\mu}{}_{\nu},
+\]
+
+the contraction
+
+\[
+\boxed{
+T^{\mu}{}_{\mu}
+}
+\]
+
+is a scalar called the trace.
+
+For a rank-three tensor
+
+\[
+R^{\mu\nu}{}_{\alpha},
+\]
+
+contracting \(\nu\) with \(\alpha\) gives
+
+\[
+R^{\mu\nu}{}_{\nu},
+\]
+
+which is a vector with free index \(\mu\).
+
+Contraction is the tensorial analogue of taking a dot product or matrix trace.
+
+\subsection{The Kronecker delta}
+
+The mixed tensor
+
+\[
+\delta^{\mu}{}_{\nu}
+\]
+
+acts as the identity:
+
+\[
+\boxed{
+\delta^{\mu}{}_{\nu}A^{\nu}
+=
+A^{\mu}
+}.
+\]
+
+Its components are
+
+\[
+\delta^{\mu}{}_{\nu}
+=
+\begin{cases}
+1,&\mu=\nu,\\
+0,&\mu\neq\nu.
+\end{cases}
+\]
+
+The trace in four-dimensional spacetime is
+
+\[
+\delta^{\mu}{}_{\mu}=4.
+\]
+
+The metric and its inverse satisfy
+
+\[
+\eta^{\mu\alpha}\eta_{\alpha\nu}
+=
+\delta^{\mu}{}_{\nu}.
+\]
+
+\subsection{Raising and lowering tensor indices}
+
+The metric acts on each index separately. For a covariant rank-two tensor,
+
+\[
+T_{\mu\nu},
+\]
+
+raising the first index gives
+
+\[
+\boxed{
+T^{\mu}{}_{\nu}
+=
+\eta^{\mu\alpha}T_{\alpha\nu}
+}.
+\]
+
+Raising both indices gives
+
+\[
+\boxed{
+T^{\mu\nu}
+=
+\eta^{\mu\alpha}
+\eta^{\nu\beta}
+T_{\alpha\beta}
+}.
+\]
+
+Likewise,
+
+\[
+T_{\mu\nu}
+=
+\eta_{\mu\alpha}
+\eta_{\nu\beta}
+T^{\alpha\beta}.
+\]
+
+Each spatial index that is raised or lowered contributes one sign change in Cartesian Minkowski coordinates.
+
+\subsection{Worked component example}
+
+Let \(T^{\mu\nu}\) have the component
+
+\[
+T^{01}=a.
+\]
+
+Lowering both indices gives
+
+\[
+T_{01}
+=
+\eta_{0\alpha}
+\eta_{1\beta}
+T^{\alpha\beta}.
+\]
+
+Because the metric is diagonal, only
+
+\[
+\alpha=0,
+\qquad
+\beta=1
+\]
+
+contribute. Therefore
+
+\[
+T_{01}
+=
+\eta_{00}
+\eta_{11}
+T^{01}
+=
+(1)(-1)a
+=
+-a.
+\]
+
+For a purely spatial component,
+
+\[
+T^{12}=b,
+\]
+
+we find
+
+\[
+T_{12}
+=
+\eta_{11}
+\eta_{22}
+T^{12}
+=
+(-1)(-1)b
+=
+b.
+\]
+
+One lowered spatial index changes the sign; two lowered spatial indices restore it.
+
+\subsection{Matrix multiplication in index notation}
+
+If
+
+\[
+C^{\mu}{}_{\nu}
+=
+A^{\mu}{}_{\alpha}
+B^{\alpha}{}_{\nu},
+\]
+
+then the dummy index \(\alpha\) represents matrix multiplication. The free indices \(\mu\) and \(\nu\) identify the row and column of the resulting matrix.
+
+Writing the sum explicitly,
+
+\[
+C^{\mu}{}_{\nu}
+=
+\sum_{\alpha=0}^{3}
+A^{\mu}{}_{\alpha}
+B^{\alpha}{}_{\nu}.
+\]
+
+The order matters:
+
+\[
+A^{\mu}{}_{\alpha}B^{\alpha}{}_{\nu}
+\]
+
+need not equal
+
+\[
+B^{\mu}{}_{\alpha}A^{\alpha}{}_{\nu}.
+\]
+
+\subsection{Symmetric tensors}
+
+A rank-two tensor is symmetric if
+
+\[
+\boxed{
+S_{\mu\nu}=S_{\nu\mu}
+}.
+\]
+
+The Minkowski metric is symmetric:
+
+\[
+\eta_{\mu\nu}=\eta_{\nu\mu}.
+\]
+
+For a symmetric tensor, exchanging its two indices does not change the component.
+
+Any rank-two tensor can be decomposed into symmetric and antisymmetric parts:
+
+\[
+T_{\mu\nu}
+=
+T_{(\mu\nu)}
++
+T_{[\mu\nu]},
+\]
+
+where
+
+\[
+\boxed{
+T_{(\mu\nu)}
+=
+\frac{1}{2}
+(T_{\mu\nu}+T_{\nu\mu})
+}
+\]
+
+and
+
+\[
+\boxed{
+T_{[\mu\nu]}
+=
+\frac{1}{2}
+(T_{\mu\nu}-T_{\nu\mu})
+}.
+\]
+
+\subsection{Antisymmetric tensors}
+
+A tensor is antisymmetric if
+
+\[
+\boxed{
+F_{\mu\nu}=-F_{\nu\mu}
+}.
+\]
+
+Setting \(\mu=\nu\) gives
+
+\[
+F_{\mu\mu}=-F_{\mu\mu},
+\]
+
+so
+
+\[
+\boxed{
+F_{\mu\mu}=0
+}
+\]
+
+with no summation intended in this statement.
+
+The electromagnetic field tensor will be an important antisymmetric tensor.
+
+\subsection{Contraction of symmetric and antisymmetric tensors}
+
+Let \(S^{\mu\nu}\) be symmetric and \(F_{\mu\nu}\) antisymmetric. Consider
+
+\[
+S^{\mu\nu}F_{\mu\nu}.
+\]
+
+Rename the dummy indices \(\mu\leftrightarrow\nu\):
+
+\[
+S^{\mu\nu}F_{\mu\nu}
+=
+S^{\nu\mu}F_{\nu\mu}.
+\]
+
+Using symmetry and antisymmetry,
+
+\[
+S^{\nu\mu}F_{\nu\mu}
+=
+S^{\mu\nu}(-F_{\mu\nu}).
+\]
+
+Therefore
+
+\[
+S^{\mu\nu}F_{\mu\nu}
+=
+-S^{\mu\nu}F_{\mu\nu},
+\]
+
+which implies
+
+\[
+\boxed{
+S^{\mu\nu}F_{\mu\nu}=0
+}.
+\]
+
+This is a typical example in which dummy-index renaming makes a structural cancellation visible.
+
+\subsection{Checking a proposed tensor equation}
+
+Consider
+
+\[
+\partial_{\mu}T^{\mu\nu}=J^{\nu}.
+\]
+
+The index \(\mu\) is summed, while \(\nu\) is free. Both sides therefore have one free upper index \(\nu\), so the equation is structurally possible.
+
+By contrast,
+
+\[
+\partial_{\mu}T^{\mu\nu}=J^{\mu}
+\]
+
+is invalid as written. On the left, \(\mu\) is dummy and \(\nu\) is free. On the right, \(\mu\) is free. The free-index patterns do not match.
+
+\subsection{Worked example: expanding a contraction}
+
+Let
+
+\[
+J^{\mu}=(c\rho,J^{1},J^{2},J^{3})
+\]
+
+and
+
+\[
+A_{\mu}=(A_{0},A_{1},A_{2},A_{3}).
+\]
+
+Then
+
+\[
+A_{\mu}J^{\mu}
+=
+A_{0}c\rho
++A_{1}J^{1}
++A_{2}J^{2}
++A_{3}J^{3}.
+\]
+
+If \(A_{\mu}\) was obtained from
+
+\[
+A^{\mu}=(A^{0},\mathbf{A}),
+\]
+
+then
+
+\[
+A_{\mu}=(A^{0},-\mathbf{A}),
+\]
+
+and
+
+\[
+A_{\mu}J^{\mu}
+=
+A^{0}c\rho
+-
+\mathbf{A}\cdot\mathbf{J}.
+\]
+
+The compact contraction contains both temporal and spatial terms with the metric signs built in.
+
+\subsection{Changing dummy indices safely}
+
+Suppose
+
+\[
+X^{\mu}
+=
+T^{\mu}{}_{\nu}A^{\nu}
++
+S^{\mu}{}_{\alpha}B^{\alpha}.
+\]
+
+The two dummy indices may be given the same name because they occur in separate terms:
+
+\[
+X^{\mu}
+=
+T^{\mu}{}_{\nu}A^{\nu}
++
+S^{\mu}{}_{\nu}B^{\nu}.
+\]
+
+However, in a product such as
+
+\[
+T^{\mu}{}_{\nu}
+S^{\nu}{}_{\alpha}
+A^{\alpha},
+\]
+
+the indices \(\nu\) and \(\alpha\) represent different contractions and cannot both be renamed to the same symbol.
+
+\subsection{Free-index equations represent component families}
+
+The equation
+
+\[
+A^{\mu}=B^{\mu}
+\]
+
+stands for four equations:
+
+\[
+A^{0}=B^{0},
+\qquad
+A^{1}=B^{1},
+\qquad
+A^{2}=B^{2},
+\qquad
+A^{3}=B^{3}.
+\]
+
+Similarly,
+
+\[
+T^{\mu\nu}=S^{\mu\nu}
+\]
+
+stands for sixteen component equations before symmetries are taken into account.
+
+A fully contracted equation such as
+
+\[
+A_{\mu}B^{\mu}=C
+\]
+
+contains no free indices and is one scalar equation.
+
+\subsection{A practical index-checking algorithm}
+
+For every tensor expression:
+
+\begin{enumerate}
+    \item inspect each term separately;
+    \item identify every repeated index;
+    \item confirm that each dummy index appears exactly twice;
+    \item confirm that a contracted pair consists of one upper and one lower index;
+    \item identify the free indices;
+    \item check that every term has the same free-index pattern;
+    \item only then perform algebra or rename dummy indices.
+\end{enumerate}
+
+This procedure catches many errors before any component calculation begins.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using the same index three times in one term;
+    \item changing a free index in only one term;
+    \item renaming a dummy index to a symbol already used elsewhere in the term;
+    \item adding tensors with different free-index structures;
+    \item contracting two upper indices without first using the metric;
+    \item assuming that exchanging indices is allowed without a symmetry property;
+    \item confusing a tensor component equation with a scalar equation.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The Einstein convention sums an index appearing once upstairs and once downstairs. Dummy indices may be renamed, while free indices determine the tensor type and must agree across an equation. Contraction reduces tensor rank, the Kronecker delta acts as the identity, and the metric raises or lowers each index separately.
+
+Symmetry and antisymmetry provide powerful structural simplifications. These rules will now be applied to Lorentz transformations, where the transformation matrix itself carries one upper and one lower index.
