@@ -1,89 +1,154 @@
 name: Build Beamer presentations
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - main
+      - "**"
     paths:
-      - 'mathematical_lectures/basic_mathematics/prezentation/**'
-      - '.github/workflows/build-beamer-presentations.yml'
-  workflow_dispatch:
+      - ".github/workflows/build-beamer-presentations.yml"
+      - "mathematical_lectures/basic_mathematics/prezentation/**/*.tex"
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+concurrency:
+  group: build-beamer-presentations-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-beamer-presentations:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
-      - name: Set up TeX Live
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: dummy.tex
-          args: '-version'
-
-      - name: Detect changed presentation folders
-        id: changed
+      - name: Detect Beamer presentations to build
+        id: detect
         shell: bash
         run: |
           set -euo pipefail
 
-          base="${{ github.event.before }}"
-          head="${{ github.sha }}"
+          root="mathematical_lectures/basic_mathematics/prezentation"
 
-          if [[ "${base}" == "0000000000000000000000000000000000000000" ]]; then
-            base="HEAD~1"
-          fi
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            find "${root}" -mindepth 2 -maxdepth 2 -name main.tex -exec dirname {} \; | sort -u > presentation_folders.txt
+          else
+            before="${{ github.event.before }}"
+            after="${{ github.sha }}"
 
-          git diff --name-only "${base}" "${head}" \
-            | grep '^mathematical_lectures/basic_mathematics/prezentation/[^/]*/' \
-            | awk -F/ '{print $1"/"$2"/"$3"/"$4}' \
-            | sort -u > changed_folders.txt || true
-
-          if [[ ! -s changed_folders.txt ]]; then
-            find mathematical_lectures/basic_mathematics/prezentation -mindepth 2 -maxdepth 2 -name main.tex \
-              -exec dirname {} \; | sort -u > changed_folders.txt
-          fi
-
-          echo "Changed folders:"
-          cat changed_folders.txt || true
-
-      - name: Compile changed Beamer presentations
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          while IFS= read -r folder; do
-            [[ -z "${folder}" ]] && continue
-
-            if [[ ! -f "${folder}/main.tex" ]]; then
-              echo "Skipping ${folder}: no main.tex"
-              continue
+            if [[ "${before}" =~ ^0+$ ]]; then
+              changed_files="$(git ls-tree -r --name-only "${after}")"
+            else
+              changed_files="$(git diff --name-only "${before}" "${after}")"
             fi
 
-            echo "Compiling ${folder}/main.tex"
-            (
-              cd "${folder}"
-              pdflatex -interaction=nonstopmode -halt-on-error main.tex
-              pdflatex -interaction=nonstopmode -halt-on-error main.tex
-            )
-          done < changed_folders.txt
+            echo "Changed files:"
+            printf '%s\n' "${changed_files}"
 
-      - name: Remove temporary LaTeX files
+            if printf '%s\n' "${changed_files}" | grep -Eq '^\.github/workflows/build-beamer-presentations\.yml$'; then
+              find "${root}" -mindepth 2 -maxdepth 2 -name main.tex -exec dirname {} \; | sort -u > presentation_folders.txt
+            else
+              printf '%s\n' "${changed_files}" \
+                | grep -E "^${root}/[^/]+/.*\.tex$" \
+                | awk -F/ '{print $1"/"$2"/"$3"/"$4}' \
+                | sort -u > presentation_folders.txt || true
+            fi
+          fi
+
+          if [[ ! -s presentation_folders.txt ]]; then
+            echo "No Beamer presentation needs rebuilding."
+            echo "presentation_folders=" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          echo "Beamer presentations to build:"
+          cat presentation_folders.txt
+
+          folders="$(tr '\n' ' ' < presentation_folders.txt | sed 's/ *$//')"
+          echo "presentation_folders=${folders}" >> "${GITHUB_OUTPUT}"
+
+      - name: Build changed Beamer presentations
+        if: steps.detect.outputs.presentation_folders != ''
+        uses: xu-cheng/texlive-action@v3
+        with:
+          texlive_version: latest
+          run: |
+            set -euo pipefail
+
+            presentations='${{ steps.detect.outputs.presentation_folders }}'
+            read -r -a folders <<< "${presentations}"
+
+            for folder in "${folders[@]}"; do
+              echo "::group::Building ${folder}"
+              if [[ ! -f "${folder}/main.tex" ]]; then
+                echo "Missing main.tex in ${folder}" >&2
+                exit 1
+              fi
+              (
+                cd "${folder}"
+                pdflatex -interaction=nonstopmode -halt-on-error main.tex
+                pdflatex -interaction=nonstopmode -halt-on-error main.tex
+              )
+              pdf="${folder}/main.pdf"
+              if [[ ! -s "${pdf}" ]]; then
+                echo "Expected PDF was not generated or is empty: ${pdf}" >&2
+                exit 1
+              fi
+              ls -lh "${pdf}"
+              echo "::endgroup::"
+            done
+
+      - name: Commit changed Beamer PDFs
+        if: steps.detect.outputs.presentation_folders != ''
+        env:
+          PRESENTATION_FOLDERS: ${{ steps.detect.outputs.presentation_folders }}
         shell: bash
         run: |
+          set -euo pipefail
+
+          read -r -a folders <<< "${PRESENTATION_FOLDERS}"
+
+          pdfs=()
+          for folder in "${folders[@]}"; do
+            pdf="${folder}/main.pdf"
+            if [[ ! -s "${pdf}" ]]; then
+              echo "Expected PDF was not generated or is empty: ${pdf}" >&2
+              exit 1
+            fi
+            pdfs+=("${pdf}")
+          done
+
+          echo "Beamer PDF files considered for commit:"
+          printf '%s\n' "${pdfs[@]}"
+          ls -lh "${pdfs[@]}"
+
           find mathematical_lectures/basic_mathematics/prezentation \
             \( -name '*.aux' -o -name '*.log' -o -name '*.nav' -o -name '*.out' -o -name '*.snm' -o -name '*.toc' -o -name '*.vrb' \) \
             -delete
 
-      - name: Commit rebuilt presentation PDFs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'Rebuild Beamer presentation PDFs'
-          file_pattern: 'mathematical_lectures/basic_mathematics/prezentation/**/*.pdf'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${pdfs[@]}"
+
+          echo "Git status after Beamer PDF build:"
+          git status --short
+          echo "Staged Beamer PDF diff stat:"
+          git diff --cached --stat -- "${pdfs[@]}" || true
+
+          if git diff --cached --quiet -- "${pdfs[@]}"; then
+            echo "Beamer PDFs are already up to date."
+            exit 0
+          fi
+
+          git commit -m "Build Beamer presentation PDFs"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
