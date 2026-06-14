@@ -1,1 +1,552 @@
 \section{Dispersion Relations}
+\label{sec:dispersion_relations}
+
+A dispersion relation connects the angular frequency \(\omega\) of a mode with its wave vector \(\mathbf{k}\). It determines how individual phases move, how wave packets propagate, and whether different wavelengths travel at the same speed.
+
+For the free real scalar field,
+
+\[
+\boxed{
+\omega^{2}
+=
+c^{2}
+\left(
+|\mathbf{k}|^{2}+\mu^{2}
+\right)
+}.
+\]
+
+We focus on the positive-frequency branch
+
+\[
+\boxed{
+\omega(k)
+=
+c\sqrt{k^{2}+\mu^{2}}
+},
+\]
+
+where
+
+\[
+k=|\mathbf{k}|.
+\]
+
+\subsection{Massless dispersion}
+
+When
+
+\[
+\mu=0,
+\]
+
+the relation becomes
+
+\[
+\boxed{
+\omega=ck
+}.
+\]
+
+This is linear in \(k\). Every Fourier component travels with the same characteristic speed \(c\), so an arbitrary one-dimensional profile may propagate without changing shape.
+
+The graph of \(\omega(k)\) is a straight line through the origin.
+
+\subsection{Massive dispersion}
+
+For
+
+\[
+\mu>0,
+\]
+
+the relation is
+
+\[
+\boxed{
+\omega=c\sqrt{k^{2}+\mu^{2}}
+}.
+\]
+
+At
+
+\[
+k=0,
+\]
+
+the frequency is
+
+\[
+\boxed{
+\omega_{0}=c\mu
+}.
+\]
+
+Thus the graph begins at a nonzero frequency. The massive field has a frequency gap between the zero-frequency axis and the lowest positive-frequency mode.
+
+\subsection{Phase velocity}
+
+For a plane wave
+
+\[
+\cos(kx-\omega t),
+\]
+
+a surface of constant phase satisfies
+
+\[
+kx-\omega t=	ext{constant}.
+\]
+
+Differentiating gives
+
+\[
+k\frac{\mathrm{d}x}{\mathrm{d}t}-\omega=0.
+\]
+
+The phase velocity is therefore
+
+\[
+\boxed{
+v_{\mathrm{ph}}
+=
+\frac{\omega}{k}
+}.
+\]
+
+For a massless field,
+
+\[
+\boxed{
+v_{\mathrm{ph}}=c}.
+\]
+
+For a massive field,
+
+\[
+\boxed{
+v_{\mathrm{ph}}
+=
+c
+\sqrt{1+
+\frac{\mu^{2}}{k^{2}}}
+}.
+\]
+
+Hence
+
+\[
+v_{\mathrm{ph}}>c
+\]
+
+for finite \(k\).
+
+This does not imply superluminal signal propagation. A perfectly monochromatic plane wave extends throughout space and carries no localized front whose speed could transmit new information.
+
+\subsection{Group velocity}
+
+A localized wave packet is constructed from nearby wave numbers. Its envelope moves approximately with the group velocity
+
+\[
+\boxed{
+v_{\mathrm{g}}
+=
+\frac{\mathrm{d}\omega}{\mathrm{d}k}
+}.
+\]
+
+For the massive relation,
+
+\[
+\begin{aligned}
+v_{\mathrm{g}}
+&=
+\frac{\mathrm{d}}{\mathrm{d}k}
+\left[
+c\sqrt{k^{2}+\mu^{2}}
+\right]\\
+&=
+\frac{ck}{\sqrt{k^{2}+\mu^{2}}}.
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+v_{\mathrm{g}}
+=
+\frac{c^{2}k}{\omega}
+}.
+\]
+
+For \(\mu>0\),
+
+\[
+\boxed{
+v_{\mathrm{g}}<c}.
+\]
+
+For the massless field,
+
+\[
+v_{\mathrm{g}}=c.
+\]
+
+\subsection{Relation between phase and group velocity}
+
+For the free massive scalar field,
+
+\[
+\begin{aligned}
+v_{\mathrm{ph}}v_{\mathrm{g}}
+&=
+\frac{\omega}{k}
+\frac{c^{2}k}{\omega}\\
+&=
+c^{2}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+v_{\mathrm{ph}}v_{\mathrm{g}}=c^{2}
+}.
+\]
+
+When the phase velocity exceeds \(c\), the group velocity is correspondingly smaller than \(c\).
+
+\subsection{Connection with relativistic energy and momentum}
+
+In a quantum interpretation, one associates
+
+\[
+E=\hbar\omega,
+\qquad
+\mathbf{p}=\hbar\mathbf{k}.
+\]
+
+Using
+
+\[
+\mu=rac{mc}{\hbar},
+\]
+
+the dispersion relation becomes
+
+\[
+E^{2}
+=
+|\mathbf{p}|^{2}c^{2}
++
+m^{2}c^{4}.
+\]
+
+The group velocity then satisfies
+
+\[
+\boxed{
+v_{\mathrm{g}}
+=
+\frac{c^{2}|\mathbf{p}|}{E}
+}.
+\]
+
+For a relativistic particle,
+
+\[
+\mathbf{v}
+=
+\frac{c^{2}\mathbf{p}}{E}.
+\]
+
+Thus the group velocity of a wave packet agrees with the corresponding classical relativistic particle velocity. This is an interpretation of the same mathematical dispersion relation, not an assumption required for the classical field theory.
+
+\subsection{Long-wavelength limit}
+
+When
+
+\[
+k\ll\mu,
+\]
+
+write
+
+\[
+\omega
+=
+c\mu
+\sqrt{1+
+\frac{k^{2}}{\mu^{2}}}.
+\]
+
+Using
+
+\[
+\sqrt{1+z}
+\approx
+1+
+\frac{z}{2}
+\]
+
+for small \(z\), we obtain
+
+\[
+\boxed{
+\omega
+\approx
+c\mu
++
+\frac{c k^{2}}{2\mu}
+}.
+\]
+
+The frequency is dominated by the uniform oscillation frequency \(c\mu\). The group velocity is approximately
+
+\[
+\boxed{
+v_{\mathrm{g}}
+\approx
+\frac{ck}{\mu}
+}.
+\]
+
+Long-wavelength massive modes therefore move slowly.
+
+\subsection{Short-wavelength limit}
+
+When
+
+\[
+k\gg\mu,
+\]
+
+write
+
+\[
+\omega
+=
+ck
+\sqrt{1+
+\frac{\mu^{2}}{k^{2}}}.
+\]
+
+Then
+
+\[
+\boxed{
+\omega
+\approx
+ck
++
+\frac{c\mu^{2}}{2k}
+}.
+\]
+
+The group velocity becomes
+
+\[
+\boxed{
+v_{\mathrm{g}}
+\approx
+c
+\left(
+1-
+\frac{\mu^{2}}{2k^{2}}
+\right)
+}.
+\]
+
+Short-wavelength massive modes approach massless propagation, but their group velocity remains slightly below \(c\).
+
+\subsection{Wave-packet spreading}
+
+A medium or equation is dispersive when different wave numbers have different group velocities. For the massive field,
+
+\[
+\frac{\mathrm{d}^{2}\omega}{\mathrm{d}k^{2}}
+=
+\frac{c\mu^{2}}
+{(k^{2}+\mu^{2})^{3/2}}.
+\]
+
+This is nonzero for \(\mu>0\). Components with different \(k\) therefore move at different velocities, and a localized packet generally spreads as it evolves.
+
+For the one-dimensional massless relation
+
+\[
+\omega=ck,
+\]
+
+the second derivative is zero. Ideal massless wave packets can propagate without dispersive spreading.
+
+\subsection{A two-mode illustration}
+
+Consider two nearby modes
+
+\[
+\phi
+=
+\cos(k_{1}x-\omega_{1}t)
++
+\cos(k_{2}x-\omega_{2}t).
+\]
+
+Using the sum identity,
+
+\[
+\begin{aligned}
+\phi
+&=
+2
+\cos
+\left[
+\frac{(k_{1}-k_{2})x
+-(\omega_{1}-\omega_{2})t}{2}
+\right]\\
+&\quad\times
+\cos
+\left[
+\frac{(k_{1}+k_{2})x
+-(\omega_{1}+\omega_{2})t}{2}
+\right].
+\end{aligned}
+\]
+
+The rapidly oscillating factor has phase velocity near
+
+\[
+\frac{\omega}{k},
+\]
+
+while the slowly varying envelope moves with
+
+\[
+\frac{\Delta\omega}{\Delta k}.
+\]
+
+In the limit of nearby modes,
+
+\[
+\frac{\Delta\omega}{\Delta k}
+\longrightarrow
+\frac{\mathrm{d}\omega}{\mathrm{d}k}
+=
+v_{\mathrm{g}}.
+\]
+
+\subsection{Causal propagation}
+
+The group velocity is useful for narrow packets, but the strongest causal statement comes from the differential equation itself. The principal part is the d'Alembertian,
+
+\[
+\Box\phi,
+\]
+
+whose characteristics are the light cone. Compactly supported disturbances cannot create effects outside the future light cone when the initial-value problem is posed causally.
+
+The lower-order mass term changes the interior evolution but not the characteristic cone.
+
+\subsection{Negative-frequency branch}
+
+The quadratic relation has two branches:
+
+\[
+\boxed{
+\omega
+=
+\pm c\sqrt{k^{2}+\mu^{2}}
+}.
+\]
+
+For a real classical field, positive- and negative-frequency complex modes are paired by complex conjugation. They are not independent real degrees of freedom.
+
+In the trigonometric description, both branches are already contained in the sine and cosine time dependence.
+
+\subsection{Frequency gap and static behaviour}
+
+For a massive mode,
+
+\[
+|\omega|\geq c\mu.
+\]
+
+There are no oscillatory plane-wave modes with
+
+\[
+0<|\omega|<c\mu.
+\]
+
+If one instead fixes a low frequency below the gap and solves for a spatial wave number, then
+
+\[
+k^{2}
+=
+\frac{\omega^{2}}{c^{2}}
+-
+\mu^{2}<0.
+\]
+
+The wave number becomes imaginary, producing exponential spatial behaviour rather than propagation. This is the time-dependent analogue of the static decay length \(1/\mu\).
+
+\subsection{Dimensional checks}
+
+The quantities satisfy
+
+\[
+[k]=[\mu]=\mathrm{m}^{-1},
+\]
+
+and
+
+\[
+[\omega]=\mathrm{s}^{-1}.
+\]
+
+Thus
+
+\[
+c^{2}(k^{2}+\mu^{2})
+\]
+
+has dimensions \(\mathrm{s}^{-2}\), matching \(\omega^{2}\).
+
+Both
+
+\[
+v_{\mathrm{ph}}=rac{\omega}{k}
+\]
+
+and
+
+\[
+v_{\mathrm{g}}=rac{\mathrm{d}\omega}{\mathrm{d}k}
+\]
+
+have dimensions of velocity.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item identifying phase velocity with signal velocity;
+    \item concluding that \(v_{\mathrm{ph}}>c\) violates relativity;
+    \item differentiating \(\omega^{2}\) instead of \(\omega\) when computing group velocity;
+    \item using the massless relation \(\omega=ck\) for a massive mode;
+    \item forgetting the nonzero frequency at \(k=0\);
+    \item claiming that the mass term changes the characteristic light cone;
+    \item assuming that every dispersive wave packet propagates without changing shape.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The free scalar dispersion relation is
+
+\[
+\omega=c\sqrt{k^{2}+\mu^{2}}.
+\]
+
+Massless modes have equal phase and group velocities \(c\). Massive modes have phase velocity greater than \(c\), group velocity less than \(c\), and the product \(v_{\mathrm{ph}}v_{\mathrm{g}}=c^{2}\). The mass parameter creates a frequency gap and dispersive wave-packet evolution without changing the causal light cone. The next section derives the energy and momentum carried by scalar-field configurations.
