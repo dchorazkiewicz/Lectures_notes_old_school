@@ -1,0 +1,100 @@
+\def\sectiontag{Operations that change entries but preserve shape}
+\section{Basic matrix operations}
+
+\begin{frame}{What remains unchanged?}
+  \begin{center}
+  \begin{tikzpicture}[node distance=1.5cm]
+    \node[rounded corners=6pt,draw=blue,very thick,fill=softblue,minimum width=3.2cm,minimum height=1.1cm] (a) {$A\in\R^{m\times n}$};
+    \node[rounded corners=6pt,draw=green,very thick,fill=softgreen,minimum width=3.2cm,minimum height=1.1cm,right=of a] (b) {$A+B,\;A-B,\;\lambda A$};
+    \draw[-{Latex[length=3mm]},very thick,navy] (a)--node[above]{same shape}(b);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.8cm}
+  \takeaway{These operations modify values while keeping every position in place.}
+\end{frame}
+
+\begin{frame}{Compatibility is not a technicality}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \begin{exampleblock}{Defined}
+        \[
+        (2\times3)+(2\times3)
+        \]
+        Every entry has a partner.
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{alertblock}{Not defined}
+        \[
+        (2\times3)+(3\times2)
+        \]
+        Positions no longer match.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.6cm}
+  \concept{Addition is position-by-position matching.}
+\end{frame}
+
+\begin{frame}{The local rule}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Addition}
+        \[
+        A+B=(a_{ij}+b_{ij})
+        \]
+      \end{block}
+      \begin{block}{Subtraction}
+        \[
+        A-B=(a_{ij}-b_{ij})
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Scalar multiplication}
+        \[
+        \lambda A=(\lambda a_{ij})
+        \]
+        one number acts on every entry
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Worked example: addition}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.28\textwidth}
+      \begin{block}{$A$}
+        \[
+        \begin{pmatrix}2&-1\\0&3\end{pmatrix}
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.06\textwidth}
+      \centering\vspace{0.65cm}\Huge $+$
+    \end{column}
+    \begin{column}{0.28\textwidth}
+      \begin{block}{$B$}
+        \[
+        \begin{pmatrix}5&4\\-2&1\end{pmatrix}
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.06\textwidth}
+      \centering\vspace{0.65cm}\Huge $=$
+    \end{column}
+    \begin{column}{0.28\textwidth}
+      \begin{exampleblock}{$A+B$}
+        \[
+        \begin{pmatrix}7&3\\-2&4\end{pmatrix}
+        \]
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.65cm}
+  \centering
+  $2+5=7$ \quad $-1+4=3$ \quad $0+(-2)=-2$ \quad $3+1=4$
+\end{frame}
