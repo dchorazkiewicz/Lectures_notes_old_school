@@ -1,1 +1,470 @@
 \section{Multiple Fields and Coupled Equations}
+\label{sec:multiple_fields_and_coupled_equations}
+
+Many field theories contain several dynamical fields or several components of one field. The variational method extends directly: every independent field is varied independently, and stationarity produces one Euler--Lagrange equation for each field component.
+
+Coupling appears when the Lagrangian density contains terms involving more than one field. The resulting equations must then be solved together.
+
+\subsection{Several independent fields}
+
+Let the dynamical variables be
+
+\[
+\phi^{1}(x),\phi^{2}(x),\ldots,\phi^{N}(x).
+\]
+
+We use the collective notation \(\phi^{a}\), where
+
+\[
+a=1,\ldots,N.
+\]
+
+The action is
+
+\[
+\boxed{
+S[\phi^{1},\ldots,\phi^{N}]
+=
+\int_{\Omega}
+\mathcal{L}(
+\phi^{a},
+\partial_{\mu}\phi^{a},
+x)
+\,\mathrm{d}^{4}x
+}.
+\]
+
+The index \(a\) labels fields or components. It is distinct from the spacetime derivative index \(\mu\).
+
+For each field, introduce an independent deformation:
+
+\[
+\phi^{a}_{\varepsilon}(x)
+=
+\phi^{a}(x)+\varepsilon\eta^{a}(x).
+\]
+
+Then
+
+\[
+\delta\phi^{a}=\eta^{a},
+\qquad
+\delta(\partial_{\mu}\phi^{a})
+=
+\partial_{\mu}\eta^{a}.
+\]
+
+\subsection{First variation for several fields}
+
+The chain rule gives
+
+\[
+\delta S
+=
+\int_{\Omega}
+\sum_{a=1}^{N}
+\left[
+\frac{\partial\mathcal{L}}{\partial\phi^{a}}
+\eta^{a}
++
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+\partial_{\mu}\eta^{a}
+\right]
+\,\mathrm{d}^{4}x.
+\]
+
+Integrating the derivative term by parts for every value of \(a\),
+
+\[
+\begin{aligned}
+\delta S
+&=
+\int_{\partial\Omega}
+\sum_{a=1}^{N}
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+n_{\mu}\eta^{a}
+\,\mathrm{d}\Sigma\\
+&\quad+
+\int_{\Omega}
+\sum_{a=1}^{N}
+\left[
+\frac{\partial\mathcal{L}}{\partial\phi^{a}}
+-
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+\right)
+\right]
+\eta^{a}
+\,\mathrm{d}^{4}x.
+\end{aligned}
+\]
+
+For fixed boundary values,
+
+\[
+\eta^{a}=0
+\qquad
+\text{on }\partial\Omega
+\]
+
+for every \(a\), so the boundary term vanishes.
+
+Because the interior functions \(\eta^{a}(x)\) are independent, every coefficient must vanish separately:
+
+\[
+\boxed{
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+\right)
+-
+\frac{\partial\mathcal{L}}{\partial\phi^{a}}
+=0,
+\qquad
+a=1,\ldots,N
+}.
+\]
+
+Thus \(N\) independent field components produce \(N\) field equations.
+
+\subsection{What coupling means}
+
+The fields are uncoupled if the Lagrangian density separates as
+
+\[
+\mathcal{L}
+=
+\mathcal{L}_{1}(\phi^{1},\partial\phi^{1})
++
+\cdots
++
+\mathcal{L}_{N}(\phi^{N},\partial\phi^{N}).
+\]
+
+Then the equation for \(\phi^{a}\) contains only \(\phi^{a}\).
+
+The fields are coupled when \(\mathcal{L}\) contains mixed terms such as
+
+\[
+g\phi^{1}\phi^{2},
+\qquad
+h\partial_{\mu}\phi^{1}\partial_{\mu}\phi^{2},
+\qquad
+V(\phi^{1},\phi^{2}).
+\]
+
+A mixed term contributes to more than one Euler--Lagrange equation. A disturbance in one field can therefore influence the evolution of another.
+
+\subsection{Example: two linearly coupled scalar fields}
+
+Consider two real fields \(\phi(\mathbf{x},t)\) and \(\chi(\mathbf{x},t)\) with density
+
+\[
+\begin{aligned}
+\mathcal{L}
+&=
+\frac{1}{2}\phi_{t}^{2}
+-
+\frac{c_{\phi}^{2}}{2}|\nabla\phi|^{2}
+-
+\frac{m_{\phi}^{2}}{2}\phi^{2}\\
+&\quad+
+\frac{1}{2}\chi_{t}^{2}
+-
+\frac{c_{\chi}^{2}}{2}|\nabla\chi|^{2}
+-
+\frac{m_{\chi}^{2}}{2}\chi^{2}\\
+&\quad-
+g\phi\chi
++
+J_{\phi}\phi
++
+J_{\chi}\chi.
+\end{aligned}
+\]
+
+The sources \(J_{\phi}\) and \(J_{\chi}\) are prescribed and are not varied.
+
+For \(\phi\),
+
+\[
+\frac{\partial\mathcal{L}}
+{\partial\phi_{t}}
+=
+\phi_{t},
+\qquad
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{i}\phi)}
+=
+-c_{\phi}^{2}\partial_{i}\phi,
+\]
+
+and
+
+\[
+\frac{\partial\mathcal{L}}{\partial\phi}
+=
+-m_{\phi}^{2}\phi-g\chi+J_{\phi}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\phi_{tt}
+-
+c_{\phi}^{2}\nabla^{2}\phi
++
+m_{\phi}^{2}\phi
++
+g\chi
+=
+J_{\phi}
+}.
+\]
+
+Similarly, variation with respect to \(\chi\) gives
+
+\[
+\boxed{
+\chi_{tt}
+-
+c_{\chi}^{2}\nabla^{2}\chi
++
+m_{\chi}^{2}\chi
++
+g\phi
+=
+J_{\chi}
+}.
+\]
+
+The equations are coupled because each contains the other field.
+
+\subsection{Consistency check from the interaction term}
+
+The interaction density is
+
+\[
+\mathcal{L}_{\mathrm{int}}
+=
+-g\phi\chi.
+\]
+
+Its variation is
+
+\[
+\delta\mathcal{L}_{\mathrm{int}}
+=
+-g\chi\,\delta\phi
+-
+g\phi\,\delta\chi.
+\]
+
+Thus the same coupling constant appears symmetrically in both equations. This provides a direct check of the signs and coefficients.
+
+If \(g=0\), the equations decouple. Each field then evolves independently.
+
+\subsection{Normal fields in a symmetric model}
+
+Suppose
+
+\[
+c_{\phi}=c_{\chi}=c,
+\qquad
+m_{\phi}=m_{\chi}=m,
+\qquad
+J_{\phi}=J_{\chi}=0.
+\]
+
+Define
+
+\[
+\psi_{+}
+=
+\frac{\phi+\chi}{\sqrt{2}},
+\qquad
+\psi_{-}
+=
+\frac{\phi-\chi}{\sqrt{2}}.
+\]
+
+Adding the two coupled equations gives
+
+\[
+(\phi+\chi)_{tt}
+-
+c^{2}\nabla^{2}(\phi+\chi)
++
+(m^{2}+g)(\phi+\chi)
+=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+(\psi_{+})_{tt}
+-
+c^{2}\nabla^{2}\psi_{+}
++
+(m^{2}+g)\psi_{+}
+=0
+}.
+\]
+
+Subtracting the equations gives
+
+\[
+\boxed{
+(\psi_{-})_{tt}
+-
+c^{2}\nabla^{2}\psi_{-}
++
+(m^{2}-g)\psi_{-}
+=0
+}.
+\]
+
+The original fields are coupled, but the combinations \(\psi_{+}\) and \(\psi_{-}\) evolve independently. They are normal fields, analogous to normal coordinates in coupled-oscillator mechanics.
+
+This example shows that coupling may depend on the chosen variables. A suitable linear transformation can diagonalize a quadratic theory.
+
+\subsection{Matrix form of a quadratic theory}
+
+Let
+
+\[
+\boldsymbol{\Phi}
+=
+\begin{pmatrix}
+\phi^{1}\\
+\vdots\\
+\phi^{N}
+\end{pmatrix}.
+\]
+
+A quadratic potential may be written as
+
+\[
+V(\boldsymbol{\Phi})
+=
+\frac{1}{2}
+\boldsymbol{\Phi}^{\mathsf{T}}
+M
+\boldsymbol{\Phi},
+\]
+
+where \(M\) is a symmetric matrix. Its gradient in field space is
+
+\[
+\frac{\partial V}{\partial\boldsymbol{\Phi}}
+=
+M\boldsymbol{\Phi}.
+\]
+
+The coupled field equations can then be written schematically as
+
+\[
+\boldsymbol{\Phi}_{tt}
+-
+c^{2}\nabla^{2}\boldsymbol{\Phi}
++
+M\boldsymbol{\Phi}
+=
+\mathbf{J}.
+\]
+
+Diagonalizing \(M\) identifies combinations of fields that propagate independently in the linear theory.
+
+\subsection{Field components and genuine independent fields}
+
+A vector-valued field may be written as
+
+\[
+\mathbf{A}(x)
+=
+(A^{1}(x),A^{2}(x),A^{3}(x)).
+\]
+
+For the purpose of variation, each independent component can initially be treated as a separate field. One writes one Euler--Lagrange equation for every component.
+
+However, components need not always represent independent physical degrees of freedom. Constraints or gauge redundancies may relate them. The variational derivative still produces component equations, but additional structure is required to identify the physically independent content.
+
+This distinction will become important in electromagnetism, where the four-potential contains gauge redundancy.
+
+\subsection{Derivative coupling}
+
+Fields may also be coupled through derivatives. For example,
+
+\[
+\mathcal{L}_{\mathrm{mix}}
+=
+-h\nabla\phi\cdot\nabla\chi.
+\]
+
+Its variation with respect to \(\phi\) contains
+
+\[
+-h\nabla\chi\cdot\nabla(\delta\phi).
+\]
+
+After integration by parts, this contributes
+
+\[
+h\nabla^{2}\chi
+\]
+
+to the coefficient of \(\delta\phi\). The equation for one field then contains derivatives of the other.
+
+Derivative coupling must therefore be handled through the full Euler--Lagrange formula, not by differentiating only the potential.
+
+\subsection{External fields and dynamical fields}
+
+A symbol appearing in \(\mathcal{L}\) is varied only if it is declared dynamical. A prescribed source \(J(x)\), background density, or external field remains fixed:
+
+\[
+\delta J=0.
+\]
+
+If the same object is instead promoted to a dynamical field, it must receive its own variation and its own equation of motion.
+
+A correct calculation should therefore begin by listing all dynamical variables and all prescribed backgrounds.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item varying only one field in an interaction term;
+    \item assuming coupled equations can be solved independently;
+    \item confusing the field label \(a\) with a spacetime index;
+    \item varying a prescribed source;
+    \item forgetting mixed derivative terms;
+    \item changing variables without transforming the complete Lagrangian density;
+    \item assuming every component is physically independent when constraints or gauge freedom are present.
+\end{enumerate}
+
+\subsection{What has been established}
+
+For several fields, stationarity gives one Euler--Lagrange equation for each independent component:
+
+\[
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+\right)
+-
+\frac{\partial\mathcal{L}}{\partial\phi^{a}}
+=0.
+\]
+
+Mixed terms in the Lagrangian density produce coupled equations. In quadratic theories, suitable linear combinations may diagonalize the coupling and reveal independent normal fields.
+
+The next section studies the spacetime boundary term in greater detail and compares fixed-value, free-boundary, and natural boundary conditions.
