@@ -1,0 +1,61 @@
+% =============================================================================
+% OPENING
+% =============================================================================
+
+\begin{frame}[plain]
+  \setbeamercolor{background canvas}{bg=navy}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[navy] (current page.south west) rectangle (current page.north east);
+    \fill[blue] ([xshift=-4.4cm]current page.north east) rectangle (current page.south east);
+    \node[anchor=west,text=white,font=\bfseries\fontsize{34}{38}\selectfont] at ([xshift=0.9cm,yshift=1.0cm]current page.west) {Matrices};
+    \node[anchor=west,text=white!78,font=\Large] at ([xshift=0.95cm,yshift=-0.15cm]current page.west) {Read the shape. Understand the action.};
+    \node[anchor=west,text=white!65,font=\small] at ([xshift=0.95cm,yshift=-2.2cm]current page.west) {Basic Mathematics \;\textbullet\; Lecture 1};
+    \node[text=white,font=\Large] at ([xshift=-2.15cm]current page.east) {$\begin{pmatrix}1&2&0\\-1&3&4\\2&0&5\end{pmatrix}$};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{The story of the lecture}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.55cm and 0.45cm]
+    \tikzset{storybox/.style={rounded corners=5pt,minimum width=2.2cm,minimum height=1.0cm,align=center,font=\bfseries,draw=line,very thick}}
+    \node[storybox,fill=softblue] (a) {Read\\the object};
+    \node[storybox,fill=softgreen,right=of a] (b) {Operate\\entrywise};
+    \node[storybox,fill=softorange,right=of b] (c) {Compose\\actions};
+    \node[storybox,fill=softblue,right=of c] (d) {Notice\\structure};
+    \node[storybox,fill=softgreen,right=of d] (e) {Transform\\the problem};
+    \draw[-{Latex[length=3mm]},thick,blue] (a) -- (b);
+    \draw[-{Latex[length=3mm]},thick,blue] (b) -- (c);
+    \draw[-{Latex[length=3mm]},thick,blue] (c) -- (d);
+    \draw[-{Latex[length=3mm]},thick,blue] (d) -- (e);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.7cm}
+  \takeaway{A matrix is useful because it keeps structure visible while we calculate.}
+\end{frame}
+
+\begin{frame}{Three 45-minute arcs}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\textwidth}
+      \begin{block}{Arc I — Language}
+        \centering
+        shape, entries, rows, columns\\[0.3cm]
+        addition and scaling
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{exampleblock}{Arc II — Action}
+        \centering
+        row $\times$ column\\[0.3cm]
+        composition and order
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{alertblock}{Arc III — Structure}
+        \centering
+        identity, transpose, diagonal\\[0.3cm]
+        row operations
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
