@@ -1,1 +1,444 @@
 \section{Rotational and Lorentz Symmetry}
+\label{sec:rotational_lorentz_symmetry}
+
+Translations produce energy and momentum. Rotations and Lorentz transformations produce angular-momentum and boost currents. For scalar fields, the current is orbital. For fields with intrinsic spin, an additional spin current is required.
+
+\subsection{Infinitesimal Lorentz transformations}
+
+A Lorentz transformation preserves the Minkowski metric:
+
+\[
+\eta_{\rho\sigma}
+\Lambda^{\rho}{}_{\mu}
+\Lambda^{\sigma}{}_{\nu}
+=
+\eta_{\mu\nu}.
+\]
+
+Near the identity,
+
+\[
+\Lambda^{\mu}{}_{\nu}
+=
+\delta^{\mu}{}_{\nu}
++
+\frac{1}{2}
+\varepsilon
+\omega^{\mu}{}_{\nu}.
+\]
+
+Metric preservation implies
+
+\[
+\boxed{
+\omega_{\mu\nu}
+=
+-\omega_{\nu\mu}
+}.
+\]
+
+The coordinate change is
+
+\[
+\boxed{
+\delta x^{\mu}
+=
+\frac{1}{2}
+\varepsilon
+\omega^{\mu}{}_{\nu}x^{\nu}
+}.
+\]
+
+The six independent components of \(\omega_{\mu\nu}\) describe three spatial rotations and three boosts.
+
+\subsection{Scalar-field transformation}
+
+A Lorentz scalar has no intrinsic component transformation:
+
+\[
+\Psi=0.
+\]
+
+Its fixed-point variation is
+
+\[
+\delta_0\phi
+=
+-\delta x^{\rho}\partial_{\rho}\phi.
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta_0\phi
+=
+-\frac{1}{2}
+\varepsilon
+\omega_{\rho\sigma}
+\left(
+x^{\sigma}\partial^{\rho}
+-
+x^{\rho}\partial^{\sigma}
+\right)\phi
+}.
+\]
+
+The operator in parentheses is the orbital Lorentz generator.
+
+\subsection{Lorentz invariance of the scalar Lagrangian}
+
+For
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi
+-
+V(\phi),
+\]
+
+the potential is invariant because \(\phi\) is a scalar. The kinetic term is a complete Lorentz contraction:
+
+\[
+\partial_{\mu}\phi
+\partial^{\mu}\phi.
+\]
+
+Hence the action is Lorentz invariant when the spacetime measure and integration region are transformed consistently.
+
+\subsection{Angular-momentum current}
+
+For a symmetric conserved energy-momentum tensor, define
+
+\[
+\boxed{
+M^{\lambda\mu\nu}
+=
+x^{\mu}T^{\lambda\nu}
+-
+x^{\nu}T^{\lambda\mu}
+}.
+\]
+
+The current is antisymmetric in its final two indices:
+
+\[
+M^{\lambda\mu\nu}
+=
+-
+M^{\lambda\nu\mu}.
+\]
+
+Its divergence is
+
+\[
+\begin{aligned}
+\partial_{\lambda}M^{\lambda\mu\nu}
+&=
+\partial_{\lambda}
+\left(
+x^{\mu}T^{\lambda\nu}
+-
+x^{\nu}T^{\lambda\mu}
+\right)
+\\
+&=
+T^{\mu\nu}
++
+x^{\mu}\partial_{\lambda}T^{\lambda\nu}
+-
+T^{\nu\mu}
+-
+x^{\nu}\partial_{\lambda}T^{\lambda\mu}.
+\end{aligned}
+\]
+
+If
+
+\[
+\partial_{\lambda}T^{\lambda\nu}=0
+\]
+
+and
+
+\[
+T^{\mu\nu}=T^{\nu\mu},
+\]
+
+then
+
+\[
+\boxed{
+\partial_{\lambda}M^{\lambda\mu\nu}=0
+}.
+\]
+
+\subsection{Conserved Lorentz charges}
+
+Define
+
+\[
+\boxed{
+J^{\mu\nu}
+=
+\frac{1}{c}
+\int
+M^{0\mu\nu}
+\,\mathrm{d}^{3}x
+}.
+\]
+
+The antisymmetry gives
+
+\[
+J^{\mu\nu}
+=
+-J^{\nu\mu}.
+\]
+
+The spatial components
+
+\[
+J^{ij}
+\]
+
+represent ordinary angular momentum. The mixed components
+
+\[
+J^{0i}
+\]
+
+represent boost charges.
+
+Under suitable boundary conditions,
+
+\[
+\frac{\mathrm{d}J^{\mu\nu}}{\mathrm{d}t}=0.
+\]
+
+\subsection{Three-dimensional angular momentum}
+
+The ordinary angular-momentum vector is
+
+\[
+\boxed{
+L^{i}
+=
+\frac{1}{2}
+\epsilon^{ijk}
+J^{jk}
+}.
+\]
+
+For a scalar field with momentum density \(\mathbf{g}\),
+
+\[
+\boxed{
+\mathbf{L}
+=
+\int
+\mathbf{x}\times\mathbf{g}
+\,\mathrm{d}^{3}x
+}.
+\]
+
+This is purely orbital angular momentum.
+
+\subsection{Rotation about the z-axis}
+
+For a rotation in the \(x\)-\(y\) plane,
+
+\[
+\delta x
+=
+-\varepsilon y,
+\qquad
+\delta y
+=
+\varepsilon x.
+\]
+
+The fixed-point variation of a scalar field is
+
+\[
+\boxed{
+\delta_0\phi
+=
+-\varepsilon
+\left(
+-y\partial_x+x\partial_y
+\right)\phi
+}.
+\]
+
+The associated conserved charge is the \(z\)-component of angular momentum:
+
+\[
+L_z
+=
+\int
+\left(
+xg_y-yg_x
+\right)
+\,\mathrm{d}^{3}x.
+\]
+
+A spherically symmetric configuration has zero orbital angular momentum density because \(\nabla\phi\) is radial and cannot produce a tangential momentum flow by itself.
+
+\subsection{Boost charges}
+
+A boost mixes time with one spatial coordinate. For a boost in the \(x^i\) direction, the corresponding charge is
+
+\[
+J^{0i}
+=
+\frac{1}{c}
+\int
+\left(
+x^{0}T^{0i}
+-
+x^{i}T^{00}
+\right)
+\,\mathrm{d}^{3}x.
+\]
+
+Since
+
+\[
+x^{0}=ct,
+\]
+
+this becomes
+
+\[
+J^{0i}
+=
+t
+\int
+T^{0i}
+\,\mathrm{d}^{3}x
+-
+\frac{1}{c}
+\int
+x^{i}T^{00}
+\,\mathrm{d}^{3}x.
+\]
+
+The conservation of \(J^{0i}\) relates the motion of the center of energy to the total momentum.
+
+\subsection{Fields with intrinsic spin}
+
+A vector or spinor field transforms not only because its argument changes but also because its components transform. Write
+
+\[
+\delta_0\phi_a
+=
+-\delta x^{\rho}\partial_{\rho}\phi_a
++
+\frac{1}{2}
+\varepsilon
+\omega_{\mu\nu}
+\left(
+\Sigma^{\mu\nu}
+\right)_a{}^b
+\phi_b.
+\]
+
+The matrices \(\Sigma^{\mu\nu}\) represent the Lorentz generators in the field's internal component space.
+
+The canonical angular-momentum current then has the form
+
+\[
+\boxed{
+M_{\mathrm{can}}^{\lambda\mu\nu}
+=
+x^{\mu}T_{\mathrm{can}}^{\lambda\nu}
+-
+x^{\nu}T_{\mathrm{can}}^{\lambda\mu}
++
+S^{\lambda\mu\nu}
+},
+\]
+
+where \(S^{\lambda\mu\nu}\) is the spin current.
+
+For a scalar field,
+
+\[
+S^{\lambda\mu\nu}=0.
+\]
+
+\subsection{Why a Symmetric Energy--Momentum Tensor Matters}
+
+From
+
+\[
+\partial_{\lambda}
+\left(
+x^{\mu}T^{\lambda\nu}
+-
+x^{\nu}T^{\lambda\mu}
+\right)
+=
+T^{\mu\nu}-T^{\nu\mu},
+\]
+
+we see that the purely orbital current is conserved only when the energy-momentum tensor is symmetric.
+
+For spinning fields, the antisymmetric part of the canonical tensor is balanced by the divergence of the spin current. An improved symmetric tensor combines orbital and spin contributions into a form particularly suitable for relativistic mechanics and gravity.
+
+\subsection{Structural check: rotationally invariant potentials}
+
+A scalar potential
+
+\[
+V(\phi)
+\]
+
+does not depend on spatial direction and therefore does not break rotational symmetry.
+
+An external term such as
+
+\[
+J(\mathbf{x})\phi
+\]
+
+preserves rotations only if
+
+\[
+J(R\mathbf{x})
+=
+J(\mathbf{x})
+\]
+
+for the relevant rotations. A source localized away from the origin generally breaks rotational symmetry about the origin.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item forgetting the antisymmetry \(\omega_{\mu\nu}=-\omega_{\nu\mu}\);
+    \item treating boosts as ordinary spatial rotations;
+    \item assuming that the canonical energy-momentum tensor is always symmetric;
+    \item omitting the spin current for vector or spinor fields;
+    \item identifying \(J^{0i}\) with ordinary angular momentum;
+    \item claiming rotational conservation when an external source selects a preferred direction.
+\end{enumerate}
+
+\subsection{What has been established}
+
+Lorentz symmetry produces the conserved current
+
+\[
+M^{\lambda\mu\nu}
+=
+x^{\mu}T^{\lambda\nu}
+-
+x^{\nu}T^{\lambda\mu}
+\]
+
+for a scalar field with symmetric energy-momentum tensor. Spatial components give angular momentum, while mixed time-space components give boost charges. The final section applies Noether's theorem to an internal global phase symmetry of a complex scalar field.
