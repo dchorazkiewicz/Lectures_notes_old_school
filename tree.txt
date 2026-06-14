@@ -408,6 +408,8 @@
 ./mathematical_lectures/probabilistic_methods/titlepage.tex
 ./mkdocs.yml
 ./physics_lectures
+./physics_lectures/classical_field_theory
+./physics_lectures/classical_field_theory/README.md
 ./physics_lectures/general_notes_experiments
 ./physics_lectures/general_notes_experiments/build.sh
 ./physics_lectures/general_notes_experiments/chapters
