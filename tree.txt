@@ -418,6 +418,8 @@
 ./physics_lectures/classical_field_theory/macros.tex
 ./physics_lectures/classical_field_theory/main.tex
 ./physics_lectures/classical_field_theory/preamble.tex
+./physics_lectures/classical_field_theory/problems
+./physics_lectures/classical_field_theory/problems/.gitkeep
 ./physics_lectures/classical_field_theory/styles.tex
 ./physics_lectures/classical_field_theory/titlepage.tex
 ./physics_lectures/general_notes_experiments
