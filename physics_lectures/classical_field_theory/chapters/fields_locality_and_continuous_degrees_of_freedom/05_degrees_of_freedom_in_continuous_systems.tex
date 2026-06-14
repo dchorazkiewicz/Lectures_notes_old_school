@@ -1,1 +1,303 @@
 \section{Degrees of Freedom in Continuous Systems}
+\label{sec:continuous_degrees_of_freedom}
+
+A degree of freedom is an independent quantity needed to specify the configuration of a system. For a particle moving on a line, one coordinate \(q(t)\) is sufficient. For a particle moving in three-dimensional space, three coordinates are required. For \(N\) particles moving on a line, a configuration may be written as
+
+\[
+\mathbf{q}(t)
+=
+\bigl(q_{1}(t),q_{2}(t),\ldots,q_{N}(t)\bigr).
+\]
+
+The configuration is one point in an \(N\)-dimensional configuration space.
+
+A continuous system is different. A string, fluid, elastic body, or field occupies a region containing continuously many points. To describe its configuration, we need a function rather than a finite list of numbers. The displacement of a string, for example, is written as
+
+\[
+u=u(x,t),
+\qquad 0\leq x\leq L.
+\]
+
+At a fixed time, the complete configuration is the function \(u(x)\). Informally, we say that there is one degree of freedom for each value of \(x\). This statement is useful, but it must be interpreted carefully.
+
+\subsection{From finitely many coordinates to a field}
+
+Suppose that a string is approximated by \(N\) marked points. Let
+
+\[
+x_{n}=n\,a,
+\qquad n=0,1,\ldots,N-1,
+\]
+
+where
+
+\[
+a=\frac{L}{N-1}
+\]
+
+is the spacing between neighbouring points.
+
+We record the displacement at each point:
+
+\[
+u_{n}(t)=u(x_{n},t).
+\]
+
+The approximate configuration is then the finite vector
+
+\[
+\mathbf{u}(t)
+=
+\bigl(u_{0}(t),u_{1}(t),\ldots,u_{N-1}(t)\bigr).
+\]
+
+For \(N=5\), only five displacement values are stored. The shape between the marked points must be inferred by interpolation. If \(N\) is increased, more detail is retained. In the formal continuum limit,
+
+\[
+N\longrightarrow\infty,
+\qquad
+a\longrightarrow 0,
+\qquad
+L\ \text{fixed},
+\]
+
+the finite list is replaced by the continuous function \(u(x,t)\).
+
+This is one practical meaning of a field: it is the limiting description obtained when a system is resolved at arbitrarily small spatial intervals.
+
+\subsection{A numerical example of increasing resolution}
+
+Take a string of length \(L=1\,\mathrm{m}\) with the configuration
+
+\[
+u(x)=0.02\,\mathrm{m}\,
+\sin\left(\frac{\pi x}{L}\right).
+\]
+
+If we sample only the endpoints and the midpoint, then
+
+\[
+x_{0}=0,
+\qquad
+x_{1}=\frac{L}{2},
+\qquad
+x_{2}=L,
+\]
+
+and
+
+\[
+\bigl(u_{0},u_{1},u_{2}\bigr)
+=
+\bigl(0,0.02\,\mathrm{m},0\bigr).
+\]
+
+This three-number description captures the maximum displacement but not the detailed curvature.
+
+With five equally spaced points,
+
+\[
+x_{n}=\frac{nL}{4},
+\qquad n=0,1,2,3,4,
+\]
+
+we obtain
+
+\[
+\begin{aligned}
+u_{0}&=0,\\
+u_{1}&=0.02\sin\left(\frac{\pi}{4}\right)\mathrm{m},\\
+u_{2}&=0.02\,\mathrm{m},\\
+u_{3}&=0.02\sin\left(\frac{3\pi}{4}\right)\mathrm{m},\\
+u_{4}&=0.
+\end{aligned}
+\]
+
+Since
+
+\[
+\sin\left(\frac{\pi}{4}\right)
+=
+\sin\left(\frac{3\pi}{4}\right)
+=
+\frac{1}{\sqrt{2}},
+\]
+
+the sampled configuration is
+
+\[
+\mathbf{u}
+=
+\left(
+0,
+\frac{0.02}{\sqrt{2}},
+0.02,
+\frac{0.02}{\sqrt{2}},
+0
+\right)\mathrm{m}.
+\]
+
+The field formula contains all these finite approximations simultaneously. Any desired sampling resolution can be extracted from it.
+
+\subsection{The values are not arbitrary independent numbers}
+
+The phrase ``one degree of freedom at each point'' does not mean that neighbouring field values are always unrelated. Physical fields are usually required to be continuous or differentiable, and their equations relate values in nearby regions.
+
+If the displacement of a string changed from \(1\,\mathrm{cm}\) to \(100\,\mathrm{m}\) over an arbitrarily small distance, the continuum model would usually cease to be physically meaningful. Smoothness assumptions restrict the allowed configurations.
+
+A finite-difference approximation makes this relation visible. The spatial derivative at \(x_{n}\) may be approximated by
+
+\[
+\frac{\partial u}{\partial x}(x_{n},t)
+\approx
+\frac{u_{n+1}(t)-u_{n}(t)}{a}.
+\]
+
+If the derivative must remain finite as \(a\to 0\), then the difference \(u_{n+1}-u_{n}\) must decrease with \(a\). Neighbouring values cannot vary arbitrarily.
+
+Boundary conditions impose further restrictions. For a string fixed at both ends,
+
+\[
+u(0,t)=0,
+\qquad
+u(L,t)=0.
+\]
+
+The endpoint values are not free degrees of freedom. Constraints and symmetries may similarly reduce the number of independent variables.
+
+\subsection{Configuration space becomes a function space}
+
+For a system with \(N\) coordinates, the configuration space may be \(\mathbb{R}^{N}\). For a field, the configuration is a function, so the configuration space is a space of functions.
+
+For a fixed string, one possible configuration space is schematically
+
+\[
+\mathcal{C}
+=
+\left\{
+u:[0,L]\to\mathbb{R}
+\;\middle|\;
+u(0)=u(L)=0
+\right\},
+\]
+
+with additional smoothness conditions when derivatives are needed.
+
+The symbol \(\mathcal{C}\) does not represent ordinary three-dimensional space. Each point of \(\mathcal{C}\) represents one entire shape of the string. Moving through configuration space means changing from one complete field configuration to another.
+
+This is why the action of a field theory is a functional. Its input is not a finite coordinate vector but a complete field history.
+
+\subsection{A field configuration versus a complete dynamical state}
+
+For many second-order dynamical equations, the field value at one instant is not enough to predict the future. We must also specify its time derivative.
+
+For a string, the initial data are
+
+\[
+u(x,0)=f(x),
+\qquad
+\frac{\partial u}{\partial t}(x,0)=g(x).
+\]
+
+The function \(f\) gives the initial shape, while \(g\) gives the initial velocity distribution. Two strings may have the same shape at one instant but move differently because their velocity fields differ.
+
+Thus we should distinguish:
+
+\begin{itemize}
+    \item a \emph{configuration}, specified by \(u(x)\);
+    \item a \emph{dynamical state}, often specified by \(u(x)\) together with \(\partial u/\partial t\).
+\end{itemize}
+
+Later, in Hamiltonian field theory, the time derivative will be replaced by a conjugate momentum field.
+
+\subsection{Normal modes provide another set of coordinates}
+
+A field may also be described by expanding it in a set of spatial patterns. For a string fixed at \(x=0\) and \(x=L\), a useful expansion is
+
+\[
+u(x,t)
+=
+\sum_{n=1}^{\infty}
+q_{n}(t)
+\sin\left(\frac{n\pi x}{L}\right).
+\]
+
+Each sine function already satisfies the endpoint conditions. The time-dependent coefficient \(q_{n}(t)\) tells us how strongly the \(n\)-th normal mode is excited.
+
+In this description, the field is represented not by one value at every point but by the infinite list
+
+\[
+q_{1}(t),q_{2}(t),q_{3}(t),\ldots
+\]
+
+The two descriptions contain the same information when the expansion is valid:
+
+\begin{itemize}
+    \item position-space description: \(u(x,t)\);
+    \item mode description: the coefficients \(q_{n}(t)\).
+\end{itemize}
+
+For example, the configuration
+
+\[
+u(x,0)
+=
+A\sin\left(\frac{\pi x}{L}\right)
++
+B\sin\left(\frac{2\pi x}{L}\right)
+\]
+
+has only two nonzero mode amplitudes:
+
+\[
+q_{1}(0)=A,
+\qquad
+q_{2}(0)=B,
+\qquad
+q_{n}(0)=0\quad\text{for }n\geq 3.
+\]
+
+The full system permits infinitely many modes, but a particular configuration may involve only a few of them.
+
+This mode viewpoint is important in wave physics and later becomes central in quantum field theory. It also clarifies that ``infinitely many degrees of freedom'' can be organized into a sequence of ordinary time-dependent coordinates.
+
+\subsection{Continuum models are approximations with a scale of validity}
+
+Many classical fields describe matter that is microscopically discrete. A string is made of atoms, a fluid is made of molecules, and an elastic solid has a crystal or molecular structure. The continuum description is effective when the length scales of interest are much larger than the microscopic spacing.
+
+If a wave has wavelength \(\lambda\) and the microscopic spacing is \(a\), the continuum approximation is usually most reliable when
+
+\[
+\lambda\gg a.
+\]
+
+At wavelengths comparable with the microscopic scale, the discrete structure may become observable, and the continuum field equation may need correction.
+
+A field theory can therefore be exact within a mathematical model while still being an approximation to a more microscopic physical system. The domain of validity should always be kept in mind.
+
+\subsection{Discretization as a computational method}
+
+The same idea used to motivate the continuum limit is also used in the opposite direction for numerical calculations. A continuous field is replaced by values on a finite grid, derivatives are approximated by finite differences, and the field equation becomes a large system of algebraic or ordinary differential equations.
+
+Increasing the number of grid points should improve the approximation when the numerical method is stable and convergent. Thus the relation
+
+\[
+\text{finite system}
+\longleftrightarrow
+\text{continuous field}
+\]
+
+works in both directions:
+
+\begin{itemize}
+    \item a dense discrete system motivates a continuum field;
+    \item a continuum field is discretized for numerical solution.
+\end{itemize}
+
+\subsection{What has been established}
+
+A field represents a system whose configuration requires a function rather than a finite list of coordinates. This can be understood by sampling the field at \(N\) points and taking the limit of increasing resolution.
+
+The field values are not generally arbitrary because smoothness, field equations, constraints, and boundary conditions relate them. The infinite-dimensional configuration space can be described either through values in position space or through infinitely many mode amplitudes.
+
+The next section makes the discrete-to-continuum passage explicit. Starting from a chain of masses connected by springs, we will derive the wave equation and the corresponding continuum energy.
