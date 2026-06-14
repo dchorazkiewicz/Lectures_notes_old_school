@@ -1,0 +1,40 @@
+\begin{frame}{Patterns worth noticing}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\textwidth}
+      \begin{block}{Zeros}
+        sparse, triangular, diagonal
+      \end{block}
+      \begin{block}{Repetition}
+        equal rows, columns, blocks
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{exampleblock}{Dependence}
+        proportional rows or columns
+      \end{exampleblock}
+      \begin{exampleblock}{Symmetry}
+        mirrored entries
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{alertblock}{Use the pattern}
+        State what becomes simpler and why.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Checkpoint: see before you compute}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.65cm]
+    \tikzset{c/.style={rounded corners=5pt,draw=line,very thick,fill=paper,minimum width=2.2cm,minimum height=0.9cm,align=center,font=\bfseries}}
+    \node[c] (look) {look for\\patterns};
+    \node[c,right=of look] (explain) {explain their\\meaning};
+    \node[c,right=of explain] (use) {use them to\\simplify};
+    \draw[-{Latex[length=3mm]},thick,blue] (look)--(explain);
+    \draw[-{Latex[length=3mm]},thick,blue] (explain)--(use);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.7cm}
+  \concept{Noticing structure is mathematical understanding.}
+\end{frame}
