@@ -1,1 +1,610 @@
 \section{Integration by Parts and Boundary Terms}
+\label{sec:integration_by_parts_boundary_terms}
+
+Integration by parts is the operation that converts the variation of a derivative into the derivative of a coefficient. In variational mechanics, this step separates the first variation into two distinct pieces:
+
+\begin{itemize}
+    \item an interior term that produces the differential equation of motion;
+    \item a boundary term that records what happens at the endpoints.
+\end{itemize}
+
+The same structure reappears in every later field-theoretic derivation. Understanding it in one time dimension is therefore more important than memorizing the final Euler--Lagrange formula.
+
+\subsection{The ordinary integration-by-parts identity}
+
+For sufficiently differentiable functions \(f(t)\) and \(g(t)\),
+
+\[
+\int_{t_{1}}^{t_{2}}
+f(t)\dot g(t)
+\,\mathrm{d}t
+=
+\left[f(t)g(t)\right]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+\dot f(t)g(t)
+\,\mathrm{d}t.
+\]
+
+This follows from the product rule
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}(fg)
+=
+\dot f g+f\dot g.
+\]
+
+Rearranging,
+
+\[
+f\dot g
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(fg)-\dot f g,
+\]
+
+and integrating over the interval gives the identity.
+
+The notation
+
+\[
+[fg]_{t_{1}}^{t_{2}}
+=
+f(t_{2})g(t_{2})-f(t_{1})g(t_{1})
+\]
+
+makes the endpoint contribution explicit.
+
+\subsection{Application to the first variation}
+
+For the action
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q,\dot q,t)
+\,\mathrm{d}t,
+\]
+
+the first variation is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\delta q
++
+\frac{\partial L}{\partial\dot q}\delta\dot q
+\right)
+\,\mathrm{d}t.
+\]
+
+Since
+
+\[
+\delta\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta q),
+\]
+
+the second term has the form required for integration by parts. Set
+
+\[
+f(t)
+=
+\frac{\partial L}{\partial\dot q},
+\qquad
+g(t)=\delta q(t).
+\]
+
+Then
+
+\[
+\int_{t_{1}}^{t_{2}}
+\frac{\partial L}{\partial\dot q}
+\delta\dot q
+\,\mathrm{d}t
+=
+\left[
+\frac{\partial L}{\partial\dot q}
+\delta q
+\right]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\delta q
+\,\mathrm{d}t.
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta S
+=
+\left[
+\frac{\partial L}{\partial\dot q}
+\delta q
+\right]_{t_{1}}^{t_{2}}
++
+\int_{t_{1}}^{t_{2}}
+\left[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\right]
+\delta q
+\,\mathrm{d}t
+}.
+\]
+
+The derivative has been transferred from \(\delta q\) to \(\partial L/\partial\dot q\). This is the decisive step in the derivation.
+
+\subsection{Why the derivative must be moved}
+
+Before integration by parts, the first variation contains both \(\delta q\) and \(\delta\dot q\). These are not independent functions because
+
+\[
+\delta\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta q).
+\]
+
+The fundamental lemma of the calculus of variations applies to an integral of the form
+
+\[
+\int f(t)\delta q(t)\,\mathrm{d}t.
+\]
+
+Integration by parts rewrites the complete interior contribution in precisely this form. The arbitrariness of \(\delta q\) can then be used to conclude that its coefficient vanishes.
+
+Without this step, one cannot correctly infer separate conditions from the coefficients of \(\delta q\) and \(\delta\dot q\).
+
+\subsection{The boundary term as a separate object}
+
+The boundary contribution is
+
+\[
+B
+=
+\left[
+\frac{\partial L}{\partial\dot q}
+\delta q
+\right]_{t_{1}}^{t_{2}}.
+\]
+
+Using the canonical momentum
+
+\[
+p
+=
+\frac{\partial L}{\partial\dot q},
+\]
+
+we may write
+
+\[
+B=[p\,\delta q]_{t_{1}}^{t_{2}}.
+\]
+
+This term contains no time integral. It depends only on endpoint data.
+
+For fixed endpoint positions,
+
+\[
+\delta q(t_{1})=
+\delta q(t_{2})=0,
+\]
+
+so
+
+\[
+B=0.
+\]
+
+For free endpoints, the term survives and produces natural boundary conditions. Thus one should never write ``the boundary term is zero'' without first stating the conditions that make it zero.
+
+\subsection{A direct example}
+
+Consider
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2}-V(q).
+\]
+
+The first variation is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+-V'(q)\delta q
++
+m\dot q\,\delta\dot q
+\right)
+\,\mathrm{d}t.
+\]
+
+Integrating the second term by parts,
+
+\[
+\int_{t_{1}}^{t_{2}}
+m\dot q\,\delta\dot q
+\,\mathrm{d}t
+=
+[m\dot q\,\delta q]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+m\ddot q\,\delta q
+\,\mathrm{d}t.
+\]
+
+Hence
+
+\[
+\delta S
+=
+[m\dot q\,\delta q]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+\left(
+m\ddot q+V'(q)
+\right)
+\delta q
+\,\mathrm{d}t.
+\]
+
+For fixed endpoints, the first term vanishes. Stationarity then implies
+
+\[
+m\ddot q+V'(q)=0.
+\]
+
+Every sign in this equation can be traced back to the product rule and the minus sign introduced by integration by parts.
+
+\subsection{Sign checking}
+
+A reliable way to check the sign is to start from
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\delta q
+\right)
+=
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\delta q
++
+\frac{\partial L}{\partial\dot q}
+\delta\dot q.
+\]
+
+Solving for the last term,
+
+\[
+\frac{\partial L}{\partial\dot q}
+\delta\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\delta q
+\right)
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\delta q.
+\]
+
+The minus sign is therefore unavoidable.
+
+\subsection{Adding a total time derivative to the Lagrangian}
+
+Suppose two Lagrangians differ by a total derivative:
+
+\[
+L'(q,\dot q,t)
+=
+L(q,\dot q,t)
++
+\frac{\mathrm{d}}{\mathrm{d}t}F(q,t).
+\]
+
+Their actions satisfy
+
+\[
+\begin{aligned}
+S'[q]
+&=
+\int_{t_{1}}^{t_{2}}
+L'\,\mathrm{d}t\\
+&=
+S[q]
++
+\int_{t_{1}}^{t_{2}}
+\frac{\mathrm{d}F}{\mathrm{d}t}
+\,\mathrm{d}t\\
+&=
+S[q]
++
+F(q(t_{2}),t_{2})
+-
+F(q(t_{1}),t_{1}).
+\end{aligned}
+\]
+
+Thus the two actions differ only by an endpoint term.
+
+For fixed endpoint values and fixed endpoint times, the variation of this additional term vanishes. Therefore \(L\) and \(L'\) produce the same Euler--Lagrange equations.
+
+This establishes an important equivalence:
+
+\[
+\boxed{
+L
+\sim
+L+
+\frac{\mathrm{d}F}{\mathrm{d}t}
+}.
+\]
+
+The Lagrangian is not unique. Different Lagrangians can encode the same equations of motion when they differ by a total derivative.
+
+\subsection{Example of equivalent Lagrangians}
+
+Consider
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2}-V(q)
+\]
+
+and choose
+
+\[
+F(q,t)=\alpha q t,
+\]
+
+where \(\alpha\) is constant. Then
+
+\[
+\frac{\mathrm{d}F}{\mathrm{d}t}
+=
+\alpha q+\alpha t\dot q.
+\]
+
+The modified Lagrangian is
+
+\[
+L'
+=
+\frac{m}{2}\dot q^{2}-V(q)
++
+\alpha q+\alpha t\dot q.
+\]
+
+Although the individual partial derivatives of \(L'\) differ from those of \(L\), the extra contributions cancel in the Euler--Lagrange equation.
+
+Indeed,
+
+\[
+\frac{\partial L'}{\partial q}
+=
+-V'(q)+\alpha,
+\]
+
+and
+
+\[
+\frac{\partial L'}{\partial\dot q}
+=
+m\dot q+\alpha t.
+\]
+
+Therefore
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L'}{\partial\dot q}
+\right)
+=
+m\ddot q+\alpha.
+\]
+
+The Euler--Lagrange equation becomes
+
+\[
+m\ddot q+\alpha-(-V'(q)+\alpha)=0,
+\]
+
+so
+
+\[
+m\ddot q+V'(q)=0.
+\]
+
+The dynamics is unchanged.
+
+\subsection{Boundary terms are not always negligible}
+
+A boundary term may be physically or mathematically important when
+
+\begin{itemize}
+    \item endpoint values are not fixed;
+    \item the integration region has a physical boundary;
+    \item one studies conserved charges or canonical momenta;
+    \item the action contains higher derivatives;
+    \item the theory is defined on a noncompact region and fall-off conditions matter;
+    \item surface contributions encode measurable quantities.
+\end{itemize}
+
+Thus ``boundary term'' does not mean ``unimportant term.'' It means a term supported on the boundary rather than in the interior.
+
+\subsection{Repeated integration by parts}
+
+If an action depends on higher derivatives, for example
+
+\[
+S[q]
+=
+\int
+L(q,\dot q,\ddot q,t)
+\,\mathrm{d}t,
+\]
+
+then varying \(\ddot q\) produces
+
+\[
+\delta\ddot q
+=
+\frac{\mathrm{d}^{2}}{\mathrm{d}t^{2}}(\delta q).
+\]
+
+Two integrations by parts are required to remove derivatives from \(\delta q\). The resulting boundary terms contain both \(\delta q\) and \(\delta\dot q\).
+
+This explains why higher-derivative actions generally require more boundary data and produce higher-order equations of motion.
+
+The present course will mainly use first-derivative Lagrangians, but the pattern is worth recognizing.
+
+\subsection{Several coordinates}
+
+For generalized coordinates \(q^{i}\),
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\sum_{i}
+\left(
+\frac{\partial L}{\partial q^{i}}\delta q^{i}
++
+\frac{\partial L}{\partial\dot q^{i}}\delta\dot q^{i}
+\right)
+\,\mathrm{d}t.
+\]
+
+Integrating each velocity term by parts gives
+
+\[
+\delta S
+=
+\left[
+\sum_{i}
+\frac{\partial L}{\partial\dot q^{i}}
+\delta q^{i}
+\right]_{t_{1}}^{t_{2}}
++
+\int_{t_{1}}^{t_{2}}
+\sum_{i}
+\left[
+\frac{\partial L}{\partial q^{i}}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{i}}
+\right)
+\right]
+\delta q^{i}
+\,\mathrm{d}t.
+\]
+
+The boundary term is a sum of momentum-coordinate pairings:
+
+\[
+\left[
+\sum_{i}p_{i}\delta q^{i}
+\right]_{t_{1}}^{t_{2}}.
+\]
+
+\subsection{The field-theory analogue}
+
+For a scalar field with action
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}(\phi,\partial_{\mu}\phi,x)
+\,\mathrm{d}^{4}x,
+\]
+
+the first variation contains
+
+\[
+\int_{\Omega}
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\partial_{\mu}(\delta\phi)
+\,\mathrm{d}^{4}x.
+\]
+
+Spacetime integration by parts gives
+
+\[
+\begin{aligned}
+&\int_{\Omega}
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\partial_{\mu}(\delta\phi)
+\,\mathrm{d}^{4}x\\
+&\qquad=
+\int_{\partial\Omega}
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\delta\phi\,n_{\mu}
+\,\mathrm{d}\Sigma
+-
+\int_{\Omega}
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\right)
+\delta\phi
+\,\mathrm{d}^{4}x.
+\end{aligned}
+\]
+
+The endpoint term of mechanics becomes a surface integral over the boundary \(\partial\Omega\). The one-dimensional formula is therefore not merely analogous to the field calculation; it is its simplest special case.
+
+\subsection{A diagnostic procedure}
+
+Whenever integration by parts appears in a variational derivation:
+
+\begin{enumerate}
+    \item identify the derivative acting on the variation;
+    \item write the product-rule identity explicitly;
+    \item separate the boundary and interior terms;
+    \item state the boundary conditions;
+    \item justify whether the boundary term vanishes;
+    \item check the sign of the interior derivative;
+    \item only then apply the fundamental lemma.
+\end{enumerate}
+
+Following this sequence prevents hidden assumptions and sign errors.
+
+\subsection{What has been established}
+
+Integration by parts converts the derivative of a variation into an interior derivative acting on the canonical momentum and an explicit boundary contribution. The interior term yields the Euler--Lagrange equation, while the boundary term records the endpoint assumptions.
+
+Lagrangians that differ by a total time derivative produce actions that differ only by endpoint terms and therefore give the same fixed-endpoint equations of motion.
+
+The next section applies the full method to several concrete particle models, from free motion to oscillation and constrained dynamics.
