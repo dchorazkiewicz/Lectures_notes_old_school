@@ -1,1 +1,525 @@
 \section{Variation of Fields}
+\label{sec:variation_of_fields}
+
+The action principle compares a candidate field history with neighbouring field histories. In mechanics, a trajectory is deformed by adding a small function of time. In field theory, the deformation is a function of all spacetime coordinates.
+
+The purpose of this section is to define field variations precisely, determine how derivatives of a field vary, and construct the first variation of a general local action.
+
+\subsection{A one-parameter family of fields}
+
+Let
+
+\[
+\phi=\phi(x)
+\]
+
+be a real field defined on a spacetime region \(\Omega\). We embed it in a one-parameter family
+
+\[
+\boxed{
+\phi_{\varepsilon}(x)
+=
+\phi(x)+\varepsilon\eta(x)
+}.
+\]
+
+Here
+
+\begin{itemize}
+    \item \(\varepsilon\) is a real parameter;
+    \item \(\eta(x)\) is a smooth deformation function;
+    \item \(\phi_{0}(x)=\phi(x)\) is the reference field.
+\end{itemize}
+
+At each spacetime point, changing \(\varepsilon\) changes the field value in the direction specified by \(\eta(x)\). The same parameter labels the deformation throughout the complete region.
+
+The variation of the field is defined by
+
+\[
+\delta\phi(x)
+:=
+\left.
+\frac{\partial\phi_{\varepsilon}(x)}{\partial\varepsilon}
+\right|_{\varepsilon=0}.
+\]
+
+For the linear family above,
+
+\[
+\boxed{
+\delta\phi(x)=\eta(x)
+}.
+\]
+
+The variation is not a derivative with respect to a spacetime coordinate. It compares different fields at the same spacetime point.
+
+\subsection{Variation and spacetime differentiation}
+
+The derivative of the varied field is
+
+\[
+\partial_{\mu}\phi_{\varepsilon}
+=
+\partial_{\mu}\phi
++
+\varepsilon\partial_{\mu}\eta.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+\delta(\partial_{\mu}\phi)
+&:=
+\left.
+\frac{\partial}{\partial\varepsilon}
+(\partial_{\mu}\phi_{\varepsilon})
+\right|_{\varepsilon=0}\\
+&=
+\partial_{\mu}\eta.
+\end{aligned}
+\]
+
+Since \(\eta=\delta\phi\),
+
+\[
+\boxed{
+\delta(\partial_{\mu}\phi)
+=
+\partial_{\mu}(\delta\phi)
+}.
+\]
+
+For the smooth families considered here, variation and spacetime differentiation commute.
+
+In time-and-space notation, this gives
+
+\[
+\delta\left(\frac{\partial\phi}{\partial t}\right)
+=
+\frac{\partial}{\partial t}(\delta\phi),
+\]
+
+and
+
+\[
+\delta(\nabla\phi)
+=
+\nabla(\delta\phi).
+\]
+
+These identities are the field-theoretic analogues of
+
+\[
+\delta\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta q)
+\]
+
+in mechanics.
+
+\subsection{Admissible field variations}
+
+The allowed deformation functions are determined by the boundary data of the variational problem. If the field value is prescribed on the boundary \(\partial\Omega\), then every varied field must satisfy the same boundary condition:
+
+\[
+\phi_{\varepsilon}|_{\partial\Omega}
+=
+\phi|_{\partial\Omega}.
+\]
+
+Substitution of
+
+\[
+\phi_{\varepsilon}
+=
+\phi+arepsilon\eta
+\]
+
+gives
+
+\[
+\boxed{
+\eta|_{\partial\Omega}=0
+}.
+\]
+
+Equivalently,
+
+\[
+\delta\phi=0
+\qquad
+\text{on }\partial\Omega.
+\]
+
+The variation is otherwise arbitrary in the interior of \(\Omega\).
+
+Another useful choice is to take \(\eta\) to have compact support inside \(\Omega\). Then \(\eta\) vanishes in a neighbourhood of the boundary, so every boundary contribution vanishes automatically. Compactly supported variations are especially useful when deriving local field equations.
+
+\subsection{A localized field variation}
+
+A deformation may be concentrated in a small spacetime region. Let \(U\) be a small open subset of \(\Omega\). We may choose a smooth function \(\eta(x)\) such that
+
+\[
+\eta(x)=0
+\qquad
+\text{for }x\notin U.
+\]
+
+The fields \(\phi\) and \(\phi_{\varepsilon}\) then agree outside \(U\). If the action is stationary under every such local deformation, the coefficient multiplying \(\eta(x)\) in the first variation must vanish at every interior point.
+
+This is the mechanism by which a global condition on the action produces a local partial differential equation.
+
+\subsection{The varied action}
+
+Consider the action
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}(\phi,\partial_{\mu}\phi,x)
+\,\mathrm{d}^{4}x.
+\]
+
+For the varied field,
+
+\[
+S[\phi_{\varepsilon}]
+=
+\int_{\Omega}
+\mathcal{L}(
+\phi_{\varepsilon},
+\partial_{\mu}\phi_{\varepsilon},
+x)
+\,\mathrm{d}^{4}x.
+\]
+
+Once \(\eta(x)\) is chosen, this is an ordinary function of \(\varepsilon\). The first variation is
+
+\[
+\boxed{
+\delta S[\phi;\eta]
+:=
+\left.
+\frac{\mathrm{d}}{\mathrm{d}\varepsilon}
+S[\phi_{\varepsilon}]
+\right|_{\varepsilon=0}
+}.
+\]
+
+The notation records both the reference field \(\phi\) and the deformation direction \(\eta\). When no ambiguity is possible, we write simply \(\delta S\).
+
+\subsection{First-order expansion of the density}
+
+Using the multivariable chain rule,
+
+\[
+\begin{aligned}
+\mathcal{L}(
+\phi+\varepsilon\eta,
+\partial_{\mu}\phi+
+\varepsilon\partial_{\mu}\eta,
+x)
+&=
+\mathcal{L}(
+\phi,
+\partial_{\mu}\phi,
+x)\\
+&\quad+
+\varepsilon
+\frac{\partial\mathcal{L}}{\partial\phi}
+\eta\\
+&\quad+
+\varepsilon
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\partial_{\mu}\eta\\
+&\quad+
+O(\varepsilon^{2}).
+\end{aligned}
+\]
+
+Repeated \(\mu\) indicates a sum over the spacetime coordinates. Integrating gives
+
+\[
+\begin{aligned}
+S[\phi_{\varepsilon}]
+&=
+S[\phi]\\
+&\quad+
+\varepsilon
+\int_{\Omega}
+\left[
+\frac{\partial\mathcal{L}}{\partial\phi}
+\eta
++
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\partial_{\mu}\eta
+\right]
+\,\mathrm{d}^{4}x\\
+&\quad+
+O(\varepsilon^{2}).
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta S
+=
+\int_{\Omega}
+\left[
+\frac{\partial\mathcal{L}}{\partial\phi}
+\delta\phi
++
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\partial_{\mu}(\delta\phi)
+\right]
+\,\mathrm{d}^{4}x
+}.
+\]
+
+This is the first variation before spacetime integration by parts.
+
+\subsection{What is held fixed in the partial derivatives}
+
+The symbols
+
+\[
+\frac{\partial\mathcal{L}}{\partial\phi}
+\qquad\text{and}\qquad
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)}
+\]
+
+are partial derivatives with respect to different arguments of the Lagrangian density.
+
+When calculating
+
+\[
+\frac{\partial\mathcal{L}}{\partial\phi},
+\]
+
+the derivatives \(\partial_{\mu}\phi\) are treated as independent arguments and held fixed. When calculating
+
+\[
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi)},
+\]
+
+the field value and all other derivative components are held fixed.
+
+This is the same formal rule used in mechanics when \(q\) and \(\dot q\) are treated as independent arguments of \(L(q,\dot q,t)\).
+
+\subsection{Example: variation of a kinetic term}
+
+Consider
+
+\[
+\mathcal{L}_{\mathrm{kin}}
+=
+\frac{\rho}{2}
+(\partial_{t}\phi)^{2}.
+\]
+
+Its variation is
+
+\[
+\begin{aligned}
+\delta\mathcal{L}_{\mathrm{kin}}
+&=
+\frac{\rho}{2}
+\delta\left[(\partial_{t}\phi)^{2}\right]\\
+&=
+\rho
+(\partial_{t}\phi)
+\delta(\partial_{t}\phi)\\
+&=
+\rho
+(\partial_{t}\phi)
+\partial_{t}(\delta\phi).
+\end{aligned}
+\]
+
+The factor of two from differentiating the square cancels the factor \(1/2\).
+
+\subsection{Example: variation of a gradient term}
+
+For
+
+\[
+\mathcal{L}_{\mathrm{grad}}
+=
+-\frac{\kappa}{2}
+|\nabla\phi|^{2},
+\]
+
+write
+
+\[
+|\nabla\phi|^{2}
+=
+\sum_{i=1}^{3}
+(\partial_{i}\phi)^{2}.
+\]
+
+Then
+
+\[
+\begin{aligned}
+\delta\mathcal{L}_{\mathrm{grad}}
+&=
+-\kappa
+\sum_{i=1}^{3}
+(\partial_{i}\phi)
+\partial_{i}(\delta\phi)\\
+&=
+-\kappa
+\nabla\phi\cdot\nabla(\delta\phi).
+\end{aligned}
+\]
+
+A spatial derivative acts on the variation. It will later be transferred to \(\nabla\phi\) by integration by parts.
+
+\subsection{Example: variation of a potential term}
+
+For a local potential contribution
+
+\[
+\mathcal{L}_{\mathrm{pot}}
+=
+-V(\phi),
+\]
+
+we obtain
+
+\[
+\boxed{
+\delta\mathcal{L}_{\mathrm{pot}}
+=
+-V'(\phi)\delta\phi
+}.
+\]
+
+No derivative of \(\delta\phi\) appears because the potential depends only on the field value at the same point.
+
+For a source term
+
+\[
+\mathcal{L}_{\mathrm{source}}=J(x)\phi(x),
+\]
+
+where \(J\) is prescribed and not varied,
+
+\[
+\boxed{
+\delta\mathcal{L}_{\mathrm{source}}
+=
+J(x)\delta\phi(x)
+}.
+\]
+
+\subsection{Linearity of the first variation}
+
+The first variation is linear in the deformation direction. If
+
+\[
+\eta=a\eta_{1}+b\eta_{2},
+\]
+
+then
+
+\[
+\delta S[\phi;a\eta_{1}+b\eta_{2}]
+=
+a\,\delta S[\phi;\eta_{1}]
++
+b\,\delta S[\phi;\eta_{2}].
+\]
+
+This makes \(\delta S\) the field-theoretic analogue of a directional derivative in an infinite-dimensional configuration space.
+
+Terms of order \(\varepsilon^{2}\) determine whether a stationary configuration is a minimum, maximum, or saddle point, but they are not needed to derive the field equation.
+
+\subsection{Several fields}
+
+For fields \(\phi^{a}(x)\), introduce
+
+\[
+\phi^{a}_{\varepsilon}(x)
+=
+\phi^{a}(x)+\varepsilon\eta^{a}(x).
+\]
+
+Then
+
+\[
+\delta\phi^{a}=\eta^{a},
+\qquad
+\delta(\partial_{\mu}\phi^{a})
+=
+\partial_{\mu}\eta^{a}.
+\]
+
+The first variation is
+
+\[
+\delta S
+=
+\int_{\Omega}
+\sum_{a}
+\left[
+\frac{\partial\mathcal{L}}{\partial\phi^{a}}
+\eta^{a}
++
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi^{a})}
+\partial_{\mu}\eta^{a}
+\right]
+\,\mathrm{d}^{4}x.
+\]
+
+When the fields are independent, the functions \(\eta^{a}\) may be chosen independently. This will produce one field equation for each field component.
+
+\subsection{Common mistakes}
+
+The following errors are especially common.
+
+\begin{enumerate}
+    \item Confusing \(\delta\phi\) with a small coordinate displacement \(\mathrm{d}\phi\).
+    \item Forgetting that derivatives of the field also vary.
+    \item Writing \(\delta(\partial_{\mu}\phi)=\delta\phi\) instead of \(\partial_{\mu}(\delta\phi)\).
+    \item Varying a prescribed source or background quantity when it is meant to remain fixed.
+    \item Treating \(\delta\phi\) and \(\partial_{\mu}(\delta\phi)\) as independent functions.
+    \item Failing to state the boundary conditions imposed on the variation.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A field variation is constructed from a family
+
+\[
+\phi_{\varepsilon}(x)
+=
+\phi(x)+\varepsilon\eta(x),
+\]
+
+with
+
+\[
+\delta\phi=\eta
+\]
+
+and
+
+\[
+\delta(\partial_{\mu}\phi)
+=
+\partial_{\mu}(\delta\phi).
+\]
+
+For a local first-derivative action, the first variation contains both \(\delta\phi\) and derivatives of \(\delta\phi\). The next section performs spacetime integration by parts and derives the Euler--Lagrange field equation.
