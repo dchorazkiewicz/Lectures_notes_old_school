@@ -1,1 +1,557 @@
-\section{Translation Symmetry and Energy-Momentum}
+\section{Translation Symmetry and Energy--Momentum}
+\label{sec:translation_energy_momentum}
+
+A field theory that does not distinguish one spacetime point from another is invariant under translations. Noether's theorem then produces the energy-momentum tensor. Its time component describes energy density and energy flow, while its spatial components describe momentum density and stress.
+
+\subsection{Infinitesimal translations}
+
+Consider
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon a^{\mu},
+\]
+
+where \(a^{\mu}\) is constant. For scalar fields,
+
+\[
+\Psi_a=0.
+\]
+
+The characteristic is
+
+\[
+Q_a
+=
+-a^{\nu}\partial_{\nu}\phi_a.
+\]
+
+If the Lagrangian has no explicit coordinate dependence,
+
+\[
+\frac{\partial\mathcal{L}}
+{\partial x^{\nu}}
+=
+0,
+\]
+
+then translations are symmetries.
+
+\subsection{Noether current for translations}
+
+The general current is
+
+\[
+j^{\mu}
+=
+\pi_a^{\mu}Q_a
++
+\mathcal{L}\xi^{\mu}.
+\]
+
+Here
+
+\[
+\xi^{\mu}=a^{\mu},
+\]
+
+so
+
+\[
+j^{\mu}
+=
+-a^{\nu}
+\pi_a^{\mu}\partial_{\nu}\phi_a
++
+a^{\mu}\mathcal{L}.
+\]
+
+Factor out \(a^{\nu}\):
+
+\[
+j^{\mu}
+=
+-a^{\nu}
+\left[
+\pi_a^{\mu}\partial_{\nu}\phi_a
+-
+\delta^{\mu}{}_{\nu}\mathcal{L}
+\right].
+\]
+
+Define the canonical energy-momentum tensor
+
+\[
+\boxed{
+T^{\mu}{}_{\nu}
+=
+\frac{\partial\mathcal{L}}
+{\partial(\partial_{\mu}\phi_a)}
+\partial_{\nu}\phi_a
+-
+\delta^{\mu}{}_{\nu}\mathcal{L}
+}.
+\]
+
+Then
+
+\[
+j^{\mu}
+=
+-a^{\nu}T^{\mu}{}_{\nu}.
+\]
+
+Because the constants \(a^{\nu}\) are independent, Noether conservation gives
+
+\[
+\boxed{
+\partial_{\mu}T^{\mu}{}_{\nu}=0
+}.
+\]
+
+There is one conservation law for each translation direction.
+
+\subsection{Direct divergence check}
+
+Differentiate:
+
+\[
+\partial_{\mu}T^{\mu}{}_{\nu}
+=
+\partial_{\mu}
+\left(
+\pi_a^{\mu}\partial_{\nu}\phi_a
+\right)
+-
+\partial_{\nu}\mathcal{L}.
+\]
+
+Expand the first term:
+
+\[
+\partial_{\mu}T^{\mu}{}_{\nu}
+=
+\left(
+\partial_{\mu}\pi_a^{\mu}
+\right)
+\partial_{\nu}\phi_a
++
+\pi_a^{\mu}
+\partial_{\mu}\partial_{\nu}\phi_a
+-
+\partial_{\nu}\mathcal{L}.
+\]
+
+If there is no explicit coordinate dependence,
+
+\[
+\partial_{\nu}\mathcal{L}
+=
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+\partial_{\nu}\phi_a
++
+\pi_a^{\mu}
+\partial_{\nu}\partial_{\mu}\phi_a.
+\]
+
+Commuting partial derivatives, the last terms cancel:
+
+\[
+\partial_{\mu}T^{\mu}{}_{\nu}
+=
+\left[
+\partial_{\mu}\pi_a^{\mu}
+-
+\frac{\partial\mathcal{L}}
+{\partial\phi_a}
+\right]
+\partial_{\nu}\phi_a.
+\]
+
+Therefore
+
+\[
+\boxed{
+\partial_{\mu}T^{\mu}{}_{\nu}
+=
+-\mathcal{E}_a
+\partial_{\nu}\phi_a
+}.
+\]
+
+On shell,
+
+\[
+\partial_{\mu}T^{\mu}{}_{\nu}=0.
+\]
+
+\subsection{Explicit coordinate dependence}
+
+If the Lagrangian depends explicitly on \(x\), then on shell
+
+\[
+\boxed{
+\partial_{\mu}T^{\mu}{}_{\nu}
+=
+-
+\left.
+\frac{\partial\mathcal{L}}
+{\partial x^{\nu}}
+\right|_{\mathrm{explicit}}
+}.
+\]
+
+An externally prescribed inhomogeneous background can therefore exchange energy or momentum with the field.
+
+\subsection{Real scalar field}
+
+For
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi
+\partial^{\mu}\phi
+-
+V(\phi),
+\]
+
+we have
+
+\[
+\pi^{\mu}
+=
+\partial^{\mu}\phi.
+\]
+
+Raising the second tensor index gives
+
+\[
+\boxed{
+T^{\mu\nu}
+=
+\partial^{\mu}\phi
+\partial^{\nu}\phi
+-
+\eta^{\mu\nu}\mathcal{L}
+}.
+\]
+
+For a scalar field, this tensor is already symmetric:
+
+\[
+T^{\mu\nu}=T^{\nu\mu}.
+\]
+
+\subsection{Energy density}
+
+Using the metric signature
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1),
+\]
+
+the Lagrangian density is
+
+\[
+\mathcal{L}
+=
+\frac{1}{2c^{2}}
+\phi_t^{2}
+-
+\frac{1}{2}
+|\nabla\phi|^{2}
+-
+V(\phi).
+\]
+
+The energy density is
+
+\[
+T^{00}
+=
+\partial^{0}\phi
+\partial^{0}\phi
+-
+\eta^{00}\mathcal{L}.
+\]
+
+Since
+
+\[
+\partial^{0}\phi
+=
+\frac{1}{c}\phi_t,
+\]
+
+we obtain
+
+\[
+\boxed{
+T^{00}
+=
+\frac{1}{2c^{2}}
+\phi_t^{2}
++
+\frac{1}{2}
+|\nabla\phi|^{2}
++
+V(\phi)
+}.
+\]
+
+This agrees with the scalar-field energy density derived directly from the Hamiltonian.
+
+\subsection{Energy flux}
+
+For a spatial index \(i\),
+
+\[
+T^{i0}
+=
+\partial^{i}\phi
+\partial^{0}\phi.
+\]
+
+Because
+
+\[
+\partial^{i}\phi
+=
+-\partial_i\phi,
+\]
+
+we find
+
+\[
+T^{i0}
+=
+-\frac{1}{c}
+\phi_t\partial_i\phi.
+\]
+
+Define the energy-flux vector
+
+\[
+\boxed{
+\mathbf{S}
+=
+c
+\left(
+T^{10},
+T^{20},
+T^{30}
+\right)
+=
+-\phi_t\nabla\phi
+}.
+\]
+
+The \(\nu=0\) conservation equation is
+
+\[
+\partial_{\mu}T^{\mu0}=0.
+\]
+
+Multiplying by \(c\),
+
+\[
+\boxed{
+\frac{\partial T^{00}}{\partial t}
++
+\nabla\cdot\mathbf{S}
+=
+0
+}.
+\]
+
+This is the local energy balance law.
+
+\subsection{Momentum density and total four-momentum}
+
+The total four-momentum is
+
+\[
+\boxed{
+P^{\nu}
+=
+\frac{1}{c}
+\int_{\mathbb{R}^{3}}
+T^{0\nu}
+\,\mathrm{d}^{3}x
+}.
+\]
+
+Its time component is
+
+\[
+P^{0}
+=
+\frac{E}{c},
+\]
+
+where
+
+\[
+E
+=
+\int
+T^{00}
+\,\mathrm{d}^{3}x.
+\]
+
+The spatial momentum density is
+
+\[
+\boxed{
+\mathbf{g}
+=
+\frac{1}{c}
+\left(
+T^{01},
+T^{02},
+T^{03}
+\right)
+}.
+\]
+
+For the scalar field,
+
+\[
+T^{0i}
+=
+-\frac{1}{c}
+\phi_t\partial_i\phi,
+\]
+
+so
+
+\[
+\boxed{
+\mathbf{g}
+=
+-\frac{1}{c^{2}}
+\phi_t\nabla\phi
+}.
+\]
+
+\subsection{Plane-wave check}
+
+Consider a massless plane wave in one dimension:
+
+\[
+\phi(x,t)
+=
+A\cos(kx-\omega t),
+\qquad
+\omega=ck.
+\]
+
+Then
+
+\[
+\phi_t
+=
+A\omega\sin(kx-\omega t),
+\]
+
+and
+
+\[
+\phi_x
+=
+-Ak\sin(kx-\omega t).
+\]
+
+The energy flux is
+
+\[
+S_x
+=
+-\phi_t\phi_x
+=
+A^{2}\omega k
+\sin^{2}(kx-\omega t).
+\]
+
+Using \(\omega=ck\),
+
+\[
+S_x
+=
+cA^{2}k^{2}
+\sin^{2}(kx-\omega t).
+\]
+
+The energy density is
+
+\[
+T^{00}
+=
+\frac{1}{2c^{2}}\phi_t^{2}
++
+\frac{1}{2}\phi_x^{2}
+=
+A^{2}k^{2}
+\sin^{2}(kx-\omega t).
+\]
+
+Therefore
+
+\[
+\boxed{
+S_x=cT^{00}
+}.
+\]
+
+The energy propagates in the positive \(x\) direction at speed \(c\), as expected.
+
+\subsection{Canonical and symmetric tensors}
+
+For scalar fields, the canonical tensor is symmetric. For fields carrying spin, the canonical tensor need not satisfy
+
+\[
+T^{\mu\nu}=T^{\nu\mu}.
+\]
+
+It can often be improved by adding a divergence term to obtain a symmetric tensor with the same total four-momentum. This issue becomes important for angular momentum and for coupling fields to gravity.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item forgetting the term \(-\delta^{\mu}{}_{\nu}\mathcal{L}\);
+    \item confusing \(T^{0i}\) with \(T^{i0}\) when the tensor is not symmetric;
+    \item identifying \(T^{00}\) with the Lagrangian density;
+    \item losing the minus sign in \(\partial^{i}=-\partial_i\);
+    \item claiming momentum conservation in the presence of an explicitly position-dependent external source;
+    \item omitting the boundary flux when deriving conservation of total energy.
+\end{enumerate}
+
+\subsection{What has been established}
+
+Translation symmetry produces the canonical energy-momentum tensor
+
+\[
+T^{\mu}{}_{\nu}
+=
+\pi_a^{\mu}\partial_{\nu}\phi_a
+-
+\delta^{\mu}{}_{\nu}\mathcal{L}.
+\]
+
+For a translation-invariant theory,
+
+\[
+\partial_{\mu}T^{\mu}{}_{\nu}=0.
+\]
+
+For the real scalar field, \(T^{00}\) is the positive energy density and \(cT^{i0}\) is the energy flux. The next section uses rotational and Lorentz symmetry to construct angular-momentum currents.
