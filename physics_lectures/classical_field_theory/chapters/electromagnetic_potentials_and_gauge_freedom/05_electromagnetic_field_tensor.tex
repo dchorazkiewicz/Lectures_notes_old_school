@@ -1,1 +1,388 @@
 \section{The Electromagnetic Field Tensor}
+\label{sec:electromagnetic_field_tensor}
+
+The electric and magnetic fields are not separate relativistic objects. A Lorentz transformation mixes them, just as a boost mixes the scalar and vector potentials. Their unified description is the antisymmetric electromagnetic field tensor.
+
+\subsection{Definition}
+
+The electromagnetic field tensor is defined by
+
+\[
+\boxed{
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}
+}.
+\]
+
+Raising both indices gives
+
+\[
+\boxed{
+F^{\mu\nu}
+=
+\partial^{\mu}A^{\nu}
+-
+\partial^{\nu}A^{\mu}
+}.
+\]
+
+The two formulas are equivalent because the Minkowski metric is constant in Cartesian inertial coordinates.
+
+\subsection{Antisymmetry}
+
+Interchanging the indices gives
+
+\[
+\begin{aligned}
+F_{\nu\mu}
+&=
+\partial_{\nu}A_{\mu}
+-
+\partial_{\mu}A_{\nu}\\
+&=
+-F_{\mu\nu}.
+\end{aligned}
+\]
+
+Therefore
+
+\[
+\boxed{
+F_{\mu\nu}
+=
+-F_{\nu\mu}
+}.
+\]
+
+In particular,
+
+\[
+F_{\mu\mu}=0
+\]
+
+with no sum over \(\mu\).
+
+A general four-by-four matrix has sixteen components. Antisymmetry reduces the number of independent components to
+
+\[
+\frac{4(4-1)}{2}=6.
+\]
+
+These six components correspond exactly to the three components of \(\mathbf{E}\) and the three components of \(\mathbf{B}\).
+
+\subsection{Gauge invariance}
+
+Under
+
+\[
+A'_{\mu}
+=
+A_{\mu}
+-
+\partial_{\mu}\chi,
+\]
+
+the transformed field tensor is
+
+\[
+\begin{aligned}
+F'_{\mu\nu}
+&=
+\partial_{\mu}A'_{\nu}
+-
+\partial_{\nu}A'_{\mu}\\
+&=
+\partial_{\mu}
+\left(
+A_{\nu}-\partial_{\nu}\chi
+\right)
+-
+\partial_{\nu}
+\left(
+A_{\mu}-\partial_{\mu}\chi
+\right)\\
+&=
+F_{\mu\nu}
+-
+\partial_{\mu}\partial_{\nu}\chi
++
+\partial_{\nu}\partial_{\mu}\chi.
+\end{aligned}
+\]
+
+For a smooth gauge function, partial derivatives commute. Hence
+
+\[
+\boxed{
+F'_{\mu\nu}=F_{\mu\nu}
+}.
+\]
+
+The field tensor is gauge invariant even though the four-potential is not.
+
+\subsection{Lorentz transformation law}
+
+Because \(A^{\mu}\) is a four-vector, the field tensor transforms as a rank-two tensor:
+
+\[
+\boxed{
+F'^{\mu\nu}
+=
+\Lambda^{\mu}{}_{\rho}
+\Lambda^{\nu}{}_{\sigma}
+F^{\rho\sigma}
+}.
+\]
+
+This transformation mixes components identified as electric in one frame with components identified as magnetic in another frame.
+
+The tensor is therefore the natural relativistic electromagnetic field variable.
+
+\subsection{Exterior-derivative interpretation}
+
+Introduce the potential one-form
+
+\[
+A
+=
+A_{\mu}\,\mathrm{d}x^{\mu}.
+\]
+
+Its exterior derivative is
+
+\[
+F
+=
+\mathrm{d}A.
+\]
+
+In components,
+
+\[
+F
+=
+\frac{1}{2}
+F_{\mu\nu}
+\,\mathrm{d}x^{\mu}
+\wedge
+\mathrm{d}x^{\nu}.
+\]
+
+The antisymmetry of \(F_{\mu\nu}\) is built into the wedge product.
+
+This geometric notation also makes the homogeneous Maxwell equations immediate:
+
+\[
+\mathrm{d}F
+=
+\mathrm{d}^{2}A
+=0.
+\]
+
+The component form of this identity will be developed in Section~\ref{sec:homogeneous_maxwell_equations}.
+
+\subsection{Cyclic derivative identity}
+
+Starting from the definition,
+
+\[
+\begin{aligned}
+&\partial_{\lambda}F_{\mu\nu}
++
+\partial_{\mu}F_{\nu\lambda}
++
+\partial_{\nu}F_{\lambda\mu}
+\\
+&=
+\partial_{\lambda}
+\left(
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}
+\right)
++
+\partial_{\mu}
+\left(
+\partial_{\nu}A_{\lambda}
+-
+\partial_{\lambda}A_{\nu}
+\right)
+\\
+&\quad+
+\partial_{\nu}
+\left(
+\partial_{\lambda}A_{\mu}
+-
+\partial_{\mu}A_{\lambda}
+\right).
+\end{aligned}
+\]
+
+Every second-derivative term cancels with another term after commuting partial derivatives. Thus
+
+\[
+\boxed{
+\partial_{\lambda}F_{\mu\nu}
++
+\partial_{\mu}F_{\nu\lambda}
++
+\partial_{\nu}F_{\lambda\mu}
+=0
+}.
+\]
+
+This is the tensor form of the Bianchi identity for electromagnetism.
+
+\subsection{Dual field tensor}
+
+Define the Levi--Civita symbol by
+
+\[
+\epsilon^{0123}=+1.
+\]
+
+The dual electromagnetic tensor is
+
+\[
+\boxed{
+\widetilde{F}^{\mu\nu}
+=
+\frac{1}{2}
+\epsilon^{\mu\nu\rho\sigma}
+F_{\rho\sigma}
+}.
+\]
+
+It is also antisymmetric:
+
+\[
+\widetilde{F}^{\mu\nu}
+=
+-\widetilde{F}^{\nu\mu}.
+\]
+
+The cyclic identity is equivalent to
+
+\[
+\boxed{
+\partial_{\mu}
+\widetilde{F}^{\mu\nu}
+=0
+}.
+\]
+
+This compact equation contains both homogeneous Maxwell equations.
+
+\subsection{Independent tensor components}
+
+Because of antisymmetry, one may choose the six independent components as
+
+\[
+F_{01},
+\quad
+F_{02},
+\quad
+F_{03},
+\quad
+F_{12},
+\quad
+F_{23},
+\quad
+F_{31}.
+\]
+
+The time-space components encode the electric field, while the purely spatial components encode the magnetic field.
+
+The precise signs depend on
+
+\begin{itemize}
+    \item the metric signature;
+    \item the definition of the four-potential;
+    \item whether indices on \(F\) are raised or lowered.
+\end{itemize}
+
+The next section derives the component matrices explicitly for the conventions used in these notes.
+
+\subsection{Lorentz scalar formed from the tensor}
+
+The contraction
+
+\[
+F_{\mu\nu}F^{\mu\nu}
+\]
+
+is a Lorentz scalar. Because \(F_{\mu\nu}\) is gauge invariant, this contraction is also gauge invariant.
+
+The free electromagnetic Lagrangian density in SI units will be
+
+\[
+\boxed{
+\mathcal{L}_{\mathrm{EM}}
+=
+-
+\frac{1}{4\mu_0}
+F_{\mu\nu}F^{\mu\nu}
+}.
+\]
+
+The factor \(1/4\) compensates for double counting caused by antisymmetry. The variation of this action will produce the inhomogeneous Maxwell equations in the next chapter.
+
+\subsection{Why an antisymmetric derivative?}
+
+A simple derivative \(\partial_{\mu}A_{\nu}\) is not gauge invariant. Under a gauge transformation it acquires a second derivative of \(\chi\).
+
+The antisymmetric combination removes that term:
+
+\[
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+This construction is the simplest local first-derivative expression that is both Lorentz covariant and gauge invariant.
+
+\subsection{Reconstruction of the potential}
+
+If a tensor \(F_{\mu\nu}\) satisfies the cyclic identity in a contractible region, then locally there exists a potential such that
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+The potential is determined only up to a gauge transformation.
+
+The local statement can fail globally on regions with nontrivial topology. This is the tensor version of the topological qualification encountered for scalar and vector potentials.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item defining \(F_{\mu\nu}\) without antisymmetrizing the derivatives;
+    \item forgetting that raising a spatial index can change a sign;
+    \item treating the potential as gauge invariant because the field tensor is gauge invariant;
+    \item counting sixteen independent components instead of six;
+    \item using the Levi--Civita symbol without stating the convention for \(\epsilon^{0123}\);
+    \item assuming that the existence of a local potential guarantees a single global potential on every domain.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The electromagnetic field is represented covariantly by
+
+\[
+F_{\mu\nu}
+=
+\partial_{\mu}A_{\nu}
+-
+\partial_{\nu}A_{\mu}.
+\]
+
+The tensor is antisymmetric, Lorentz covariant, and gauge invariant. It satisfies the cyclic identity because it is constructed from a potential. The next section identifies its six independent components with the electric and magnetic fields.
