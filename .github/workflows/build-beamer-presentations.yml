@@ -1,0 +1,89 @@
+name: Build Beamer presentations
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mathematical_lectures/basic_mathematics/prezentation/**'
+      - '.github/workflows/build-beamer-presentations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-beamer-presentations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up TeX Live
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: dummy.tex
+          args: '-version'
+
+      - name: Detect changed presentation folders
+        id: changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          base="${{ github.event.before }}"
+          head="${{ github.sha }}"
+
+          if [[ "${base}" == "0000000000000000000000000000000000000000" ]]; then
+            base="HEAD~1"
+          fi
+
+          git diff --name-only "${base}" "${head}" \
+            | grep '^mathematical_lectures/basic_mathematics/prezentation/[^/]*/' \
+            | awk -F/ '{print $1"/"$2"/"$3"/"$4}' \
+            | sort -u > changed_folders.txt || true
+
+          if [[ ! -s changed_folders.txt ]]; then
+            find mathematical_lectures/basic_mathematics/prezentation -mindepth 2 -maxdepth 2 -name main.tex \
+              -exec dirname {} \; | sort -u > changed_folders.txt
+          fi
+
+          echo "Changed folders:"
+          cat changed_folders.txt || true
+
+      - name: Compile changed Beamer presentations
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r folder; do
+            [[ -z "${folder}" ]] && continue
+
+            if [[ ! -f "${folder}/main.tex" ]]; then
+              echo "Skipping ${folder}: no main.tex"
+              continue
+            fi
+
+            echo "Compiling ${folder}/main.tex"
+            (
+              cd "${folder}"
+              pdflatex -interaction=nonstopmode -halt-on-error main.tex
+              pdflatex -interaction=nonstopmode -halt-on-error main.tex
+            )
+          done < changed_folders.txt
+
+      - name: Remove temporary LaTeX files
+        shell: bash
+        run: |
+          find mathematical_lectures/basic_mathematics/prezentation \
+            \( -name '*.aux' -o -name '*.log' -o -name '*.nav' -o -name '*.out' -o -name '*.snm' -o -name '*.toc' -o -name '*.vrb' \) \
+            -delete
+
+      - name: Commit rebuilt presentation PDFs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Rebuild Beamer presentation PDFs'
+          file_pattern: 'mathematical_lectures/basic_mathematics/prezentation/**/*.pdf'
