@@ -1,1 +1,541 @@
 \section{Massless and Massive Field Equations}
+\label{sec:massless_and_massive_field_equations}
+
+The free real scalar field has two structurally important cases. When the mass parameter vanishes, the equation is the ordinary relativistic wave equation. When the mass parameter is nonzero, a local restoring term is added and the result is the classical Klein--Gordon equation.
+
+The purpose of this section is to compare the two equations directly, identify their limiting cases, and show how the mass term changes both temporal and spatial behaviour.
+
+\subsection{The massless equation}
+
+For
+
+\[
+\mu=0,
+\]
+
+the free Lagrangian density is
+
+\[
+\boxed{
+\mathcal{L}_{\mathrm{massless}}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+}.
+\]
+
+The field equation is
+
+\[
+\boxed{
+\Box\phi=0
+}.
+\]
+
+Using the chosen metric convention,
+
+\[
+\boxed{
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
+=0
+}.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+\phi_{tt}
+=
+c^{2}\nabla^{2}\phi
+}.
+\]
+
+The field propagates disturbances with characteristic speed \(c\).
+
+\subsection{The massive equation}
+
+For
+
+\[
+\mu>0,
+\]
+
+the density is
+
+\[
+\boxed{
+\mathcal{L}_{\mathrm{massive}}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+}.
+\]
+
+The equation is
+
+\[
+\boxed{
+(\Box+\mu^{2})\phi=0
+}.
+\]
+
+In expanded form,
+
+\[
+\boxed{
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
++
+\mu^{2}\phi
+=0
+}.
+\]
+
+Multiplying by \(c^{2}\),
+
+\[
+\boxed{
+\phi_{tt}
+-
+c^{2}\nabla^{2}\phi
++
+c^{2}\mu^{2}\phi
+=0
+}.
+\]
+
+The local term
+
+\[
+c^{2}\mu^{2}\phi
+\]
+
+acts as a restoring force toward \(\phi=0\).
+
+\subsection{Why the equation is called Klein--Gordon}
+
+The equation
+
+\[
+(\Box+\mu^{2})\phi=0
+\]
+
+is called the Klein--Gordon equation. In quantum theory, the parameter is commonly written as
+
+\[
+\mu=rac{mc}{\hbar},
+\]
+
+so the equation becomes
+
+\[
+\left(
+\Box+
+\frac{m^{2}c^{2}}{\hbar^{2}}
+\right)
+\phi=0.
+\]
+
+Here it is treated entirely as a classical relativistic partial differential equation. The field amplitude is a classical real function, and no probabilistic interpretation is assigned to it.
+
+\subsection{Spatially uniform fields}
+
+Suppose the field is independent of position:
+
+\[
+\phi(\mathbf{x},t)=q(t).
+\]
+
+Then
+
+\[
+\nabla^{2}\phi=0.
+\]
+
+For the massless theory,
+
+\[
+q''(t)=0,
+\]
+
+so
+
+\[
+\boxed{
+q(t)=A+Bt
+}.
+\]
+
+A spatially uniform massless field may remain constant or change linearly in time.
+
+For the massive theory,
+
+\[
+q''(t)+c^{2}\mu^{2}q(t)=0.
+\]
+
+Thus
+
+\[
+\boxed{
+q(t)
+=
+A\cos(c\mu t)
++
+B\sin(c\mu t)
+}.
+\]
+
+The natural angular frequency of the uniform mode is
+
+\[
+\boxed{
+\omega_{0}=c\mu
+}.
+\]
+
+The mass term therefore permits oscillation even when the field has no spatial variation.
+
+\subsection{Static fields}
+
+Suppose the field is time independent:
+
+\[
+\phi(\mathbf{x},t)=\Phi(\mathbf{x}).
+\]
+
+Then
+
+\[
+\phi_{tt}=0.
+\]
+
+The massless equation becomes
+
+\[
+\boxed{
+\nabla^{2}\Phi=0
+}.
+\]
+
+Thus static massless configurations satisfy the Laplace equation.
+
+The massive equation becomes
+
+\[
+\boxed{
+\nabla^{2}\Phi
+-
+\mu^{2}\Phi
+=0
+}.
+\]
+
+This is the homogeneous modified Helmholtz equation. Its solutions typically decay or grow exponentially rather than varying linearly or harmonically in space.
+
+\subsection{One-dimensional static solutions}
+
+In one spatial dimension, the massive static equation is
+
+\[
+\frac{\mathrm{d}^{2}\Phi}{\mathrm{d}x^{2}}
+-
+\mu^{2}\Phi
+=0.
+\]
+
+The characteristic equation is
+
+\[
+r^{2}-\mu^{2}=0,
+\]
+
+with roots
+
+\[
+r=\pm\mu.
+\]
+
+Therefore
+
+\[
+\boxed{
+\Phi(x)
+=
+A e^{\mu x}
++
+B e^{-\mu x}
+}.
+\]
+
+On a half-line \(x\geq0\), a bounded solution at infinity requires
+
+\[
+A=0,
+\]
+
+so
+
+\[
+\boxed{
+\Phi(x)=B e^{-\mu x}
+}.
+\]
+
+The characteristic decay length is
+
+\[
+\boxed{
+\ell_{\mu}=rac{1}{\mu}
+}.
+\]
+
+The mass parameter therefore introduces a natural spatial length scale.
+
+\subsection{Sourced equations}
+
+An external scalar source \(J(x)\) may be included through
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}
++
+J\phi.
+\]
+
+The source is prescribed, so
+
+\[
+\delta J=0.
+\]
+
+The field equation becomes
+
+\[
+\boxed{
+(\Box+\mu^{2})\phi=J
+}.
+\]
+
+In the massless case,
+
+\[
+\Box\phi=J.
+\]
+
+The source-free equation describes free propagation. The sourced equation describes a field generated or driven by external matter.
+
+\subsection{Static point-source behaviour}
+
+The static sourced massive equation has the form
+
+\[
+\nabla^{2}\Phi
+-
+\mu^{2}\Phi
+=
+-\rho(\mathbf{x}).
+\]
+
+Outside the source region,
+
+\[
+\rho=0,
+\]
+
+and a spherically symmetric solution in three dimensions behaves as
+
+\[
+\boxed{
+\Phi(r)
+\propto
+\frac{e^{-\mu r}}{r}
+}.
+\]
+
+The exponential factor suppresses the field at distances much larger than \(1/\mu\). In the limit
+
+\[
+\mu\to0,
+\]
+
+this reduces to the massless behaviour
+
+\[
+\Phi(r)
+\propto
+\frac{1}{r}.
+\]
+
+This comparison shows how a mass parameter can produce a finite interaction range in a sourced linear theory.
+
+\subsection{Cauchy data}
+
+Both equations are second order in time. To specify a solution, one generally prescribes the field and its first time derivative on an initial spatial surface:
+
+\[
+\boxed{
+\phi(\mathbf{x},t_{0})
+=
+f(\mathbf{x})
+}
+\]
+
+and
+
+\[
+\boxed{
+\phi_{t}(\mathbf{x},t_{0})
+=
+g(\mathbf{x})
+}.
+\]
+
+Boundary conditions may also be required when space is restricted to a finite region.
+
+The mass term does not change the number of initial data. It changes the evolution generated from those data.
+
+\subsection{Finite propagation speed}
+
+The highest-derivative part of both equations is
+
+\[
+\Box\phi.
+\]
+
+Therefore the characteristic light cone is the same in the massive and massless theories. The lower-order mass term changes the dispersion of modes but does not permit signals to propagate outside the light cone.
+
+This distinction is important:
+
+\begin{quote}
+The mass term changes mode propagation without changing the causal characteristic speed of the differential equation.
+\end{quote}
+
+\subsection{Symmetries of the free equations}
+
+Both equations are invariant under spacetime translations and Lorentz transformations. They are also invariant under the discrete field reflection
+
+\[
+\boxed{
+\phi\longrightarrow-\phi
+}.
+\]
+
+For the massless free theory, the equation is additionally invariant under the constant shift
+
+\[
+\boxed{
+\phi\longrightarrow\phi+C
+}.
+\]
+
+Indeed, derivatives remove the constant. The mass term breaks this shift symmetry because
+
+\[
+\mu^{2}(\phi+C)
+\neq
+\mu^{2}\phi
+\]
+
+when \(C\neq0\).
+
+\subsection{Superposition}
+
+Both free equations are linear. If
+
+\[
+(\Box+\mu^{2})\phi_{1}=0
+\]
+
+and
+
+\[
+(\Box+\mu^{2})\phi_{2}=0,
+\]
+
+then
+
+\[
+\boxed{
+\phi=a\phi_{1}+b\phi_{2}
+}
+\]
+
+is also a solution.
+
+This property allows the field to be expanded into normal modes. It will fail once nonlinear powers such as \(\phi^{3}\) appear in the equation.
+
+\subsection{Limiting cases}
+
+Several checks clarify the equations.
+
+\begin{enumerate}
+    \item Massless limit:
+    \[
+    \mu\to0
+    \quad\Longrightarrow\quad
+    (\Box+\mu^{2})\phi=0
+    \longrightarrow
+    \Box\phi=0.
+    \]
+
+    \item Spatially uniform limit:
+    \[
+    \nabla\phi=0
+    \quad\Longrightarrow\quad
+    \phi_{tt}+c^{2}\mu^{2}\phi=0.
+    \]
+
+    \item Static limit:
+    \[
+    \phi_{t}=0
+    \quad\Longrightarrow\quad
+    \nabla^{2}\phi-\mu^{2}\phi=0.
+    \]
+
+    \item Long-wavelength regime:
+    spatial derivatives are small, so the local mass oscillation becomes dominant.
+
+    \item Short-wavelength regime:
+    gradient terms dominate, and massive modes approach massless wave behaviour.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item calling \(\Box\phi=0\) the massive Klein--Gordon equation;
+    \item using \(-\mu^{2}\phi\) in the equation after choosing the mostly-minus signature and the stated Lagrangian;
+    \item assuming that a nonzero mass term changes the characteristic light cone;
+    \item confusing the static modified Helmholtz equation with the ordinary Helmholtz equation;
+    \item forgetting that two initial functions are required for a second-order evolution equation;
+    \item claiming that the massless shift symmetry survives when \(\mu\neq0\);
+    \item interpreting the exponential static length scale as a propagation speed.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The massless real scalar field satisfies
+
+\[
+\Box\phi=0,
+\]
+
+while the massive field satisfies
+
+\[
+(\Box+\mu^{2})\phi=0.
+\]
+
+The mass parameter introduces a natural frequency \(c\mu\) and a natural length scale \(1/\mu\), while leaving the causal light cone determined by the principal wave operator unchanged. The next section constructs explicit plane-wave solutions and shows how their real combinations generate general free-field configurations.
