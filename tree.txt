@@ -15,6 +15,7 @@
 ./README.md
 ./connector_write_read_test.md
 ./docs
+./docs/basic_mathematics_presentations.md
 ./docs/index.md
 ./mathematical_lectures
 ./mathematical_lectures/basic_mathematics
