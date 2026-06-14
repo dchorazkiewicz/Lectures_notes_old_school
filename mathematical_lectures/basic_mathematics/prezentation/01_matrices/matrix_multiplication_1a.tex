@@ -1,0 +1,43 @@
+\def\sectiontag{Rows meet columns, and order becomes meaningful}
+\section{Matrix multiplication}
+
+\begin{frame}{Why multiplication needs a new rule}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Addition}
+        Matching positions interact.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{exampleblock}{Multiplication}
+        One row interacts with one column.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+  \concept{A product combines information across positions.}
+\end{frame}
+
+\begin{frame}{Dimension rule: inner match, outer remain}
+  \centering
+  \LARGE
+  \[
+  (\mblue{m}\times\morange{n})(\morange{n}\times\mred{p})
+  =\mblue{m}\times\mred{p}
+  \]
+
+  \vspace{0.25cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Inner dimensions}
+        Same length: one row of $A$ meets one column of $B$.
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Outer dimensions}
+        Number of rows and columns in the product.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
