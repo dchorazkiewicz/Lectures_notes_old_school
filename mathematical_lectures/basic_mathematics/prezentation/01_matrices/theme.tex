@@ -1,0 +1,100 @@
+\usetheme{default}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{array,booktabs,colortbl}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,matrix,fit,backgrounds,shapes.geometric}
+
+% --- Palette -----------------------------------------------------------------
+\definecolor{navy}{HTML}{17324D}
+\definecolor{blue}{HTML}{2D6AA0}
+\definecolor{cyan}{HTML}{58A9C6}
+\definecolor{green}{HTML}{3A8D73}
+\definecolor{orange}{HTML}{D88A34}
+\definecolor{red}{HTML}{C95A5A}
+\definecolor{ink}{HTML}{1F2933}
+\definecolor{muted}{HTML}{657786}
+\definecolor{paper}{HTML}{F7F9FB}
+\definecolor{line}{HTML}{D8E0E8}
+\definecolor{softblue}{HTML}{EAF2F8}
+\definecolor{softgreen}{HTML}{EAF5F1}
+\definecolor{softorange}{HTML}{FBF1E5}
+\definecolor{softred}{HTML}{FAECEC}
+
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{structure}{fg=blue}
+\setbeamercolor{frametitle}{fg=white,bg=navy}
+\setbeamercolor{block title}{fg=white,bg=blue}
+\setbeamercolor{block body}{fg=ink,bg=softblue}
+\setbeamercolor{block title alerted}{fg=white,bg=red}
+\setbeamercolor{block body alerted}{fg=ink,bg=softred}
+\setbeamercolor{block title example}{fg=white,bg=green}
+\setbeamercolor{block body example}{fg=ink,bg=softgreen}
+
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.9cm,dp=0.24cm,leftskip=0.55cm,rightskip=0.4cm]{frametitle}
+    \begin{minipage}[c]{0.68\paperwidth}
+      \usebeamerfont{frametitle}\insertframetitle
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.24\paperwidth}
+      \raggedleft\tiny\color{white!75}\insertsectionhead
+    \end{minipage}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.78\paperwidth,ht=0.34cm,dp=0.18cm,leftskip=0.5cm]{author in head/foot}%
+      \scriptsize\color{muted}Basic Mathematics \;\textbullet\; Matrices
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.22\paperwidth,ht=0.34cm,dp=0.18cm,rightskip=0.5cm plus1fil]{date in head/foot}%
+      \hfill\scriptsize\color{muted}\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+
+% --- Macros ------------------------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\mblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\mgreen}[1]{\textcolor{green}{#1}}
+\newcommand{\mred}[1]{\textcolor{red}{#1}}
+\newcommand{\morange}[1]{\textcolor{orange}{#1}}
+\newcommand{\mutedtext}[1]{\textcolor{muted}{#1}}
+\newcommand{\pill}[2]{\tikz[baseline=(X.base)]\node[rounded corners=3pt,fill=#1,inner xsep=6pt,inner ysep=3pt,text=ink,font=\small\bfseries] (X) {#2};}
+\newcommand{\concept}[1]{\begin{center}\Large\bfseries\color{navy}#1\end{center}}
+\newcommand{\takeaway}[1]{%
+  \begin{beamercolorbox}[rounded=true,wd=\linewidth,sep=0.45em]{block body example}
+    \centering\bfseries #1
+  \end{beamercolorbox}}
+
+% --- Section dividers ---------------------------------------------------------
+\AtBeginSection[]{
+  \begin{frame}[plain]
+    \setbeamercolor{background canvas}{bg=navy}
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[navy] (current page.south west) rectangle (current page.north east);
+      \fill[blue] (current page.south west) rectangle ([xshift=2.1cm]current page.north west);
+      \node[anchor=west,text=white,font=\bfseries\fontsize{48}{52}\selectfont] at ([xshift=0.45cm,yshift=0.2cm]current page.west) {\insertsectionnumber};
+      \node[anchor=west,text=white,font=\bfseries\fontsize{28}{32}\selectfont,text width=11.2cm] at ([xshift=2.75cm,yshift=0.55cm]current page.west) {\insertsectionhead};
+      \node[anchor=west,text=white!70,font=\large,text width=11.0cm] at ([xshift=2.8cm,yshift=-1.0cm]current page.west) {\sectiontag};
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\title{Matrices}
+\subtitle{Read the shape. Understand the action.}
+\author{Damian Chorążkiewicz}
+\date{}
