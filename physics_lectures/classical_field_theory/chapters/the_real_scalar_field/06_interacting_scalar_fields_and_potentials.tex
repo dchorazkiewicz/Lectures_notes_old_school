@@ -1,1 +1,662 @@
 \section{Interacting Scalar Fields and Potentials}
+\label{sec:interacting_scalar_fields_and_potentials}
+
+The free scalar theory is quadratic, so its equation is linear and its modes evolve independently. Interactions are introduced by replacing the quadratic mass potential with a more general function \(V(\phi)\), or by coupling several scalar fields in one potential.
+
+The shape of the potential determines equilibrium values, nonlinear forces, stability, and the possible existence of spatially varying static configurations.
+
+\subsection{General interacting action}
+
+Consider the Lagrangian density
+
+\[
+\boxed{
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+V(\phi)
++
+J(x)\phi
+}.
+\]
+
+The field \(\phi\) is dynamical, while \(J(x)\) is a prescribed external source.
+
+The action is
+
+\[
+S[\phi]
+=
+\int_{\Omega}
+\mathcal{L}
+\,\mathrm{d}^{4}x.
+\]
+
+The derivative term is Lorentz invariant because it is a complete contraction. The potential is also a Lorentz scalar because it depends only on the scalar field value.
+
+\subsection{Variation of the potential}
+
+The derivative contribution varies as
+
+\[
+\delta
+\left(
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+\right)
+=
+\partial_{\mu}\phi
+\partial^{\mu}(\delta\phi).
+\]
+
+The potential contribution is
+
+\[
+\delta[-V(\phi)]
+=
+-V'(\phi)\delta\phi.
+\]
+
+The source contribution is
+
+\[
+\delta(J\phi)
+=
+J\delta\phi.
+\]
+
+After integration by parts and removal of the boundary term under fixed boundary values, stationarity gives
+
+\[
+\boxed{
+\Box\phi
++
+V'(\phi)
+=
+J
+}.
+\]
+
+In components,
+
+\[
+\boxed{
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
++
+V'(\phi)
+=
+J
+}.
+\]
+
+The local force is determined by the derivative of the potential, not by the potential itself.
+
+\subsection{Energy density}
+
+The canonical energy density is
+
+\[
+\boxed{
+\mathcal{E}
+=
+\frac{1}{2c^{2}}
+\phi_{t}^{2}
++
+\frac{1}{2}
+|\nabla\phi|^{2}
++
+V(\phi)
+-
+J\phi
+}.
+\]
+
+When the source is time independent, this expression defines a conserved total energy under suitable boundary conditions. If \(J\) depends explicitly on time, the external system can supply or remove energy.
+
+Adding a constant to the potential,
+
+\[
+V(\phi)
+\longrightarrow
+V(\phi)+V_{0},
+\]
+
+does not change the field equation because
+
+\[
+\frac{\mathrm{d}V_{0}}{\mathrm{d}\phi}=0.
+\]
+
+It does shift the absolute energy density by \(V_{0}\).
+
+\subsection{Uniform equilibria}
+
+For a constant, time-independent field
+
+\[
+\phi(x)=\phi_{0},
+\]
+
+all derivatives vanish. The field equation reduces to
+
+\[
+\boxed{
+V'(\phi_{0})=J
+}.
+\]
+
+In the source-free case,
+
+\[
+\boxed{
+V'(\phi_{0})=0
+}.
+\]
+
+Thus uniform equilibria are stationary points of the potential.
+
+A stationary point is not automatically stable. The sign of
+
+\[
+V''(\phi_{0})
+\]
+
+determines the leading restoring behaviour and will be analyzed systematically in the next section.
+
+\subsection{Quadratic potential as the free theory}
+
+For
+
+\[
+V(\phi)
+=
+\frac{1}{2}\mu^{2}\phi^{2},
+\]
+
+we have
+
+\[
+V'(\phi)=\mu^{2}\phi.
+\]
+
+The equation becomes
+
+\[
+\Box\phi+\mu^{2}\phi=J.
+\]
+
+When \(J=0\), this is the free massive Klein--Gordon equation.
+
+The free theory is therefore the special case in which the potential is purely quadratic.
+
+\subsection{Quartic self-interaction}
+
+Consider
+
+\[
+\boxed{
+V(\phi)
+=
+\frac{1}{2}\mu^{2}\phi^{2}
++
+\frac{\lambda}{4}\phi^{4}
+}.
+\]
+
+Then
+
+\[
+V'(\phi)
+=
+\mu^{2}\phi
++
+\lambda\phi^{3}.
+\]
+
+The source-free equation is
+
+\[
+\boxed{
+\Box\phi
++
+\mu^{2}\phi
++
+\lambda\phi^{3}
+=0
+}.
+\]
+
+The cubic force term makes the equation nonlinear. If \(\phi_{1}\) and \(\phi_{2}\) are solutions, their sum is generally not a solution because
+
+\[
+(\phi_{1}+\phi_{2})^{3}
+\neq
+\phi_{1}^{3}+\phi_{2}^{3}.
+\]
+
+Different modes can exchange energy through the interaction.
+
+\subsection{Boundedness of the quartic potential}
+
+For large \(|\phi|\), the quartic term dominates:
+
+\[
+V(\phi)
+\sim
+\frac{\lambda}{4}\phi^{4}.
+\]
+
+If
+
+\[
+\lambda>0,
+\]
+
+the potential grows toward positive infinity and is bounded below.
+
+If
+
+\[
+\lambda<0,
+\]
+
+the potential tends to negative infinity as \(|\phi|\to\infty\). The classical energy is then unbounded below, so the model has no stable ground configuration without additional higher-order terms.
+
+\subsection{Double-well potential}
+
+A central nonlinear example is
+
+\[
+\boxed{
+V(\phi)
+=
+\frac{\lambda}{4}
+(\phi^{2}-v^{2})^{2}
+},
+\]
+
+where
+
+\[
+\lambda>0,
+\qquad
+v>0.
+\]
+
+The derivative is
+
+\[
+V'(\phi)
+=
+\lambda\phi
+(\phi^{2}-v^{2}).
+\]
+
+The field equation is
+
+\[
+\boxed{
+\Box\phi
++
+\lambda\phi
+(\phi^{2}-v^{2})
+=0
+}.
+\]
+
+The potential is invariant under
+
+\[
+\boxed{
+\phi\longrightarrow-\phi
+}.
+\]
+
+This is a discrete reflection symmetry.
+
+\subsection{Equilibria of the double well}
+
+Uniform equilibria satisfy
+
+\[
+\lambda\phi_{0}
+(\phi_{0}^{2}-v^{2})=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\phi_{0}=0,
+\qquad
+\phi_{0}=v,
+\qquad
+\phi_{0}=-v
+}.
+\]
+
+The second derivative is
+
+\[
+V''(\phi)
+=
+\lambda(3\phi^{2}-v^{2}).
+\]
+
+At the origin,
+
+\[
+V''(0)
+=
+-\lambda v^{2}<0,
+\]
+
+so \(\phi=0\) is a local maximum.
+
+At the outer equilibria,
+
+\[
+V''(\pm v)
+=
+2\lambda v^{2}>0,
+\]
+
+so \(\phi=\pm v\) are local minima.
+
+The theory has two degenerate lowest-energy uniform configurations.
+
+\subsection{Static interacting fields}
+
+For a time-independent configuration,
+
+\[
+\phi(\mathbf{x},t)=\Phi(\mathbf{x}),
+\]
+
+the field equation becomes
+
+\[
+\boxed{
+-\nabla^{2}\Phi
++
+V'(\Phi)
+=
+J(\mathbf{x})
+}.
+\]
+
+Equivalently,
+
+\[
+\nabla^{2}\Phi
+=
+V'(\Phi)-J.
+\]
+
+This is a nonlinear boundary-value problem when \(V'\) is nonlinear.
+
+The static energy functional is
+
+\[
+\boxed{
+E[\Phi]
+=
+\int
+\left[
+\frac{1}{2}|\nabla\Phi|^{2}
++
+V(\Phi)
+-
+J\Phi
+\right]
+\,\mathrm{d}^{3}x
+}.
+\]
+
+Its stationary points satisfy the static field equation.
+
+\subsection{A one-dimensional transition solution}
+
+For the double-well potential in one spatial dimension, a static field obeys
+
+\[
+\frac{\mathrm{d}^{2}\Phi}{\mathrm{d}x^{2}}
+=
+\lambda\Phi
+(\Phi^{2}-v^{2}).
+\]
+
+A solution connecting the two minima is
+
+\[
+\boxed{
+\Phi(x)
+=
+v\tanh
+\left[
+v\sqrt{
+\frac{\lambda}{2}
+}
+(x-x_{0})
+\right]
+}.
+\]
+
+As
+
+\[
+x\to-\infty,
+\]
+
+we have
+
+\[
+\Phi(x)\to-v,
+\]
+
+while as
+
+\[
+x\to+\infty,
+\]
+
+we have
+
+\[
+\Phi(x)\to+v.
+\]
+
+The parameter \(x_{0}\) locates the center of the transition. This configuration is often called a kink or domain wall in one spatial dimension.
+
+\subsection{Verification of the transition solution}
+
+Let
+
+\[
+a
+=
+v\sqrt{
+\frac{\lambda}{2}
+}.
+\]
+
+Then
+
+\[
+\Phi(x)=v\tanh[a(x-x_{0})].
+\]
+
+The first derivative is
+
+\[
+\Phi'
+=
+va\operatorname{sech}^{2}[a(x-x_{0})].
+\]
+
+The second derivative is
+
+\[
+\Phi''
+=
+-2va^{2}
+\tanh[a(x-x_{0})]
+\operatorname{sech}^{2}[a(x-x_{0})].
+\]
+
+Using
+
+\[
+\operatorname{sech}^{2}z
+=
+1-	anh^{2}z
+\]
+
+and \(a^{2}=\lambda v^{2}/2\), one finds
+
+\[
+\Phi''
+=
+\lambda\Phi(\Phi^{2}-v^{2}).
+\]
+
+Thus the proposed field satisfies the static nonlinear equation.
+
+\subsection{Coupled scalar fields}
+
+Let two real fields \(\phi\) and \(\chi\) have density
+
+\[
+\mathcal{L}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
++
+\frac{1}{2}
+\partial_{\mu}\chi\partial^{\mu}\chi
+-
+V(\phi,\chi).
+\]
+
+Variation with respect to each field gives
+
+\[
+\boxed{
+\Box\phi
++
+\frac{\partial V}{\partial\phi}
+=0
+}
+\]
+
+and
+
+\[
+\boxed{
+\Box\chi
++
+\frac{\partial V}{\partial\chi}
+=0
+}.
+\]
+
+For the interaction
+
+\[
+V_{\mathrm{int}}
+=
+\frac{g}{2}
+\phi^{2}\chi^{2},
+\]
+
+the equations contain
+
+\[
+\frac{\partial V_{\mathrm{int}}}{\partial\phi}
+=
+g\phi\chi^{2}
+\]
+
+and
+
+\[
+\frac{\partial V_{\mathrm{int}}}{\partial\chi}
+=
+g\phi^{2}\chi.
+\]
+
+Each field changes the effective restoring force acting on the other.
+
+\subsection{External sources and effective potential}
+
+For a constant source \(J\), define
+
+\[
+\boxed{
+V_{\mathrm{eff}}(\phi)
+=
+V(\phi)-J\phi
+}.
+\]
+
+Uniform equilibria satisfy
+
+\[
+V_{\mathrm{eff}}'(\phi_{0})=0.
+\]
+
+Thus a source tilts the potential and shifts the equilibrium. In a symmetric double well, a nonzero source generally makes one minimum energetically preferred over the other.
+
+\subsection{Finite-energy conditions}
+
+For a static configuration on an unbounded region, finite energy requires the field to approach a minimum of the potential at spatial infinity:
+
+\[
+\Phi(\mathbf{x})
+\longrightarrow
+\phi_{\mathrm{vac}}
+\qquad
+\text{as }|\mathbf{x}|\to\infty,
+\]
+
+where
+
+\[
+V'(\phi_{\mathrm{vac}})=0.
+\]
+
+It is convenient to shift the potential so that
+
+\[
+V(\phi_{\mathrm{vac}})=0.
+\]
+
+The gradient must also decay sufficiently rapidly for the total energy integral to converge.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item placing \(V(\phi)\) rather than \(V'(\phi)\) in the field equation;
+    \item assuming that superposition survives a nonlinear interaction;
+    \item varying an external source that is meant to remain fixed;
+    \item calling every stationary point of \(V\) stable;
+    \item choosing a quartic coupling with negative leading coefficient and overlooking the unbounded energy;
+    \item forgetting that adding a constant to \(V\) changes the energy but not the classical equation;
+    \item solving a nonlinear static equation without imposing boundary behaviour.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A general interacting scalar field satisfies
+
+\[
+\Box\phi+V'(\phi)=J.
+\]
+
+The potential determines nonlinear forces, uniform equilibria, energy boundedness, and possible static transition configurations. Quartic and double-well potentials provide the basic examples, while mixed potentials couple several scalar fields. The next section develops the systematic approximation of a nonlinear theory by linearizing around a chosen background solution.
