@@ -1,1 +1,766 @@
 \section{Stability and Boundary-Value Problems}
+\label{sec:stability_and_boundary_value_problems}
+
+A field equation does not determine a unique physical solution by itself. Initial data, boundary conditions, regularity assumptions, and finite-energy requirements are part of the problem. These conditions also influence stability because they determine which perturbation modes are allowed.
+
+This section combines the energy and linearization methods with boundary-value analysis. The main tool is the spectrum of the spatial perturbation operator.
+
+\subsection{Initial-value and boundary-value problems}
+
+For a second-order evolution equation such as
+
+\[
+\frac{1}{c^{2}}\phi_{tt}
+-
+\nabla^{2}\phi
++
+V'(\phi)
+=0,
+\]
+
+one normally specifies initial data
+
+\[
+\boxed{
+\phi(\mathbf{x},t_{0})
+=
+f(\mathbf{x})
+}
+\]
+
+and
+
+\[
+\boxed{
+\phi_{t}(\mathbf{x},t_{0})
+=
+g(\mathbf{x})
+}.
+\]
+
+If the spatial domain has a boundary, one must also impose boundary conditions compatible with the initial data.
+
+A static boundary-value problem instead seeks a time-independent field satisfying
+
+\[
+-\nabla^{2}\Phi
++
+V'(\Phi)
+=
+J
+\]
+
+with specified data on the spatial boundary.
+
+\subsection{Dirichlet boundary conditions}
+
+A Dirichlet condition fixes the field value:
+
+\[
+\boxed{
+\phi|_{\partial\Sigma}
+=f
+}.
+\]
+
+Allowed variations satisfy
+
+\[
+\delta\phi=0
+\qquad
+\text{on }\partial\Sigma.
+\]
+
+The boundary term from integration by parts therefore vanishes.
+
+For a string-like interval, homogeneous Dirichlet conditions are
+
+\[
+\phi(0,t)=0,
+\qquad
+\phi(L,t)=0.
+\]
+
+These conditions exclude the spatially constant mode.
+
+\subsection{Neumann boundary conditions}
+
+A Neumann condition fixes the outward normal derivative:
+
+\[
+\boxed{
+\frac{\partial\phi}{\partial n}
+=g
+}.
+\]
+
+The homogeneous condition is
+
+\[
+\frac{\partial\phi}{\partial n}=0.
+\]
+
+For the standard scalar action, this is also the natural boundary condition when the field value is free and no boundary interaction is added.
+
+On an interval,
+
+\[
+\phi_{x}(0,t)=0,
+\qquad
+\phi_{x}(L,t)=0.
+\]
+
+These conditions allow a spatially constant mode.
+
+\subsection{Robin and periodic conditions}
+
+A Robin condition combines the field and its normal derivative:
+
+\[
+\boxed{
+a\phi
++
+b
+\frac{\partial\phi}{\partial n}
+=h
+}.
+\]
+
+Such conditions may follow from explicit boundary terms in the action.
+
+Periodic conditions identify opposite boundaries:
+
+\[
+\boxed{
+\phi(x+L,t)=\phi(x,t)
+}
+\]
+
+and
+
+\[
+\phi_{x}(x+L,t)=\phi_{x}(x,t).
+\]
+
+They are useful for Fourier expansions and for approximating a homogeneous system in a finite box.
+
+\subsection{Normal modes with fixed boundaries}
+
+For the free massive field on
+
+\[
+0\leq x\leq L,
+\]
+
+impose
+
+\[
+\phi(0,t)=
+\phi(L,t)=0.
+\]
+
+Use separation of variables:
+
+\[
+\phi(x,t)=X(x)T(t).
+\]
+
+The equation
+
+\[
+\frac{1}{c^{2}}\phi_{tt}
+-
+\phi_{xx}
++
+\mu^{2}\phi=0
+\]
+
+gives
+
+\[
+\frac{T''}{c^{2}T}
+=
+\frac{X''}{X}
+-
+\mu^{2}.
+\]
+
+Set the separation constant to \(-k^{2}-\mu^{2}\). Then
+
+\[
+X''+k^{2}X=0,
+\]
+
+and
+
+\[
+T''+c^{2}(k^{2}+\mu^{2})T=0.
+\]
+
+The boundary conditions require
+
+\[
+\boxed{
+k_{n}=rac{n\pi}{L},
+\qquad
+n=1,2,3,\ldots
+}.
+\]
+
+Thus
+
+\[
+\boxed{
+\omega_{n}^{2}
+=
+c^{2}
+\left[
+\left(
+\frac{n\pi}{L}
+\right)^{2}
++
+\mu^{2}
+\right]
+}.
+\]
+
+All frequencies are real when \(\mu^{2}\geq0\), so every linear mode oscillates.
+
+\subsection{Normal modes with Neumann boundaries}
+
+For
+
+\[
+\phi_{x}(0,t)
+=
+\phi_{x}(L,t)
+=0,
+\]
+
+the spatial modes are
+
+\[
+X_{n}(x)
+=
+\cos
+\left(
+\frac{n\pi x}{L}
+\right),
+\]
+
+with
+
+\[
+\boxed{
+k_{n}=rac{n\pi}{L},
+\qquad
+n=0,1,2,\ldots
+}.
+\]
+
+The \(n=0\) mode is spatially constant. Its frequency is
+
+\[
+\boxed{
+\omega_{0}=c\mu
+}.
+\]
+
+For a massless field, this mode has zero frequency and represents a constant shift of the field.
+
+\subsection{Static massive boundary-value problem}
+
+Consider the one-dimensional static equation
+
+\[
+\Phi''-\mu^{2}\Phi=0
+\]
+
+on
+
+\[
+0\leq x\leq L
+\]
+
+with
+
+\[
+\Phi(0)=A,
+\qquad
+\Phi(L)=B.
+\]
+
+For \(\mu>0\), the solution can be written as
+
+\[
+\boxed{
+\Phi(x)
+=
+A
+\frac{
+\sinh[\mu(L-x)]
+}{
+\sinh(\mu L)
+}
++
+B
+\frac{
+\sinh(\mu x)
+}{
+\sinh(\mu L)
+}
+}.
+\]
+
+At \(x=0\), the first coefficient equals one and the second vanishes. At \(x=L\), the first vanishes and the second equals one.
+
+Differentiating twice verifies
+
+\[
+\Phi''=\mu^{2}\Phi.
+\]
+
+\subsection{Massless limit of the boundary solution}
+
+For small \(\mu\),
+
+\[
+\sinh(\mu x)
+\approx
+\mu x.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+\Phi(x)
+&\longrightarrow
+A
+\frac{L-x}{L}
++
+B
+\frac{x}{L}\\
+&=
+A+
+\frac{B-A}{L}x.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\Phi(x)
+\longrightarrow
+A+
+\frac{B-A}{L}x
+}
+\]
+
+as \(\mu\to0\). This is the linear solution of the one-dimensional Laplace equation.
+
+\subsection{Linear stability operator}
+
+Let \(\bar\phi(\mathbf{x})\) be a static background. A perturbation satisfies
+
+\[
+\frac{1}{c^{2}}\psi_{tt}
++
+\mathcal{O}\psi
+=0,
+\]
+
+where
+
+\[
+\boxed{
+\mathcal{O}
+=
+-\nabla^{2}
++
+V''(\bar\phi)
+}.
+\]
+
+Seek separated modes
+
+\[
+\psi(\mathbf{x},t)
+=
+f_{n}(\mathbf{x})T_{n}(t).
+\]
+
+Let
+
+\[
+\boxed{
+\mathcal{O}f_{n}
+=
+\lambda_{n}f_{n}
+}.
+\]
+
+Then
+
+\[
+T_{n}''
++
+c^{2}\lambda_{n}T_{n}
+=0.
+\]
+
+The sign of \(\lambda_{n}\) determines the mode behaviour.
+
+\subsection{Spectral stability criterion}
+
+Three cases occur.
+
+\begin{enumerate}
+    \item If
+    \[
+    \lambda_{n}>0,
+    \]
+    then
+    \[
+    T_{n}(t)
+    =
+    A_{n}\cos(c\sqrt{\lambda_{n}}t)
+    +
+    B_{n}\sin(c\sqrt{\lambda_{n}}t).
+    \]
+    The mode oscillates.
+
+    \item If
+    \[
+    \lambda_{n}=0,
+    \]
+    then
+    \[
+    T_{n}(t)=A_{n}+B_{n}t.
+    \]
+    The mode is neutral at linear order.
+
+    \item If
+    \[
+    \lambda_{n}<0,
+    \]
+    then
+    \[
+    T_{n}(t)
+    =
+    A_{n}e^{c\sqrt{-\lambda_{n}}t}
+    +
+    B_{n}e^{-c\sqrt{-\lambda_{n}}t}.
+    \]
+    A growing exponential is present.
+\end{enumerate}
+
+Therefore a static background is linearly unstable if the allowed spectrum contains a negative eigenvalue.
+
+\subsection{The role of boundary conditions in stability}
+
+Boundary conditions determine the domain of \(\mathcal{O}\) and therefore its eigenvalues.
+
+For example, with constant
+
+\[
+V''(\bar\phi)=-\sigma^{2},
+\]
+
+Dirichlet modes on an interval have
+
+\[
+\lambda_{n}
+=
+\left(
+\frac{n\pi}{L}
+\right)^{2}
+-
+\sigma^{2}.
+\]
+
+The lowest mode is unstable when
+
+\[
+\boxed{
+\frac{\pi}{L}<\sigma
+}.
+\]
+
+A sufficiently small interval can remove the unstable long-wavelength mode, while a larger interval permits it.
+
+Thus stability is a property of the field equation together with its domain and boundary conditions.
+
+\subsection{Energy method}
+
+For a perturbation around a constant equilibrium, the quadratic energy is
+
+\[
+E^{(2)}
+=
+\int
+\left[
+\frac{1}{2c^{2}}\psi_{t}^{2}
++
+\frac{1}{2}|\nabla\psi|^{2}
++
+\frac{1}{2}
+V''(\phi_{0})\psi^{2}
+\right]
+\,\mathrm{d}^{3}x.
+\]
+
+If this quadratic form is positive for every nonzero allowed perturbation, it provides a strong indication of linear stability.
+
+If one can find a perturbation for which the quadratic energy is negative, the background cannot be a local minimum of the energy functional.
+
+The energy method and spectral method are closely related because the spatial quadratic form is generated by the operator
+
+\[
+\mathcal{O}
+=
+-\nabla^{2}+V''(\phi_{0}).
+\]
+
+\subsection{Self-adjointness and boundary terms}
+
+For two functions \(f\) and \(g\), integration by parts gives
+
+\[
+\begin{aligned}
+\int_{\Sigma}
+f(-\nabla^{2}g)
+\,\mathrm{d}^{3}x
+&=
+\int_{\Sigma}
+\nabla f\cdot\nabla g
+\,\mathrm{d}^{3}x\\
+&\quad-
+\int_{\partial\Sigma}
+f
+\frac{\partial g}{\partial n}
+\,\mathrm{d}A.
+\end{aligned}
+\]
+
+Dirichlet, Neumann, periodic, and suitable Robin conditions can make the boundary contribution compatible with a self-adjoint spatial operator.
+
+Self-adjointness ensures real eigenvalues and orthogonality of modes under the appropriate inner product.
+
+\subsection{Uniqueness for the positive massive static problem}
+
+Suppose \(\Phi_{1}\) and \(\Phi_{2}\) solve
+
+\[
+-\nabla^{2}\Phi
++
+\mu^{2}\Phi
+=
+J
+\]
+
+with the same Dirichlet boundary values and \(\mu^{2}>0\). Let
+
+\[
+w=\Phi_{1}-\Phi_{2}.
+\]
+
+Then
+
+\[
+-\nabla^{2}w+\mu^{2}w=0
+\]
+
+and
+
+\[
+w=0
+\qquad
+\text{on }\partial\Sigma.
+\]
+
+Multiply by \(w\) and integrate:
+
+\[
+\int_{\Sigma}
+\left[
+|\nabla w|^{2}
++
+\mu^{2}w^{2}
+\right]
+\,\mathrm{d}^{3}x
+=0.
+\]
+
+Both terms are nonnegative, so
+
+\[
+w=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\Phi_{1}=\Phi_{2}
+}.
+\]
+
+The solution is unique under the stated assumptions.
+
+\subsection{Finite-energy boundary behaviour}
+
+On unbounded space, stability and energy conservation require appropriate fall-off. For the free massive field, finite energy requires
+
+\[
+\phi,
+\qquad
+\nabla\phi,
+\qquad
+\phi_{t}
+\]
+
+to decay sufficiently rapidly as
+
+\[
+|\mathbf{x}|\to\infty.
+\]
+
+For an interacting field, the field should approach a minimum of the potential so that the potential-energy density tends to its vacuum value.
+
+Surface terms must vanish when deriving conservation laws or varying the action.
+
+\subsection{Linear and nonlinear stability}
+
+Linear stability means that the linearized equation has no growing allowed mode. It is a necessary diagnostic, but it is not always sufficient for full nonlinear stability.
+
+Nonlinear stability asks whether every sufficiently small initial perturbation remains small under the complete nonlinear evolution. Proving this usually requires estimates beyond the scope of the present chapter.
+
+A linearly unstable mode is decisive: the background is unstable. A linearly stable spectrum is encouraging, but nonlinear interactions and zero modes may require further analysis.
+
+\subsection{A practical workflow}
+
+For a scalar-field stability or boundary-value problem:
+
+\begin{enumerate}
+    \item identify the background solution;
+    \item state the spatial domain and boundary conditions;
+    \item compute \(V''\) on the background;
+    \item construct
+    \[
+    \mathcal{O}=-\nabla^{2}+V''(\bar\phi);
+    \]
+    \item solve or estimate its eigenvalue spectrum;
+    \item identify negative, zero, and positive modes;
+    \item check the quadratic energy and boundary flux;
+    \item verify whether the perturbation remains within the linear regime.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item solving the differential equation without specifying boundary conditions;
+    \item mixing initial data with boundary data;
+    \item assuming that a positive local potential curvature guarantees stability for every nonuniform background;
+    \item ignoring negative eigenvalues of the full spatial operator;
+    \item treating a zero mode as an exponentially growing instability;
+    \item using integration by parts without checking the boundary term;
+    \item claiming nonlinear stability solely from a linear calculation;
+    \item forgetting that boundary conditions change the allowed spectrum.
+\end{enumerate}
+
+\subsection{Chapter summary}
+
+This chapter developed the real scalar field as the basic model of relativistic classical field theory.
+
+The free action is
+
+\[
+S[\phi]
+=
+\int
+\left[
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+\right]
+\,\mathrm{d}^{4}x,
+\]
+
+and its field equation is
+
+\[
+\boxed{
+(\Box+\mu^{2})\phi=0
+}.
+\]
+
+Plane waves satisfy
+
+\[
+k^{2}=\mu^{2}
+\]
+
+and
+
+\[
+\omega^{2}
+=
+c^{2}(k^{2}+\mu^{2}).
+\]
+
+Massless modes propagate nondispersively at \(c\), while massive modes have a frequency gap, phase velocity greater than \(c\), and group velocity below \(c\).
+
+The energy density, flux, and momentum density are
+
+\[
+\mathcal{E}
+=
+\frac{1}{2c^{2}}\phi_{t}^{2}
++
+\frac{1}{2}|\nabla\phi|^{2}
++
+V(\phi),
+\]
+
+\[
+\mathbf{S}
+=
+-\phi_{t}\nabla\phi,
+\]
+
+and
+
+\[
+\mathbf{g}
+=
+\frac{\mathbf{S}}{c^{2}}.
+\]
+
+Interactions are introduced through a general potential:
+
+\[
+\Box\phi+V'(\phi)=J.
+\]
+
+Linearizing around a background gives
+
+\[
+\Box\psi+V''(\bar\phi)\psi=\delta J.
+\]
+
+The curvature of the potential acts as an effective squared mass, while the full stability problem is controlled by
+
+\[
+\mathcal{O}
+=
+-\nabla^{2}+V''(\bar\phi)
+\]
+
+together with the boundary conditions.
+
+The chapter has therefore connected action principles, relativistic covariance, wave propagation, energy transport, nonlinear potentials, and stability in one complete model. The next chapter develops continuous symmetries, conserved currents, and Noether's theorem.
