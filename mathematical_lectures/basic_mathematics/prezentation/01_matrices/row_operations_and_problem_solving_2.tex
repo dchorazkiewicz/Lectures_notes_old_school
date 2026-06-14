@@ -1,0 +1,108 @@
+\begin{frame}{Row-operation example: arithmetic made visible}
+  \centering
+  \Large
+  \[
+  \underbrace{(2,4,3)}_{R_2}
+  -2\underbrace{(1,2,-1)}_{R_1}
+  =
+  (2-2,\;4-4,\;3+2)
+  =
+  \underbrace{(0,0,5)}_{R_2^{\text{new}}}
+  \]
+
+  \vspace{0.7cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Cancelled}
+        The repeated contribution in columns 1 and 2.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{exampleblock}{Exposed}
+        A remaining contribution in column 3.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Row-operation example: before, operation, after}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.35\textwidth}
+      \centering
+      \mutedtext{before}
+      \[
+      \begin{pmatrix}
+      1&2&-1\\
+      \cellcolor{softorange}2&\cellcolor{softorange}4&\cellcolor{softorange}3\\
+      0&1&5
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \centering
+      \pill{softred}{$R_2\leftarrow R_2-2R_1$}\\[0.35cm]
+      \Huge $\Longrightarrow$
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \centering
+      \mutedtext{after}
+      \[
+      \begin{pmatrix}
+      1&2&-1\\
+      \cellcolor{softgreen}0&\cellcolor{softgreen}0&\cellcolor{softgreen}5\\
+      0&1&5
+      \end{pmatrix}
+      \]
+    \end{column}
+  \end{columns}
+
+  \vspace{0.45cm}
+  \takeaway{The new row shows exactly what was not already explained by the first row.}
+\end{frame}
+
+\begin{frame}{The three layers of the same step}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\textwidth}
+      \begin{block}{1. Arithmetic}
+        subtract two row vectors
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{exampleblock}{2. Transformation}
+        replace $R_2$ by a new row
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{alertblock}{3. Interpretation}
+        reveal dependence and residual information
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+  \concept{A good solution makes all three layers visible.}
+\end{frame}
+
+\begin{frame}{Column vectors are matrices}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      \begin{block}{Column form}
+        \[
+        \bm{u}=\begin{pmatrix}2\\-1\\4\end{pmatrix}
+        \in\R^{3\times1}
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{exampleblock}{Row form}
+        \[
+        \bm{u}^{\mathsf T}=\begin{pmatrix}2&-1&4\end{pmatrix}
+        \in\R^{1\times3}
+        \]
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.55cm}
+  \takeaway{Transpose changes the algebraic role of the same coordinates.}
+\end{frame}

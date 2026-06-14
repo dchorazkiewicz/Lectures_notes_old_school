@@ -1,0 +1,176 @@
+\def\sectiontag{From a rectangular array to a mathematical object}
+\section{What matrices are}
+
+\begin{frame}{A matrix can play several roles}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      \[
+      A=\begin{pmatrix}
+      2&1\\[-1mm]
+      -1&3
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \vspace{0.2cm}
+      \pill{softblue}{data}\quad
+      \pill{softgreen}{coefficients}\quad
+      \pill{softorange}{relations}
+
+      \vspace{0.45cm}
+      \pill{softblue}{transformation}\quad
+      \pill{softgreen}{geometric action}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.75cm}
+  \takeaway{The entries alone do not tell the whole story; the interpretation comes from the problem.}
+\end{frame}
+
+\begin{frame}{The first skill is reading}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.8cm]
+    \tikzset{q/.style={rounded corners=5pt,draw=line,very thick,fill=paper,minimum width=2.55cm,minimum height=0.9cm,align=center,font=\bfseries}}
+    \node[q] (s) {What is\\the shape?};
+    \node[q,right=of s] (e) {What do\\entries mean?};
+    \node[q,right=of e] (r) {How should rows\\and columns be read?};
+    \draw[-{Latex[length=3mm]},thick,blue] (s)--(e);
+    \draw[-{Latex[length=3mm]},thick,blue] (e)--(r);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.8cm}
+  \concept{Calculation comes after orientation.}
+\end{frame}
+
+\begin{frame}{General notation}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.58\textwidth}
+      \[
+      A=\begin{pmatrix}
+      a_{11}&a_{12}&\cdots&a_{1n}\\
+      a_{21}&a_{22}&\cdots&a_{2n}\\
+      \vdots&\vdots&\ddots&\vdots\\
+      a_{m1}&a_{m2}&\cdots&a_{mn}
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \begin{block}{Shape}
+        \[
+        A\in\R^{\mblue{m}\times\mred{n}}
+        \]
+        \mblue{$m$ rows}\\
+        \mred{$n$ columns}
+      \end{block}
+      \begin{exampleblock}{Address}
+        \[
+        a_{\mblue{i}\mred{j}}
+        \]
+        row $i$, column $j$
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Read one matrix carefully}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      \[
+      M=\begin{pmatrix}
+      \cellcolor{softblue}4&\cellcolor{softblue}-2&\cellcolor{softblue}0\\
+      7&1&\cellcolor{softgreen}5
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{block}{Shape}
+        $M\in\R^{2\times3}$
+      \end{block}
+      \begin{exampleblock}{Selected entries}
+        $m_{11}=4$\\
+        $m_{12}=-2$\\
+        $m_{23}=5$
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.35cm}
+  \mutedtext{Blue: first row. Green: entry in row 2, column 3.}
+\end{frame}
+
+\begin{frame}{Rows and columns are different objects}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Row matrix}
+        \[
+        r=\begin{pmatrix}4&-2&0\end{pmatrix}
+        \]
+        \centering $1\times3$
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Column matrix}
+        \[
+        c=\begin{pmatrix}4\\-2\\0\end{pmatrix}
+        \]
+        \centering $3\times1$
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+  \takeaway{Same numbers, different shape, different algebraic role.}
+\end{frame}
+
+\begin{frame}{A small gallery of shapes}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softblue}{row}\\[0.3cm]
+      $\begin{pmatrix}a&b&c\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$1\times3$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softgreen}{column}\\[0.3cm]
+      $\begin{pmatrix}a\\b\\c\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$3\times1$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softorange}{square}\\[0.3cm]
+      $\begin{pmatrix}a&b\\c&d\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$2\times2$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softred}{rectangular}\\[0.3cm]
+      $\begin{pmatrix}a&b&c\\d&e&f\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$2\times3$}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+  \concept{Shape determines which operations are possible.}
+\end{frame}
+
+\begin{frame}{Checkpoint: before touching the entries}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.62\textwidth}
+      \Large
+      \begin{enumerate}
+        \item name the shape;
+        \item locate entries by indices;
+        \item separate rows from columns;
+        \item identify the intended interpretation.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \begin{alertblock}{Do not start with}
+        ``Which formula should I use?''
+      \end{alertblock}
+      \begin{exampleblock}{Start with}
+        ``What object am I holding?''
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =============================================================================

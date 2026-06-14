@@ -1,0 +1,89 @@
+\begin{frame}{Worked example: the first row}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{$c_{11}$}
+        \[
+        \begin{pmatrix}\cellcolor{softblue}1&\cellcolor{softblue}3\end{pmatrix}
+        \begin{pmatrix}\cellcolor{softgreen}2\\\cellcolor{softgreen}5\end{pmatrix}
+        =1\cdot2+3\cdot5=17
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{exampleblock}{$c_{12}$}
+        \[
+        \begin{pmatrix}\cellcolor{softblue}1&\cellcolor{softblue}3\end{pmatrix}
+        \begin{pmatrix}\cellcolor{softorange}0\\\cellcolor{softorange}-1\end{pmatrix}
+        =1\cdot0+3(-1)=-3
+        \]
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.55cm}
+  \takeaway{The same row produces a full row of the product.}
+\end{frame}
+
+\begin{frame}{Worked example: the second row and the result}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \[
+      c_{21}=(-2)\cdot2+4\cdot5=16
+      \]
+      \[
+      c_{22}=(-2)\cdot0+4(-1)=-4
+      \]
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Assembled product}
+        \[
+        AB=\begin{pmatrix}17&-3\\16&-4\end{pmatrix}
+        \]
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Reverse the order, ask a different question}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.45\textwidth}
+      \begin{block}{$AB$}
+        \[
+        \begin{pmatrix}17&-3\\16&-4\end{pmatrix}
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{alertblock}{$BA$}
+        \[
+        \begin{pmatrix}2&6\\7&11\end{pmatrix}
+        \]
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+  \concept{$AB\neq BA$ in general.}
+\end{frame}
+
+\begin{frame}{Why order matters conceptually}
+  \begin{center}
+  \begin{tikzpicture}[node distance=1.1cm]
+    \tikzset{state/.style={rounded corners=5pt,draw=line,very thick,fill=paper,minimum width=2.0cm,minimum height=0.85cm,align=center}}
+    \node[state] (x1) {$\bm{x}$};
+    \node[state,right=of x1] (bx) {$B\bm{x}$};
+    \node[state,right=of bx] (abx) {$A(B\bm{x})$};
+    \draw[-{Latex[length=3mm]},thick,blue] (x1)--node[above]{$B$}(bx);
+    \draw[-{Latex[length=3mm]},thick,blue] (bx)--node[above]{$A$}(abx);
+
+    \node[state,below=1.25cm of x1] (x2) {$\bm{x}$};
+    \node[state,right=of x2] (ax) {$A\bm{x}$};
+    \node[state,right=of ax] (bax) {$B(A\bm{x})$};
+    \draw[-{Latex[length=3mm]},thick,red] (x2)--node[above]{$A$}(ax);
+    \draw[-{Latex[length=3mm]},thick,red] (ax)--node[above]{$B$}(bax);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.45cm}
+  \takeaway{Changing the order changes the process being performed.}
+\end{frame}

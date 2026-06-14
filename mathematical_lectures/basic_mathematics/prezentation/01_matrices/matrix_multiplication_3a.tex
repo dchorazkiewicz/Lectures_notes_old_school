@@ -1,0 +1,58 @@
+\begin{frame}{Sometimes only one order exists}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.46\textwidth}
+      \begin{exampleblock}{Defined}
+        \[
+        A\in\R^{2\times3},\quad B\in\R^{3\times1}
+        \]
+        \[
+        AB\in\R^{2\times1}
+        \]
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{alertblock}{Not defined}
+        \[
+        (3\times1)(2\times3)
+        \]
+        The inner dimensions $1$ and $2$ do not match.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Matrix times vector}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.44\textwidth}
+      \[
+      A\in\R^{m\times n},\qquad \bm{x}\in\R^{n}
+      \]
+      \[
+      A\bm{x}\in\R^{m}
+      \]
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Interpretation}
+        The matrix receives an input vector and produces an output vector.
+      \end{block}
+      \begin{exampleblock}{Shape logic}
+        Input length $n$ must match the number of matrix columns.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Columns explain the action}
+  \Large
+  \[
+  A=\begin{pmatrix}\bm{a}_1&\bm{a}_2&\cdots&\bm{a}_n\end{pmatrix},
+  \qquad
+  \bm{x}=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}
+  \]
+  \[
+  A\bm{x}=x_1\bm{a}_1+x_2\bm{a}_2+\cdots+x_n\bm{a}_n
+  \]
+
+  \vspace{0.5cm}
+  \takeaway{The output is a linear combination of the columns of $A$.}
+\end{frame}

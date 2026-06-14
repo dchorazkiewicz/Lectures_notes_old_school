@@ -1,0 +1,93 @@
+\def\sectiontag{Transform the representation to reveal hidden relations}
+\section{Row operations and problem solving}
+
+\begin{frame}{Why change the matrix at all?}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Not the goal}
+        Make the matrix look different.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{exampleblock}{The real goal}
+        Reveal dependence, simplify structure, prepare a system for solving.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+  \concept{A row operation is a controlled change with a purpose.}
+\end{frame}
+
+\begin{frame}{The three elementary row operations}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\textwidth}
+      \begin{block}{Swap}
+        \[
+        R_i\leftrightarrow R_j
+        \]
+        reorder equations
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{exampleblock}{Scale}
+        \[
+        R_i\leftarrow\lambda R_i,
+        \quad \lambda\neq0
+        \]
+        change normalization
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{alertblock}{Combine}
+        \[
+        R_i\leftarrow R_i+\lambda R_j
+        \]
+        remove repeated information
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{A row operation should tell a story}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.7cm]
+    \tikzset{stage/.style={rounded corners=5pt,draw=line,very thick,fill=paper,minimum width=2.45cm,minimum height=0.9cm,align=center,font=\bfseries}}
+    \node[stage] (before) {matrix\\before};
+    \node[stage,right=of before] (op) {chosen\\operation};
+    \node[stage,right=of op] (arith) {row\\arithmetic};
+    \node[stage,right=of arith] (after) {matrix\\after};
+    \draw[-{Latex[length=3mm]},thick,blue] (before)--(op);
+    \draw[-{Latex[length=3mm]},thick,blue] (op)--(arith);
+    \draw[-{Latex[length=3mm]},thick,blue] (arith)--(after);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.7cm}
+  \takeaway{The interpretation is the final step: what did the transformation reveal?}
+\end{frame}
+
+\begin{frame}{Row-operation example: before and intention}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.43\textwidth}
+      \[
+      A=\begin{pmatrix}
+      1&2&-1\\
+      2&4&3\\
+      0&1&5
+      \end{pmatrix}
+      \]
+    \end{column}
+    \begin{column}{0.53\textwidth}
+      \begin{alertblock}{Observation}
+        The first two entries of $R_2$ are exactly twice the first two entries of $R_1$.
+      \end{alertblock}
+      \begin{exampleblock}{Intention}
+        Remove that repeated part and see what remains.
+      \end{exampleblock}
+      \[
+      R_2\leftarrow R_2-2R_1
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
