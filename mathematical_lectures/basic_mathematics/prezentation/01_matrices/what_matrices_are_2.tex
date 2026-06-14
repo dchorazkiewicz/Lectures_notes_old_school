@@ -1,0 +1,73 @@
+\begin{frame}{Rows and columns are different objects}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Row matrix}
+        \[
+        r=\begin{pmatrix}4&-2&0\end{pmatrix}
+        \]
+        \centering $1\times3$
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Column matrix}
+        \[
+        c=\begin{pmatrix}4\\-2\\0\end{pmatrix}
+        \]
+        \centering $3\times1$
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+  \takeaway{Same numbers, different shape, different algebraic role.}
+\end{frame}
+
+\begin{frame}{A small gallery of shapes}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softblue}{row}\\[0.3cm]
+      $\begin{pmatrix}a&b&c\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$1\times3$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softgreen}{column}\\[0.3cm]
+      $\begin{pmatrix}a\\b\\c\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$3\times1$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softorange}{square}\\[0.3cm]
+      $\begin{pmatrix}a&b\\c&d\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$2\times2$}
+    \end{column}
+    \begin{column}{0.23\textwidth}
+      \centering\pill{softred}{rectangular}\\[0.3cm]
+      $\begin{pmatrix}a&b&c\\d&e&f\end{pmatrix}$\\[0.2cm]
+      \mutedtext{$2\times3$}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.8cm}
+  \concept{Shape determines which operations are possible.}
+\end{frame}
+
+\begin{frame}{Checkpoint: before touching the entries}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.62\textwidth}
+      \Large
+      \begin{enumerate}
+        \item name the shape;
+        \item locate entries by indices;
+        \item separate rows from columns;
+        \item identify the intended interpretation.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \begin{alertblock}{Formula-first}
+        Which formula?
+      \end{alertblock}
+      \begin{exampleblock}{Object-first}
+        What object?
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
