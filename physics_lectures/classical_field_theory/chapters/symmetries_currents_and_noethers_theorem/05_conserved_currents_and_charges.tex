@@ -1,1 +1,397 @@
 \section{Conserved Currents and Charges}
+\label{sec:conserved_currents_charges}
+
+Noether's theorem produces a local equation,
+
+\[
+\partial_{\mu}j^{\mu}=0.
+\]
+
+To interpret this equation physically, it must be separated into a density and a spatial flux. The integrated density is conserved only when the flux through the boundary is controlled.
+
+\subsection{Continuity equation}
+
+Use
+
+\[
+x^{0}=ct,
+\qquad
+\partial_{0}
+=
+\frac{1}{c}
+\frac{\partial}{\partial t}.
+\]
+
+Write the four-current as
+
+\[
+\boxed{
+j^{\mu}
+=
+\left(
+c\rho,
+\mathbf{j}
+\right)
+}.
+\]
+
+Then
+
+\[
+\partial_{\mu}j^{\mu}
+=
+\frac{1}{c}
+\frac{\partial}{\partial t}
+\left(
+c\rho
+\right)
++
+\nabla\cdot\mathbf{j}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{\partial\rho}{\partial t}
++
+\nabla\cdot\mathbf{j}
+=
+0
+}.
+\]
+
+The quantity \(\rho\) is the local charge density, and \(\mathbf{j}\) is the spatial current or flux density.
+
+\subsection{Integrated charge}
+
+For a spatial region \(V\), define
+
+\[
+\boxed{
+Q_V(t)
+=
+\int_V
+\rho(\mathbf{x},t)
+\,\mathrm{d}^{3}x
+}.
+\]
+
+Differentiate:
+
+\[
+\frac{\mathrm{d}Q_V}{\mathrm{d}t}
+=
+\int_V
+\frac{\partial\rho}{\partial t}
+\,\mathrm{d}^{3}x.
+\]
+
+Using the continuity equation,
+
+\[
+\frac{\mathrm{d}Q_V}{\mathrm{d}t}
+=
+-
+\int_V
+\nabla\cdot\mathbf{j}
+\,\mathrm{d}^{3}x.
+\]
+
+The divergence theorem gives
+
+\[
+\boxed{
+\frac{\mathrm{d}Q_V}{\mathrm{d}t}
+=
+-
+\oint_{\partial V}
+\mathbf{j}\cdot\mathbf{n}
+\,\mathrm{d}A
+}.
+\]
+
+The charge inside \(V\) changes only because current crosses the boundary.
+
+\subsection{Conservation on all space}
+
+For
+
+\[
+V=\mathbb{R}^{3},
+\]
+
+the total charge is
+
+\[
+\boxed{
+Q
+=
+\int_{\mathbb{R}^{3}}
+\rho
+\,\mathrm{d}^{3}x
+=
+\frac{1}{c}
+\int_{\mathbb{R}^{3}}
+j^{0}
+\,\mathrm{d}^{3}x
+}.
+\]
+
+If the fields decay sufficiently rapidly that
+
+\[
+\lim_{R\to\infty}
+\oint_{|\mathbf{x}|=R}
+\mathbf{j}\cdot\mathbf{n}
+\,\mathrm{d}A
+=
+0,
+\]
+
+then
+
+\[
+\boxed{
+\frac{\mathrm{d}Q}{\mathrm{d}t}=0
+}.
+\]
+
+Local conservation alone is not enough. Boundary behavior is part of the argument.
+
+\subsection{Finite regions and balance laws}
+
+In a laboratory region, the charge need not be constant. The correct statement is the balance law
+
+\[
+Q_V(t_2)-Q_V(t_1)
+=
+-
+\int_{t_1}^{t_2}
+\oint_{\partial V}
+\mathbf{j}\cdot\mathbf{n}
+\,\mathrm{d}A\,\mathrm{d}t.
+\]
+
+A decrease of charge inside the region is exactly balanced by outward flux.
+
+This interpretation applies not only to electric charge but also to energy, momentum, and other Noether quantities.
+
+\subsection{Boundary conditions}
+
+Several common conditions make the boundary flux vanish:
+
+\begin{enumerate}
+    \item compact support of the current;
+    \item sufficiently rapid decay at spatial infinity;
+    \item periodic boundary conditions, for which opposite-face fluxes cancel;
+    \item reflecting boundaries with
+    \[
+    \mathbf{j}\cdot\mathbf{n}=0;
+    \]
+    \item integration over a closed system whose boundary is not crossed by the relevant current.
+\end{enumerate}
+
+The appropriate condition depends on the physical problem.
+
+\subsection{Current nonuniqueness and charge}
+
+Let
+
+\[
+j'^{\mu}
+=
+j^{\mu}
++
+\partial_{\nu}B^{\mu\nu},
+\qquad
+B^{\mu\nu}
+=
+-B^{\nu\mu}.
+\]
+
+The charge density changes by
+
+\[
+\rho'
+=
+\rho
++
+\frac{1}{c}
+\partial_iB^{0i}.
+\]
+
+Therefore
+
+\[
+Q'-Q
+=
+\frac{1}{c}
+\int_{\mathbb{R}^{3}}
+\partial_iB^{0i}
+\,\mathrm{d}^{3}x
+=
+\frac{1}{c}
+\oint_{S_{\infty}}
+B^{0i}n_i
+\,\mathrm{d}A.
+\]
+
+If the improvement term decays sufficiently rapidly, then
+
+\[
+Q'=Q.
+\]
+
+Thus different local representatives of a current can define the same physical charge.
+
+\subsection{Worked example: shift charge}
+
+For the massless scalar shift symmetry,
+
+\[
+j^{\mu}
+=
+\partial^{\mu}\phi.
+\]
+
+Since
+
+\[
+\partial^{0}\phi
+=
+\frac{1}{c}
+\frac{\partial\phi}{\partial t},
+\]
+
+the density is
+
+\[
+\rho
+=
+\frac{j^{0}}{c}
+=
+\frac{1}{c^{2}}
+\frac{\partial\phi}{\partial t}.
+\]
+
+The charge is
+
+\[
+\boxed{
+Q_{\mathrm{shift}}
+=
+\frac{1}{c^{2}}
+\int
+\frac{\partial\phi}{\partial t}
+\,\mathrm{d}^{3}x
+}.
+\]
+
+Its time derivative is
+
+\[
+\frac{\mathrm{d}Q_{\mathrm{shift}}}{\mathrm{d}t}
+=
+\frac{1}{c^{2}}
+\int
+\frac{\partial^{2}\phi}{\partial t^{2}}
+\,\mathrm{d}^{3}x.
+\]
+
+Using the massless wave equation,
+
+\[
+\frac{1}{c^{2}}\phi_{tt}
+=
+\nabla^{2}\phi,
+\]
+
+we find
+
+\[
+\frac{\mathrm{d}Q_{\mathrm{shift}}}{\mathrm{d}t}
+=
+\int
+\nabla^{2}\phi
+\,\mathrm{d}^{3}x
+=
+\oint
+\nabla\phi\cdot\mathbf{n}
+\,\mathrm{d}A.
+\]
+
+The charge is constant when the boundary term vanishes.
+
+\subsection{Local conservation versus static density}
+
+A conserved current does not imply
+
+\[
+\frac{\partial\rho}{\partial t}=0
+\]
+
+at every point. The density can move through space. The continuity equation states that local changes are balanced by flux:
+
+\[
+\frac{\partial\rho}{\partial t}
+=
+-\nabla\cdot\mathbf{j}.
+\]
+
+A wave packet can carry a conserved total charge while its density profile changes position and shape.
+
+\subsection{Charge as generator}
+
+In Hamiltonian formulations, a conserved Noether charge often generates the corresponding infinitesimal transformation through Poisson brackets. Schematically,
+
+\[
+\delta\phi_a
+=
+\varepsilon
+\left\{
+\phi_a,Q
+\right\}.
+\]
+
+This deeper relation explains why conserved charges encode symmetry operations. A complete Hamiltonian treatment lies beyond the present derivation, but the structural connection is worth recording.
+
+\subsection{Diagnostic checks}
+
+For a proposed current:
+
+\begin{enumerate}
+    \item compute \(\partial_{\mu}j^{\mu}\) directly;
+    \item use the field equations only after the divergence is expanded;
+    \item identify the density \(j^{0}/c\);
+    \item identify the spatial flux \(\mathbf{j}\);
+    \item check the dimensions of the integrated charge;
+    \item state the boundary condition needed for \(\mathrm{d}Q/\mathrm{d}t=0\).
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item treating \(\partial_{\mu}j^{\mu}=0\) as if it implied a time-independent density;
+    \item defining a charge without the factor appropriate to the convention \(x^{0}=ct\);
+    \item discarding the boundary flux without stating a decay or boundary condition;
+    \item confusing the current \(j^{\mu}\) with its integrated charge \(Q\);
+    \item concluding that two improved currents define different charges without checking the surface term;
+    \item using a global conservation statement when only a finite-region balance law is justified.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A conserved four-current produces the continuity equation
+
+\[
+\frac{\partial\rho}{\partial t}
++
+\nabla\cdot\mathbf{j}
+=
+0.
+\]
+
+The associated charge is constant only when the boundary flux vanishes. This local-to-global passage will now be applied to spacetime translations, producing energy and momentum conservation.
