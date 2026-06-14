@@ -1,1 +1,517 @@
 \section{Gauge Transformations}
+\label{sec:gauge_transformations}
+
+The scalar and vector potentials are not uniquely determined by the electric and magnetic fields. A gauge transformation changes the potentials while leaving all electromagnetic fields unchanged. This freedom is not an accidental feature of one convenient parametrization; it is a central structural property of electromagnetism.
+
+\subsection{The gauge transformation}
+
+Let \(\chi(\mathbf{x},t)\) be a sufficiently smooth scalar function. Define new potentials by
+
+\[
+\boxed{
+\mathbf{A}'
+=
+\mathbf{A}
++
+\nabla\chi
+}
+\]
+
+and
+
+\[
+\boxed{
+\Phi'
+=
+\Phi
+-
+\frac{\partial\chi}{\partial t}
+}.
+\]
+
+The two potentials must transform together. Changing only \(\mathbf{A}\) or only \(\Phi\) generally changes the electric field.
+
+\subsection{Magnetic-field invariance}
+
+The transformed magnetic field is
+
+\[
+\begin{aligned}
+\mathbf{B}'
+&=
+\nabla\times\mathbf{A}'\\
+&=
+\nabla\times
+\left(
+\mathbf{A}+
+\nabla\chi
+\right)\\
+&=
+\nabla\times\mathbf{A}
++
+\nabla\times\nabla\chi.
+\end{aligned}
+\]
+
+Since
+
+\[
+\nabla\times\nabla\chi=0,
+\]
+
+we obtain
+
+\[
+\boxed{
+\mathbf{B}'=\mathbf{B}
+}.
+\]
+
+\subsection{Electric-field invariance}
+
+The transformed electric field is
+
+\[
+\begin{aligned}
+\mathbf{E}'
+&=
+-\nabla\Phi'
+-
+\frac{\partial\mathbf{A}'}{\partial t}\\
+&=
+-\nabla
+\left(
+\Phi-
+\frac{\partial\chi}{\partial t}
+\right)
+-
+\frac{\partial}{\partial t}
+\left(
+\mathbf{A}+
+\nabla\chi
+\right).
+\end{aligned}
+\]
+
+Expanding,
+
+\[
+\begin{aligned}
+\mathbf{E}'
+&=
+-\nabla\Phi
++
+\nabla
+\frac{\partial\chi}{\partial t}
+-
+\frac{\partial\mathbf{A}}{\partial t}
+-
+\frac{\partial}{\partial t}
+\nabla\chi.
+\end{aligned}
+\]
+
+For smooth \(\chi\),
+
+\[
+\nabla
+\frac{\partial\chi}{\partial t}
+=
+\frac{\partial}{\partial t}
+\nabla\chi.
+\]
+
+The additional terms cancel, and therefore
+
+\[
+\boxed{
+\mathbf{E}'=\mathbf{E}
+}.
+\]
+
+\subsection{Gauge-equivalent potentials}
+
+Two pairs
+
+\[
+(\Phi,\mathbf{A})
+\]
+
+and
+
+\[
+(\Phi',\mathbf{A}')
+\]
+
+are gauge equivalent if they are related by a function \(\chi\) through the transformation above.
+
+The physical electromagnetic configuration is represented not by one pair of potentials but by an entire equivalence class:
+
+\[
+\boxed{
+[(\Phi,\mathbf{A})]
+=
+\left\{
+\left(
+\Phi-
+\frac{\partial\chi}{\partial t},
+\mathbf{A}+
+\nabla\chi
+\right)
+\right\}
+}.
+\]
+
+Every member of the class produces the same \(\mathbf{E}\) and \(\mathbf{B}\).
+
+\subsection{Example: two gauges for a uniform magnetic field}
+
+For
+
+\[
+\mathbf{B}=B_0\mathbf{e}_z,
+\]
+
+the symmetric gauge is
+
+\[
+\mathbf{A}_{\mathrm{s}}
+=
+\frac{B_0}{2}
+\left(
+-y\mathbf{e}_x
++x\mathbf{e}_y
+\right).
+\]
+
+The Landau-type gauge is
+
+\[
+\mathbf{A}_{\mathrm{L}}
+=
+B_0x\mathbf{e}_y.
+\]
+
+Their difference is
+
+\[
+\mathbf{A}_{\mathrm{L}}
+-
+\mathbf{A}_{\mathrm{s}}
+=
+\frac{B_0}{2}
+\left(
+y\mathbf{e}_x
++x\mathbf{e}_y
+\right).
+\]
+
+Choose
+
+\[
+\chi(x,y)
+=
+\frac{1}{2}B_0xy.
+\]
+
+Then
+
+\[
+\nabla\chi
+=
+\frac{B_0}{2}
+\left(
+y\mathbf{e}_x
++x\mathbf{e}_y
+\right),
+\]
+
+so
+
+\[
+\mathbf{A}_{\mathrm{L}}
+=
+\mathbf{A}_{\mathrm{s}}
++
+\nabla\chi.
+\]
+
+The scalar potential is unchanged because \(\chi\) is time independent.
+
+\subsection{Gauge fixing}
+
+A gauge condition selects one representative, or a restricted set of representatives, from each gauge-equivalence class. Gauge fixing does not change the physical fields. It removes redundant descriptive freedom and can simplify the equations for the potentials.
+
+Common gauge conditions include:
+
+\begin{enumerate}
+    \item the Coulomb gauge,
+    \[
+    \boxed{
+    \nabla\cdot\mathbf{A}=0
+    };
+    \]
+
+    \item the Lorenz gauge,
+    \[
+    \boxed{
+    \nabla\cdot\mathbf{A}
+    +
+    \frac{1}{c^2}
+    \frac{\partial\Phi}{\partial t}
+    =0
+    };
+    \]
+
+    \item the temporal gauge,
+    \[
+    \boxed{
+    \Phi=0
+    }.
+    \]
+\end{enumerate}
+
+The Lorenz gauge is named after Ludvig Lorenz. It is Lorentz covariant, but its name is not ``Lorentz gauge.''
+
+\subsection{Reaching the Coulomb gauge}
+
+Suppose the original vector potential does not satisfy
+
+\[
+\nabla\cdot\mathbf{A}=0.
+\]
+
+After a gauge transformation,
+
+\[
+\nabla\cdot\mathbf{A}'
+=
+\nabla\cdot\mathbf{A}
++
+\nabla^2\chi.
+\]
+
+To impose the Coulomb gauge, choose \(\chi\) to solve
+
+\[
+\boxed{
+\nabla^2\chi
+=
+-
+\nabla\cdot\mathbf{A}
+}.
+\]
+
+The solvability and uniqueness of this Poisson equation depend on boundary conditions.
+
+\subsection{Reaching the Lorenz gauge}
+
+Under a gauge transformation,
+
+\[
+\begin{aligned}
+&\nabla\cdot\mathbf{A}'
++
+\frac{1}{c^2}
+\frac{\partial\Phi'}{\partial t}
+\\
+&=
+\nabla\cdot\mathbf{A}
++
+\nabla^2\chi
++
+\frac{1}{c^2}
+\frac{\partial\Phi}{\partial t}
+-
+\frac{1}{c^2}
+\frac{\partial^2\chi}{\partial t^2}.
+\end{aligned}
+\]
+
+Using
+
+\[
+\Box
+=
+\frac{1}{c^2}
+\frac{\partial^2}{\partial t^2}
+-
+\nabla^2,
+\]
+
+the new potentials satisfy the Lorenz condition when
+
+\[
+\boxed{
+\Box\chi
+=
+\nabla\cdot\mathbf{A}
++
+\frac{1}{c^2}
+\frac{\partial\Phi}{\partial t}
+}.
+\]
+
+This is a wave equation for the gauge function.
+
+\subsection{Residual gauge freedom}
+
+A gauge condition does not always determine the potentials uniquely.
+
+In the Lorenz gauge, a further transformation preserves the condition when
+
+\[
+\boxed{
+\Box\chi=0
+}.
+\]
+
+This remaining freedom is called residual gauge freedom.
+
+In the Coulomb gauge, residual transformations satisfy
+
+\[
+\boxed{
+\nabla^2\chi=0
+}
+\]
+
+together with the relevant boundary conditions.
+
+\subsection{Temporal gauge}
+
+To set
+
+\[
+\Phi'=0,
+\]
+
+choose \(\chi\) such that
+
+\[
+\frac{\partial\chi}{\partial t}
+=
+\Phi.
+\]
+
+One possible solution is
+
+\[
+\chi(\mathbf{x},t)
+=
+\int_{t_0}^{t}
+\Phi(\mathbf{x},t')
+\,\mathrm{d}t'
++
+\chi_0(\mathbf{x}).
+\]
+
+The arbitrary spatial function \(\chi_0\) represents residual freedom.
+
+\subsection{Gauge invariance and physical redundancy}
+
+A gauge transformation does not map one physical electromagnetic state to a different physical state. It changes the mathematical representative of the same state.
+
+This differs from a global physical symmetry. A spatial rotation can map a field configuration into a distinct rotated configuration. A gauge transformation leaves all local field strengths unchanged.
+
+The distinction will become especially important when the electromagnetic field is coupled to charged matter.
+
+\subsection{Boundary conditions and allowed gauge functions}
+
+Not every function \(\chi\) is admissible in every problem. Gauge transformations must respect the boundary conditions, fall-off requirements, periodicity, and regularity assumptions imposed on the potentials.
+
+For example, if the potentials are required to vanish sufficiently rapidly at spatial infinity, a gauge function that grows without bound may not preserve the allowed class of configurations.
+
+Gauge transformations that vanish appropriately at the boundary are often called small gauge transformations. Transformations with nontrivial boundary behavior can carry additional global information.
+
+\subsection{Four-dimensional preview}
+
+With the convention
+
+\[
+A^{\mu}
+=
+\left(
+\frac{\Phi}{c},
+\mathbf{A}
+\right),
+\]
+
+the gauge transformation becomes
+
+\[
+\boxed{
+A'^{\mu}
+=
+A^{\mu}
+-
+\partial^{\mu}\chi
+}.
+\]
+
+For the time component,
+
+\[
+\frac{\Phi'}{c}
+=
+\frac{\Phi}{c}
+-
+\frac{1}{c}
+\frac{\partial\chi}{\partial t}.
+\]
+
+For the spatial components, since
+
+\[
+\partial^{i}=-\partial_i,
+\]
+
+we obtain
+
+\[
+\mathbf{A}'
+=
+\mathbf{A}+
+\nabla\chi.
+\]
+
+The next section develops this covariant notation systematically.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item transforming \(\mathbf{A}\) without transforming \(\Phi\);
+    \item using the same sign in both three-dimensional transformation formulas;
+    \item treating gauge-equivalent potentials as physically different electromagnetic fields;
+    \item assuming that a gauge condition removes all residual freedom;
+    \item confusing the Lorenz gauge with a Lorentz transformation;
+    \item choosing a gauge function that violates the boundary conditions of the problem.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The transformations
+
+\[
+\mathbf{A}'
+=
+\mathbf{A}+
+\nabla\chi,
+\qquad
+\Phi'
+=
+\Phi-
+\frac{\partial\chi}{\partial t}
+\]
+
+leave \(\mathbf{E}\) and \(\mathbf{B}\) unchanged. Gauge conditions select convenient representatives but may leave residual freedom. The covariant expression
+
+\[
+A'^{\mu}
+=
+A^{\mu}-\partial^{\mu}\chi
+\]
+
+prepares the construction of the electromagnetic four-potential.
