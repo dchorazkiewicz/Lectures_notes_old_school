@@ -1,1 +1,265 @@
 \section{Scalar, Vector, and Tensor Fields}
+\label{sec:scalar_vector_tensor_fields}
+
+The previous section described a field as a rule that assigns a value to every point of a domain. We now ask a second question:
+
+\begin{quote}
+What kind of value is attached to each point?
+\end{quote}
+
+The answer matters because different kinds of values respond differently when coordinates are changed. A temperature does not acquire a direction when the coordinate axes are rotated. A velocity does have a direction, although its numerical components depend on the chosen axes. A stress field contains still more information: it describes how forces act on surfaces with different orientations.
+
+The terms \emph{scalar}, \emph{vector}, and \emph{tensor} identify these different transformation behaviours.
+
+\subsection{Scalar fields}
+
+A scalar field assigns one number to every point. In three-dimensional space, a scalar field may be written as
+
+\[
+\phi : D\subseteq\mathbb{R}^{3}\longrightarrow\mathbb{R},
+\qquad
+\mathbf{x}\longmapsto\phi(\mathbf{x}).
+\]
+
+Typical examples include temperature, mass density, pressure, electric potential, and the real scalar field studied later in this course.
+
+The word \emph{scalar} does not merely mean that we have written one numerical component. It means that the physical value is unchanged when we describe the same point using another coordinate system. If a room has temperature \(295\,\mathrm{K}\) at a particular event, rotating the coordinate axes does not change that temperature.
+
+As a simple example, consider the field on a flat plate
+
+\[
+T(x,y)
+=
+300\,\mathrm{K}
+-
+2\,\mathrm{K\,m^{-1}}\,x
++
+3\,\mathrm{K\,m^{-1}}\,y.
+\]
+
+At the point \((x,y)=(1\,\mathrm{m},2\,\mathrm{m})\),
+
+\[
+T(1\,\mathrm{m},2\,\mathrm{m})
+=
+300\,\mathrm{K}-2\,\mathrm{K}+6\,\mathrm{K}
+=
+304\,\mathrm{K}.
+\]
+
+Another observer may use rotated coordinates \((x',y')\), but the temperature assigned to the same physical point is still \(304\,\mathrm{K}\). The formula written in terms of \(x'\) and \(y'\) may look different, yet the scalar value at the point is the same.
+
+A useful distinction is therefore:
+
+\begin{itemize}
+    \item the \emph{coordinate expression} of a field may change;
+    \item the physical scalar assigned to a point does not depend on the coordinate labels.
+\end{itemize}
+
+\subsection{Vector fields}
+
+A vector field assigns a vector to every point:
+
+\[
+\mathbf{v}:D\subseteq\mathbb{R}^{3}\longrightarrow\mathbb{R}^{3}.
+\]
+
+Examples include the velocity field of a fluid, the electric field, the magnetic field, and the displacement field of an elastic medium.
+
+In a chosen Cartesian basis, a vector field is written in components as
+
+\[
+\mathbf{v}(\mathbf{x})
+=
+v^{1}(\mathbf{x})\,\mathbf{e}_{1}
++
+v^{2}(\mathbf{x})\,\mathbf{e}_{2}
++
+v^{3}(\mathbf{x})\,\mathbf{e}_{3}.
+\]
+
+The three component functions \(v^{1},v^{2},v^{3}\) are scalar-valued functions, but together they represent one geometric vector. If the coordinate axes are rotated, the components change in a coordinated way so that the physical vector remains the same.
+
+This is why a vector should not be identified with a column of numbers alone. The column
+
+\[
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix}
+\]
+
+represents a vector only after a basis has been specified. Relative to a different basis, the same vector generally has different components.
+
+Consider the two-dimensional velocity field
+
+\[
+\mathbf{v}(x,y)
+=
+-\Omega y\,\mathbf{e}_{x}
++
+\Omega x\,\mathbf{e}_{y},
+\]
+
+where \(\Omega\) is a constant with units of inverse time. At the point \((x,y)=(2\,\mathrm{m},1\,\mathrm{m})\),
+
+\[
+\mathbf{v}(2\,\mathrm{m},1\,\mathrm{m})
+=
+-\Omega(1\,\mathrm{m})\,\mathbf{e}_{x}
++
+\Omega(2\,\mathrm{m})\,\mathbf{e}_{y}.
+\]
+
+If \(\Omega=0.5\,\mathrm{s^{-1}}\), then
+
+\[
+\mathbf{v}
+=
+-0.5\,\mathrm{m\,s^{-1}}\,\mathbf{e}_{x}
++
+1.0\,\mathrm{m\,s^{-1}}\,\mathbf{e}_{y}.
+\]
+
+The local speed is the magnitude
+
+\[
+\lVert\mathbf{v}\rVert
+=
+\sqrt{(-0.5)^2+(1.0)^2}\,\mathrm{m\,s^{-1}}
+=
+\sqrt{1.25}\,\mathrm{m\,s^{-1}}.
+\]
+
+This example shows how a vector field is used operationally: choose a point, evaluate each component there, and combine the components into a vector with magnitude and direction. The complete field may be visualized as an arrow attached to every point of the domain.
+
+\subsection{Tensor fields}
+
+A tensor field assigns a tensor to every point. Tensors generalize scalars and vectors. A scalar may be regarded as a tensor of rank zero, and a vector as a tensor of rank one. A rank-two tensor contains information about how one direction is related to another.
+
+In coordinates, a rank-two tensor field may be written as an array of components
+
+\[
+T^{ij}(\mathbf{x})
+\quad\text{or}\quad
+T_{ij}(\mathbf{x}).
+\]
+
+However, not every array of numbers is automatically a tensor. The defining property is the transformation law: when coordinates are changed, the components must transform so that the underlying geometric or physical object remains well defined.
+
+A concrete example is the stress tensor \(\boldsymbol{\sigma}\) in a continuous material. At each point, it determines the force per unit area acting on a small surface through that point. The force depends not only on position but also on the orientation of the surface. If \(\mathbf{n}\) is a unit normal to the surface, the traction vector is
+
+\[
+\mathbf{t}=\boldsymbol{\sigma}\,\mathbf{n}.
+\]
+
+In two dimensions, suppose that at one point
+
+\[
+\boldsymbol{\sigma}
+=
+\begin{pmatrix}
+4 & 1\\
+1 & 2
+\end{pmatrix}
+\mathrm{MPa}.
+\]
+
+For a surface whose unit normal is \(\mathbf{n}=\mathbf{e}_{x}\), represented by
+
+\[
+\mathbf{n}
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+\]
+
+we obtain
+
+\[
+\mathbf{t}
+=
+\begin{pmatrix}
+4 & 1\\
+1 & 2
+\end{pmatrix}
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix}
+\mathrm{MPa}
+=
+\begin{pmatrix}
+4\\
+1
+\end{pmatrix}
+\mathrm{MPa}.
+\]
+
+For a surface with normal \(\mathbf{e}_{y}\),
+
+\[
+\mathbf{t}
+=
+\begin{pmatrix}
+4 & 1\\
+1 & 2
+\end{pmatrix}
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}
+\mathrm{MPa}
+=
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\mathrm{MPa}.
+\]
+
+The tensor therefore contains more information than a single vector: it tells us which traction vector is associated with each possible surface direction. This is a useful model for understanding why tensor fields naturally appear when physical effects depend on orientation.
+
+Other important tensor fields include the electromagnetic field tensor, the energy-momentum tensor, and the spacetime metric. Each will be introduced only when there is a physical problem that requires it.
+
+\subsection{Transformation behaviour is the essential distinction}
+
+It is tempting to distinguish the three cases simply by counting components:
+
+\begin{itemize}
+    \item one component for a scalar;
+    \item several components for a vector;
+    \item a matrix of components for a rank-two tensor.
+\end{itemize}
+
+This is useful as a first picture, but it is not the complete definition. The essential question is how the components change when the basis or coordinates change.
+
+A scalar field obeys
+
+\[
+\phi'(x')=\phi(x),
+\]
+
+meaning that both expressions assign the same scalar to the same physical point. A vector transforms by one copy of the coordinate transformation matrix, while a rank-two tensor transforms by two copies. The precise formulas will be developed when tensor notation is introduced in Chapter 4.
+
+For now, the practical lesson is:
+
+\begin{quote}
+The components depend on the description; the scalar, vector, or tensor represented by those components is the physical or geometric object.
+\end{quote}
+
+\subsection{Several fields may describe one system}
+
+A physical system is rarely described by only one field. A fluid may require a mass-density field \(\rho(\mathbf{x},t)\), a pressure field \(p(\mathbf{x},t)\), a temperature field \(T(\mathbf{x},t)\), and a velocity field \(\mathbf{v}(\mathbf{x},t)\). These fields have different value types but share the same spatial and temporal domain.
+
+Similarly, electrodynamics uses a scalar charge-density field, a vector current-density field, electric and magnetic vector fields, and later a single antisymmetric tensor field that combines the electric and magnetic information in a relativistic form.
+
+The choice of field variables is part of constructing a theory. We must choose enough fields to describe the relevant physical information, but we should avoid introducing quantities that are redundant unless that redundancy serves a useful structural purpose.
+
+\subsection{What has been established}
+
+A scalar field assigns one coordinate-independent number to each point. A vector field assigns a geometric vector whose components depend on the chosen basis. A tensor field assigns a multilinear object that can relate several directions and whose components obey a definite transformation law.
+
+The number of written components is not the deepest distinction. What matters is how the assigned object behaves under a change of coordinates. In the next section, we turn from the type of field value to the domain on which the field is defined and to the roles played by space and time.
