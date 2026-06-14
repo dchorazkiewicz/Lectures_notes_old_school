@@ -1,1 +1,437 @@
 \section{Continuous Transformations}
+\label{sec:continuous_transformations}
+
+A symmetry is not merely a formula that leaves one expression unchanged. In field theory it is a systematic transformation of coordinates, fields, or both, together with a statement that the physical action is unchanged, or changes only by a boundary term. Noether's theorem applies to continuous transformations, so the first task is to make the infinitesimal structure of such transformations precise.
+
+\subsection{One-parameter families}
+
+A continuous transformation is usually described by a real parameter \(\varepsilon\). For a field \(\phi_a(x)\), where the label \(a\) distinguishes different components or different fields, write
+
+\[
+x^{\mu}
+\longrightarrow
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon \xi^{\mu}(x)
++
+O(\varepsilon^{2}),
+\]
+
+and
+
+\[
+\phi_a(x)
+\longrightarrow
+\phi'_a(x')
+=
+\phi_a(x)
++
+\varepsilon \Psi_a(x,\phi)
++
+O(\varepsilon^{2}).
+\]
+
+The functions \(\xi^{\mu}\) describe the infinitesimal change of coordinates, while the functions \(\Psi_a\) describe the infinitesimal change of the field components evaluated at the transformed point.
+
+The identity transformation is obtained at
+
+\[
+\varepsilon=0.
+\]
+
+The first derivative with respect to \(\varepsilon\) defines the infinitesimal generator of the transformation. For most applications of Noether's theorem, all information needed to construct the conserved current is contained in this first-order term.
+
+\subsection{Finite and infinitesimal transformations}
+
+Suppose a finite transformation is written as
+
+\[
+\phi
+\longrightarrow
+F_{\varepsilon}(\phi).
+\]
+
+For small \(\varepsilon\),
+
+\[
+F_{\varepsilon}(\phi)
+=
+\phi
++
+\varepsilon
+\left.
+\frac{\mathrm{d}F_{\varepsilon}(\phi)}
+{\mathrm{d}\varepsilon}
+\right|_{\varepsilon=0}
++
+O(\varepsilon^{2}).
+\]
+
+The infinitesimal variation is therefore
+
+\[
+\delta\phi
+=
+\varepsilon \Delta\phi,
+\]
+
+where
+
+\[
+\Delta\phi
+=
+\left.
+\frac{\mathrm{d}F_{\varepsilon}(\phi)}
+{\mathrm{d}\varepsilon}
+\right|_{\varepsilon=0}.
+\]
+
+For example, a finite internal rotation of two real fields is
+
+\[
+\begin{pmatrix}
+\phi_1'\\
+\phi_2'
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos\varepsilon & -\sin\varepsilon\\
+\sin\varepsilon & \cos\varepsilon
+\end{pmatrix}
+\begin{pmatrix}
+\phi_1\\
+\phi_2
+\end{pmatrix}.
+\]
+
+Using
+
+\[
+\cos\varepsilon
+=
+1+O(\varepsilon^{2}),
+\qquad
+\sin\varepsilon
+=
+\varepsilon+O(\varepsilon^{3}),
+\]
+
+we obtain
+
+\[
+\delta\phi_1
+=
+-\varepsilon\phi_2,
+\qquad
+\delta\phi_2
+=
+\varepsilon\phi_1.
+\]
+
+The infinitesimal generator is therefore a rotation in the two-dimensional internal field space.
+
+\subsection{Active and passive viewpoints}
+
+A coordinate transformation can be interpreted in two related ways.
+
+In the passive viewpoint, the physical configuration is unchanged, but it is described using new coordinates. In the active viewpoint, the coordinate labels are kept fixed and the field configuration is moved. Both descriptions are useful, but they assign different meanings to the symbol \(\delta\phi\).
+
+The transformation law
+
+\[
+\phi'_a(x')
+=
+\phi_a(x)
++
+\varepsilon\Psi_a
+\]
+
+compares field values at two corresponding spacetime points. Noether's theorem is most conveniently written using the change at the same coordinate value \(x\). Define the fixed-point, or characteristic, variation by
+
+\[
+\boxed{
+\delta_0\phi_a(x)
+=
+\phi'_a(x)-\phi_a(x)
+}.
+\]
+
+Expanding
+
+\[
+\phi'_a(x)
+=
+\phi'_a(x')
+-
+\varepsilon\xi^{\nu}\partial_{\nu}\phi_a
++
+O(\varepsilon^{2}),
+\]
+
+gives
+
+\[
+\boxed{
+\delta_0\phi_a
+=
+\varepsilon
+\left(
+\Psi_a
+-
+\xi^{\nu}\partial_{\nu}\phi_a
+\right)
+}.
+\]
+
+It is useful to define the characteristic
+
+\[
+\boxed{
+Q_a
+=
+\Psi_a
+-
+\xi^{\nu}\partial_{\nu}\phi_a
+},
+\]
+
+so that
+
+\[
+\delta_0\phi_a
+=
+\varepsilon Q_a.
+\]
+
+This distinction becomes essential for spacetime translations and Lorentz transformations.
+
+\subsection{Example: spacetime translations}
+
+A constant translation is
+
+\[
+x'^{\mu}
+=
+x^{\mu}
++
+\varepsilon a^{\mu},
+\]
+
+where \(a^{\mu}\) is constant. A scalar field has no additional intrinsic change, so
+
+\[
+\Psi=0.
+\]
+
+The fixed-point variation is
+
+\[
+\boxed{
+\delta_0\phi
+=
+-\varepsilon a^{\nu}\partial_{\nu}\phi
+}.
+\]
+
+The translated field at the point \(x\) is the old field evaluated at the shifted point \(x-\varepsilon a\). This is why the derivative appears with a minus sign.
+
+\subsection{Example: spatial rotations}
+
+For an infinitesimal rotation,
+
+\[
+x'^{i}
+=
+x^{i}
++
+\varepsilon \omega^{i}{}_{j}x^{j},
+\]
+
+where
+
+\[
+\omega_{ij}
+=
+-\omega_{ji}.
+\]
+
+For a scalar field,
+
+\[
+\Psi=0,
+\]
+
+and therefore
+
+\[
+\delta_0\phi
+=
+-\varepsilon
+\omega^{i}{}_{j}x^{j}\partial_i\phi.
+\]
+
+For a rotation in the \(x\)-\(y\) plane, this becomes
+
+\[
+\boxed{
+\delta_0\phi
+=
+-\varepsilon
+\left(
+-y\partial_x+x\partial_y
+\right)\phi
+}.
+\]
+
+The differential operator in parentheses is the orbital rotation generator.
+
+\subsection{Example: a constant shift of a scalar field}
+
+Consider
+
+\[
+\phi(x)
+\longrightarrow
+\phi'(x)
+=
+\phi(x)+\varepsilon.
+\]
+
+Here the coordinates do not change:
+
+\[
+\xi^{\mu}=0,
+\]
+
+and the field generator is
+
+\[
+\Psi=1.
+\]
+
+Thus
+
+\[
+\boxed{
+\delta_0\phi=\varepsilon
+}.
+\]
+
+A massless free scalar theory depends only on derivatives of \(\phi\), so it is invariant under this transformation. A mass term proportional to \(\phi^{2}\) breaks the shift symmetry.
+
+\subsection{Example: global phase transformations}
+
+For a complex field,
+
+\[
+\phi(x)
+\longrightarrow
+\phi'(x)
+=
+e^{-i\varepsilon}\phi(x).
+\]
+
+To first order,
+
+\[
+e^{-i\varepsilon}
+=
+1-i\varepsilon+O(\varepsilon^{2}),
+\]
+
+so
+
+\[
+\boxed{
+\delta_0\phi
+=
+-i\varepsilon\phi
+},
+\qquad
+\boxed{
+\delta_0\phi^{*}
+=
+i\varepsilon\phi^{*}
+}.
+\]
+
+The same parameter \(\varepsilon\) is used at every spacetime point. The transformation is therefore global. This symmetry will produce the conserved current studied in Section~\ref{sec:complex_scalar_phase_symmetry}.
+
+\subsection{Generators and composition}
+
+If transformations form a one-parameter group,
+
+\[
+F_{\varepsilon_1}
+\circ
+F_{\varepsilon_2}
+=
+F_{\varepsilon_1+\varepsilon_2},
+\]
+
+then repeated infinitesimal transformations generate the finite transformation. Formally,
+
+\[
+F_{\varepsilon}
+=
+e^{\varepsilon G},
+\]
+
+where \(G\) is the generator.
+
+For a translation in the direction \(a^{\mu}\),
+
+\[
+G
+=
+-a^{\mu}\partial_{\mu}.
+\]
+
+For a phase rotation,
+
+\[
+G\phi
+=
+-i\phi.
+\]
+
+The generator acts on the field configuration and determines the corresponding Noether current.
+
+\subsection{Discrete transformations}
+
+Not every symmetry is continuous. The real scalar reflection
+
+\[
+\phi
+\longrightarrow
+-\phi
+\]
+
+is a discrete transformation. There is no continuously variable parameter connecting the identity to this transformation within the two-element group. It can constrain the form of the Lagrangian, but the standard form of Noether's first theorem does not associate it with a continuously conserved current.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using the same symbol for \(\phi'(x')-\phi(x)\) and \(\phi'(x)-\phi(x)\);
+    \item forgetting the term \(-\xi^{\nu}\partial_{\nu}\phi_a\) in a spacetime transformation;
+    \item assuming that every symmetry must act on coordinates;
+    \item treating a discrete symmetry as if it possessed an infinitesimal generator;
+    \item expanding a finite transformation beyond the order needed for Noether's theorem;
+    \item changing the transformation parameter from point to point while still calling the transformation global.
+\end{enumerate}
+
+\subsection{What has been established}
+
+A continuous transformation is described by infinitesimal coordinate generators \(\xi^{\mu}\) and field generators \(\Psi_a\). The fixed-point variation is controlled by the characteristic
+
+\[
+Q_a
+=
+\Psi_a-\xi^{\nu}\partial_{\nu}\phi_a.
+\]
+
+This quantity is the field variation that enters the variational identity underlying Noether's theorem. The next section classifies the principal kinds of symmetry that occur in classical field theory.
