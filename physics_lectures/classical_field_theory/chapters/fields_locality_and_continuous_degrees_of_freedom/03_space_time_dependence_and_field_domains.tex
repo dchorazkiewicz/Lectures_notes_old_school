@@ -1,1 +1,213 @@
 \section{Space-Time Dependence and Field Domains}
+\label{sec:field_domains_and_spacetime_dependence}
+
+A field is not specified completely until its domain is known. The formula
+
+\[
+\phi(x,t)=A\cos(kx-\omega t)
+\]
+
+may describe a disturbance on an infinite line, a wave on a finite string, or a local approximation inside a larger system. The same expression can represent different physical problems depending on the allowed values of \(x\), the time interval under consideration, and the conditions imposed at the boundary.
+
+The domain is therefore not a technical detail added after the field has been defined. It is part of the model.
+
+\subsection{Spatial domains}
+
+A field may be defined on spaces of different dimensions.
+
+For a thin rod or string, one spatial coordinate may be sufficient:
+
+\[
+D=[0,L]\subset\mathbb{R}.
+\]
+
+A field on the rod is then written as \(u(x,t)\), with \(0\leq x\leq L\). The reduction to one dimension is a modelling assumption. It means that variations across the thickness of the rod are neglected or averaged.
+
+For a thin plate or membrane, the domain may be a region \(D\subset\mathbb{R}^{2}\), and a field is written as
+
+\[
+\phi=\phi(x,y,t).
+\]
+
+For a field in ordinary three-dimensional space, the domain is a region \(D\subset\mathbb{R}^{3}\), and we write
+
+\[
+\phi=\phi(x,y,z,t)
+\quad\text{or}\quad
+\phi=\phi(\mathbf{x},t).
+\]
+
+The notation \(\mathbf{x}\) is compact, but it should not hide the fact that three independent spatial coordinates are present.
+
+Some fields live on curved surfaces or curved spaces. For example, the temperature on the surface of a sphere is naturally a field on that sphere, not on the entire surrounding three-dimensional space. Coordinates such as latitude and longitude may be used to label points, but the sphere itself is the geometric domain. Later, when gravity is discussed, spacetime will play this role as a curved domain.
+
+\subsection{Static and time-dependent fields}
+
+A \emph{static field} does not change with time. It is written as
+
+\[
+\phi=\phi(\mathbf{x}).
+\]
+
+This does not mean that the field is spatially uniform. A static electric potential may vary strongly from point to point while remaining unchanged in time.
+
+A \emph{time-dependent field} is written as
+
+\[
+\phi=\phi(\mathbf{x},t).
+\]
+
+At each fixed time \(t=t_{0}\), the function \(\phi(\mathbf{x},t_{0})\) is one field configuration. As time changes, the system passes through a family of configurations.
+
+It is helpful to separate two related objects:
+
+\begin{itemize}
+    \item the \emph{configuration at time \(t_{0}\)}, which is a function of space only;
+    \item the \emph{field history}, which is a function of both space and time.
+\end{itemize}
+
+For a vibrating string, a photograph at one instant shows the configuration \(u(x,t_{0})\). A video of the motion represents the history \(u(x,t)\).
+
+\subsection{Spacetime as a single domain}
+
+In nonrelativistic notation, space and time are usually written separately. In relativistic field theory, they are combined into a spacetime point. We write
+
+\[
+x^{\mu}=(x^{0},x^{1},x^{2},x^{3}),
+\]
+
+where the time coordinate is commonly chosen as \(x^{0}=ct\) or, in units with \(c=1\), simply \(x^{0}=t\).
+
+A relativistic field may then be written as
+
+\[
+\phi=\phi(x^{\mu}).
+\]
+
+This notation does not erase the physical distinction between time and space. It organizes them into one structure so that Lorentz transformations can be handled consistently. The geometric details will be developed in Chapter 4. At this stage, the important idea is that a field assigns data to events in spacetime, not merely to points in space.
+
+\subsection{Partial derivatives and what they measure}
+
+When a field depends on several independent variables, its rate of change is described by partial derivatives. Consider the field
+
+\[
+u(x,t)=A\cos(kx)\cos(\omega t).
+\]
+
+The spatial derivative is
+
+\[
+\frac{\partial u}{\partial x}
+=
+-Ak\sin(kx)\cos(\omega t).
+\]
+
+This derivative measures how the displacement changes when the position is varied while the time is held fixed. For a string, it is related to the local slope of the string.
+
+The time derivative is
+
+\[
+\frac{\partial u}{\partial t}
+=
+-A\omega\cos(kx)\sin(\omega t).
+\]
+
+This derivative measures how the displacement at one fixed position changes with time. For a string, it is the transverse velocity of the material point labelled by \(x\).
+
+The two derivatives answer different physical questions. Confusing them would mean confusing a comparison between neighbouring points at one instant with a comparison between different instants at one point.
+
+The dimensions provide a useful check. If \(u\) has dimensions of length, then
+
+\[
+\left[\frac{\partial u}{\partial x}\right]=1,
+\qquad
+\left[\frac{\partial u}{\partial t}\right]
+=\mathrm{length}/\mathrm{time}.
+\]
+
+The spatial derivative is dimensionless in this example because it represents a slope, while the time derivative has the dimensions of velocity.
+
+\subsection{The field equation is not the whole problem}
+
+A differential equation usually admits many solutions. To determine the physical field, one must also specify the domain and appropriate data.
+
+Consider a string occupying
+
+\[
+0\leq x\leq L
+\]
+
+and satisfying the wave equation
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+c^{2}\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+This equation alone does not tell us which motion occurs. We also need initial data, such as
+
+\[
+u(x,0)=f(x),
+\qquad
+\frac{\partial u}{\partial t}(x,0)=g(x).
+\]
+
+The function \(f(x)\) gives the initial shape of the string, and \(g(x)\) gives the initial velocity of each point.
+
+If the endpoints are fixed, we also impose boundary conditions:
+
+\[
+u(0,t)=0,
+\qquad
+u(L,t)=0.
+\]
+
+The complete mathematical problem therefore consists of four ingredients:
+
+\begin{enumerate}
+    \item the field variable \(u(x,t)\);
+    \item the domain \(0\leq x\leq L\);
+    \item the field equation;
+    \item the initial and boundary data.
+\end{enumerate}
+
+Changing the boundary conditions changes the physical problem. A string with fixed endpoints, a string with one free endpoint, and a periodic string may obey the same local differential equation but have different allowed motions.
+
+\subsection{Boundary conditions encode physical information}
+
+A boundary condition is not merely a device for selecting one mathematical solution. It represents how the system interacts with its surroundings.
+
+For a temperature field, fixing \(T\) at the boundary may represent contact with a heat reservoir. Fixing the normal heat flux may represent insulation or a prescribed flow of heat. For an electromagnetic field, boundary conditions describe conductors, interfaces between materials, incoming radiation, or behaviour at large distances.
+
+It is therefore useful to ask what physical arrangement produces the chosen boundary condition. A mathematically convenient condition may not describe the experiment under consideration.
+
+\subsection{Local coordinates and physical points}
+
+Coordinates are labels assigned to points of the domain. The physical point is not identical with its coordinate tuple. On a flat Cartesian domain, the distinction may seem unnecessary because the coordinates are especially simple. On curved surfaces or in curvilinear coordinates, it becomes essential.
+
+For example, the north pole of a sphere is one physical point even though longitude is not uniquely defined there. A field value at the north pole must be well defined independently of this coordinate ambiguity.
+
+This observation prepares an important theme of field theory: equations should describe geometric or physical relations, not depend on an arbitrary choice of coordinates. Component formulas may change when coordinates are changed, while the underlying statement remains the same.
+
+\subsection{A checklist for specifying a field problem}
+
+Before manipulating a field formula, identify the following information:
+
+\begin{enumerate}
+    \item What is the spatial domain?
+    \item Is the field static or time dependent?
+    \item What type of value is assigned to each point?
+    \item Which coordinates are being used?
+    \item What differential equation does the field satisfy?
+    \item What initial data are specified?
+    \item What boundary conditions are imposed?
+\end{enumerate}
+
+If any of these items is missing, the problem may be incomplete or ambiguous.
+
+\subsection{What has been established}
+
+A field is defined on a specific spatial or spacetime domain. Its dependence on space describes variation from point to point, while its dependence on time describes the evolution of configurations. Partial derivatives express these distinct kinds of change.
+
+A field equation must be interpreted together with its domain, initial data, and boundary conditions. The next section examines another structural property of field theories: locality, the idea that the behaviour at a point is governed by field values and derivatives in its immediate neighbourhood.
