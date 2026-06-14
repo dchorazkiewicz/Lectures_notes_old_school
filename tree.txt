@@ -193,6 +193,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1b_unit.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1c_transpose.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_2a.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_2b_powers.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/theme.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_1.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_2.tex
