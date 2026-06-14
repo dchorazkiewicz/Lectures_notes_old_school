@@ -1,1 +1,537 @@
 \section{Generalized Coordinates and Constraints}
+\label{sec:generalized_coordinates_constraints}
+
+The coordinates used to describe a mechanical system need not be Cartesian positions. They should be chosen to represent the independent degrees of freedom as directly as possible. Coordinates adapted to the geometry and constraints of a system often make the Lagrangian formulation much simpler than a force-based Cartesian description.
+
+A generalized coordinate may be a distance, an angle, or any parameter that uniquely labels the allowed configurations within the region under consideration.
+
+\subsection{Degrees of freedom}
+
+The number of degrees of freedom is the number of independent parameters required to specify a configuration.
+
+A free particle in three-dimensional space has three degrees of freedom, which may be represented by
+
+\[
+x,
+\qquad
+y,
+\qquad
+z.
+\]
+
+Two free particles have six Cartesian coordinates. If constraints relate some of these coordinates, the number of independent degrees of freedom is reduced.
+
+For example, a particle constrained to move on a sphere of radius \(R\) satisfies
+
+\[
+x^{2}+y^{2}+z^{2}=R^{2}.
+\]
+
+Although three Cartesian coordinates appear, they are connected by one independent constraint. The particle therefore has two degrees of freedom.
+
+A convenient choice is
+
+\[
+q^{1}=\theta,
+\qquad
+q^{2}=\varphi,
+\]
+
+with
+
+\[
+\begin{aligned}
+x&=R\sin\theta\cos\varphi,\\
+y&=R\sin\theta\sin\varphi,\\
+z&=R\cos\theta.
+\end{aligned}
+\]
+
+The constraint is then built directly into the coordinate representation.
+
+\subsection{Generalized coordinates}
+
+A set of generalized coordinates is denoted by
+
+\[
+q^{1},q^{2},\ldots,q^{N}.
+\]
+
+The Cartesian positions of all particles are expressed as functions of these coordinates and possibly time:
+
+\[
+\mathbf{r}_{a}
+=
+\mathbf{r}_{a}(q^{1},\ldots,q^{N},t).
+\]
+
+Here the index \(a\) labels particles. The explicit time dependence allows for moving constraints, such as a bead constrained to a wire whose shape changes with time.
+
+The generalized coordinates need not have the dimensions of length. An angular coordinate is dimensionless in SI units, while other coordinates may have dimensions adapted to the problem.
+
+The Euler--Lagrange equations retain the same form for every generalized coordinate:
+
+\[
+\boxed{
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{i}}
+\right)
+-
+\frac{\partial L}{\partial q^{i}}
+=0
+}.
+\]
+
+This coordinate flexibility is one of the principal advantages of Lagrangian mechanics.
+
+\subsection{Velocities in generalized coordinates}
+
+If
+
+\[
+\mathbf{r}_{a}
+=
+\mathbf{r}_{a}(q^{1},\ldots,q^{N},t),
+\]
+
+then the particle velocity is obtained by the chain rule:
+
+\[
+\boxed{
+\dot{\mathbf{r}}_{a}
+=
+\sum_{i=1}^{N}
+\frac{\partial\mathbf{r}_{a}}{\partial q^{i}}
+\dot q^{i}
++
+\frac{\partial\mathbf{r}_{a}}{\partial t}
+}.
+\]
+
+For a time-independent coordinate transformation,
+
+\[
+\frac{\partial\mathbf{r}_{a}}{\partial t}=0,
+\]
+
+so
+
+\[
+\dot{\mathbf{r}}_{a}
+=
+\sum_{i=1}^{N}
+\frac{\partial\mathbf{r}_{a}}{\partial q^{i}}
+\dot q^{i}.
+\]
+
+The kinetic energy can then be expressed in terms of the generalized coordinates and velocities.
+
+For particles with masses \(m_{a}\),
+
+\[
+T
+=
+\frac{1}{2}
+\sum_{a}m_{a}
+\dot{\mathbf{r}}_{a}^{2}.
+\]
+
+After substitution, the kinetic energy commonly takes the form
+
+\[
+T
+=
+\frac{1}{2}
+\sum_{i,j}
+g_{ij}(q)
+\dot q^{i}\dot q^{j},
+\]
+
+where the coefficients \(g_{ij}(q)\) depend on the chosen coordinates. In geometric language, these coefficients form the metric on configuration space.
+
+\subsection{Example: a particle constrained to a circle}
+
+Consider a particle of mass \(m\) constrained to a circle of radius \(R\) in the plane. Cartesian coordinates satisfy
+
+\[
+x^{2}+y^{2}=R^{2}.
+\]
+
+Using Cartesian coordinates would require carrying this constraint throughout the calculation. Instead, introduce the angular coordinate \(\theta\):
+
+\[
+x=R\cos\theta,
+\qquad
+y=R\sin\theta.
+\]
+
+The velocity components are
+
+\[
+\dot x=-R\sin\theta\,\dot\theta,
+\qquad
+\dot y=R\cos\theta\,\dot\theta.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+\dot x^{2}+\dot y^{2}
+&=
+R^{2}
+\left(
+\sin^{2}\theta+
+\cos^{2}\theta
+\right)
+\dot\theta^{2}\\
+&=
+R^{2}\dot\theta^{2}.
+\end{aligned}
+\]
+
+The kinetic energy is
+
+\[
+T
+=
+\frac{mR^{2}}{2}\dot\theta^{2}.
+\]
+
+If there is no potential, the Lagrangian is
+
+\[
+L
+=
+\frac{mR^{2}}{2}\dot\theta^{2}.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(mR^{2}\dot\theta\right)
+=0,
+\]
+
+so
+
+\[
+\ddot\theta=0.
+\]
+
+Uniform angular motion follows without introducing the radial constraint force. The normal force that keeps the particle on the circle does not appear explicitly because the coordinate \(\theta\) already describes only allowed motion.
+
+\subsection{Holonomic constraints}
+
+A holonomic constraint can be written as a relation among coordinates and time:
+
+\[
+f_{\alpha}(q^{1},\ldots,q^{M},t)=0,
+\qquad
+\alpha=1,\ldots,r.
+\]
+
+If the \(r\) constraints are independent, they reduce the number of degrees of freedom from \(M\) to
+
+\[
+N=M-r.
+\]
+
+Examples include:
+
+\begin{itemize}
+    \item a particle on a circle, \(x^{2}+y^{2}-R^{2}=0\);
+    \item a particle on a sphere, \(x^{2}+y^{2}+z^{2}-R^{2}=0\);
+    \item two particles connected by a rigid rod, \(\lVert\mathbf{r}_{1}-\mathbf{r}_{2}\rVert-\ell=0\).
+\end{itemize}
+
+When possible, the most direct method is to solve the constraints by introducing independent generalized coordinates.
+
+\subsection{Example: the simple pendulum}
+
+A point mass \(m\) attached to a massless rigid rod of length \(\ell\) moves in a vertical plane. Its Cartesian coordinates may be written as
+
+\[
+x=\ell\sin\theta,
+\qquad
+y=-\ell\cos\theta.
+\]
+
+The rigid-length constraint
+
+\[
+x^{2}+y^{2}=\ell^{2}
+\]
+
+is automatically satisfied.
+
+The velocity components are
+
+\[
+\dot x=\ell\cos\theta\,\dot\theta,
+\qquad
+\dot y=\ell\sin\theta\,\dot\theta.
+\]
+
+Thus
+
+\[
+T
+=
+\frac{m}{2}
+\left(
+\dot x^{2}+\dot y^{2}
+\right)
+=
+\frac{m\ell^{2}}{2}\dot\theta^{2}.
+\]
+
+Taking the zero of potential energy at the lowest point,
+
+\[
+V
+=
+mg\ell(1-\cos\theta).
+\]
+
+The Lagrangian is
+
+\[
+L
+=
+\frac{m\ell^{2}}{2}\dot\theta^{2}
+-
+mg\ell(1-\cos\theta).
+\]
+
+We calculate
+
+\[
+\frac{\partial L}{\partial\dot\theta}
+=
+m\ell^{2}\dot\theta,
+\]
+
+and
+
+\[
+\frac{\partial L}{\partial\theta}
+=
+-mg\ell\sin\theta.
+\]
+
+The Euler--Lagrange equation gives
+
+\[
+m\ell^{2}\ddot\theta
++
+mg\ell\sin\theta
+=0.
+\]
+
+Dividing by \(m\ell^{2}\),
+
+\[
+\boxed{
+\ddot\theta
++
+\frac{g}{\ell}\sin\theta
+=0
+}.
+\]
+
+The tension in the rod does not appear in this equation. It enforces the constraint but performs no virtual work along an allowed angular displacement.
+
+\subsection{Constraint forces and virtual displacements}
+
+A virtual displacement is an infinitesimal change of configuration consistent with the constraints at a fixed time. In generalized coordinates,
+
+\[
+\delta\mathbf{r}_{a}
+=
+\sum_{i}
+\frac{\partial\mathbf{r}_{a}}{\partial q^{i}}
+\delta q^{i}.
+\]
+
+For ideal holonomic constraints, the constraint forces do no virtual work:
+
+\[
+\sum_{a}
+\mathbf{F}^{\mathrm{constraint}}_{a}
+\cdot
+\delta\mathbf{r}_{a}
+=0.
+\]
+
+This is why such forces can disappear from the equations when independent generalized coordinates are used. The coordinates describe motion tangent to the constraint surface, while the constraint forces act in directions that maintain the restriction.
+
+This statement must be applied with care. Friction and other non-ideal forces may perform work along allowed displacements and cannot be removed merely by changing coordinates.
+
+\subsection{Constraints imposed with Lagrange multipliers}
+
+Sometimes solving the constraints explicitly is inconvenient. One may then retain redundant coordinates and introduce Lagrange multipliers.
+
+Suppose the coordinates \(q^{a}\) satisfy
+
+\[
+f_{\alpha}(q,t)=0.
+\]
+
+Define the augmented Lagrangian
+
+\[
+L_{\mathrm{aug}}
+=
+L(q,\dot q,t)
++
+\sum_{\alpha}
+\lambda_{\alpha}(t)
+f_{\alpha}(q,t).
+\]
+
+Variation with respect to \(\lambda_{\alpha}\) gives
+
+\[
+f_{\alpha}(q,t)=0,
+\]
+
+while variation with respect to \(q^{a}\) gives
+
+\[
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q^{a}}
+\right)
+-
+\frac{\partial L}{\partial q^{a}}
+=
+\sum_{\alpha}
+\lambda_{\alpha}
+\frac{\partial f_{\alpha}}{\partial q^{a}}.
+\]
+
+The multiplier terms represent generalized constraint forces.
+
+\subsection{Example: circle constraint with a multiplier}
+
+For a free particle in the plane constrained by
+
+\[
+f(x,y)=x^{2}+y^{2}-R^{2}=0,
+\]
+
+take
+
+\[
+L_{\mathrm{aug}}
+=
+\frac{m}{2}
+\left(
+\dot x^{2}+\dot y^{2}
+\right)
++
+\lambda(t)
+\left(
+x^{2}+y^{2}-R^{2}
+\right).
+\]
+
+The equations for \(x\) and \(y\) are
+
+\[
+m\ddot x-2\lambda x=0,
+\]
+
+and
+
+\[
+m\ddot y-2\lambda y=0.
+\]
+
+Variation with respect to \(\lambda\) restores the circle constraint.
+
+The vector form is
+
+\[
+m\ddot{\mathbf{r}}
+=
+2\lambda\mathbf{r}.
+\]
+
+The right-hand side is radial, as expected for the force that keeps the particle on the circle. The multiplier determines the magnitude of that constraint force.
+
+\subsection{Time-dependent constraints}
+
+A holonomic constraint may depend explicitly on time:
+
+\[
+f(q,t)=0.
+\]
+
+An example is a bead constrained to a moving wire. Coordinates adapted to such a constraint can produce a Lagrangian with explicit time dependence.
+
+In that case, energy need not be conserved because the moving constraint can transfer energy to or from the system. The Euler--Lagrange equations remain valid, but the physical interpretation of conserved quantities must account for the external time dependence.
+
+\subsection{Non-holonomic constraints}
+
+Not every constraint can be reduced to an equation involving coordinates alone. A constraint may involve velocities:
+
+\[
+g_{\alpha}(q,\dot q,t)=0.
+\]
+
+Such constraints are called non-holonomic when they cannot be integrated into relations of the form \(f_{\alpha}(q,t)=0\).
+
+Rolling without slipping is a standard example. The treatment of non-holonomic systems requires care because simply substituting the velocity constraint into the Lagrangian may produce incorrect equations.
+
+The present course focuses mainly on holonomic constraints, which provide the cleanest preparation for field-theoretic variables and gauge redundancies.
+
+\subsection{Coordinate singularities and coordinate ranges}
+
+Generalized coordinates may fail to be valid globally. Spherical coordinates, for example, are singular at the poles, and an angular coordinate is periodic:
+
+\[
+\varphi
+\sim
+\varphi+2\pi.
+\]
+
+A coordinate description must therefore include its range and any identifications. A singularity of the coordinate system need not represent a physical singularity of the mechanical system.
+
+This distinction reappears in field theory, where different coordinate systems or gauge choices may describe the same physical configuration.
+
+\subsection{A practical coordinate-selection procedure}
+
+For a constrained mechanical system:
+
+\begin{enumerate}
+    \item list the Cartesian variables;
+    \item identify the independent constraints;
+    \item count the remaining degrees of freedom;
+    \item choose generalized coordinates adapted to the allowed configurations;
+    \item express positions and velocities in those coordinates;
+    \item compute \(T\) and \(V\);
+    \item form \(L=T-V\);
+    \item apply one Euler--Lagrange equation to each independent coordinate.
+\end{enumerate}
+
+If the constraints cannot be solved conveniently, introduce Lagrange multipliers and vary the augmented action.
+
+\subsection{Connection with field variables}
+
+A field may be regarded as a system with one or more generalized coordinates at every point of space. The field components are the dynamical variables, and relations among them may play the role of constraints or redundancies.
+
+The lesson from mechanics is that the choice of variables matters. Variables adapted to the structure of the theory can remove unnecessary equations and expose the true independent degrees of freedom.
+
+In gauge theories, however, the variables often contain deliberate redundancy rather than an ordinary mechanical constraint. Distinguishing physical degrees of freedom from descriptive redundancy will become a central issue later.
+
+\subsection{What has been established}
+
+Generalized coordinates parameterize the independent configurations of a mechanical system. Holonomic constraints reduce the number of degrees of freedom and can often be incorporated directly into the coordinates. When this is done, ideal constraint forces need not appear explicitly in the Euler--Lagrange equations.
+
+Alternatively, constraints may be enforced with Lagrange multipliers, whose equations restore the constraints and whose contributions represent constraint forces.
+
+The next section examines integration by parts and boundary terms as a general mathematical mechanism, preparing the transition from one-dimensional mechanical actions to spacetime field actions.
