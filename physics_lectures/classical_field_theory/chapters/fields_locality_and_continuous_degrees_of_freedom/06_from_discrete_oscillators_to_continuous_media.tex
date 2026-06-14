@@ -1,1 +1,607 @@
 \section{From Discrete Oscillators to Continuous Media}
+\label{sec:discrete_to_continuum}
+
+The continuum description of a string can be derived from a discrete mechanical model. This derivation is important because it shows that a field equation is not an arbitrary formula. It may emerge from ordinary Newtonian mechanics when a system contains many closely spaced degrees of freedom.
+
+We consider a chain of identical masses connected by identical springs. The masses are separated by a fixed equilibrium distance \(a\). The transverse displacement of the \(n\)-th mass is denoted by
+
+\[
+u_{n}(t).
+\]
+
+The equilibrium position of that mass is
+
+\[
+x_{n}=na.
+\]
+
+The goal is to replace the discrete variables
+
+\[
+u_{0}(t),u_{1}(t),u_{2}(t),\ldots
+\]
+
+by a continuous displacement field
+
+\[
+u=u(x,t).
+\]
+
+\subsection{Assumptions of the model}
+
+The derivation uses several assumptions that should be stated explicitly.
+
+\begin{enumerate}
+    \item Every mass has the same mass \(m\).
+    \item Neighbouring masses are connected by identical springs with spring constant \(\kappa\).
+    \item Only nearest neighbours interact.
+    \item The transverse displacements are small enough that the restoring force is linear.
+    \item The displacement changes smoothly over distances comparable with the spacing \(a\).
+\end{enumerate}
+
+The final continuum equation is valid only within the regime where these assumptions are reasonable.
+
+\subsection{The discrete elastic energy}
+
+For small relative displacements, the spring between masses \(n\) and \(n+1\) stores the potential energy
+
+\[
+V_{n,n+1}
+=
+\frac{\kappa}{2}
+\bigl(u_{n+1}-u_{n}\bigr)^{2}.
+\]
+
+The two springs connected to the \(n\)-th mass contribute
+
+\[
+V
+=
+\frac{\kappa}{2}
+\bigl(u_{n}-u_{n-1}\bigr)^{2}
++
+\frac{\kappa}{2}
+\bigl(u_{n+1}-u_{n}\bigr)^{2}
++
+\text{terms independent of }u_{n}.
+\]
+
+The force on the \(n\)-th mass is
+
+\[
+F_{n}
+=
+-\frac{\partial V}{\partial u_{n}}.
+\]
+
+Differentiating the first spring term gives
+
+\[
+\frac{\partial}{\partial u_{n}}
+\left[
+\frac{\kappa}{2}
+(u_{n}-u_{n-1})^{2}
+\right]
+=
+\kappa(u_{n}-u_{n-1}),
+\]
+
+while the second gives
+
+\[
+\frac{\partial}{\partial u_{n}}
+\left[
+\frac{\kappa}{2}
+(u_{n+1}-u_{n})^{2}
+\right]
+=
+-\kappa(u_{n+1}-u_{n}).
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+F_{n}
+&=
+-\kappa(u_{n}-u_{n-1})
++\kappa(u_{n+1}-u_{n})\\
+&=
+\kappa
+\bigl(u_{n+1}-2u_{n}+u_{n-1}\bigr).
+\end{aligned}
+\]
+
+Newton's second law gives the discrete equation of motion
+
+\[
+\boxed{
+m\frac{\mathrm{d}^{2}u_{n}}{\mathrm{d}t^{2}}
+=
+\kappa
+\bigl(u_{n+1}-2u_{n}+u_{n-1}\bigr)
+}.
+\]
+
+The combination
+
+\[
+u_{n+1}-2u_{n}+u_{n-1}
+\]
+
+is the discrete second difference. It measures whether the displacement of the \(n\)-th mass lies above or below the average of its neighbours.
+
+If
+
+\[
+u_{n}=\frac{u_{n-1}+u_{n+1}}{2},
+\]
+
+then the second difference vanishes, and the two neighbouring springs exert no net transverse restoring force. If \(u_{n}\) lies above the average, the net force points downward. The force therefore tends to reduce local curvature.
+
+\subsection{Introducing a continuous field}
+
+We now assume that the discrete displacements are samples of a smooth function:
+
+\[
+u_{n}(t)=u(x_{n},t),
+\qquad x_{n}=na.
+\]
+
+The neighbouring displacements are
+
+\[
+u_{n+1}(t)=u(x+a,t),
+\qquad
+u_{n-1}(t)=u(x-a,t),
+\]
+
+where \(x=x_{n}\).
+
+For a sufficiently smooth field, Taylor expansion about \(x\) gives
+
+\[
+\begin{aligned}
+u(x+a,t)
+&=
+u(x,t)
++a\frac{\partial u}{\partial x}
++\frac{a^{2}}{2}
+\frac{\partial^{2}u}{\partial x^{2}}
++\frac{a^{3}}{6}
+\frac{\partial^{3}u}{\partial x^{3}}
++O(a^{4}),\\
+u(x-a,t)
+&=
+u(x,t)
+-a\frac{\partial u}{\partial x}
++\frac{a^{2}}{2}
+\frac{\partial^{2}u}{\partial x^{2}}
+-\frac{a^{3}}{6}
+\frac{\partial^{3}u}{\partial x^{3}}
++O(a^{4}).
+\end{aligned}
+\]
+
+Adding these expressions and subtracting \(2u(x,t)\), the terms linear and cubic in \(a\) cancel:
+
+\[
+u(x+a,t)-2u(x,t)+u(x-a,t)
+=
+a^{2}
+\frac{\partial^{2}u}{\partial x^{2}}
++O(a^{4}).
+\]
+
+To leading order,
+
+\[
+u_{n+1}-2u_{n}+u_{n-1}
+\approx
+a^{2}
+\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+The discrete second difference becomes the continuous second derivative.
+
+Substituting this approximation into the discrete equation gives
+
+\[
+m
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+\kappa a^{2}
+\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+\subsection{Identifying continuum parameters}
+
+The mass per unit length is
+
+\[
+\mu=\frac{m}{a}.
+\]
+
+We also define
+
+\[
+T=\kappa a.
+\]
+
+The quantity \(T\) has the dimensions of force:
+
+\[
+[T]
+=
+[\kappa][a]
+=
+\frac{\mathrm{N}}{\mathrm{m}}\,\mathrm{m}
+=
+\mathrm{N}.
+\]
+
+In the continuum string model, \(T\) plays the role of the tension.
+
+Using
+
+\[
+m=\mu a,
+\qquad
+\kappa=\frac{T}{a},
+\]
+
+the discrete approximation becomes
+
+\[
+\mu a
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+\frac{T}{a}a^{2}
+\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+Cancelling the common factor \(a\), we obtain
+
+\[
+\boxed{
+\mu
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+T
+\frac{\partial^{2}u}{\partial x^{2}}
+}.
+\]
+
+Dividing by \(\mu\),
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+\frac{T}{\mu}
+\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+Defining
+
+\[
+c^{2}=\frac{T}{\mu},
+\]
+
+we arrive at the one-dimensional wave equation
+
+\[
+\boxed{
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}}
+}.
+\]
+
+\subsection{Dimensional check}
+
+The ratio \(T/\mu\) has dimensions
+
+\[
+\left[\frac{T}{\mu}\right]
+=
+\frac{\mathrm{kg\,m\,s^{-2}}}{\mathrm{kg\,m^{-1}}}
+=
+\mathrm{m^{2}\,s^{-2}}.
+\]
+
+Therefore
+
+\[
+[c]=\mathrm{m\,s^{-1}},
+\]
+
+so \(c\) is a speed. This is consistent with its interpretation as the propagation speed of small disturbances along the string.
+
+The dimensions of both sides of the wave equation also agree:
+
+\[
+\left[
+\frac{\partial^{2}u}{\partial t^{2}}
+\right]
+=
+\mathrm{m\,s^{-2}},
+\]
+
+and
+
+\[
+\left[
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}}
+\right]
+=
+\mathrm{m^{2}\,s^{-2}}
+\cdot
+\mathrm{m^{-1}}
+=
+\mathrm{m\,s^{-2}}.
+\]
+
+\subsection{Physical interpretation of the wave equation}
+
+The left-hand side,
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}},
+\]
+
+is the local transverse acceleration of the string.
+
+The right-hand side contains
+
+\[
+\frac{\partial^{2}u}{\partial x^{2}},
+\]
+
+which measures local curvature. A straight segment has zero second derivative and therefore no net transverse restoring force. A curved segment is accelerated toward a straighter configuration.
+
+The coefficient \(T/\mu\) compares the restoring effect of tension with the inertia of the string. Increasing the tension increases the propagation speed, while increasing the mass density decreases it:
+
+\[
+c=\sqrt{\frac{T}{\mu}}.
+\]
+
+The equation therefore has a direct mechanical interpretation. It is not merely a formal relation between derivatives.
+
+\subsection{Discrete waves and the long-wavelength limit}
+
+The continuum approximation can be checked by solving the discrete model with a wave-like ansatz. Let
+
+\[
+u_{n}(t)
+=
+A e^{i(kna-\omega t)}.
+\]
+
+Then
+
+\[
+\frac{\mathrm{d}^{2}u_{n}}{\mathrm{d}t^{2}}
+=
+-\omega^{2}u_{n},
+\]
+
+and
+
+\[
+u_{n+1}=e^{ika}u_{n},
+\qquad
+u_{n-1}=e^{-ika}u_{n}.
+\]
+
+Substitution into the discrete equation gives
+
+\[
+-m\omega^{2}u_{n}
+=
+\kappa
+\bigl(e^{ika}-2+e^{-ika}\bigr)u_{n}.
+\]
+
+Using
+
+\[
+e^{ika}+e^{-ika}=2\cos(ka),
+\]
+
+we find
+
+\[
+-m\omega^{2}
+=
+2\kappa\bigl(\cos(ka)-1\bigr).
+\]
+
+Since
+
+\[
+1-\cos(ka)
+=
+2\sin^{2}\left(\frac{ka}{2}\right),
+\]
+
+the exact discrete dispersion relation is
+
+\[
+\boxed{
+\omega^{2}
+=
+\frac{4\kappa}{m}
+\sin^{2}\left(\frac{ka}{2}\right)
+}.
+\]
+
+For long wavelengths,
+
+\[
+ka\ll 1,
+\]
+
+and
+
+\[
+\sin\left(\frac{ka}{2}\right)
+\approx
+\frac{ka}{2}.
+\]
+
+Therefore
+
+\[
+\omega^{2}
+\approx
+\frac{4\kappa}{m}
+\frac{k^{2}a^{2}}{4}
+=
+\frac{\kappa a^{2}}{m}k^{2}.
+\]
+
+Because
+
+\[
+\frac{\kappa a^{2}}{m}
+=
+\frac{T}{\mu}
+=
+c^{2},
+\]
+
+we obtain
+
+\[
+\boxed{
+\omega^{2}\approx c^{2}k^{2}
+}.
+\]
+
+This is the dispersion relation of the continuum wave equation. The derivation shows exactly when the continuum model is valid: the wavelength must be much larger than the lattice spacing,
+
+\[
+\lambda\gg a.
+\]
+
+At shorter wavelengths, the sine function in the discrete dispersion relation cannot be replaced by its linear approximation, and the discrete structure becomes physically relevant.
+
+\subsection{From discrete energy to field energy}
+
+The total energy of the discrete chain is
+
+\[
+E
+=
+\sum_{n}
+\left[
+\frac{m}{2}\dot{u}_{n}^{2}
++
+\frac{\kappa}{2}
+(u_{n+1}-u_{n})^{2}
+\right].
+\]
+
+In the continuum approximation,
+
+\[
+\dot{u}_{n}
+\approx
+\frac{\partial u}{\partial t},
+\]
+
+and
+
+\[
+u_{n+1}-u_{n}
+\approx
+a\frac{\partial u}{\partial x}.
+\]
+
+Using \(m=\mu a\) and \(\kappa=T/a\), the energy associated with one lattice interval becomes
+
+\[
+\frac{m}{2}\dot{u}_{n}^{2}
++
+\frac{\kappa}{2}(u_{n+1}-u_{n})^{2}
+\approx
+
+a
+\left[
+\frac{\mu}{2}
+\left(\frac{\partial u}{\partial t}\right)^{2}
++
+\frac{T}{2}
+\left(\frac{\partial u}{\partial x}\right)^{2}
+\right].
+\]
+
+The sum therefore becomes a Riemann sum:
+
+\[
+E
+\approx
+\sum_{n}a
+\left[
+\frac{\mu}{2}
+\left(\frac{\partial u}{\partial t}\right)^{2}
++
+\frac{T}{2}
+\left(\frac{\partial u}{\partial x}\right)^{2}
+\right].
+\]
+
+In the continuum limit,
+
+\[
+\boxed{
+E
+=
+\int_{0}^{L}
+\left[
+\frac{\mu}{2}
+\left(\frac{\partial u}{\partial t}\right)^{2}
++
+\frac{T}{2}
+\left(\frac{\partial u}{\partial x}\right)^{2}
+\right]
+\,\mathrm{d}x
+}.
+\]
+
+The first term is kinetic energy density, and the second is elastic energy density. The energy is no longer assigned to individual masses and springs; it is distributed continuously along the string.
+
+This expression will later help motivate a Lagrangian density. The transition from a mechanical sum to a spatial integral is one of the basic structural steps from particle mechanics to field theory.
+
+\subsection{What the continuum limit keeps and what it forgets}
+
+The continuum field retains the long-wavelength collective motion of the discrete chain. It forgets details that depend on the individual masses and the precise lattice spacing.
+
+The continuum approximation is therefore not obtained by simply replacing an index by a coordinate. Three coordinated replacements occur:
+
+\begin{enumerate}
+    \item the discrete displacement \(u_{n}(t)\) becomes the field \(u(x,t)\);
+    \item finite differences become spatial derivatives;
+    \item sums of local contributions become spatial integrals.
+\end{enumerate}
+
+The parameters must also be rescaled so that finite continuum quantities such as \(\mu=m/a\) and \(T=\kappa a\) remain meaningful.
+
+\subsection{What has been established}
+
+Starting from Newton's law for a chain of coupled oscillators, we derived the wave equation
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}},
+\qquad
+c=\sqrt{\frac{T}{\mu}}.
+\]
+
+The derivation displayed the physical meaning of each term, the dimensional consistency of the result, and the assumptions behind the continuum approximation. The discrete dispersion relation showed that the field description is the long-wavelength limit of the microscopic model.
+
+We also derived the continuum energy as an integral of an energy density. This prepares the later transition from mechanical Lagrangians to Lagrangian densities. The final section of the chapter now compares several physical fields and applies a common set of questions to each of them.
