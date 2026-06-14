@@ -193,6 +193,14 @@
 ./mathematical_lectures/basic_mathematics/prezentation/08_sequences_and_functions/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/09_limits_and_continuity
 ./mathematical_lectures/basic_mathematics/prezentation/09_limits_and_continuity/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/10_derivatives_and_function_analysis
+./mathematical_lectures/basic_mathematics/prezentation/10_derivatives_and_function_analysis/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/11_integrals
+./mathematical_lectures/basic_mathematics/prezentation/11_integrals/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/12_applications_of_calculus
+./mathematical_lectures/basic_mathematics/prezentation/12_applications_of_calculus/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/13_weekly_problem_sets
+./mathematical_lectures/basic_mathematics/prezentation/13_weekly_problem_sets/.gitignore
 ./mathematical_lectures/basic_mathematics/problems
 ./mathematical_lectures/basic_mathematics/problems/algebra
 ./mathematical_lectures/basic_mathematics/problems/algebra/01_matrices_and_operations.md
