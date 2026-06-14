@@ -189,6 +189,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_1a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_1b.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/opening.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/row_operations_and_problem_solving_1a_intro.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1b_unit.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1c_transpose.tex
