@@ -133,3 +133,5 @@ jobs:
           git add physics_lectures/classical_field_theory/chapters/the_real_scalar_field
           git commit -m "Repair scalar field TeX control characters"
           git push origin HEAD:main
+
+# Trigger repair after workflow registration
