@@ -1,1 +1,534 @@
 \section{Variations of Particle Trajectories}
+\label{sec:variations_of_particle_trajectories}
+
+The action principle compares one candidate trajectory with nearby trajectories. To perform this comparison systematically, we introduce a parameter that labels a family of paths. The derivative with respect to that parameter defines the \emph{variation} of the trajectory.
+
+This construction is the central technical step of variational mechanics. Ordinary differentiation measures how a quantity changes when time changes. A variation measures how a complete trajectory changes when we move from one candidate path to another.
+
+\subsection{A one-parameter family of paths}
+
+Let
+
+\[
+q=q(t)
+\]
+
+be a reference trajectory on the interval
+
+\[
+t_{1}\leq t\leq t_{2}.
+\]
+
+We construct nearby trajectories by writing
+
+\[
+\boxed{
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t)
+}.
+\]
+
+Here:
+
+\begin{itemize}
+    \item \(\varepsilon\) is a real parameter;
+    \item \(\eta(t)\) is a chosen deformation function;
+    \item \(q_{0}(t)=q(t)\) is the reference trajectory.
+\end{itemize}
+
+For small \(\varepsilon\), the path \(q_{\varepsilon}\) lies close to \(q\). Positive and negative values of \(\varepsilon\) deform the path in opposite directions.
+
+At a fixed time \(t\), the number \(\eta(t)\) tells us how strongly the trajectory is displaced at that instant. The entire function \(\eta\) specifies the shape of the deformation over the complete interval.
+
+\subsection{Definition of the variation}
+
+The variation of the trajectory is defined by differentiating the family \(q_{\varepsilon}\) with respect to \(\varepsilon\) and then setting \(\varepsilon=0\):
+
+\[
+\delta q(t)
+:=
+\left.
+\frac{\partial q_{\varepsilon}(t)}{\partial\varepsilon}
+\right|_{\varepsilon=0}.
+\]
+
+For the family
+
+\[
+q_{\varepsilon}(t)=q(t)+\varepsilon\eta(t),
+\]
+
+we obtain
+
+\[
+\boxed{
+\delta q(t)=\eta(t)
+}.
+\]
+
+The symbol \(\delta\) does not represent a new time derivative. It denotes differentiation in the space of trajectories.
+
+The distinction is therefore
+
+\[
+\frac{\mathrm{d}q}{\mathrm{d}t}
+\quad\text{versus}\quad
+\delta q.
+\]
+
+The first quantity compares the values of one trajectory at nearby times. The second compares nearby trajectories at the same time.
+
+\subsection{Variation of the velocity}
+
+The velocity along the varied trajectory is
+
+\[
+\dot q_{\varepsilon}(t)
+=
+\frac{\mathrm{d}}{\mathrm{d}t}
+q_{\varepsilon}(t).
+\]
+
+Using
+
+\[
+q_{\varepsilon}(t)=q(t)+\varepsilon\eta(t),
+\]
+
+we find
+
+\[
+\dot q_{\varepsilon}(t)
+=
+\dot q(t)+\varepsilon\dot\eta(t).
+\]
+
+The variation of the velocity is therefore
+
+\[
+\begin{aligned}
+\delta\dot q(t)
+&:=
+\left.
+\frac{\partial\dot q_{\varepsilon}(t)}{\partial\varepsilon}
+\right|_{\varepsilon=0}\\
+&=
+\dot\eta(t).
+\end{aligned}
+\]
+
+Since \(\delta q=\eta\), this may be written as
+
+\[
+\boxed{
+\delta\dot q
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta q)
+}.
+\]
+
+Thus the variation and the time derivative commute for the class of smooth variations considered here:
+
+\[
+\delta\left(\frac{\mathrm{d}q}{\mathrm{d}t}\right)
+=
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta q).
+\]
+
+This identity will be used repeatedly. It is the reason that varying a Lagrangian containing \(\dot q\) produces a term involving the time derivative of \(\delta q\).
+
+\subsection{A geometric picture}
+
+A trajectory can be represented as a curve in the \((t,q)\)-plane. The family
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t)
+\]
+
+is then a family of nearby curves. For each fixed value of \(t\), changing \(\varepsilon\) moves vertically from one curve to another.
+
+The reference path is the curve corresponding to \(\varepsilon=0\). The function \(\eta(t)\) gives the tangent direction of the family in the space of curves.
+
+This geometric picture explains why a variation is not one additional trajectory by itself. It is an infinitesimal direction in which the reference trajectory may be deformed.
+
+\subsection{Variations with fixed endpoints}
+
+In the standard derivation of the Euler--Lagrange equation, the initial and final positions are held fixed:
+
+\[
+q_{\varepsilon}(t_{1})=q(t_{1}),
+\qquad
+q_{\varepsilon}(t_{2})=q(t_{2}).
+\]
+
+Substituting
+
+\[
+q_{\varepsilon}(t)=q(t)+\varepsilon\eta(t)
+\]
+
+gives
+
+\[
+q(t_{1})+\varepsilon\eta(t_{1})=q(t_{1}),
+\]
+
+and
+
+\[
+q(t_{2})+\varepsilon\eta(t_{2})=q(t_{2}).
+\]
+
+For these relations to hold for all sufficiently small \(\varepsilon\), we require
+
+\[
+\boxed{
+\eta(t_{1})=0,
+\qquad
+\eta(t_{2})=0
+}.
+\]
+
+Equivalently,
+
+\[
+\delta q(t_{1})=0,
+\qquad
+\delta q(t_{2})=0.
+\]
+
+The deformation is otherwise arbitrary in the interior of the interval. It may be concentrated in a small region, oscillatory, or spread over the entire path, provided it is sufficiently smooth and satisfies the endpoint conditions.
+
+The role of these conditions will be examined in detail in the next section. They are not decorative assumptions: they determine the boundary term produced by integration by parts.
+
+\subsection{Example of an admissible deformation}
+
+Suppose that
+
+\[
+0\leq t\leq T
+\]
+
+and the endpoints are fixed. A simple admissible deformation is
+
+\[
+\eta(t)
+=
+A\sin\left(\frac{\pi t}{T}\right),
+\]
+
+because
+
+\[
+\eta(0)=0,
+\qquad
+\eta(T)=0.
+\]
+
+The corresponding family of trajectories is
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)
++
+\varepsilon A
+\sin\left(\frac{\pi t}{T}\right).
+\]
+
+The deformation is largest near the middle of the interval and vanishes at the endpoints.
+
+Another admissible choice is
+
+\[
+\eta(t)
+=
+A t(T-t).
+\]
+
+Again,
+
+\[
+\eta(0)=0,
+\qquad
+\eta(T)=0.
+\]
+
+These examples show that the allowed deformation is not unique. The stationarity condition must hold for every admissible \(\eta(t)\), not merely for one convenient choice.
+
+\subsection{A localized variation}
+
+To understand why a variational principle produces a local differential equation, it is useful to consider a deformation that is nonzero only in a small part of the interval.
+
+Let \(t_{a}\) and \(t_{b}\) satisfy
+
+\[
+t_{1}<t_{a}<t_{b}<t_{2}.
+\]
+
+We may choose a smooth function \(\eta(t)\) such that
+
+\[
+\eta(t)=0
+\]
+
+outside the interval \((t_{a},t_{b})\). The varied and reference trajectories then agree everywhere except in that small time region.
+
+If the action is stationary under all such localized deformations, the coefficient multiplying \(\eta(t)\) in the first variation must vanish at every interior time. This idea will later be formalized by the fundamental lemma of the calculus of variations.
+
+\subsection{The varied action}
+
+The action of the varied path is
+
+\[
+S[q_{\varepsilon}]
+=
+\int_{t_{1}}^{t_{2}}
+L\bigl(q_{\varepsilon}(t),\dot q_{\varepsilon}(t),t\bigr)
+\,\mathrm{d}t.
+\]
+
+Once the deformation function \(\eta(t)\) is chosen, this expression is an ordinary function of the parameter \(\varepsilon\):
+
+\[
+\varepsilon
+\longmapsto
+S[q_{\varepsilon}].
+\]
+
+The first variation of the action is defined by
+
+\[
+\boxed{
+\delta S[q;\eta]
+:=
+\left.
+\frac{\mathrm{d}}{\mathrm{d}\varepsilon}
+S[q_{\varepsilon}]
+\right|_{\varepsilon=0}
+}.
+\]
+
+The notation \(\delta S[q;\eta]\) makes two dependences visible:
+
+\begin{itemize}
+    \item the variation is evaluated at the reference trajectory \(q\);
+    \item its value depends on the chosen deformation direction \(\eta\).
+\end{itemize}
+
+When the context is clear, this is abbreviated to \(\delta S\).
+
+\subsection{First-order expansion of the Lagrangian}
+
+For small \(\varepsilon\), the Lagrangian along the varied path may be expanded to first order:
+
+\[
+\begin{aligned}
+L(q_{\varepsilon},\dot q_{\varepsilon},t)
+&=
+L(q+\varepsilon\eta,
+\dot q+\varepsilon\dot\eta,t)\\
+&=
+L(q,\dot q,t)
++
+\varepsilon
+\left(
+\frac{\partial L}{\partial q}\eta
++
+\frac{\partial L}{\partial\dot q}\dot\eta
+\right)
++
+O(\varepsilon^{2}).
+\end{aligned}
+\]
+
+Integrating over time gives
+
+\[
+S[q_{\varepsilon}]
+=
+S[q]
++
+\varepsilon
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\eta
++
+\frac{\partial L}{\partial\dot q}\dot\eta
+\right)
+\,\mathrm{d}t
++
+O(\varepsilon^{2}).
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\,\delta q
++
+\frac{\partial L}{\partial\dot q}\,\delta\dot q
+\right)
+\,\mathrm{d}t
+}.
+\]
+
+Using \(\delta q=\eta\) and \(\delta\dot q=\dot\eta\), we may also write
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\eta
++
+\frac{\partial L}{\partial\dot q}\dot\eta
+\right)
+\,\mathrm{d}t.
+\]
+
+At this stage, the derivative \(\dot\eta\) still appears. To obtain a condition involving the arbitrary function \(\eta\) itself, we will transfer the time derivative from \(\eta\) to \(\partial L/\partial\dot q\) by integration by parts.
+
+\subsection{Linearity of the first variation}
+
+The first variation is linear in the deformation direction. If
+
+\[
+\eta(t)
+=
+a\eta_{1}(t)+b\eta_{2}(t),
+\]
+
+then
+
+\[
+\delta S[q;a\eta_{1}+b\eta_{2}]
+=
+a\,\delta S[q;\eta_{1}]
++
+b\,\delta S[q;\eta_{2}].
+\]
+
+This follows directly from the first-order expression for \(\delta S\). Linearity is important because the first variation is the functional analogue of a directional derivative.
+
+The second-order and higher-order changes of the action are generally not linear in \(\eta\). They become relevant when one asks whether a stationary path is a minimum, maximum, or saddle point.
+
+\subsection{Several generalized coordinates}
+
+For a system described by coordinates
+
+\[
+q^{1}(t),q^{2}(t),\ldots,q^{N}(t),
+\]
+
+we introduce one variation for each coordinate:
+
+\[
+q^{i}_{\varepsilon}(t)
+=
+q^{i}(t)+\varepsilon\eta^{i}(t).
+\]
+
+Then
+
+\[
+\delta q^{i}=\eta^{i},
+\qquad
+\delta\dot q^{i}=\dot\eta^{i}.
+\]
+
+The first variation becomes
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\sum_{i=1}^{N}
+\left(
+\frac{\partial L}{\partial q^{i}}\eta^{i}
++
+\frac{\partial L}{\partial\dot q^{i}}\dot\eta^{i}
+\right)
+\,\mathrm{d}t.
+\]
+
+Each deformation function \(\eta^{i}(t)\) may be chosen independently when the coordinates are independent. This independence will later produce one Euler--Lagrange equation for each generalized coordinate.
+
+\subsection{Common mistakes}
+
+Several distinctions must be kept clear.
+
+\begin{enumerate}
+    \item The variation \(\delta q\) is not the same as a small time increment \(\mathrm{d}q\). It compares different paths at the same time.
+    \item The parameter \(\varepsilon\) is not physical time. It labels trajectories in a family.
+    \item The function \(\eta(t)\) is not chosen after the calculation to force a desired result. Stationarity must hold for every admissible \(\eta\).
+    \item If the endpoints are fixed, the variation must vanish there. This does not imply that \(\dot\eta\) also vanishes at the endpoints.
+    \item The equality \(\delta\dot q=\mathrm{d}(\delta q)/\mathrm{d}t\) must be used explicitly when varying a velocity-dependent Lagrangian.
+\end{enumerate}
+
+These points prevent the variational calculation from becoming a formal manipulation without a clear meaning.
+
+\subsection{Preparation for field variations}
+
+The same construction extends directly to a field. A reference field \(\phi(x)\) is replaced by a family
+
+\[
+\phi_{\varepsilon}(x)
+=
+\phi(x)+\varepsilon\eta(x),
+\]
+
+and the field variation is
+
+\[
+\delta\phi(x)
+=
+\left.
+\frac{\partial\phi_{\varepsilon}(x)}{\partial\varepsilon}
+\right|_{\varepsilon=0}
+=
+\eta(x).
+\]
+
+Derivatives of the field vary according to
+
+\[
+\delta(\partial_{\mu}\phi)
+=
+\partial_{\mu}(\delta\phi).
+\]
+
+Thus the particle calculation is not an unrelated preliminary exercise. It is the one-dimensional version of the field-theoretic variation that will be used throughout the course.
+
+\subsection{What has been established}
+
+A variation is defined by embedding a reference trajectory in a one-parameter family
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t).
+\]
+
+The deformation function is
+
+\[
+\delta q(t)=\eta(t),
+\]
+
+and its velocity variation is
+
+\[
+\delta\dot q(t)=\dot\eta(t).
+\]
+
+The first variation of the action is the derivative of \(S[q_{\varepsilon}]\) with respect to the path parameter at \(\varepsilon=0\). It is linear in the deformation direction and, before integration by parts, contains both \(\eta\) and \(\dot\eta\).
+
+The next section examines the endpoint and boundary conditions that determine which variations are admissible and what happens to the boundary term in the variational calculation.
