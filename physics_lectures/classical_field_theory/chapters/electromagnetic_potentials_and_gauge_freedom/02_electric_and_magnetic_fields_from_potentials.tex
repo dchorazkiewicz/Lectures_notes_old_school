@@ -1,1 +1,594 @@
 \section{Electric and Magnetic Fields from Potentials}
+\label{sec:fields_from_potentials}
+
+The definitions
+
+\[
+\mathbf{B}
+=
+\nabla\times\mathbf{A}
+\]
+
+and
+
+\[
+\mathbf{E}
+=
+-\nabla\Phi
+-
+\frac{\partial\mathbf{A}}{\partial t}
+\]
+
+are designed so that the homogeneous Maxwell equations hold identically. This section verifies those identities, examines their component form, and applies the formulas to representative configurations.
+
+\subsection{Magnetic Gauss law}
+
+Using
+
+\[
+\mathbf{B}
+=
+\nabla\times\mathbf{A},
+\]
+
+we obtain
+
+\[
+\nabla\cdot\mathbf{B}
+=
+\nabla\cdot
+\left(
+\nabla\times\mathbf{A}
+\right).
+\]
+
+The divergence of a curl vanishes for every twice continuously differentiable vector field:
+
+\[
+\boxed{
+\nabla\cdot\mathbf{B}=0
+}.
+\]
+
+In Cartesian components,
+
+\[
+B_i
+=
+\epsilon_{ijk}
+\partial_jA_k.
+\]
+
+Therefore
+
+\[
+\partial_iB_i
+=
+\epsilon_{ijk}
+\partial_i\partial_jA_k.
+\]
+
+The derivative factor is symmetric under
+
+\[
+i\longleftrightarrow j,
+\]
+
+while \(\epsilon_{ijk}\) is antisymmetric. Their contraction vanishes:
+
+\[
+\epsilon_{ijk}
+\partial_i\partial_jA_k
+=0.
+\]
+
+The identity follows from the commutativity of ordinary partial derivatives.
+
+\subsection{Faraday's law}
+
+Take the curl of the electric field:
+
+\[
+\begin{aligned}
+\nabla\times\mathbf{E}
+&=
+-\nabla\times\nabla\Phi
+-
+\nabla\times
+\frac{\partial\mathbf{A}}{\partial t}.
+\end{aligned}
+\]
+
+The curl of a gradient vanishes:
+
+\[
+\nabla\times\nabla\Phi=0.
+\]
+
+For sufficiently regular fields, time and spatial derivatives commute:
+
+\[
+\nabla\times
+\frac{\partial\mathbf{A}}{\partial t}
+=
+\frac{\partial}{\partial t}
+\left(
+\nabla\times\mathbf{A}
+\right)
+=
+\frac{\partial\mathbf{B}}{\partial t}.
+\]
+
+Thus
+
+\[
+\boxed{
+\nabla\times\mathbf{E}
++
+\frac{\partial\mathbf{B}}{\partial t}
+=0
+}.
+\]
+
+Faraday's law is therefore built into the potential representation.
+
+\subsection{Component verification}
+
+Write
+
+\[
+E_i
+=
+-\partial_i\Phi
+-
+\frac{\partial A_i}{\partial t}
+\]
+
+and
+
+\[
+B_i
+=
+\epsilon_{ijk}\partial_jA_k.
+\]
+
+The \(i\)-th component of the curl of \(\mathbf{E}\) is
+
+\[
+\begin{aligned}
+(\nabla\times\mathbf{E})_i
+&=
+\epsilon_{ijk}\partial_jE_k\\
+&=
+-\epsilon_{ijk}
+\partial_j\partial_k\Phi
+-
+\epsilon_{ijk}
+\partial_j
+\frac{\partial A_k}{\partial t}.
+\end{aligned}
+\]
+
+The first term vanishes by symmetry and antisymmetry. The second term is
+
+\[
+-
+\frac{\partial}{\partial t}
+\left(
+\epsilon_{ijk}\partial_jA_k
+\right)
+=
+-
+\frac{\partial B_i}{\partial t}.
+\]
+
+Hence
+
+\[
+(\nabla\times\mathbf{E})_i
+=
+-
+\frac{\partial B_i}{\partial t}.
+\]
+
+\subsection{Which Maxwell equations remain dynamical?}
+
+The potential definitions automatically satisfy
+
+\[
+\nabla\cdot\mathbf{B}=0
+\]
+
+and
+
+\[
+\nabla\times\mathbf{E}
++
+\frac{\partial\mathbf{B}}{\partial t}=0.
+\]
+
+The remaining equations,
+
+\[
+\nabla\cdot\mathbf{E}
+=
+\frac{\rho}{\varepsilon_0}
+\]
+
+and
+
+\[
+\nabla\times\mathbf{B}
+-
+\frac{1}{c^2}
+\frac{\partial\mathbf{E}}{\partial t}
+=
+\mu_0\mathbf{J},
+\]
+
+determine how the potentials respond to electric charge and current. They will be derived from an action in the next chapter.
+
+\subsection{Electrostatic limit}
+
+If the potentials are time independent,
+
+\[
+\frac{\partial\mathbf{A}}{\partial t}=0,
+\]
+
+then
+
+\[
+\mathbf{E}
+=
+-\nabla\Phi.
+\]
+
+The electric field is curl free:
+
+\[
+\nabla\times\mathbf{E}=0.
+\]
+
+Gauss's law becomes a Poisson equation for the scalar potential:
+
+\[
+\boxed{
+\nabla^2\Phi
+=
+-
+\frac{\rho}{\varepsilon_0}
+}.
+\]
+
+In a source-free region,
+
+\[
+\nabla^2\Phi=0.
+\]
+
+\subsection{Magnetostatic limit}
+
+For steady currents,
+
+\[
+\frac{\partial\mathbf{E}}{\partial t}=0.
+\]
+
+Ampere's law is
+
+\[
+\nabla\times\mathbf{B}
+=
+\mu_0\mathbf{J}.
+\]
+
+Substitute
+
+\[
+\mathbf{B}
+=
+\nabla\times\mathbf{A}.
+\]
+
+Using the vector identity
+
+\[
+\nabla\times
+\left(
+\nabla\times\mathbf{A}
+\right)
+=
+\nabla
+\left(
+\nabla\cdot\mathbf{A}
+\right)
+-
+\nabla^2\mathbf{A},
+\]
+
+we obtain
+
+\[
+\nabla
+\left(
+\nabla\cdot\mathbf{A}
+\right)
+-
+\nabla^2\mathbf{A}
+=
+\mu_0\mathbf{J}.
+\]
+
+In the Coulomb gauge,
+
+\[
+\nabla\cdot\mathbf{A}=0,
+\]
+
+this reduces to
+
+\[
+\boxed{
+\nabla^2\mathbf{A}
+=
+-\mu_0\mathbf{J}
+}.
+\]
+
+\subsection{Example: time-dependent uniform vector potential}
+
+Let
+
+\[
+\Phi=0
+\]
+
+and
+
+\[
+\mathbf{A}(t)
+=
+A_0(t)\mathbf{e}_x.
+\]
+
+Because \(\mathbf{A}\) is spatially uniform,
+
+\[
+\mathbf{B}
+=
+\nabla\times\mathbf{A}
+=0.
+\]
+
+The electric field is
+
+\[
+\boxed{
+\mathbf{E}
+=
+-
+\frac{\mathrm{d}A_0}{\mathrm{d}t}
+\mathbf{e}_x
+}.
+\]
+
+A time-dependent vector potential can therefore produce an electric field even when the magnetic field vanishes.
+
+\subsection{Example: a plane-wave potential}
+
+Choose
+
+\[
+\Phi=0
+\]
+
+and
+
+\[
+\mathbf{A}(z,t)
+=
+A_0
+\cos(kz-\omega t)
+\mathbf{e}_x.
+\]
+
+The electric field is
+
+\[
+\begin{aligned}
+\mathbf{E}
+&=
+-
+\frac{\partial\mathbf{A}}{\partial t}\\
+&=
+-
+A_0\omega
+\sin(kz-\omega t)
+\mathbf{e}_x.
+\end{aligned}
+\]
+
+The magnetic field is
+
+\[
+\begin{aligned}
+\mathbf{B}
+&=
+\nabla\times\mathbf{A}\\
+&=
+-A_0k
+\sin(kz-\omega t)
+\mathbf{e}_y.
+\end{aligned}
+\]
+
+For an electromagnetic wave in vacuum,
+
+\[
+\omega=ck.
+\]
+
+Therefore the magnitudes satisfy
+
+\[
+\boxed{
+|\mathbf{E}|=c|\mathbf{B}|
+}.
+\]
+
+The vectors \(\mathbf{E}\), \(\mathbf{B}\), and the propagation direction \(\mathbf{e}_z\) are mutually perpendicular. Their signs depend on the chosen phase and orientation of the potential.
+
+\subsection{Example: time-dependent magnetic field}
+
+Consider the symmetric-gauge potential
+
+\[
+\mathbf{A}
+=
+\frac{1}{2}
+B(t)
+\left(
+-y\mathbf{e}_x
++x\mathbf{e}_y
+\right)
+\]
+
+with
+
+\[
+\Phi=0.
+\]
+
+Its magnetic field is
+
+\[
+\mathbf{B}
+=
+B(t)\mathbf{e}_z.
+\]
+
+The induced electric field is
+
+\[
+\boxed{
+\mathbf{E}
+=
+\frac{1}{2}
+\frac{\mathrm{d}B}{\mathrm{d}t}
+\left(
+y\mathbf{e}_x
+-
+x\mathbf{e}_y
+\right)
+}.
+\]
+
+In cylindrical coordinates,
+
+\[
+\mathbf{E}
+=
+-
+\frac{r}{2}
+\frac{\mathrm{d}B}{\mathrm{d}t}
+\mathbf{e}_{\varphi}.
+\]
+
+The electric field circulates around the changing magnetic field, as required by Faraday's law.
+
+\subsection{Integral form of Faraday's law}
+
+Integrate the differential equation over a surface \(S\):
+
+\[
+\int_S
+\left(
+\nabla\times\mathbf{E}
+\right)
+\cdot\mathbf{n}
+\,\mathrm{d}A
+=
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\int_S
+\mathbf{B}\cdot\mathbf{n}
+\,\mathrm{d}A.
+\]
+
+By Stokes' theorem,
+
+\[
+\boxed{
+\oint_{\partial S}
+\mathbf{E}\cdot\mathrm{d}\boldsymbol{\ell}
+=
+-
+\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
+}.
+\]
+
+Here
+
+\[
+\Phi_B
+=
+\int_S
+\mathbf{B}\cdot\mathbf{n}
+\,\mathrm{d}A
+\]
+
+is the magnetic flux through \(S\).
+
+\subsection{Regularity assumptions}
+
+The derivations used the commutativity of partial derivatives:
+
+\[
+\partial_i\partial_j
+=
+\partial_j\partial_i
+\]
+
+and
+
+\[
+\frac{\partial}{\partial t}
+\partial_i
+=
+\partial_i
+\frac{\partial}{\partial t}.
+\]
+
+These identities hold for sufficiently smooth potentials. Singular potentials, excluded regions, or distributional sources require additional care. The local equations remain valid away from singularities.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item omitting the term \(-\partial\mathbf{A}/\partial t\) from the electric field;
+    \item using \(\nabla\times\nabla\Phi\neq0\);
+    \item forgetting that time and spatial derivatives were assumed to commute;
+    \item concluding that \(\mathbf{B}=0\) implies \(\mathbf{A}=0\);
+    \item using electrostatic formulas in a time-dependent induction problem;
+    \item reversing the sign in Faraday's law.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The potential representation implies identically
+
+\[
+\nabla\cdot\mathbf{B}=0
+\]
+
+and
+
+\[
+\nabla\times\mathbf{E}
++
+\frac{\partial\mathbf{B}}{\partial t}=0.
+\]
+
+The two homogeneous Maxwell equations are therefore structural consequences of expressing the fields in terms of \(\Phi\) and \(\mathbf{A}\). The next section analyzes the full family of potential transformations that leave both physical fields unchanged.
