@@ -1,1 +1,539 @@
 \section{Field Invariants}
+\label{sec:electromagnetic_field_invariants}
+
+Electric and magnetic fields mix under Lorentz boosts, but certain combinations have the same value in every inertial frame. These Lorentz invariants classify electromagnetic configurations and provide the scalar quantities used in relativistic electromagnetic actions.
+
+\subsection{First invariant}
+
+The simplest scalar contraction is
+
+\[
+F_{\mu\nu}F^{\mu\nu}.
+\]
+
+Using antisymmetry, sum over independent index pairs:
+
+\[
+F_{\mu\nu}F^{\mu\nu}
+=
+2
+\sum_{\mu<\nu}
+F_{\mu\nu}F^{\mu\nu}.
+\]
+
+For the time-space components,
+
+\[
+F_{0i}
+=
+\frac{E_i}{c},
+\qquad
+F^{0i}
+=
+-
+\frac{E_i}{c}.
+\]
+
+Their contribution is
+
+\[
+2
+\sum_i
+F_{0i}F^{0i}
+=
+-
+\frac{2}{c^2}
+|\mathbf{E}|^2.
+\]
+
+For the spatial components,
+
+\[
+F_{12}=-B_z,
+\qquad
+F_{23}=-B_x,
+\qquad
+F_{31}=-B_y,
+\]
+
+and raising both spatial indices does not change their signs. Their contribution is
+
+\[
+2
+\left(
+B_x^2+B_y^2+B_z^2
+\right)
+=
+2|\mathbf{B}|^2.
+\]
+
+Therefore
+
+\[
+\boxed{
+F_{\mu\nu}F^{\mu\nu}
+=
+2
+\left(
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+\right)
+}.
+\]
+
+It is convenient to define
+
+\[
+\boxed{
+\mathcal{I}_1
+=
+\frac{1}{2}
+F_{\mu\nu}F^{\mu\nu}
+=
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+}.
+\]
+
+\subsection{Why the first combination is invariant}
+
+Under a Lorentz transformation,
+
+\[
+F'^{\mu\nu}
+=
+\Lambda^{\mu}{}_{\rho}
+\Lambda^{\nu}{}_{\sigma}
+F^{\rho\sigma}.
+\]
+
+Contracting all indices with the metric gives a Lorentz scalar:
+
+\[
+F'_{\mu\nu}F'^{\mu\nu}
+=
+F_{\mu\nu}F^{\mu\nu}.
+\]
+
+Thus observers can disagree about the separate values of \(\mathbf{E}\) and \(\mathbf{B}\), but they agree about
+
+\[
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}.
+\]
+
+\subsection{Second invariant}
+
+Using the dual tensor, form
+
+\[
+F_{\mu\nu}
+\widetilde{F}^{\mu\nu}.
+\]
+
+With
+
+\[
+\widetilde{F}^{0i}=-B_i
+\]
+
+and the component conventions of the previous section, direct contraction gives
+
+\[
+\boxed{
+F_{\mu\nu}
+\widetilde{F}^{\mu\nu}
+=
+-
+\frac{4}{c}
+\mathbf{E}\cdot\mathbf{B}
+}.
+\]
+
+Define
+
+\[
+\boxed{
+\mathcal{I}_2
+=
+-
+\frac{c}{4}
+F_{\mu\nu}
+\widetilde{F}^{\mu\nu}
+=
+\mathbf{E}\cdot\mathbf{B}
+}.
+\]
+
+This quantity is invariant under proper Lorentz transformations.
+
+\subsection{Pseudoscalar character}
+
+The electric field is a polar vector, while the magnetic field is an axial vector. Under spatial parity,
+
+\[
+\mathbf{E}
+\longrightarrow
+-\mathbf{E},
+\qquad
+\mathbf{B}
+\longrightarrow
+\mathbf{B}.
+\]
+
+Therefore
+
+\[
+\mathbf{E}\cdot\mathbf{B}
+\longrightarrow
+-
+\mathbf{E}\cdot\mathbf{B}.
+\]
+
+The second invariant is a pseudoscalar: it is unchanged under proper Lorentz transformations but changes sign under an orientation-reversing spatial reflection.
+
+\subsection{Gauge invariance}
+
+Both invariants are constructed entirely from \(F_{\mu\nu}\). Since
+
+\[
+F'_{\mu\nu}=F_{\mu\nu}
+\]
+
+under a gauge transformation, we have
+
+\[
+\mathcal{I}'_1
+=
+\mathcal{I}_1
+\]
+
+and
+
+\[
+\mathcal{I}'_2
+=
+\mathcal{I}_2.
+\]
+
+They are simultaneously Lorentz invariant and gauge invariant.
+
+\subsection{Purely electric configuration}
+
+If one inertial frame has
+
+\[
+\mathbf{B}=0,
+\]
+
+then
+
+\[
+\mathcal{I}_1
+=
+-
+\frac{|\mathbf{E}|^2}{c^2}<0
+\]
+
+for a nonzero field, and
+
+\[
+\mathcal{I}_2=0.
+\]
+
+Every other inertial frame must therefore satisfy
+
+\[
+|\mathbf{B}'|^2
+-
+\frac{|\mathbf{E}'|^2}{c^2}<0
+\]
+
+and
+
+\[
+\mathbf{E}'\cdot\mathbf{B}'=0.
+\]
+
+Such a field is called electric-like.
+
+\subsection{Purely magnetic configuration}
+
+If one frame has
+
+\[
+\mathbf{E}=0,
+\]
+
+then
+
+\[
+\mathcal{I}_1
+=
+|\mathbf{B}|^2>0
+\]
+
+and
+
+\[
+\mathcal{I}_2=0.
+\]
+
+Such a field is magnetic-like.
+
+\subsection{Existence of pure-field frames}
+
+For a nonzero field satisfying
+
+\[
+\mathbf{E}\cdot\mathbf{B}=0,
+\]
+
+the sign of \(\mathcal{I}_1\) determines whether a pure-field frame exists:
+
+\begin{itemize}
+    \item if
+    \[
+    \mathcal{I}_1<0,
+    \]
+    there is an inertial frame in which \(\mathbf{B}'=0\);
+
+    \item if
+    \[
+    \mathcal{I}_1>0,
+    \]
+    there is an inertial frame in which \(\mathbf{E}'=0\).
+\end{itemize}
+
+If
+
+\[
+\mathbf{E}\cdot\mathbf{B}\neq0,
+\]
+
+no inertial frame can make either field vanish, because the second invariant would otherwise be zero.
+
+\subsection{Null electromagnetic fields}
+
+A field is called null when
+
+\[
+\boxed{
+\mathcal{I}_1=0
+}
+\]
+
+and
+
+\[
+\boxed{
+\mathcal{I}_2=0
+}.
+\]
+
+In three-dimensional language,
+
+\[
+|\mathbf{E}|=c|\mathbf{B}|
+\]
+
+and
+
+\[
+\mathbf{E}\cdot\mathbf{B}=0.
+\]
+
+A vacuum plane wave is the standard example.
+
+\subsection{Plane-wave check}
+
+For a plane electromagnetic wave propagating in the direction \(\mathbf{n}\),
+
+\[
+\mathbf{B}
+=
+\frac{1}{c}
+\mathbf{n}\times\mathbf{E}.
+\]
+
+Therefore
+
+\[
+\mathbf{E}\cdot\mathbf{B}
+=
+\frac{1}{c}
+\mathbf{E}\cdot
+\left(
+\mathbf{n}\times\mathbf{E}
+\right)
+=0.
+\]
+
+Also,
+
+\[
+|\mathbf{B}|
+=
+\frac{|\mathbf{E}|}{c}.
+\]
+
+Hence
+
+\[
+\mathcal{I}_1=0,
+\qquad
+\mathcal{I}_2=0.
+\]
+
+No inertial frame can transform a nonzero plane wave into a purely electric or purely magnetic static field.
+
+\subsection{Parallel-field frame}
+
+For a general non-null electromagnetic field, one can find an inertial frame in which the electric and magnetic fields are parallel. In that frame, their magnitudes are determined by the two invariants.
+
+Let the parallel-frame magnitudes be \(E_0\) and \(B_0\), with signs chosen so that
+
+\[
+E_0B_0
+=
+\mathcal{I}_2.
+\]
+
+They satisfy
+
+\[
+B_0^2
+-
+\frac{E_0^2}{c^2}
+=
+\mathcal{I}_1.
+\]
+
+The two Lorentz invariants therefore contain the observer-independent information needed to classify the local electromagnetic field.
+
+\subsection{Electromagnetic Lagrangian}
+
+The standard free electromagnetic density is
+
+\[
+\mathcal{L}_{\mathrm{EM}}
+=
+-
+\frac{1}{4\mu_0}
+F_{\mu\nu}F^{\mu\nu}.
+\]
+
+Using the first invariant,
+
+\[
+\begin{aligned}
+\mathcal{L}_{\mathrm{EM}}
+&=
+-
+\frac{1}{2\mu_0}
+\left(
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+\right).
+\end{aligned}
+\]
+
+Since
+
+\[
+\frac{1}{\mu_0c^2}
+=
+\varepsilon_0,
+\]
+
+we obtain
+
+\[
+\boxed{
+\mathcal{L}_{\mathrm{EM}}
+=
+\frac{\varepsilon_0}{2}
+|\mathbf{E}|^2
+-
+\frac{1}{2\mu_0}
+|\mathbf{B}|^2
+}.
+\]
+
+This is not the electromagnetic energy density. The relative minus sign reflects the Lorentzian action, not a lack of positive field energy.
+
+\subsection{The second invariant as an action term}
+
+The density
+
+\[
+F_{\mu\nu}
+\widetilde{F}^{\mu\nu}
+\]
+
+is a total divergence in ordinary electromagnetism when \(F=\mathrm{d}A\). With suitable boundary conditions, adding a constant multiple of this term does not change the local Maxwell equations.
+
+Its role becomes more significant in theories with nontrivial topology, boundaries, magnetic sources, or generalized gauge dynamics.
+
+\subsection{Diagnostic use of invariants}
+
+Suppose two observers report fields \((\mathbf{E},\mathbf{B})\) and \((\mathbf{E}',\mathbf{B}')\). A necessary check for Lorentz compatibility is
+
+\[
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+=
+|\mathbf{B}'|^2
+-
+\frac{|\mathbf{E}'|^2}{c^2}
+\]
+
+and
+
+\[
+\mathbf{E}\cdot\mathbf{B}
+=
+\mathbf{E}'\cdot\mathbf{B}'.
+\]
+
+If either equality fails, the two field pairs cannot describe the same electromagnetic tensor at the same event in two inertial frames.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using \(|\mathbf{E}|^2+c^2|\mathbf{B}|^2\) as a Lorentz scalar;
+    \item losing the factor of two in \(F_{\mu\nu}F^{\mu\nu}\);
+    \item forgetting the factor \(1/c\) in the second tensor contraction;
+    \item calling \(\mathbf{E}\cdot\mathbf{B}\) an ordinary scalar under parity;
+    \item assuming that zero invariants imply a zero field;
+    \item confusing the electromagnetic Lagrangian density with the positive energy density.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The two independent local field invariants are represented by
+
+\[
+\mathcal{I}_1
+=
+|\mathbf{B}|^2
+-
+\frac{|\mathbf{E}|^2}{c^2}
+\]
+
+and
+
+\[
+\mathcal{I}_2
+=
+\mathbf{E}\cdot\mathbf{B}.
+\]
+
+They classify fields as electric-like, magnetic-like, or null and remain unchanged under proper Lorentz transformations. The final section uses the dual tensor and the cyclic identity to express the homogeneous Maxwell equations covariantly.
