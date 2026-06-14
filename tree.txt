@@ -179,6 +179,8 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/.gitignore
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants/.gitignore
+./mathematical_lectures/basic_mathematics/prezentation/03_matrix_inversion
+./mathematical_lectures/basic_mathematics/prezentation/03_matrix_inversion/.gitignore
 ./mathematical_lectures/basic_mathematics/problems
 ./mathematical_lectures/basic_mathematics/problems/algebra
 ./mathematical_lectures/basic_mathematics/problems/algebra/01_matrices_and_operations.md
