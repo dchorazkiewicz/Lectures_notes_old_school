@@ -1,1 +1,734 @@
 \section{Four-Derivatives and the d'Alembert Operator}
+\label{sec:four_derivatives_and_dalembert_operator}
+
+Relativistic field equations contain derivatives with respect to both time and space. To write them covariantly, these derivatives must be assembled into an object with a definite Lorentz-transformation rule.
+
+The resulting object is the four-gradient. Contracting the four-gradient with itself produces the d'Alembert operator, the relativistic analogue of the Laplacian.
+
+\subsection{Coordinates and partial derivatives}
+
+The spacetime coordinates are
+
+\[
+x^{\mu}=(ct,x,y,z).
+\]
+
+The derivative with respect to the zeroth coordinate is
+
+\[
+\frac{\partial}{\partial x^{0}}
+=
+\frac{\partial}{\partial(ct)}
+=
+\frac{1}{c}
+\frac{\partial}{\partial t}.
+\]
+
+The spatial derivatives are
+
+\[
+\frac{\partial}{\partial x^{1}}
+=
+\frac{\partial}{\partial x},
+\qquad
+\frac{\partial}{\partial x^{2}}
+=
+\frac{\partial}{\partial y},
+\qquad
+\frac{\partial}{\partial x^{3}}
+=
+\frac{\partial}{\partial z}.
+\]
+
+\subsection{The covariant four-gradient}
+
+Define
+
+\[
+\boxed{
+\partial_{\mu}
+:=
+\frac{\partial}{\partial x^{\mu}}
+}.
+\]
+
+Its components are
+
+\[
+\boxed{
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\frac{\partial}{\partial t},
+\nabla
+\right)
+}.
+\]
+
+Here
+
+\[
+\nabla
+=
+\left(
+\frac{\partial}{\partial x},
+\frac{\partial}{\partial y},
+\frac{\partial}{\partial z}
+\right).
+\]
+
+The lower index is essential. By the chain rule, derivatives with respect to contravariant coordinates transform as covectors.
+
+\subsection{Transformation law from the chain rule}
+
+Let
+
+\[
+x'^{\mu}
+=
+\Lambda^{\mu}{}_{\nu}x^{\nu}.
+\]
+
+The inverse relation is
+
+\[
+x^{\nu}
+=
+(\Lambda^{-1})^{\nu}{}_{\mu}x'^{\mu}.
+\]
+
+Using the chain rule,
+
+\[
+\begin{aligned}
+\partial'_{\mu}
+&=
+\frac{\partial}{\partial x'^{\mu}}\\
+&=
+\frac{\partial x^{\nu}}
+{\partial x'^{\mu}}
+\frac{\partial}{\partial x^{\nu}}\\
+&=
+(\Lambda^{-1})^{\nu}{}_{\mu}
+\partial_{\nu}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\partial'_{\mu}
+=
+(\Lambda^{-1})^{\nu}{}_{\mu}
+\partial_{\nu}
+}.
+\]
+
+The four-gradient is a covector operator.
+
+\subsection{The contravariant four-gradient}
+
+Raise the index with the inverse metric:
+
+\[
+\boxed{
+\partial^{\mu}
+=
+\eta^{\mu\nu}\partial_{\nu}
+}.
+\]
+
+With
+
+\[
+\eta^{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1),
+\]
+
+we obtain
+
+\[
+\boxed{
+\partial^{\mu}
+=
+\left(
+\frac{1}{c}\frac{\partial}{\partial t},
+-\nabla
+\right)
+}.
+\]
+
+Thus
+
+\[
+\partial^{0}=\partial_{0},
+\qquad
+\partial^{i}=-\partial_{i}.
+\]
+
+The sign difference between \(\partial_{\mu}\) and \(\partial^{\mu}\) is a direct consequence of the metric convention.
+
+\subsection{Derivative of a scalar field}
+
+Let \(\phi(x)\) be a Lorentz scalar:
+
+\[
+\phi'(x')=\phi(x).
+\]
+
+Its gradient
+
+\[
+\partial_{\mu}\phi
+\]
+
+is a covector. The raised gradient
+
+\[
+\partial^{\mu}\phi
+\]
+
+is a contravariant four-vector.
+
+In components,
+
+\[
+\boxed{
+\partial_{\mu}\phi
+=
+\left(
+\frac{1}{c}\phi_{t},
+\nabla\phi
+\right)
+}
+\]
+
+and
+
+\[
+\boxed{
+\partial^{\mu}\phi
+=
+\left(
+\frac{1}{c}\phi_{t},
+-\nabla\phi
+\right)
+}.
+\]
+
+The quantity
+
+\[
+\partial_{\mu}\phi\,
+\partial^{\mu}\phi
+\]
+
+is a Lorentz scalar.
+
+Expanding,
+
+\[
+\boxed{
+\partial_{\mu}\phi\,
+\partial^{\mu}\phi
+=
+\frac{1}{c^{2}}
+\left(
+\frac{\partial\phi}{\partial t}
+\right)^{2}
+-
+|\nabla\phi|^{2}
+}.
+\]
+
+This combination will become the kinetic term of the relativistic scalar-field Lagrangian.
+
+\subsection{Four-divergence}
+
+For a contravariant four-vector field \(A^{\mu}(x)\), its divergence is
+
+\[
+\boxed{
+\partial_{\mu}A^{\mu}
+}.
+\]
+
+The derivative index is contracted with the vector index, so the result is a Lorentz scalar.
+
+If
+
+\[
+A^{\mu}=(A^{0},\mathbf{A}),
+\]
+
+then
+
+\[
+\boxed{
+\partial_{\mu}A^{\mu}
+=
+\frac{1}{c}
+\frac{\partial A^{0}}{\partial t}
++
+\nabla\cdot\mathbf{A}
+}.
+\]
+
+For the four-current
+
+\[
+J^{\mu}=(c\rho,\mathbf{J}),
+\]
+
+we find
+
+\[
+\partial_{\mu}J^{\mu}
+=
+\frac{1}{c}
+\frac{\partial(c\rho)}{\partial t}
++
+\nabla\cdot\mathbf{J}.
+\]
+
+Therefore
+
+\[
+\boxed{
+\partial_{\mu}J^{\mu}=0
+}
+\]
+
+is equivalent to the continuity equation
+
+\[
+\boxed{
+\frac{\partial\rho}{\partial t}
++
+\nabla\cdot\mathbf{J}
+=0
+}.
+\]
+
+This is an example of a familiar three-dimensional conservation law written as one covariant scalar equation.
+
+\subsection{The d'Alembert operator}
+
+Contract the two four-derivatives:
+
+\[
+\boxed{
+\Box
+:=
+\partial_{\mu}\partial^{\mu}
+=
+\eta^{\mu\nu}
+\partial_{\mu}\partial_{\nu}
+}.
+\]
+
+The symbol \(\Box\) is read as d'Alembertian or wave operator.
+
+Expanding the components,
+
+\[
+\begin{aligned}
+\Box
+&=
+\partial_{0}\partial^{0}
++
+\partial_{1}\partial^{1}
++
+\partial_{2}\partial^{2}
++
+\partial_{3}\partial^{3}\\
+&=
+\frac{1}{c^{2}}
+\frac{\partial^{2}}{\partial t^{2}}
+-
+\frac{\partial^{2}}{\partial x^{2}}
+-
+\frac{\partial^{2}}{\partial y^{2}}
+-
+\frac{\partial^{2}}{\partial z^{2}}.
+\end{aligned}
+\]
+
+Thus
+
+\[
+\boxed{
+\Box
+=
+\frac{1}{c^{2}}
+\frac{\partial^{2}}{\partial t^{2}}
+-
+\nabla^{2}
+}.
+\]
+
+With the opposite metric signature, the overall sign of \(\Box\) is often defined oppositely. The convention must always be checked.
+
+\subsection{Covariant wave equation}
+
+The ordinary wave equation is
+
+\[
+\frac{\partial^{2}\phi}{\partial t^{2}}
+=
+c^{2}\nabla^{2}\phi.
+\]
+
+Move all terms to one side and divide by \(c^{2}\):
+
+\[
+\frac{1}{c^{2}}
+\frac{\partial^{2}\phi}{\partial t^{2}}
+-
+\nabla^{2}\phi
+=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\Box\phi=0
+}.
+\]
+
+The compact equation is Lorentz covariant because \(\Box\phi\) is a scalar when \(\phi\) is a scalar field.
+
+\subsection{Why \(\Box\) is Lorentz invariant}
+
+The operator is a contraction:
+
+\[
+\Box
+=
+\partial_{\mu}\partial^{\mu}.
+\]
+
+The first derivative transforms covariantly and the second contravariantly. Their contracted index disappears, leaving a scalar operator.
+
+More explicitly,
+
+\[
+\partial'_{\mu}\partial'^{\mu}
+=
+\partial_{\mu}\partial^{\mu}.
+\]
+
+Therefore if
+
+\[
+\Box\phi=0
+\]
+
+holds in one inertial frame, the same covariant equation holds in every inertial frame.
+
+\subsection{Worked example: applying \(\Box\)}
+
+Let
+
+\[
+\phi(x,t)
+=
+A\cos(kx-\omega t)
+\]
+
+in one spatial dimension. Then
+
+\[
+\frac{\partial^{2}\phi}{\partial t^{2}}
+=
+-\omega^{2}\phi,
+\]
+
+and
+
+\[
+\frac{\partial^{2}\phi}{\partial x^{2}}
+=
+-k^{2}\phi.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+\Box\phi
+&=
+\frac{1}{c^{2}}
+(-\omega^{2}\phi)
+-
+(-k^{2}\phi)\\
+&=
+\left(
+-\frac{\omega^{2}}{c^{2}}
++k^{2}
+\right)
+\phi.
+\end{aligned}
+\]
+
+The equation
+
+\[
+\Box\phi=0
+\]
+
+requires
+
+\[
+\boxed{
+\omega^{2}=c^{2}k^{2}
+}.
+\]
+
+The covariant equation therefore contains the familiar dispersion relation of a massless wave.
+
+\subsection{The wave four-vector}
+
+A plane-wave phase may be written as
+
+\[
+\mathbf{k}\cdot\mathbf{x}-\omega t.
+\]
+
+Define the contravariant wave four-vector
+
+\[
+\boxed{
+k^{\mu}
+=
+\left(
+\frac{\omega}{c},
+\mathbf{k}
+\right)
+}.
+\]
+
+Its covariant components are
+
+\[
+\boxed{
+k_{\mu}
+=
+\left(
+\frac{\omega}{c},
+-\mathbf{k}
+\right)
+}.
+\]
+
+Then
+
+\[
+k_{\mu}x^{\mu}
+=
+\omega t-
+\mathbf{k}\cdot\mathbf{x}.
+\]
+
+Therefore
+
+\[
+\mathbf{k}\cdot\mathbf{x}-\omega t
+=
+-k_{\mu}x^{\mu}.
+\]
+
+A plane wave may be written as
+
+\[
+\phi(x)
+=
+A e^{-ik_{\mu}x^{\mu}}.
+\]
+
+The phase is a Lorentz scalar.
+
+\subsection{Derivative of a plane wave}
+
+For
+
+\[
+\phi(x)
+=
+A e^{-ik_{\nu}x^{\nu}},
+\]
+
+we have
+
+\[
+\partial_{\mu}\phi
+=
+-ik_{\mu}\phi.
+\]
+
+Applying another derivative,
+
+\[
+\begin{aligned}
+\Box\phi
+&=
+\partial_{\mu}\partial^{\mu}\phi\\
+&=
+-k_{\mu}k^{\mu}\phi.
+\end{aligned}
+\]
+
+Thus the massless wave equation implies
+
+\[
+\boxed{
+k_{\mu}k^{\mu}=0
+}.
+\]
+
+The wave four-vector is null for a wave with dispersion relation
+
+\[
+\omega^{2}=c^{2}|\mathbf{k}|^{2}.
+\]
+
+\subsection{Product rule}
+
+The four-derivative obeys the ordinary product rule:
+
+\[
+\boxed{
+\partial_{\mu}(fg)
+=
+(\partial_{\mu}f)g
++
+f(\partial_{\mu}g)
+}.
+\]
+
+For a scalar \(f\) and vector \(A^{\mu}\),
+
+\[
+\partial_{\mu}(fA^{\mu})
+=
+(\partial_{\mu}f)A^{\mu}
++
+f\partial_{\mu}A^{\mu}.
+\]
+
+This identity is the covariant form used in spacetime integration by parts and in derivations of Noether currents.
+
+\subsection{Commutation of partial derivatives}
+
+For a sufficiently smooth field in Cartesian Minkowski coordinates,
+
+\[
+\boxed{
+\partial_{\mu}\partial_{\nu}\phi
+=
+\partial_{\nu}\partial_{\mu}\phi
+}.
+\]
+
+The order of ordinary partial derivatives may therefore be exchanged.
+
+This property will later imply that the antisymmetrized second derivative of a scalar vanishes:
+
+\[
+\partial_{\mu}\partial_{\nu}\phi
+-
+\partial_{\nu}\partial_{\mu}\phi
+=0.
+\]
+
+In curved spacetime or in gauge theory, generalized covariant derivatives need not commute. Their noncommutativity carries geometric or physical information.
+
+\subsection{Dimensions}
+
+Since
+
+\[
+[x^{\mu}]=\mathrm{m},
+\]
+
+all components of \(\partial_{\mu}\) have dimensions
+
+\[
+[\partial_{\mu}]=\mathrm{m}^{-1}.
+\]
+
+The d'Alembertian has dimensions
+
+\[
+[\Box]=\mathrm{m}^{-2}.
+\]
+
+Thus every term added to \(\Box\phi\) in a field equation must have compatible dimensions.
+
+\subsection{Structural checks}
+
+A covariant derivative calculation should satisfy:
+
+\begin{enumerate}
+    \item \(\partial_{\mu}\) has a lower index;
+    \item raising the index changes the signs of the spatial components;
+    \item the contraction \(\partial_{\mu}A^{\mu}\) is a scalar;
+    \item \(\Box\) expands to \(c^{-2}\partial_{t}^{2}-\nabla^{2}\) in the chosen convention;
+    \item a plane wave produces the expected dispersion relation;
+    \item all terms have compatible dimensions.
+\end{enumerate}
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item writing \(\partial_{0}=\partial/\partial t\) instead of \(c^{-1}\partial/\partial t\) when \(x^{0}=ct\);
+    \item treating \(\partial^{\mu}\) and \(\partial_{\mu}\) as numerically identical;
+    \item using the wrong sign in front of the Laplacian;
+    \item calling \(\nabla\phi\) by itself a four-vector;
+    \item forgetting that the wave phase must be a Lorentz scalar;
+    \item confusing the d'Alembertian with the spatial Laplacian;
+    \item applying commutation of derivatives without sufficient smoothness or in a context involving covariant derivatives.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The covariant four-gradient is
+
+\[
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+\nabla
+\right),
+\]
+
+while
+
+\[
+\partial^{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+-\nabla
+\right).
+\]
+
+Their contraction defines the d'Alembert operator
+
+\[
+\Box
+=
+\partial_{\mu}\partial^{\mu}
+=
+\frac{1}{c^{2}}\partial_{t}^{2}
+-
+\nabla^{2}.
+\]
+
+The ordinary wave equation becomes the covariant scalar equation \(\Box\phi=0\). The next section develops a broader collection of relativistic invariants and shows how scalar contractions encode observer-independent physical statements.
