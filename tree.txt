@@ -186,6 +186,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/basic_matrix_operations_2b.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.pdf
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_1a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/opening.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/theme.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_1.tex
