@@ -12,6 +12,7 @@ on:
       - "mathematical_lectures/**/build.sh"
       - "physics_lectures/**/*.tex"
       - "physics_lectures/**/build.sh"
+      - "!mathematical_lectures/basic_mathematics/prezentation/**"
 
 permissions:
   contents: write
@@ -61,6 +62,8 @@ jobs:
             else
               changed_files="$(git diff --name-only "${before}" "${after}")"
             fi
+
+            changed_files="$(printf '%s\n' "${changed_files}" | grep -Ev '^mathematical_lectures/basic_mathematics/prezentation/' || true)"
 
             build_all=false
             if printf '%s\n' "${changed_files}" | grep -Eq '^shared/'; then
