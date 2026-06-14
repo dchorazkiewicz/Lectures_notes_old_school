@@ -4,6 +4,7 @@
 ./.github/workflows/build-beamer-presentations.yml
 ./.github/workflows/build-pdfs.yml
 ./.github/workflows/deploy-pages.yml
+./.github/workflows/repair-scalar-field-tex.yml
 ./.github/workflows/update-tree.yml
 ./.gitignore
 ./.memory
