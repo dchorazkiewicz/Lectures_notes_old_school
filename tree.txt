@@ -188,8 +188,14 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/main.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_1a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_1b.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_2.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_3a.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/matrix_multiplication_3b.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/opening.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/row_operations_and_problem_solving_1.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/row_operations_and_problem_solving_1a_intro.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/row_operations_and_problem_solving_2.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1a.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1b_unit.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_1c_transpose.tex
@@ -197,6 +203,7 @@
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_2b_powers.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/special_matrices_and_structure_2d_patterns.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/theme.tex
+./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_1.tex
 ./mathematical_lectures/basic_mathematics/prezentation/01_matrices/what_matrices_are_2.tex
 ./mathematical_lectures/basic_mathematics/prezentation/02_determinants
