@@ -1,1 +1,507 @@
 \section{The Free Real Scalar Field}
+\label{sec:free_real_scalar_field}
+
+The real scalar field is the simplest relativistic field theory that contains all of the main structural elements of later models: a Lorentz-invariant action, a local differential equation, propagating waves, conserved energy and momentum, and the possibility of nonlinear interactions.
+
+A scalar field assigns one real number to every event in Minkowski spacetime:
+
+\[
+\boxed{
+\phi:\mathbb{M}^{1,3}\longrightarrow\mathbb{R}
+}.
+\]
+
+Under a Lorentz transformation, the numerical value attached to a physical event is unchanged:
+
+\[
+\boxed{
+\phi'(x')=\phi(x)
+}.
+\]
+
+The coordinate formula changes because the coordinates change, but the field value at the event is a Lorentz scalar.
+
+\subsection{Conventions}
+
+Throughout this chapter we use
+
+\[
+\eta_{\mu\nu}
+=
+\operatorname{diag}(1,-1,-1,-1)
+\]
+
+and
+
+\[
+x^{\mu}=(ct,\mathbf{x}).
+\]
+
+The four-gradient is
+
+\[
+\partial_{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+\nabla
+\right),
+\]
+
+while
+
+\[
+\partial^{\mu}
+=
+\left(
+\frac{1}{c}\partial_{t},
+-\nabla
+\right).
+\]
+
+Therefore
+
+\[
+\boxed{
+\partial_{\mu}\phi\partial^{\mu}\phi
+=
+\frac{1}{c^{2}}\phi_{t}^{2}
+-
+|\nabla\phi|^{2}
+}.
+\]
+
+This contraction is a Lorentz scalar and provides the natural derivative term in the action.
+
+\subsection{What free means}
+
+A field theory is called free when its equation of motion is linear and different normal modes do not interact with one another. For a real scalar field, the free Lagrangian density contains terms at most quadratic in \(\phi\) and its first derivatives.
+
+The most general standard free density with constant coefficients and no external source is
+
+\[
+\boxed{
+\mathcal{L}_{0}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+}.
+\]
+
+The parameter \(\mu\) has dimensions of inverse length:
+
+\[
+[\mu]=\mathrm{m}^{-1}.
+\]
+
+It is called the mass parameter. In a quantum interpretation one often writes
+
+\[
+\mu=rac{mc}{\hbar},
+\]
+
+but the present chapter treats the equation as a classical field equation. No quantum interpretation is required.
+
+\subsection{Expanded time-and-space form}
+
+Using the metric convention, the Lagrangian density becomes
+
+\[
+\boxed{
+\mathcal{L}_{0}
+=
+\frac{1}{2c^{2}}\phi_{t}^{2}
+-
+\frac{1}{2}|\nabla\phi|^{2}
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+}.
+\]
+
+The three terms have distinct roles:
+
+\begin{itemize}
+    \item \(\phi_{t}^{2}/(2c^{2})\) describes temporal change;
+    \item \(|\nabla\phi|^{2}/2\) penalizes spatial variation;
+    \item \(\mu^{2}\phi^{2}/2\) provides a local restoring term.
+\end{itemize}
+
+The relative signs are fixed so that the associated energy density is nonnegative for real \(\mu\).
+
+\subsection{The action}
+
+The action is
+
+\[
+\boxed{
+S[\phi]
+=
+\int_{\Omega}
+\left[
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}
+\right]
+\,\mathrm{d}^{4}x
+}.
+\]
+
+The spacetime measure is Lorentz invariant under proper Lorentz transformations, and the integrand is a Lorentz scalar. Therefore the action is Lorentz invariant.
+
+This is the basic construction principle of relativistic field theory:
+
+\begin{quote}
+Build the Lagrangian density from Lorentz scalars and integrate it over spacetime.
+\end{quote}
+
+\subsection{Variation of the action}
+
+Let
+
+\[
+\phi_{\varepsilon}
+=
+\phi+arepsilon\eta,
+\]
+
+where \(\eta\) vanishes on the boundary of the integration region. The variation of the derivative term is
+
+\[
+\delta
+\left(
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+\right)
+=
+\partial_{\mu}\phi\partial^{\mu}(\delta\phi).
+\]
+
+The variation of the mass term is
+
+\[
+\delta
+\left(
+-\frac{1}{2}\mu^{2}\phi^{2}
+\right)
+=
+-\mu^{2}\phi\delta\phi.
+\]
+
+Therefore
+
+\[
+\delta S
+=
+\int_{\Omega}
+\left[
+\partial_{\mu}\phi\partial^{\mu}(\delta\phi)
+-
+\mu^{2}\phi\delta\phi
+\right]
+\,\mathrm{d}^{4}x.
+\]
+
+Use the product rule:
+
+\[
+\partial^{\mu}
+\left(
+\partial_{\mu}\phi\delta\phi
+\right)
+=
+\left(
+\partial^{\mu}\partial_{\mu}\phi
+\right)
+\delta\phi
++
+\partial_{\mu}\phi
+\partial^{\mu}(\delta\phi).
+\]
+
+Hence
+
+\[
+\partial_{\mu}\phi
+\partial^{\mu}(\delta\phi)
+=
+\partial^{\mu}
+\left(
+\partial_{\mu}\phi\delta\phi
+\right)
+-
+\left(
+\partial^{\mu}\partial_{\mu}\phi
+\right)
+\delta\phi.
+\]
+
+After spacetime integration by parts,
+
+\[
+\begin{aligned}
+\delta S
+&=
+\int_{\partial\Omega}
+ n^{\mu}
+\partial_{\mu}\phi
+\delta\phi
+\,\mathrm{d}\Sigma\\
+&\quad-
+\int_{\Omega}
+\left(
+\partial_{\mu}\partial^{\mu}\phi
++
+\mu^{2}\phi
+\right)
+\delta\phi
+\,\mathrm{d}^{4}x.
+\end{aligned}
+\]
+
+Because
+
+\[
+\delta\phi=0
+\qquad
+\text{on }\partial\Omega,
+\]
+
+the boundary term vanishes. Stationarity for arbitrary interior variations gives
+
+\[
+\boxed{
+\left(
+\Box+\mu^{2}
+\right)
+\phi=0
+}.
+\]
+
+This is the free massive Klein--Gordon equation in the present convention.
+
+\subsection{Direct Euler--Lagrange check}
+
+The field Euler--Lagrange equation is
+
+\[
+\partial_{\mu}
+\left(
+\frac{\partial\mathcal{L}_{0}}
+{\partial(\partial_{\mu}\phi)}
+\right)
+-
+\frac{\partial\mathcal{L}_{0}}{\partial\phi}
+=0.
+\]
+
+For the free density,
+
+\[
+\frac{\partial\mathcal{L}_{0}}
+{\partial(\partial_{\mu}\phi)}
+=
+\partial^{\mu}\phi,
+\]
+
+and
+
+\[
+\frac{\partial\mathcal{L}_{0}}{\partial\phi}
+=
+-\mu^{2}\phi.
+\]
+
+Therefore
+
+\[
+\partial_{\mu}\partial^{\mu}\phi
++
+\mu^{2}\phi
+=0,
+\]
+
+which agrees with the direct variation.
+
+\subsection{Expanded field equation}
+
+Using
+
+\[
+\Box
+=
+\frac{1}{c^{2}}\partial_{t}^{2}
+-
+\nabla^{2},
+\]
+
+the equation becomes
+
+\[
+\boxed{
+\frac{1}{c^{2}}
+\frac{\partial^{2}\phi}{\partial t^{2}}
+-
+\nabla^{2}\phi
++
+\mu^{2}\phi
+=0
+}.
+\]
+
+Equivalently,
+
+\[
+\boxed{
+\phi_{tt}
+-
+c^{2}\nabla^{2}\phi
++
+c^{2}\mu^{2}\phi
+=0
+}.
+\]
+
+The first two terms form the ordinary wave operator. The final term provides a local oscillation frequency even for a spatially uniform field.
+
+\subsection{The massless limit}
+
+Setting
+
+\[
+\mu=0
+\]
+
+gives
+
+\[
+\boxed{
+\Box\phi=0
+}.
+\]
+
+In components,
+
+\[
+\phi_{tt}-c^{2}\nabla^{2}\phi=0.
+\]
+
+This is the relativistic wave equation for a free massless scalar field.
+
+The massive and massless cases have the same derivative structure. The difference is entirely in the local quadratic potential.
+
+\subsection{Canonical momentum density}
+
+The canonical momentum conjugate to \(\phi\) is
+
+\[
+\pi
+:=
+\frac{\partial\mathcal{L}_{0}}
+{\partial\phi_{t}}.
+\]
+
+From the expanded density,
+
+\[
+\boxed{
+\pi
+=
+\frac{1}{c^{2}}\phi_{t}
+}.
+\]
+
+This normalization follows from the use of the spacetime measure \(\mathrm{d}^{4}x=c\,\mathrm{d}t\,\mathrm{d}^{3}x\) together with the chosen form of \(\mathcal{L}_{0}\). One may rescale the overall density by a constant without changing the field equation, but all canonical quantities must then be rescaled consistently.
+
+\subsection{Reality of the field}
+
+The condition
+
+\[
+\phi(x)\in\mathbb{R}
+\]
+
+means that the physical field has one real component. Complex exponentials may still be used as calculational tools because the equation is linear with real coefficients. The physical solution is then obtained by taking a real part or by combining complex-conjugate modes.
+
+A complex scalar field is a different theory. It contains two independent real components and possesses an internal phase symmetry. That theory will appear later in connection with Noether's theorem.
+
+\subsection{Why the free theory is linear}
+
+The field equation
+
+\[
+(\Box+\mu^{2})\phi=0
+\]
+
+is linear. If \(\phi_{1}\) and \(\phi_{2}\) are solutions, then
+
+\[
+\phi
+=
+a\phi_{1}+b\phi_{2}
+\]
+
+is also a solution for constants \(a\) and \(b\).
+
+This superposition principle allows arbitrary free fields to be decomposed into plane-wave modes. Interactions will later destroy this simple linear independence of modes.
+
+\subsection{Dimensional checks}
+
+Because
+
+\[
+[\Box]=\mathrm{m}^{-2},
+\]
+
+the mass parameter must satisfy
+
+\[
+[\mu^{2}]=\mathrm{m}^{-2}.
+\]
+
+Thus both terms in
+
+\[
+(\Box+\mu^{2})\phi
+\]
+
+have the same dimensions.
+
+The physical dimensions assigned to \(\phi\) depend on the normalization of the action. The field equation alone fixes the relative dimensions of the derivative and mass terms, not the absolute unit of the field amplitude.
+
+\subsection{Common mistakes}
+
+Typical errors include:
+
+\begin{enumerate}
+    \item using a Euclidean derivative square instead of the Lorentz contraction;
+    \item writing the spatial-gradient term with the wrong sign;
+    \item confusing the inverse-length parameter \(\mu\) with a mass measured directly in kilograms;
+    \item dropping the boundary term without stating that \(\delta\phi\) vanishes on the boundary;
+    \item treating a complex exponential as a complex physical field without imposing the real-field condition;
+    \item assuming that a free field must be massless;
+    \item changing the overall normalization of the Lagrangian without changing the canonical momentum consistently.
+\end{enumerate}
+
+\subsection{What has been established}
+
+The simplest free relativistic real scalar field is defined by
+
+\[
+\mathcal{L}_{0}
+=
+\frac{1}{2}
+\partial_{\mu}\phi\partial^{\mu}\phi
+-
+\frac{1}{2}\mu^{2}\phi^{2}.
+\]
+
+Its action is Lorentz invariant, and variation with fixed boundary values gives
+
+\[
+(\Box+\mu^{2})\phi=0.
+\]
+
+The parameter \(\mu\) distinguishes the massive and massless theories, while the quadratic form of the action guarantees linearity and superposition. The next section compares the two field equations in detail and analyzes their basic classes of solutions.
