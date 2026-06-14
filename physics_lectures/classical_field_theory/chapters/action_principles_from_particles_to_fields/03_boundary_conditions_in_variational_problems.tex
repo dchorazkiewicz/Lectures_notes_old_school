@@ -1,1 +1,431 @@
 \section{Boundary Conditions in Variational Problems}
+\label{sec:boundary_conditions_variational_problems}
+
+A variational problem is not defined by the action functional alone. One must also specify which trajectories are allowed to compete. The boundary data determine the admissible class of paths and therefore determine which variations may be used.
+
+This point is essential because the derivation of the equations of motion produces a boundary term. Whether that term vanishes, survives, or imposes an additional condition depends entirely on the boundary assumptions.
+
+\subsection{What is held fixed?}
+
+Consider the action
+
+\[
+S[q]
+=
+\int_{t_{1}}^{t_{2}}
+L(q,\dot q,t)
+\,\mathrm{d}t.
+\]
+
+Before varying it, we must decide which quantities are fixed. The most common mechanical problem fixes
+
+\[
+t_{1},
+\qquad
+t_{2},
+\qquad
+q(t_{1}),
+\qquad
+q(t_{2}).
+\]
+
+Thus every admissible trajectory begins at the same initial event and ends at the same final event.
+
+If
+
+\[
+q_{\varepsilon}(t)
+=
+q(t)+\varepsilon\eta(t),
+\]
+
+then fixed endpoint positions require
+
+\[
+q_{\varepsilon}(t_{1})=q(t_{1}),
+\qquad
+q_{\varepsilon}(t_{2})=q(t_{2}).
+\]
+
+Therefore
+
+\[
+\boxed{
+\eta(t_{1})=0,
+\qquad
+\eta(t_{2})=0
+}.
+\]
+
+Equivalently,
+
+\[
+\delta q(t_{1})=0,
+\qquad
+\delta q(t_{2})=0.
+\]
+
+These conditions apply only at the endpoints. Inside the interval, the deformation remains arbitrary.
+
+\subsection{The admissible class of trajectories}
+
+The action is evaluated on a collection of functions rather than on all imaginable curves. A typical admissible class consists of trajectories that
+
+\begin{itemize}
+    \item are continuous on \([t_{1},t_{2}]\);
+    \item possess the derivatives required by the Lagrangian;
+    \item satisfy the prescribed endpoint data;
+    \item obey any additional constraints of the mechanical system.
+\end{itemize}
+
+For a Lagrangian depending on \(q\) and \(\dot q\), one usually assumes at least that the trajectory is piecewise continuously differentiable. To derive the classical Euler--Lagrange equation pointwise, greater smoothness is normally assumed.
+
+The exact function space matters in rigorous treatments. In an introductory derivation, the main requirement is that all differentiations and integrations by parts are legitimate.
+
+\subsection{Admissible and inadmissible deformations}
+
+Suppose the interval is
+
+\[
+0\leq t\leq T
+\]
+
+and the endpoints are fixed. The function
+
+\[
+\eta_{1}(t)
+=
+A\sin\left(\frac{\pi t}{T}\right)
+\]
+
+is admissible because
+
+\[
+\eta_{1}(0)=0,
+\qquad
+\eta_{1}(T)=0.
+\]
+
+Similarly,
+
+\[
+\eta_{2}(t)
+=
+A t(T-t)
+\]
+
+is admissible.
+
+By contrast,
+
+\[
+\eta_{3}(t)=A
+\]
+
+is not admissible when the endpoint positions are fixed, because it shifts both endpoints.
+
+The function
+
+\[
+\eta_{4}(t)=At
+\]
+
+also fails, since
+
+\[
+\eta_{4}(T)=AT\neq 0
+\]
+
+unless \(A=0\).
+
+The stationarity condition must hold for every admissible deformation, not for deformations that violate the stated boundary data.
+
+\subsection{Fixed endpoint values do not fix endpoint slopes}
+
+From
+
+\[
+\eta(t_{1})=0,
+\qquad
+\eta(t_{2})=0,
+\]
+
+it does not follow that
+
+\[
+\dot\eta(t_{1})=0,
+\qquad
+\dot\eta(t_{2})=0.
+\]
+
+For example,
+
+\[
+\eta(t)
+=
+A\sin\left(\frac{\pi(t-t_{1})}{t_{2}-t_{1}}ight)
+\]
+
+vanishes at both endpoints, but its derivative is generally nonzero there.
+
+This distinction is important. A first-order Lagrangian \(L(q,\dot q,t)\) produces a boundary term proportional to \(\delta q\), so fixing \(q\) at the endpoints is sufficient. If the Lagrangian depended on higher derivatives, additional endpoint data could be required.
+
+\subsection{How the boundary term appears}
+
+The first variation of the action is
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left(
+\frac{\partial L}{\partial q}\eta
++
+\frac{\partial L}{\partial\dot q}\dot\eta
+\right)
+\,\mathrm{d}t.
+\]
+
+The second term contains \(\dot\eta\). Integration by parts gives
+
+\[
+\int_{t_{1}}^{t_{2}}
+\frac{\partial L}{\partial\dot q}\dot\eta
+\,\mathrm{d}t
+=
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
+-
+\int_{t_{1}}^{t_{2}}
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\eta
+\,\mathrm{d}t.
+\]
+
+Therefore
+
+\[
+\boxed{
+\delta S
+=
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
++
+\int_{t_{1}}^{t_{2}}
+\left[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\right]
+\eta
+\,\mathrm{d}t
+}.
+\]
+
+The first term is the boundary contribution. It is evaluated only at \(t_{1}\) and \(t_{2}\).
+
+\subsection{Why the boundary term vanishes for fixed endpoints}
+
+When the endpoint positions are fixed,
+
+\[
+\eta(t_{1})=0,
+\qquad
+\eta(t_{2})=0.
+\]
+
+Hence
+
+\[
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
+=
+0.
+\]
+
+The first variation then reduces to an integral over the interior:
+
+\[
+\delta S
+=
+\int_{t_{1}}^{t_{2}}
+\left[
+\frac{\partial L}{\partial q}
+-
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial\dot q}
+\right)
+\right]
+\eta
+\,\mathrm{d}t.
+\]
+
+The boundary term has not disappeared by algebraic coincidence. It vanishes because the class of admissible paths was chosen to have fixed endpoint positions.
+
+A correct derivation should always state this reason explicitly.
+
+\subsection{What happens if an endpoint is free?}
+
+Suppose the final position is not fixed. Then \(\eta(t_{2})\) need not vanish. If the initial position remains fixed, we still have
+
+\[
+\eta(t_{1})=0,
+\]
+
+but the boundary contribution becomes
+
+\[
+\left[
+\frac{\partial L}{\partial\dot q}\eta
+\right]_{t_{1}}^{t_{2}}
+=
+\left.
+\frac{\partial L}{\partial\dot q}
+\right|_{t_{2}}
+\eta(t_{2}).
+\]
+
+For the action to be stationary for arbitrary endpoint displacement \(\eta(t_{2})\), one must require
+
+\[
+\boxed{
+\left.
+\frac{\partial L}{\partial\dot q}
+\right|_{t_{2}}
+=0
+}.
+\]
+
+This is an example of a \emph{natural boundary condition}. It is not imposed before the variation. It follows from stationarity when the corresponding endpoint value is free.
+
+If both endpoint positions are free, analogous conditions arise at both ends.
+
+\subsection{Canonical momentum at the boundary}
+
+The quantity
+
+\[
+p
+:=
+\frac{\partial L}{\partial\dot q}
+\]
+
+is the canonical momentum conjugate to \(q\). The boundary contribution may therefore be written as
+
+\[
+[p\,\delta q]_{t_{1}}^{t_{2}}.
+\]
+
+This form reveals the pairing between endpoint position variations and canonical momentum.
+
+For the standard Lagrangian
+
+\[
+L
+=
+\frac{m}{2}\dot q^{2}-V(q),
+\]
+
+we have
+
+\[
+p=m\dot q.
+\]
+
+Thus a free endpoint can produce a condition on the endpoint momentum.
+
+This structure becomes even more important in field theory, where boundary terms pair field variations with normal derivatives or canonical field momenta on the boundary of a spacetime region.
+
+\subsection{Fixed times and variable times}
+
+The standard derivation assumes that \(t_{1}\) and \(t_{2}\) are fixed. If an endpoint time is also allowed to vary, the variation of the action contains additional terms because both the path value and the integration limit change.
+
+Such problems lead to transversality conditions and require a more careful treatment. They are not needed for the basic derivation developed here, but they illustrate a general rule:
+
+\begin{quote}
+Every quantity allowed to vary can contribute its own boundary term and its own boundary condition.
+\end{quote}
+
+In the remainder of this chapter, unless stated otherwise, the endpoint times and endpoint positions are fixed.
+
+\subsection{Boundary conditions and uniqueness}
+
+The variational principle produces differential equations in the interior, but differential equations alone do not usually determine a unique trajectory. Boundary conditions or initial conditions are also required.
+
+For a second-order equation of motion, two independent pieces of data are normally needed. One may specify
+
+\[
+q(t_{1})
+\quad\text{and}\quad
+q(t_{2}),
+\]
+
+as in a fixed-endpoint variational problem, or one may specify
+
+\[
+q(t_{1})
+\quad\text{and}\quad
+\dot q(t_{1}),
+\]
+
+as in an initial-value problem.
+
+These are different ways of selecting a particular solution of the same differential equation. The variational derivation commonly uses endpoint data because they make the boundary term transparent.
+
+\subsection{Boundary data in field theory}
+
+For a field \(\phi(x)\) defined on a spacetime region \(\Omega\), the particle endpoints are replaced by the boundary \(\partial\Omega\). A standard field variation satisfies
+
+\[
+\delta\phi=0
+\qquad\text{on }\partial\Omega.
+\]
+
+Spacetime integration by parts then produces a surface term over \(\partial\Omega\). The condition \(\delta\phi=0\) makes that term vanish, just as \(\delta q(t_{1})=\delta q(t_{2})=0\) removes the endpoint term in mechanics.
+
+Other field boundary conditions are possible. If the field value is not fixed, stationarity may produce a natural boundary condition involving derivatives of the field. The particle problem is therefore the simplest model of the boundary analysis required later.
+
+\subsection{Diagnostic questions}
+
+Before discarding a boundary term, one should ask:
+
+\begin{enumerate}
+    \item What are the boundaries of the integration region?
+    \item Which endpoint or boundary values are fixed?
+    \item Which variations are therefore required to vanish?
+    \item Are the endpoint times fixed or variable?
+    \item Does the action contain higher derivatives that require additional boundary data?
+    \item If a boundary value is free, what natural boundary condition follows?
+\end{enumerate}
+
+These questions prevent one of the most common errors in variational calculations: setting a boundary term to zero without stating why.
+
+\subsection{What has been established}
+
+Boundary conditions are part of the definition of a variational problem. For fixed endpoint positions, admissible variations satisfy
+
+\[
+\delta q(t_{1})=0,
+\qquad
+\delta q(t_{2})=0.
+\]
+
+These conditions eliminate the endpoint contribution
+
+\[
+\left[
+\frac{\partial L}{\partial\dot q}\delta q
+\right]_{t_{1}}^{t_{2}}.
+\]
+
+If an endpoint is free, the boundary term does not vanish automatically and stationarity produces a natural boundary condition. The next section uses the fixed-endpoint problem to derive the Euler--Lagrange equation in full.
