@@ -1,1 +1,169 @@
 \section{What Is a Field?}
+\label{sec:what_is_a_field}
+
+A field is a way of assigning physical or mathematical information to every point of a region. The word ``field'' is familiar from phrases such as temperature field, velocity field, electric field, or gravitational field, but the common structure behind these examples is easy to miss. In each case, the question is not only ``what is the value of a quantity?'' but rather
+
+\begin{quote}
+What value does the quantity have \emph{here}, and how does that value compare with the value at nearby points?
+\end{quote}
+
+This spatial dependence is the first essential feature of a field. If the field can also change with time, then we ask the same question at every point and at every instant.
+
+\subsection{From a single quantity to a distributed quantity}
+
+Consider the temperature of a small object that is kept almost uniform. In a simple model, one number may be sufficient:
+
+\[
+T = 293\,\mathrm{K}.
+\]
+
+This number describes the whole object only because we have assumed that the temperature is approximately the same everywhere. If one end of the object is heated, that assumption is no longer reasonable. We now need a temperature value for each position. For a thin rod, we may write
+
+\[
+T = T(x,t),
+\]
+
+where \(x\) labels position along the rod and \(t\) denotes time. The symbol \(T\) still represents temperature, but it no longer denotes one number. It denotes a rule that returns a number when a position and a time are supplied.
+
+For example, suppose that at one instant the temperature along a one-metre rod is approximated by
+
+\[
+T(x)=293\,\mathrm{K}+10\,\mathrm{K\,m^{-1}}\,x,
+\qquad 0\leq x\leq 1\,\mathrm{m}.
+\]
+
+At the left end,
+
+\[
+T(0)=293\,\mathrm{K},
+\]
+
+while at \(x=0.40\,\mathrm{m}\),
+
+\[
+T(0.40\,\mathrm{m})
+=
+293\,\mathrm{K}
++
+10\,\mathrm{K\,m^{-1}}\cdot 0.40\,\mathrm{m}
+=
+297\,\mathrm{K}.
+\]
+
+The calculation is elementary, but it shows the operational meaning of the field: the formula assigns a temperature to every allowed position. A single expression contains an entire spatial distribution.
+
+\subsection{A mathematical description}
+
+Abstractly, a field may be written as a map
+
+\[
+\Phi : D \longrightarrow V.
+\]
+
+Here:
+
+\begin{itemize}
+    \item \(D\) is the domain on which the field is defined;
+    \item \(V\) is the set or space of possible field values;
+    \item \(\Phi(p)\) is the field value at the point \(p\in D\).
+\end{itemize}
+
+The domain may be a line, a surface, a region of three-dimensional space, or spacetime itself. The value space \(V\) may consist of real numbers, vectors, matrices, tensors, or more complicated objects. The distinction between these possibilities will be developed in the next section.
+
+The notation should always reveal what information the field requires. For a static field in ordinary space we may write
+
+\[
+\Phi=\Phi(\mathbf{x}),
+\]
+
+where \(\mathbf{x}=(x,y,z)\). For a time-dependent field we write
+
+\[
+\Phi=\Phi(\mathbf{x},t).
+\]
+
+Later, in relativistic notation, space and time will be combined into a spacetime point \(x^{\mu}\), and the same field may be written as \(\Phi(x^{\mu})\).
+
+\subsection{A field configuration}
+
+At a fixed time \(t=t_{0}\), the function
+
+\[
+\mathbf{x}\longmapsto \Phi(\mathbf{x},t_{0})
+\]
+
+is called a field configuration, or a snapshot of the field. It tells us the value of the field everywhere in space at that instant.
+
+This is the field-theoretic analogue of specifying the position of a particle at one instant. The important difference is that a particle position is described by finitely many numbers, whereas a field configuration requires one value at every point of the spatial domain.
+
+For a vibrating string, for example, the displacement field may be denoted by
+
+\[
+u=u(x,t).
+\]
+
+At a fixed time \(t=t_{0}\), the graph of \(u(x,t_{0})\) is the actual shape of the string at that instant. Knowing only \(u(0.5\,\mathrm{m},t_{0})\) tells us the displacement of one point, not the configuration of the whole string. To specify the complete state of the string, we need the displacement for every \(x\), and generally also its time derivative \(\partial u/\partial t\).
+
+This observation is the origin of the statement that a field has continuously many degrees of freedom. The idea will be made precise later in this chapter by comparing a field with a chain of many coupled oscillators.
+
+\subsection{A field is more than a collection of values}
+
+It is useful to distinguish a field from an arbitrary list of unrelated numbers. Physical fields are usually assumed to vary in a sufficiently regular way. Nearby points tend to have related field values, and derivatives such as
+
+\[
+\frac{\partial \Phi}{\partial x},
+\qquad
+\frac{\partial \Phi}{\partial t},
+\qquad
+\nabla \Phi
+\]
+
+carry physical information.
+
+For the temperature field, a spatial derivative measures how rapidly temperature changes from one place to another. For the displacement of a string, a spatial derivative measures the local slope, while a time derivative measures the local velocity. These derivatives allow a theory to connect the behaviour at one point with the behaviour in its neighbourhood.
+
+A field theory therefore contains more than the statement that a field exists. It also contains equations that determine how the field may vary. A typical field equation relates the value of the field and its derivatives. For example, the one-dimensional wave equation has the form
+
+\[
+\frac{\partial^{2}u}{\partial t^{2}}
+=
+c^{2}
+\frac{\partial^{2}u}{\partial x^{2}}.
+\]
+
+We will derive this equation later rather than accept it as a formula to memorize. For the moment, its structure is what matters: the acceleration of one small part of the string is related to the curvature of the string near that point.
+
+\subsection{Background fields and dynamical fields}
+
+Not every field appearing in a calculation is treated in the same way. A useful distinction is the following.
+
+A \emph{background field} is prescribed as part of the environment. We may study the motion of a charged particle in a given electric field \(\mathbf{E}(\mathbf{x},t)\) without asking how that electric field was produced.
+
+A \emph{dynamical field} is an unknown quantity whose evolution is determined by a field equation. In electrodynamics, the electromagnetic field itself becomes dynamical when Maxwell's equations are solved together with specified sources and boundary data.
+
+The same mathematical object can play either role depending on the problem. A gravitational field may be treated as a fixed background when studying a falling particle, or as a dynamical field when solving the equations of general relativity. It is therefore important to ask:
+
+\begin{quote}
+Is this field given, or is it one of the unknowns of the theory?
+\end{quote}
+
+\subsection{Fields and measurement}
+
+A field is not identified only by a symbol. Its physical meaning depends on how its values are connected with observations. A temperature field may be sampled by thermometers placed at different positions. A fluid velocity field may be inferred from the motion of small tracer particles. An electric field may be defined operationally through the force on a sufficiently small test charge.
+
+This does not mean that every useful field variable is directly observable. Potentials, for example, may contain a redundancy: different potentials can describe the same electric and magnetic fields. Such cases require care, because a mathematical variable may be indispensable for formulating the theory even when not every part of it represents an independent observable quantity.
+
+For each field introduced in this course, we will therefore ask four questions:
+
+\begin{enumerate}
+    \item On what domain is the field defined?
+    \item What kind of object is assigned to each point?
+    \item Is the field prescribed or dynamical?
+    \item How are its values connected with measurable effects?
+\end{enumerate}
+
+\subsection{What has been established}
+
+A field is a rule that assigns an appropriate value to every point of a domain. A time-dependent field assigns such values throughout space and throughout time. A configuration is the complete spatial distribution at one instant, while the full field history describes how configurations change.
+
+The essential conceptual step is the replacement of a finite list of variables by a continuously distributed quantity. The next section examines what kind of value may be attached to each point and why scalar, vector, and tensor fields must be distinguished.
