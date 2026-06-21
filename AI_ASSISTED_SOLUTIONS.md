@@ -1,33 +1,40 @@
-# AI-Assisted Problem Solving and PDF Solution Notes
+# Effective AI-Assisted Work with Mathematical Documents
 
-This repository can be used not only to store lecture notes and problem sets, but also to create complete, well-formatted solution documents with the help of an AI assistant such as ChatGPT.
+This repository can be used as a workspace for lecture notes, problem sets, worked solutions, and polished mathematical documents. An AI assistant can read selected files, discuss the mathematics, create new source files, improve explanations, and prepare a complete document structure.
 
-## Two practical ways to work
+The most effective model is usually **text first, generated output second**.
 
-### 1. Interactive work in chat
+## Text files are easy to manage
 
-A user can point the assistant to a specific file in the repository, for example a lecture chapter or a problem-set source file, and ask it to:
+Plain-text formats such as Markdown, LaTeX, Python, YAML, JSON, shell scripts, and ordinary text files are easy for AI tools and GitHub to handle. They can be read directly, edited precisely, reviewed line by line, compared in Git diffs, merged, corrected, and committed through text-oriented repository APIs.
 
-- read the relevant theory and exercises,
-- solve selected or all problems,
-- explain the reasoning step by step,
-- check calculations and assumptions,
-- prepare polished LaTeX source for the solutions.
+For mathematical documents, LaTeX is especially useful. It keeps the source readable and editable while supporting professional equations, theorem environments, references, tables, and TikZ graphics.
 
-This mode is useful for discussion, verification, and gradual development of individual solutions.
+## Binary files are less convenient
 
-### 2. Repository-aware document generation
+Files such as PDF, PNG, JPG, ZIP, and DOCX can be stored in Git, but they are harder to review, merge, and modify. A small visual change usually produces a completely new binary file, and many repository connectors accept only UTF-8 text rather than arbitrary binary data.
 
-An AI agent with access to the repository and its own execution environment can perform the complete workflow:
+An AI assistant may be able to generate a PDF in its own execution environment, but the connector available in a particular session may not support uploading that PDF directly. Direct binary commits should therefore not be treated as the default workflow.
 
-1. read `tree.txt`, `AGENTS.md`, the source chapter, and the selected problem set;
-2. create a separate solution structure without modifying the original exercises;
-3. write mathematically correct and pedagogically explained LaTeX solutions;
-4. compile the document to PDF;
-5. inspect the compilation result and correct formatting or LaTeX errors;
-6. commit the source files and, when the PDF is an intended repository output, the compiled PDF to GitHub.
+## Recommended workflow
 
-A possible structure is:
+```text
+AI or human edits text sources
+        ↓
+Git commit stores LaTeX, Markdown, scripts, and configuration
+        ↓
+GitHub Actions compiles the document
+        ↓
+PDF is published as an artifact, release asset, or committed output
+```
+
+The editable source remains the primary version of the document. The PDF is a generated presentation of that source.
+
+This approach keeps mathematical changes visible in Git history, makes builds reproducible, and avoids transferring binary files through text-only connectors. Compilation errors can also be inspected in GitHub Actions logs.
+
+## Example: worked problem solutions
+
+A user can point an AI assistant to a lecture chapter and a problem-set file. The assistant can then create a separate modular solution project without changing the original exercises.
 
 ```text
 mathematical_lectures/basic_mathematics/
@@ -42,35 +49,39 @@ mathematical_lectures/basic_mathematics/
         │   ├── problem_01.tex
         │   ├── problem_02.tex
         │   └── ...
-        └── main.pdf
+        └── figures/
 ```
 
-The exact location may be adapted to the project, but the original problem files should remain unchanged and the solutions should be kept in a clearly separated, modular structure.
+The assistant can read the relevant theory, solve the exercises, explain every important step, add checks and diagrams, keep each solution in a separate file, and commit the complete LaTeX source. A GitHub Actions workflow can then compile and publish the PDF automatically.
 
-## Expected quality of the solution documents
+A polished solution document can contain complete derivations, method selection, assumptions, domain restrictions, verification, remarks about common errors, TikZ diagrams, consistent notation, cross-references, and a professional page layout.
 
-The generated material should be more than a list of final answers. A good solution PDF should contain:
+## Possible outputs
 
-- complete reasoning and intermediate steps,
-- clear identification of the method being used,
-- explicit assumptions and domain restrictions,
-- verification of results where appropriate,
-- consistent mathematical notation,
-- real LaTeX typesetting,
-- readable theorem, remark, and solution boxes,
-- TikZ diagrams when a geometric illustration is useful,
-- a clean structure suitable for presentation, revision, or distribution.
+The same text-first workflow can produce:
 
-Temporary build files such as `.aux`, `.log`, `.out`, and `.toc` should not be committed.
+- Markdown explanations for quick review;
+- modular LaTeX notes;
+- student solution PDFs;
+- Beamer presentations;
+- temporary workflow artifacts;
+- stable release assets.
 
 ## Example instruction for an AI agent
 
 ```text
-Read the lecture chapter and the indicated problem-set file in this repository.
+Read the indicated lecture chapter and problem-set file.
 Create a separate modular LaTeX project containing complete solutions.
-Explain every important step, preserve mathematical rigor, compile the PDF,
-review the result, and commit the source files and final PDF to the correct branch.
+Commit the editable text sources to the repository.
+Use the repository build system or GitHub Actions to compile and publish the PDF.
 Do not modify the original problem set.
 ```
 
-This workflow makes it possible to move directly from repository exercises to complete, professionally formatted mathematical solution notes while keeping the source material, explanations, and final PDF under version control.
+## Practical principle
+
+```text
+Store knowledge and structure as text.
+Generate polished binary documents from that text.
+```
+
+This model allows AI assistants, human authors, Git, and GitHub Actions to work together efficiently while keeping mathematical content reviewable, reproducible, and easy to improve.
