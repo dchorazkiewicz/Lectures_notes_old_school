@@ -1,3 +1,5 @@
+[Open the GitHub repository](https://github.com/dchorazkiewicz/Lectures_notes_old_school)
+
 # Lecture PDFs
 
 This page collects direct links to the compiled lecture-note PDFs.
