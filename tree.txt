@@ -18,6 +18,7 @@
 ./README.md
 ./connector_write_read_test.md
 ./docs
+./docs/basic_mathematics_didactic_manifest.md
 ./docs/basic_mathematics_presentations.md
 ./docs/index.md
 ./mathematical_lectures
