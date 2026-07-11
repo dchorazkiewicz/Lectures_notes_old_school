@@ -1,0 +1,191 @@
+\section{Problem Set 3: Matrix Inversion}
+
+\begin{enumerate}
+\item \textbf{Problem 1}\par
+Decide whether each matrix is invertible:
+\[
+A=\begin{pmatrix}2&1\\3&4\end{pmatrix},
+\qquad
+B=\begin{pmatrix}1&2\\2&4\end{pmatrix}.
+\]
+
+\item \textbf{Problem 2}\par
+Find the inverse of
+\[
+A=\begin{pmatrix}3&1\\2&1\end{pmatrix}
+\]
+using the \(2\times2\) inverse formula.
+
+\item \textbf{Problem 3}\par
+Verify your answer to the previous problem by computing both \(AA^{-1}\) and \(A^{-1}A\).
+
+\item \textbf{Problem 4}\par
+Find the inverse of
+\[
+D=\operatorname{diag}(2,-3,5).
+\]
+
+\item \textbf{Problem 5}\par
+Find all values of \(k\) for which
+\[
+A(k)=\begin{pmatrix}
+k&1\\
+2&k
+\end{pmatrix}
+\]
+has an inverse.
+
+\item \textbf{Problem 6}\par
+Use Gauss--Jordan elimination to find the inverse of
+\[
+A=\begin{pmatrix}
+1&2\\
+3&5
+\end{pmatrix}.
+\]
+
+\item \textbf{Problem 7}\par
+Use Gauss--Jordan elimination to find the inverse of
+\[
+A=\begin{pmatrix}
+1&1&0\\
+0&1&1\\
+1&0&1
+\end{pmatrix}.
+\]
+
+\item \textbf{Problem 8}\par
+Find the adjugate of
+\[
+A=\begin{pmatrix}
+4&1\\
+2&3
+\end{pmatrix}
+\]
+and use it to compute \(A^{-1}\).
+
+\item \textbf{Problem 9}\par
+Let
+\[
+A=\begin{pmatrix}2&1\\1&1\end{pmatrix},
+\qquad
+b=\begin{pmatrix}5\\3\end{pmatrix}.
+\]
+Solve \(Ax=b\) using \(A^{-1}\).
+
+\item \textbf{Problem 10}\par
+Solve
+\[
+XA=B
+\]
+for \(X\), where
+\[
+A=\begin{pmatrix}1&1\\0&2\end{pmatrix},
+\qquad
+B=\begin{pmatrix}3&1\\4&2\end{pmatrix}.
+\]
+Pay attention to the side on which \(A^{-1}\) must be multiplied.
+
+\item \textbf{Problem 11}\par
+Solve
+\[
+2X-A=B
+\]
+for \(X\), where
+\[
+A=\begin{pmatrix}1&0\\2&-1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}3&4\\0&5\end{pmatrix}.
+\]
+
+\item \textbf{Problem 12}\par
+If
+\[
+A^{-1}=\begin{pmatrix}2&-1\\0&3\end{pmatrix}
+\quad\text{and}\quad
+B^{-1}=\begin{pmatrix}1&0\\4&2\end{pmatrix},
+\]
+find \((AB)^{-1}\).
+
+\item \textbf{Problem 13}\par
+Prove by direct multiplication that
+\[
+(A^{\mathsf T})^{-1}=(A^{-1})^{\mathsf T}
+\]
+for
+\[
+A=\begin{pmatrix}1&2\\3&5\end{pmatrix}.
+\]
+
+\item \textbf{Problem 14}\par
+Find the inverse of the elementary matrix
+\[
+E=\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+-4&0&1
+\end{pmatrix}
+\]
+and explain which row operation \(E\) represents.
+
+\item \textbf{Problem 15}\par
+A proposed inverse of
+\[
+A=\begin{pmatrix}2&-1\\1&0\end{pmatrix}
+\]
+is
+\[
+C=\begin{pmatrix}0&1\\-1&2\end{pmatrix}.
+\]
+Check whether the proposal is correct.
+
+\item \textbf{Problem 16}\par
+Explain why a matrix with two identical rows cannot have an inverse. Use both a determinant argument and an information-loss interpretation.
+
+\item \textbf{Problem 17}\par
+The transformation
+\[
+y=
+\begin{pmatrix}2&1\\1&1\end{pmatrix}x
+\]
+maps an unknown vector \(x\) to
+\[
+y=\begin{pmatrix}8\\5\end{pmatrix}.
+\]
+Recover \(x\).
+
+\item \textbf{Problem 18}\par
+Choose the most efficient method for finding the inverse of each matrix and justify the choice:
+\[
+A=\begin{pmatrix}5&0\\0&-2\end{pmatrix},
+\quad
+B=\begin{pmatrix}1&2\\3&7\end{pmatrix},
+\quad
+C=\begin{pmatrix}1&1&0\\0&1&1\\0&0&2\end{pmatrix}.
+\]
+Then compute the inverses.
+
+\item \textbf{Problem 19}\par
+Let
+\[
+A=\begin{pmatrix}
+1&a\\
+2&2a
+\end{pmatrix}.
+\]
+Explain, without attempting Gauss--Jordan elimination, why \(A^{-1}\) does not exist for any real \(a\).
+
+\item \textbf{Problem 20}\par
+For
+\[
+A=\begin{pmatrix}
+1&2\\
+3&4
+\end{pmatrix},
+\]
+find \(A^{-1}\), solve \(Ax=b\) for
+\[
+b=\begin{pmatrix}5\\11\end{pmatrix},
+\]
+and verify the solution in the original equation. Finally, explain what the inverse accomplishes conceptually.
+\end{enumerate}
