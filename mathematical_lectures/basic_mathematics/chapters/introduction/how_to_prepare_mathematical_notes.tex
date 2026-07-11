@@ -97,19 +97,60 @@ understand the solution:
     \item What should I be able to explain during class?
 \end{itemize}
 
-The final note should be written for a human reader. It should show a clear path
-from the problem to the conclusion:
-\[
-\begin{aligned}
-\text{problem}
-&\longrightarrow \text{given information}
-\longrightarrow \text{goal}
-\longrightarrow \text{method} \\
-&\longrightarrow \text{justified steps}
-\longrightarrow \text{verification}
-\longrightarrow \text{conclusion}.
-\end{aligned}
-\]
+The final note should be written for a human reader. A complete solution should
+make the following five stages visible:
+
+\begin{center}
+\begin{tikzpicture}[
+    stage/.style={
+        draw=SectionBlue,
+        rounded corners=3pt,
+        fill=AccentBlue!35,
+        text width=10.2cm,
+        minimum height=1.05cm,
+        align=center,
+        inner sep=6pt
+    },
+    centralstage/.style={
+        stage,
+        draw=ExampleGreen,
+        fill=ExampleGreenBack
+    },
+    flowarrow/.style={
+        -{Stealth[length=2.6mm]},
+        very thick,
+        draw=SubsectionBlue
+    }
+]
+\node[stage] (understand) at (0,0)
+    {\textbf{1. Understand the problem}\\
+     Record the problem, identify the given information, and state the goal.};
+
+\node[stage] (method) at (0,-1.65)
+    {\textbf{2. Choose a method}\\
+     Select the definitions, theorems, or techniques that connect the data
+     with the goal.};
+
+\node[centralstage] (argument) at (0,-3.30)
+    {\textbf{3. Construct the argument}\\
+     Carry out the necessary steps and connect formulas with sentences that
+     explain why each important transition is valid.};
+
+\node[stage] (verify) at (0,-4.95)
+    {\textbf{4. Verify the result}\\
+     Check calculations, assumptions, domain restrictions, or geometric
+     meaning whenever appropriate.};
+
+\node[stage] (conclude) at (0,-6.60)
+    {\textbf{5. State the conclusion}\\
+     Answer the original question clearly and in its proper context.};
+
+\draw[flowarrow] (understand) -- (method);
+\draw[flowarrow] (method) -- (argument);
+\draw[flowarrow] (argument) -- (verify);
+\draw[flowarrow] (verify) -- (conclude);
+\end{tikzpicture}
+\end{center}
 
 Preparing such notes is part of learning mathematics. It trains the ability to
 read notation, recognise mathematical objects, organise information, construct
