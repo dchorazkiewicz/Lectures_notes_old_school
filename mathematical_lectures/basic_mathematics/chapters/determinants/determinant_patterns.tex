@@ -1,85 +1,153 @@
-\section{Determinant patterns}
+\section{General properties and efficient calculation}
 
-A student who has just learned determinants often tries to compute every determinant by direct expansion. This is understandable, but it is not the best habit. Determinants reward attention to structure. Before expanding, we should ask what kind of matrix we are looking at.
+The recursive definition extends the determinant to every square size. The properties observed for \(2\times2\) and \(3\times3\) matrices continue to hold in arbitrary dimension.
 
-\subsection{Zeros are invitations}
+\subsection{Multilinearity and alternating behaviour}
 
-A row or column with many zeros usually tells us where to expand.
+\begin{theorembox}
+The determinant is linear in each row separately when all other rows are fixed. It is also linear in each column separately.
+\end{theorembox}
+
+If the \(i\)-th row is written as a sum \(r_i=u+v\), then
+\[
+\det(r_1,\ldots,u+v,\ldots,r_n)
+=
+\det(r_1,\ldots,u,\ldots,r_n)
++
+\det(r_1,\ldots,v,\ldots,r_n).
+\]
+If the row is multiplied by \(\lambda\), then the determinant is multiplied by \(\lambda\).
+
+\begin{theorembox}
+Exchanging two rows changes the sign of the determinant. Consequently, a matrix with two equal rows has determinant zero.
+\end{theorembox}
+
+Combining multilinearity with the equal-row property gives a stronger conclusion. If one row is a linear combination of the other rows, then the determinant is zero.
+
+For example, if
+\[
+r_3=2r_1-r_2,
+\]
+then
+\[
+\begin{aligned}
+\det(r_1,r_2,r_3)
+&=\det(r_1,r_2,2r_1-r_2)\\
+&=2\det(r_1,r_2,r_1)-\det(r_1,r_2,r_2)\\
+&=0.
+\end{aligned}
+\]
+Both terms contain repeated rows.
+
+Because \(\det(A^{\mathsf T})=\det A\), all corresponding column statements also hold.
+
+\subsection{Elementary row operations}
+
+The effect of the three elementary row operations can now be summarized.
+
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Row operation} & \textbf{Effect on the determinant}\\
+\hline
+Exchange two rows & multiply by \(-1\)\\
+Multiply one row by \(\lambda\) & multiply by \(\lambda\)\\
+Add a multiple of one row to another & no change
+\end{tabular}
+\end{center}
+
+These rules allow us to simplify a matrix while keeping track of the determinant.
 
 \begin{examplebox}
-For
+Compute
 \[
-A=\begin{pmatrix}
-2&0&1&3\\
-0&0&5&1\\
-4&0&-1&2\\
-1&7&0&6
-\end{pmatrix},
-\]
-the second column has only one non-zero entry. Expansion along that column gives
-\[
-\det A=7\det\begin{pmatrix}
-2&1&3\\
-0&5&1\\
-4&-1&2
-\end{pmatrix}.
-\]
-The matrix itself suggests an efficient first move.
-\end{examplebox}
-
-\subsection{Triangular form is a goal}
-
-Triangular matrices have easy determinants, so determinant-preserving row operations can be used to create triangular form.
-
-\begin{examplebox}
-Let
-\[
-A=\begin{pmatrix}
-1&1&2\\
-2&3&7\\
-3&5&12
+\det\begin{pmatrix}
+1&2&1\\
+2&5&3\\
+1&0&4
 \end{pmatrix}.
 \]
 Apply
 \[
 R_2\leftarrow R_2-2R_1,
 \qquad
-R_3\leftarrow R_3-3R_1,
+R_3\leftarrow R_3-R_1.
 \]
-and then
-\[
-R_3\leftarrow R_3-2R_2.
-\]
-This produces
+These operations do not change the determinant:
 \[
 \begin{pmatrix}
-1&1&2\\
-0&1&3\\
-0&0&0
+1&2&1\\
+2&5&3\\
+1&0&4
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1&2&1\\
+0&1&1\\
+0&-2&3
 \end{pmatrix}.
 \]
-Therefore \(\det A=0\), and the zero row reveals linear dependence.
+Next use
+\[
+R_3\leftarrow R_3+2R_2,
+\]
+which again leaves the determinant unchanged:
+\[
+\begin{pmatrix}
+1&2&1\\
+0&1&1\\
+0&-2&3
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1&2&1\\
+0&1&1\\
+0&0&5
+\end{pmatrix}.
+\]
+The final matrix is upper triangular, so
+\[
+\det A=1\cdot1\cdot5=5.
+\]
 \end{examplebox}
 
-\subsection{Common factors}
+\subsection{Triangular matrices}
 
-A common factor in one row or column may be taken outside the determinant. For example,
+\begin{theorembox}
+The determinant of an upper or lower triangular matrix is the product of its diagonal entries:
 \[
-\det\begin{pmatrix}
-3x&6x\\
-2&5
-\end{pmatrix}
-=3x\det\begin{pmatrix}
-1&2\\
-2&5
-\end{pmatrix}
-=3x.
+\det A=a_{11}a_{22}\cdots a_{nn}.
 \]
-Such a factor may reveal parameter values for which the determinant vanishes.
+\end{theorembox}
 
-\subsection{Vandermonde-type structure}
+This follows from Laplace expansion: the zeros force the calculation to continue through smaller triangular matrices until only the diagonal entries remain.
 
-A famous structured example is the \(3\times3\) Vandermonde determinant
+A useful consequence is that a triangular matrix has determinant zero exactly when at least one diagonal entry is zero.
+
+\subsection{Scaling the whole matrix}
+
+If every row of an \(n\times n\) matrix is multiplied by \(\lambda\), multilinearity contributes one factor of \(\lambda\) from each row. Therefore
+\[
+\det(\lambda A)=\lambda^n\det A.
+\]
+This is why the determinant is not a linear function of the whole matrix.
+
+\subsection{The determinant of a product}
+
+A further fundamental property is
+\[
+\det(AB)=\det A\det B
+\]
+for square matrices \(A\) and \(B\) of the same size.
+
+The full proof is not needed for the present calculations, but the statement is consistent with the rules already established. For diagonal matrices it is immediate: the diagonal entries multiply position by position, and so do their products.
+
+\begin{remarkbox}
+The formula \(\det(AB)=\det A\det B\) concerns matrix multiplication. It is different from entry-by-entry multiplication and should not be confused with linearity in rows or columns.
+\end{remarkbox}
+
+\subsection{A structured example}
+
+Consider the Vandermonde-type determinant
 \[
 V=\begin{pmatrix}
 1&1&1\\
@@ -87,7 +155,7 @@ x&y&z\\
 x^2&y^2&z^2
 \end{pmatrix}.
 \]
-Its factorization follows from determinant-preserving column operations. Apply
+Apply the determinant-preserving column operations
 \[
 C_2\leftarrow C_2-C_1,
 \qquad
@@ -112,42 +180,34 @@ y-x&z-x\\
 y^2-x^2&z^2-x^2
 \end{pmatrix}.
 \]
-Using
+Factor the two columns:
 \[
 y^2-x^2=(y-x)(y+x),
 \qquad
-z^2-x^2=(z-x)(z+x),
+z^2-x^2=(z-x)(z+x).
 \]
-we obtain
+Therefore
 \[
+\begin{aligned}
 \det V
-=(y-x)(z-x)
-\det\begin{pmatrix}
-1&1\\
-y+x&z+x
-\end{pmatrix}.
+&=(y-x)(z-x)
+\det\begin{pmatrix}1&1\\y+x&z+x\end{pmatrix}\\
+&=(y-x)(z-x)(z-y).
+\end{aligned}
 \]
-The remaining determinant is \(z-y\). Hence
-\[
-\boxed{\det V=(y-x)(z-x)(z-y)}.
-\]
+The factorization immediately shows when the determinant is zero: whenever two of \(x,y,z\) are equal, two columns of the original matrix are equal.
 
-The factors describe exactly when two columns become equal. For example, if \(x=y\), then the first two columns coincide and the factor \(y-x\) is zero.
-
-\subsection{Looking before expanding}
+\subsection*{What to remember}
 
 \begin{summarybox}
-Before computing a determinant, ask:
+Before computing a determinant:
 \begin{itemize}
-\item Is the matrix triangular or nearly triangular?
-\item Is there a row or column with many zeros?
-\item Are two rows or columns equal or proportional?
-\item Can determinant-preserving row or column operations create zeros?
-\item Is there a common factor in a row or column?
-\item If parameters are present, when could dependence occur?
+\item check whether rows or columns are equal, proportional, or related by a simple linear combination;
+\item look for zeros and triangular structure;
+\item decide whether row or column operations will simplify the matrix;
+\item track sign changes and extracted factors;
+\item use Laplace expansion only after choosing a useful row or column.
 \end{itemize}
+
+The determinant begins as a definition. Its mathematical content is revealed by the algebraic properties that the definition satisfies.
 \end{summarybox}
-
-\section*{What to remember}
-
-A determinant is not merely a computational ornament. It detects structural information, becomes zero when independence is lost, and changes predictably under row and column operations. Efficient calculations begin by reading the matrix before expanding it.
