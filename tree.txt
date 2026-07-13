@@ -21,7 +21,6 @@
 ./docs/basic_mathematics_didactic_manifest.md
 ./docs/basic_mathematics_presentations.md
 ./docs/index.md
-./dummy2.txt
 ./mathematical_lectures
 ./mathematical_lectures/basic_mathematics
 ./mathematical_lectures/basic_mathematics/build.sh
