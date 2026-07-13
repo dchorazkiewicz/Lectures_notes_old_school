@@ -1,217 +1,171 @@
-\section{Properties of determinants}
+\section{Properties visible in small dimensions}
 
-At this point we know how to compute determinants of small matrices, and we know a general method: Laplace expansion. But if we use Laplace expansion blindly, determinant calculations can become long and unpleasant. Mathematics is not only about having a method. It is also about knowing when a method can be simplified.
+The formulas from the previous section define the determinant. We now investigate what those formulas do. We begin with \(2\times2\) matrices because every calculation can be written explicitly. The same behaviour can also be verified from the \(3\times3\) formula.
 
-The determinant has several important properties. These properties are not just facts to memorize. They are tools for reading a matrix before calculating.
+\subsection{Linearity in one row}
 
-\subsection{Triangular matrices}
-
-A square matrix is upper triangular if all entries below the main diagonal are zero. It is lower triangular if all entries above the main diagonal are zero.
-
-For example,
+Let
 \[
-U=\begin{pmatrix}
-2&-1&4\\
-0&3&5\\
-0&0&-2
-\end{pmatrix}
+r=(a,b),\qquad s=(c,d),\qquad u=(p,q).
 \]
-is upper triangular.
+Using rows as notation, write
+\[
+\det\begin{pmatrix}r\\s\end{pmatrix}
+=\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc.
+\]
+If the first row is replaced by \(r+u\), then
+\[
+\begin{aligned}
+\det\begin{pmatrix}r+u\\s\end{pmatrix}
+&=\begin{vmatrix}a+p&b+q\\c&d\end{vmatrix}\\
+&=(a+p)d-(b+q)c\\
+&=(ad-bc)+(pd-qc)\\
+&=\det\begin{pmatrix}r\\s\end{pmatrix}
++\det\begin{pmatrix}u\\s\end{pmatrix}.
+\end{aligned}
+\]
+Similarly, for a number \(\lambda\),
+\[
+\det\begin{pmatrix}\lambda r\\s\end{pmatrix}
+=\lambda\det\begin{pmatrix}r\\s\end{pmatrix}.
+\]
+
+Thus the determinant is linear in the first row when the second row is held fixed. It is also linear in the second row when the first row is held fixed.
 
 \begin{theorembox}
-The determinant of a triangular matrix is the product of its diagonal entries.
-\[
-\det U=u_{11}u_{22}\cdots u_{nn}.
-\]
+For \(2\times2\) and \(3\times3\) determinants, the determinant is linear in each row separately and in each column separately.
 \end{theorembox}
 
-For the matrix above,
+The word \emph{separately} is essential. The determinant is not linear in the whole matrix. For a \(2\times2\) matrix,
 \[
-\det U=2\cdot3\cdot(-2)=-12.
+\det(\lambda A)=\lambda^2\det A,
 \]
-This is much faster than expanding the determinant directly.
+because both rows have been multiplied by \(\lambda\).
 
-The reason is visible from Laplace expansion. If we expand a triangular matrix along a row or column with many zeros, the determinant keeps reducing to smaller triangular matrices. Eventually only diagonal entries remain.
+\subsection{Exchanging two rows}
 
-\subsection{Swapping two rows}
-
-If two rows of a matrix are exchanged, the determinant changes sign.
-
-\begin{theorembox}
-If \(B\) is obtained from \(A\) by swapping two rows, then
+For a \(2\times2\) matrix,
 \[
-\det B=-\det A.
+\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc.
 \]
-The same is true for swapping two columns.
-\end{theorembox}
-
-For a \(2\times2\) matrix this can be checked directly:
-\[
-\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc,
-\]
-while
+After exchanging the rows,
 \[
 \det\begin{pmatrix}c&d\\a&b\end{pmatrix}=cb-da=-(ad-bc).
 \]
-The general case follows from the same alternating nature of the determinant.
+Therefore exchanging two rows changes the sign.
 
-This property explains why the sign pattern in cofactors matters. The determinant remembers orientation. Exchanging two rows reverses that orientation.
+\begin{theorembox}
+For determinants of size \(2\times2\) and \(3\times3\), exchanging two rows changes the sign of the determinant. The same is true when two columns are exchanged.
+\end{theorembox}
 
-\subsection{Equal rows and proportional rows}
+This explains the earlier calculation:
+\[
+\det\begin{pmatrix}1&2\\3&4\end{pmatrix}=-2,
+\qquad
+\det\begin{pmatrix}3&4\\1&2\end{pmatrix}=2.
+\]
 
-If two rows of a matrix are equal, then the determinant is zero.
+\subsection{Equal and proportional rows}
 
-Indeed, suppose two rows are equal. If we swap these two rows, the matrix does not change. Therefore the determinant should remain the same. But swapping two rows changes the sign of the determinant. Hence
+Suppose two rows are equal. Exchanging them does not change the matrix, but exchanging them must change the sign of the determinant. Hence
 \[
 \det A=-\det A,
 \]
-so
-\[
-2\det A=0,
-\]
-and therefore
+which gives
 \[
 \det A=0.
 \]
 
-This is a good example of a short argument. We did not compute the determinant. We used a property to force its value.
-
-If two rows are proportional, the determinant is also zero. For example,
+The same conclusion follows directly from linearity when two rows are proportional. If the second row is \(\lambda r\), then
 \[
-A=\begin{pmatrix}
-1&3&-2\\
-2&6&-4\\
-0&1&5
-\end{pmatrix}
+\det\begin{pmatrix}r\\\lambda r\end{pmatrix}
+=\lambda\det\begin{pmatrix}r\\r\end{pmatrix}=0.
 \]
-has the second row equal to twice the first row. The determinant is zero because the first two rows do not contain independent information.
-
-\begin{remarkbox}
-A determinant equal to zero often means that some hidden dependence is present. Repeated rows and proportional rows are the easiest visible cases of this phenomenon.
-\end{remarkbox}
-
-\subsection{Multiplying a row by a number}
-
-If one row of a matrix is multiplied by a number \(\lambda\), then the determinant is also multiplied by \(\lambda\).
 
 \begin{theorembox}
-If \(B\) is obtained from \(A\) by multiplying one row by \(\lambda\), then
-\[
-\det B=\lambda \det A.
-\]
-The same is true for multiplying one column by \(\lambda\).
+If two rows are equal or proportional, then the determinant is zero. The same statement holds for equal or proportional columns.
 \end{theorembox}
 
 For example,
 \[
 \det\begin{pmatrix}
-2&4\\
-3&5
-\end{pmatrix}=2\cdot5-4\cdot3=10-12=-2.
+1&2&3\\
+2&4&6\\
+0&1&5
+\end{pmatrix}=0,
 \]
-If we multiply the first row by \(3\), we get
-\[
-\det\begin{pmatrix}
-6&12\\
-3&5
-\end{pmatrix}=6\cdot5-12\cdot3=30-36=-6.
-\]
-The new determinant is three times the old one:
-\[
--6=3(-2).
-\]
-
-This property is often used when simplifying determinants or when factoring common numbers out of rows or columns.
+because the second row is twice the first row. There is no need to use Sarrus' rule.
 
 \subsection{Adding a multiple of one row to another}
 
-One of the most useful properties is the following.
+Let the rows be \(r\) and \(s\). By linearity,
+\[
+\det\begin{pmatrix}r\\s+\lambda r\end{pmatrix}
+=
+\det\begin{pmatrix}r\\s\end{pmatrix}
++
+\lambda\det\begin{pmatrix}r\\r\end{pmatrix}.
+\]
+The second determinant is zero, so
+\[
+\det\begin{pmatrix}r\\s+\lambda r\end{pmatrix}
+=
+\det\begin{pmatrix}r\\s\end{pmatrix}.
+\]
 
 \begin{theorembox}
-Adding a multiple of one row to another row does not change the determinant.
+Adding a multiple of one row to another row does not change the determinant. The same is true for columns.
 \end{theorembox}
 
-This property is extremely important because it allows us to use row operations to simplify a determinant without changing its value. It is the determinant version of a powerful idea: transform the object into a simpler one while preserving the quantity we care about.
+This property is not a separate trick. It follows from two earlier facts: linearity in one row and the vanishing of a determinant with equal rows.
 
 \begin{examplebox}
-Compute
+Let
 \[
-\det\begin{pmatrix}
-1&2&1\\
-2&5&3\\
-1&0&4
-\end{pmatrix}.
-\]
-We simplify the matrix using row operations that do not change the determinant. Replace
-\[
-R_2\leftarrow R_2-2R_1,
-\qquad
-R_3\leftarrow R_3-R_1.
+A=\begin{pmatrix}2&1\\5&3\end{pmatrix}.
 \]
 Then
 \[
-\begin{pmatrix}
-1&2&1\\
-2&5&3\\
-1&0&4
-\end{pmatrix}
+\det A=2\cdot3-1\cdot5=1.
+\]
+Replace the second row by \(R_2-2R_1\):
+\[
+\begin{pmatrix}2&1\\5&3\end{pmatrix}
 \longrightarrow
-\begin{pmatrix}
-1&2&1\\
-0&1&1\\
-0&-2&3
-\end{pmatrix}.
+\begin{pmatrix}2&1\\1&1\end{pmatrix}.
 \]
-Now replace
+The new determinant is
 \[
-R_3\leftarrow R_3+2R_2.
+2\cdot1-1\cdot1=1,
 \]
-We get
-\[
-\begin{pmatrix}
-1&2&1\\
-0&1&1\\
-0&0&5
-\end{pmatrix}.
-\]
-This matrix is upper triangular, so its determinant is the product of the diagonal entries:
-\[
-\det A=1\cdot1\cdot5=5.
-\]
+the same as before.
 \end{examplebox}
 
-This calculation is much more efficient than expanding immediately. It also demonstrates how determinant properties support intelligent computation.
+\subsection{Transposition}
 
-\subsection{The determinant of a product}
-
-Another fundamental property is
+For a \(2\times2\) matrix,
 \[
-\det(AB)=\det(A)\det(B),
+\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc
+=\det\begin{pmatrix}a&c\\b&d\end{pmatrix}.
 \]
-for square matrices \(A\) and \(B\) of the same size.
+The same equality follows from the \(3\times3\) formula.
 
-This formula says that determinants multiply under matrix multiplication. If one matrix scales area or volume by one factor and another matrix scales it by another factor, then doing both transformations multiplies the scale factors.
-
-One important consequence is immediate. If \(A\) has determinant zero, then for every compatible square matrix \(B\),
+\begin{theorembox}
+For matrices of size \(2\times2\) and \(3\times3\),
 \[
-\det(AB)=0.
+\det(A^{\mathsf T})=\det A.
 \]
-A matrix that has already collapsed structure cannot be repaired by multiplying by another matrix on one side.
+\end{theorembox}
 
-\subsection{How to use the properties}
-
-The properties of determinants are not separate tricks. They form a strategy.
+Consequently, every property stated for rows has a corresponding version for columns.
 
 \begin{summarybox}
-Before computing a determinant, ask:
+For the small determinants already defined:
 \begin{itemize}
-\item Is the matrix triangular?
-\item Are two rows or columns equal or proportional?
-\item Can I create zeros using row operations that preserve the determinant?
-\item If I swap rows, did I change the sign?
-\item If I multiply a row by a number, did I multiply the determinant by that number?
-\item Is Laplace expansion now easier after simplification?
+\item the determinant is linear in each row and column separately;
+\item exchanging two rows or columns changes the sign;
+\item equal or proportional rows or columns give determinant zero;
+\item adding a multiple of one row or column to another does not change the determinant;
+\item transposition does not change the determinant.
 \end{itemize}
 \end{summarybox}
-
-A determinant should not be expanded mechanically unless there is no better path. Often the best computation begins with looking at the matrix and asking what structure is already visible.
