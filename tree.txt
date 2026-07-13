@@ -695,4 +695,5 @@
 ./shared/macros.tex
 ./shared/preamble.tex
 ./shared/styles.tex
+./tmp_placeholder.txt
 ./tree.txt
