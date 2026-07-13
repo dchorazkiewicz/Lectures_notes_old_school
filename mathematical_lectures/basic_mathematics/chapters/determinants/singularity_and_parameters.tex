@@ -1,148 +1,146 @@
-\section{Singularity and parameters}
+\section{What a zero determinant can reveal}
 
-The determinant is especially important because of what happens when it is equal to zero. A zero determinant is not just a numerical accident. It tells us that the matrix has lost a certain kind of independence.
+A determinant equal to zero is often easier to understand than a general determinant value. In small dimensions we can connect the equation \(\det A=0\) directly with relations among rows or columns.
 
-\begin{definitionbox}
-A square matrix \(A\) is called singular if
-\[
-\det A=0.
-\]
-It is called non-singular if
-\[
-\det A\ne0.
-\]
-\end{definitionbox}
+\subsection{The \(2\times2\) case}
 
-The word ``singular'' means exceptional or special. In this context, it means that the matrix does not behave like a fully independent square matrix. Something has collapsed. Rows or columns may be dependent, the associated transformation may flatten space, or a system of equations may fail to have a unique solution.
-
-\subsection{Reading singularity from rows}
-
-Consider
-\[
-A=\begin{pmatrix}
-1&2&3\\
-2&4&6\\
-0&1&-1
-\end{pmatrix}.
-\]
-The second row is twice the first row:
-\[
-(2,4,6)=2(1,2,3).
-\]
-Therefore the rows are dependent, and the determinant is zero:
-\[
-\det A=0.
-\]
-We do not need to expand the determinant to know this. The structure is visible.
-
-This is an important habit: before calculating, inspect. Sometimes the answer is already present in the shape of the object.
-
-\subsection{A determinant as a test for invertibility}
-
-A central theorem, which will become essential in the next chapter, is the following.
-
-\begin{theorembox}
-A square matrix \(A\) is invertible if and only if
-\[
-\det A\ne0.
-\]
-Equivalently, \(A\) is non-invertible if and only if
-\[
-\det A=0.
-\]
-\end{theorembox}
-
-This theorem is one of the reasons determinants matter. It says that a single number can answer a structural question: can the matrix be reversed? If the determinant is non-zero, the matrix has not collapsed its structure, and an inverse matrix exists. If the determinant is zero, the matrix has lost information, and no inverse matrix can recover it.
-
-We will study inverse matrices in the next chapter. Here we should understand the direction of thought:
-\[
-\det A\ne0 \quad \Longrightarrow \quad \text{the matrix can be inverted},
-\]
-while
-\[
-\det A=0 \quad \Longrightarrow \quad \text{the matrix cannot be inverted}.
-\]
-
-\subsection{Matrices depending on a parameter}
-
-Determinants are often used when a matrix contains a parameter. Then the determinant becomes an expression depending on that parameter. Solving
-\[
-\det A=0
-\]
-tells us for which parameter values the matrix becomes singular.
-
-\begin{examplebox}
 Let
 \[
-A(t)=\begin{pmatrix}
-t&1\\
-4&t
-\end{pmatrix}.
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
 \]
 Then
 \[
-\det A(t)=t\cdot t-1\cdot4=t^2-4.
+\det A=0
+\quad\Longleftrightarrow\quad
+ad=bc.
 \]
-The matrix is singular when
+If the first row is non-zero, this equation implies that the second row is proportional to the first. To see this, suppose first that \(a\ne0\). Then
 \[
-t^2-4=0.
+d=\frac{bc}{a},
 \]
-Therefore
+so
 \[
-t=2 \quad \text{or} \quad t=-2.
+(c,d)=\frac{c}{a}(a,b).
 \]
-For all other values of \(t\), the matrix is non-singular.
-\end{examplebox}
+If \(a=0\), then \(b\ne0\), and the equation \(ad=bc\) gives \(c=0\). Hence
+\[
+(c,d)=\frac{d}{b}(0,b).
+\]
+If the first row is the zero row, proportionality is immediate.
 
-This example is simple, but it shows the main idea. A parameter does not merely make the computation longer. It changes the question. We are no longer asking for one determinant value. We are asking when the structure of the matrix changes.
+Thus, for \(2\times2\) matrices, determinant zero is equivalent to the rows being proportional. The same is true for the columns.
+
+\subsection{A first observation from matrix--vector multiplication}
+
+The previous chapter introduced multiplication of a matrix by a column vector. Consider a matrix whose second row is \(\lambda\) times its first row:
+\[
+A=
+\begin{pmatrix}
+a&b\\
+\lambda a&\lambda b
+\end{pmatrix}.
+\]
+For an arbitrary column vector
+\[
+x=\begin{pmatrix}u\\v\end{pmatrix},
+\]
+we obtain
+\[
+Ax=
+\begin{pmatrix}
+au+bv\\
+\lambda au+\lambda bv
+\end{pmatrix}
+=
+\begin{pmatrix}
+t\\
+\lambda t
+\end{pmatrix},
+\qquad t=au+bv.
+\]
+No matter which values of \(u\) and \(v\) are chosen, the two entries of \(Ax\) satisfy the fixed relation
+\[
+(Ax)_2=\lambda(Ax)_1.
+\]
 
 \begin{examplebox}
 Let
 \[
-B(a)=\begin{pmatrix}
-1&a&0\\
-0&1&a\\
-a&0&1
-\end{pmatrix}.
+A=\begin{pmatrix}1&2\\2&4\end{pmatrix}.
 \]
-Using Sarrus' rule,
+Then \(\det A=0\), and for every \(x=(u,v)^{\mathsf T}\),
 \[
-\det B(a)=(1\cdot1\cdot1+a\cdot a\cdot a+0\cdot0\cdot0)
--(0\cdot1\cdot a+a\cdot0\cdot1+1\cdot a\cdot0).
+Ax=
+\begin{pmatrix}u+2v\\2u+4v\end{pmatrix}
+=
+\begin{pmatrix}t\\2t\end{pmatrix}.
 \]
-Thus
-\[
-\det B(a)=1+a^3.
-\]
-The matrix is singular when
-\[
-1+a^3=0,
-\]
-so
-\[
-a=-1.
-\]
-Thus \(B(a)\) is singular only for \(a=-1\), and non-singular for all other real values of \(a\).
+The resulting columns are restricted to a single pattern: the second entry is always twice the first.
 \end{examplebox}
 
-The determinant turns a structural question about a matrix into an algebraic equation. This is one of the most useful aspects of the concept.
+This does not yet require a general theory of linear mappings. It is simply an algebraic observation obtained from matrix multiplication. It gives a first indication that determinant zero records a restriction in the possible outputs.
 
-\subsection{What should be concluded?}
+A similar phenomenon appears for three rows. If
+\[
+r_3=r_1+r_2,
+\]
+then for every column vector \(x\), the third entry of \(Ax\) is the sum of the first two entries. The output again satisfies a fixed relation.
 
-When a problem asks for parameter values for which a matrix is singular, the answer is not just a list of numbers. The reasoning has a structure:
-\begin{enumerate}
-\item compute \(\det A\) as a function of the parameter,
-\item solve the equation \(\det A=0\),
-\item interpret the roots as values where the matrix loses invertibility.
-\end{enumerate}
+\subsection{Parameters}
+
+When a matrix contains a parameter, its determinant is an expression in that parameter. The equation
+\[
+\det A(t)=0
+\]
+identifies the parameter values for which a row or column relation appears.
+
+\begin{examplebox}
+Let
+\[
+A(t)=\begin{pmatrix}t&1\\4&t\end{pmatrix}.
+\]
+Then
+\[
+\det A(t)=t^2-4=(t-2)(t+2).
+\]
+Therefore the determinant is zero for
+\[
+t=2\qquad\text{or}\qquad t=-2.
+\]
+For \(t=2\),
+\[
+A(2)=\begin{pmatrix}2&1\\4&2\end{pmatrix},
+\]
+and the second row is twice the first. For \(t=-2\),
+\[
+A(-2)=\begin{pmatrix}-2&1\\4&-2\end{pmatrix},
+\]
+and the second row is \(-2\) times the first.
+\end{examplebox}
+
+Here the roots of the determinant are not merely numbers obtained from an equation. They identify exactly when proportionality occurs.
+
+\begin{examplebox}
+Consider
+\[
+B(s)=
+\begin{pmatrix}
+1&0&1\\
+0&1&1\\
+1&s&2
+\end{pmatrix}.
+\]
+Using the \(3\times3\) formula,
+\[
+\det B(s)=1-s.
+\]
+Thus \(\det B(s)=0\) when \(s=1\). At that value,
+\[
+(1,1,2)=(1,0,1)+(0,1,1),
+\]
+so the third row is the sum of the first two rows.
+\end{examplebox}
 
 \begin{summarybox}
-The determinant separates square matrices into two broad classes.
-\begin{itemize}
-\item If \(\det A\ne0\), the matrix is non-singular and invertible.
-\item If \(\det A=0\), the matrix is singular and not invertible.
-\item If \(A\) depends on a parameter, the equation \(\det A=0\) identifies the exceptional parameter values.
-\end{itemize}
+When a determinant is zero, first look for a relation among rows or columns. With parameters, solve \(\det A=0\) and then inspect what relation appears at the exceptional values.
 \end{summarybox}
-
-This prepares the next chapter. Once we know how to detect whether a matrix is invertible, we can ask a new question: if the inverse exists, how do we find it?
