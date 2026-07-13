@@ -1,154 +1,386 @@
 \section{Properties visible in small dimensions}
 
-The formulas from the previous section define the determinant. We now investigate what those formulas do. We begin with \(2\times2\) matrices because every calculation can be written explicitly. The same behaviour can also be verified from the \(3\times3\) formula.
+The formulas from the previous section define determinants of size \(2\times2\) and \(3\times3\). We now use those formulas to prove several properties. At this stage the order of the argument is important:
+\begin{enumerate}
+\item write the matrix after the proposed operation;
+\item apply the determinant formula;
+\item expand all brackets;
+\item group the terms;
+\item recognize determinants that have already been defined;
+\item only then state the general conclusion.
+\end{enumerate}
 
-\subsection{Linearity in one row}
+The calculations below are deliberately written in full. They are models for the kind of reasoning that should appear in a complete solution.
+
+\subsection{Linearity in one row for \(2\times2\) matrices}
 
 Let
 \[
-r=(a,b),\qquad s=(c,d),\qquad u=(p,q).
+r=(a,b),\qquad u=(p,q),\qquad s=(c,d).
 \]
-Using rows as notation, write
+We first add the two possible first rows:
 \[
-\det\begin{pmatrix}r\\s\end{pmatrix}
-=\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc.
+r+u=(a+p,b+q).
 \]
-If the first row is replaced by \(r+u\), then
+The matrix with first row \(r+u\) and second row \(s\) is therefore
+\[
+\begin{pmatrix}
+a+p&b+q\\
+c&d
+\end{pmatrix}.
+\]
+Using the definition of a \(2\times2\) determinant, we obtain
 \[
 \begin{aligned}
-\det\begin{pmatrix}r+u\\s\end{pmatrix}
-&=\begin{vmatrix}a+p&b+q\\c&d\end{vmatrix}\\
+\det\begin{pmatrix}a+p&b+q\\c&d\end{pmatrix}
 &=(a+p)d-(b+q)c\\
+&=ad+pd-bc-qc\\
 &=(ad-bc)+(pd-qc)\\
-&=\det\begin{pmatrix}r\\s\end{pmatrix}
-+\det\begin{pmatrix}u\\s\end{pmatrix}.
+&=\det\begin{pmatrix}a&b\\c&d\end{pmatrix}
+ +\det\begin{pmatrix}p&q\\c&d\end{pmatrix}.
 \end{aligned}
 \]
-Similarly, for a number \(\lambda\),
+Thus addition in the first row becomes addition of determinants:
+\[
+\det\begin{pmatrix}r+u\\s\end{pmatrix}
+=
+\det\begin{pmatrix}r\\s\end{pmatrix}
++
+\det\begin{pmatrix}u\\s\end{pmatrix}.
+\]
+
+Now multiply the first row by a number \(\lambda\). The new first row is
+\[
+\lambda r=(\lambda a,\lambda b).
+\]
+Again we apply the definition:
+\[
+\begin{aligned}
+\det\begin{pmatrix}\lambda a&\lambda b\\c&d\end{pmatrix}
+&=(\lambda a)d-(\lambda b)c\\
+&=\lambda ad-\lambda bc\\
+&=\lambda(ad-bc)\\
+&=\lambda\det\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\end{aligned}
+\]
+Therefore scalar multiplication in one row produces the same scalar multiplication of the determinant:
 \[
 \det\begin{pmatrix}\lambda r\\s\end{pmatrix}
-=\lambda\det\begin{pmatrix}r\\s\end{pmatrix}.
+=
+\lambda\det\begin{pmatrix}r\\s\end{pmatrix}.
 \]
 
-Thus the determinant is linear in the first row when the second row is held fixed. It is also linear in the second row when the first row is held fixed.
+The same calculation must also be checked for the second row. Let
+\[
+s+u=(c+p,d+q).
+\]
+Then
+\[
+\begin{aligned}
+\det\begin{pmatrix}a&b\\c+p&d+q\end{pmatrix}
+&=a(d+q)-b(c+p)\\
+&=ad+aq-bc-bp\\
+&=(ad-bc)+(aq-bp)\\
+&=\det\begin{pmatrix}a&b\\c&d\end{pmatrix}
+ +\det\begin{pmatrix}a&b\\p&q\end{pmatrix}.
+\end{aligned}
+\]
+Likewise,
+\[
+\begin{aligned}
+\det\begin{pmatrix}a&b\\\lambda c&\lambda d\end{pmatrix}
+&=a(\lambda d)-b(\lambda c)\\
+&=\lambda ad-\lambda bc\\
+&=\lambda(ad-bc)\\
+&=\lambda\det\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\end{aligned}
+\]
 
 \begin{theorembox}
-For \(2\times2\) and \(3\times3\) determinants, the determinant is linear in each row separately and in each column separately.
+For a \(2\times2\) determinant, the determinant is linear in each row separately when the other row is fixed.
 \end{theorembox}
 
-The word \emph{separately} is essential. The determinant is not linear in the whole matrix. For a \(2\times2\) matrix,
+The word \emph{separately} is essential. If every entry of a \(2\times2\) matrix is multiplied by \(\lambda\), then both rows are multiplied by \(\lambda\). Applying the row-scaling property twice gives
 \[
-\det(\lambda A)=\lambda^2\det A,
+\begin{aligned}
+\det(\lambda A)
+&=\lambda\cdot\lambda\det A\\
+&=\lambda^2\det A.
+\end{aligned}
 \]
-because both rows have been multiplied by \(\lambda\).
+Thus the determinant is not linear as a function of the whole matrix.
+
+\subsection{A \(3\times3\) check of linearity}
+
+For a \(3\times3\) matrix, linearity can also be seen directly from the six-term formula. Consider
+\[
+A=\begin{pmatrix}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{pmatrix}
+\]
+and replace its first row by the sum
+\[
+(a,b,c)+(p,q,r)=(a+p,b+q,c+r).
+\]
+Then
+\[
+\begin{aligned}
+&\det\begin{pmatrix}
+a+p&b+q&c+r\\
+d&e&f\\
+g&h&i
+\end{pmatrix}\\
+&=(a+p)ei+(b+q)fg+(c+r)dh
+ -(c+r)eg-(b+q)di-(a+p)fh\\
+&=aei+pei+bfg+qfg+cdh+rdh
+ -ceg-reg-bdi-qdi-afh-pfh\\
+&=(aei+bfg+cdh-ceg-bdi-afh)\\
+&\qquad +(pei+qfg+rdh-reg-qdi-pfh)\\
+&=\det\begin{pmatrix}
+a&b&c\\d&e&f\\g&h&i
+\end{pmatrix}
++
+\det\begin{pmatrix}
+p&q&r\\d&e&f\\g&h&i
+\end{pmatrix}.
+\end{aligned}
+\]
+Every term coming from \(a,b,c\) forms the first determinant, and every term coming from \(p,q,r\) forms the second determinant. This is the same mechanism as in the \(2\times2\) case, only with more terms.
+
+\begin{theorembox}
+For the \(2\times2\) and \(3\times3\) determinants already defined, the determinant is linear in each row separately. The corresponding statement for columns will follow from transposition.
+\end{theorembox}
 
 \subsection{Exchanging two rows}
 
-For a \(2\times2\) matrix,
+Start with
 \[
-\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc.
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
 \]
-After exchanging the rows,
+Its determinant is
 \[
-\det\begin{pmatrix}c&d\\a&b\end{pmatrix}=cb-da=-(ad-bc).
+\det A=ad-bc.
 \]
-Therefore exchanging two rows changes the sign.
+After exchanging the two rows we obtain
+\[
+B=\begin{pmatrix}c&d\\a&b\end{pmatrix}.
+\]
+Now compute the new determinant from the definition:
+\[
+\begin{aligned}
+\det B
+&=cb-da\\
+&=bc-ad\\
+&=-(ad-bc)\\
+&=-\det A.
+\end{aligned}
+\]
+The sign change is therefore a consequence of the formula, not an additional convention.
 
 \begin{theorembox}
-For determinants of size \(2\times2\) and \(3\times3\), exchanging two rows changes the sign of the determinant. The same is true when two columns are exchanged.
+For a \(2\times2\) determinant, exchanging the two rows changes the sign of the determinant.
 \end{theorembox}
 
-This explains the earlier calculation:
+For \(3\times3\) determinants the calculation is longer but follows the same pattern. If the first two rows are exchanged, then
 \[
-\det\begin{pmatrix}1&2\\3&4\end{pmatrix}=-2,
-\qquad
-\det\begin{pmatrix}3&4\\1&2\end{pmatrix}=2.
+\begin{aligned}
+\det\begin{pmatrix}
+d&e&f\\a&b&c\\g&h&i
+\end{pmatrix}
+&=dbi+ecg+fah-fbg-eai-dch\\
+&=bdi+ceg+afh-bfg-aei-cdh\\
+&=-(aei+bfg+cdh-ceg-bdi-afh).
+\end{aligned}
+\]
+Hence this row exchange also multiplies the determinant by \(-1\).
+
+\subsection{Equal rows give determinant zero}
+
+Suppose a \(2\times2\) matrix has two equal rows:
+\[
+A=\begin{pmatrix}a&b\\a&b\end{pmatrix}.
+\]
+Applying the definition directly gives
+\[
+\begin{aligned}
+\det A
+&=ab-ba\\
+&=0.
+\end{aligned}
 \]
 
-\subsection{Equal and proportional rows}
-
-Suppose two rows are equal. Exchanging them does not change the matrix, but exchanging them must change the sign of the determinant. Hence
+There is also a second argument using the row-exchange property. Exchanging the two equal rows does not change the matrix, so the determinant should remain \(\det A\). On the other hand, every row exchange changes the sign, so the same operation gives \(-\det A\). Therefore
 \[
-\det A=-\det A,
+\det A=-\det A.
 \]
-which gives
+Adding \(\det A\) to both sides gives
+\[
+2\det A=0,
+\]
+and hence
 \[
 \det A=0.
 \]
 
-The same conclusion follows directly from linearity when two rows are proportional. If the second row is \(\lambda r\), then
+\subsection{Proportional rows give determinant zero}
+
+Let the second row be \(\lambda\) times the first row:
 \[
-\det\begin{pmatrix}r\\\lambda r\end{pmatrix}
-=\lambda\det\begin{pmatrix}r\\r\end{pmatrix}=0.
+A=\begin{pmatrix}
+a&b\\
+\lambda a&\lambda b
+\end{pmatrix}.
+\]
+A direct calculation gives
+\[
+\begin{aligned}
+\det A
+&=a(\lambda b)-b(\lambda a)\\
+&=\lambda ab-\lambda ab\\
+&=0.
+\end{aligned}
 \]
 
+The same conclusion can be obtained from linearity. Write the rows as \(r\) and \(\lambda r\). Then
+\[
+\begin{aligned}
+\det\begin{pmatrix}r\\\lambda r\end{pmatrix}
+&=\lambda\det\begin{pmatrix}r\\r\end{pmatrix}\\
+&=\lambda\cdot0\\
+&=0.
+\end{aligned}
+\]
+The second line uses the result already proved for equal rows.
+
 \begin{theorembox}
-If two rows are equal or proportional, then the determinant is zero. The same statement holds for equal or proportional columns.
+If two rows of a \(2\times2\) or \(3\times3\) matrix are equal or proportional, then the determinant is zero.
 \end{theorembox}
 
-For example,
+\begin{examplebox}
+Consider
 \[
-\det\begin{pmatrix}
+A=\begin{pmatrix}
 1&2&3\\
 2&4&6\\
 0&1&5
-\end{pmatrix}=0,
+\end{pmatrix}.
 \]
-because the second row is twice the first row. There is no need to use Sarrus' rule.
+The second row is twice the first row. To display the reasoning completely, write
+\[
+R_2=2R_1.
+\]
+By linearity in the second row,
+\[
+\begin{aligned}
+\det(R_1,R_2,R_3)
+&=\det(R_1,2R_1,R_3)\\
+&=2\det(R_1,R_1,R_3)\\
+&=2\cdot0\\
+&=0.
+\end{aligned}
+\]
+There is no need to use Sarrus' rule.
+\end{examplebox}
 
 \subsection{Adding a multiple of one row to another}
 
-Let the rows be \(r\) and \(s\). By linearity,
+Let the two rows be
 \[
-\det\begin{pmatrix}r\\s+\lambda r\end{pmatrix}
-=
-\det\begin{pmatrix}r\\s\end{pmatrix}
-+
-\lambda\det\begin{pmatrix}r\\r\end{pmatrix}.
+r=(a,b),\qquad s=(c,d).
 \]
-The second determinant is zero, so
+Replace the second row by
 \[
-\det\begin{pmatrix}r\\s+\lambda r\end{pmatrix}
-=
-\det\begin{pmatrix}r\\s\end{pmatrix}.
+s+\lambda r=(c+\lambda a,d+\lambda b).
 \]
+We first verify the result directly from the \(2\times2\) formula:
+\[
+\begin{aligned}
+\det\begin{pmatrix}
+a&b\\
+c+\lambda a&d+\lambda b
+\end{pmatrix}
+&=a(d+\lambda b)-b(c+\lambda a)\\
+&=ad+\lambda ab-bc-\lambda ab\\
+&=ad-bc\\
+&=\det\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\end{aligned}
+\]
+The two new terms, \(\lambda ab\) and \(-\lambda ab\), cancel.
+
+Now express the same calculation using the previously proved properties:
+\[
+\begin{aligned}
+\det\begin{pmatrix}r\\s+\lambda r\end{pmatrix}
+&=\det\begin{pmatrix}r\\s\end{pmatrix}
+ +\det\begin{pmatrix}r\\\lambda r\end{pmatrix}\\
+&=\det\begin{pmatrix}r\\s\end{pmatrix}
+ +\lambda\det\begin{pmatrix}r\\r\end{pmatrix}\\
+&=\det\begin{pmatrix}r\\s\end{pmatrix}
+ +\lambda\cdot0\\
+&=\det\begin{pmatrix}r\\s\end{pmatrix}.
+\end{aligned}
+\]
+Each equality uses one previously established fact: first additivity, then homogeneity, then the zero determinant for equal rows.
 
 \begin{theorembox}
-Adding a multiple of one row to another row does not change the determinant. The same is true for columns.
+Adding a multiple of one row to another row does not change the determinant. The same result holds for the small \(3\times3\) determinant.
 \end{theorembox}
-
-This property is not a separate trick. It follows from two earlier facts: linearity in one row and the vanishing of a determinant with equal rows.
 
 \begin{examplebox}
 Let
 \[
 A=\begin{pmatrix}2&1\\5&3\end{pmatrix}.
 \]
-Then
+First calculate the original determinant:
 \[
-\det A=2\cdot3-1\cdot5=1.
+\det A=2\cdot3-1\cdot5=6-5=1.
 \]
-Replace the second row by \(R_2-2R_1\):
+Now perform
 \[
-\begin{pmatrix}2&1\\5&3\end{pmatrix}
-\longrightarrow
+R_2\leftarrow R_2-2R_1.
+\]
+The new second row is calculated entry by entry:
+\[
+(5,3)-2(2,1)=(5,3)-(4,2)=(1,1).
+\]
+Thus
+\[
+A\longrightarrow
 \begin{pmatrix}2&1\\1&1\end{pmatrix}.
 \]
-The new determinant is
+The determinant of the new matrix is
 \[
-2\cdot1-1\cdot1=1,
+2\cdot1-1\cdot1=2-1=1.
 \]
-the same as before.
+The value has not changed, exactly as the theorem predicts.
 \end{examplebox}
 
-\subsection{Transposition}
+\subsection{Transposition and column properties}
 
-For a \(2\times2\) matrix,
+Let
 \[
-\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc
-=\det\begin{pmatrix}a&c\\b&d\end{pmatrix}.
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
 \]
-The same equality follows from the \(3\times3\) formula.
+Then
+\[
+A^{\mathsf T}=\begin{pmatrix}a&c\\b&d\end{pmatrix}.
+\]
+Compute both determinants:
+\[
+\det A=ad-bc,
+\]
+and
+\[
+\begin{aligned}
+\det(A^{\mathsf T})
+&=ad-cb\\
+&=ad-bc\\
+&=\det A.
+\end{aligned}
+\]
+The middle equality uses the commutativity of multiplication of ordinary numbers: \(cb=bc\).
 
 \begin{theorembox}
 For matrices of size \(2\times2\) and \(3\times3\),
@@ -157,15 +389,19 @@ For matrices of size \(2\times2\) and \(3\times3\),
 \]
 \end{theorembox}
 
-Consequently, every property stated for rows has a corresponding version for columns.
+Transposition changes rows into columns. Therefore every row statement proved above has a corresponding column statement. For example, if two columns are proportional, transpose the matrix. The proportional columns become proportional rows, the transposed determinant is zero, and hence the original determinant is also zero.
+
+\subsection*{Order of the argument}
 
 \begin{summarybox}
-For the small determinants already defined:
-\begin{itemize}
-\item the determinant is linear in each row and column separately;
-\item exchanging two rows or columns changes the sign;
-\item equal or proportional rows or columns give determinant zero;
-\item adding a multiple of one row or column to another does not change the determinant;
-\item transposition does not change the determinant.
-\end{itemize}
+The properties were not introduced as unrelated rules. They were established in a specific order:
+\begin{enumerate}
+\item the explicit determinant formula gives linearity in one row;
+\item the formula also shows that a row exchange changes the sign;
+\item the sign change gives determinant zero for equal rows;
+\item linearity and the equal-row case give determinant zero for proportional rows;
+\item linearity and the equal-row case show that adding a multiple of one row to another does not change the determinant;
+\item transposition transfers all row statements to columns.
+\end{enumerate}
+When proving a determinant property, write every algebraic step and state which earlier result is used.
 \end{summarybox}
