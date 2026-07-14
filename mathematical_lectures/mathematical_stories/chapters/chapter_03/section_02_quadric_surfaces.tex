@@ -1,0 +1,222 @@
+\section{Second-Degree Surfaces in Three-Dimensional Space}
+
+The three-dimensional analogue of a conic section is a \emph{quadric surface}.
+Instead of an equation in two coordinates, we now allow a second-degree equation
+in three coordinates.
+
+\begin{definitionbox}
+A second-degree equation in $\mathbb{R}^3$ has the form
+\[
+Ax^2+By^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz+J=0,
+\]
+where at least one quadratic coefficient is nonzero. Its solution set is called
+a quadric surface when it forms a non-degenerate surface.
+\end{definitionbox}
+
+Translations move the centre or vertex of the surface. Rotations of the
+coordinate system remove mixed terms such as $xy$, $xz$, and $yz$. After these
+changes of coordinates, the principal quadric surfaces have simple standard
+forms.
+
+\subsection{Ellipsoid}
+
+An ellipsoid centred at the origin has equation
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\qquad a,b,c>0.
+\]
+Its intersections with the coordinate planes are ellipses. When
+$a=b=c=r$, the ellipsoid becomes the sphere
+\[
+x^2+y^2+z^2=r^2.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
+    \draw[axis] (0,-2.8) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.8,-1.4) node[below left] {$y$};
+    \draw[subset] (0,0) ellipse (2.8 and 1.7);
+    \draw[subset,dashed] (0,0) ellipse (1.0 and 1.7);
+    \draw[subset] (0,-1.7) arc[start angle=-90,end angle=90,x radius=1.0,y radius=1.7];
+    \draw[subset,dashed] (0,1.7) arc[start angle=90,end angle=270,x radius=1.0,y radius=1.7];
+\end{tikzpicture}
+\end{center}
+
+\subsection{Elliptic Paraboloid}
+
+An elliptic paraboloid has standard equation
+\[
+z=\frac{x^2}{a^2}+\frac{y^2}{b^2},
+\qquad a,b>0.
+\]
+Horizontal sections $z=k>0$ are ellipses, while vertical sections through the
+$z$-axis are parabolas. The surface has one vertex and opens in one direction.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,4.6) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.7,-1.3) node[below left] {$y$};
+    \draw[subset,domain=-2.2:2.2,samples=100] plot (\x,{0.72*\x*\x});
+    \draw[subset] (0,1.1) ellipse (1.25 and 0.42);
+    \draw[subset] (0,2.4) ellipse (1.85 and 0.62);
+    \draw[subset] (0,3.8) ellipse (2.35 and 0.78);
+    \fill[geometricSubsetColor] (0,0) circle (2pt) node[below right] {vertex};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Hyperbolic Paraboloid}
+
+A hyperbolic paraboloid has standard equation
+\[
+z=\frac{x^2}{a^2}-\frac{y^2}{b^2}.
+\]
+Sections parallel to the $xz$-plane and $yz$-plane are parabolas opening in
+opposite directions. Horizontal sections are hyperbolas, except at $z=0$, where
+the section consists of two intersecting lines. The surface is commonly called
+a saddle.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+    \draw[axis] (0,-2.6) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-2.0,-1.5) node[below left] {$y$};
+    \draw[subset,domain=-2.4:2.4,samples=100] plot (\x,{0.42*\x*\x});
+    \draw[subset,domain=-2.2:2.2,samples=100] plot ({0.8*\x},{-0.42*\x*\x});
+    \draw[helper] (-2.3,-1.15) -- (2.3,1.15);
+    \draw[helper] (-2.3,1.15) -- (2.3,-1.15);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Hyperboloid of One Sheet}
+
+A hyperboloid of one sheet has standard equation
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.
+\]
+Horizontal sections are ellipses. Vertical sections through the $z$-axis are
+hyperbolas. The surface is connected and has a narrow central waist.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
+    \draw[axis] (0,-3.3) -- (0,3.5) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.8,-1.4) node[below left] {$y$};
+    \draw[subset] (0,0) ellipse (1.35 and 0.45);
+    \draw[subset] (0,2.2) ellipse (2.15 and 0.72);
+    \draw[subset] (0,-2.2) ellipse (2.15 and 0.72);
+    \draw[subset] (-1.35,0) .. controls (-1.55,1.0) and (-1.9,1.7) .. (-2.15,2.2);
+    \draw[subset] (1.35,0) .. controls (1.55,1.0) and (1.9,1.7) .. (2.15,2.2);
+    \draw[subset] (-1.35,0) .. controls (-1.55,-1.0) and (-1.9,-1.7) .. (-2.15,-2.2);
+    \draw[subset] (1.35,0) .. controls (1.55,-1.0) and (1.9,-1.7) .. (2.15,-2.2);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Hyperboloid of Two Sheets}
+
+A hyperboloid of two sheets has standard equation
+\[
+-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1.
+\]
+The condition forces $|z|\ge c$, so the surface has two disconnected parts.
+Horizontal sections are ellipses, while suitable vertical sections are
+hyperbolas.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-4.0) -- (0,4.2) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.6,-1.2) node[below left] {$y$};
+    \draw[subset] (0,1.5) ellipse (0.75 and 0.25);
+    \draw[subset] (0,3.0) ellipse (1.75 and 0.58);
+    \draw[subset] (-0.75,1.5) .. controls (-1.0,2.0) and (-1.45,2.6) .. (-1.75,3.0);
+    \draw[subset] (0.75,1.5) .. controls (1.0,2.0) and (1.45,2.6) .. (1.75,3.0);
+    \draw[subset] (0,-1.5) ellipse (0.75 and 0.25);
+    \draw[subset] (0,-3.0) ellipse (1.75 and 0.58);
+    \draw[subset] (-0.75,-1.5) .. controls (-1.0,-2.0) and (-1.45,-2.6) .. (-1.75,-3.0);
+    \draw[subset] (0.75,-1.5) .. controls (1.0,-2.0) and (1.45,-2.6) .. (1.75,-3.0);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Elliptic Cone}
+
+An elliptic cone has equation
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0.
+\]
+It consists of two nappes meeting at the origin. Horizontal sections away from
+the origin are ellipses. Vertical sections through the axis are pairs of
+intersecting lines.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-3.5) -- (0,3.7) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.6,-1.2) node[below left] {$y$};
+    \draw[subset] (0,0) -- (-2.2,2.8);
+    \draw[subset] (0,0) -- (2.2,2.8);
+    \draw[subset] (0,0) -- (-2.2,-2.8);
+    \draw[subset] (0,0) -- (2.2,-2.8);
+    \draw[subset] (0,2.8) ellipse (2.2 and 0.72);
+    \draw[subset] (0,-2.8) ellipse (2.2 and 0.72);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Cylinders as Second-Degree Surfaces}
+
+If one coordinate does not occur in the equation, the corresponding planar
+curve is extended parallel to that coordinate axis. For example,
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+\]
+describes an elliptic cylinder parallel to the $z$-axis, while
+\[
+y=x^2
+\]
+describes a parabolic cylinder parallel to the $z$-axis.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-2.7) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.7,-1.3) node[below left] {$y$};
+    \draw[subset] (0,1.8) ellipse (1.8 and 0.65);
+    \draw[subset] (0,-1.8) ellipse (1.8 and 0.65);
+    \draw[subset] (-1.8,1.8) -- (-1.8,-1.8);
+    \draw[subset] (1.8,1.8) -- (1.8,-1.8);
+    \draw[subset,dashed] (0,1.8) arc[start angle=0,end angle=180,x radius=1.8,y radius=0.65];
+    \draw[subset,dashed] (0,-1.8) arc[start angle=180,end angle=360,x radius=1.8,y radius=0.65];
+\end{tikzpicture}
+\end{center}
+
+\subsection{Degenerate Quadrics}
+
+As in the planar case, a second-degree equation in three variables may be
+degenerate. It may describe a point, a line, a plane, two planes, or no real
+points. For example,
+\[
+x^2+y^2+z^2=0
+\]
+describes only the origin, while
+\[
+x^2-y^2=0
+\]
+factors as
+\[
+(x-y)(x+y)=0
+\]
+and therefore describes the union of the two planes
+\[
+x-y=0
+\qquad\text{and}\qquad
+x+y=0.
+\]
+
+\begin{summarybox}
+Second-degree equations in three variables produce quadric surfaces. After
+translations and rotations, the main non-degenerate types are ellipsoids,
+elliptic and hyperbolic paraboloids, hyperboloids of one or two sheets, and
+elliptic cones. Equations missing one coordinate give cylinders, while
+factorisation may reveal degenerate unions of planes or smaller sets.
+\end{summarybox}
