@@ -1,22 +1,23 @@
 \section{Points, Coordinates, and the Euclidean Plane}
 
-Before using coordinates for geometry, we must distinguish three different
+Before using coordinates for geometry, we must distinguish four different
 objects:
 
 \begin{enumerate}
     \item the set of ordered pairs of real numbers;
     \item a coordinate interpretation of those pairs;
-    \item the additional rule that measures distance between pairs.
+    \item a rule that measures distance between pairs;
+    \item geometric notions, such as length, circle, angle, and perpendicularity,
+          defined relative to the chosen structure.
 \end{enumerate}
 
-These are related, but they are not the same thing.  In particular, the set
-$\mathbb{R}^2$ by itself does not yet contain a notion of length, angle,
-perpendicularity, or circle.
+These objects are related, but they are not identical. In particular, the bare
+set $\mathbb{R}^2$ contains neither distances nor angles.
 
 \subsection{The Set of Ordered Pairs}
 
 \begin{definitionbox}
-The Cartesian product of two copies of the real line is the set
+The Cartesian product of two copies of the real line is
 \[
 \mathbb{R}^2
 =
@@ -31,15 +32,13 @@ The word \emph{ordered} is essential:
 \[
 (2,5)\neq(5,2).
 \]
-At this stage, however, an element $(x,y)$ is only an ordered pair.  The two
-numbers could represent any two measured quantities.  Nothing in the set
-$\mathbb{R}^2$ alone says that the first number is horizontal position, that the
-second is vertical position, or that the two directions are perpendicular.
+At this stage, $(x,y)$ is only an ordered pair. Nothing in the set
+$\mathbb{R}^2$ alone says that $x$ is horizontal position, that $y$ is vertical
+position, or that the two directions are perpendicular.
 
 \begin{remarkbox}
-The notation $\mathbb{R}^2$ specifies which objects are present, but not how
-distances between them are measured.  A set and a geometry placed on that set
-must not be confused.
+A set specifies which objects exist. It does not, by itself, specify how far
+apart they are, which curves are circles, or what an angle means.
 \end{remarkbox}
 
 \subsection{A Coordinate Interpretation}
@@ -52,20 +51,18 @@ coincide.
 \begin{tikzpicture}[scale=0.9]
     \draw[axis] (-4.5,0) -- (4.7,0) node[right] {$x$};
     \draw[axis] (0,-3.5) -- (0,3.7) node[above] {$y$};
-
     \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
         \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {\small $\x$};
     }
     \foreach \y in {-3,-2,-1,1,2,3} {
         \draw (0.08,\y) -- (-0.08,\y) node[left=3pt] {\small $\y$};
     }
-
     \node[below left=2pt] at (0,0) {$0$};
 \end{tikzpicture}
 \end{center}
 
-The horizontal copy is called the $x$-axis and the vertical copy is called the
-$y$-axis.  Their common zero is the origin,
+The horizontal copy is the $x$-axis, the vertical copy is the $y$-axis, and
+their common zero is the origin
 \[
 O=(0,0).
 \]
@@ -75,50 +72,20 @@ Under this coordinate interpretation, the ordered pair
 \[
 P=(x,y)
 \]
-labels the point reached by moving to the position $x$ along the horizontal
-axis and to the position $y$ along the vertical axis.  The numbers $x$ and $y$
-are called the coordinates of $P$.
+labels the point reached by taking position $x$ on the horizontal axis and
+position $y$ on the vertical axis. The numbers $x$ and $y$ are called the
+coordinates of $P$.
 \end{definitionbox}
 
-This is an interpretation imposed on the ordered pairs.  It gives a
-correspondence
+This interpretation gives a correspondence
 \[
 \text{coordinate point}
 \quad\longleftrightarrow\quad
 \text{ordered pair in }\mathbb{R}^2.
 \]
-It still does not, by itself, define the distance between two points.
+It still does not define distance or angle.
 
-Consider
-\[
-P=(3,2).
-\]
-The coordinate construction places this point three units to the right of the
-origin and two units above it.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[axis] (-1.2,0) -- (5.0,0) node[right] {$x$};
-    \draw[axis] (0,-1.2) -- (0,4.0) node[above] {$y$};
-
-    \foreach \x in {-1,1,2,3,4} {
-        \draw (\x,0.07) -- (\x,-0.07) node[below=3pt] {\small $\x$};
-    }
-    \foreach \y in {-1,1,2,3} {
-        \draw (0.07,\y) -- (-0.07,\y) node[left=3pt] {\small $\y$};
-    }
-
-    \draw[helper] (3,0) -- (3,2);
-    \draw[helper] (0,2) -- (3,2);
-    \fill (3,2) circle (2.2pt);
-    \node[above right] at (3,2) {$P=(3,2)$};
-\end{tikzpicture}
-\end{center}
-
-The dashed lines are auxiliary.  They show how the two coordinates are read;
-they are not part of the point.
-
-\subsection{Distance: the Additional Geometric Structure}
+\subsection{Distance: Additional Geometric Structure}
 
 Let
 \[
@@ -126,17 +93,16 @@ P=(x_1,y_1),
 \qquad
 Q=(x_2,y_2).
 \]
-Their horizontal and vertical coordinate changes are
+Write
 \[
 \Delta x=x_2-x_1,
 \qquad
 \Delta y=y_2-y_1.
 \]
-The coordinate differences form the legs of a right triangle.  The
-Pythagorean theorem therefore motivates the following rule.
+The Pythagorean relation motivates the Euclidean distance.
 
 \begin{definitionbox}
-The Euclidean distance between $P=(x_1,y_1)$ and $Q=(x_2,y_2)$ is
+The Euclidean distance between $P$ and $Q$ is
 \[
 d_E(P,Q)
 =
@@ -163,26 +129,11 @@ d_E(P,Q)
 
 The defining relation is
 \[
-\boxed{
- d_E(P,Q)^2
- =
- (\Delta x)^2+(\Delta y)^2
-}.
+\boxed{d_E(P,Q)^2=(\Delta x)^2+(\Delta y)^2}.
 \]
-
-\begin{examplebox}
-For $P=(0,0)$ and $Q=(3,4)$,
-\[
-d_E(P,Q)
-=
-\sqrt{3^2+4^2}
-=5.
-\]
-\end{examplebox}
 
 \begin{theorembox}
-The function $d_E$ is a metric on $\mathbb{R}^2$.  For all
-$P,Q,R\in\mathbb{R}^2$ it satisfies
+For all $P,Q,R\in\mathbb{R}^2$, the function $d_E$ satisfies
 \[
 \begin{aligned}
 d_E(P,Q)&\geq 0,\\
@@ -191,65 +142,144 @@ d_E(P,Q)&=d_E(Q,P),\\
 d_E(P,R)&\leq d_E(P,Q)+d_E(Q,R).
 \end{aligned}
 \]
+Therefore $d_E$ is a metric on $\mathbb{R}^2$.
 \end{theorembox}
-
-These properties formalise what is required of a distance.  The last one is
-the triangle inequality.
 
 \subsection{The Euclidean Plane}
 
 \begin{definitionbox}
-The standard Euclidean plane in coordinates is the metric space
+The standard Euclidean plane in coordinates is
 \[
 \boxed{\bigl(\mathbb{R}^2,d_E\bigr)}.
 \]
-It consists of the set $\mathbb{R}^2$ together with the Euclidean distance
-$d_E$.
+It consists of the set $\mathbb{R}^2$ equipped with the Euclidean metric $d_E$.
 \end{definitionbox}
 
-This distinction is essential:
+Thus
 \[
-\boxed{
-\mathbb{R}^2\text{ is a set of ordered pairs}
-}
+\boxed{\mathbb{R}^2\text{ is a set}}
 \qquad\text{whereas}\qquad
-\boxed{
-(\mathbb{R}^2,d_E)\text{ carries Euclidean geometry}.
-}
+\boxed{(\mathbb{R}^2,d_E)\text{ is a metric space}}.
 \]
 
-Lengths, metric circles, right angles, and perpendicularity depend on the
-chosen geometric structure; they do not arise from the bare set of ordered
-pairs.
+\subsection{Angles Depend on Geometric Structure}
+
+There is no angle attached to three points merely because the points belong to
+$\mathbb{R}^2$. An angle must be defined relative to additional geometric
+structure.
+
+For the Euclidean metric, the angle can be reconstructed from distances. Let
+$A,P,B\in\mathbb{R}^2$, with $A\neq P$ and $B\neq P$. The three Euclidean
+distances
+\[
+d_E(A,P),
+\qquad
+d_E(B,P),
+\qquad
+d_E(A,B)
+\]
+determine the Euclidean triangle $APB$ up to rigid motion.
+
+\begin{definitionbox}
+The Euclidean angle $\angle APB\in[0,\pi]$ is defined by
+\[
+\cos\angle APB
+=
+\frac{
+ d_E(A,P)^2+d_E(B,P)^2-d_E(A,B)^2
+}{
+ 2d_E(A,P)d_E(B,P)
+}.
+\]
+Equivalently,
+\[
+\angle APB
+=
+\arccos\left(
+\frac{
+ d_E(A,P)^2+d_E(B,P)^2-d_E(A,B)^2
+}{
+ 2d_E(A,P)d_E(B,P)
+}
+\right).
+\]
+\end{definitionbox}
+
+This is the law of cosines used as a definition of the Euclidean angle in
+terms of the Euclidean metric.
+
+\begin{theorembox}
+The angle $\angle APB$ is a right angle precisely when
+\[
+\angle APB=\frac{\pi}{2}.
+\]
+Since $\cos(\pi/2)=0$, this is equivalent to
+\[
+\boxed{
+d_E(A,B)^2
+=
+d_E(A,P)^2+d_E(B,P)^2
+}.
+\]
+Thus Euclidean perpendicularity can be expressed entirely through Euclidean
+distances.
+\end{theorembox}
 
 \begin{remarkbox}
-Other metrics can be placed on the same set $\mathbb{R}^2$.  For example,
+The statement above is special to Euclidean geometry. An arbitrary metric does
+not automatically determine a canonical notion of angle. If one replaces
+$d_E$ by another metric and inserts its distances into the Euclidean cosine
+formula, the resulting quantity need not have the geometric meaning of an
+angle and may not define a coherent angle theory at all.
+
+Therefore one must not say that every metric simply produces its own angles.
+The correct statement is that the Euclidean metric determines the Euclidean
+angles because it has the special Pythagorean structure encoded in the law of
+cosines.
+\end{remarkbox}
+
+The dependence is therefore
+\[
+\boxed{
+\text{Euclidean metric}
+\quad\longrightarrow\quad
+\text{Euclidean lengths and angles}
+\quad\longrightarrow\quad
+\text{Euclidean perpendicularity}
+}.
+\]
+
+\subsection{Other Metrics on the Same Set}
+
+Other metrics may be placed on the same set $\mathbb{R}^2$. For example,
 \[
 d_1(P,Q)=|x_2-x_1|+|y_2-y_1|
 \]
 and
 \[
-d_\infty(P,Q)
-=
-\max\{|x_2-x_1|,|y_2-y_1|\}.
+d_\infty(P,Q)=\max\{|x_2-x_1|,|y_2-y_1|\}.
 \]
-They measure distance differently and therefore produce different metric
-circles.  This confirms that the geometry is additional structure, not a
-consequence of the set $\mathbb{R}^2$ alone.
+They produce different distances and different metric circles.
+
+\begin{remarkbox}
+Changing the metric changes the metric geometry. It does not follow that the
+new metric carries a natural angle satisfying the Euclidean law of cosines.
+Distance and angle are related in Euclidean geometry, but they are not
+universally interchangeable concepts in every metric space.
 \end{remarkbox}
 
 \subsection{Coordinate Conditions and Subsets}
 
 Once the ambient set has been specified, a condition on $x$ and $y$ selects a
-subset of $\mathbb{R}^2$.  For example,
+subset of $\mathbb{R}^2$. For example,
 \[
 y=2
 \]
-is only a condition on two coordinates.  The corresponding subset is
+is a condition, whereas
 \[
-L=
-\{(x,y)\in\mathbb{R}^2:y=2\}.
+L=\{(x,y)\in\mathbb{R}^2:y=2\}
 \]
+defines the complete set of pairs satisfying it.
 
 \begin{definitionbox}
 The expression
@@ -260,7 +290,7 @@ denotes the set of all ordered pairs in $\mathbb{R}^2$ satisfying the condition
 $\mathcal{C}(x,y)$.
 \end{definitionbox}
 
-The colon is read as ``such that.''  A vertical bar may be used instead:
+The colon is read as ``such that.'' A vertical bar may be used instead:
 \[
 \{(x,y)\in\mathbb{R}^2:y=2\}
 =
@@ -279,20 +309,11 @@ Under the coordinate interpretation, $L$ is a horizontal line.
 \end{tikzpicture}
 \end{center}
 
-Similarly,
+The coordinate axes are the subsets
 \[
-M=
-\{(x,y)\in\mathbb{R}^2:x=-1\}
-\]
-is a vertical line.
-
-The coordinate axes themselves are subsets:
-\[
-X=
-\{(x,y)\in\mathbb{R}^2:y=0\},
+X=\{(x,y)\in\mathbb{R}^2:y=0\},
 \qquad
-Y=
-\{(x,y)\in\mathbb{R}^2:x=0\},
+Y=\{(x,y)\in\mathbb{R}^2:x=0\},
 \]
 and
 \[
@@ -301,12 +322,8 @@ X\cap Y=\{(0,0)\}.
 
 \subsection{A Metric Circle}
 
-A circle is not determined merely by the set $\mathbb{R}^2$.  It is defined
-using a chosen distance.
-
 \begin{definitionbox}
-For a centre $O\in\mathbb{R}^2$ and radius $R>0$, the Euclidean circle with
-centre $O$ and radius $R$ is
+For a centre $O\in\mathbb{R}^2$ and radius $R>0$, the Euclidean circle is
 \[
 C_E(O,R)
 =
@@ -314,15 +331,15 @@ C_E(O,R)
 \]
 \end{definitionbox}
 
-For $O=(0,0)$ and $R=2$, the distance condition is
+For $O=(0,0)$ and $R=2$,
 \[
-\sqrt{x^2+y^2}=2.
+d_E((x,y),O)=2
 \]
-Because both sides are non-negative, this is equivalent to
+is equivalent to
 \[
 x^2+y^2=4.
 \]
-Thus
+Therefore
 \[
 C_E(O,2)
 =
@@ -343,14 +360,15 @@ C_E(O,2)
 The logical order is
 \[
 \mathbb{R}^2
-\quad\longrightarrow\quad
+\longrightarrow
 \text{coordinate interpretation}
-\quad\longrightarrow\quad
+\longrightarrow
 d_E
-\quad\longrightarrow\quad
-(\mathbb{R}^2,d_E).
+\longrightarrow
+(\mathbb{R}^2,d_E)
+\longrightarrow
+\text{Euclidean lengths, circles, angles, and perpendicularity}.
 \]
-The first object is a set.  The last object is the coordinate model of the
-Euclidean plane.  Coordinate equations then define subsets of this ambient
-space, and the metric gives geometric meaning to lengths and circles.
+None of the later geometric notions belongs to the bare set
+$\mathbb{R}^2$ without additional structure.
 \end{summarybox}
