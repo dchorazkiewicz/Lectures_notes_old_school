@@ -293,6 +293,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_02.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_03.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_01.tex
