@@ -22,9 +22,8 @@ It is useful to separate three levels of the discussion.
           segments, circles, and angles.
     \item We accept a small number of basic construction postulates describing
           what may be drawn directly.
-    \item More complicated constructions, such as perpendicular bisectors and
-          angle bisectors, must be obtained from those basic operations and then
-          justified.
+    \item More complicated constructions must be obtained from those basic
+          operations and then justified.
 \end{enumerate}
 
 The pictures below are not proofs of the postulates.  They show the elementary
@@ -109,23 +108,32 @@ two circles.
 
 This operation is what makes multi-step constructions possible.
 
-\subsubsection{Right Angles Are Geometric Before They Are Measured}
+\subsubsection{A Perpendicular Through a Chosen Point}
 
-All right angles are congruent.  A right angle is therefore already a definite
-geometric object before degrees or radians are introduced.
+Given a straight line $\ell$ and a chosen point $P$, we may construct the unique
+straight line $m$ through $P$ that meets $\ell$ at a right angle.  This applies
+both when $P$ lies on $\ell$ and when $P$ lies outside $\ell$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \draw[subset] (-2.8,0) -- (2.8,0);
-    \draw[subset] (0,-1.7) -- (0,2.2);
-    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
-    \fill[geometricSubsetColor] (0,0) circle (2pt) node[below left] {$O$};
-    \node at (0,-2.15) {perpendicular lines meet in a right angle};
+    \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
+    \fill[geometricSubsetColor] (-1.7,0) circle (2pt) node[below left] {$P$};
+    \draw[very thick] (-1.7,-1.5) -- (-1.7,2.1) node[above] {$m$};
+    \draw (-1.42,0) -- (-1.42,0.28) -- (-1.7,0.28);
+    \node at (-1.7,-1.95) {$P\in\ell$};
+
+    \draw[subset] (4.4,0) -- (9.4,0) node[right] {$\ell$};
+    \fill[geometricSubsetColor] (6.9,1.65) circle (2pt) node[right] {$P$};
+    \draw[very thick] (6.9,-0.8) -- (6.9,2.3) node[above] {$m$};
+    \draw (7.18,0) -- (7.18,0.28) -- (6.9,0.28);
+    \node at (6.9,-1.25) {$P\notin\ell$};
 \end{tikzpicture}
 \end{center}
 
-Later we will construct perpendicular lines from circles and congruent
-segments.  Their existence is not obtained from a coordinate formula.
+The statement is geometric: the four angles formed at the intersection are
+right angles.  No numerical angle measure and no coordinate formula is being
+used.  Later constructions with equal-radius circles will show explicitly how
+the perpendicular can be produced with a straightedge and compass.
 
 \subsubsection{The Parallel Postulate}
 
@@ -147,19 +155,16 @@ geometries.
 \begin{definitionbox}
 The basic geometric access used in this chapter may be summarized as follows:
 we may choose points, draw the straight line through two chosen points, extend
-segments, draw circles with chosen centres and radii, and retain intersection
-points of constructed lines and circles.  Euclidean geometry additionally
-provides the unique parallel through a point outside a line.
+segments, draw circles with chosen centres and radii, retain intersection
+points, construct the unique perpendicular through a chosen point, and construct
+the unique parallel through a point outside a given line.
 \end{definitionbox}
-
-Everything constructed below must ultimately be reduced to repeated uses of
-these operations.
 
 \subsection{Constructions Derived from the Basic Postulates}
 
-The straightedge-and-compass constructions below are not additional axioms.
-They must be built from the operations shown above and justified by geometric
-equalities.
+The straightedge-and-compass constructions below explain how the geometric
+operations above can be realized from lines, circles, congruent radii, and
+intersection points.
 
 \subsubsection{The Perpendicular Bisector of a Segment}
 
