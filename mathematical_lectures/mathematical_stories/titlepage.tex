@@ -1,0 +1,56 @@
+\begin{titlepage}
+    \thispagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[AccentBlue!42] (current page.south west) rectangle (current page.north east);
+        \fill[ExampleGreenBack] ([xshift=-1.8cm,yshift=-2.2cm]current page.north east)
+            circle (4.8cm);
+        \fill[TheoremOrangeBack] ([xshift=1.4cm,yshift=1.0cm]current page.south west)
+            circle (5.0cm);
+        \fill[white,opacity=0.62] ([xshift=-3.6cm,yshift=2.8cm]current page.south east)
+            circle (2.0cm);
+        \draw[SectionBlue!28,line width=1.0pt]
+            ([xshift=1.4cm,yshift=-1.4cm]current page.north west)
+            rectangle
+            ([xshift=-1.4cm,yshift=1.4cm]current page.south east);
+    \end{tikzpicture}
+
+    \vspace*{1.3cm}
+
+    \begin{flushleft}
+        {\Large\bfseries\color{SectionBlue} Mathematical Stories\par}
+        \vspace{0.18cm}
+        {\color{SectionBlue!70}\rule{0.42\textwidth}{1.2pt}\par}
+    \end{flushleft}
+
+    \vspace{2.0cm}
+
+    \begin{center}
+        \begin{tcolorbox}[
+            enhanced,
+            width=0.86\textwidth,
+            colback=white,
+            colframe=SectionBlue,
+            boxrule=1.0pt,
+            arc=6pt,
+            left=14mm,
+            right=14mm,
+            top=12mm,
+            bottom=12mm,
+            halign=center,
+            drop shadow={black!18!white}
+        ]
+            {\Huge\bfseries\color{ChapterBlue} Mathematical Stories\par}
+            \vspace{0.25cm}
+            {\LARGE\bfseries\color{SectionBlue} Lecture Notes\par}
+        \end{tcolorbox}
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        {\large\color{ChapterBlue}\today\par}
+    \end{center}
+
+    \vspace*{0.8cm}
+\end{titlepage}
