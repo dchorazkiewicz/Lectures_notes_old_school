@@ -1,0 +1,376 @@
+\section{Vectors}
+
+The Cartesian coordinate system allows us to describe points by numbers.  A
+second geometric object is needed to describe displacement, direction, and
+change.  This object is a vector.
+
+\subsection{Directed Segments and Free Vectors}
+
+Let $A$ and $B$ be points.  The directed segment from $A$ to $B$ is denoted by
+\[
+\overrightarrow{AB}.
+\]
+It has a direction, an orientation, and a length.  Two directed segments
+represent the same vector when one can be translated onto the other without
+rotation or change of length.
+
+\begin{definitionbox}
+A \emph{free vector} is an equivalence class of directed segments having the
+same length, direction, and orientation.  A particular directed segment is a
+representative of the vector.
+\end{definitionbox}
+
+Thus a vector is not attached permanently to one point.  It may be translated
+parallel to itself anywhere in the plane or in space.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-0.5,0) -- (6.2,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,4.2) node[above] {$y$};
+    \coordinate (A) at (0.8,0.8);
+    \coordinate (B) at (3.0,2.4);
+    \coordinate (C) at (3.4,1.2);
+    \coordinate (D) at (5.6,2.8);
+    \draw[subset,->] (A) -- (B) node[midway,above left] {$\mathbf v$};
+    \draw[subset,->] (C) -- (D) node[midway,below right] {$\mathbf v$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
+    \fill[geometricSubsetColor] (C) circle (2pt) node[below] {$C$};
+    \fill[geometricSubsetColor] (D) circle (2pt) node[above right] {$D$};
+\end{tikzpicture}
+\end{center}
+
+The zero vector, denoted by $\mathbf 0$, has length zero.  Its initial and
+terminal points coincide.  For every vector $\mathbf v$, the opposite vector
+$-\mathbf v$ has the same length and direction but the reverse orientation.
+
+\subsection{Addition and the Parallelogram Rule}
+
+Suppose that representatives of $\mathbf u$ and $\mathbf v$ begin at the same
+point.  Translate each vector to the endpoint of the other.  The four directed
+segments form a parallelogram.
+
+\begin{definitionbox}
+The sum $\mathbf u+\mathbf v$ is the vector represented by the diagonal of this
+parallelogram beginning at the common initial point.
+\end{definitionbox}
+
+Equivalently, place the initial point of $\mathbf v$ at the terminal point of
+$\mathbf u$.  The vector from the initial point of $\mathbf u$ to the terminal
+point of the translated $\mathbf v$ is $\mathbf u+\mathbf v$.  This is the
+triangle rule.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (3.2,0.8);
+    \coordinate (V) at (1.1,2.5);
+    \coordinate (S) at (4.3,3.3);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[helper] (U) -- (S);
+    \draw[helper] (V) -- (S);
+    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
+    \fill[geometricSubsetColor] (O) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+Vector addition satisfies
+\[
+\mathbf u+\mathbf v=\mathbf v+\mathbf u,
+\qquad
+(\mathbf u+\mathbf v)+\mathbf w=\mathbf u+(\mathbf v+\mathbf w),
+\]
+\[
+\mathbf v+\mathbf 0=\mathbf v,
+\qquad
+\mathbf v+(-\mathbf v)=\mathbf 0.
+\]
+Subtraction is defined by
+\[
+\mathbf u-\mathbf v=\mathbf u+(-\mathbf v).
+\]
+
+\subsection{Multiplication by a Scalar}
+
+Let $\lambda\in\mathbb R$.
+
+\begin{definitionbox}
+The scalar multiple $\lambda\mathbf v$ is the vector whose length is
+$|\lambda|$ times the length of $\mathbf v$.  It has the same orientation as
+$\mathbf v$ when $\lambda>0$, the opposite orientation when $\lambda<0$, and
+is the zero vector when $\lambda=0$.
+\end{definitionbox}
+
+Scalar multiplication satisfies
+\[
+\lambda(\mathbf u+\mathbf v)=\lambda\mathbf u+\lambda\mathbf v,
+\qquad
+(\lambda+\mu)\mathbf v=\lambda\mathbf v+\mu\mathbf v,
+\]
+\[
+(\lambda\mu)\mathbf v=\lambda(\mu\mathbf v),
+\qquad
+1\mathbf v=\mathbf v.
+\]
+
+Two nonzero vectors are parallel precisely when one is a nonzero scalar
+multiple of the other:
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\quad\text{for some }\lambda\neq0.
+\]
+
+\subsection{Coordinates of a Vector}
+
+Let
+\[
+A=(x_1,y_1),
+\qquad
+B=(x_2,y_2).
+\]
+The vector from $A$ to $B$ has coordinates
+\[
+\overrightarrow{AB}=(x_2-x_1,\,y_2-y_1).
+\]
+In three-dimensional space, if
+\[
+A=(x_1,y_1,z_1),
+\qquad
+B=(x_2,y_2,z_2),
+\]
+then
+\[
+\overrightarrow{AB}=(x_2-x_1,\,y_2-y_1,\,z_2-z_1).
+\]
+
+For vectors written in coordinates,
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2),
+\]
+we have
+\[
+\mathbf u+\mathbf v=(u_1+v_1,\,u_2+v_2),
+\qquad
+\lambda\mathbf u=(\lambda u_1,\,\lambda u_2).
+\]
+The analogous formulas hold componentwise in $\mathbb R^3$.
+
+The standard basis vectors are
+\[
+\mathbf e_1=(1,0),
+\qquad
+\mathbf e_2=(0,1)
+\]
+in the plane, and
+\[
+\mathbf e_1=(1,0,0),
+\qquad
+\mathbf e_2=(0,1,0),
+\qquad
+\mathbf e_3=(0,0,1)
+\]
+in space.  Therefore
+\[
+(u_1,u_2)=u_1\mathbf e_1+u_2\mathbf e_2
+\]
+and
+\[
+(u_1,u_2,u_3)=u_1\mathbf e_1+u_2\mathbf e_2+u_3\mathbf e_3.
+\]
+
+\subsection{Linear Combinations, Span, and Bases}
+
+An expression of the form
+\[
+\lambda_1\mathbf v_1+\cdots+\lambda_k\mathbf v_k
+\]
+is called a linear combination of the vectors $\mathbf v_1,\ldots,\mathbf v_k$.
+The set of all such combinations is their span.
+
+Two vectors in the plane are linearly independent when neither is a scalar
+multiple of the other.  In that case they form a basis of the plane: every
+vector can be written uniquely as their linear combination.  Similarly, three
+vectors in $\mathbb R^3$ form a basis when none of them can be expressed as a
+linear combination of the other two.
+
+This language will later describe lines and planes:
+\[
+P=P_0+t\mathbf v
+\]
+describes a line, while
+\[
+P=P_0+s\mathbf u+t\mathbf v
+\]
+describes a plane when $\mathbf u$ and $\mathbf v$ are linearly independent.
+
+\subsection{Length and Unit Vectors}
+
+The length, or Euclidean norm, of
+\[
+\mathbf v=(v_1,v_2)
+\]
+is
+\[
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2}.
+\]
+For
+\[
+\mathbf v=(v_1,v_2,v_3)
+\]
+in space,
+\[
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2+v_3^2}.
+\]
+These formulas follow from the Pythagorean theorem.
+
+A vector of length one is called a unit vector.  Every nonzero vector
+$\mathbf v$ determines the unit vector
+\[
+\widehat{\mathbf v}=\frac{\mathbf v}{\|\mathbf v\|}
+\]
+in the same direction.
+
+The distance between points is the length of their displacement vector:
+\[
+d(A,B)=\|\overrightarrow{AB}\|.
+\]
+
+\subsection{The Dot Product and Angles}
+
+For vectors in $\mathbb R^2$ or $\mathbb R^3$, define the dot product by
+\[
+\mathbf u\cdot\mathbf v
+=
+\sum_i u_i v_i.
+\]
+Thus, in three dimensions,
+\[
+(u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
+=
+u_1v_1+u_2v_2+u_3v_3.
+\]
+
+\begin{theorembox}
+If $\theta$ is the angle between two nonzero vectors $\mathbf u$ and
+$\mathbf v$, then
+\[
+\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+Consequently,
+\[
+\cos\theta
+=
+\frac{\mathbf u\cdot\mathbf v}
+{\|\mathbf u\|\,\|\mathbf v\|}.
+\]
+\end{theorembox}
+
+The dot product is symmetric and distributive:
+\[
+\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u,
+\qquad
+\mathbf u\cdot(\mathbf v+\mathbf w)
+=
+\mathbf u\cdot\mathbf v+\mathbf u\cdot\mathbf w.
+\]
+Moreover,
+\[
+\mathbf v\cdot\mathbf v=\|\mathbf v\|^2.
+\]
+
+\subsection{Perpendicularity and Orthogonal Projection}
+
+\begin{definitionbox}
+Two nonzero vectors are perpendicular, or orthogonal, when the angle between
+them is a right angle.
+\end{definitionbox}
+
+Because $\cos\theta=0$ for a right angle,
+\[
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0.
+\]
+This criterion will be used to define normal vectors to lines and planes.
+
+The orthogonal projection of $\mathbf u$ onto a nonzero vector $\mathbf v$ is
+\[
+\operatorname{proj}_{\mathbf v}\mathbf u
+=
+\frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
+\]
+The difference
+\[
+\mathbf u-\operatorname{proj}_{\mathbf v}\mathbf u
+\]
+is perpendicular to $\mathbf v$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (V) at (5,0);
+    \coordinate (U) at (3.2,2.7);
+    \coordinate (P) at (3.2,0);
+    \draw[subset,->] (O) -- (V) node[right] {$\mathbf v$};
+    \draw[subset,->] (O) -- (U) node[above] {$\mathbf u$};
+    \draw[very thick,->] (O) -- (P) node[midway,below] {$\operatorname{proj}_{\mathbf v}\mathbf u$};
+    \draw[helper] (U) -- (P);
+    \draw (P) ++(-0.28,0) -- ++(0,0.28) -- ++(0.28,0);
+\end{tikzpicture}
+\end{center}
+
+\subsection{The Cross Product in Three Dimensions}
+
+For
+\[
+\mathbf u=(u_1,u_2,u_3),
+\qquad
+\mathbf v=(v_1,v_2,v_3),
+\]
+define
+\[
+\mathbf u\times\mathbf v
+=
+(u_2v_3-u_3v_2,\,
+ u_3v_1-u_1v_3,\,
+ u_1v_2-u_2v_1).
+\]
+
+\begin{theorembox}
+The vector $\mathbf u\times\mathbf v$ is perpendicular to both $\mathbf u$ and
+$\mathbf v$.  Its length is
+\[
+\|\mathbf u\times\mathbf v\|
+=
+\|\mathbf u\|\,\|\mathbf v\|\sin\theta,
+\]
+where $\theta$ is the angle between $\mathbf u$ and $\mathbf v$.
+\end{theorembox}
+
+Therefore $\|\mathbf u\times\mathbf v\|$ is the area of the parallelogram
+spanned by $\mathbf u$ and $\mathbf v$.  The cross product is zero exactly when
+the vectors are parallel.  Its orientation is determined by the right-hand
+rule.
+
+The scalar triple product
+\[
+\mathbf u\cdot(\mathbf v\times\mathbf w)
+\]
+is the signed volume of the parallelepiped spanned by the three vectors.  It is
+zero exactly when the vectors are coplanar.
+
+\begin{summarybox}
+Vectors describe displacement and direction.  Their fundamental operations are
+addition, scalar multiplication, the dot product, and---in three dimensions---
+the cross product.  The parallelogram rule gives vector addition, the dot
+product detects angles and perpendicularity, and the cross product produces a
+normal vector to a plane.  These constructions provide the language needed for
+lines, planes, conic sections, and quadric surfaces.
+\end{summarybox}
