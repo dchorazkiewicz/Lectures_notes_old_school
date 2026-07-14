@@ -192,10 +192,10 @@ d_E(P,Q)
 }.
 \]
 
-\subsection{Angles and Their Measure}
+\subsection{Angles, Names of Angles, and Angle Measure}
 
 Only now, after the coordinate construction and the distance formula are in
-place, do we record how angles are understood in the Euclidean plane.
+place, do we record how angles are described in the Euclidean plane.
 
 \begin{definitionbox}
 An angle with vertex $O$ is the part of the plane determined by two rays with
@@ -203,25 +203,37 @@ common initial point $O$, together with the choice of which of the two regions
 between the rays is meant.
 \end{definitionbox}
 
-The angle is a geometric object. Its measure is a number assigned by comparing
-that region with a full turn about the vertex.
+An angle is a geometric object. A name such as \emph{right angle} classifies
+that object. The measure of the angle is a number assigned to it. These three
+notions must not be identified:
+\[
+\boxed{
+\text{angle}
+\neq
+\text{name of the angle}
+\neq
+\text{numerical measure of the angle}
+}.
+\]
 
 \begin{definitionbox}
-A full turn is assigned the measure
+Let $\alpha$ be an angle. Its degree measure, denoted by $m_{\deg}(\alpha)$,
+is defined by comparing the angle with a full turn. A full turn is assigned
+measure
 \[
 360^\circ.
 \]
-If an angle occupies the fraction $r$ of a full turn, then its degree measure is
+If $\alpha$ occupies the fraction $r$ of a full turn, then
 \[
-m(\alpha)=360^\circ r.
+m_{\deg}(\alpha)=360^\circ r.
 \]
 \end{definitionbox}
 
-Therefore a half-turn has measure
+Consequently, an angle occupying one half of a full turn has measure
 \[
 180^\circ,
 \]
-and one quarter of a full turn has measure
+and an angle occupying one quarter of a full turn has measure
 \[
 90^\circ.
 \]
@@ -232,32 +244,45 @@ and one quarter of a full turn has measure
     \draw[axis] (O) -- (3.4,0) node[right] {$r_1$};
     \draw[axis] (O) -- (0,3.0) node[above] {$r_2$};
     \draw[subset] (1.0,0) arc[start angle=0,end angle=90,radius=1.0];
-    \node[subset label] at (0.72,0.72) {$90^\circ$};
+    \node[subset label] at (0.95,0.78) {$m_{\deg}(\alpha)=90^\circ$};
     \fill (O) circle (2pt) node[below left] {$O$};
     \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
 \end{tikzpicture}
 \end{center}
 
+\begin{definitionbox}
+A \emph{right angle} is the name given to each of the four congruent angles
+formed by two perpendicular lines.
+\end{definitionbox}
+
 \begin{theorembox}
 Two perpendicular lines through a point divide a full turn into four congruent
-angles. Hence each of them has measure
+angles. Therefore, if $\alpha$ is any one of these right angles, then
 \[
-\frac{360^\circ}{4}=90^\circ.
+m_{\deg}(\alpha)
+=
+\frac{360^\circ}{4}
+=
+90^\circ.
 \]
-Such an angle is called a right angle.
+Thus a right angle is not the number $90^\circ$; rather, a right angle has
+degree measure $90^\circ$.
 \end{theorembox}
 
 The coordinate axes were chosen to be perpendicular before coordinates were
-assigned. The statement that they form a right angle is therefore inherited
-from the Euclidean construction, not created by an algebraic formula.
+assigned. Their positive rays therefore determine a right angle, and that
+angle has degree measure $90^\circ$.
 
 \begin{remarkbox}
-The same angle may later be measured in radians. A full turn is $2\pi$ radians,
-so
+The same angle may be measured using a different scale. If $\alpha$ is a right
+angle, then
 \[
-90^\circ=\frac{\pi}{2}.
+m_{\deg}(\alpha)=90^\circ
+\qquad\text{and}\qquad
+m_{\mathrm{rad}}(\alpha)=\frac{\pi}{2}.
 \]
-Degrees and radians are two numerical scales for the same Euclidean angle.
+Degrees and radians are two systems for measuring the same geometric angle;
+neither number is the angle itself.
 \end{remarkbox}
 
 \begin{summarybox}
@@ -268,7 +293,8 @@ The construction proceeds in the following order:
     \item refine the scale and identify axis positions with real numbers;
     \item assign coordinates by orthogonal projection;
     \item derive the distance formula from the Pythagorean theorem;
-    \item finally describe angles and their numerical measure.
+    \item finally distinguish an angle, its geometric name, and its numerical
+          measure.
 \end{enumerate}
 Coordinates are a numerical representation of the original Euclidean geometry.
 \end{summarybox}
