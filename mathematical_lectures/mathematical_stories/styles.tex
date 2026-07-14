@@ -1,1 +1,14 @@
 \input{../../shared/styles}
+
+% Local visual language for geometric diagrams in this lecture.
+% Coordinate axes remain black; the subset currently being studied is dark blue;
+% auxiliary construction lines are neutral gray.
+\colorlet{geometricSubsetColor}{blue!60!black}
+
+\tikzset{
+    coordinate axis/.style={->,thick,black},
+    geometric subset/.style={very thick,draw=geometricSubsetColor},
+    geometric region/.style={thick,draw=geometricSubsetColor,fill=geometricSubsetColor!10},
+    construction line/.style={dashed,gray},
+    geometric label/.style={text=geometricSubsetColor}
+}
