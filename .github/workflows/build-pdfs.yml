@@ -1,18 +1,8 @@
 name: Build lecture PDFs
 
+# Temporarily disabled: manual dispatch only.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - "**"
-    paths:
-      - ".github/workflows/build-pdfs.yml"
-      - "shared/**/*.tex"
-      - "mathematical_lectures/**/*.tex"
-      - "mathematical_lectures/**/build.sh"
-      - "physics_lectures/**/*.tex"
-      - "physics_lectures/**/build.sh"
-      - "!mathematical_lectures/basic_mathematics/prezentation/**"
 
 permissions:
   contents: write
