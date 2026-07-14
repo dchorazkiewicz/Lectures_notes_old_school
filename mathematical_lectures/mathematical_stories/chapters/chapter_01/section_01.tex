@@ -1,91 +1,240 @@
-\section{Points, Coordinates, and the Euclidean Plane}
+\section{Constructing Cartesian Coordinates from Euclidean Geometry}
 
-Before using coordinates for geometry, we must distinguish four different
-objects:
-
-\begin{enumerate}
-    \item the set of ordered pairs of real numbers;
-    \item a coordinate interpretation of those pairs;
-    \item a rule that measures distance between pairs;
-    \item geometric notions, such as length, circle, angle, and perpendicularity,
-          defined relative to the chosen structure.
-\end{enumerate}
-
-These objects are related, but they are not identical. In particular, the bare
-set $\mathbb{R}^2$ contains neither distances nor angles.
-
-\subsection{The Set of Ordered Pairs}
-
-\begin{definitionbox}
-The Cartesian product of two copies of the real line is
-\[
-\mathbb{R}^2
-=
-\mathbb{R}\times\mathbb{R}
-=
-\{(x,y):x\in\mathbb{R},\ y\in\mathbb{R}\}.
-\]
-Its elements are ordered pairs of real numbers.
-\end{definitionbox}
-
-The word \emph{ordered} is essential:
-\[
-(2,5)\neq(5,2).
-\]
-At this stage, $(x,y)$ is only an ordered pair. Nothing in the set
-$\mathbb{R}^2$ alone says that $x$ is horizontal position, that $y$ is vertical
-position, or that the two directions are perpendicular.
+We do not begin with ordered pairs of numbers.  We begin with a Euclidean
+plane: a geometric plane in which points, straight lines, perpendicular lines,
+congruent segments, angle bisection, and the Pythagorean theorem are already
+available.  Our aim is to construct a numerical description of this geometry.
 
 \begin{remarkbox}
-A set specifies which objects exist. It does not, by itself, specify how far
-apart they are, which curves are circles, or what an angle means.
+The Cartesian coordinate system does not create the Euclidean plane.  It is a
+method for encoding an already existing Euclidean geometry by numbers.
 \end{remarkbox}
 
-\subsection{A Coordinate Interpretation}
+\subsection{The Euclidean Plane Before Coordinates}
 
-To use $\mathbb{R}^2$ as a model of a plane, we choose two real number lines,
-place one horizontally and the other vertically, and make their zero points
-coincide.
+At the beginning there are points and geometric relations, but no distinguished
+origin, no coordinate axes, and no numerical labels attached to points.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \draw[axis] (-4.5,0) -- (4.7,0) node[right] {$x$};
-    \draw[axis] (0,-3.5) -- (0,3.7) node[above] {$y$};
-    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
-        \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {\small $\x$};
+    \fill[gray!8] (-4,-2.2) rectangle (4,2.2);
+    \foreach \x/\y in {-3.2/1.2,-2.1/-0.8,-0.6/1.5,0.8/-1.1,2.1/0.9,3.1/-0.4} {
+        \fill (\x,\y) circle (1.7pt);
     }
-    \foreach \y in {-3,-2,-1,1,2,3} {
-        \draw (0.08,\y) -- (-0.08,\y) node[left=3pt] {\small $\y$};
-    }
-    \node[below left=2pt] at (0,0) {$0$};
+    \node at (0,-2.55) {a Euclidean plane with no chosen coordinates};
 \end{tikzpicture}
 \end{center}
 
-The horizontal copy is the $x$-axis, the vertical copy is the $y$-axis, and
-their common zero is the origin
-\[
-O=(0,0).
-\]
-
 \begin{definitionbox}
-Under this coordinate interpretation, the ordered pair
-\[
-P=(x,y)
-\]
-labels the point reached by taking position $x$ on the horizontal axis and
-position $y$ on the vertical axis. The numbers $x$ and $y$ are called the
-coordinates of $P$.
+For this construction we assume the elementary operations of Euclidean
+geometry:
+\begin{itemize}
+    \item through two distinct points one may draw a unique straight line;
+    \item through a point one may construct a line perpendicular to a given line;
+    \item a segment length may be transferred with a compass;
+    \item a segment may be bisected;
+    \item lengths in a right triangle satisfy the Pythagorean theorem.
+\end{itemize}
 \end{definitionbox}
 
-This interpretation gives a correspondence
-\[
-\text{coordinate point}
-\quad\longleftrightarrow\quad
-\text{ordered pair in }\mathbb{R}^2.
-\]
-It still does not define distance or angle.
+These assumptions supply the geometry from which coordinates will be built.
 
-\subsection{Distance: Additional Geometric Structure}
+\subsection{Choosing the First Axis and the Origin}
+
+Choose an arbitrary straight line and call it the future $x$-axis.  Then choose
+an arbitrary point $O$ on this line.  This point will become the origin.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[subset] (-4.2,0) -- (4.2,0);
+    \fill (0,0) circle (2pt);
+    \node[below] at (0,0) {$O$};
+    \node[subset label,right] at (4.2,0) {first axis};
+\end{tikzpicture}
+\end{center}
+
+Nothing forces this particular choice.  A different line or a different point
+would produce a different coordinate system on the same plane.
+
+\subsection{Constructing the Perpendicular Axis}
+
+Through $O$, construct the unique line perpendicular to the first axis.  This
+line becomes the $y$-axis.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \fill (0,0) circle (2pt);
+    \node[below left] at (0,0) {$O$};
+    \draw (0.25,0) -- (0.25,0.25) -- (0,0.25);
+\end{tikzpicture}
+\end{center}
+
+The two axes divide the plane into four right angles.  At this stage the axes
+have directions, but they still have no numerical scale.
+
+\begin{definitionbox}
+A rectangular Cartesian frame consists of
+\begin{itemize}
+    \item an origin $O$;
+    \item two perpendicular axes through $O$;
+    \item a chosen positive direction on each axis;
+    \item a common unit length.
+\end{itemize}
+\end{definitionbox}
+
+\subsection{Choosing and Transferring a Unit Length}
+
+Choose a segment of positive length and declare it to have length $1$.  Using a
+compass, transfer this same length from $O$ in both directions along both axes.
+This produces the marks $1$, $-1$ on the $x$-axis and $1$, $-1$ on the
+$y$-axis.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \foreach \x in {-3,-2,-1,1,2,3} {
+        \draw (\x,0.09) -- (\x,-0.09) node[below=3pt] {$\x$};
+    }
+    \foreach \y in {-2,-1,1,2} {
+        \draw (0.09,\y) -- (-0.09,\y) node[left=3pt] {$\y$};
+    }
+    \node[below left] at (0,0) {$0$};
+    \draw[<->,gray] (0,2.65) -- (1,2.65) node[midway,above] {unit length};
+\end{tikzpicture}
+\end{center}
+
+Repeated transfer of the unit segment constructs all integer marks.  The sign
+records on which side of the origin a point lies.
+
+\begin{remarkbox}
+Using the same compass opening on both axes is essential.  It makes one unit on
+the $x$-axis congruent to one unit on the $y$-axis.  Without this agreement, the
+coordinate formula for Euclidean distance would contain different scale
+factors in the two directions.
+\end{remarkbox}
+
+\subsection{Bisecting the Unit and Approximating Positions}
+
+A unit segment can be bisected geometrically.  Repeating the construction gives
+marks at
+\[
+\frac12,\quad \frac14,\quad \frac34,\quad \frac18,\quad \frac38,
+\quad \ldots
+\]
+and similarly on the negative side.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+    \draw[axis] (-0.4,0) -- (4.4,0);
+    \foreach \x/\lab in {0/0,1/{\frac14},2/{\frac12},3/{\frac34},4/1} {
+        \draw (\x,0.1) -- (\x,-0.1) node[below=4pt] {$\lab$};
+    }
+    \draw[gray] (0,0.45) -- (4,0.45);
+    \draw[gray] (0,0.38) -- (0,0.52);
+    \draw[gray] (2,0.38) -- (2,0.52);
+    \draw[gray] (4,0.38) -- (4,0.52);
+    \node[above] at (2,0.52) {successive bisections};
+\end{tikzpicture}
+\end{center}
+
+After $n$ bisections, one obtains all dyadic positions
+\[
+\frac{k}{2^n},
+\qquad k\in\mathbb Z.
+\]
+These marks can approximate any position on the axis with arbitrary precision.
+
+\begin{remarkbox}
+Repeated bisection does not construct every real number exactly.  It constructs
+the dyadic rational numbers.  The claim needed here is approximation: for every
+point on the axis and every desired precision, sufficiently fine bisection
+places dyadic marks on both sides of that point as closely as required.
+Identifying all axis positions with real numbers additionally uses the usual
+continuity and completeness assumptions of Euclidean measurement.
+\end{remarkbox}
+
+Thus each axis becomes a geometric copy of the real number line once an origin,
+a direction, and a unit have been fixed.
+
+\subsection{Projecting a Point onto the Axes}
+
+Let $P$ be any point of the plane.  Through $P$, construct a line perpendicular
+to the $x$-axis.  Let its intersection with the $x$-axis be $P_x$.  Through
+$P$, construct a line perpendicular to the $y$-axis, and call the intersection
+with the $y$-axis $P_y$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-1.2,0) -- (5.0,0) node[right] {$x$};
+    \draw[axis] (0,-1.2) -- (0,4.0) node[above] {$y$};
+    \coordinate (P) at (3.2,2.4);
+    \coordinate (Px) at (3.2,0);
+    \coordinate (Py) at (0,2.4);
+    \draw[helper] (P) -- (Px);
+    \draw[helper] (P) -- (Py);
+    \fill (P) circle (2.2pt) node[above right] {$P$};
+    \fill (Px) circle (1.8pt) node[below] {$P_x$};
+    \fill (Py) circle (1.8pt) node[left] {$P_y$};
+    \draw (2.95,0) -- (2.95,0.25) -- (3.2,0.25);
+    \draw (0,2.15) -- (0.25,2.15) -- (0.25,2.4);
+\end{tikzpicture}
+\end{center}
+
+The signed number assigned to $P_x$ is called the $x$-coordinate of $P$.  The
+signed number assigned to $P_y$ is called the $y$-coordinate of $P$.
+
+\begin{definitionbox}
+If the orthogonal projections of $P$ onto the two scaled axes have numerical
+labels $x$ and $y$, then the Cartesian coordinates of $P$ are the ordered pair
+\[
+P\longleftrightarrow (x,y).
+\]
+\end{definitionbox}
+
+The order matters: the first number comes from projection onto the $x$-axis,
+and the second from projection onto the $y$-axis.
+
+\subsection{Why Every Point Has One Coordinate Pair}
+
+The Euclidean parallel and perpendicular constructions guarantee that each
+point has exactly one perpendicular projection onto each axis.  Therefore each
+point produces one ordered pair $(x,y)$.
+
+Conversely, given two axis positions labelled $x$ and $y$, draw through the
+$x$-position a line perpendicular to the $x$-axis and through the $y$-position
+a line perpendicular to the $y$-axis.  These two lines meet at exactly one
+point.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-1.0,0) -- (4.8,0) node[right] {$x$};
+    \draw[axis] (0,-1.0) -- (0,3.8) node[above] {$y$};
+    \draw[helper] (3,0) -- (3,2.5);
+    \draw[helper] (0,2.5) -- (3,2.5);
+    \fill (3,0) circle (1.7pt) node[below] {$x$};
+    \fill (0,2.5) circle (1.7pt) node[left] {$y$};
+    \fill (3,2.5) circle (2.2pt) node[above right] {$(x,y)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{theorembox}
+Once the rectangular frame and its common unit are fixed, there is a one-to-one
+correspondence
+\[
+\boxed{
+\text{points of the Euclidean plane}
+\quad\longleftrightarrow\quad
+\text{ordered pairs }(x,y)\in\mathbb R^2
+}.
+\]
+The ordered pairs are numerical labels for geometric points; they are not the
+starting point of the construction.
+\end{theorembox}
+
+\subsection{The Distance Formula Comes from Pythagoras}
 
 Let
 \[
@@ -93,22 +242,16 @@ P=(x_1,y_1),
 \qquad
 Q=(x_2,y_2).
 \]
-Write
+The horizontal separation of the points has length
 \[
-\Delta x=x_2-x_1,
-\qquad
-\Delta y=y_2-y_1.
+|x_2-x_1|,
 \]
-The Pythagorean relation motivates the Euclidean distance.
-
-\begin{definitionbox}
-The Euclidean distance between $P$ and $Q$ is
+and the vertical separation has length
 \[
-d_E(P,Q)
-=
-\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.
+|y_2-y_1|.
 \]
-\end{definitionbox}
+These lengths form the legs of a right triangle whose hypotenuse is the segment
+$PQ$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -118,257 +261,77 @@ d_E(P,Q)
     \coordinate (Q) at (4,3.5);
     \coordinate (R) at (4,1);
     \draw[subset] (P) -- (Q);
-    \draw[helper] (P) -- (R) node[midway,below] {$|\Delta x|$};
-    \draw[helper] (R) -- (Q) node[midway,right] {$|\Delta y|$};
+    \draw[helper] (P) -- (R) node[midway,below] {$|x_2-x_1|$};
+    \draw[helper] (R) -- (Q) node[midway,right] {$|y_2-y_1|$};
     \draw (3.72,1) -- (3.72,1.28) -- (4,1.28);
     \fill (P) circle (2pt) node[below left] {$P$};
     \fill (Q) circle (2pt) node[above right] {$Q$};
-    \node[subset label,above left] at (2.5,2.35) {$d_E(P,Q)$};
 \end{tikzpicture}
 \end{center}
 
-The defining relation is
+By the Pythagorean theorem,
 \[
-\boxed{d_E(P,Q)^2=(\Delta x)^2+(\Delta y)^2}.
-\]
-
-\begin{theorembox}
-For all $P,Q,R\in\mathbb{R}^2$, the function $d_E$ satisfies
-\[
-\begin{aligned}
-d_E(P,Q)&\geq 0,\\
-d_E(P,Q)=0&\iff P=Q,\\
-d_E(P,Q)&=d_E(Q,P),\\
-d_E(P,R)&\leq d_E(P,Q)+d_E(Q,R).
-\end{aligned}
-\]
-Therefore $d_E$ is a metric on $\mathbb{R}^2$.
-\end{theorembox}
-
-\subsection{The Euclidean Plane}
-
-\begin{definitionbox}
-The standard Euclidean plane in coordinates is
-\[
-\boxed{\bigl(\mathbb{R}^2,d_E\bigr)}.
-\]
-It consists of the set $\mathbb{R}^2$ equipped with the Euclidean metric $d_E$.
-\end{definitionbox}
-
-Thus
-\[
-\boxed{\mathbb{R}^2\text{ is a set}}
-\qquad\text{whereas}\qquad
-\boxed{(\mathbb{R}^2,d_E)\text{ is a metric space}}.
-\]
-
-\subsection{Angles Depend on Geometric Structure}
-
-There is no angle attached to three points merely because the points belong to
-$\mathbb{R}^2$. An angle must be defined relative to additional geometric
-structure.
-
-For the Euclidean metric, the angle can be reconstructed from distances. Let
-$A,P,B\in\mathbb{R}^2$, with $A\neq P$ and $B\neq P$. The three Euclidean
-distances
-\[
-d_E(A,P),
-\qquad
-d_E(B,P),
-\qquad
-d_E(A,B)
-\]
-determine the Euclidean triangle $APB$ up to rigid motion.
-
-\begin{definitionbox}
-The Euclidean angle $\angle APB\in[0,\pi]$ is defined by
-\[
-\cos\angle APB
+|PQ|^2
 =
-\frac{
- d_E(A,P)^2+d_E(B,P)^2-d_E(A,B)^2
-}{
- 2d_E(A,P)d_E(B,P)
-}.
-\]
-Equivalently,
-\[
-\angle APB
-=
-\arccos\left(
-\frac{
- d_E(A,P)^2+d_E(B,P)^2-d_E(A,B)^2
-}{
- 2d_E(A,P)d_E(B,P)
-}
-\right).
-\]
-\end{definitionbox}
-
-This is the law of cosines used as a definition of the Euclidean angle in
-terms of the Euclidean metric.
-
-\begin{theorembox}
-The angle $\angle APB$ is a right angle precisely when
-\[
-\angle APB=\frac{\pi}{2}.
-\]
-Since $\cos(\pi/2)=0$, this is equivalent to
-\[
-\boxed{
-d_E(A,B)^2
-=
-d_E(A,P)^2+d_E(B,P)^2
-}.
-\]
-Thus Euclidean perpendicularity can be expressed entirely through Euclidean
-distances.
-\end{theorembox}
-
-\begin{remarkbox}
-The statement above is special to Euclidean geometry. An arbitrary metric does
-not automatically determine a canonical notion of angle. If one replaces
-$d_E$ by another metric and inserts its distances into the Euclidean cosine
-formula, the resulting quantity need not have the geometric meaning of an
-angle and may not define a coherent angle theory at all.
-
-Therefore one must not say that every metric simply produces its own angles.
-The correct statement is that the Euclidean metric determines the Euclidean
-angles because it has the special Pythagorean structure encoded in the law of
-cosines.
-\end{remarkbox}
-
-The dependence is therefore
-\[
-\boxed{
-\text{Euclidean metric}
-\quad\longrightarrow\quad
-\text{Euclidean lengths and angles}
-\quad\longrightarrow\quad
-\text{Euclidean perpendicularity}
-}.
-\]
-
-\subsection{Other Metrics on the Same Set}
-
-Other metrics may be placed on the same set $\mathbb{R}^2$. For example,
-\[
-d_1(P,Q)=|x_2-x_1|+|y_2-y_1|
-\]
-and
-\[
-d_\infty(P,Q)=\max\{|x_2-x_1|,|y_2-y_1|\}.
-\]
-They produce different distances and different metric circles.
-
-\begin{remarkbox}
-Changing the metric changes the metric geometry. It does not follow that the
-new metric carries a natural angle satisfying the Euclidean law of cosines.
-Distance and angle are related in Euclidean geometry, but they are not
-universally interchangeable concepts in every metric space.
-\end{remarkbox}
-
-\subsection{Coordinate Conditions and Subsets}
-
-Once the ambient set has been specified, a condition on $x$ and $y$ selects a
-subset of $\mathbb{R}^2$. For example,
-\[
-y=2
-\]
-is a condition, whereas
-\[
-L=\{(x,y)\in\mathbb{R}^2:y=2\}
-\]
-defines the complete set of pairs satisfying it.
-
-\begin{definitionbox}
-The expression
-\[
-\{(x,y)\in\mathbb{R}^2:\mathcal{C}(x,y)\}
-\]
-denotes the set of all ordered pairs in $\mathbb{R}^2$ satisfying the condition
-$\mathcal{C}(x,y)$.
-\end{definitionbox}
-
-The colon is read as ``such that.'' A vertical bar may be used instead:
-\[
-\{(x,y)\in\mathbb{R}^2:y=2\}
-=
-\{(x,y)\in\mathbb{R}^2\mid y=2\}.
-\]
-
-Under the coordinate interpretation, $L$ is a horizontal line.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
-    \draw[axis] (0,-1.3) -- (0,3.8) node[above] {$y$};
-    \draw[subset] (-4,2) -- (4,2);
-    \node[subset label,right] at (4,2) {$L$};
-    \draw (0.08,2) -- (-0.08,2) node[left=3pt] {$2$};
-\end{tikzpicture}
-\end{center}
-
-The coordinate axes are the subsets
-\[
-X=\{(x,y)\in\mathbb{R}^2:y=0\},
-\qquad
-Y=\{(x,y)\in\mathbb{R}^2:x=0\},
-\]
-and
-\[
-X\cap Y=\{(0,0)\}.
-\]
-
-\subsection{A Metric Circle}
-
-\begin{definitionbox}
-For a centre $O\in\mathbb{R}^2$ and radius $R>0$, the Euclidean circle is
-\[
-C_E(O,R)
-=
-\{P\in\mathbb{R}^2:d_E(P,O)=R\}.
-\]
-\end{definitionbox}
-
-For $O=(0,0)$ and $R=2$,
-\[
-d_E((x,y),O)=2
-\]
-is equivalent to
-\[
-x^2+y^2=4.
+(x_2-x_1)^2+(y_2-y_1)^2.
 \]
 Therefore
+\begin{theorembox}
+The Euclidean distance expressed in Cartesian coordinates is
 \[
-C_E(O,2)
+\boxed{
+d_E(P,Q)
 =
-\{(x,y)\in\mathbb{R}^2:x^2+y^2=4\}.
+\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+}.
 \]
+This formula does not define a new geometry independently of the original
+plane.  It is the numerical expression of the Euclidean length already present
+in that plane.
+\end{theorembox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[axis] (-3.2,0) -- (3.4,0) node[right] {$x$};
-    \draw[axis] (0,-3.2) -- (0,3.4) node[above] {$y$};
-    \draw[subset] (0,0) circle (2);
-    \fill (0,0) circle (1.7pt) node[below left] {$O$};
-    \node[subset label,above right] at (1.4,1.4) {$C_E(O,2)$};
-\end{tikzpicture}
-\end{center}
+\subsection{Angles Are Inherited, Not Created by Coordinates}
+
+Angles and perpendicularity belong to the Euclidean geometry with which we
+started.  The axes were chosen to be perpendicular before any coordinates were
+assigned.  Coordinates allow us to calculate angle relations, but they do not
+create the notion of angle.
+
+For example, two perpendicular lines through a point divide a full turn into
+four equal right angles.  Cartesian coordinates encode this fact through the
+perpendicular axes and, later, through algebraic criteria for slopes.
+
+\begin{remarkbox}
+The logical direction in this construction is
+\[
+\text{Euclidean geometry}
+\longrightarrow
+\text{perpendicular axes and a unit}
+\longrightarrow
+\text{coordinates}
+\longrightarrow
+\text{algebraic formulas for Euclidean geometry}.
+\]
+It is not
+\[
+\mathbb R^2
+\longrightarrow
+\text{geometry without further assumptions}.
+\]
+\end{remarkbox}
 
 \begin{summarybox}
-The logical order is
-\[
-\mathbb{R}^2
-\longrightarrow
-\text{coordinate interpretation}
-\longrightarrow
-d_E
-\longrightarrow
-(\mathbb{R}^2,d_E)
-\longrightarrow
-\text{Euclidean lengths, circles, angles, and perpendicularity}.
-\]
-None of the later geometric notions belongs to the bare set
-$\mathbb{R}^2$ without additional structure.
+A Cartesian coordinate system is constructed on a Euclidean plane by:
+\begin{enumerate}
+    \item choosing a line and an origin;
+    \item constructing the perpendicular axis through the origin;
+    \item choosing positive directions and one common unit length;
+    \item transferring and bisecting that unit to scale the axes;
+    \item assigning to every point its two orthogonal projections;
+    \item reading the two signed axis positions as $(x,y)$;
+    \item translating Euclidean theorems, such as Pythagoras, into coordinate
+          formulas.
+\end{enumerate}
+The resulting identification with $\mathbb R^2$ is a coordinate representation
+of the original Euclidean plane.
 \end{summarybox}
