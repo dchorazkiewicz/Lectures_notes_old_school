@@ -1,129 +1,29 @@
-\section{Vectors}
+\section{Vectors from Coordinates}
 
-The Cartesian coordinate system allows us to describe points by numbers.  A
-second geometric object is needed to describe displacement, direction, and
-change.  This object is a vector.
+In the previous chapter we learned to replace a point of the Euclidean plane by
+an ordered pair of real numbers.  We now use that correspondence immediately.
+Instead of beginning with an abstract object, let us begin with an experiment.
 
-\subsection{Directed Segments and Free Vectors}
-
-Let $A$ and $B$ be points.  The directed segment from $A$ to $B$ is denoted by
+Choose two points
 \[
-\overrightarrow{AB}.
-\]
-It has a direction, an orientation, and a length.  Two directed segments
-represent the same vector when one can be translated onto the other without
-rotation or change of length.
-
-\begin{definitionbox}
-A \emph{free vector} is an equivalence class of directed segments having the
-same length, direction, and orientation.  A particular directed segment is a
-representative of the vector.
-\end{definitionbox}
-
-Thus a vector is not attached permanently to one point.  It may be translated
-parallel to itself anywhere in the plane or in space.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[axis] (-0.5,0) -- (6.2,0) node[right] {$x$};
-    \draw[axis] (0,-0.5) -- (0,4.2) node[above] {$y$};
-    \coordinate (A) at (0.8,0.8);
-    \coordinate (B) at (3.0,2.4);
-    \coordinate (C) at (3.4,1.2);
-    \coordinate (D) at (5.6,2.8);
-    \draw[subset,->] (A) -- (B) node[midway,above left] {$\mathbf v$};
-    \draw[subset,->] (C) -- (D) node[midway,below right] {$\mathbf v$};
-    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
-    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
-    \fill[geometricSubsetColor] (C) circle (2pt) node[below] {$C$};
-    \fill[geometricSubsetColor] (D) circle (2pt) node[above right] {$D$};
-\end{tikzpicture}
-\end{center}
-
-The zero vector, denoted by $\mathbf 0$, has length zero.  Its initial and
-terminal points coincide.  For every vector $\mathbf v$, the opposite vector
-$-\mathbf v$ has the same length and direction but the reverse orientation.
-
-\subsection{Addition and the Parallelogram Rule}
-
-Suppose that representatives of $\mathbf u$ and $\mathbf v$ begin at the same
-point.  Translate each vector to the endpoint of the other.  The four directed
-segments form a parallelogram.
-
-\begin{definitionbox}
-The sum $\mathbf u+\mathbf v$ is the vector represented by the diagonal of this
-parallelogram beginning at the common initial point.
-\end{definitionbox}
-
-Equivalently, place the initial point of $\mathbf v$ at the terminal point of
-$\mathbf u$.  The vector from the initial point of $\mathbf u$ to the terminal
-point of the translated $\mathbf v$ is $\mathbf u+\mathbf v$.  This is the
-triangle rule.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.95]
-    \coordinate (O) at (0,0);
-    \coordinate (U) at (3.2,0.8);
-    \coordinate (V) at (1.1,2.5);
-    \coordinate (S) at (4.3,3.3);
-    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
-    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
-    \draw[helper] (U) -- (S);
-    \draw[helper] (V) -- (S);
-    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
-    \fill[geometricSubsetColor] (O) circle (2pt);
-\end{tikzpicture}
-\end{center}
-
-Vector addition satisfies
-\[
-\mathbf u+\mathbf v=\mathbf v+\mathbf u,
+A=(1,2),
 \qquad
-(\mathbf u+\mathbf v)+\mathbf w=\mathbf u+(\mathbf v+\mathbf w),
+B=(4,6).
 \]
+To move from $A$ to $B$, the first coordinate must increase by $3$ and the
+second coordinate by $4$:
 \[
-\mathbf v+\mathbf 0=\mathbf v,
+4-1=3,
 \qquad
-\mathbf v+(-\mathbf v)=\mathbf 0.
+6-2=4.
 \]
-Subtraction is defined by
+The ordered pair
 \[
-\mathbf u-\mathbf v=\mathbf u+(-\mathbf v).
+(3,4)
 \]
+records the complete displacement from $A$ to $B$.
 
-\subsection{Multiplication by a Scalar}
-
-Let $\lambda\in\mathbb R$.
-
-\begin{definitionbox}
-The scalar multiple $\lambda\mathbf v$ is the vector whose length is
-$|\lambda|$ times the length of $\mathbf v$.  It has the same orientation as
-$\mathbf v$ when $\lambda>0$, the opposite orientation when $\lambda<0$, and
-is the zero vector when $\lambda=0$.
-\end{definitionbox}
-
-Scalar multiplication satisfies
-\[
-\lambda(\mathbf u+\mathbf v)=\lambda\mathbf u+\lambda\mathbf v,
-\qquad
-(\lambda+\mu)\mathbf v=\lambda\mathbf v+\mu\mathbf v,
-\]
-\[
-(\lambda\mu)\mathbf v=\lambda(\mu\mathbf v),
-\qquad
-1\mathbf v=\mathbf v.
-\]
-
-Two nonzero vectors are parallel precisely when one is a nonzero scalar
-multiple of the other:
-\[
-\mathbf u\parallel\mathbf v
-\iff
-\mathbf u=\lambda\mathbf v
-\quad\text{for some }\lambda\neq0.
-\]
-
-\subsection{Coordinates of a Vector}
+\subsection{A Vector as a Coordinate Displacement}
 
 Let
 \[
@@ -131,191 +31,503 @@ A=(x_1,y_1),
 \qquad
 B=(x_2,y_2).
 \]
-The vector from $A$ to $B$ has coordinates
+The displacement from $A$ to $B$ is
 \[
 \overrightarrow{AB}=(x_2-x_1,\,y_2-y_1).
 \]
-In three-dimensional space, if
+
+\begin{definitionbox}
+A vector in the Cartesian plane is an ordered pair
 \[
-A=(x_1,y_1,z_1),
-\qquad
-B=(x_2,y_2,z_2),
+\mathbf v=(v_1,v_2)
+\]
+interpreted as a displacement: $v_1$ units in the horizontal direction and
+$v_2$ units in the vertical direction.
+\end{definitionbox}
+
+This definition makes the phrase ``the same vector at another point'' precise.
+If $C=(c_1,c_2)$ and
+\[
+D=(c_1+v_1,\,c_2+v_2),
 \]
 then
 \[
-\overrightarrow{AB}=(x_2-x_1,\,y_2-y_1,\,z_2-z_1).
+\overrightarrow{CD}=(v_1,v_2)=\mathbf v.
 \]
+Nothing is moved vaguely.  The endpoint is obtained by adding the same two
+coordinate changes.
 
-For vectors written in coordinates,
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.0) node[above] {$y$};
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (4,3);
+    \coordinate (C) at (2.5,2.2);
+    \coordinate (D) at (5.5,4.2);
+    \draw[subset,->] (A) -- (B) node[midway,below right] {$(3,2)$};
+    \draw[subset,->] (C) -- (D) node[midway,above left] {$(3,2)$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below right] {$B$};
+    \fill[geometricSubsetColor] (C) circle (2pt) node[above left] {$C$};
+    \fill[geometricSubsetColor] (D) circle (2pt) node[above right] {$D$};
+\end{tikzpicture}
+\end{center}
+
+The two arrows in the picture have different initial points, but both change
+coordinates by exactly $(3,2)$.  This is the coordinate meaning of equality of
+vectors.
+
+\begin{examplebox}
+Let
 \[
-\mathbf u=(u_1,u_2),
+P=(-2,1),
 \qquad
-\mathbf v=(v_1,v_2),
+Q=(3,-4).
 \]
-we have
+Then
 \[
-\mathbf u+\mathbf v=(u_1+v_1,\,u_2+v_2),
-\qquad
-\lambda\mathbf u=(\lambda u_1,\,\lambda u_2).
+\overrightarrow{PQ}
+=
+(3-(-2),\,-4-1)
+=
+(5,-5).
 \]
-The analogous formulas hold componentwise in $\mathbb R^3$.
+Starting from any point $(a,b)$, the same displacement ends at
+\[
+(a+5,\,b-5).
+\]
+\end{examplebox}
 
-The standard basis vectors are
+The zero vector is
 \[
-\mathbf e_1=(1,0),
-\qquad
-\mathbf e_2=(0,1)
+\mathbf 0=(0,0).
 \]
-in the plane, and
-\[
-\mathbf e_1=(1,0,0),
-\qquad
-\mathbf e_2=(0,1,0),
-\qquad
-\mathbf e_3=(0,0,1)
-\]
-in space.  Therefore
-\[
-(u_1,u_2)=u_1\mathbf e_1+u_2\mathbf e_2
-\]
-and
-\[
-(u_1,u_2,u_3)=u_1\mathbf e_1+u_2\mathbf e_2+u_3\mathbf e_3.
-\]
-
-\subsection{Linear Combinations, Span, and Bases}
-
-An expression of the form
-\[
-\lambda_1\mathbf v_1+\cdots+\lambda_k\mathbf v_k
-\]
-is called a linear combination of the vectors $\mathbf v_1,\ldots,\mathbf v_k$.
-The set of all such combinations is their span.
-
-Two vectors in the plane are linearly independent when neither is a scalar
-multiple of the other.  In that case they form a basis of the plane: every
-vector can be written uniquely as their linear combination.  Similarly, three
-vectors in $\mathbb R^3$ form a basis when none of them can be expressed as a
-linear combination of the other two.
-
-This language will later describe lines and planes:
-\[
-P=P_0+t\mathbf v
-\]
-describes a line, while
-\[
-P=P_0+s\mathbf u+t\mathbf v
-\]
-describes a plane when $\mathbf u$ and $\mathbf v$ are linearly independent.
-
-\subsection{Length and Unit Vectors}
-
-The length, or Euclidean norm, of
+It changes neither coordinate.  The opposite of
 \[
 \mathbf v=(v_1,v_2)
 \]
 is
 \[
-\|\mathbf v\|=\sqrt{v_1^2+v_2^2}.
+-\mathbf v=(-v_1,-v_2),
 \]
+which reverses the displacement.
+
+\subsection{Adding Displacements}
+
+Suppose we first move by
+\[
+\mathbf u=(u_1,u_2)
+\]
+and then by
+\[
+\mathbf v=(v_1,v_2).
+\]
+Starting at $(x,y)$, the first move gives
+\[
+(x+u_1,\,y+u_2),
+\]
+and the second gives
+\[
+(x+u_1+v_1,\,y+u_2+v_2).
+\]
+Therefore the combined displacement is
+\[
+\mathbf u+\mathbf v
+=
+(u_1+v_1,\,u_2+v_2).
+\]
+
+This formula is not an arbitrary rule.  It is forced by performing two
+coordinate changes one after another.
+
+\begin{examplebox}
+From $(1,1)$ move first by
+\[
+\mathbf u=(3,1)
+\]
+and then by
+\[
+\mathbf v=(-1,2).
+\]
+The intermediate point is
+\[
+(1,1)+(3,1)=(4,2),
+\]
+and the final point is
+\[
+(4,2)+(-1,2)=(3,4).
+\]
+The single displacement from start to finish is
+\[
+(3,4)-(1,1)=(2,3),
+\]
+which is exactly
+\[
+\mathbf u+\mathbf v=(3,1)+(-1,2)=(2,3).
+\]
+\end{examplebox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (3.2,0.9);
+    \coordinate (V) at (1.0,2.5);
+    \coordinate (S) at (4.2,3.4);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[helper] (U) -- (S);
+    \draw[helper] (V) -- (S);
+    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+The coordinate formula also explains the parallelogram rule.  Beginning at the
+same point, the two paths
+\[
+\mathbf u\text{ then }\mathbf v
+\qquad\text{and}\qquad
+\mathbf v\text{ then }\mathbf u
+\]
+end at the same coordinates because real-number addition is commutative.
+Hence the four points form a parallelogram, and its diagonal represents
+$\mathbf u+\mathbf v$.
+
+Subtraction is simply the displacement needed to undo another displacement:
+\[
+\mathbf u-\mathbf v
+=
+(u_1-v_1,\,u_2-v_2).
+\]
+In particular,
+\[
+\overrightarrow{AB}=B-A
+\]
+when points are identified with their coordinate pairs.
+
+\subsection{Scaling a Vector}
+
+Let
+\[
+\mathbf v=(v_1,v_2)
+\]
+and let $\lambda\in\mathbb R$.  Repeating the displacement twice gives
+\[
+2\mathbf v=(2v_1,2v_2),
+\]
+while reversing it gives
+\[
+-\mathbf v=(-v_1,-v_2).
+\]
+This suggests the general rule
+\[
+\lambda\mathbf v=(\lambda v_1,\lambda v_2).
+\]
+
+For $\lambda>0$, the direction is preserved.  For $\lambda<0$, it is reversed.
+The factor $|\lambda|$ tells us how the length changes.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \draw[subset,->] (O) -- (2,1) node[above] {$\mathbf v$};
+    \draw[very thick,->] (O) -- (4,2) node[above right] {$2\mathbf v$};
+    \draw[subset,->] (O) -- (-2,-1) node[below left] {$-\mathbf v$};
+    \fill[geometricSubsetColor] (O) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+Two nonzero vectors point along the same line precisely when one is a scalar
+multiple of the other:
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\quad\text{for some }\lambda\neq0.
+\]
+This criterion will later become the coordinate test for parallel lines.
+
+\subsection{The Standard Coordinate Vectors}
+
+The displacements
+\[
+\mathbf e_1=(1,0),
+\qquad
+\mathbf e_2=(0,1)
+\]
+move one unit along the coordinate axes.  Every vector can therefore be written
+as
+\[
+(v_1,v_2)=v_1\mathbf e_1+v_2\mathbf e_2.
+\]
+
+This is exactly why coordinates are useful: they tell us how much of each basic
+direction is present.
+
+\begin{examplebox}
 For
 \[
-\mathbf v=(v_1,v_2,v_3)
+\mathbf v=(3,-2),
 \]
-in space,
+we have
 \[
-\|\mathbf v\|=\sqrt{v_1^2+v_2^2+v_3^2}.
+\mathbf v=3\mathbf e_1-2\mathbf e_2.
 \]
-These formulas follow from the Pythagorean theorem.
+Geometrically, this means three units to the right and two units downward.
+\end{examplebox}
 
-A vector of length one is called a unit vector.  Every nonzero vector
-$\mathbf v$ determines the unit vector
+The same idea works in space.  There we use
 \[
-\widehat{\mathbf v}=\frac{\mathbf v}{\|\mathbf v\|}
+\mathbf e_1=(1,0,0),
+\qquad
+\mathbf e_2=(0,1,0),
+\qquad
+\mathbf e_3=(0,0,1),
 \]
-in the same direction.
-
-The distance between points is the length of their displacement vector:
+and
 \[
-d(A,B)=\|\overrightarrow{AB}\|.
-\]
-
-\subsection{The Dot Product and Angles}
-
-For vectors in $\mathbb R^2$ or $\mathbb R^3$, define the dot product by
-\[
-\mathbf u\cdot\mathbf v
+(v_1,v_2,v_3)
 =
-\sum_i u_i v_i.
+v_1\mathbf e_1+v_2\mathbf e_2+v_3\mathbf e_3.
 \]
-Thus, in three dimensions,
+For points
+\[
+A=(x_1,y_1,z_1),
+\qquad
+B=(x_2,y_2,z_2),
+\]
+the displacement is
+\[
+\overrightarrow{AB}
+=
+(x_2-x_1,\,y_2-y_1,\,z_2-z_1).
+\]
+
+\subsection{Length from the Pythagorean Theorem}
+
+Take
+\[
+\mathbf v=(v_1,v_2).
+\]
+Draw it from the origin.  Its endpoint is $(v_1,v_2)$, so the horizontal and
+vertical sides of the associated right triangle have lengths $|v_1|$ and
+$|v_2|$.  The Pythagorean theorem gives
+\[
+\|\mathbf v\|
+=
+\sqrt{v_1^2+v_2^2}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (4,2.7);
+    \coordinate (R) at (4,0);
+    \draw[subset,->] (O) -- (P) node[midway,above left] {$\mathbf v$};
+    \draw[helper] (O) -- (R) node[midway,below] {$|v_1|$};
+    \draw[helper] (R) -- (P) node[midway,right] {$|v_2|$};
+    \draw (R) ++(-0.28,0) -- ++(0,0.28) -- ++(0.28,0);
+\end{tikzpicture}
+\end{center}
+
+In three dimensions, applying the same theorem twice gives
+\[
+\|(v_1,v_2,v_3)\|
+=
+\sqrt{v_1^2+v_2^2+v_3^2}.
+\]
+The distance between two points is now simply the length of their displacement:
+\[
+d(A,B)=\|B-A\|.
+\]
+
+\begin{examplebox}
+For
+\[
+A=(1,-1),
+\qquad
+B=(5,2),
+\]
+we have
+\[
+B-A=(4,3),
+\]
+so
+\[
+d(A,B)=\sqrt{4^2+3^2}=5.
+\]
+The familiar $3$--$4$--$5$ triangle appears directly in the coordinate
+calculation.
+\end{examplebox}
+
+A vector of length one is called a unit vector.  For $\mathbf v\neq\mathbf0$,
+\[
+\widehat{\mathbf v}
+=
+\frac{\mathbf v}{\|\mathbf v\|}
+\]
+has the same direction and length one.
+
+\subsection{Recovering Angles from Coordinates}
+
+Length came from the Pythagorean theorem.  Angles can also be recovered from
+coordinates.
+
+Let $\mathbf u$ and $\mathbf v$ begin at the same point, and let $\theta$ be the
+angle between them.  The third side of the triangle is $\mathbf u-\mathbf v$.
+The cosine rule gives
+\[
+\|\mathbf u-\mathbf v\|^2
+=
+\|\mathbf u\|^2+\|\mathbf v\|^2
+-2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+On the other hand, if
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2),
+\]
+then direct expansion gives
+\[
+\|\mathbf u-\mathbf v\|^2
+=
+\|\mathbf u\|^2+\|\mathbf v\|^2
+-2(u_1v_1+u_2v_2).
+\]
+Comparing the two expressions shows that the coordinate combination
+\[
+u_1v_1+u_2v_2
+\]
+measures the angle.
+
+\begin{definitionbox}
+The dot product of
+\[
+\mathbf u=(u_1,u_2)
+\qquad\text{and}\qquad
+\mathbf v=(v_1,v_2)
+\]
+is
+\[
+\mathbf u\cdot\mathbf v=u_1v_1+u_2v_2.
+\]
+In $\mathbb R^3$ one adds the third product:
 \[
 (u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
 =
 u_1v_1+u_2v_2+u_3v_3.
 \]
+\end{definitionbox}
 
-\begin{theorembox}
-If $\theta$ is the angle between two nonzero vectors $\mathbf u$ and
-$\mathbf v$, then
+The preceding calculation proves
 \[
 \mathbf u\cdot\mathbf v
 =
 \|\mathbf u\|\,\|\mathbf v\|\cos\theta.
 \]
-Consequently,
+Thus
 \[
 \cos\theta
 =
 \frac{\mathbf u\cdot\mathbf v}
 {\|\mathbf u\|\,\|\mathbf v\|}.
 \]
-\end{theorembox}
 
-The dot product is symmetric and distributive:
+\begin{examplebox}
+Let
 \[
-\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u,
+\mathbf u=(1,2),
 \qquad
-\mathbf u\cdot(\mathbf v+\mathbf w)
-=
-\mathbf u\cdot\mathbf v+\mathbf u\cdot\mathbf w.
+\mathbf v=(3,1).
 \]
-Moreover,
+Then
 \[
-\mathbf v\cdot\mathbf v=\|\mathbf v\|^2.
+\mathbf u\cdot\mathbf v=1\cdot3+2\cdot1=5,
 \]
+while
+\[
+\|\mathbf u\|=\sqrt5,
+\qquad
+\|\mathbf v\|=\sqrt{10}.
+\]
+Therefore
+\[
+\cos\theta=
+\frac{5}{\sqrt5\sqrt{10}}
+=
+\frac{1}{\sqrt2},
+\]
+so the angle is $45^\circ$.
+\end{examplebox}
 
-\subsection{Perpendicularity and Orthogonal Projection}
+\subsection{Perpendicularity as a Coordinate Test}
 
-\begin{definitionbox}
-Two nonzero vectors are perpendicular, or orthogonal, when the angle between
-them is a right angle.
-\end{definitionbox}
-
-Because $\cos\theta=0$ for a right angle,
+A right angle has cosine zero.  Therefore, for nonzero vectors,
 \[
 \mathbf u\perp\mathbf v
 \iff
 \mathbf u\cdot\mathbf v=0.
 \]
-This criterion will be used to define normal vectors to lines and planes.
 
-The orthogonal projection of $\mathbf u$ onto a nonzero vector $\mathbf v$ is
+This is the first major payoff of introducing vectors through coordinates.  A
+geometric statement about a right angle becomes one arithmetic calculation.
+
+\begin{examplebox}
+Take
+\[
+\mathbf u=(3,2),
+\qquad
+\mathbf v=(-2,3).
+\]
+Then
+\[
+\mathbf u\cdot\mathbf v
+=3(-2)+2(3)=0.
+\]
+Hence the vectors are perpendicular.  Notice that $(-2,3)$ is obtained from
+$(3,2)$ by a quarter-turn: the coordinates are exchanged and one sign changes.
+\end{examplebox}
+
+A vector perpendicular to a given direction is called a normal vector.  In the
+next chapter, normal vectors will let us write equations of lines and planes.
+
+\subsection{Projection: Splitting a Vector into Parallel and Perpendicular Parts}
+
+Let $\mathbf v\neq\mathbf0$.  We want to split an arbitrary vector $\mathbf u$
+into one part parallel to $\mathbf v$ and one part perpendicular to it.
+
+A vector parallel to $\mathbf v$ has the form $\lambda\mathbf v$.  We require
+\[
+\mathbf u-\lambda\mathbf v
+\]
+to be perpendicular to $\mathbf v$.  Therefore
+\[
+(\mathbf u-\lambda\mathbf v)\cdot\mathbf v=0.
+\]
+Expanding gives
+\[
+\mathbf u\cdot\mathbf v
+-
+\lambda(\mathbf v\cdot\mathbf v)=0,
+\]
+so
+\[
+\lambda
+=
+\frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}.
+\]
+Hence the parallel part is
 \[
 \operatorname{proj}_{\mathbf v}\mathbf u
 =
 \frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
 \]
-The difference
-\[
-\mathbf u-\operatorname{proj}_{\mathbf v}\mathbf u
-\]
-is perpendicular to $\mathbf v$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.95]
     \coordinate (O) at (0,0);
-    \coordinate (V) at (5,0);
+    \coordinate (V) at (5.2,0);
     \coordinate (U) at (3.2,2.7);
     \coordinate (P) at (3.2,0);
     \draw[subset,->] (O) -- (V) node[right] {$\mathbf v$};
@@ -326,7 +538,64 @@ is perpendicular to $\mathbf v$.
 \end{tikzpicture}
 \end{center}
 
+The remainder
+\[
+\mathbf u-
+\operatorname{proj}_{\mathbf v}\mathbf u
+\]
+is perpendicular to $\mathbf v$.  This decomposition will later describe
+shortest distances to lines and planes.
+
+\subsection{Two Directions and the Parallelogram They Generate}
+
+Given two vectors $\mathbf u$ and $\mathbf v$, every expression
+\[
+s\mathbf u+t\mathbf v
+\]
+is called a linear combination of them.  In the plane, two nonparallel vectors
+allow us to reach every point from the origin by choosing suitable $s$ and $t$.
+They form a basis of the plane.
+
+If the vectors are parallel, then every combination remains on one line.  If
+they are not parallel, their combinations fill the whole plane.  This is the
+geometric distinction between one available direction and two genuinely
+independent directions.
+
+The parallelogram generated by $\mathbf u$ and $\mathbf v$ has vertices
+\[
+\mathbf0,
+\qquad
+\mathbf u,
+\qquad
+\mathbf v,
+\qquad
+\mathbf u+\mathbf v.
+\]
+Its area in the plane is
+\[
+|u_1v_2-u_2v_1|.
+\]
+The expression vanishes exactly when the two vectors are parallel.
+
+\begin{examplebox}
+For
+\[
+\mathbf u=(3,1),
+\qquad
+\mathbf v=(1,2),
+\]
+the area is
+\[
+|3\cdot2-1\cdot1|=5.
+\]
+Because the area is nonzero, the vectors are not parallel and form a basis of
+the plane.
+\end{examplebox}
+
 \subsection{The Cross Product in Three Dimensions}
+
+In space, two nonparallel vectors determine a plane.  It is often useful to
+construct a vector perpendicular to both of them.
 
 For
 \[
@@ -338,39 +607,73 @@ define
 \[
 \mathbf u\times\mathbf v
 =
-(u_2v_3-u_3v_2,\,
- u_3v_1-u_1v_3,\,
- u_1v_2-u_2v_1).
+\bigl(
+ u_2v_3-u_3v_2,
+ u_3v_1-u_1v_3,
+ u_1v_2-u_2v_1
+\bigr).
 \]
+A direct dot-product calculation gives
+\[
+(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
+\qquad
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0.
+\]
+Thus $\mathbf u\times\mathbf v$ is normal to the plane generated by
+$\mathbf u$ and $\mathbf v$.
 
-\begin{theorembox}
-The vector $\mathbf u\times\mathbf v$ is perpendicular to both $\mathbf u$ and
-$\mathbf v$.  Its length is
+Its length equals the area of their parallelogram:
 \[
 \|\mathbf u\times\mathbf v\|
 =
-\|\mathbf u\|\,\|\mathbf v\|\sin\theta,
+\|\mathbf u\|\,\|\mathbf v\|\sin\theta.
 \]
-where $\theta$ is the angle between $\mathbf u$ and $\mathbf v$.
-\end{theorembox}
-
-Therefore $\|\mathbf u\times\mathbf v\|$ is the area of the parallelogram
-spanned by $\mathbf u$ and $\mathbf v$.  The cross product is zero exactly when
-the vectors are parallel.  Its orientation is determined by the right-hand
-rule.
-
-The scalar triple product
+Consequently,
 \[
-\mathbf u\cdot(\mathbf v\times\mathbf w)
+\mathbf u\times\mathbf v=\mathbf0
 \]
-is the signed volume of the parallelepiped spanned by the three vectors.  It is
-zero exactly when the vectors are coplanar.
+exactly when the vectors are parallel.
+
+\begin{examplebox}
+Let
+\[
+\mathbf u=(1,0,1),
+\qquad
+\mathbf v=(0,2,1).
+\]
+Then
+\[
+\mathbf u\times\mathbf v
+=
+(-2,-1,2).
+\]
+Indeed,
+\[
+(-2,-1,2)\cdot(1,0,1)=0
+\]
+and
+\[
+(-2,-1,2)\cdot(0,2,1)=0.
+\]
+So $(-2,-1,2)$ is perpendicular to both original directions.
+\end{examplebox}
 
 \begin{summarybox}
-Vectors describe displacement and direction.  Their fundamental operations are
-addition, scalar multiplication, the dot product, and---in three dimensions---
-the cross product.  The parallelogram rule gives vector addition, the dot
-product detects angles and perpendicularity, and the cross product produces a
-normal vector to a plane.  These constructions provide the language needed for
-lines, planes, conic sections, and quadric surfaces.
+A vector is introduced here directly as a coordinate displacement.
+For points $A$ and $B$,
+\[
+\overrightarrow{AB}=B-A.
+\]
+Successive displacements force componentwise addition, scaling forces
+componentwise multiplication by a scalar, and the Pythagorean theorem gives the
+norm.  Comparing the cosine rule with coordinate expansion produces the dot
+product and the test
+\[
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0.
+\]
+In three dimensions, the cross product constructs a normal direction to two
+nonparallel vectors.  These tools are exactly what we need to describe lines
+and planes in the next chapter.
 \end{summarybox}
