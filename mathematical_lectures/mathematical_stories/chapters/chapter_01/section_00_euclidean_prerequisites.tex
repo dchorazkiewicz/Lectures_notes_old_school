@@ -1,0 +1,244 @@
+\section{The Euclidean Geometry Available Before Coordinates}
+
+Before introducing coordinates, we recall the geometric world that is already
+available.  At this stage there are no ordered pairs, no axes, and no vectors.
+There are points, straight lines, segments, circles, and angles, together with
+constructions and relations that can be recognized without assigning numbers
+to every object.
+
+\begin{remarkbox}
+Coordinates will later translate this geometry into arithmetic.  They do not
+create the geometry and they are not needed to state that two segments are
+congruent, that two lines meet at a right angle, or that one point lies between
+two others.
+\end{remarkbox}
+
+\subsection{Points, Lines, Segments, Circles, and Angles}
+
+We begin with the following elementary geometric objects and relations.
+
+\begin{itemize}
+    \item A point records a position but has no length or area.
+    \item Two distinct points determine a unique straight line.
+    \item The part of a line between two points is a segment.
+    \item A ray begins at one point and extends indefinitely in one direction.
+    \item A circle consists of all points at a fixed distance from a chosen
+          centre.
+    \item Two rays with a common endpoint determine an angle.
+\end{itemize}
+
+Segments can be compared and copied.  Angles can be compared, copied, added,
+and bisected before any numerical measure in degrees or radians is introduced.
+In particular, a right angle is a geometric object available from the start.
+
+When two lines meet and the adjacent angles are equal, each of those angles is
+a right angle and the lines are perpendicular.  Two coplanar lines that never
+meet are parallel.
+
+\subsection{What Straightedge-and-Compass Constructions Give Us}
+
+The classical straightedge and compass allow us to perform a small collection
+of operations repeatedly.  These operations will later be used to construct a
+coordinate system.
+
+\begin{itemize}
+    \item draw the unique line through two distinct points;
+    \item draw a circle with a chosen centre and radius;
+    \item transfer a segment length to another location;
+    \item find the midpoint and perpendicular bisector of a segment;
+    \item construct a perpendicular through a point on a line;
+    \item construct a perpendicular through a point outside a line;
+    \item bisect an angle;
+    \item copy an angle;
+    \item construct a parallel through a point outside a line.
+\end{itemize}
+
+The important point is not merely that these constructions are possible.  Each
+construction is justified by elementary geometric equalities.
+
+\subsubsection{The Perpendicular Bisector of a Segment}
+
+Let $A$ and $B$ be distinct points.  Draw two circles with the same radius,
+one centred at $A$ and one centred at $B$, choosing the radius larger than half
+of $AB$.  Let their intersection points be $P$ and $Q$.
+
+Because $P$ lies on both circles,
+\[
+PA=PB.
+\]
+Similarly,
+\[
+QA=QB.
+\]
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$.  The line through $P$
+and $Q$ is the perpendicular bisector of $AB$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \coordinate (A) at (-2.2,0);
+    \coordinate (B) at (2.2,0);
+    \coordinate (P) at (0,2.4);
+    \coordinate (Q) at (0,-2.4);
+    \draw[helper] (A) circle (3.25);
+    \draw[helper] (B) circle (3.25);
+    \draw[subset] (A) -- (B);
+    \draw[very thick] (0,-3.0) -- (0,3.0);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[below] {$Q$};
+\end{tikzpicture}
+\end{center}
+
+The midpoint of $AB$ is the intersection of this perpendicular bisector with
+$AB$.  Thus midpoint and perpendicularity are obtained from congruent radii,
+not from coordinates.
+
+\subsubsection{Bisecting an Angle}
+
+Let two rays with common endpoint $O$ form an angle.  Draw a circle centred at
+$O$ meeting the rays at $A$ and $B$.  Then draw equal-radius circles centred at
+$A$ and $B$, and let one of their intersections inside the angle be $P$.
+Since
+\[
+OA=OB,
+\qquad
+AP=BP,
+\qquad
+OP=OP,
+\]
+the triangles $OAP$ and $OBP$ are congruent.  Therefore
+\[
+\angle AOP=\angle POB.
+\]
+The ray $OP$ is the angle bisector.
+
+\subsection{Parallel Lines and Proportional Segments}
+
+A central fact of Euclidean geometry is that parallel lines preserve ratios.
+This is the content of Thales' theorem in the form needed here.
+
+\begin{theorembox}
+Let $D$ lie on $AB$ and $E$ lie on $AC$ in a triangle $ABC$.  If
+\[
+DE\parallel BC,
+\]
+then
+\[
+\frac{AD}{AB}
+=
+\frac{AE}{AC}
+=
+\frac{DE}{BC}.
+\]
+\end{theorembox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (0,3.6);
+    \coordinate (B) at (-3.2,0);
+    \coordinate (C) at (3.8,0);
+    \coordinate (D) at (-1.6,1.8);
+    \coordinate (E) at (1.9,1.8);
+    \draw[subset] (A) -- (B) -- (C) -- cycle;
+    \draw[very thick] (D) -- (E);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[above] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below left] {$B$};
+    \fill[geometricSubsetColor] (C) circle (2pt) node[below right] {$C$};
+    \fill[geometricSubsetColor] (D) circle (2pt) node[left] {$D$};
+    \fill[geometricSubsetColor] (E) circle (2pt) node[right] {$E$};
+    \node at (0.15,2.05) {$DE\parallel BC$};
+\end{tikzpicture}
+\end{center}
+
+The smaller triangle $ADE$ and the larger triangle $ABC$ have the same three
+angles.  Their corresponding sides differ by one common scale factor.  This is
+the basic phenomenon of similarity.
+
+\begin{definitionbox}
+Two triangles are similar when their corresponding angles are equal.  In that
+case their corresponding side lengths are proportional.
+\end{definitionbox}
+
+Similarity lets us change the size of a figure while preserving its shape.  It
+is the reason ratios of corresponding lengths can depend only on angles.
+
+\subsection{Sine and Cosine Before Coordinates}
+
+Take a right triangle containing an acute angle $\alpha$.  Let $h$ denote the
+hypotenuse, let $a$ be the leg adjacent to $\alpha$, and let $b$ be the leg
+opposite $\alpha$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4.8,0);
+    \coordinate (C) at (4.8,2.9);
+    \draw[subset] (A) -- (B) -- (C) -- cycle;
+    \draw (B) ++(-0.3,0) -- ++(0,0.3) -- ++(0.3,0);
+    \draw (0.85,0) arc[start angle=0,end angle=31.1,radius=0.85];
+    \node at (1.08,0.28) {$\alpha$};
+    \node[below] at (2.4,0) {$a$};
+    \node[right] at (4.8,1.45) {$b$};
+    \node[above left] at (2.4,1.45) {$h$};
+\end{tikzpicture}
+\end{center}
+
+We define
+\[
+\cos\alpha=\frac{a}{h},
+\qquad
+\sin\alpha=\frac{b}{h}.
+\]
+
+These expressions are well defined.  Indeed, any two right triangles containing
+the same acute angle $\alpha$ have the same third angle and are therefore
+similar.  Their corresponding sides are proportional, so the ratios $a/h$ and
+$b/h$ do not depend on the particular triangle chosen.  They depend only on the
+angle.
+
+This is the essential role of Thales' theorem and similarity: they turn the two
+ratios above into genuine functions of an angle.
+
+The Pythagorean theorem gives
+\[
+a^2+b^2=h^2.
+\]
+Dividing by $h^2$ yields
+\[
+\left(\frac{a}{h}\right)^2+
+\left(\frac{b}{h}\right)^2=1,
+\]
+and hence
+\[
+\cos^2\alpha+\sin^2\alpha=1.
+\]
+Thus the fundamental trigonometric identity is a direct reformulation of the
+Pythagorean theorem.
+
+\subsection{Angles and Their Numerical Measure}
+
+An angle exists geometrically before it is assigned a number.  We can compare,
+copy, add, and bisect angles without degrees or radians.  A numerical angle
+measure requires an additional choice of unit.
+
+Degrees divide one full turn into $360$ equal parts.  Radians use the geometry
+of a circle.  If an angle at the centre of a circle cuts off an arc of length
+$s$ on a circle of radius $r$, its radian measure is
+\[
+\theta=\frac{s}{r}.
+\]
+The ratio does not depend on the size of the circle: scaling the circle by a
+factor scales both $s$ and $r$ by that factor.  Again, similarity makes the
+quantity well defined.
+
+\begin{remarkbox}
+At this point no vector has been introduced.  We have only Euclidean objects,
+constructions, similarity, trigonometric ratios, and numerical angle measure.
+Vectors will appear only in the next chapter, after the Cartesian coordinate
+system has been constructed.
+\end{remarkbox}
+
+The next step is to choose two perpendicular lines, an origin, directions, and
+a unit length.  Those choices will convert the Euclidean plane into a Cartesian
+coordinate plane.
