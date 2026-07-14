@@ -360,6 +360,207 @@ same geometric fact appears in the expression just discovered:
 A vector perpendicular to a given direction is called a normal vector.  This
 idea will be used to construct equations of lines and planes.
 
+\subsection{What Does the Dot Product Measure for an Arbitrary Angle?}
+
+The preceding calculation discovered the dot product by studying one special
+geometric question: when is the angle a right angle?  We now ask what the same
+coordinate expression says about an arbitrary angle.
+
+Take two arbitrary nonzero vectors beginning at a common point:
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2).
+\]
+Let $\alpha$ and $\beta$ be their respective angles of inclination measured
+from the positive horizontal direction.  The vector $\mathbf u$ has length
+$\|\mathbf u\|$.  Its horizontal and vertical coordinate changes are therefore
+\[
+u_1=\|\mathbf u\|\cos\alpha,
+\qquad
+u_2=\|\mathbf u\|\sin\alpha.
+\]
+Likewise,
+\[
+v_1=\|\mathbf v\|\cos\beta,
+\qquad
+v_2=\|\mathbf v\|\sin\beta.
+\]
+Thus the two vectors can be written without making either of them a coordinate
+axis:
+\[
+\mathbf u
+=
+\|\mathbf u\|(\cos\alpha,\sin\alpha),
+\]
+\[
+\mathbf v
+=
+\|\mathbf v\|(\cos\beta,\sin\beta).
+\]
+
+Now substitute these coordinates into the dot product discovered above:
+\[
+\begin{aligned}
+\mathbf u\cdot\mathbf v
+&=u_1v_1+u_2v_2\\
+&=\|\mathbf u\|\cos\alpha\,
+  \|\mathbf v\|\cos\beta
+ +\|\mathbf u\|\sin\alpha\,
+  \|\mathbf v\|\sin\beta\\
+&=\|\mathbf u\|\,\|\mathbf v\|
+  \bigl(\cos\alpha\cos\beta+
+        \sin\alpha\sin\beta\bigr).
+\end{aligned}
+\]
+The angle between the two directions is
+\[
+\theta=|\alpha-\beta|.
+\]
+The cosine-difference identity gives
+\[
+\cos(\alpha-\beta)
+=
+\cos\alpha\cos\beta+\sin\alpha\sin\beta.
+\]
+Because cosine is even,
+\[
+\cos(\alpha-\beta)=\cos|\alpha-\beta|=\cos\theta.
+\]
+Therefore
+\[
+\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+
+\begin{theorembox}
+For arbitrary nonzero vectors $\mathbf u$ and $\mathbf v$ in the plane, if
+$\theta$ is the angle between their direction lines, then
+\[
+\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+\end{theorembox}
+
+This formula was not used to define the dot product.  The dot product first
+appeared as the coordinate expression forced by perpendicular direction lines.
+The calculation above shows that the same expression records every angle, not
+only a right angle.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.2,1.6);
+    \coordinate (V) at (1.6,3.6);
+    \draw[axis] (-0.4,0) -- (5.2,0) node[right] {$x$};
+    \draw[subset,->] (O) -- (U) node[above right] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[above] {$\mathbf v$};
+    \draw (1.0,0) arc[start angle=0,end angle=20.9,radius=1.0];
+    \node at (1.22,0.25) {$\alpha$};
+    \draw (0.78,0.30) arc[start angle=20.9,end angle=66.0,radius=0.84];
+    \node at (0.72,0.72) {$\theta$};
+    \draw (0.55,1.24) arc[start angle=66.0,end angle=90,radius=1.36];
+    \node at (0.28,1.42) {$\beta$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{The Cosine Theorem Emerges from Vector Subtraction}
+
+The two vectors $\mathbf u$ and $\mathbf v$, drawn from a common point, form two
+sides of a triangle.  The displacement from the endpoint of $\mathbf v$ to the
+endpoint of $\mathbf u$ is
+\[
+\mathbf u-\mathbf v.
+\]
+Hence the three side lengths are
+\[
+\|\mathbf u\|,
+\qquad
+\|\mathbf v\|,
+\qquad
+\|\mathbf u-\mathbf v\|.
+\]
+Let $\theta$ be the angle between $\mathbf u$ and $\mathbf v$.
+
+We calculate the square of the third side directly from coordinates and the dot
+product:
+\[
+\begin{aligned}
+\|\mathbf u-\mathbf v\|^2
+&=(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)\\
+&=\mathbf u\cdot\mathbf u
+  -\mathbf u\cdot\mathbf v
+  -\mathbf v\cdot\mathbf u
+  +\mathbf v\cdot\mathbf v.
+\end{aligned}
+\]
+The dot product is symmetric, so
+\[
+\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u.
+\]
+Also,
+\[
+\mathbf u\cdot\mathbf u=\|\mathbf u\|^2,
+\qquad
+\mathbf v\cdot\mathbf v=\|\mathbf v\|^2.
+\]
+Therefore
+\[
+\|\mathbf u-\mathbf v\|^2
+=
+\|\mathbf u\|^2+
+\|\mathbf v\|^2-
+2\mathbf u\cdot\mathbf v.
+\]
+Substituting the angle formula just derived gives
+\[
+\|\mathbf u-\mathbf v\|^2
+=
+\|\mathbf u\|^2+
+\|\mathbf v\|^2-
+2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+
+If we write
+\[
+a=\|\mathbf u\|,
+\qquad
+b=\|\mathbf v\|,
+\qquad
+c=\|\mathbf u-\mathbf v\|,
+\]
+then the calculation becomes
+\[
+c^2=a^2+b^2-2ab\cos\theta.
+\]
+
+\begin{theorembox}
+For a triangle with side lengths $a$, $b$, and $c$, where $\theta$ is the angle
+between the sides of lengths $a$ and $b$,
+\[
+c^2=a^2+b^2-2ab\cos\theta.
+\]
+\end{theorembox}
+
+The cosine theorem is therefore not inserted as an external rule.  It is the
+coordinate expansion of the displacement between the endpoints of two arbitrary
+vectors.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.4,1.5);
+    \coordinate (V) at (1.3,3.5);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[very thick,->] (V) -- (U) node[midway,above right] {$\mathbf u-\mathbf v$};
+    \draw (0.72,0.25) arc[start angle=19,end angle=69.6,radius=0.76];
+    \node at (0.70,0.65) {$\theta$};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Projection Is Forced by the Right-Angle Condition}
 
 Let $\mathbf v\neq\mathbf0$.  We seek a multiple $\lambda\mathbf v$ such that
@@ -425,6 +626,9 @@ Every operation in this chapter arose from a geometric problem expressed in
 coordinates.  Successive displacements produced vector addition.  Repeated
 displacements produced scalar multiplication.  Direction lines produced the
 criterion for parallel vectors.  Perpendicular direction lines produced the
-coordinate expression later named the dot product.  Projection and the cross
-product were then obtained by solving explicit perpendicularity conditions.
+coordinate expression later named the dot product.  Writing two arbitrary
+vectors by their lengths and inclination angles showed that this expression is
+$\|\mathbf u\|\,\|\mathbf v\|\cos\theta$.  Expanding the displacement
+$\mathbf u-\mathbf v$ then produced the cosine theorem.  Projection and the
+cross product were obtained by solving explicit perpendicularity conditions.
 \end{summarybox}
