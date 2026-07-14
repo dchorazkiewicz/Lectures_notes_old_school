@@ -109,6 +109,7 @@ jobs:
 
           all_projects=(
             "mathematical_lectures/basic_mathematics"
+            "mathematical_lectures/mathematical_stories"
             "mathematical_lectures/probabilistic_methods"
             "mathematical_lectures/general_notes_experiments"
             "physics_lectures/physics_basics"
