@@ -42,13 +42,13 @@ belong to $L$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
-    \draw[->,thick] (-3.4,0) -- (3.6,0) node[right] {$x$};
-    \draw[->,thick] (0,-4.2) -- (0,6.0) node[above] {$y$};
-    \draw[very thick,domain=-2.4:2.4,samples=2] plot (\x,{2*\x+1});
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-4.2) -- (0,6.0) node[above] {$y$};
+    \draw[subset,domain=-2.4:2.4,samples=2] plot (\x,{2*\x+1});
     \foreach \x/\y in {-2/-3,-1/-1,0/1,1/3,2/5} {
         \fill[geometricSubsetColor] (\x,\y) circle (2pt);
     }
-    \node[geometricSubsetColor,right] at (2.1,5.2) {$L$};
+    \node[subset label,right] at (2.1,5.2) {$L$};
 \end{tikzpicture}
 \end{center}
 
@@ -82,13 +82,13 @@ line:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
-    \draw[->,thick] (-0.8,0) -- (4.4,0) node[right] {$x$};
-    \draw[->,thick] (0,-0.8) -- (0,6.0) node[above] {$y$};
-    \draw[very thick,domain=-0.2:2.5,samples=2] plot (\x,{2*\x+1});
+    \draw[axis] (-0.8,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-0.8) -- (0,6.0) node[above] {$y$};
+    \draw[subset,domain=-0.2:2.5,samples=2] plot (\x,{2*\x+1});
     \fill[geometricSubsetColor] (0.5,2) circle (2pt);
     \fill[geometricSubsetColor] (2,5) circle (2pt);
-    \draw[dashed] (0.5,2) -- (2,2) node[midway,below] {$\Delta x$};
-    \draw[dashed] (2,2) -- (2,5) node[midway,right] {$\Delta y$};
+    \draw[helper] (0.5,2) -- (2,2) node[midway,below] {$\Delta x$};
+    \draw[helper] (2,2) -- (2,5) node[midway,right] {$\Delta y$};
 \end{tikzpicture}
 \end{center}
 
@@ -152,10 +152,10 @@ is the vertical line through all points whose first coordinate is $-2$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-    \draw[->,thick] (-4.0,0) -- (3.5,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.2) -- (0,3.5) node[above] {$y$};
-    \draw[very thick] (-2,-3) -- (-2,3);
-    \node[geometricSubsetColor,above] at (-2,3) {$V_{-2}$};
+    \draw[axis] (-4.0,0) -- (3.5,0) node[right] {$x$};
+    \draw[axis] (0,-3.2) -- (0,3.5) node[above] {$y$};
+    \draw[subset] (-2,-3) -- (-2,3);
+    \node[subset label,above] at (-2,3) {$V_{-2}$};
     \draw (-2,0.08) -- (-2,-0.08) node[below=3pt] {$-2$};
 \end{tikzpicture}
 \end{center}
@@ -273,48 +273,140 @@ L=\{(x,y)\in\mathbb{R}^2:y=2x\}.
 \]
 \end{examplebox}
 
-\subsection{Parallel and Perpendicular Lines}
+\subsection{Parallel Lines: Geometry First, Criterion Second}
 
-Two distinct non-vertical lines are parallel precisely when they have the same
-slope.  Thus
+Two distinct lines are called \emph{parallel} when they have no common point.
+Thus, for subsets $L_1,L_2\subseteq\mathbb{R}^2$, parallelism means
 \[
-y=m x+b_1
+L_1\neq L_2
 \qquad\text{and}\qquad
-y=m x+b_2,
-\qquad b_1\neq b_2,
+L_1\cap L_2=\varnothing.
 \]
-describe parallel lines.
+This is the geometric definition.  We now ask how it can be recognised from
+equations.
 
-Two vertical lines are also parallel.  A vertical line is perpendicular to a
-horizontal line.
+Let
+\[
+L_1=\{(x,y)\in\mathbb{R}^2:y=m_1x+b_1\},
+\qquad
+L_2=\{(x,y)\in\mathbb{R}^2:y=m_2x+b_2\}.
+\]
+A common point would have to satisfy both conditions, so
+\[
+m_1x+b_1=m_2x+b_2.
+\]
+Equivalently,
+\[
+(m_1-m_2)x=b_2-b_1.
+\]
 
-For two non-vertical and non-horizontal lines with slopes $m_1$ and $m_2$, the
-lines are perpendicular when
+If $m_1\neq m_2$, this equation has exactly one solution for $x$, and therefore
+the two lines meet at exactly one point.  They are not parallel.
+
+If $m_1=m_2$, the equation becomes
 \[
-m_1m_2=-1.
+0=b_2-b_1.
 \]
-Equivalently, their slopes are negative reciprocals:
+There are then two possibilities:
+\begin{itemize}
+    \item if $b_1=b_2$, the two set-builder descriptions define the same line;
+    \item if $b_1\neq b_2$, no point satisfies both conditions, so the lines are
+    distinct and have empty intersection.
+\end{itemize}
+
+We have therefore derived the criterion:
 \[
-m_2=-\frac{1}{m_1}.
+\boxed{L_1\parallel L_2
+\iff m_1=m_2\text{ and }b_1\neq b_2.}
 \]
+The equality of slopes is not the definition of parallelism.  It is an
+algebraic consequence of the geometric definition for non-vertical lines.
+Two distinct vertical lines are parallel for the same reason: the conditions
+$x=c_1$ and $x=c_2$ cannot hold simultaneously when $c_1\neq c_2$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
-    \draw[->,thick] (-4.2,0) -- (4.4,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.5) -- (0,4.0) node[above] {$y$};
-    \draw[very thick,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x+1.3});
-    \draw[very thick,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x-1.2});
-    \node[geometricSubsetColor,right] at (3.0,3.1) {$L_1$};
-    \node[geometricSubsetColor,right] at (3.0,0.6) {$L_2$};
+    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-3.5) -- (0,4.0) node[above] {$y$};
+    \draw[subset,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x+1.3});
+    \draw[subset,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x-1.2});
+    \node[subset label,right] at (3.0,3.1) {$L_1$};
+    \node[subset label,right] at (3.0,0.6) {$L_2$};
 \end{tikzpicture}
 \end{center}
 
-The important point is not merely to recognise formulas.  A line should always
-be understood simultaneously as
+\subsection{Perpendicular Lines and the Origin of the Slope Criterion}
+
+Two intersecting lines are called \emph{perpendicular} when the angle between
+them is a right angle, that is, an angle of measure
 \[
-\text{a geometric object},
-\qquad
-\text{a subset of }\mathbb{R}^2,
-\qquad
-\text{and a condition on coordinates}.
+\frac{\pi}{2}.
 \]
+This is again a geometric definition.  Merely having one common point is not
+enough: most pairs of intersecting lines do not form a right angle.
+
+To connect this definition with slope, consider a non-vertical line and let
+$\alpha$ be the angle through which the positive $x$-axis must be rotated
+counterclockwise to point in the direction of the line.  A right triangle drawn
+along the line has horizontal side $\Delta x$ and vertical side $\Delta y$.
+By the definition of tangent,
+\[
+\tan\alpha=\frac{\Delta y}{\Delta x}=m.
+\]
+Thus slope is not an unrelated coefficient: it is the tangent of the geometric
+angle of inclination.
+
+Now let two non-vertical, non-horizontal lines have inclination angles
+$\alpha_1$ and $\alpha_2$.  They are perpendicular precisely when their
+directions differ by a right angle.  We may therefore write
+\[
+\alpha_2=\alpha_1+\frac{\pi}{2}
+\]
+up to reversing the direction of a line, which does not change the line itself.
+Using
+\[
+\tan\left(\alpha+\frac{\pi}{2}\right)
+=-\frac{1}{\tan\alpha},
+\]
+we obtain
+\[
+m_2
+=\tan\alpha_2
+=-\frac{1}{\tan\alpha_1}
+=-\frac{1}{m_1}.
+\]
+Hence
+\[
+\boxed{m_1m_2=-1.}
+\]
+This formula has now been derived from the geometric definition of
+perpendicularity.  It is a test for a right angle, not the meaning of a right
+angle.
+
+The excluded case is also geometrically clear.  A horizontal line has
+inclination angle $0$ and slope $0$.  Rotating its direction by $\pi/2$ gives a
+vertical line, whose slope is undefined.  Thus horizontal and vertical lines
+are perpendicular, even though the product-of-slopes formula cannot be written
+for them.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
+    \draw[axis] (0,-3.4) -- (0,3.6) node[above] {$y$};
+    \draw[subset,domain=-3:3,samples=2] plot (\x,{0.5*\x});
+    \draw[subset,domain=-1.6:1.6,samples=2] plot (\x,{-2*\x});
+    \draw[black] (0.22,0.11) -- (0.11,0.33) -- (-0.11,0.22);
+    \node[subset label,right] at (2.7,1.35) {$L_1$};
+    \node[subset label,left] at (-1.25,2.5) {$L_2$};
+\end{tikzpicture}
+\end{center}
+
+The logical order is therefore:
+\[
+\text{geometric definition}
+\longrightarrow
+\text{coordinate analysis}
+\longrightarrow
+\text{algebraic criterion}.
+\]
+A criterion is useful only after we know what it recognises and why it works.
