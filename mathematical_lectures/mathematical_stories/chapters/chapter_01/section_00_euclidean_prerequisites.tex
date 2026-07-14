@@ -13,6 +13,148 @@ congruent, that two lines meet at a right angle, or that one point lies between
 two others.
 \end{remarkbox}
 
+\subsection{What Is Given, and What Are We Allowed to Construct?}
+
+It is useful to separate three levels of the discussion.
+
+\begin{enumerate}
+    \item We begin with primitive geometric objects: points, straight lines,
+          segments, circles, and angles.
+    \item We accept a small number of basic construction postulates describing
+          what may be drawn directly.
+    \item More complicated constructions, such as perpendicular bisectors and
+          angle bisectors, must be obtained from those basic operations and then
+          justified.
+\end{enumerate}
+
+The pictures below are not proofs of the postulates.  They show the elementary
+operations to which the geometry gives us access.
+
+\subsubsection{Two Points Determine a Straight Line}
+
+Given two distinct points $A$ and $B$, we may construct the unique straight
+line passing through both of them.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \fill[geometricSubsetColor] (-2.4,-0.6) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (2.1,0.8) circle (2pt) node[above] {$B$};
+    \draw[helper] (-3.4,-0.91) -- (3.3,1.17);
+    \draw[subset] (-2.4,-0.6) -- (2.1,0.8);
+    \node at (0,-1.55) {two points determine one straight line};
+\end{tikzpicture}
+\end{center}
+
+This gives access to the entire line, not only to the segment between the two
+chosen points.
+
+\subsubsection{A Segment May Be Extended}
+
+A finite segment may be continued along the same straight line beyond either
+endpoint.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.2,0);
+    \coordinate (B) at (1.2,0);
+    \coordinate (C) at (3.0,0);
+    \draw[subset] (A) -- (B);
+    \draw[helper,->] (B) -- (C);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \node[below] at (C) {$C$};
+    \node at (0,-1.15) {the segment $AB$ is extended beyond $B$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{A Centre and a Radius Determine a Circle}
+
+Given a centre $O$ and a segment whose length is used as a radius, we may draw
+the circle consisting of all points at that distance from $O$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.2,0);
+    \draw[helper] (O) circle (2.2);
+    \draw[subset] (O) -- (A) node[midway,below] {$r$};
+    \fill[geometricSubsetColor] (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[right] {$A$};
+    \node at (0,-2.75) {all points on the circle have distance $r$ from $O$};
+\end{tikzpicture}
+\end{center}
+
+The compass therefore allows a length to be transferred without assigning a
+number to it.
+
+\subsubsection{Intersections Produce New Points}
+
+When two constructed objects meet, their intersection points become available
+for later constructions.  This applies to two lines, a line and a circle, or
+two circles.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \coordinate (A) at (-1.5,0);
+    \coordinate (B) at (1.5,0);
+    \draw[helper] (A) circle (2.15);
+    \draw[helper] (B) circle (2.15);
+    \fill[geometricSubsetColor] (0,1.55) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (0,-1.55) circle (2pt) node[below] {$Q$};
+    \fill (A) circle (1.7pt) node[left] {$A$};
+    \fill (B) circle (1.7pt) node[right] {$B$};
+    \node at (0,-2.65) {the intersections $P$ and $Q$ are new constructible points};
+\end{tikzpicture}
+\end{center}
+
+This operation is what makes multi-step constructions possible.
+
+\subsubsection{Right Angles Are Geometric Before They Are Measured}
+
+All right angles are congruent.  A right angle is therefore already a definite
+geometric object before degrees or radians are introduced.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[subset] (-2.8,0) -- (2.8,0);
+    \draw[subset] (0,-1.7) -- (0,2.2);
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    \fill[geometricSubsetColor] (0,0) circle (2pt) node[below left] {$O$};
+    \node at (0,-2.15) {perpendicular lines meet in a right angle};
+\end{tikzpicture}
+\end{center}
+
+Later we will construct perpendicular lines from circles and congruent
+segments.  Their existence is not obtained from a coordinate formula.
+
+\subsubsection{The Parallel Postulate}
+
+Given a straight line $\ell$ and a point $P$ not lying on it, Euclidean geometry
+allows exactly one straight line through $P$ that does not meet $\ell$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[subset] (-3.5,-0.8) -- (3.5,-0.8) node[right] {$\ell$};
+    \fill[geometricSubsetColor] (-0.7,1.25) circle (2pt) node[above] {$P$};
+    \draw[very thick] (-3.5,1.25) -- (3.5,1.25) node[right] {$m$};
+    \node at (0,-1.55) {$m$ is the unique parallel to $\ell$ through $P$};
+\end{tikzpicture}
+\end{center}
+
+This is the specifically Euclidean postulate.  Replacing it produces other
+geometries.
+
+\begin{definitionbox}
+The basic geometric access used in this chapter may be summarized as follows:
+we may choose points, draw the straight line through two chosen points, extend
+segments, draw circles with chosen centres and radii, and retain intersection
+points of constructed lines and circles.  Euclidean geometry additionally
+provides the unique parallel through a point outside a line.
+\end{definitionbox}
+
+Everything constructed below must ultimately be reduced to repeated uses of
+these operations.
+
 \subsection{Points, Lines, Segments, Circles, and Angles}
 
 We begin with the following elementary geometric objects and relations.
