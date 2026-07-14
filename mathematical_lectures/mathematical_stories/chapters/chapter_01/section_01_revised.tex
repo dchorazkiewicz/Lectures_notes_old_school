@@ -300,7 +300,46 @@ A\in r_1\setminus\{O\},
 \qquad
 B\in r_2\setminus\{O\}.
 \]
-The points form the Euclidean triangle $OAB$. The classical law of cosines,
+The points form the Euclidean triangle $OAB$. Before writing the formula, we
+identify the angle and the three side lengths occurring in it.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (4.4,0);
+    \coordinate (B) at (1.55,3.0);
+
+    \fill[blue!6] (O) -- (1.0,0)
+        arc[start angle=0,end angle=62.7,radius=1.0] -- cycle;
+
+    \draw[subset] (O) -- (A)
+        node[midway,below=5pt] {$d_E(O,A)$};
+    \draw[subset] (O) -- (B)
+        node[midway,left=7pt] {$d_E(O,B)$};
+    \draw[subset] (A) -- (B)
+        node[midway,above right=3pt] {$d_E(A,B)$};
+
+    \draw[subset] (0.78,0)
+        arc[start angle=0,end angle=62.7,radius=0.78];
+    \node[subset label] at (0.88,0.42) {$\alpha$};
+
+    \fill (O) circle (2.1pt) node[below left] {$O$};
+    \fill (A) circle (2.1pt) node[below right] {$A$};
+    \fill (B) circle (2.1pt) node[above] {$B$};
+
+    \node[align=left,anchor=west] at (5.0,2.35) {
+        adjacent to $\alpha$:\\
+        $d_E(O,A)$ and $d_E(O,B)$
+    };
+    \node[align=left,anchor=west] at (5.0,0.65) {
+        opposite $\alpha$:\\
+        $d_E(A,B)$
+    };
+\end{tikzpicture}
+\end{center}
+
+The side $AB$ is opposite the angle $\alpha$, while $OA$ and $OB$ are adjacent
+to it. With these symbols fixed by the diagram, the classical law of cosines,
 proved geometrically without Cartesian coordinates, states that
 \[
 d_E(A,B)^2
