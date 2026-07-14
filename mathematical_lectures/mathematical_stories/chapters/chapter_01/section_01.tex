@@ -1,1 +1,241 @@
-% Sections for this chapter will be added here.
+\section{Points and Coordinates in the Plane}
+
+Before we introduce algebraic techniques, we need a place in which mathematical
+objects can live and be seen.  The real number line is useful, but it allows us
+to move in only one direction.  Many questions become clearer as soon as we can
+move independently in two directions and draw what is happening.  For this
+reason, our first working environment will be the Cartesian plane.
+
+The plane is simple enough to draw on paper, but already rich enough to contain
+points, curves, regions, distances, directions, equations, and transformations.
+Three-dimensional space will later extend many of the same ideas, but two
+dimensions allow us to see the essential structure without hiding it behind a
+complicated picture.
+
+\subsection{Two Number Lines Crossing}
+
+Take two copies of the real number line.  Place one horizontally and the other
+vertically so that they meet at their zero points.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->,thick] (-4.5,0) -- (4.7,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.5) -- (0,3.7) node[above] {$y$};
+
+    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+        \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {\small $\x$};
+    }
+    \foreach \y in {-3,-2,-1,1,2,3} {
+        \draw (0.08,\y) -- (-0.08,\y) node[left=3pt] {\small $\y$};
+    }
+
+    \node[below left=2pt] at (0,0) {$0$};
+\end{tikzpicture}
+\end{center}
+
+The horizontal line is called the \emph{$x$-axis}, and the vertical line is
+called the \emph{$y$-axis}.  Their intersection is called the \emph{origin}.
+We denote the origin by
+\[
+O=(0,0).
+\]
+
+The axes give us two independent measurements.  The first measurement tells us
+how far we move horizontally from the origin.  The second tells us how far we
+move vertically.
+
+\begin{definitionbox}
+A point in the Cartesian plane is described by an ordered pair of real numbers
+\[
+(x,y).
+\]
+The first number is the \emph{$x$-coordinate}; the second is the
+\emph{$y$-coordinate}.
+\end{definitionbox}
+
+The word \emph{ordered} is essential.  The point $(2,5)$ is generally not the
+same point as $(5,2)$.  The first number always refers to horizontal position,
+and the second always refers to vertical position.
+
+\subsection{From a Pair of Numbers to a Point}
+
+Consider the ordered pair
+\[
+P=(3,2).
+\]
+To locate this point, begin at the origin.  Move three units to the right, then
+two units upward.  The endpoint is the point $P$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->,thick] (-1.2,0) -- (5.0,0) node[right] {$x$};
+    \draw[->,thick] (0,-1.2) -- (0,4.0) node[above] {$y$};
+
+    \foreach \x in {-1,1,2,3,4} {
+        \draw (\x,0.07) -- (\x,-0.07) node[below=3pt] {\small $\x$};
+    }
+    \foreach \y in {-1,1,2,3} {
+        \draw (0.07,\y) -- (-0.07,\y) node[left=3pt] {\small $\y$};
+    }
+
+    \draw[dashed] (3,0) -- (3,2);
+    \draw[dashed] (0,2) -- (3,2);
+    \fill (3,2) circle (2.2pt);
+    \node[above right] at (3,2) {$P=(3,2)$};
+\end{tikzpicture}
+\end{center}
+
+The dashed lines are not part of the point.  They only show how the coordinates
+are read from the axes.  The vertical dashed line reaches the $x$-axis at $3$,
+and the horizontal dashed line reaches the $y$-axis at $2$.
+
+Now consider
+\[
+Q=(-2,3).
+\]
+The negative first coordinate tells us to move two units to the left.  The
+positive second coordinate tells us to move three units upward.
+
+A coordinate therefore contains both magnitude and direction:
+\begin{itemize}
+    \item a positive $x$-coordinate means right of the $y$-axis;
+    \item a negative $x$-coordinate means left of the $y$-axis;
+    \item a positive $y$-coordinate means above the $x$-axis;
+    \item a negative $y$-coordinate means below the $x$-axis.
+\end{itemize}
+
+\subsection{From a Point to a Pair of Numbers}
+
+The same correspondence can be read in the opposite direction.  Given a point
+in the plane, we determine its coordinates by projecting it onto the axes.
+
+\begin{examplebox}
+Suppose a point lies four units to the left of the $y$-axis and one unit below
+the $x$-axis.  Its coordinates are
+\[
+(-4,-1).
+\]
+The first coordinate records the horizontal position, and the second records
+the vertical position.
+\end{examplebox}
+
+This gives a precise correspondence:
+\[
+\text{point in the plane}
+\quad\longleftrightarrow\quad
+\text{ordered pair of real numbers}.
+\]
+
+The geometry and the arithmetic describe the same object in two different
+languages.  A point can be seen in a diagram, but it can also be stored and
+manipulated as a pair of numbers.
+
+\subsection{The Cartesian Plane as a Set}
+
+Because each point is represented by two real numbers, the entire Cartesian
+plane can be written as
+\[
+\mathbb{R}^2=\{(x,y):x\in\mathbb{R},\ y\in\mathbb{R}\}.
+\]
+
+This notation means: take every possible ordered pair of real numbers.  The
+superscript $2$ does not mean that the real numbers are being squared.  It tells
+us that two real coordinates are required to specify one point.
+
+For example,
+\[
+(1,4),\qquad (-3,0),\qquad \left(\frac12,-7\right),\qquad
+(\sqrt{2},\pi)
+\]
+are all elements of $\mathbb{R}^2$.
+
+The points on the axes are special cases:
+\begin{itemize}
+    \item points on the $x$-axis have the form $(x,0)$;
+    \item points on the $y$-axis have the form $(0,y)$;
+    \item the origin is the unique point $(0,0)$ lying on both axes.
+\end{itemize}
+
+\subsection{Regions Determined by the Axes}
+
+The two axes divide the plane into four regions called \emph{quadrants}.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[->,thick] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.3) -- (0,3.5) node[above] {$y$};
+
+    \node at (2.3,2.0) {Quadrant I};
+    \node at (-2.3,2.0) {Quadrant II};
+    \node at (-2.3,-2.0) {Quadrant III};
+    \node at (2.3,-2.0) {Quadrant IV};
+\end{tikzpicture}
+\end{center}
+
+The signs of the coordinates identify the quadrant:
+\[
+\begin{array}{c|c}
+\text{Quadrant} & \text{Signs of }(x,y)\\
+\hline
+\mathrm{I} & (+,+)\\
+\mathrm{II} & (-,+)\\
+\mathrm{III} & (-,-)\\
+\mathrm{IV} & (+,-)
+\end{array}
+\]
+
+Points on the axes do not belong to any quadrant, because at least one of their
+coordinates is zero.
+
+\subsection{One Point and Many Points}
+
+An equation involving $x$ and $y$ usually does not describe one point.  It
+describes all points whose coordinates satisfy the equation.
+
+For instance,
+\[
+y=2
+\]
+describes every point whose second coordinate is equal to $2$:
+\[
+(0,2),\quad (1,2),\quad (-3,2),\quad
+\left(\frac12,2\right),\quad\ldots
+\]
+These points form a horizontal line.
+
+Similarly,
+\[
+x=-1
+\]
+describes every point whose first coordinate is $-1$.  These points form a
+vertical line.
+
+\begin{remarkbox}
+An ordered pair such as $(3,2)$ describes one point.  A condition such as
+$y=2$ describes a set of points.  Distinguishing a single object from a set of
+objects will be important throughout the course.
+\end{remarkbox}
+
+A more interesting condition is
+\[
+x^2+y^2=4.
+\]
+Some points satisfy it:
+\[
+(2,0),\quad (-2,0),\quad (0,2),\quad (0,-2).
+\]
+Other points do not.  The complete set of solutions forms a circle centred at
+the origin.  We do not yet need a general theory of curves.  The important
+observation is that algebraic conditions can select geometric objects from the
+plane.
+
+This will be one of our main working principles:
+\[
+\text{equations and inequalities}
+\quad\longleftrightarrow\quad
+\text{sets of points in the plane}.
+\]
+
+The Cartesian plane therefore gives us more than a picture.  It provides a
+common language in which numerical information, algebraic conditions, and
+geometric objects can be compared directly.
