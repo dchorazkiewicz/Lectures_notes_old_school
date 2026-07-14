@@ -1,10 +1,9 @@
 \section{Lines in the Cartesian Plane}
 
-A line is one of the simplest geometric subsets of the plane, but it already
-shows how several mathematical descriptions can refer to the same object.  We
-may draw a line, describe how its coordinates change, write a condition
-satisfied by its points, or define it explicitly as a subset of
-$\mathbb{R}^2$.  These descriptions should not be confused with one another.
+A line is one of the simplest geometric subsets of the plane. It can be drawn,
+described by a condition on coordinates, or defined explicitly as a subset of
+$\mathbb{R}^2$. We will keep these descriptions separate and explain how they
+are connected.
 
 \subsection{A Line as a Set of Points}
 
@@ -12,29 +11,30 @@ Consider the condition
 \[
 y=2x+1.
 \]
-By itself, this is a relation between the coordinates $x$ and $y$.  The
-geometric object determined by this relation is the set
+This is a relation between the coordinates $x$ and $y$. The corresponding
+geometric object is the set
 \[
-L
-=
-\{(x,y)\in\mathbb{R}^2:y=2x+1\}.
+L=\{(x,y)\in\mathbb{R}^2:y=2x+1\}.
 \]
-We read this as follows:
 
-\begin{quote}
-$L$ is the set of all points $(x,y)$ in the Cartesian plane such that
-$y=2x+1$.
-\end{quote}
+\begin{definitionbox}
+A non-vertical line in the Cartesian plane is a set of the form
+\[
+L_{m,b}=\{(x,y)\in\mathbb{R}^2:y=mx+b\},
+\]
+where $m,b\in\mathbb{R}$ are fixed.
+\end{definitionbox}
 
-Every value of $x$ determines exactly one value of $y$.  For example,
+Every value of $x$ determines exactly one value of $y$. For example, for
+$y=2x+1$ we obtain
 \[
 \begin{array}{c|ccccc}
 x&-2&-1&0&1&2\\
 \hline
-y=2x+1&-3&-1&1&3&5
+y&-3&-1&1&3&5
 \end{array}
 \]
-so the points
+and therefore all of the points
 \[
 (-2,-3),\quad(-1,-1),\quad(0,1),\quad(1,3),\quad(2,5)
 \]
@@ -52,33 +52,35 @@ belong to $L$.
 \end{tikzpicture}
 \end{center}
 
-The listed points are examples of elements of $L$.  The line itself contains
-infinitely many points and is defined by the complete set-builder expression.
+\begin{remarkbox}
+A finite list of points only gives examples of elements of a line. The complete
+line is the entire set of points satisfying its defining condition.
+\end{remarkbox}
 
-\subsection{Slope and Vertical Change}
+\subsection{Slope, Angle, and Vertical Change}
 
-In the equation
+Take two distinct points on a non-vertical line. Let their horizontal and
+vertical changes be
 \[
-y=mx+b,
+\Delta x=x_2-x_1,
+\qquad
+\Delta y=y_2-y_1.
 \]
-the number $m$ measures how the vertical coordinate changes when the horizontal
-coordinate changes.  Suppose we increase $x$ by an amount $\Delta x$.  Then
+Because the line is not vertical, $\Delta x\neq 0$.
+
+\begin{definitionbox}
+The \emph{slope} of a non-vertical line is
+\[
+\boxed{m=\frac{\Delta y}{\Delta x}}.
+\]
+It measures vertical change per unit of horizontal change.
+\end{definitionbox}
+
+For a line described by $y=mx+b$, replacing $x$ by $x+\Delta x$ changes $y$ by
 \[
 \Delta y=m\,\Delta x.
 \]
-Therefore
-\[
-m=\frac{\Delta y}{\Delta x},
-\qquad \Delta x\neq 0.
-\]
-The number $m$ is called the \emph{slope} of the line.
-
-For the line $y=2x+1$, increasing $x$ by $1$ increases $y$ by $2$.  Increasing
-$x$ by $3$ increases $y$ by $6$.  The same ratio appears everywhere on the
-line:
-\[
-\frac{\Delta y}{\Delta x}=2.
-\]
+Thus the coefficient $m$ in the equation is exactly the geometric slope.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -89,66 +91,81 @@ line:
     \fill[geometricSubsetColor] (2,5) circle (2pt);
     \draw[helper] (0.5,2) -- (2,2) node[midway,below] {$\Delta x$};
     \draw[helper] (2,2) -- (2,5) node[midway,right] {$\Delta y$};
+    \draw (1.15,2) arc[start angle=0,end angle=63.435,radius=0.65];
+    \node at (1.35,2.35) {$\alpha$};
 \end{tikzpicture}
 \end{center}
 
-The sign of the slope describes the direction of the line:
+The line and the positive horizontal direction form an angle $\alpha$. In the
+right triangle shown above, the tangent of $\alpha$ is defined as
+\[
+\tan\alpha
+=
+\frac{\text{opposite side}}{\text{adjacent side}}
+=
+\frac{\Delta y}{\Delta x}.
+\]
+
+\begin{theorembox}
+If $\alpha$ is an angle of inclination of a non-vertical line, then
+\[
+\boxed{m=\tan\alpha}.
+\]
+Thus slope is both a coordinate ratio and a description of direction.
+\end{theorembox}
+
+The sign of $m$ has a direct geometric meaning:
 \begin{itemize}
-    \item if $m>0$, the line rises as we move from left to right;
-    \item if $m<0$, the line falls as we move from left to right;
-    \item if $m=0$, the line is horizontal.
+    \item $m>0$: the line rises from left to right;
+    \item $m<0$: the line falls from left to right;
+    \item $m=0$: the line is horizontal.
 \end{itemize}
 
-The slope does not describe one chosen pair of points only.  It is a property of
-the entire line.
+\subsection{The Constant Term and Axis Intersections}
 
-\subsection{The Meaning of the Constant Term}
-
-In the equation
+For the line
 \[
 y=mx+b,
 \]
-setting $x=0$ gives
-\[
-y=b.
-\]
-Thus the line meets the $y$-axis at the point
-\[
-(0,b).
-\]
-The number $b$ is called the \emph{$y$-intercept}.
+setting $x=0$ gives $y=b$.
 
-For example, the line
+\begin{theorembox}
+The line
 \[
-L=\{(x,y)\in\mathbb{R}^2:y=-\tfrac12x+3\}
+L_{m,b}=\{(x,y)\in\mathbb{R}^2:y=mx+b\}
 \]
-has slope $-\tfrac12$ and meets the $y$-axis at $(0,3)$.
+meets the $y$-axis at
+\[
+\boxed{(0,b)}.
+\]
+\end{theorembox}
 
-To find where a non-horizontal line meets the $x$-axis, we set $y=0$.  For the
-same line,
+To find an intersection with the $x$-axis, set $y=0$ and solve the resulting
+equation for $x$.
+
+\begin{examplebox}
+For
+\[
+L=\{(x,y)\in\mathbb{R}^2:y=-\tfrac12x+3\},
+\]
+the $y$-axis intersection is $(0,3)$. Setting $y=0$ gives
 \[
 0=-\frac12x+3,
 \]
-so $x=6$.  Hence the line meets the $x$-axis at $(6,0)$.
+so $x=6$. Hence the $x$-axis intersection is $(6,0)$.
+\end{examplebox}
 
 \subsection{Vertical Lines}
 
-Not every line can be written in the form $y=mx+b$.  A vertical line has the
-form
-\[
-V_c
-=
-\{(x,y)\in\mathbb{R}^2:x=c\},
-\]
-where $c$ is a fixed real number.
+A vertical line cannot be written as $y=mx+b$, because one value of $x$ is
+paired with every real value of $y$.
 
-For example,
+\begin{definitionbox}
+For a fixed $c\in\mathbb{R}$, the vertical line through $x=c$ is
 \[
-V_{-2}
-=
-\{(x,y)\in\mathbb{R}^2:x=-2\}
+V_c=\{(x,y)\in\mathbb{R}^2:x=c\}.
 \]
-is the vertical line through all points whose first coordinate is $-2$.
+\end{definitionbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -160,138 +177,113 @@ is the vertical line through all points whose first coordinate is $-2$.
 \end{tikzpicture}
 \end{center}
 
-A vertical line has no finite slope, because moving between two distinct points
-on it gives $\Delta x=0$, and the ratio
-\[
-\frac{\Delta y}{\Delta x}
-\]
-is then undefined.
+\begin{remarkbox}
+A vertical line has no real-valued slope. For two distinct points on it,
+$\Delta x=0$, so the quotient $\Delta y/\Delta x$ is undefined.
+\end{remarkbox}
 
 \subsection{The General Linear Equation}
 
-A line can also be described by a condition of the form
+\begin{definitionbox}
+Let $a,b,c\in\mathbb{R}$, where $a$ and $b$ are not both zero. The set
 \[
-ax+by=c,
+L_{a,b,c}=\{(x,y)\in\mathbb{R}^2:ax+by=c\}
 \]
-where $a$, $b$, and $c$ are real numbers and $a$ and $b$ are not both zero.  The
-corresponding subset of the plane is
-\[
-L_{a,b,c}
-=
-\{(x,y)\in\mathbb{R}^2:ax+by=c\}.
-\]
+is a line in the Cartesian plane.
+\end{definitionbox}
 
-When $b\neq 0$, we may solve for $y$:
+If $b\neq 0$, solving for $y$ gives
 \[
 y=-\frac{a}{b}x+\frac{c}{b}.
 \]
-Thus the slope is
+Therefore
 \[
-m=-\frac{a}{b},
+\boxed{m=-\frac{a}{b}},
+\qquad
+\boxed{b_{\mathrm{intercept}}=\frac{c}{b}}.
 \]
-and the $y$-intercept is $c/b$.
-
-When $b=0$, the condition becomes
+If $b=0$, then $a\neq 0$ and the condition becomes
 \[
-ax=c,
+x=\frac{c}{a},
 \]
-so, because $a\neq 0$,
-\[
-x=\frac{c}{a}.
-\]
-This is a vertical line.  The general equation therefore includes both
-non-vertical and vertical lines.
+which describes a vertical line.
 
 \begin{examplebox}
-Consider
+For
 \[
-2x+3y=6.
+L=\{(x,y)\in\mathbb{R}^2:2x+3y=6\},
 \]
-The geometric object is
-\[
-L
-=
-\{(x,y)\in\mathbb{R}^2:2x+3y=6\}.
-\]
-Solving for $y$ gives
+solving for $y$ gives
 \[
 y=-\frac23x+2.
 \]
-The same line therefore has slope $-\frac23$, meets the $y$-axis at $(0,2)$,
-and meets the $x$-axis at $(3,0)$.
+Thus the slope is $-2/3$, the $y$-axis intersection is $(0,2)$, and the
+$x$-axis intersection is $(3,0)$.
 \end{examplebox}
 
-\subsection{A Line Through Two Points}
+\subsection{The Line Through Two Points}
 
 Let
 \[
 P=(x_1,y_1),
 \qquad
-Q=(x_2,y_2),
+Q=(x_2,y_2)
 \]
-with $x_1\neq x_2$.  The slope of the unique line through these points is
-\[
-m=\frac{y_2-y_1}{x_2-x_1}.
-\]
-A point $(x,y)$ lies on the same line precisely when its change from $P$ has the
-same slope:
-\[
-\frac{y-y_1}{x-x_1}=m.
-\]
-Multiplying by $x-x_1$ gives the point--slope condition
-\[
-y-y_1=m(x-x_1).
-\]
-The corresponding line is therefore
-\[
-L
-=
-\{(x,y)\in\mathbb{R}^2:y-y_1=m(x-x_1)\}.
-\]
+be distinct points.
 
-If $x_1=x_2$, the two distinct points determine the vertical line
+\begin{theorembox}
+If $x_1\neq x_2$, the unique line through $P$ and $Q$ has slope
+\[
+\boxed{m=\frac{y_2-y_1}{x_2-x_1}}
+\]
+and can be defined by
+\[
+\boxed{L=\{(x,y)\in\mathbb{R}^2:y-y_1=m(x-x_1)\}}.
+\]
+\end{theorembox}
+
+The second formula follows because every point $(x,y)$ on the line must produce
+the same vertical-to-horizontal change ratio from $P$.
+
+If $x_1=x_2$, the two points determine the vertical line
 \[
 L=\{(x,y)\in\mathbb{R}^2:x=x_1\}.
 \]
 
 \begin{examplebox}
-The points $P=(1,2)$ and $Q=(4,8)$ determine a line with slope
+The points $P=(1,2)$ and $Q=(4,8)$ give
 \[
 m=\frac{8-2}{4-1}=2.
 \]
-Using $P$, its condition is
+Hence
 \[
 y-2=2(x-1),
 \]
-which simplifies to
-\[
-y=2x.
-\]
-Hence the line is
+which simplifies to $y=2x$. Therefore
 \[
 L=\{(x,y)\in\mathbb{R}^2:y=2x\}.
 \]
 \end{examplebox}
 
-\subsection{Parallel Lines: Geometry First, Criterion Second}
+\subsection{Parallel Lines}
 
-Two distinct lines are called \emph{parallel} when they have no common point.
-Thus, for subsets $L_1,L_2\subseteq\mathbb{R}^2$, parallelism means
+\begin{definitionbox}
+Two distinct lines $L_1$ and $L_2$ are \emph{parallel} when they have no common
+point:
 \[
-L_1\neq L_2
+\boxed{L_1\neq L_2
 \qquad\text{and}\qquad
-L_1\cap L_2=\varnothing.
+L_1\cap L_2=\varnothing.}
 \]
-This is the geometric definition.  We now ask how it can be recognised from
-equations.
+\end{definitionbox}
 
-Let
+Consider
 \[
 L_1=\{(x,y)\in\mathbb{R}^2:y=m_1x+b_1\},
 \qquad
 L_2=\{(x,y)\in\mathbb{R}^2:y=m_2x+b_2\}.
 \]
-A common point would have to satisfy both conditions, so
+A common point would have to satisfy
 \[
 m_1x+b_1=m_2x+b_2.
 \]
@@ -299,70 +291,48 @@ Equivalently,
 \[
 (m_1-m_2)x=b_2-b_1.
 \]
+If $m_1\neq m_2$, this equation has exactly one solution for $x$, so the lines
+intersect. If $m_1=m_2$, then either $b_1=b_2$ and the lines are identical, or
+$b_1\neq b_2$ and no common point exists.
 
-If $m_1\neq m_2$, this equation has exactly one solution for $x$, and therefore
-the two lines meet at exactly one point.  They are not parallel.
-
-If $m_1=m_2$, the equation becomes
+\begin{theorembox}
+Two non-vertical lines are parallel precisely when
 \[
-0=b_2-b_1.
+\boxed{m_1=m_2
+\qquad\text{and}\qquad
+b_1\neq b_2.}
 \]
-There are then two possibilities:
-\begin{itemize}
-    \item if $b_1=b_2$, the two set-builder descriptions define the same line;
-    \item if $b_1\neq b_2$, no point satisfies both conditions, so the lines are
-    distinct and have empty intersection.
-\end{itemize}
+The equality of slopes is therefore a consequence of the geometric definition,
+not the definition itself.
+\end{theorembox}
 
-We have therefore derived the criterion:
+Two distinct vertical lines are also parallel, because conditions $x=c_1$ and
+$x=c_2$ with $c_1\neq c_2$ cannot hold at the same point.
+
+\subsection{Perpendicular Lines}
+
+\begin{definitionbox}
+Two intersecting lines are \emph{perpendicular} when the angle formed at their
+intersection is a right angle:
 \[
-\boxed{L_1\parallel L_2
-\iff m_1=m_2\text{ and }b_1\neq b_2.}
+\boxed{\frac{\pi}{2}}.
 \]
-The equality of slopes is not the definition of parallelism.  It is an
-algebraic consequence of the geometric definition for non-vertical lines.
-Two distinct vertical lines are parallel for the same reason: the conditions
-$x=c_1$ and $x=c_2$ cannot hold simultaneously when $c_1\neq c_2$.
+\end{definitionbox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.75]
-    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
-    \draw[axis] (0,-3.5) -- (0,4.0) node[above] {$y$};
-    \draw[subset,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x+1.3});
-    \draw[subset,domain=-3.2:3.2,samples=2] plot (\x,{0.6*\x-1.2});
-    \node[subset label,right] at (3.0,3.1) {$L_1$};
-    \node[subset label,right] at (3.0,0.6) {$L_2$};
-\end{tikzpicture}
-\end{center}
-
-\subsection{Perpendicular Lines and the Origin of the Slope Criterion}
-
-Two intersecting lines are called \emph{perpendicular} when the angle between
-them is a right angle, that is, an angle of measure
-\[
-\frac{\pi}{2}.
-\]
-This is again a geometric definition.  Merely having one common point is not
-enough: most pairs of intersecting lines do not form a right angle.
-
-To connect this definition with slope, consider a non-vertical line and let
-$\alpha$ be the angle through which the positive $x$-axis must be rotated
-counterclockwise to point in the direction of the line.  A right triangle drawn
-along the line has horizontal side $\Delta x$ and vertical side $\Delta y$.
-By the definition of tangent,
-\[
-\tan\alpha=\frac{\Delta y}{\Delta x}=m.
-\]
-Thus slope is not an unrelated coefficient: it is the tangent of the geometric
-angle of inclination.
-
-Now let two non-vertical, non-horizontal lines have inclination angles
-$\alpha_1$ and $\alpha_2$.  They are perpendicular precisely when their
-directions differ by a right angle.  We may therefore write
+Let two non-vertical, non-horizontal lines have inclination angles $\alpha_1$
+and $\alpha_2$. They are perpendicular exactly when their directions differ by
+$\pi/2$. Thus we may write
 \[
 \alpha_2=\alpha_1+\frac{\pi}{2}
 \]
-up to reversing the direction of a line, which does not change the line itself.
+up to reversing the direction along a line.
+
+From the previously established relation $m=\tan\alpha$,
+\[
+m_1=\tan\alpha_1,
+\qquad
+m_2=\tan\alpha_2.
+\]
 Using
 \[
 \tan\left(\alpha+\frac{\pi}{2}\right)
@@ -370,43 +340,40 @@ Using
 \]
 we obtain
 \[
-m_2
-=\tan\alpha_2
-=-\frac{1}{\tan\alpha_1}
-=-\frac{1}{m_1}.
+m_2=-\frac{1}{m_1}.
 \]
-Hence
+
+\begin{theorembox}
+For two non-vertical, non-horizontal lines,
 \[
-\boxed{m_1m_2=-1.}
+\boxed{L_1\perp L_2
+\iff
+m_1m_2=-1.}
 \]
-This formula has now been derived from the geometric definition of
-perpendicularity.  It is a test for a right angle, not the meaning of a right
-angle.
+This criterion is derived from the geometric right-angle condition and the
+relation $m=\tan\alpha$.
+\end{theorembox}
 
-The excluded case is also geometrically clear.  A horizontal line has
-inclination angle $0$ and slope $0$.  Rotating its direction by $\pi/2$ gives a
-vertical line, whose slope is undefined.  Thus horizontal and vertical lines
-are perpendicular, even though the product-of-slopes formula cannot be written
-for them.
+A horizontal line and a vertical line form the remaining perpendicular case.
+The product formula is not applicable there because the vertical line has no
+real-valued slope.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
-    \draw[axis] (0,-3.4) -- (0,3.6) node[above] {$y$};
-    \draw[subset,domain=-3:3,samples=2] plot (\x,{0.5*\x});
-    \draw[subset,domain=-1.6:1.6,samples=2] plot (\x,{-2*\x});
-    \draw[black] (0.22,0.11) -- (0.11,0.33) -- (-0.11,0.22);
-    \node[subset label,right] at (2.7,1.35) {$L_1$};
-    \node[subset label,left] at (-1.25,2.5) {$L_2$};
-\end{tikzpicture}
-\end{center}
+\begin{remarkbox}
+Two lines may intersect without being perpendicular. Intersection only says
+that they have a common point. Perpendicularity additionally prescribes the
+angle at that point.
+\end{remarkbox}
 
-The logical order is therefore:
+\begin{summarybox}
+The central relations in this section are
 \[
-\text{geometric definition}
-\longrightarrow
-\text{coordinate analysis}
-\longrightarrow
-\text{algebraic criterion}.
+\begin{aligned}
+L_{m,b}&=\{(x,y)\in\mathbb{R}^2:y=mx+b\},\\[2mm]
+m&=\frac{\Delta y}{\Delta x}=\tan\alpha,\\[2mm]
+L_1\parallel L_2&\iff m_1=m_2\text{ and }b_1\neq b_2,\\[2mm]
+L_1\perp L_2&\iff m_1m_2=-1
+\quad\text{(non-vertical, non-horizontal case).}
+\end{aligned}
 \]
-A criterion is useful only after we know what it recognises and why it works.
+Each algebraic criterion has been obtained from a geometric definition.
+\end{summarybox}
