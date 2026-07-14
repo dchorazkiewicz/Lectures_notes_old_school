@@ -2,6 +2,7 @@
 ./.github
 ./.github/trigger-repair.txt
 ./.github/workflows
+./.github/workflows/auto-dispatch-builds.yml
 ./.github/workflows/build-beamer-presentations.yml
 ./.github/workflows/build-pdfs.yml
 ./.github/workflows/deploy-pages.yml
