@@ -290,6 +290,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_00_introduction.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/law_of_cosines_figure.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_01_revised.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_02.tex
