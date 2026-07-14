@@ -1,0 +1,168 @@
+\section{Lines in Three-Dimensional Space}
+
+A point in three-dimensional Cartesian space has coordinates
+\[
+P=(x,y,z)\in\mathbb{R}^3.
+\]
+A line is determined by one point and one nonzero direction.
+
+\begin{definitionbox}
+Let
+\[
+P_0=(x_0,y_0,z_0)
+\]
+and let
+\[
+\mathbf{v}=(a,b,c)\neq(0,0,0).
+\]
+The line through $P_0$ with direction vector $\mathbf{v}$ is
+\[
+L=\{P_0+t\mathbf{v}:t\in\mathbb{R}\}.
+\]
+Equivalently,
+\[
+(x,y,z)=(x_0,y_0,z_0)+t(a,b,c).
+\]
+\end{definitionbox}
+
+In coordinates this becomes the system
+\[
+\begin{cases}
+x=x_0+at,\\
+y=y_0+bt,\\
+z=z_0+ct,
+\end{cases}
+\qquad t\in\mathbb{R}.
+\]
+As $t$ varies, the point moves along the line. Positive and negative values of
+$t$ describe the two opposite directions along the same geometric line.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (0,0) -- (5.2,0) node[right] {$x$};
+    \draw[axis] (0,0) -- (-1.7,-1.5) node[below left] {$y$};
+    \draw[axis] (0,0) -- (0,4.3) node[above] {$z$};
+
+    \coordinate (P) at (1.2,1.0);
+    \coordinate (Q) at (4.2,3.0);
+    \draw[subset] (0.5,0.53) -- (4.8,3.4) node[above right] {$L$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[below left] {$P_0$};
+    \draw[->,thick,geometricSubsetColor] (P) -- (Q) node[midway,above left] {$\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{The Line Through Two Points in Space}
+
+Let
+\[
+P=(x_1,y_1,z_1),
+\qquad
+Q=(x_2,y_2,z_2)
+\]
+be distinct points. Their difference
+\[
+Q-P=(x_2-x_1,\,y_2-y_1,\,z_2-z_1)
+\]
+is a nonzero direction vector of the line through them.
+
+\begin{theorembox}
+The unique line through two distinct points $P,Q\in\mathbb{R}^3$ is
+\[
+L=\{P+t(Q-P):t\in\mathbb{R}\}.
+\]
+In coordinates,
+\[
+\begin{cases}
+x=x_1+t(x_2-x_1),\\
+y=y_1+t(y_2-y_1),\\
+z=z_1+t(z_2-z_1).
+\end{cases}
+\]
+\end{theorembox}
+
+\begin{examplebox}
+For
+\[
+P=(1,0,2),
+\qquad
+Q=(3,4,1),
+\]
+a direction vector is
+\[
+Q-P=(2,4,-1).
+\]
+Therefore the line through $P$ and $Q$ is
+\[
+(x,y,z)=(1,0,2)+t(2,4,-1),
+\]
+or
+\[
+\begin{cases}
+x=1+2t,\\
+y=4t,\\
+z=2-t.
+\end{cases}
+\]
+\end{examplebox}
+
+\subsection{Symmetric Form}
+
+If $a$, $b$, and $c$ are all nonzero, the parameter can be eliminated from
+\[
+x=x_0+at,
+\qquad
+y=y_0+bt,
+\qquad z=z_0+ct.
+\]
+This gives
+\[
+\frac{x-x_0}{a}
+=
+\frac{y-y_0}{b}
+=
+\frac{z-z_0}{c}.
+\]
+If one component of the direction vector is zero, the corresponding coordinate
+is constant. For example, if $c=0$, then $z=z_0$, while the remaining two
+coordinates may still be written in symmetric form.
+
+\subsection{Parallel and Intersecting Lines in Space}
+
+Consider
+\[
+L_1=P_1+t\mathbf v_1,
+\qquad
+L_2=P_2+s\mathbf v_2.
+\]
+The lines are parallel when their direction vectors are proportional:
+\[
+\mathbf v_2=\lambda\mathbf v_1
+\]
+for some nonzero $\lambda$.
+
+To test whether two nonparallel lines intersect, one solves
+\[
+P_1+t\mathbf v_1=P_2+s\mathbf v_2
+\]
+for the two parameters $t$ and $s$. This is a system of three scalar equations.
+It may have one solution or no solution.
+
+\begin{definitionbox}
+Two lines in $\mathbb{R}^3$ are \emph{skew} when they are neither parallel nor
+intersecting.
+\end{definitionbox}
+
+Skew lines have no analogue in the plane. In two dimensions, two distinct
+nonparallel lines must intersect; in three dimensions, one line may pass above
+or beside another without meeting it.
+
+\begin{summarybox}
+A line in $\mathbb{R}^3$ is described by
+\[
+L=\{P_0+t\mathbf v:t\in\mathbb{R}\},
+\qquad \mathbf v\neq\mathbf 0.
+\]
+Two distinct points determine the direction $Q-P$. Parallel lines have
+proportional direction vectors, while nonparallel lines may either intersect or
+be skew.
+\end{summarybox}
