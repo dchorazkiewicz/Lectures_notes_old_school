@@ -135,12 +135,21 @@ manipulated as a pair of numbers.
 Because each point is represented by two real numbers, the entire Cartesian
 plane can be written as
 \[
-\mathbb{R}^2=\{(x,y):x\in\mathbb{R},\ y\in\mathbb{R}\}.
+\mathbb{R}^2
+=
+\{(x,y):x\in\mathbb{R},\ y\in\mathbb{R}\}.
 \]
 
-This notation means: take every possible ordered pair of real numbers.  The
-superscript $2$ does not mean that the real numbers are being squared.  It tells
-us that two real coordinates are required to specify one point.
+The braces describe a set.  The expression inside them says which objects are
+admitted to that set.  We read the formula as follows:
+
+\begin{quote}
+$\mathbb{R}^2$ is the set of all ordered pairs $(x,y)$ such that $x$ is a real
+number and $y$ is a real number.
+\end{quote}
+
+The superscript $2$ does not mean that the real numbers are being squared.  It
+tells us that two real coordinates are required to specify one point.
 
 For example,
 \[
@@ -149,14 +158,101 @@ For example,
 \]
 are all elements of $\mathbb{R}^2$.
 
-The points on the axes are special cases:
-\begin{itemize}
-    \item points on the $x$-axis have the form $(x,0)$;
-    \item points on the $y$-axis have the form $(0,y)$;
-    \item the origin is the unique point $(0,0)$ lying on both axes.
-\end{itemize}
+\subsection{Conditions and Sets of Points}
 
-\subsection{Regions Determined by the Axes}
+A formula involving $x$ and $y$ may be used in two different ways.  First, it
+may appear only as a \emph{condition}.  For example,
+\[
+y=2
+\]
+is a relation between two numbers.  By itself, it tells us which pairs of
+numbers satisfy the relation, but it does not yet introduce a name for the
+collection of all such pairs.
+
+To define a geometric object as a subset of the plane, we write the entire set:
+\[
+L
+=
+\{(x,y)\in\mathbb{R}^2:y=2\}.
+\]
+
+This is read as follows:
+
+\begin{quote}
+$L$ is the set of all points $(x,y)$ in the Cartesian plane such that $y=2$.
+\end{quote}
+
+The colon means ``such that.''  A vertical bar may be used instead:
+\[
+\{(x,y)\in\mathbb{R}^2:y=2\}
+=
+\{(x,y)\in\mathbb{R}^2\mid y=2\}.
+\]
+
+The condition $y=2$ selects precisely those points whose second coordinate is
+$2$.  Geometrically, they form a horizontal line.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    \draw[->,thick] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[->,thick] (0,-1.3) -- (0,3.8) node[above] {$y$};
+    \draw[very thick] (-4,2) -- (4,2);
+    \node[right] at (4,2) {$L$};
+    \draw (0.08,2) -- (-0.08,2) node[left=3pt] {$2$};
+\end{tikzpicture}
+\end{center}
+
+Several particular elements of this set are
+\[
+(0,2),\quad (1,2),\quad (-3,2),\quad
+\left(\frac12,2\right).
+\]
+They are examples of points in $L$, but no finite list of examples is the same
+thing as the complete definition of $L$.
+
+Similarly, the set
+\[
+M
+=
+\{(x,y)\in\mathbb{R}^2:x=-1\}
+\]
+is the vertical line through $x=-1$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    \draw[->,thick] (-3.5,0) -- (3.8,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.1) -- (0,3.4) node[above] {$y$};
+    \draw[very thick] (-1,-3) -- (-1,3);
+    \node[above] at (-1,3) {$M$};
+    \draw (-1,0.08) -- (-1,-0.08) node[below=3pt] {$-1$};
+\end{tikzpicture}
+\end{center}
+
+This distinction will be used throughout the course:
+\[
+\boxed{\text{condition on coordinates}}
+\qquad\text{versus}\qquad
+\boxed{\text{set of all points satisfying the condition}}.
+\]
+
+\subsection{The Axes and Quadrants as Subsets of the Plane}
+
+The coordinate axes themselves are subsets of $\mathbb{R}^2$.  The $x$-axis is
+\[
+X
+=
+\{(x,y)\in\mathbb{R}^2:y=0\},
+\]
+and the $y$-axis is
+\[
+Y
+=
+\{(x,y)\in\mathbb{R}^2:x=0\}.
+\]
+Their only common point is the origin:
+\[
+X\cap Y=\{(0,0)\}.
+\]
 
 The two axes divide the plane into four regions called \emph{quadrants}.
 
@@ -172,51 +268,26 @@ The two axes divide the plane into four regions called \emph{quadrants}.
 \end{tikzpicture}
 \end{center}
 
-The signs of the coordinates identify the quadrant:
+For example, the first quadrant is the set
 \[
-\begin{array}{c|c}
-\text{Quadrant} & \text{Signs of }(x,y)\\
-\hline
-\mathrm{I} & (+,+)\\
-\mathrm{II} & (-,+)\\
-\mathrm{III} & (-,-)\\
-\mathrm{IV} & (+,-)
-\end{array}
+Q_1
+=
+\{(x,y)\in\mathbb{R}^2:x>0\text{ and }y>0\}.
 \]
-
-Points on the axes do not belong to any quadrant, because at least one of their
+The remaining quadrants are described similarly:
+\[
+\begin{aligned}
+Q_2&=\{(x,y)\in\mathbb{R}^2:x<0\text{ and }y>0\},\\
+Q_3&=\{(x,y)\in\mathbb{R}^2:x<0\text{ and }y<0\},\\
+Q_4&=\{(x,y)\in\mathbb{R}^2:x>0\text{ and }y<0\}.
+\end{aligned}
+\]
+Points on the axes do not belong to any quadrant because at least one of their
 coordinates is zero.
 
-\subsection{One Point and Many Points}
+\subsection{A Curved Set of Points}
 
-An equation involving $x$ and $y$ usually does not describe one point.  It
-describes all points whose coordinates satisfy the equation.
-
-For instance,
-\[
-y=2
-\]
-describes every point whose second coordinate is equal to $2$:
-\[
-(0,2),\quad (1,2),\quad (-3,2),\quad
-\left(\frac12,2\right),\quad\ldots
-\]
-These points form a horizontal line.
-
-Similarly,
-\[
-x=-1
-\]
-describes every point whose first coordinate is $-1$.  These points form a
-vertical line.
-
-\begin{remarkbox}
-An ordered pair such as $(3,2)$ describes one point.  A condition such as
-$y=2$ describes a set of points.  Distinguishing a single object from a set of
-objects will be important throughout the course.
-\end{remarkbox}
-
-A more interesting condition is
+Consider now the condition
 \[
 x^2+y^2=4.
 \]
@@ -224,18 +295,40 @@ Some points satisfy it:
 \[
 (2,0),\quad (-2,0),\quad (0,2),\quad (0,-2).
 \]
-Other points do not.  The complete set of solutions forms a circle centred at
-the origin.  We do not yet need a general theory of curves.  The important
-observation is that algebraic conditions can select geometric objects from the
-plane.
-
-This will be one of our main working principles:
+Other points do not.  The complete geometric object is the subset
 \[
-\text{equations and inequalities}
-\quad\longleftrightarrow\quad
-\text{sets of points in the plane}.
+C
+=
+\{(x,y)\in\mathbb{R}^2:x^2+y^2=4\}.
+\]
+We read this as ``the set of all points $(x,y)$ in the plane such that
+$x^2+y^2=4$.''  Geometrically, $C$ is the circle of radius $2$ centred at the
+origin.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->,thick] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \draw[very thick] (0,0) circle (2);
+    \fill (0,0) circle (1.7pt) node[below left] {$O$};
+    \node[above right] at (1.4,1.4) {$C$};
+\end{tikzpicture}
+\end{center}
+
+The equation is the condition.  The set-builder expression states explicitly
+which ambient space we are working in, what the elements are, and which
+condition they must satisfy.  The diagram then shows the geometric meaning of
+that set.
+
+This gives one of our main working principles:
+\[
+\text{condition on coordinates}
+\quad\longrightarrow\quad
+\text{subset of }\mathbb{R}^2
+\quad\longrightarrow\quad
+\text{geometric interpretation}.
 \]
 
 The Cartesian plane therefore gives us more than a picture.  It provides a
-common language in which numerical information, algebraic conditions, and
+common language in which numerical information, algebraic conditions, sets, and
 geometric objects can be compared directly.
