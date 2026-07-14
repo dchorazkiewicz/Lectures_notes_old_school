@@ -1,0 +1,30 @@
+name: Auto-dispatch lecture builds
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**/*.pdf"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: auto-dispatch-lecture-builds
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch lecture PDF build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run build-pdfs.yml --ref main
+
+      - name: Dispatch Beamer PDF build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run build-beamer-presentations.yml --ref main
