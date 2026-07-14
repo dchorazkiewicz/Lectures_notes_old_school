@@ -48,13 +48,17 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}[chapter]
 
+% Do not draw a second frame around formulas already placed in a colored box.
+\newcommand{\plainformula}[1]{#1}
+
 % Colored boxes
 \newtcolorbox{definitionbox}{
     breakable,
     colback=AccentBlue!28,
     colframe=SectionBlue,
     title=Definition,
-    fonttitle=\bfseries
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
 }
 
 \newtcolorbox{theorembox}{
@@ -62,7 +66,8 @@
     colback=TheoremOrangeBack,
     colframe=TheoremOrange,
     title=Theorem,
-    fonttitle=\bfseries
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
 }
 
 \newtcolorbox{examplebox}{
@@ -70,7 +75,8 @@
     colback=ExampleGreenBack,
     colframe=ExampleGreen,
     title=Example,
-    fonttitle=\bfseries
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
 }
 
 \newtcolorbox{remarkbox}{
@@ -78,7 +84,8 @@
     colback=gray!4,
     colframe=SubsectionBlue!75,
     title=Remark,
-    fonttitle=\bfseries
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
 }
 
 \newtcolorbox{summarybox}{
@@ -86,5 +93,6 @@
     colback=gray!5,
     colframe=ChapterBlue,
     title=Summary,
-    fonttitle=\bfseries
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
 }
