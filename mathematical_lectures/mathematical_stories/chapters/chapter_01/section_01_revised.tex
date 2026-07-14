@@ -72,7 +72,8 @@ marks.
         \draw (0.09,\y) -- (-0.09,\y) node[left=3pt] {$\y$};
     }
     \node[below left] at (0,0) {$0$};
-    \draw[<->,gray] (0,2.65) -- (1,2.65) node[midway,above] {one unit};
+    \draw[<->,gray] (0,-2.65) -- (1,-2.65);
+    \node[gray,below] at (0.5,-2.65) {one common unit};
 \end{tikzpicture}
 \end{center}
 
@@ -192,98 +193,145 @@ d_E(P,Q)
 }.
 \]
 
-\subsection{Angles, Names of Angles, and Angle Measure}
+\subsection{Angles and the Calculation of Their Measure}
 
-Only now, after the coordinate construction and the distance formula are in
-place, do we record how angles are described in the Euclidean plane.
-
-\begin{definitionbox}
-An angle with vertex $O$ is the part of the plane determined by two rays with
-common initial point $O$, together with the choice of which of the two regions
-between the rays is meant.
-\end{definitionbox}
-
-An angle is a geometric object. A name such as \emph{right angle} classifies
-that object. The measure of the angle is a number assigned to it. These three
-notions must not be identified:
-\[
-\boxed{
-\text{angle}
-\neq
-\text{name of the angle}
-\neq
-\text{numerical measure of the angle}
-}.
-\]
+Only now, after coordinates and the distance formula have been constructed, do
+we describe how an angle is determined geometrically and how its measure can be
+calculated.
 
 \begin{definitionbox}
-Let $\alpha$ be an angle. Its degree measure, denoted by $m_{\deg}(\alpha)$,
-is defined by comparing the angle with a full turn. A full turn is assigned
-measure
-\[
-360^\circ.
-\]
-If $\alpha$ occupies the fraction $r$ of a full turn, then
-\[
-m_{\deg}(\alpha)=360^\circ r.
-\]
+Let $r_1$ and $r_2$ be two rays with the same initial point $O$. The rays,
+together with a choice of one of the two regions between them, determine an
+angle $\alpha$ with vertex $O$.
 \end{definitionbox}
 
-Consequently, an angle occupying one half of a full turn has measure
-\[
-180^\circ,
-\]
-and an angle occupying one quarter of a full turn has measure
-\[
-90^\circ.
-\]
+Thus the angle is the chosen geometric region. It is not the arc drawn near the
+vertex and it is not a number. The arc is only a graphical mark indicating
+which region has been selected.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
     \coordinate (O) at (0,0);
-    \draw[axis] (O) -- (3.4,0) node[right] {$r_1$};
-    \draw[axis] (O) -- (0,3.0) node[above] {$r_2$};
-    \draw[subset] (1.0,0) arc[start angle=0,end angle=90,radius=1.0];
-    \node[subset label] at (0.95,0.78) {$m_{\deg}(\alpha)=90^\circ$};
+    \coordinate (A) at (3.4,0);
+    \coordinate (B) at (1.7,2.8);
+    \fill[blue!8] (O) -- (A) arc[start angle=0,end angle=58.7,radius=3.4] -- cycle;
+    \draw[axis] (O) -- (A) node[right] {$r_1$};
+    \draw[axis] (O) -- (B) node[above] {$r_2$};
+    \draw[subset] (0.9,0) arc[start angle=0,end angle=58.7,radius=0.9];
+    \node[subset label] at (0.95,0.48) {$\alpha$};
     \fill (O) circle (2pt) node[below left] {$O$};
-    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
 \end{tikzpicture}
 \end{center}
+
+\begin{definitionbox}
+To measure $\alpha$ geometrically, draw a circle with centre $O$. The rays meet
+the circle at points $A$ and $B$. Let $s$ be the length of the selected arc
+from $A$ to $B$, and let $C$ be the circumference of the circle. The degree
+measure of $\alpha$ is
+\[
+m_{\deg}(\alpha)=360^\circ\frac{s}{C}.
+\]
+The ratio $s/C$ is independent of the chosen radius, so it depends only on the
+angle.
+\end{definitionbox}
+
+A full turn uses the whole circumference, so its measure is $360^\circ$. A
+half-turn uses half of the circumference and therefore has measure
+$180^\circ$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,0);
+    \coordinate (B) at (1.5,2.598);
+    \draw[gray] (O) circle (3);
+    \draw[axis] (O) -- (A) node[right] {$A$};
+    \draw[axis] (O) -- (B) node[above] {$B$};
+    \draw[subset] (A) arc[start angle=0,end angle=60,radius=3];
+    \node[subset label] at (2.7,1.55) {selected arc of length $s$};
+    \fill (O) circle (2pt) node[below left] {$O$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Calculating the measure from lengths}
+
+Choose any points $A\in r_1\setminus\{O\}$ and
+$B\in r_2\setminus\{O\}$. The three lengths
+\[
+d_E(O,A),\qquad d_E(O,B),\qquad d_E(A,B)
+\]
+determine the Euclidean triangle $OAB$. By the law of cosines,
+\[
+d_E(A,B)^2
+=
+d_E(O,A)^2+d_E(O,B)^2
+-2d_E(O,A)d_E(O,B)\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr).
+\]
+Therefore
+\begin{theorembox}
+The radian measure of the angle is
+\[
+\boxed{
+m_{\mathrm{rad}}(\alpha)
+=
+\arccos\left(
+\frac{
+d_E(O,A)^2+d_E(O,B)^2-d_E(A,B)^2
+}{
+2d_E(O,A)d_E(O,B)
+}
+\right)
+}.
+\]
+The distances can be calculated from the Cartesian coordinates by the distance
+formula derived above.
+\end{theorembox}
+
+The result does not depend on how far along the two rays the points $A$ and
+$B$ are chosen. Moving either point along its ray changes the triangle's size,
+but not the angle between its sides.
+
+\begin{examplebox}
+Let
+\[
+O=(0,0),\qquad A=(1,0),\qquad B=(1,1).
+\]
+Then
+\[
+d_E(O,A)=1,\qquad d_E(O,B)=\sqrt2,\qquad d_E(A,B)=1.
+\]
+Hence
+\[
+\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr)
+=
+\frac{1^2+(\sqrt2)^2-1^2}{2\cdot1\cdot\sqrt2}
+=
+\frac{1}{\sqrt2},
+\]
+so
+\[
+m_{\mathrm{rad}}(\alpha)=\frac{\pi}{4}
+\qquad\text{and}\qquad
+m_{\deg}(\alpha)=45^\circ.
+\]
+The angle itself is the region determined by the rays $OA$ and $OB$; the
+numbers $\pi/4$ and $45^\circ$ are two measures of that same angle.
+\end{examplebox}
 
 \begin{definitionbox}
 A \emph{right angle} is the name given to each of the four congruent angles
 formed by two perpendicular lines.
 \end{definitionbox}
 
-\begin{theorembox}
-Two perpendicular lines through a point divide a full turn into four congruent
-angles. Therefore, if $\alpha$ is any one of these right angles, then
-\[
-m_{\deg}(\alpha)
-=
-\frac{360^\circ}{4}
-=
-90^\circ.
-\]
-Thus a right angle is not the number $90^\circ$; rather, a right angle has
-degree measure $90^\circ$.
-\end{theorembox}
-
-The coordinate axes were chosen to be perpendicular before coordinates were
-assigned. Their positive rays therefore determine a right angle, and that
-angle has degree measure $90^\circ$.
-
-\begin{remarkbox}
-The same angle may be measured using a different scale. If $\alpha$ is a right
-angle, then
+If $\alpha$ is a right angle, then it occupies one quarter of a full turn.
+Consequently,
 \[
 m_{\deg}(\alpha)=90^\circ
 \qquad\text{and}\qquad
 m_{\mathrm{rad}}(\alpha)=\frac{\pi}{2}.
 \]
-Degrees and radians are two systems for measuring the same geometric angle;
-neither number is the angle itself.
-\end{remarkbox}
+A right angle is not either of these numbers; it is a geometric angle having
+these measures in the two measurement systems.
 
 \begin{summarybox}
 The construction proceeds in the following order:
@@ -293,8 +341,8 @@ The construction proceeds in the following order:
     \item refine the scale and identify axis positions with real numbers;
     \item assign coordinates by orthogonal projection;
     \item derive the distance formula from the Pythagorean theorem;
-    \item finally distinguish an angle, its geometric name, and its numerical
-          measure.
+    \item finally determine angles by pairs of rays and calculate their measures
+          from arcs or from the law of cosines.
 \end{enumerate}
 Coordinates are a numerical representation of the original Euclidean geometry.
 \end{summarybox}
