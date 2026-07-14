@@ -10,7 +10,6 @@
 ./.gitignore
 ./.memory
 ./.memory/chatgpt_github_connector_instructions.md
-./.python-version
 ./.vscode
 ./.vscode/settings.json
 ./AGENTS.md
