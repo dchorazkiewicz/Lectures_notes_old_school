@@ -1,14 +1,14 @@
 \section{The Euclidean Geometry Available Before Coordinates}
 
 Before introducing coordinates, we recall the geometric world that is already
-available.  At this stage there are no ordered pairs, no axes, and no vectors.
+available. At this stage there are no ordered pairs, no axes, and no vectors.
 There are points, straight lines, segments, circles, and angles, together with
 relations such as incidence, betweenness, congruence, perpendicularity, and
 parallelism.
 
 \begin{remarkbox}
-Coordinates will later translate this geometry into arithmetic.  They do not
-create the geometry.  We can already construct and compare geometric objects
+Coordinates will later translate this geometry into arithmetic. They do not
+create the geometry. We can already construct and compare geometric objects
 before assigning numbers to all points and angles.
 \end{remarkbox}
 
@@ -26,12 +26,12 @@ We shall distinguish three kinds of statements.
 
 In particular, a perpendicular bisector, a perpendicular through a point, an
 angle bisector, or a parallel through a point will not be treated as primitive
-construction postulates.  They will be constructed.
+construction postulates. They will be constructed.
 
 \subsection{Euclid's Five Postulates}
 
 The following are the five postulates used in the first book of Euclid's
-\emph{Elements}.  The diagrams illustrate their meaning; they are not proofs.
+\emph{Elements}. The diagrams illustrate their meaning; they are not proofs.
 
 \subsubsection{Postulate I: Joining Two Points}
 
@@ -105,7 +105,7 @@ All right angles are congruent.
 \end{center}
 
 This postulate does not say that a perpendicular may simply be drawn without
-construction.  It says that once right angles have been constructed, they are
+construction. It says that once right angles have been constructed, they are
 all equal.
 
 \subsubsection{Postulate V: The Parallel Postulate}
@@ -124,7 +124,7 @@ that side.
 \end{center}
 
 A familiar modern equivalent is Playfair's formulation: through a point outside
-a given line there passes exactly one parallel to that line.  We shall use that
+a given line there passes exactly one parallel to that line. We shall use that
 form later, after the relation between the two formulations has been made clear.
 
 \subsection{Elementary Rules for Straightedge-and-Compass Work}
@@ -140,40 +140,52 @@ For explicit constructions we use the following operational rules.
 \end{enumerate}
 
 \begin{center}
-\begin{tikzpicture}[scale=0.78]
-    \coordinate (A) at (-4.8,0);
-    \coordinate (B) at (-2.5,0.8);
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.3,-0.4);
+    \coordinate (B) at (2.1,0.9);
     \draw[subset] (A) -- (B);
-    \fill[geometricSubsetColor] (A) circle (2pt);
-    \fill[geometricSubsetColor] (B) circle (2pt);
-    \node at (-3.65,-1.0) {line through two points};
-
-    \coordinate (O) at (0,0);
-    \draw[helper] (O) circle (1.25);
-    \draw[subset] (O) -- (1.25,0);
-    \fill[geometricSubsetColor] (O) circle (2pt);
-    \node at (0,-1.75) {circle from centre and radius};
-
-    \coordinate (C) at (3.4,0);
-    \coordinate (D) at (5.4,0);
-    \draw[helper] (C) circle (1.45);
-    \draw[helper] (D) circle (1.45);
-    \fill[geometricSubsetColor] (4.4,1.04) circle (2pt) node[above] {$P$};
-    \fill[geometricSubsetColor] (4.4,-1.04) circle (2pt) node[below] {$Q$};
-    \node at (4.4,-1.75) {new points from intersections};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
+    \node at (0,-1.35) {draw the line through two constructed points};
 \end{tikzpicture}
 \end{center}
 
-These rules are the actual construction toolkit.  The constructions below must
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (R) at (2.0,0);
+    \draw[helper] (O) circle (2.0);
+    \draw[subset] (O) -- (R) node[midway,below] {$r$};
+    \fill[geometricSubsetColor] (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (R) circle (2pt);
+    \node at (0,-2.55) {draw a circle from a constructed centre and radius};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \coordinate (C) at (-1.5,0);
+    \coordinate (D) at (1.5,0);
+    \draw[helper] (C) circle (2.15);
+    \draw[helper] (D) circle (2.15);
+    \fill (C) circle (1.7pt) node[left] {$C$};
+    \fill (D) circle (1.7pt) node[right] {$D$};
+    \fill[geometricSubsetColor] (0,1.55) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (0,-1.55) circle (2pt) node[below] {$Q$};
+    \node at (0,-2.65) {retain the intersection points as new constructible points};
+\end{tikzpicture}
+\end{center}
+
+These rules are the actual construction toolkit. The constructions below must
 be reduced to repeated uses of them.
 
 \subsection{Constructions Derived from the Toolkit}
 
 \subsubsection{The Perpendicular Bisector and the Midpoint}
 
-Let $A$ and $B$ be distinct points.  Draw two circles with the same radius,
+Let $A$ and $B$ be distinct points. Draw two circles with the same radius,
 one centred at $A$ and one centred at $B$, choosing the radius larger than half
-of $AB$.  Let their intersection points be $P$ and $Q$.
+of $AB$. Let their intersection points be $P$ and $Q$.
 
 Because $P$ lies on both circles,
 \[
@@ -183,7 +195,7 @@ and similarly,
 \[
 QA=QB.
 \]
-Thus both $P$ and $Q$ are equidistant from $A$ and $B$.  The line $PQ$ is the
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is the
 perpendicular bisector of $AB$.
 
 \begin{center}
@@ -203,16 +215,16 @@ perpendicular bisector of $AB$.
 \end{tikzpicture}
 \end{center}
 
-The intersection of $PQ$ with $AB$ is the midpoint of $AB$.  Thus midpoint and
+The intersection of $PQ$ with $AB$ is the midpoint of $AB$. Thus midpoint and
 perpendicularity have been constructed from equal radii and intersections.
 
 \subsubsection{A Perpendicular Through a Point on a Line}
 
-Let $P$ lie on a line $\ell$.  Choose points $A$ and $B$ on $\ell$ with
+Let $P$ lie on a line $\ell$. Choose points $A$ and $B$ on $\ell$ with
 \[
 PA=PB.
 \]
-Construct the perpendicular bisector of $AB$.  Since $P$ is the midpoint of
+Construct the perpendicular bisector of $AB$. Since $P$ is the midpoint of
 $AB$, this perpendicular bisector passes through $P$ and is perpendicular to
 $\ell$.
 
@@ -233,13 +245,13 @@ $\ell$.
 
 \subsubsection{A Perpendicular Through a Point Outside a Line}
 
-Let $P$ lie outside a line $\ell$.  Draw a circle centred at $P$ large enough
-to meet $\ell$ at two points $A$ and $B$.  Then
+Let $P$ lie outside a line $\ell$. Draw a circle centred at $P$ large enough
+to meet $\ell$ at two points $A$ and $B$. Then
 \[
 PA=PB.
 \]
-Construct the perpendicular bisector of $AB$.  Because $P$ is equidistant from
-$A$ and $B$, it lies on that perpendicular bisector.  Hence the constructed
+Construct the perpendicular bisector of $AB$. Because $P$ is equidistant from
+$A$ and $B$, it lies on that perpendicular bisector. Hence the constructed
 line passes through $P$ and is perpendicular to $\ell$.
 
 \begin{center}
@@ -262,8 +274,8 @@ was not inserted as an additional postulate.
 
 \subsubsection{Bisecting an Angle}
 
-Let two rays with common endpoint $O$ form an angle.  Draw a circle centred at
-$O$ meeting the rays at $A$ and $B$.  Then draw equal-radius circles centred at
+Let two rays with common endpoint $O$ form an angle. Draw a circle centred at
+$O$ meeting the rays at $A$ and $B$. Then draw equal-radius circles centred at
 $A$ and $B$, and let one of their intersections inside the angle be $P$.
 Since
 \[
@@ -273,7 +285,7 @@ AP=BP,
 \qquad
 OP=OP,
 \]
-the triangles $OAP$ and $OBP$ are congruent.  Therefore
+the triangles $OAP$ and $OBP$ are congruent. Therefore
 \[
 \angle AOP=\angle POB.
 \]
@@ -281,9 +293,9 @@ The ray $OP$ is the angle bisector.
 
 \subsubsection{Constructing a Parallel Through a Point}
 
-Let $P$ lie outside a line $\ell$.  First construct a line $m$ through $P$
-perpendicular to $\ell$.  Then construct a line $n$ through $P$ perpendicular
-to $m$.  Since $n$ and $\ell$ are perpendicular to the same line, they have the
+Let $P$ lie outside a line $\ell$. First construct a line $m$ through $P$
+perpendicular to $\ell$. Then construct a line $n$ through $P$ perpendicular
+to $m$. Since $n$ and $\ell$ are perpendicular to the same line, they have the
 same direction and do not meet:
 \[
 n\parallel\ell.
@@ -297,7 +309,7 @@ A central fact of Euclidean geometry is that parallel lines preserve ratios.
 This is the content of Thales' theorem in the form needed here.
 
 \begin{theorembox}
-Let $D$ lie on $AB$ and $E$ lie on $AC$ in a triangle $ABC$.  If
+Let $D$ lie on $AB$ and $E$ lie on $AC$ in a triangle $ABC$. If
 \[
 DE\parallel BC,
 \]
@@ -330,20 +342,20 @@ then
 \end{center}
 
 The smaller triangle $ADE$ and the larger triangle $ABC$ have the same three
-angles.  Their corresponding sides differ by one common scale factor.  This is
+angles. Their corresponding sides differ by one common scale factor. This is
 the basic phenomenon of similarity.
 
 \begin{definitionbox}
-Two triangles are similar when their corresponding angles are equal.  In that
+Two triangles are similar when their corresponding angles are equal. In that
 case their corresponding side lengths are proportional.
 \end{definitionbox}
 
-Similarity lets us change the size of a figure while preserving its shape.  It
+Similarity lets us change the size of a figure while preserving its shape. It
 is the reason ratios of corresponding lengths can depend only on angles.
 
 \subsection{Sine and Cosine Before Coordinates}
 
-Take a right triangle containing an acute angle $\alpha$.  Let $h$ denote the
+Take a right triangle containing an acute angle $\alpha$. Let $h$ denote the
 hypotenuse, let $a$ be the leg adjacent to $\alpha$, and let $b$ be the leg
 opposite $\alpha$.
 
@@ -369,10 +381,10 @@ We define
 \sin\alpha=\frac{b}{h}.
 \]
 
-These expressions are well defined.  Indeed, any two right triangles containing
+These expressions are well defined. Indeed, any two right triangles containing
 the same acute angle $\alpha$ have the same third angle and are therefore
-similar.  Their corresponding sides are proportional, so the ratios $a/h$ and
-$b/h$ do not depend on the particular triangle chosen.  They depend only on the
+similar. Their corresponding sides are proportional, so the ratios $a/h$ and
+$b/h$ do not depend on the particular triangle chosen. They depend only on the
 angle.
 
 This is the essential role of Thales' theorem and similarity: they turn the two
@@ -396,27 +408,27 @@ Pythagorean theorem.
 
 \subsection{Angles and Their Numerical Measure}
 
-An angle exists geometrically before it is assigned a number.  We can compare,
-copy, add, and bisect angles without degrees or radians.  A numerical angle
+An angle exists geometrically before it is assigned a number. We can compare,
+copy, add, and bisect angles without degrees or radians. A numerical angle
 measure requires an additional choice of unit.
 
-Degrees divide one full turn into $360$ equal parts.  Radians use the geometry
-of a circle.  If an angle at the centre of a circle cuts off an arc of length
+Degrees divide one full turn into $360$ equal parts. Radians use the geometry
+of a circle. If an angle at the centre of a circle cuts off an arc of length
 $s$ on a circle of radius $r$, its radian measure is
 \[
 \theta=\frac{s}{r}.
 \]
 The ratio does not depend on the size of the circle: scaling the circle by a
-factor scales both $s$ and $r$ by that factor.  Again, similarity makes the
+factor scales both $s$ and $r$ by that factor. Again, similarity makes the
 quantity well defined.
 
 \begin{remarkbox}
-At this point no vector has been introduced.  We have only Euclidean objects,
+At this point no vector has been introduced. We have only Euclidean objects,
 postulates, constructions, similarity, trigonometric ratios, and numerical
-angle measure.  Vectors will appear only in the next chapter, after the
+angle measure. Vectors will appear only in the next chapter, after the
 Cartesian coordinate system has been constructed.
 \end{remarkbox}
 
 The next step is to choose two perpendicular lines, an origin, directions, and
-a unit length.  Those choices will convert the Euclidean plane into a Cartesian
+a unit length. Those choices will convert the Euclidean plane into a Cartesian
 coordinate plane.
