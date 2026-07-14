@@ -1,0 +1,152 @@
+\subsection{Why a Zero Dot Product Means Perpendicularity}
+
+The condition
+\[
+\mathbf u\cdot\mathbf v=0
+\]
+should not be accepted as an unexplained rule.  It is already hidden in the
+coordinate criterion for perpendicular lines established in the preceding
+chapter.
+
+Take two nonzero vectors
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2)
+\]
+and choose an arbitrary point
+\[
+P=(x_0,y_0).
+\]
+Use the vectors as coordinate displacements from that same point:
+\[
+Q=P+\mathbf u=(x_0+u_1,\,y_0+u_2),
+\]
+\[
+R=P+\mathbf v=(x_0+v_1,\,y_0+v_2).
+\]
+The line through $P$ and $Q$ has direction $\mathbf u$, while the line through
+$P$ and $R$ has direction $\mathbf v$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (P) at (0.7,0.6);
+    \coordinate (Q) at (4.5,2.1);
+    \coordinate (R) at (-0.5,3.6);
+    \draw[subset,->] (P) -- (Q) node[midway,below right] {$\mathbf u$};
+    \draw[subset,->] (P) -- (R) node[midway,left] {$\mathbf v$};
+    \draw[helper] ($(P)!-0.25!(Q)$) -- ($(P)!1.25!(Q)$);
+    \draw[helper] ($(P)!-0.25!(R)$) -- ($(P)!1.25!(R)$);
+    \fill[geometricSubsetColor] (P) circle (2pt) node[below left] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
+    \fill[geometricSubsetColor] (R) circle (2pt) node[above left] {$R$};
+\end{tikzpicture}
+\end{center}
+
+First suppose that neither line is vertical, so
+\[
+u_1\neq0,
+\qquad
+v_1\neq0.
+\]
+Their slopes are obtained directly from the coordinate differences:
+\[
+m_{\mathbf u}
+=
+\frac{(y_0+u_2)-y_0}{(x_0+u_1)-x_0}
+=
+\frac{u_2}{u_1},
+\]
+\[
+m_{\mathbf v}
+=
+\frac{(y_0+v_2)-y_0}{(x_0+v_1)-x_0}
+=
+\frac{v_2}{v_1}.
+\]
+The previously proved criterion for perpendicular nonvertical lines is
+\[
+m_{\mathbf u}m_{\mathbf v}=-1.
+\]
+Substitution gives
+\[
+\frac{u_2}{u_1}\frac{v_2}{v_1}=-1.
+\]
+Multiplying by $u_1v_1$ yields
+\[
+u_2v_2=-u_1v_1,
+\]
+and therefore
+\[
+u_1v_1+u_2v_2=0.
+\]
+But the left-hand side is exactly the coordinate definition of the dot product:
+\[
+\mathbf u\cdot\mathbf v=u_1v_1+u_2v_2.
+\]
+Hence, in the nonvertical case,
+\[
+\text{the two direction lines are perpendicular}
+\iff
+\mathbf u\cdot\mathbf v=0.
+\]
+
+The remaining case is a horizontal line perpendicular to a vertical line.  A
+nonzero horizontal direction has the form
+\[
+\mathbf u=(u_1,0),
+\]
+while a nonzero vertical direction has the form
+\[
+\mathbf v=(0,v_2).
+\]
+Then
+\[
+\mathbf u\cdot\mathbf v
+=
+u_1\cdot0+0\cdot v_2
+=0.
+\]
+Conversely, if $\mathbf u=(u_1,0)$ is nonzero and
+\[
+\mathbf u\cdot\mathbf v=u_1v_1=0,
+\]
+then $v_1=0$, so $\mathbf v$ is vertical.
+
+\begin{theorembox}
+For nonzero vectors $\mathbf u,\mathbf v\in\mathbb R^2$, the lines through a
+common point with directions $\mathbf u$ and $\mathbf v$ are perpendicular if
+and only if
+\[
+\mathbf u\cdot\mathbf v=0.
+\]
+\end{theorembox}
+
+The choice of the common point $P$ was arbitrary.  It disappears from every
+slope calculation because only coordinate differences remain.  Thus
+perpendicularity depends on the two displacement vectors, not on where their
+representatives are drawn.
+
+\begin{examplebox}
+Take
+\[
+\mathbf u=(3,2),
+\qquad
+\mathbf v=(-2,3).
+\]
+The corresponding slopes are
+\[
+m_{\mathbf u}=\frac23,
+\qquad
+m_{\mathbf v}=-\frac32,
+\]
+so their product is $-1$.  The same fact appears immediately in the dot
+product:
+\[
+\mathbf u\cdot\mathbf v
+=3(-2)+2(3)
+=0.
+\]
+The algebraic test and the geometric right-angle condition are therefore the
+same statement written in two languages.
+\end{examplebox}
