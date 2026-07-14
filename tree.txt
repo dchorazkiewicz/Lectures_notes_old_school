@@ -300,6 +300,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_01.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_02_lines_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/section_01.tex
