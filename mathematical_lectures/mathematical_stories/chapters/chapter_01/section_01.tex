@@ -1,9 +1,9 @@
 \section{Points and Coordinates in the Plane}
 
 Before we introduce algebraic techniques, we need a place in which mathematical
-objects can live and be seen.  The real number line is useful, but it allows us
-to move in only one direction.  Many questions become clearer as soon as we can
-move independently in two directions and draw what is happening.  For this
+objects can live and be seen. The real number line is useful, but it allows us
+to move in only one direction. Many questions become clearer as soon as we can
+move independently in two directions and draw what is happening. For this
 reason, our first working environment will be the Cartesian plane.
 
 The plane is simple enough to draw on paper, but already rich enough to contain
@@ -14,13 +14,13 @@ complicated picture.
 
 \subsection{Two Number Lines Crossing}
 
-Take two copies of the real number line.  Place one horizontally and the other
+Take two copies of the real number line. Place one horizontally and the other
 vertically so that they meet at their zero points.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \draw[->,thick] (-4.5,0) -- (4.7,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.5) -- (0,3.7) node[above] {$y$};
+    \draw[axis] (-4.5,0) -- (4.7,0) node[right] {$x$};
+    \draw[axis] (0,-3.5) -- (0,3.7) node[above] {$y$};
 
     \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
         \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {\small $\x$};
@@ -34,15 +34,15 @@ vertically so that they meet at their zero points.
 \end{center}
 
 The horizontal line is called the \emph{$x$-axis}, and the vertical line is
-called the \emph{$y$-axis}.  Their intersection is called the \emph{origin}.
-We denote the origin by
+called the \emph{$y$-axis}. Their intersection is called the \emph{origin}. We
+denote the origin by
 \[
 O=(0,0).
 \]
 
-The axes give us two independent measurements.  The first measurement tells us
-how far we move horizontally from the origin.  The second tells us how far we
-move vertically.
+The axes give us two independent measurements. The first tells us how far we
+move horizontally from the origin. The second tells us how far we move
+vertically.
 
 \begin{definitionbox}
 A point in the Cartesian plane is described by an ordered pair of real numbers
@@ -53,23 +53,23 @@ The first number is the \emph{$x$-coordinate}; the second is the
 \emph{$y$-coordinate}.
 \end{definitionbox}
 
-The word \emph{ordered} is essential.  The point $(2,5)$ is generally not the
-same point as $(5,2)$.  The first number always refers to horizontal position,
+The word \emph{ordered} is essential. The point $(2,5)$ is generally not the
+same point as $(5,2)$. The first number always refers to horizontal position,
 and the second always refers to vertical position.
 
-\subsection{From a Pair of Numbers to a Point}
+\subsection{From Coordinates to a Point}
 
-Consider the ordered pair
+Consider
 \[
 P=(3,2).
 \]
-To locate this point, begin at the origin.  Move three units to the right, then
-two units upward.  The endpoint is the point $P$.
+To locate this point, begin at the origin. Move three units to the right and two
+units upward.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \draw[->,thick] (-1.2,0) -- (5.0,0) node[right] {$x$};
-    \draw[->,thick] (0,-1.2) -- (0,4.0) node[above] {$y$};
+    \draw[axis] (-1.2,0) -- (5.0,0) node[right] {$x$};
+    \draw[axis] (0,-1.2) -- (0,4.0) node[above] {$y$};
 
     \foreach \x in {-1,1,2,3,4} {
         \draw (\x,0.07) -- (\x,-0.07) node[below=3pt] {\small $\x$};
@@ -78,247 +78,148 @@ two units upward.  The endpoint is the point $P$.
         \draw (0.07,\y) -- (-0.07,\y) node[left=3pt] {\small $\y$};
     }
 
-    \draw[dashed] (3,0) -- (3,2);
-    \draw[dashed] (0,2) -- (3,2);
+    \draw[helper] (3,0) -- (3,2);
+    \draw[helper] (0,2) -- (3,2);
     \fill (3,2) circle (2.2pt);
     \node[above right] at (3,2) {$P=(3,2)$};
 \end{tikzpicture}
 \end{center}
 
-The dashed lines are not part of the point.  They only show how the coordinates
-are read from the axes.  The vertical dashed line reaches the $x$-axis at $3$,
-and the horizontal dashed line reaches the $y$-axis at $2$.
+The dashed lines are auxiliary. They show how the coordinates are read from the
+axes; they are not part of the point.
 
-Now consider
-\[
-Q=(-2,3).
-\]
-The negative first coordinate tells us to move two units to the left.  The
-positive second coordinate tells us to move three units upward.
-
-A coordinate therefore contains both magnitude and direction:
+The signs of the coordinates encode direction:
 \begin{itemize}
-    \item a positive $x$-coordinate means right of the $y$-axis;
-    \item a negative $x$-coordinate means left of the $y$-axis;
-    \item a positive $y$-coordinate means above the $x$-axis;
-    \item a negative $y$-coordinate means below the $x$-axis.
+    \item positive $x$ means right of the $y$-axis;
+    \item negative $x$ means left of the $y$-axis;
+    \item positive $y$ means above the $x$-axis;
+    \item negative $y$ means below the $x$-axis.
 \end{itemize}
 
-\subsection{From a Point to a Pair of Numbers}
-
-The same correspondence can be read in the opposite direction.  Given a point
-in the plane, we determine its coordinates by projecting it onto the axes.
-
-\begin{examplebox}
-Suppose a point lies four units to the left of the $y$-axis and one unit below
-the $x$-axis.  Its coordinates are
-\[
-(-4,-1).
-\]
-The first coordinate records the horizontal position, and the second records
-the vertical position.
-\end{examplebox}
-
-This gives a precise correspondence:
+Thus geometry and arithmetic describe the same object in two languages:
 \[
 \text{point in the plane}
 \quad\longleftrightarrow\quad
 \text{ordered pair of real numbers}.
 \]
 
-The geometry and the arithmetic describe the same object in two different
-languages.  A point can be seen in a diagram, but it can also be stored and
-manipulated as a pair of numbers.
-
 \subsection{The Cartesian Plane as a Set}
 
-Because each point is represented by two real numbers, the entire Cartesian
-plane can be written as
+Because every point is represented by two real numbers, the entire plane is
 \[
 \mathbb{R}^2
 =
 \{(x,y):x\in\mathbb{R},\ y\in\mathbb{R}\}.
 \]
 
-The braces describe a set.  The expression inside them says which objects are
-admitted to that set.  We read the formula as follows:
+We read this as follows:
 
 \begin{quote}
-$\mathbb{R}^2$ is the set of all ordered pairs $(x,y)$ such that $x$ is a real
-number and $y$ is a real number.
+$\mathbb{R}^2$ is the set of all ordered pairs $(x,y)$ such that both $x$ and
+$y$ are real numbers.
 \end{quote}
 
-The superscript $2$ does not mean that the real numbers are being squared.  It
-tells us that two real coordinates are required to specify one point.
+The superscript $2$ does not mean that real numbers are squared. It records that
+two real coordinates are required to specify one point.
 
-For example,
+The coordinate axes are themselves subsets of the plane:
 \[
-(1,4),\qquad (-3,0),\qquad \left(\frac12,-7\right),\qquad
-(\sqrt{2},\pi)
-\]
-are all elements of $\mathbb{R}^2$.
-
-\subsection{Conditions and Sets of Points}
-
-A formula involving $x$ and $y$ may be used in two different ways.  First, it
-may appear only as a \emph{condition}.  For example,
-\[
-y=2
-\]
-is a relation between two numbers.  By itself, it tells us which pairs of
-numbers satisfy the relation, but it does not yet introduce a name for the
-collection of all such pairs.
-
-To define a geometric object as a subset of the plane, we write the entire set:
-\[
-L
-=
-\{(x,y)\in\mathbb{R}^2:y=2\}.
-\]
-
-This is read as follows:
-
-\begin{quote}
-$L$ is the set of all points $(x,y)$ in the Cartesian plane such that $y=2$.
-\end{quote}
-
-The colon means ``such that.''  A vertical bar may be used instead:
-\[
-\{(x,y)\in\mathbb{R}^2:y=2\}
-=
-\{(x,y)\in\mathbb{R}^2\mid y=2\}.
-\]
-
-The condition $y=2$ selects precisely those points whose second coordinate is
-$2$.  Geometrically, they form a horizontal line.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \draw[->,thick] (-4.2,0) -- (4.4,0) node[right] {$x$};
-    \draw[->,thick] (0,-1.3) -- (0,3.8) node[above] {$y$};
-    \draw[very thick] (-4,2) -- (4,2);
-    \node[right] at (4,2) {$L$};
-    \draw (0.08,2) -- (-0.08,2) node[left=3pt] {$2$};
-\end{tikzpicture}
-\end{center}
-
-Several particular elements of this set are
-\[
-(0,2),\quad (1,2),\quad (-3,2),\quad
-\left(\frac12,2\right).
-\]
-They are examples of points in $L$, but no finite list of examples is the same
-thing as the complete definition of $L$.
-
-Similarly, the set
-\[
-M
-=
-\{(x,y)\in\mathbb{R}^2:x=-1\}
-\]
-is the vertical line through $x=-1$.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \draw[->,thick] (-3.5,0) -- (3.8,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.1) -- (0,3.4) node[above] {$y$};
-    \draw[very thick] (-1,-3) -- (-1,3);
-    \node[above] at (-1,3) {$M$};
-    \draw (-1,0.08) -- (-1,-0.08) node[below=3pt] {$-1$};
-\end{tikzpicture}
-\end{center}
-
-This distinction will be used throughout the course:
-\[
-\boxed{\text{condition on coordinates}}
-\qquad\text{versus}\qquad
-\boxed{\text{set of all points satisfying the condition}}.
-\]
-
-\subsection{The Axes and Quadrants as Subsets of the Plane}
-
-The coordinate axes themselves are subsets of $\mathbb{R}^2$.  The $x$-axis is
-\[
-X
-=
-\{(x,y)\in\mathbb{R}^2:y=0\},
-\]
-and the $y$-axis is
-\[
-Y
-=
-\{(x,y)\in\mathbb{R}^2:x=0\}.
+X=\{(x,y)\in\mathbb{R}^2:y=0\},
+\qquad
+Y=\{(x,y)\in\mathbb{R}^2:x=0\}.
 \]
 Their only common point is the origin:
 \[
 X\cap Y=\{(0,0)\}.
 \]
 
-The two axes divide the plane into four regions called \emph{quadrants}.
+\subsection{Conditions and Sets of Points}
+
+A formula involving $x$ and $y$ may appear only as a condition. For example,
+\[
+y=2
+\]
+is a relation between two numbers. To define the corresponding geometric
+object, we write the complete set:
+\[
+L=\{(x,y)\in\mathbb{R}^2:y=2\}.
+\]
+
+This is read as:
+
+\begin{quote}
+$L$ is the set of all points $(x,y)$ in the Cartesian plane such that $y=2$.
+\end{quote}
+
+The colon means ``such that.'' A vertical bar may be used instead:
+\[
+\{(x,y)\in\mathbb{R}^2:y=2\}
+=
+\{(x,y)\in\mathbb{R}^2\mid y=2\}.
+\]
+
+Geometrically, $L$ is a horizontal line.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.85]
-    \draw[->,thick] (-4.2,0) -- (4.4,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.3) -- (0,3.5) node[above] {$y$};
-
-    \node at (2.3,2.0) {Quadrant I};
-    \node at (-2.3,2.0) {Quadrant II};
-    \node at (-2.3,-2.0) {Quadrant III};
-    \node at (2.3,-2.0) {Quadrant IV};
+\begin{tikzpicture}[scale=0.8]
+    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-1.3) -- (0,3.8) node[above] {$y$};
+    \draw[subset] (-4,2) -- (4,2);
+    \node[subset label,right] at (4,2) {$L$};
+    \draw (0.08,2) -- (-0.08,2) node[left=3pt] {$2$};
 \end{tikzpicture}
 \end{center}
 
-For example, the first quadrant is the set
+Similarly,
 \[
-Q_1
-=
-\{(x,y)\in\mathbb{R}^2:x>0\text{ and }y>0\}.
+M=\{(x,y)\in\mathbb{R}^2:x=-1\}
 \]
-The remaining quadrants are described similarly:
+is a vertical line.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    \draw[axis] (-3.5,0) -- (3.8,0) node[right] {$x$};
+    \draw[axis] (0,-3.1) -- (0,3.4) node[above] {$y$};
+    \draw[subset] (-1,-3) -- (-1,3);
+    \node[subset label,above] at (-1,3) {$M$};
+    \draw (-1,0.08) -- (-1,-0.08) node[below=3pt] {$-1$};
+\end{tikzpicture}
+\end{center}
+
+The distinction is fundamental:
 \[
-\begin{aligned}
-Q_2&=\{(x,y)\in\mathbb{R}^2:x<0\text{ and }y>0\},\\
-Q_3&=\{(x,y)\in\mathbb{R}^2:x<0\text{ and }y<0\},\\
-Q_4&=\{(x,y)\in\mathbb{R}^2:x>0\text{ and }y<0\}.
-\end{aligned}
+\boxed{\text{condition on coordinates}}
+\qquad\text{versus}\qquad
+\boxed{\text{set of all points satisfying the condition}}.
 \]
-Points on the axes do not belong to any quadrant because at least one of their
-coordinates is zero.
 
 \subsection{A Curved Set of Points}
 
-Consider now the condition
+Consider the condition
 \[
 x^2+y^2=4.
 \]
-Some points satisfy it:
+The corresponding geometric object is
 \[
-(2,0),\quad (-2,0),\quad (0,2),\quad (0,-2).
-\]
-Other points do not.  The complete geometric object is the subset
-\[
-C
-=
-\{(x,y)\in\mathbb{R}^2:x^2+y^2=4\}.
+C=\{(x,y)\in\mathbb{R}^2:x^2+y^2=4\}.
 \]
 We read this as ``the set of all points $(x,y)$ in the plane such that
-$x^2+y^2=4$.''  Geometrically, $C$ is the circle of radius $2$ centred at the
+$x^2+y^2=4$.'' Geometrically, $C$ is the circle of radius $2$ centred at the
 origin.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \draw[->,thick] (-3.2,0) -- (3.4,0) node[right] {$x$};
-    \draw[->,thick] (0,-3.2) -- (0,3.4) node[above] {$y$};
-    \draw[very thick] (0,0) circle (2);
+    \draw[axis] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[axis] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \draw[subset] (0,0) circle (2);
     \fill (0,0) circle (1.7pt) node[below left] {$O$};
-    \node[above right] at (1.4,1.4) {$C$};
+    \node[subset label,above right] at (1.4,1.4) {$C$};
 \end{tikzpicture}
 \end{center}
 
-The equation is the condition.  The set-builder expression states explicitly
-which ambient space we are working in, what the elements are, and which
-condition they must satisfy.  The diagram then shows the geometric meaning of
-that set.
+The equation is the condition. The set-builder expression states the ambient
+space, the form of its elements, and the condition they must satisfy. The
+diagram shows the geometric meaning of that set.
 
 This gives one of our main working principles:
 \[
@@ -329,6 +230,6 @@ This gives one of our main working principles:
 \text{geometric interpretation}.
 \]
 
-The Cartesian plane therefore gives us more than a picture.  It provides a
-common language in which numerical information, algebraic conditions, sets, and
-geometric objects can be compared directly.
+The Cartesian plane therefore gives us a common language in which numerical
+information, algebraic conditions, sets, and geometric objects can be compared
+directly.
