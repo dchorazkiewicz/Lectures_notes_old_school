@@ -1,0 +1,430 @@
+\section{Vectors from Coordinate Displacements}
+
+In the previous chapter a point of the Euclidean plane was identified with an
+ordered pair of real numbers.  We now use that identification immediately.
+The aim is not to collect formulas about vectors.  We shall begin with concrete
+geometric questions and allow the formulas to emerge from coordinate
+calculations.
+
+Choose two points
+\[
+A=(1,2),
+\qquad
+B=(4,6).
+\]
+To pass from $A$ to $B$, the first coordinate changes by $3$ and the second by
+$4$.  The pair
+\[
+(3,4)
+\]
+records the complete displacement.
+
+\subsection{A Vector Records a Change of Coordinates}
+
+For arbitrary points
+\[
+A=(x_1,y_1),
+\qquad
+B=(x_2,y_2),
+\]
+the displacement from $A$ to $B$ is
+\[
+\overrightarrow{AB}
+=
+(x_2-x_1,\,y_2-y_1).
+\]
+
+\begin{definitionbox}
+A vector in the Cartesian plane is an ordered pair
+\[
+\mathbf v=(v_1,v_2)
+\]
+interpreted as a coordinate displacement: $v_1$ units horizontally and $v_2$
+units vertically.
+\end{definitionbox}
+
+This makes the phrase ``the same vector starting elsewhere'' precise.  If
+$P=(p_1,p_2)$ and
+\[
+Q=(p_1+v_1,\,p_2+v_2),
+\]
+then
+\[
+\overrightarrow{PQ}=(v_1,v_2)=\mathbf v.
+\]
+No arrow is moved by an undefined geometric operation: the same two coordinate
+changes are simply applied at another point.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.0) node[above] {$y$};
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (4,3);
+    \coordinate (P) at (2.5,2.2);
+    \coordinate (Q) at (5.5,4.2);
+    \draw[subset,->] (A) -- (B) node[midway,below right] {$(3,2)$};
+    \draw[subset,->] (P) -- (Q) node[midway,above left] {$(3,2)$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below right] {$B$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above left] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
+\end{tikzpicture}
+\end{center}
+
+The zero displacement is $\mathbf0=(0,0)$.  Reversing
+$\mathbf v=(v_1,v_2)$ gives
+\[
+-\mathbf v=(-v_1,-v_2).
+\]
+
+\subsection{Two Successive Displacements Force Vector Addition}
+
+Start at an arbitrary point $(x,y)$.  First apply
+\[
+\mathbf u=(u_1,u_2),
+\]
+and then
+\[
+\mathbf v=(v_1,v_2).
+\]
+The successive endpoints are
+\[
+(x,y)
+\longmapsto
+(x+u_1,y+u_2)
+\longmapsto
+(x+u_1+v_1,y+u_2+v_2).
+\]
+Therefore the single displacement with the same effect must be
+\[
+\mathbf u+\mathbf v
+=
+(u_1+v_1,\,u_2+v_2).
+\]
+The rule is forced by the experiment; it is not introduced as a convention to
+memorise.
+
+Because addition of real numbers is commutative, applying $\mathbf u$ and then
+$\mathbf v$ reaches the same endpoint as applying $\mathbf v$ and then
+$\mathbf u$.  This produces the parallelogram rule.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (3.2,0.9);
+    \coordinate (V) at (1.0,2.5);
+    \coordinate (S) at (4.2,3.4);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[helper] (U) -- (S);
+    \draw[helper] (V) -- (S);
+    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+Subtraction is the displacement that undoes another displacement:
+\[
+\mathbf u-\mathbf v
+=
+(u_1-v_1,\,u_2-v_2).
+\]
+In particular,
+\[
+\overrightarrow{AB}=B-A.
+\]
+
+\subsection{Repeating and Reversing a Displacement}
+
+Repeating $\mathbf v=(v_1,v_2)$ twice gives $(2v_1,2v_2)$, while reversing it
+gives $(-v_1,-v_2)$.  The natural extension is
+\[
+\lambda\mathbf v=(\lambda v_1,\lambda v_2),
+\qquad \lambda\in\mathbb R.
+\]
+For positive $\lambda$ the orientation is unchanged; for negative $\lambda$ it
+is reversed.
+
+\subsection{When Do Two Vectors Determine Parallel Directions?}
+
+Take two nonzero vectors
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2)
+\]
+and choose an arbitrary point $P$.  Construct
+\[
+Q=P+\mathbf u,
+\qquad
+R=P+\mathbf v.
+\]
+The line through $P,Q$ has direction $\mathbf u$, and the line through $P,R$
+has direction $\mathbf v$.
+
+Suppose first that both directions are nonvertical.  Their slopes are
+\[
+m_{\mathbf u}=\frac{u_2}{u_1},
+\qquad
+m_{\mathbf v}=\frac{v_2}{v_1}.
+\]
+The two direction lines coincide precisely when these slopes are equal:
+\[
+\frac{u_2}{u_1}=\frac{v_2}{v_1}.
+\]
+After cross multiplication,
+\[
+u_2v_1=u_1v_2.
+\]
+This equality means that the two coordinate pairs have the same ratio.  Hence
+there is a nonzero number $\lambda$ such that
+\[
+\mathbf u=\lambda\mathbf v.
+\]
+The same conclusion is immediate for vertical directions: both first
+coordinates are zero, and one nonzero vertical displacement is a scalar
+multiple of the other.
+
+Thus the coordinate condition has been obtained from the geometry of their
+direction lines:
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\quad\text{for some }\lambda\neq0.
+\]
+Here parallel vectors mean vectors whose direction lines are parallel or
+coincident.  The formula is the conclusion of the calculation, not its starting
+point.
+
+\begin{examplebox}
+The vectors
+\[
+\mathbf u=(6,-4),
+\qquad
+\mathbf v=(-3,2)
+\]
+determine the same line direction because
+\[
+\mathbf u=-2\mathbf v.
+\]
+Their orientations are opposite, but their carrier lines are parallel.
+\end{examplebox}
+
+\subsection{Length from the Pythagorean Theorem}
+
+Draw $\mathbf v=(v_1,v_2)$ from any point.  The horizontal and vertical changes
+form the legs of a right triangle, so the Pythagorean theorem gives
+\[
+\|\mathbf v\|^2=v_1^2+v_2^2,
+\qquad
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2}.
+\]
+Consequently,
+\[
+d(A,B)=\|B-A\|.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (4,2.7);
+    \coordinate (R) at (4,0);
+    \draw[subset,->] (O) -- (P) node[midway,above left] {$\mathbf v$};
+    \draw[helper] (O) -- (R) node[midway,below] {$|v_1|$};
+    \draw[helper] (R) -- (P) node[midway,right] {$|v_2|$};
+    \draw (R) ++(-0.28,0) -- ++(0,0.28) -- ++(0.28,0);
+\end{tikzpicture}
+\end{center}
+
+A nonzero vector can be rescaled to length one:
+\[
+\widehat{\mathbf v}=\frac{\mathbf v}{\|\mathbf v\|}.
+\]
+
+\subsection{What Coordinate Condition Expresses a Right Angle?}
+
+We now ask a geometric question before introducing any new algebraic operation.
+Given two nonzero vectors
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2),
+\]
+when are their direction lines perpendicular?
+
+Choose any common initial point
+\[
+P=(x_0,y_0)
+\]
+and form
+\[
+Q=P+\mathbf u,
+\qquad
+R=P+\mathbf v.
+\]
+The point $P$ will disappear from the calculation because slopes depend only on
+coordinate differences.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (P) at (0.7,0.6);
+    \coordinate (Q) at (4.5,2.1);
+    \coordinate (R) at (-0.5,3.6);
+    \draw[helper] (-0.25,0.225) -- (5.45,2.475);
+    \draw[helper] (1.0,-0.15) -- (-0.8,4.35);
+    \draw[subset,->] (P) -- (Q) node[midway,below right] {$\mathbf u$};
+    \draw[subset,->] (P) -- (R) node[midway,left] {$\mathbf v$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[below left] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
+    \fill[geometricSubsetColor] (R) circle (2pt) node[above left] {$R$};
+\end{tikzpicture}
+\end{center}
+
+Assume first that neither direction is vertical.  Then
+\[
+m_{\mathbf u}=\frac{u_2}{u_1},
+\qquad
+m_{\mathbf v}=\frac{v_2}{v_1}.
+\]
+The previously established coordinate criterion for perpendicular nonvertical
+lines is
+\[
+m_{\mathbf u}m_{\mathbf v}=-1.
+\]
+Substitution gives
+\[
+\frac{u_2}{u_1}\frac{v_2}{v_1}=-1.
+\]
+Multiplying by $u_1v_1$ yields
+\[
+u_1v_1+u_2v_2=0.
+\]
+
+The remaining perpendicular case consists of a horizontal and a vertical
+direction.  Their vectors have the forms
+\[
+(u_1,0)
+\qquad\text{and}\qquad
+(0,v_2),
+\]
+and the same expression again vanishes:
+\[
+u_1\cdot0+0\cdot v_2=0.
+\]
+
+We have therefore discovered the coordinate expression that detects a right
+angle.  Since it will occur repeatedly, we give it a name only now.
+
+\begin{definitionbox}
+For vectors in the plane, their \emph{dot product} is
+\[
+\mathbf u\cdot\mathbf v
+=
+u_1v_1+u_2v_2.
+\]
+In three-dimensional space,
+\[
+(u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
+=
+u_1v_1+u_2v_2+u_3v_3.
+\]
+\end{definitionbox}
+
+\begin{theorembox}
+For nonzero vectors in the plane,
+\[
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0,
+\]
+where vector perpendicularity means perpendicularity of the direction lines
+constructed from the vectors at a common point.
+\end{theorembox}
+
+\begin{examplebox}
+Take
+\[
+\mathbf u=(3,2),
+\qquad
+\mathbf v=(-2,3).
+\]
+Their direction-line slopes are $2/3$ and $-3/2$, whose product is $-1$.  The
+same geometric fact appears in the expression just discovered:
+\[
+\mathbf u\cdot\mathbf v
+=3(-2)+2(3)=0.
+\]
+\end{examplebox}
+
+A vector perpendicular to a given direction is called a normal vector.  This
+idea will be used to construct equations of lines and planes.
+
+\subsection{Projection Is Forced by the Right-Angle Condition}
+
+Let $\mathbf v\neq\mathbf0$.  We seek a multiple $\lambda\mathbf v$ such that
+the remainder
+\[
+\mathbf u-\lambda\mathbf v
+\]
+is perpendicular to $\mathbf v$.  The criterion just derived requires
+\[
+(\mathbf u-\lambda\mathbf v)\cdot\mathbf v=0.
+\]
+Expanding and solving for $\lambda$ gives
+\[
+\lambda
+=
+\frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}.
+\]
+Thus the parallel part of $\mathbf u$ is not introduced by a memorised formula;
+it is the unique multiple that leaves a perpendicular remainder:
+\[
+\operatorname{proj}_{\mathbf v}\mathbf u
+=
+\frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
+\]
+
+\subsection{The Same Coordinate Ideas in Three Dimensions}
+
+In $\mathbb R^3$, a vector is a displacement
+\[
+\mathbf v=(v_1,v_2,v_3),
+\]
+and all addition and scaling rules remain componentwise.  Its length is obtained
+by applying the Pythagorean theorem twice:
+\[
+\|\mathbf v\|
+=
+\sqrt{v_1^2+v_2^2+v_3^2}.
+\]
+
+Two nonparallel directions in space determine a plane.  To construct a normal
+direction to that plane, seek a vector perpendicular to both.  The coordinate
+expression
+\[
+\mathbf u\times\mathbf v
+=
+\bigl(
+ u_2v_3-u_3v_2,
+ u_3v_1-u_1v_3,
+ u_1v_2-u_2v_1
+\bigr)
+\]
+has exactly this property, because direct substitution gives
+\[
+(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
+\qquad
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0.
+\]
+Thus the cross product is introduced as a constructed solution to two
+perpendicularity conditions.
+
+\begin{summarybox}
+Every operation in this chapter arose from a geometric problem expressed in
+coordinates.  Successive displacements produced vector addition.  Repeated
+displacements produced scalar multiplication.  Direction lines produced the
+criterion for parallel vectors.  Perpendicular direction lines produced the
+coordinate expression later named the dot product.  Projection and the cross
+product were then obtained by solving explicit perpendicularity conditions.
+\end{summarybox}
