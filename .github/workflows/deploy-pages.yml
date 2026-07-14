@@ -1,7 +1,9 @@
 name: Deploy MkDocs site
 
-# Temporarily disabled: manual dispatch only.
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
