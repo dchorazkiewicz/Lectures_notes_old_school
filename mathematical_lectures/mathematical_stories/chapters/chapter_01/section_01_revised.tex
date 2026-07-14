@@ -1,8 +1,8 @@
 \section{Constructing Cartesian Coordinates from Euclidean Geometry}
 
 We begin with a Euclidean plane, not with ordered pairs. Points, straight
-lines, perpendicularity, congruent segments, circles, arc length, the
-Pythagorean theorem, and the law of cosines belong to the Euclidean geometry
+lines, right angles, perpendicularity, congruent segments, circles, arc length,
+the Pythagorean theorem, and the law of cosines belong to the Euclidean geometry
 available before coordinates are introduced. Cartesian coordinates will give
 numerical labels to this already existing geometry.
 
@@ -30,7 +30,8 @@ numerical scale.
 For the construction below we use standard Euclidean operations and theorems:
 \begin{itemize}
     \item drawing the line through two distinct points;
-    \item constructing a perpendicular through a point;
+    \item constructing a right angle, equivalently constructing a perpendicular
+          through a point;
     \item transferring a segment length with a compass;
     \item bisecting a segment;
     \item constructing and comparing circles and arcs;
@@ -39,15 +40,16 @@ For the construction below we use standard Euclidean operations and theorems:
 \end{itemize}
 \end{definitionbox}
 
-The language of angles and angle measure will be made explicit only at the end
-of the construction. Until then, perpendicularity is treated as one of the
-primitive Euclidean relations already available in the plane.
+A right angle is therefore available from the beginning as a Euclidean
+construction. What is postponed until the end of the section is not the
+existence of right angles, but their numerical measurement in radians or
+degrees.
 
 \subsection{Choosing the Axes and the Origin}
 
 Choose a line and a point $O$ on it. The line becomes the $x$-axis and $O$
 becomes the origin. Through $O$, construct the line perpendicular to the first
-one. This becomes the $y$-axis.
+one; equivalently, construct a right angle at $O$. This becomes the $y$-axis.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -60,7 +62,8 @@ one. This becomes the $y$-axis.
 \end{center}
 
 The axes are perpendicular because this was required in their geometric
-construction. No coordinate formula has yet been used.
+construction. No coordinate formula has yet been used, and no numerical angle
+measure has yet been assigned.
 
 \subsection{Choosing a Common Unit}
 
@@ -171,8 +174,9 @@ the horizontal and vertical separations are
 \qquad\text{and}\qquad
 |y_2-y_1|.
 \]
-Together with the segment $PQ$, these two perpendicular separations form a
-Euclidean triangle to which the Pythagorean theorem applies.
+Together with the segment $PQ$, these two perpendicular separations form a right
+triangle. Here ``right'' means constructed with a right angle; no numerical
+measure of that angle is needed for the Pythagorean theorem.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -210,9 +214,10 @@ expression of the Euclidean distance already present in the plane.
 
 \subsection{Angles and the Calculation of Their Measure}
 
-Only now, after coordinates and the distance formula have been constructed, do
-we introduce angle language explicitly and describe how angle measures can be
-calculated.
+Right angles have already been used as Euclidean constructions: they are what
+make the axes perpendicular and what make the triangle in the distance formula a
+right triangle. We now make the general language of angles explicit and define
+how to assign numerical measures to angles.
 
 \begin{definitionbox}
 Let $r_1$ and $r_2$ be two rays with the same initial point $O$. The rays,
@@ -430,11 +435,14 @@ numbers $\pi/4$ and $45^\circ$ are two measures of that angle.
 \end{examplebox}
 
 \begin{definitionbox}
-A \emph{right angle} is the name given to each of the four congruent angles
-formed by two perpendicular lines.
+A \emph{right angle} is the constructible angle formed by two perpendicular
+rays. Equivalently, two perpendicular lines meet so that the four angles around
+their intersection are congruent; each of these angles is called a right angle.
 \end{definitionbox}
 
-If $\alpha$ is a right angle, then
+This name was already used earlier in the construction of the axes and in the
+Pythagorean triangle for the distance formula. The new information obtained now
+is numerical: if $\alpha$ is a right angle, then
 \[
 m_{\mathrm{rad}}(\alpha)=\frac{\pi}{2},
 \qquad
@@ -446,12 +454,13 @@ these measures in the two measurement systems.
 \begin{summarybox}
 The construction proceeds in the following order:
 \begin{enumerate}
-    \item start with a Euclidean plane and its geometric constructions;
+    \item start with a Euclidean plane and its geometric constructions, including
+          right angles and perpendicularity;
     \item choose perpendicular axes, positive directions, and a common unit;
     \item refine the scale and identify axis positions with real numbers;
     \item assign coordinates by orthogonal projection;
     \item derive the coordinate distance formula from Pythagoras;
-    \item finally introduce angles as regions determined by pairs of rays;
+    \item then define general angle measure using circles and arc length;
     \item define $\pi$ from the constant ratio $C/D$;
     \item define radian measure by the radius-independent ratio $s/r$;
     \item convert radians to degrees;
