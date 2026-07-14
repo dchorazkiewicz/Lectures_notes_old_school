@@ -1,13 +1,13 @@
 \section{Constructing Cartesian Coordinates from Euclidean Geometry}
 
-We begin with a Euclidean plane, not with ordered pairs.  Points, straight
-lines, perpendicularity, congruent segments, angle bisection, and the
+We begin with a Euclidean plane, not with ordered pairs. Points, straight
+lines, perpendicularity, congruent segments, segment bisection, and the
 Pythagorean theorem are assumed to be available before coordinates are
-introduced.  Cartesian coordinates will provide numerical labels for this
+introduced. Cartesian coordinates will provide numerical labels for this
 existing geometry.
 
 \begin{remarkbox}
-Coordinates do not create Euclidean geometry.  They encode it.
+Coordinates do not create Euclidean geometry. They encode it.
 \end{remarkbox}
 
 \subsection{The Plane Before Coordinates}
@@ -31,16 +31,16 @@ For the construction below we use the following Euclidean operations:
     \item drawing the line through two distinct points;
     \item constructing a perpendicular through a point;
     \item transferring a segment length with a compass;
-    \item bisecting a segment or an angle;
+    \item bisecting a segment;
     \item applying the Pythagorean theorem.
 \end{itemize}
 \end{definitionbox}
 
 \subsection{Choosing the Axes and the Origin}
 
-Choose a line and a point $O$ on it.  The line will become the $x$-axis and
-$O$ will become the origin.  Through $O$, construct the line perpendicular to
-the first one.  This becomes the $y$-axis.
+Choose a line and a point $O$ on it. The line will become the $x$-axis and
+$O$ will become the origin. Through $O$, construct the line perpendicular to
+the first one. This becomes the $y$-axis.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -53,12 +53,12 @@ the first one.  This becomes the $y$-axis.
 \end{center}
 
 The axes are perpendicular because this was required in their geometric
-construction.  No coordinate formula has yet been used.
+construction. No coordinate formula has yet been used.
 
 \subsection{Choosing a Common Unit}
 
-Choose a positive length and call it one unit.  Transfer the same length with a
-compass along both axes and in both directions.  Repetition gives the integer
+Choose a positive length and call it one unit. Transfer the same length with a
+compass along both axes and in both directions. Repetition gives the integer
 marks.
 
 \begin{center}
@@ -77,7 +77,7 @@ marks.
 \end{center}
 
 \begin{remarkbox}
-Using one common unit on both axes is essential.  It makes a horizontal unit
+Using one common unit on both axes is essential. It makes a horizontal unit
 congruent to a vertical unit.
 \end{remarkbox}
 
@@ -101,83 +101,14 @@ quarters, eighths, and in general the dyadic marks
 \end{tikzpicture}
 \end{center}
 
-These marks approximate every axis position arbitrarily closely.  Identifying
+These marks approximate every axis position arbitrarily closely. Identifying
 all positions exactly with real numbers uses the usual continuity and
 completeness assumptions of Euclidean measurement.
 
-\subsection{Angles and Their Measure}
-
-A distinction is required between an angle and the numerical measure assigned
-to it.
-
-\begin{definitionbox}
-An angle with vertex $O$ is determined by two rays with common initial point
-$O$, together with the choice of the region swept from the first ray to the
-second.
-\end{definitionbox}
-
-The angle is a geometric object.  Its measure is a number obtained by comparing
-that sweep with a full turn.
-
-\begin{definitionbox}
-One full turn is assigned the measure
-\[
-360^\circ.
-\]
-If an angle occupies the fraction $r$ of a full turn, then its degree measure
-is
-\[
-m(\alpha)=360^\circ r.
-\]
-\end{definitionbox}
-
-Thus a half-turn has measure
-\[
-180^\circ,
-\]
-and one quarter of a full turn has measure
-\[
-90^\circ.
-\]
-
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-    \coordinate (O) at (0,0);
-    \draw[axis] (O) -- (3.4,0) node[right] {$r_1$};
-    \draw[axis] (O) -- (0,3.0) node[above] {$r_2$};
-    \draw[subset] (1.0,0) arc[start angle=0,end angle=90,radius=1.0];
-    \node[subset label] at (0.72,0.72) {$90^\circ$};
-    \fill (O) circle (2pt) node[below left] {$O$};
-    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
-\end{tikzpicture}
-\end{center}
-
-\begin{theorembox}
-Two perpendicular lines through a point divide a full turn into four congruent
-angles.  Therefore each of these angles has measure
-\[
-\frac{360^\circ}{4}=90^\circ.
-\]
-Such an angle is called a right angle.
-\end{theorembox}
-
-This explains the role of perpendicularity in the Cartesian construction: the
-coordinate axes are chosen so that the angle between their positive rays is a
-right angle.
-
-\begin{remarkbox}
-Later we may express the same angle measure in radians.  A full turn is
-$2\pi$ radians, so
-\[
-90^\circ=\frac{\pi}{2}.
-\]
-Degrees and radians are two numerical scales for the same Euclidean angle.
-\end{remarkbox}
-
 \subsection{Assigning Coordinates by Orthogonal Projection}
 
-Let $P$ be a point of the plane.  Through $P$, draw a line perpendicular to the
-$x$-axis and let its intersection with the axis be $P_x$.  Similarly construct
+Let $P$ be a point of the plane. Through $P$, draw a line perpendicular to the
+$x$-axis and let its intersection with the axis be $P_x$. Similarly construct
 $P_y$ on the $y$-axis.
 
 \begin{center}
@@ -204,7 +135,7 @@ P\longleftrightarrow(x,y).
 \begin{theorembox}
 Once the perpendicular axes, their positive directions, and a common unit are
 fixed, every point of the plane has exactly one coordinate pair and every pair
-$(x,y)\in\mathbb R^2$ determines exactly one point.  Hence
+$(x,y)\in\mathbb R^2$ determines exactly one point. Hence
 \[
 \boxed{
 \text{points of the Euclidean plane}
@@ -261,15 +192,83 @@ d_E(P,Q)
 }.
 \]
 
+\subsection{Angles and Their Measure}
+
+Only now, after the coordinate construction and the distance formula are in
+place, do we record how angles are understood in the Euclidean plane.
+
+\begin{definitionbox}
+An angle with vertex $O$ is the part of the plane determined by two rays with
+common initial point $O$, together with the choice of which of the two regions
+between the rays is meant.
+\end{definitionbox}
+
+The angle is a geometric object. Its measure is a number assigned by comparing
+that region with a full turn about the vertex.
+
+\begin{definitionbox}
+A full turn is assigned the measure
+\[
+360^\circ.
+\]
+If an angle occupies the fraction $r$ of a full turn, then its degree measure is
+\[
+m(\alpha)=360^\circ r.
+\]
+\end{definitionbox}
+
+Therefore a half-turn has measure
+\[
+180^\circ,
+\]
+and one quarter of a full turn has measure
+\[
+90^\circ.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    \coordinate (O) at (0,0);
+    \draw[axis] (O) -- (3.4,0) node[right] {$r_1$};
+    \draw[axis] (O) -- (0,3.0) node[above] {$r_2$};
+    \draw[subset] (1.0,0) arc[start angle=0,end angle=90,radius=1.0];
+    \node[subset label] at (0.72,0.72) {$90^\circ$};
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
+\end{tikzpicture}
+\end{center}
+
+\begin{theorembox}
+Two perpendicular lines through a point divide a full turn into four congruent
+angles. Hence each of them has measure
+\[
+\frac{360^\circ}{4}=90^\circ.
+\]
+Such an angle is called a right angle.
+\end{theorembox}
+
+The coordinate axes were chosen to be perpendicular before coordinates were
+assigned. The statement that they form a right angle is therefore inherited
+from the Euclidean construction, not created by an algebraic formula.
+
+\begin{remarkbox}
+The same angle may later be measured in radians. A full turn is $2\pi$ radians,
+so
+\[
+90^\circ=\frac{\pi}{2}.
+\]
+Degrees and radians are two numerical scales for the same Euclidean angle.
+\end{remarkbox}
+
 \begin{summarybox}
 The construction proceeds in the following order:
 \begin{enumerate}
-    \item start with Euclidean points, lines, lengths, angles, and perpendicularity;
-    \item choose perpendicular axes and a common unit;
-    \item measure angle by comparison with a full turn;
+    \item start with a Euclidean plane;
+    \item choose perpendicular axes, positive directions, and a common unit;
+    \item refine the scale and identify axis positions with real numbers;
     \item assign coordinates by orthogonal projection;
-    \item translate Euclidean relations into algebraic formulas.
+    \item derive the distance formula from the Pythagorean theorem;
+    \item finally describe angles and their numerical measure.
 \end{enumerate}
-Coordinates are therefore a numerical representation of the original
-Euclidean geometry.
+Coordinates are a numerical representation of the original Euclidean geometry.
 \end{summarybox}
