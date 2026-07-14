@@ -205,8 +205,8 @@ together with a choice of one of the two regions between them, determine an
 angle $\alpha$ with vertex $O$.
 \end{definitionbox}
 
-Thus the angle is the chosen geometric region. It is not the arc drawn near the
-vertex and it is not a number. The arc is only a graphical mark indicating
+The angle is the chosen geometric region. It is neither the small arc drawn
+near the vertex nor a number. The arc is only a graphical mark indicating
 which region has been selected.
 
 \begin{center}
@@ -223,21 +223,61 @@ which region has been selected.
 \end{tikzpicture}
 \end{center}
 
-\begin{definitionbox}
-To measure $\alpha$ geometrically, draw a circle with centre $O$. The rays meet
-the circle at points $A$ and $B$. Let $s$ be the length of the selected arc
-from $A$ to $B$, and let $C$ be the circumference of the circle. The degree
-measure of $\alpha$ is
+\subsubsection*{Why circles give a consistent measure}
+
+To measure the opening between the rays, draw a circle centred at $O$. The rays
+meet the circle at points $A$ and $B$. The selected angle cuts from the circle
+a corresponding arc.
+
+\begin{theorembox}
+For every Euclidean circle, the ratio of its circumference $C$ to its diameter
+$D$ is the same constant:
 \[
-m_{\deg}(\alpha)=360^\circ\frac{s}{C}.
+\frac{C}{D}=\pi.
 \]
-The ratio $s/C$ is independent of the chosen radius, so it depends only on the
-angle.
+The constant is called $\pi$. Since $D=2r$, every circle of radius $r$ has
+circumference
+\[
+\boxed{C=2\pi r}.
+\]
+\end{theorembox}
+
+The independence of $C/D$ from the size of the circle is a consequence of the
+similarity of circles: enlarging a circle by a scale factor $\lambda$ multiplies
+both its diameter and its circumference by $\lambda$.
+
+The same scaling applies to corresponding arcs. If two circles centred at $O$
+have radii $r_1$ and $r_2$, and the same two rays cut arc lengths $s_1$ and
+$s_2$, then similarity gives
+\[
+\frac{s_1}{s_2}=\frac{r_1}{r_2}.
+\]
+Therefore
+\[
+\frac{s_1}{r_1}=\frac{s_2}{r_2}.
+\]
+This common ratio depends only on the angle and not on the radius of the circle.
+
+\begin{definitionbox}
+Let $s$ be the length of the selected arc on a circle of radius $r$ centred at
+the vertex. The radian measure of the angle $\alpha$ is
+\[
+\boxed{m_{\mathrm{rad}}(\alpha)=\frac{s}{r}}.
+\]
+This definition is valid because the ratio $s/r$ is independent of the chosen
+radius.
 \end{definitionbox}
 
-A full turn uses the whole circumference, so its measure is $360^\circ$. A
-half-turn uses half of the circumference and therefore has measure
-$180^\circ$.
+For a full turn, the selected arc is the whole circumference, so
+\[
+m_{\mathrm{rad}}(\text{full turn})
+=
+\frac{2\pi r}{r}
+=
+2\pi.
+\]
+Thus a half-turn has radian measure $\pi$, and a quarter-turn has radian measure
+$\pi/2$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
@@ -248,12 +288,31 @@ $180^\circ$.
     \draw[axis] (O) -- (A) node[right] {$A$};
     \draw[axis] (O) -- (B) node[above] {$B$};
     \draw[subset] (A) arc[start angle=0,end angle=60,radius=3];
-    \node[subset label] at (2.7,1.55) {selected arc of length $s$};
+    \draw[helper] (O) -- (2.25,1.299) node[midway,below right] {$r$};
+    \node[subset label] at (2.7,1.55) {arc length $s$};
     \fill (O) circle (2pt) node[below left] {$O$};
 \end{tikzpicture}
 \end{center}
 
-\subsubsection*{Calculating the measure from lengths}
+Degrees are a second numerical scale for the same angle. A full turn is assigned
+$360^\circ$, so the conversion between the two scales is
+\[
+2\pi\text{ radians}=360^\circ.
+\]
+Consequently,
+\[
+\boxed{
+m_{\deg}(\alpha)
+=
+\frac{180^\circ}{\pi}\,m_{\mathrm{rad}}(\alpha)
+}.
+\]
+
+\subsubsection*{Calculating the measure without measuring an arc}
+
+The arc definition explains what radian measure means, but arc length is often
+hard to determine directly. We therefore replace the arc measurement by a
+calculation using a triangle.
 
 Choose any points $A\in r_1\setminus\{O\}$ and
 $B\in r_2\setminus\{O\}$. The three lengths
@@ -267,7 +326,8 @@ d_E(A,B)^2
 d_E(O,A)^2+d_E(O,B)^2
 -2d_E(O,A)d_E(O,B)\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr).
 \]
-Therefore
+Solving this equation for the angle measure gives the practical formula.
+
 \begin{theorembox}
 The radian measure of the angle is
 \[
@@ -283,13 +343,13 @@ d_E(O,A)^2+d_E(O,B)^2-d_E(A,B)^2
 \right)
 }.
 \]
-The distances can be calculated from the Cartesian coordinates by the distance
-formula derived above.
+The distances are calculated from Cartesian coordinates by the distance formula
+derived above.
 \end{theorembox}
 
-The result does not depend on how far along the two rays the points $A$ and
-$B$ are chosen. Moving either point along its ray changes the triangle's size,
-but not the angle between its sides.
+The formula is independent of how far along the rays the points $A$ and $B$ are
+chosen. Moving either point along its ray produces a similar triangle, so the
+angle and its measure remain unchanged.
 
 \begin{examplebox}
 Let
@@ -326,9 +386,9 @@ formed by two perpendicular lines.
 If $\alpha$ is a right angle, then it occupies one quarter of a full turn.
 Consequently,
 \[
-m_{\deg}(\alpha)=90^\circ
+m_{\mathrm{rad}}(\alpha)=\frac{\pi}{2}
 \qquad\text{and}\qquad
-m_{\mathrm{rad}}(\alpha)=\frac{\pi}{2}.
+m_{\deg}(\alpha)=90^\circ.
 \]
 A right angle is not either of these numbers; it is a geometric angle having
 these measures in the two measurement systems.
@@ -341,8 +401,10 @@ The construction proceeds in the following order:
     \item refine the scale and identify axis positions with real numbers;
     \item assign coordinates by orthogonal projection;
     \item derive the distance formula from the Pythagorean theorem;
-    \item finally determine angles by pairs of rays and calculate their measures
-          from arcs or from the law of cosines.
+    \item define $\pi$ from the constant ratio $C/D$;
+    \item define radian measure by the radius-independent ratio $s/r$;
+    \item convert radians to degrees;
+    \item calculate angle measures from distances by the law of cosines.
 \end{enumerate}
 Coordinates are a numerical representation of the original Euclidean geometry.
 \end{summarybox}
