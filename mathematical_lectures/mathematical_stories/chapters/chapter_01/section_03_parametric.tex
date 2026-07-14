@@ -1,0 +1,131 @@
+\subsection{The Parametric Equation of a Line}
+
+The equations used so far describe a line by a condition that its coordinates
+must satisfy. A parametric equation describes the same line differently: we
+start from one point and move along a fixed direction.
+
+Let
+\[
+P_0=(x_0,y_0)
+\]
+be a point of the line, and let
+\[
+(u,v)\neq(0,0)
+\]
+be a direction pair. Multiplying the direction pair by a real number $t$
+changes only the distance and orientation of the displacement, not its
+direction. Starting at $P_0$ therefore gives the points
+\[
+(x,y)=(x_0,y_0)+t(u,v),
+\qquad t\in\mathbb{R}.
+\]
+
+\begin{definitionbox}
+The line through $P_0=(x_0,y_0)$ with direction pair $(u,v)\neq(0,0)$ is
+parametrised by
+\[
+L=\{(x_0+tu,\,y_0+tv):t\in\mathbb{R}\}.
+\]
+Equivalently, its coordinates satisfy
+\[
+\begin{cases}
+x=x_0+tu,\\
+y=y_0+tv,
+\end{cases}
+\qquad t\in\mathbb{R}.
+\]
+\end{definitionbox}
+
+When $t=0$, the parametrisation gives the initial point $P_0$. Positive and
+negative values of $t$ move from $P_0$ in the two opposite directions along the
+line. Since $t$ ranges over all real numbers, every point of the line is
+obtained.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-1.0,0) -- (6.2,0) node[right] {$x$};
+    \draw[axis] (0,-1.0) -- (0,4.8) node[above] {$y$};
+
+    \coordinate (P) at (1.2,1.1);
+    \coordinate (Q) at (4.8,3.5);
+    \coordinate (D) at (3.0,2.3);
+
+    \draw[subset] (0.3,0.5) -- (5.6,4.03) node[above right] {$L$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt)
+        node[below right] {$P_0=(x_0,y_0)$};
+    \fill[geometricSubsetColor] (Q) circle (2.2pt)
+        node[above left] {$P_0+t(u,v)$};
+    \draw[->,helper] (P) -- (D)
+        node[midway,above left] {$(u,v)$};
+\end{tikzpicture}
+\end{center}
+
+If $u\neq0$, eliminating the parameter gives
+\[
+t=\frac{x-x_0}{u}
+\]
+and hence
+\[
+y-y_0=\frac{v}{u}(x-x_0).
+\]
+Thus the slope is
+\[
+m=\frac{v}{u}.
+\]
+If $u=0$, then $v\neq0$ and the parametrisation becomes
+\[
+x=x_0,
+\qquad
+y=y_0+tv,
+\]
+which describes a vertical line. The parametric form therefore treats
+non-vertical and vertical lines in one uniform way.
+
+For two distinct points
+\[
+P=(x_1,y_1),
+\qquad
+Q=(x_2,y_2),
+\]
+the difference
+\[
+Q-P=(x_2-x_1,\,y_2-y_1)
+\]
+is a direction pair for their line. Consequently,
+\[
+L=\{P+t(Q-P):t\in\mathbb{R}\},
+\]
+or in coordinates,
+\[
+\begin{cases}
+x=x_1+t(x_2-x_1),\\
+y=y_1+t(y_2-y_1),
+\end{cases}
+\qquad t\in\mathbb{R}.
+\]
+
+\begin{examplebox}
+The line through $P=(1,2)$ with direction pair $(3,6)$ has the parametrisation
+\[
+\begin{cases}
+x=1+3t,\\
+y=2+6t,
+\end{cases}
+\qquad t\in\mathbb{R}.
+\]
+Because $3\neq0$, we have
+\[
+t=\frac{x-1}{3}.
+\]
+Substitution into the second equation gives
+\[
+y=2+6\frac{x-1}{3}=2x.
+\]
+Thus the parametric and Cartesian equations describe the same line.
+\end{examplebox}
+
+\begin{remarkbox}
+A parametrisation of a line is not unique. Replacing $(u,v)$ by any non-zero
+multiple $\lambda(u,v)$ changes the parameter but not the set of points on the
+line.
+\end{remarkbox}
