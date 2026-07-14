@@ -4,8 +4,13 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - "**/*.pdf"
+    paths:
+      - "mathematical_lectures/**/*.tex"
+      - "mathematical_lectures/**/build.sh"
+      - "physics_lectures/**/*.tex"
+      - "physics_lectures/**/build.sh"
+      - "shared/**/*.tex"
+      - ".github/workflows/build-pdfs.yml"
 
 permissions:
   actions: write
