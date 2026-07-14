@@ -1,4 +1,15 @@
 \chapter{The Cartesian Plane}
 
+% In this chapter, the thickest paths represent the geometric subset currently
+% being studied. Keep axes black and construction lines gray so the object is
+% visually separated from the coordinate system.
+\begingroup
+\tikzset{
+    very thick/.style={line width=1.2pt,draw=geometricSubsetColor},
+    dashed/.append style={draw=gray}
+}
+
 \input{chapters/chapter_01/section_01}
 \input{chapters/chapter_01/section_02}
+
+\endgroup
