@@ -3,73 +3,73 @@
 Before introducing coordinates, we recall the geometric world that is already
 available.  At this stage there are no ordered pairs, no axes, and no vectors.
 There are points, straight lines, segments, circles, and angles, together with
-constructions and relations that can be recognized without assigning numbers
-to every object.
+relations such as incidence, betweenness, congruence, perpendicularity, and
+parallelism.
 
 \begin{remarkbox}
 Coordinates will later translate this geometry into arithmetic.  They do not
-create the geometry and they are not needed to state that two segments are
-congruent, that two lines meet at a right angle, or that one point lies between
-two others.
+create the geometry.  We can already construct and compare geometric objects
+before assigning numbers to all points and angles.
 \end{remarkbox}
 
-\subsection{What Is Given, and What Are We Allowed to Construct?}
+\subsection{Three Different Levels Must Not Be Confused}
 
-It is useful to separate three levels of the discussion.
+We shall distinguish three kinds of statements.
 
 \begin{enumerate}
-    \item We begin with primitive geometric objects: points, straight lines,
-          segments, circles, and angles.
-    \item We accept a small number of basic construction postulates describing
-          what may be drawn directly.
-    \item More complicated constructions must be obtained from those basic
-          operations and then justified.
+    \item \emph{Euclid's postulates} describe the geometric world being assumed.
+    \item \emph{Straightedge-and-compass rules} describe which elementary
+          drawings and intersections may be used in a construction.
+    \item \emph{Derived constructions} must be built from those elementary
+          operations and justified by a proof.
 \end{enumerate}
 
-The pictures below are not proofs of the postulates.  They show the elementary
-operations to which the geometry gives us access.
+In particular, a perpendicular bisector, a perpendicular through a point, an
+angle bisector, or a parallel through a point will not be treated as primitive
+construction postulates.  They will be constructed.
 
-\subsubsection{Two Points Determine a Straight Line}
+\subsection{Euclid's Five Postulates}
 
-Given two distinct points $A$ and $B$, we may construct the unique straight
-line passing through both of them.
+The following are the five postulates used in the first book of Euclid's
+\emph{Elements}.  The diagrams illustrate their meaning; they are not proofs.
+
+\subsubsection{Postulate I: Joining Two Points}
+
+A straight segment can be drawn from any point to any other point.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-    \fill[geometricSubsetColor] (-2.4,-0.6) circle (2pt) node[below] {$A$};
-    \fill[geometricSubsetColor] (2.1,0.8) circle (2pt) node[above] {$B$};
-    \draw[helper] (-3.4,-0.91) -- (3.3,1.17);
-    \draw[subset] (-2.4,-0.6) -- (2.1,0.8);
-    \node at (0,-1.55) {two points determine one straight line};
+    \coordinate (A) at (-2.4,-0.6);
+    \coordinate (B) at (2.1,0.8);
+    \draw[subset] (A) -- (B);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
+    \node at (0,-1.55) {a segment is drawn from $A$ to $B$};
 \end{tikzpicture}
 \end{center}
 
-This gives access to the entire line, not only to the segment between the two
-chosen points.
+\subsubsection{Postulate II: Extending a Segment}
 
-\subsubsection{A Segment May Be Extended}
-
-A finite segment may be continued along the same straight line beyond either
-endpoint.
+A finite straight segment can be extended continuously in the same straight
+line.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
     \coordinate (A) at (-2.2,0);
     \coordinate (B) at (1.2,0);
-    \coordinate (C) at (3.0,0);
+    \coordinate (C) at (3.1,0);
     \draw[subset] (A) -- (B);
     \draw[helper,->] (B) -- (C);
     \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
     \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
     \node[below] at (C) {$C$};
-    \node at (0,-1.15) {the segment $AB$ is extended beyond $B$};
+    \node at (0,-1.15) {$AB$ is extended beyond $B$};
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{A Centre and a Radius Determine a Circle}
+\subsubsection{Postulate III: Drawing a Circle}
 
-Given a centre $O$ and a segment whose length is used as a radius, we may draw
-the circle consisting of all points at that distance from $O$.
+A circle can be drawn with any chosen centre and any chosen radius.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -79,94 +79,97 @@ the circle consisting of all points at that distance from $O$.
     \draw[subset] (O) -- (A) node[midway,below] {$r$};
     \fill[geometricSubsetColor] (O) circle (2pt) node[below left] {$O$};
     \fill[geometricSubsetColor] (A) circle (2pt) node[right] {$A$};
-    \node at (0,-2.75) {all points on the circle have distance $r$ from $O$};
+    \node at (0,-2.75) {centre $O$ and radius $r$ determine a circle};
 \end{tikzpicture}
 \end{center}
 
-The compass therefore allows a length to be transferred without assigning a
-number to it.
+This postulate is what permits a length to be copied geometrically without
+first assigning a number to it.
 
-\subsubsection{Intersections Produce New Points}
+\subsubsection{Postulate IV: Equality of Right Angles}
 
-When two constructed objects meet, their intersection points become available
-for later constructions.  This applies to two lines, a line and a circle, or
-two circles.
+All right angles are congruent.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
-    \coordinate (A) at (-1.5,0);
-    \coordinate (B) at (1.5,0);
-    \draw[helper] (A) circle (2.15);
-    \draw[helper] (B) circle (2.15);
-    \fill[geometricSubsetColor] (0,1.55) circle (2pt) node[above] {$P$};
-    \fill[geometricSubsetColor] (0,-1.55) circle (2pt) node[below] {$Q$};
-    \fill (A) circle (1.7pt) node[left] {$A$};
-    \fill (B) circle (1.7pt) node[right] {$B$};
-    \node at (0,-2.65) {the intersections $P$ and $Q$ are new constructible points};
-\end{tikzpicture}
-\end{center}
-
-This operation is what makes multi-step constructions possible.
-
-\subsubsection{A Perpendicular Through a Chosen Point}
-
-Given a straight line $\ell$ and a chosen point $P$, we may construct the unique
-straight line $m$ through $P$ that meets $\ell$ at a right angle.  This applies
-both when $P$ lies on $\ell$ and when $P$ lies outside $\ell$.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
-    \fill[geometricSubsetColor] (-1.7,0) circle (2pt) node[below left] {$P$};
-    \draw[very thick] (-1.7,-1.5) -- (-1.7,2.1) node[above] {$m$};
+    \draw[subset] (-3.2,0) -- (-0.2,0);
+    \draw[subset] (-1.7,-1.3) -- (-1.7,1.6);
     \draw (-1.42,0) -- (-1.42,0.28) -- (-1.7,0.28);
-    \node at (-1.7,-1.95) {$P\in\ell$};
 
-    \draw[subset] (4.4,0) -- (9.4,0) node[right] {$\ell$};
-    \fill[geometricSubsetColor] (6.9,1.65) circle (2pt) node[right] {$P$};
-    \draw[very thick] (6.9,-0.8) -- (6.9,2.3) node[above] {$m$};
-    \draw (7.18,0) -- (7.18,0.28) -- (6.9,0.28);
-    \node at (6.9,-1.25) {$P\notin\ell$};
+    \draw[subset] (0.8,-0.8) -- (3.5,0.7);
+    \draw[subset] (2.9,-1.25) -- (1.4,1.45);
+    \draw (2.24,0.02) -- (2.10,0.27) -- (1.85,0.13);
+
+    \node at (0,-2.0) {every right angle represents the same geometric magnitude};
 \end{tikzpicture}
 \end{center}
 
-The statement is geometric: the four angles formed at the intersection are
-right angles.  No numerical angle measure and no coordinate formula is being
-used.  Later constructions with equal-radius circles will show explicitly how
-the perpendicular can be produced with a straightedge and compass.
+This postulate does not say that a perpendicular may simply be drawn without
+construction.  It says that once right angles have been constructed, they are
+all equal.
 
-\subsubsection{The Parallel Postulate}
+\subsubsection{Postulate V: The Parallel Postulate}
 
-Given a straight line $\ell$ and a point $P$ not lying on it, Euclidean geometry
-allows exactly one straight line through $P$ that does not meet $\ell$.
+If a transversal meets two straight lines and the interior angles on one side
+sum to less than two right angles, then the two lines, when extended, meet on
+that side.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[subset] (-3.5,-0.8) -- (3.5,-0.8) node[right] {$\ell$};
-    \fill[geometricSubsetColor] (-0.7,1.25) circle (2pt) node[above] {$P$};
-    \draw[very thick] (-3.5,1.25) -- (3.5,1.25) node[right] {$m$};
-    \node at (0,-1.55) {$m$ is the unique parallel to $\ell$ through $P$};
+\begin{tikzpicture}[scale=0.85]
+    \draw[subset] (-3.4,1.15) -- (3.5,0.15) node[right] {$\ell$};
+    \draw[subset] (-3.4,-1.2) -- (3.5,-0.35) node[right] {$m$};
+    \draw[helper] (-1.0,-2.0) -- (0.6,2.0) node[above] {$t$};
+    \node at (0,-2.45) {the angle condition determines on which side $\ell$ and $m$ meet};
 \end{tikzpicture}
 \end{center}
 
-This is the specifically Euclidean postulate.  Replacing it produces other
-geometries.
+A familiar modern equivalent is Playfair's formulation: through a point outside
+a given line there passes exactly one parallel to that line.  We shall use that
+form later, after the relation between the two formulations has been made clear.
 
-\begin{definitionbox}
-The basic geometric access used in this chapter may be summarized as follows:
-we may choose points, draw the straight line through two chosen points, extend
-segments, draw circles with chosen centres and radii, retain intersection
-points, construct the unique perpendicular through a chosen point, and construct
-the unique parallel through a point outside a given line.
-\end{definitionbox}
+\subsection{Elementary Rules for Straightedge-and-Compass Work}
 
-\subsection{Constructions Derived from the Basic Postulates}
+For explicit constructions we use the following operational rules.
 
-The straightedge-and-compass constructions below explain how the geometric
-operations above can be realized from lines, circles, congruent radii, and
-intersection points.
+\begin{enumerate}
+    \item Through two already constructed distinct points, draw the straight line.
+    \item With an already constructed point as centre and an already constructed
+          segment as radius, draw a circle.
+    \item Retain intersection points of two constructed lines, a line and a
+          circle, or two circles whenever such intersections exist.
+\end{enumerate}
 
-\subsubsection{The Perpendicular Bisector of a Segment}
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+    \coordinate (A) at (-4.8,0);
+    \coordinate (B) at (-2.5,0.8);
+    \draw[subset] (A) -- (B);
+    \fill[geometricSubsetColor] (A) circle (2pt);
+    \fill[geometricSubsetColor] (B) circle (2pt);
+    \node at (-3.65,-1.0) {line through two points};
+
+    \coordinate (O) at (0,0);
+    \draw[helper] (O) circle (1.25);
+    \draw[subset] (O) -- (1.25,0);
+    \fill[geometricSubsetColor] (O) circle (2pt);
+    \node at (0,-1.75) {circle from centre and radius};
+
+    \coordinate (C) at (3.4,0);
+    \coordinate (D) at (5.4,0);
+    \draw[helper] (C) circle (1.45);
+    \draw[helper] (D) circle (1.45);
+    \fill[geometricSubsetColor] (4.4,1.04) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (4.4,-1.04) circle (2pt) node[below] {$Q$};
+    \node at (4.4,-1.75) {new points from intersections};
+\end{tikzpicture}
+\end{center}
+
+These rules are the actual construction toolkit.  The constructions below must
+be reduced to repeated uses of them.
+
+\subsection{Constructions Derived from the Toolkit}
+
+\subsubsection{The Perpendicular Bisector and the Midpoint}
 
 Let $A$ and $B$ be distinct points.  Draw two circles with the same radius,
 one centred at $A$ and one centred at $B$, choosing the radius larger than half
@@ -174,14 +177,14 @@ of $AB$.  Let their intersection points be $P$ and $Q$.
 
 Because $P$ lies on both circles,
 \[
-PA=PB.
+PA=PB,
 \]
-Similarly,
+and similarly,
 \[
 QA=QB.
 \]
-Thus both $P$ and $Q$ are equidistant from $A$ and $B$.  The line through $P$
-and $Q$ is the perpendicular bisector of $AB$.
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$.  The line $PQ$ is the
+perpendicular bisector of $AB$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -200,9 +203,62 @@ and $Q$ is the perpendicular bisector of $AB$.
 \end{tikzpicture}
 \end{center}
 
-The midpoint of $AB$ is the intersection of this perpendicular bisector with
-$AB$.  Thus midpoint and perpendicularity are obtained from congruent radii,
-not from coordinates.
+The intersection of $PQ$ with $AB$ is the midpoint of $AB$.  Thus midpoint and
+perpendicularity have been constructed from equal radii and intersections.
+
+\subsubsection{A Perpendicular Through a Point on a Line}
+
+Let $P$ lie on a line $\ell$.  Choose points $A$ and $B$ on $\ell$ with
+\[
+PA=PB.
+\]
+Construct the perpendicular bisector of $AB$.  Since $P$ is the midpoint of
+$AB$, this perpendicular bisector passes through $P$ and is perpendicular to
+$\ell$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.4,0);
+    \coordinate (P) at (0,0);
+    \coordinate (B) at (2.4,0);
+    \draw[subset] (-3.4,0) -- (3.4,0) node[right] {$\ell$};
+    \draw[very thick] (0,-2.0) -- (0,2.4) node[above] {$m$};
+    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[below right] {$P$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \node at (0,-2.45) {$m$ is constructed through $P$ and satisfies $m\perp\ell$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{A Perpendicular Through a Point Outside a Line}
+
+Let $P$ lie outside a line $\ell$.  Draw a circle centred at $P$ large enough
+to meet $\ell$ at two points $A$ and $B$.  Then
+\[
+PA=PB.
+\]
+Construct the perpendicular bisector of $AB$.  Because $P$ is equidistant from
+$A$ and $B$, it lies on that perpendicular bisector.  Hence the constructed
+line passes through $P$ and is perpendicular to $\ell$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (P) at (0,2.0);
+    \coordinate (A) at (-2.1,0);
+    \coordinate (B) at (2.1,0);
+    \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
+    \draw[helper] (P) circle (2.9);
+    \draw[very thick] (0,-1.0) -- (0,2.8) node[above] {$m$};
+    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
+    \fill[geometricSubsetColor] (P) circle (2pt) node[right] {$P$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+\end{tikzpicture}
+\end{center}
+
+The existence of a perpendicular has therefore been proved by construction; it
+was not inserted as an additional postulate.
 
 \subsubsection{Bisecting an Angle}
 
@@ -222,6 +278,18 @@ the triangles $OAP$ and $OBP$ are congruent.  Therefore
 \angle AOP=\angle POB.
 \]
 The ray $OP$ is the angle bisector.
+
+\subsubsection{Constructing a Parallel Through a Point}
+
+Let $P$ lie outside a line $\ell$.  First construct a line $m$ through $P$
+perpendicular to $\ell$.  Then construct a line $n$ through $P$ perpendicular
+to $m$.  Since $n$ and $\ell$ are perpendicular to the same line, they have the
+same direction and do not meet:
+\[
+n\parallel\ell.
+\]
+The fifth postulate guarantees the uniqueness of this parallel in Euclidean
+geometry.
 
 \subsection{Parallel Lines and Proportional Segments}
 
@@ -344,9 +412,9 @@ quantity well defined.
 
 \begin{remarkbox}
 At this point no vector has been introduced.  We have only Euclidean objects,
-constructions, similarity, trigonometric ratios, and numerical angle measure.
-Vectors will appear only in the next chapter, after the Cartesian coordinate
-system has been constructed.
+postulates, constructions, similarity, trigonometric ratios, and numerical
+angle measure.  Vectors will appear only in the next chapter, after the
+Cartesian coordinate system has been constructed.
 \end{remarkbox}
 
 The next step is to choose two perpendicular lines, an origin, directions, and
