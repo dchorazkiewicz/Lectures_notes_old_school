@@ -242,6 +242,21 @@ and can be defined by
 \]
 \end{theorembox}
 
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-0.7,0) -- (5.4,0) node[right] {$x$};
+    \draw[axis] (0,-0.6) -- (0,5.2) node[above] {$y$};
+    \coordinate (P) at (1,1.4);
+    \coordinate (Q) at (4,4.1);
+    \coordinate (R) at (4,1.4);
+    \draw[subset] (0.2,0.68) -- (4.9,4.91) node[above right] {$L$};
+    \draw[helper] (P) -- (R) node[midway,below] {$x_2-x_1$};
+    \draw[helper] (R) -- (Q) node[midway,right] {$y_2-y_1$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above left] {$P=(x_1,y_1)$};
+    \fill[geometricSubsetColor] (Q) circle (2.2pt) node[above left] {$Q=(x_2,y_2)$};
+\end{tikzpicture}
+\end{center}
+
 The second formula follows because every point $(x,y)$ on the line must produce
 the same vertical-to-horizontal change ratio from $P$.
 
