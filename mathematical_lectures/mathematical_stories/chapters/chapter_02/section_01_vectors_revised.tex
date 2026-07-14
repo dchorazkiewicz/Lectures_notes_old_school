@@ -1,10 +1,9 @@
 \section{Vectors from Coordinate Displacements}
 
 In the previous chapter a point of the Euclidean plane was identified with an
-ordered pair of real numbers.  We now use that identification immediately.
-The aim is not to collect formulas about vectors.  We shall begin with concrete
-geometric questions and allow the formulas to emerge from coordinate
-calculations.
+ordered pair of real numbers. We now use that identification immediately. The
+aim is not to collect formulas about vectors, but to let the formulas emerge
+from geometric questions and coordinate calculations.
 
 Choose two points
 \[
@@ -13,7 +12,7 @@ A=(1,2),
 B=(4,6).
 \]
 To pass from $A$ to $B$, the first coordinate changes by $3$ and the second by
-$4$.  The pair
+$4$. The pair
 \[
 (3,4)
 \]
@@ -43,7 +42,7 @@ interpreted as a coordinate displacement: $v_1$ units horizontally and $v_2$
 units vertically.
 \end{definitionbox}
 
-This makes the phrase ``the same vector starting elsewhere'' precise.  If
+This makes the phrase ``the same vector starting elsewhere'' precise. If
 $P=(p_1,p_2)$ and
 \[
 Q=(p_1+v_1,\,p_2+v_2),
@@ -52,8 +51,7 @@ then
 \[
 \overrightarrow{PQ}=(v_1,v_2)=\mathbf v.
 \]
-No arrow is moved by an undefined geometric operation: the same two coordinate
-changes are simply applied at another point.
+The same two coordinate changes have simply been applied at another point.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -72,15 +70,18 @@ changes are simply applied at another point.
 \end{tikzpicture}
 \end{center}
 
-The zero displacement is $\mathbf0=(0,0)$.  Reversing
-$\mathbf v=(v_1,v_2)$ gives
+The zero displacement is
+\[
+\mathbf0=(0,0).
+\]
+Reversing $\mathbf v=(v_1,v_2)$ gives
 \[
 -\mathbf v=(-v_1,-v_2).
 \]
 
 \subsection{Two Successive Displacements Force Vector Addition}
 
-Start at an arbitrary point $(x,y)$.  First apply
+Start at an arbitrary point $(x,y)$. First apply
 \[
 \mathbf u=(u_1,u_2),
 \]
@@ -107,7 +108,7 @@ memorise.
 
 Because addition of real numbers is commutative, applying $\mathbf u$ and then
 $\mathbf v$ reaches the same endpoint as applying $\mathbf v$ and then
-$\mathbf u$.  This produces the parallelogram rule.
+$\mathbf u$. This produces the parallelogram rule.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.95]
@@ -137,7 +138,7 @@ In particular,
 \subsection{Repeating and Reversing a Displacement}
 
 Repeating $\mathbf v=(v_1,v_2)$ twice gives $(2v_1,2v_2)$, while reversing it
-gives $(-v_1,-v_2)$.  The natural extension is
+gives $(-v_1,-v_2)$. The natural extension is
 \[
 \lambda\mathbf v=(\lambda v_1,\lambda v_2),
 \qquad \lambda\in\mathbb R.
@@ -145,76 +146,10 @@ gives $(-v_1,-v_2)$.  The natural extension is
 For positive $\lambda$ the orientation is unchanged; for negative $\lambda$ it
 is reversed.
 
-\subsection{When Do Two Vectors Determine Parallel Directions?}
+\subsection{Length and Inclination}
 
-Take two nonzero vectors
-\[
-\mathbf u=(u_1,u_2),
-\qquad
-\mathbf v=(v_1,v_2)
-\]
-and choose an arbitrary point $P$.  Construct
-\[
-Q=P+\mathbf u,
-\qquad
-R=P+\mathbf v.
-\]
-The line through $P,Q$ has direction $\mathbf u$, and the line through $P,R$
-has direction $\mathbf v$.
-
-Suppose first that both directions are nonvertical.  Their slopes are
-\[
-m_{\mathbf u}=\frac{u_2}{u_1},
-\qquad
-m_{\mathbf v}=\frac{v_2}{v_1}.
-\]
-The two direction lines coincide precisely when these slopes are equal:
-\[
-\frac{u_2}{u_1}=\frac{v_2}{v_1}.
-\]
-After cross multiplication,
-\[
-u_2v_1=u_1v_2.
-\]
-This equality means that the two coordinate pairs have the same ratio.  Hence
-there is a nonzero number $\lambda$ such that
-\[
-\mathbf u=\lambda\mathbf v.
-\]
-The same conclusion is immediate for vertical directions: both first
-coordinates are zero, and one nonzero vertical displacement is a scalar
-multiple of the other.
-
-Thus the coordinate condition has been obtained from the geometry of their
-direction lines:
-\[
-\mathbf u\parallel\mathbf v
-\iff
-\mathbf u=\lambda\mathbf v
-\quad\text{for some }\lambda\neq0.
-\]
-Here parallel vectors mean vectors whose direction lines are parallel or
-coincident.  The formula is the conclusion of the calculation, not its starting
-point.
-
-\begin{examplebox}
-The vectors
-\[
-\mathbf u=(6,-4),
-\qquad
-\mathbf v=(-3,2)
-\]
-determine the same line direction because
-\[
-\mathbf u=-2\mathbf v.
-\]
-Their orientations are opposite, but their carrier lines are parallel.
-\end{examplebox}
-
-\subsection{Length from the Pythagorean Theorem}
-
-Draw $\mathbf v=(v_1,v_2)$ from any point.  The horizontal and vertical changes
-form the legs of a right triangle, so the Pythagorean theorem gives
+Draw $\mathbf v=(v_1,v_2)$ from the origin. Its endpoint and the coordinate axes
+form a right triangle. The Pythagorean theorem gives
 \[
 \|\mathbf v\|^2=v_1^2+v_2^2,
 \qquad
@@ -237,157 +172,32 @@ d(A,B)=\|B-A\|.
 \end{tikzpicture}
 \end{center}
 
-A nonzero vector can be rescaled to length one:
+Let $\alpha$ be the angle of inclination of a nonzero vector $\mathbf v$ from
+the positive horizontal direction. The coordinate projections of $\mathbf v$
+are
 \[
-\widehat{\mathbf v}=\frac{\mathbf v}{\|\mathbf v\|}.
-\]
-
-\subsection{What Coordinate Condition Expresses a Right Angle?}
-
-We now ask a geometric question before introducing any new algebraic operation.
-Given two nonzero vectors
-\[
-\mathbf u=(u_1,u_2),
+v_1=\|\mathbf v\|\cos\alpha,
 \qquad
-\mathbf v=(v_1,v_2),
+v_2=\|\mathbf v\|\sin\alpha.
 \]
-when are their direction lines perpendicular?
-
-Choose any common initial point
+Thus
 \[
-P=(x_0,y_0)
-\]
-and form
-\[
-Q=P+\mathbf u,
-\qquad
-R=P+\mathbf v.
-\]
-The point $P$ will disappear from the calculation because slopes depend only on
-coordinate differences.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \coordinate (P) at (0.7,0.6);
-    \coordinate (Q) at (4.5,2.1);
-    \coordinate (R) at (-0.5,3.6);
-    \draw[helper] (-0.25,0.225) -- (5.45,2.475);
-    \draw[helper] (1.0,-0.15) -- (-0.8,4.35);
-    \draw[subset,->] (P) -- (Q) node[midway,below right] {$\mathbf u$};
-    \draw[subset,->] (P) -- (R) node[midway,left] {$\mathbf v$};
-    \fill[geometricSubsetColor] (P) circle (2pt) node[below left] {$P$};
-    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
-    \fill[geometricSubsetColor] (R) circle (2pt) node[above left] {$R$};
-\end{tikzpicture}
-\end{center}
-
-Assume first that neither direction is vertical.  Then
-\[
-m_{\mathbf u}=\frac{u_2}{u_1},
-\qquad
-m_{\mathbf v}=\frac{v_2}{v_1}.
-\]
-The previously established coordinate criterion for perpendicular nonvertical
-lines is
-\[
-m_{\mathbf u}m_{\mathbf v}=-1.
-\]
-Substitution gives
-\[
-\frac{u_2}{u_1}\frac{v_2}{v_1}=-1.
-\]
-Multiplying by $u_1v_1$ yields
-\[
-u_1v_1+u_2v_2=0.
-\]
-
-The remaining perpendicular case consists of a horizontal and a vertical
-direction.  Their vectors have the forms
-\[
-(u_1,0)
-\qquad\text{and}\qquad
-(0,v_2),
-\]
-and the same expression again vanishes:
-\[
-u_1\cdot0+0\cdot v_2=0.
-\]
-
-We have therefore discovered the coordinate expression that detects a right
-angle.  Since it will occur repeatedly, we give it a name only now.
-
-\begin{definitionbox}
-For vectors in the plane, their \emph{dot product} is
-\[
-\mathbf u\cdot\mathbf v
+\mathbf v
 =
-u_1v_1+u_2v_2.
+\|\mathbf v\|(\cos\alpha,\sin\alpha).
 \]
-In three-dimensional space,
-\[
-(u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
-=
-u_1v_1+u_2v_2+u_3v_3.
-\]
-\end{definitionbox}
+This representation applies to every nonzero vector; no vector has been chosen
+as a special coordinate axis.
 
-\begin{theorembox}
-For nonzero vectors in the plane,
-\[
-\mathbf u\perp\mathbf v
-\iff
-\mathbf u\cdot\mathbf v=0,
-\]
-where vector perpendicularity means perpendicularity of the direction lines
-constructed from the vectors at a common point.
-\end{theorembox}
+\subsection{One Angle Calculation, Two Geometric Tests}
 
-\begin{examplebox}
-Take
-\[
-\mathbf u=(3,2),
-\qquad
-\mathbf v=(-2,3).
-\]
-Their direction-line slopes are $2/3$ and $-3/2$, whose product is $-1$.  The
-same geometric fact appears in the expression just discovered:
-\[
-\mathbf u\cdot\mathbf v
-=3(-2)+2(3)=0.
-\]
-\end{examplebox}
-
-A vector perpendicular to a given direction is called a normal vector.  This
-idea will be used to construct equations of lines and planes.
-
-\subsection{What Does the Dot Product Measure for an Arbitrary Angle?}
-
-The preceding calculation discovered the dot product by studying one special
-geometric question: when is the angle a right angle?  We now ask what the same
-coordinate expression says about an arbitrary angle.
-
-Take two arbitrary nonzero vectors beginning at a common point:
+Take two arbitrary nonzero vectors
 \[
 \mathbf u=(u_1,u_2),
 \qquad
 \mathbf v=(v_1,v_2).
 \]
-Let $\alpha$ and $\beta$ be their respective angles of inclination measured
-from the positive horizontal direction.  The vector $\mathbf u$ has length
-$\|\mathbf u\|$.  Its horizontal and vertical coordinate changes are therefore
-\[
-u_1=\|\mathbf u\|\cos\alpha,
-\qquad
-u_2=\|\mathbf u\|\sin\alpha.
-\]
-Likewise,
-\[
-v_1=\|\mathbf v\|\cos\beta,
-\qquad
-v_2=\|\mathbf v\|\sin\beta.
-\]
-Thus the two vectors can be written without making either of them a coordinate
-axis:
+Let their angles of inclination be $\alpha$ and $\beta$. Then
 \[
 \mathbf u
 =
@@ -398,56 +208,12 @@ axis:
 =
 \|\mathbf v\|(\cos\beta,\sin\beta).
 \]
-
-Now substitute these coordinates into the dot product discovered above:
+The difference $\beta-\alpha$ measures the directed turn from $\mathbf u$ to
+$\mathbf v$. The ordinary angle between the vectors will be denoted by
 \[
-\begin{aligned}
-\mathbf u\cdot\mathbf v
-&=u_1v_1+u_2v_2\\
-&=\|\mathbf u\|\cos\alpha\,
-  \|\mathbf v\|\cos\beta
- +\|\mathbf u\|\sin\alpha\,
-  \|\mathbf v\|\sin\beta\\
-&=\|\mathbf u\|\,\|\mathbf v\|
-  \bigl(\cos\alpha\cos\beta+
-        \sin\alpha\sin\beta\bigr).
-\end{aligned}
+\theta=|\beta-\alpha|
 \]
-The angle between the two directions is
-\[
-\theta=|\alpha-\beta|.
-\]
-The cosine-difference identity gives
-\[
-\cos(\alpha-\beta)
-=
-\cos\alpha\cos\beta+\sin\alpha\sin\beta.
-\]
-Because cosine is even,
-\[
-\cos(\alpha-\beta)=\cos|\alpha-\beta|=\cos\theta.
-\]
-Therefore
-\[
-\mathbf u\cdot\mathbf v
-=
-\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
-\]
-
-\begin{theorembox}
-For arbitrary nonzero vectors $\mathbf u$ and $\mathbf v$ in the plane, if
-$\theta$ is the angle between their direction lines, then
-\[
-\mathbf u\cdot\mathbf v
-=
-\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
-\]
-\end{theorembox}
-
-This formula was not used to define the dot product.  The dot product first
-appeared as the coordinate expression forced by perpendicular direction lines.
-The calculation above shows that the same expression records every angle, not
-only a right angle.
+when the smaller angle is intended.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -466,15 +232,189 @@ only a right angle.
 \end{tikzpicture}
 \end{center}
 
-\subsection{The Cosine Theorem Emerges from Vector Subtraction}
+\subsubsection{Parallel directions arise from the sine of the angle difference}
 
-The two vectors $\mathbf u$ and $\mathbf v$, drawn from a common point, form two
-sides of a triangle.  The displacement from the endpoint of $\mathbf v$ to the
-endpoint of $\mathbf u$ is
+Two nonzero vectors determine the same unoriented direction precisely when the
+turn from one to the other is an integer multiple of a half-turn:
+\[
+\beta-\alpha\equiv0\pmod{\pi}.
+\]
+Equivalently,
+\[
+\sin(\beta-\alpha)=0.
+\]
+Using the sine-difference identity,
+\[
+\sin(\beta-\alpha)
+=
+\sin\beta\cos\alpha-
+\cos\beta\sin\alpha.
+\]
+Now substitute
+\[
+\cos\alpha=\frac{u_1}{\|\mathbf u\|},
+\qquad
+\sin\alpha=\frac{u_2}{\|\mathbf u\|},
+\]
+\[
+\cos\beta=\frac{v_1}{\|\mathbf v\|},
+\qquad
+\sin\beta=\frac{v_2}{\|\mathbf v\|}.
+\]
+We obtain
+\[
+\begin{aligned}
+\sin(\beta-\alpha)
+&=
+\frac{v_2}{\|\mathbf v\|}
+\frac{u_1}{\|\mathbf u\|}
+-
+\frac{v_1}{\|\mathbf v\|}
+\frac{u_2}{\|\mathbf u\|}\\
+&=
+\frac{u_1v_2-u_2v_1}
+{\|\mathbf u\|\,\|\mathbf v\|}.
+\end{aligned}
+\]
+The denominator is nonzero. Therefore
+\[
+\sin(\beta-\alpha)=0
+\iff
+u_1v_2-u_2v_1=0.
+\]
+We have discovered the coordinate test
+\[
+\mathbf u\parallel\mathbf v
+\iff
+u_1v_2-u_2v_1=0.
+\]
+
+The same condition implies that one vector is a scalar multiple of the other.
+Indeed, if $v_1\neq0$, set $\lambda=u_1/v_1$. The equality
+\[
+u_1v_2-u_2v_1=0
+\]
+gives $u_2=\lambda v_2$, and hence
+\[
+\mathbf u=\lambda\mathbf v.
+\]
+If $v_1=0$, then $v_2\neq0$ and the same argument uses
+$\lambda=u_2/v_2$. Thus
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\quad\text{for some }\lambda\neq0.
+\]
+This scalar-multiple criterion is a conclusion of the angle calculation, not a
+rule imposed in advance.
+
+\subsubsection{The cosine of the same difference reveals perpendicularity}
+
+The vectors are perpendicular precisely when their angle difference is a
+quarter-turn modulo a half-turn:
+\[
+\beta-\alpha
+\equiv
+\frac{\pi}{2}
+\pmod{\pi}.
+\]
+Equivalently,
+\[
+\cos(\beta-\alpha)=0.
+\]
+The cosine-difference identity gives
+\[
+\cos(\beta-\alpha)
+=
+\cos\beta\cos\alpha+
+\sin\beta\sin\alpha.
+\]
+Substituting the coordinate ratios gives
+\[
+\begin{aligned}
+\cos(\beta-\alpha)
+&=
+\frac{v_1}{\|\mathbf v\|}
+\frac{u_1}{\|\mathbf u\|}
++
+\frac{v_2}{\|\mathbf v\|}
+\frac{u_2}{\|\mathbf u\|}\\
+&=
+\frac{u_1v_1+u_2v_2}
+{\|\mathbf u\|\,\|\mathbf v\|}.
+\end{aligned}
+\]
+Since the denominator is nonzero,
+\[
+\mathbf u\perp\mathbf v
+\iff
+u_1v_1+u_2v_2=0.
+\]
+The coordinate expression has emerged from the geometry. Only now do we give it
+a name.
+
+\begin{definitionbox}
+For vectors in the plane, their \emph{dot product} is
+\[
+\mathbf u\cdot\mathbf v
+=
+u_1v_1+u_2v_2.
+\]
+In three-dimensional space,
+\[
+(u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
+=
+u_1v_1+u_2v_2+u_3v_3.
+\]
+\end{definitionbox}
+
+The preceding calculation proves
+\[
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0.
+\]
+It proves more than the right-angle case. Because cosine is even and
+$\theta=|\beta-\alpha|$,
+\[
+\cos(\beta-\alpha)=\cos\theta.
+\]
+Therefore
+\[
+\boxed{\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta}
+\]
+for every pair of nonzero vectors in the plane.
+
+\begin{examplebox}
+Take
+\[
+\mathbf u=(3,2),
+\qquad
+\mathbf v=(-2,3).
+\]
+Then
+\[
+\mathbf u\cdot\mathbf v
+=3(-2)+2(3)=0.
+\]
+The coordinate calculation says that
+\[
+\cos\theta=0,
+\]
+so the angle between the vectors is a right angle.
+\end{examplebox}
+
+\subsection{The Cosine Theorem Emerges Immediately}
+
+Draw $\mathbf u$ and $\mathbf v$ from a common point. The displacement from the
+endpoint of $\mathbf v$ to the endpoint of $\mathbf u$ is
 \[
 \mathbf u-\mathbf v.
 \]
-Hence the three side lengths are
+Thus these three vectors determine a triangle with side lengths
 \[
 \|\mathbf u\|,
 \qquad
@@ -482,48 +422,24 @@ Hence the three side lengths are
 \qquad
 \|\mathbf u-\mathbf v\|.
 \]
-Let $\theta$ be the angle between $\mathbf u$ and $\mathbf v$.
-
-We calculate the square of the third side directly from coordinates and the dot
-product:
+We calculate the square of the third side:
 \[
 \begin{aligned}
 \|\mathbf u-\mathbf v\|^2
 &=(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)\\
 &=\mathbf u\cdot\mathbf u
-  -\mathbf u\cdot\mathbf v
-  -\mathbf v\cdot\mathbf u
-  +\mathbf v\cdot\mathbf v.
-\end{aligned}
-\]
-The dot product is symmetric, so
-\[
-\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u.
-\]
-Also,
-\[
-\mathbf u\cdot\mathbf u=\|\mathbf u\|^2,
-\qquad
-\mathbf v\cdot\mathbf v=\|\mathbf v\|^2.
-\]
-Therefore
-\[
-\|\mathbf u-\mathbf v\|^2
-=
-\|\mathbf u\|^2+
+-\mathbf u\cdot\mathbf v
+-\mathbf v\cdot\mathbf u
++\mathbf v\cdot\mathbf v\\
+&=\|\mathbf u\|^2+
 \|\mathbf v\|^2-
-2\mathbf u\cdot\mathbf v.
-\]
-Substituting the angle formula just derived gives
-\[
-\|\mathbf u-\mathbf v\|^2
-=
-\|\mathbf u\|^2+
+2\mathbf u\cdot\mathbf v\\
+&=\|\mathbf u\|^2+
 \|\mathbf v\|^2-
 2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\end{aligned}
 \]
-
-If we write
+If
 \[
 a=\|\mathbf u\|,
 \qquad
@@ -531,9 +447,9 @@ b=\|\mathbf v\|,
 \qquad
 c=\|\mathbf u-\mathbf v\|,
 \]
-then the calculation becomes
+then
 \[
-c^2=a^2+b^2-2ab\cos\theta.
+\boxed{c^2=a^2+b^2-2ab\cos\theta}.
 \]
 
 \begin{theorembox}
@@ -544,9 +460,8 @@ c^2=a^2+b^2-2ab\cos\theta.
 \]
 \end{theorembox}
 
-The cosine theorem is therefore not inserted as an external rule.  It is the
-coordinate expansion of the displacement between the endpoints of two arbitrary
-vectors.
+The cosine theorem is not inserted as an external formula. It is the coordinate
+expansion of the displacement between the endpoints of two arbitrary vectors.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -563,28 +478,34 @@ vectors.
 
 \subsection{Projection Is Forced by the Right-Angle Condition}
 
-Let $\mathbf v\neq\mathbf0$.  We seek a multiple $\lambda\mathbf v$ such that
+Let $\mathbf v\neq\mathbf0$. We seek a multiple $\lambda\mathbf v$ such that
 the remainder
 \[
 \mathbf u-\lambda\mathbf v
 \]
-is perpendicular to $\mathbf v$.  The criterion just derived requires
+is perpendicular to $\mathbf v$. The criterion just derived requires
 \[
 (\mathbf u-\lambda\mathbf v)\cdot\mathbf v=0.
 \]
-Expanding and solving for $\lambda$ gives
+Expanding gives
+\[
+\mathbf u\cdot\mathbf v-
+\lambda(\mathbf v\cdot\mathbf v)=0,
+\]
+so
 \[
 \lambda
 =
 \frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}.
 \]
-Thus the parallel part of $\mathbf u$ is not introduced by a memorised formula;
-it is the unique multiple that leaves a perpendicular remainder:
+Thus the parallel component is
 \[
 \operatorname{proj}_{\mathbf v}\mathbf u
 =
 \frac{\mathbf u\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
 \]
+The formula is the solution of a geometric requirement, not a rule to be
+memorised without explanation.
 
 \subsection{The Same Coordinate Ideas in Three Dimensions}
 
@@ -592,17 +513,17 @@ In $\mathbb R^3$, a vector is a displacement
 \[
 \mathbf v=(v_1,v_2,v_3),
 \]
-and all addition and scaling rules remain componentwise.  Its length is obtained
-by applying the Pythagorean theorem twice:
+and addition and scaling remain componentwise. Applying the Pythagorean theorem
+twice gives
 \[
 \|\mathbf v\|
 =
 \sqrt{v_1^2+v_2^2+v_3^2}.
 \]
 
-Two nonparallel directions in space determine a plane.  To construct a normal
-direction to that plane, seek a vector perpendicular to both.  The coordinate
-expression
+Two nonparallel vectors in space determine two independent directions. To
+construct a vector perpendicular to both, solve the corresponding two dot-product
+conditions. The resulting expression is
 \[
 \mathbf u\times\mathbf v
 =
@@ -610,25 +531,28 @@ expression
  u_2v_3-u_3v_2,
  u_3v_1-u_1v_3,
  u_1v_2-u_2v_1
-\bigr)
+\bigr).
 \]
-has exactly this property, because direct substitution gives
+Direct substitution verifies
 \[
 (\mathbf u\times\mathbf v)\cdot\mathbf u=0,
 \qquad
 (\mathbf u\times\mathbf v)\cdot\mathbf v=0.
 \]
-Thus the cross product is introduced as a constructed solution to two
+Thus the cross product is introduced as a constructed solution to two explicit
 perpendicularity conditions.
 
 \begin{summarybox}
-Every operation in this chapter arose from a geometric problem expressed in
-coordinates.  Successive displacements produced vector addition.  Repeated
-displacements produced scalar multiplication.  Direction lines produced the
-criterion for parallel vectors.  Perpendicular direction lines produced the
-coordinate expression later named the dot product.  Writing two arbitrary
-vectors by their lengths and inclination angles showed that this expression is
-$\|\mathbf u\|\,\|\mathbf v\|\cos\theta$.  Expanding the displacement
-$\mathbf u-\mathbf v$ then produced the cosine theorem.  Projection and the
-cross product were obtained by solving explicit perpendicularity conditions.
+A vector was introduced as a coordinate displacement. Successive displacements
+forced vector addition, and repetition forced scalar multiplication. Writing
+arbitrary vectors through their lengths and inclination angles allowed the sine
+of the angle difference to produce the parallelism test and the cosine of the
+same difference to produce the dot product, perpendicularity, and the formula
+\[
+\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+Expanding $\|\mathbf u-\mathbf v\|^2$ then produced the cosine theorem. Projection
+and the cross product arose by solving explicit perpendicularity conditions.
 \end{summarybox}
