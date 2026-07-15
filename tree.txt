@@ -391,6 +391,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap/chapter_01_intentions.tex
 ./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap/chapter_02_intentions.tex
 ./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap/chapter_03_intentions.tex
+./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap/chapter_03_lines_plane.tex
 ./mathematical_lectures/mathematical_stories/figures
 ./mathematical_lectures/mathematical_stories/figures/README.md
 ./mathematical_lectures/mathematical_stories/macros.tex
