@@ -42,29 +42,11 @@ perpendicularity have been constructed from equal radii and intersections.
 Let $P$ lie on a line $\ell$.
 
 \textbf{Step 1.} Draw a circle centred at $P$. It meets $\ell$ at two points
-$A$ and $B$. Since $A$ and $B$ lie on the same circle,
-\[
-|PA|=|PB|.
-\]
-Thus $P$ is the midpoint of $AB$.
+$A$ and $B$. Since $|PA|=|PB|$, the point $P$ is the midpoint of $AB$.
 
-\textbf{Step 2.} Draw two circles with the same radius, one centred at $A$ and
-one centred at $B$, choosing the radius larger than $|AP|$. Let their intersection
-points be $Q$ and $R$. Then
-\[
-|AQ|=|BQ|
-\qquad\text{and}\qquad
-|AR|=|BR|.
-\]
-Both $Q$ and $R$ are therefore equidistant from $A$ and $B$, so the line $QR$
-is the perpendicular bisector of $AB$. Because $P$ is the midpoint of $AB$, the
-line $QR$ passes through $P$. Since $AB$ lies on $\ell$,
-\[
-QR\perp AB,
-\qquad\text{hence}\qquad
-QR\perp\ell.
-\]
-The required perpendicular is the line $m=QR$.
+\textbf{Step 2.} Apply the perpendicular-bisector construction to $AB$. The
+resulting perpendicular bisector passes through its midpoint $P$, and since
+$AB$ lies on $\ell$, it is perpendicular to $\ell$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -94,37 +76,18 @@ The required perpendicular is the line $m=QR$.
 \end{tikzpicture}
 \end{center}
 
-The perpendicular has now been obtained entirely from the permitted
-straightedge-and-compass operations.
-
 \subsubsection{A Perpendicular Through a Point Outside a Line}
 
 Let $P$ lie outside a line $\ell$.
 
 \textbf{Step 1.} Draw a circle centred at $P$ with radius large enough to meet
-$\ell$ at two points $A$ and $B$. Since $A$ and $B$ lie on the same circle,
-\[
-|PA|=|PB|.
-\]
+$\ell$ at two points $A$ and $B$. Then $|PA|=|PB|$, so $P$ lies on the
+perpendicular bisector of $AB$.
 
-\textbf{Step 2.} Draw two circles of radius $|PA|$: one centred at $A$ and one
-centred at $B$. The two circles meet at $P$ and at a second point $Q$. Therefore
-\[
-|AP|=|BP|
-\qquad\text{and}\qquad
-|AQ|=|BQ|.
-\]
-Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is
-therefore the perpendicular bisector of $AB$.
-
-Because $A$ and $B$ lie on $\ell$, the segment $AB$ is contained in $\ell$.
-Consequently,
-\[
-PQ\perp AB,
-\qquad\text{hence}\qquad
-PQ\perp\ell.
-\]
-The required perpendicular is the line $m=PQ$.
+\textbf{Step 2.} Draw equal-radius circles centred at $A$ and $B$, chosen so that
+they meet again at a second point $Q$. By the perpendicular-bisector construction,
+the line through the two points equidistant from $A$ and $B$, namely $P$ and $Q$,
+is perpendicular to $AB$ and hence to $\ell$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -151,10 +114,6 @@ The required perpendicular is the line $m=PQ$.
         {\small Step 2: circles centred at $A$ and $B$};
 \end{tikzpicture}
 \end{center}
-
-The perpendicular has now been obtained entirely from the permitted
-straightedge-and-compass operations: drawing circles, retaining their
-intersection points, and drawing the line through two constructed points.
 
 \subsubsection{Bisecting an Angle}
 
