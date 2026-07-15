@@ -1,0 +1,57 @@
+\subsection{Why the Dot Product Can Be Expanded}
+
+The dot product was discovered from the cosine of the angle between two
+vectors. Before using it in longer calculations, we must verify how it behaves
+under addition and scalar multiplication.
+
+Let
+\[
+\mathbf u=(u_1,u_2),\qquad
+\mathbf v=(v_1,v_2),\qquad
+\mathbf w=(w_1,w_2).
+\]
+Then
+\[
+\begin{aligned}
+(\mathbf u+\mathbf w)\cdot\mathbf v
+&=(u_1+w_1)v_1+(u_2+w_2)v_2\\
+&=(u_1v_1+u_2v_2)+(w_1v_1+w_2v_2)\\
+&=\mathbf u\cdot\mathbf v+\mathbf w\cdot\mathbf v.
+\end{aligned}
+\]
+Thus the dot product distributes over vector addition. Similarly,
+\[
+(\lambda\mathbf u)\cdot\mathbf v
+=\lambda(\mathbf u\cdot\mathbf v).
+\]
+The symmetry of multiplication of real numbers also gives
+\[
+\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u.
+\]
+
+\begin{theorembox}
+For vectors $\mathbf u,\mathbf v,\mathbf w$ and a real number $\lambda$,
+\[
+\begin{aligned}
+(\mathbf u+\mathbf w)\cdot\mathbf v
+&=\mathbf u\cdot\mathbf v+\mathbf w\cdot\mathbf v,\\
+(\lambda\mathbf u)\cdot\mathbf v
+&=\lambda(\mathbf u\cdot\mathbf v),\\
+\mathbf u\cdot\mathbf v
+&=\mathbf v\cdot\mathbf u.
+\end{aligned}
+\]
+Moreover,
+\[
+\boxed{\mathbf u\cdot\mathbf u=\|\mathbf u\|^2}.
+\]
+\end{theorembox}
+
+The last identity follows immediately:
+\[
+\mathbf u\cdot\mathbf u=u_1^2+u_2^2=\|\mathbf u\|^2.
+\]
+These properties justify every later expansion involving expressions such as
+$(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)$. They are not formal rules
+borrowed from elsewhere; they follow from the coordinate definition of the dot
+product.
