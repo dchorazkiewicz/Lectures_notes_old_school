@@ -293,6 +293,8 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_00_introduction.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/derived_constructions.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/euclids_five_postulates.tex
