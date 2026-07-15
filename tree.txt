@@ -386,8 +386,6 @@
 ./mathematical_lectures/mathematical_stories/chapters/introduction/how_to_prepare_mathematical_notes.tex
 ./mathematical_lectures/mathematical_stories/chapters/introduction/how_to_work_with_this_course.tex
 ./mathematical_lectures/mathematical_stories/chapters/introduction/overview.tex
-./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap
-./mathematical_lectures/mathematical_stories/chapters/introduction/roadmap/chapter_04_motivation.tex
 ./mathematical_lectures/mathematical_stories/figures
 ./mathematical_lectures/mathematical_stories/figures/README.md
 ./mathematical_lectures/mathematical_stories/macros.tex
