@@ -1,10 +1,71 @@
-\subsection{Repeating and Reversing a Displacement}
+\subsection{Stretching, Shrinking, and Reversing a Displacement}
 
-Repeating $\mathbf v=(v_1,v_2)$ twice gives $(2v_1,2v_2)$, while reversing it
-gives $(-v_1,-v_2)$. The natural extension is
+Addition combines different displacements. A second operation appears when the
+same displacement is repeated.
+
+If
 \[
-\lambda\mathbf v=(\lambda v_1,\lambda v_2),
-\qquad \lambda\in\mathbb R.
+\mathbf v=(v_1,v_2),
 \]
-For positive $\lambda$ the orientation is unchanged; for negative $\lambda$ it
-is reversed.
+then performing it twice gives
+\[
+\mathbf v+\mathbf v=(2v_1,2v_2).
+\]
+Performing it three times gives
+\[
+3\mathbf v=(3v_1,3v_2).
+\]
+The coordinates are multiplied by the same number because both components must
+be stretched by the same factor if the direction is to remain unchanged.
+
+This suggests the general definition
+\[
+\boxed{
+\lambda\mathbf v=(\lambda v_1,\lambda v_2),
+\qquad \lambda\in\mathbb R
+}.
+\]
+The number $\lambda$ is called a scalar. It does not provide a new direction;
+it changes how much of the old displacement is taken.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (Vhalf) at (1.2,0.7);
+    \coordinate (V) at (2.4,1.4);
+    \coordinate (TwoV) at (4.8,2.8);
+    \coordinate (MinusV) at (-2.4,-1.4);
+
+    \draw[green!55!black,line width=1pt,->] (O) -- (Vhalf)
+        node[midway,above left] {$\tfrac12\mathbf v$};
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (V)
+        node[midway,below right] {$\mathbf v$};
+    \draw[orange!85!black,line width=1.1pt,->] (O) -- (TwoV)
+        node[midway,above left] {$2\mathbf v$};
+    \draw[violet!75,line width=1.1pt,->] (O) -- (MinusV)
+        node[midway,above left] {$-\mathbf v$};
+
+    \draw[gray,dashed] (-3.0,-1.75) -- (5.4,3.15);
+    \fill (O) circle (2pt) node[below right] {$O$};
+\end{tikzpicture}
+\end{center}
+
+The picture separates the possible cases:
+
+\begin{itemize}
+    \item if $\lambda>1$, the vector is stretched;
+    \item if $0<\lambda<1$, it is shortened;
+    \item if $\lambda=0$, it collapses to the zero vector;
+    \item if $\lambda<0$, it is also reversed.
+\end{itemize}
+
+In every case the result lies on the same line through the origin as
+$\mathbf v$. This gives a first geometric meaning of scalar multiples:
+nonzero vectors $\mathbf u$ and $\mathbf v$ are parallel precisely when one is
+a scalar multiple of the other.
+
+Scalar multiplication also explains why fractions and real factors are natural.
+The vector $\tfrac12\mathbf v$ is the displacement that must be repeated twice
+to produce $\mathbf v$, while $\sqrt2\,\mathbf v$ has the same direction and
+$\sqrt2$ times the length. The operation extends the simple idea of repetition
+to continuous scaling.
