@@ -1,0 +1,35 @@
+\subsection{The Plane Before Coordinates}
+
+At first there is only a Euclidean plane. There is no distinguished straight
+line, no origin, no horizontal or vertical direction, no positive direction,
+and no numerical scale.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \fill[gray!8] (-4,-2.1) rectangle (4,2.1);
+    \foreach \x/\y in {-3.1/1.1,-2.0/-0.7,-0.5/1.4,0.9/-1.0,2.0/0.8,3.0/-0.3} {
+        \fill (\x,\y) circle (1.7pt);
+    }
+    \node at (0,-2.45) {a Euclidean plane with no chosen coordinates};
+\end{tikzpicture}
+\end{center}
+
+\begin{definitionbox}
+For the construction below we use standard Euclidean operations and theorems:
+\begin{itemize}
+    \item constructing the straight line through two distinct points;
+    \item choosing a point on a constructed line;
+    \item constructing a right angle, equivalently constructing the unique
+          perpendicular to a line through a chosen point;
+    \item transferring a segment length with a compass;
+    \item bisecting a segment;
+    \item using the continuity of the Euclidean line when passing from a dense
+          family of constructed marks to all real positions;
+    \item applying the Pythagorean theorem to a right triangle;
+    \item later, constructing and comparing circles and arcs and applying the
+          law of cosines in a Euclidean triangle.
+\end{itemize}
+\end{definitionbox}
+
+A right angle is available from the beginning as a Euclidean construction. What
+is postponed is its numerical measurement in radians or degrees.
