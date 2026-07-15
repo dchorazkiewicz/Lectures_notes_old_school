@@ -1,0 +1,51 @@
+\subsection{Elementary Rules for Straightedge-and-Compass Work}
+
+For explicit constructions we use the following operational rules.
+
+\begin{enumerate}
+    \item Through two already constructed distinct points, draw the straight line.
+    \item With an already constructed point as centre and an already constructed
+          segment as radius, draw a circle.
+    \item Retain intersection points of two constructed lines, a line and a
+          circle, or two circles whenever such intersections exist.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.3,-0.4);
+    \coordinate (B) at (2.1,0.9);
+    \draw[subset] (A) -- (B);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
+    \node at (0,-1.35) {draw the line through two constructed points};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (R) at (2.0,0);
+    \draw[helper] (O) circle (2.0);
+    \draw[subset] (O) -- (R) node[midway,below] {$r$};
+    \fill[geometricSubsetColor] (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (R) circle (2pt);
+    \node at (0,-2.55) {draw a circle from a constructed centre and radius};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \coordinate (C) at (-1.5,0);
+    \coordinate (D) at (1.5,0);
+    \draw[helper] (C) circle (2.15);
+    \draw[helper] (D) circle (2.15);
+    \fill (C) circle (1.7pt) node[left] {$C$};
+    \fill (D) circle (1.7pt) node[right] {$D$};
+    \fill[geometricSubsetColor] (0,1.55) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (0,-1.55) circle (2pt) node[below] {$Q$};
+    \node at (0,-2.65) {retain the intersection points as new constructible points};
+\end{tikzpicture}
+\end{center}
+
+These rules are the actual construction toolkit. The constructions below must
+be reduced to repeated uses of them.
