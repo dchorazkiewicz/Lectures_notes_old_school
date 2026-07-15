@@ -1,0 +1,136 @@
+\subsection{Vector tests behind the slope rules}
+
+Let two lines have nonzero direction vectors $\mathbf v_1$ and $\mathbf v_2$.
+Their geometric directions are parallel precisely when one direction vector is a
+nonzero scalar multiple of the other:
+\[
+\boxed{
+\mathbf v_1\parallel\mathbf v_2
+\iff
+\mathbf v_2=\lambda\mathbf v_1
+\text{ for some }\lambda\neq0.
+}
+\]
+In three coordinates the same condition will be detected by a zero cross
+product. In the plane, the scalar-multiple criterion is already sufficient.
+
+The directions are perpendicular precisely when
+\[
+\boxed{
+\mathbf v_1\perp\mathbf v_2
+\iff
+\mathbf v_1\cdot\mathbf v_2=0.
+}
+\]
+These tests do not require a slope and therefore include vertical directions
+without a separate convention.
+
+For nonvertical lines with slopes $m_1,m_2$, convenient direction vectors are
+\[
+\mathbf v_1=(1,m_1),
+\qquad
+\mathbf v_2=(1,m_2).
+\]
+Their dot product is
+\[
+\mathbf v_1\cdot\mathbf v_2=1+m_1m_2.
+\]
+Consequently,
+\[
+\mathbf v_1\perp\mathbf v_2
+\iff
+1+m_1m_2=0
+\iff
+\boxed{m_1m_2=-1}.
+\]
+Thus the familiar slope rule is not an independent fact. It is the coordinate
+form of the dot-product test for the special direction vectors $(1,m)$.
+
+\subsection{The nearest point on a line}
+
+Let
+\[
+L=\{P_0+t\mathbf v:t\in\mathbb R\},
+\qquad \mathbf v\neq\mathbf0,
+\]
+and let $P$ be a point not necessarily on $L$. The displacement
+\[
+P-P_0
+\]
+can be decomposed into a component parallel to $\mathbf v$ and a component
+perpendicular to $\mathbf v$. The parallel component is
+\[
+\operatorname{proj}_{\mathbf v}(P-P_0)
+=
+\frac{(P-P_0)\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
+\]
+Starting from $P_0$ and moving by this component reaches the foot of the
+perpendicular:
+\[
+\boxed{
+Q=P_0+\operatorname{proj}_{\mathbf v}(P-P_0).
+}
+\]
+The point $Q$ lies on the line, and $P-Q$ is perpendicular to the line. It is
+therefore the shortest displacement from $P$ to any point of $L$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95,>=stealth]
+    \coordinate (P0) at (0.8,0.8);
+    \coordinate (Q) at (3.7,2.1);
+    \coordinate (P) at (2.8,4.1);
+    \coordinate (R) at (5.4,2.86);
+    \draw[subset] (0.1,0.49) -- (R) node[above right] {$L$};
+    \draw[blue!70!black,line width=1.1pt,->] (P0) -- (Q)
+        node[midway,below right] {$\operatorname{proj}_{\mathbf v}(P-P_0)$};
+    \draw[orange!85!black,line width=1.1pt,->] (Q) -- (P)
+        node[midway,right] {$P-Q$};
+    \draw[very thick,->] (P0) -- (P)
+        node[midway,above left] {$P-P_0$};
+    \draw (Q) ++(-0.22,-0.10) -- ++(-0.12,0.27) -- ++(0.22,0.10);
+    \fill[geometricSubsetColor] (P0) circle (2pt) node[below left] {$P_0$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[below right] {$Q$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above] {$P$};
+\end{tikzpicture}
+\end{center}
+
+Hence
+\[
+\boxed{
+d(P,L)
+=
+\left\|
+(P-P_0)-\operatorname{proj}_{\mathbf v}(P-P_0)
+\right\|.
+}
+\]
+
+\subsection{Distance from the normal equation}
+
+Suppose the same line is written as
+\[
+ax+by=c,
+\qquad (a,b)\neq(0,0),
+\]
+with normal vector
+\[
+\mathbf n=(a,b).
+\]
+For $P=(x_P,y_P)$ and any fixed $P_0$ on the line,
+\[
+\mathbf n\cdot(P-P_0)=ax_P+by_P-c.
+\]
+The signed scalar component of $P-P_0$ in the normal direction is therefore
+\[
+\frac{ax_P+by_P-c}{\sqrt{a^2+b^2}}.
+\]
+Distance is nonnegative, so
+\[
+\boxed{
+d(P,L)
+=
+\frac{|ax_P+by_P-c|}{\sqrt{a^2+b^2}}.
+}
+\]
+This formula is not a new rule detached from projection. It is the length of the
+normal component of the displacement from the line to the point.
