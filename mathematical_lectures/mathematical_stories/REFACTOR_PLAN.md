@@ -1,6 +1,7 @@
 # Mathematical Stories source-structure migration
 
 Branch: `refactor/mathematical-stories-structure`
+Draft pull request: `#6`
 
 ## Goal
 
@@ -26,7 +27,7 @@ Replace large monolithic section files with a stable hierarchy in which each sub
 - [x] Audit the remaining active chapter entry files. Placeholder chapters and already focused section files were left unchanged.
 - [x] Remove superseded monolithic sources after input-graph verification.
 - [ ] Run the PDF build in CI. The repository build workflow is manual-dispatch only and local checkout was unavailable because the execution environment could not resolve `github.com`.
-- [ ] Compare the branch with `main` and open a draft pull request.
+- [x] Compare the branch with `main` and open draft pull request #6.
 
 ## Target convention
 
