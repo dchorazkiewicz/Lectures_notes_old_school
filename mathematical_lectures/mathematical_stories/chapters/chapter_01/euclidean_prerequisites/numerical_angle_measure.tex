@@ -98,17 +98,33 @@ m_{\deg}(\text{right angle})=90^\circ.
 The angle is still the geometric region; $\pi/2$ and $90^\circ$ are two numbers
 assigned to it by two different measurement systems.
 
-The trigonometric functions were first defined for geometric angles. Numerical
-notation is obtained by composition with radian measure: if
-$t=m_{\mathrm{rad}}(\alpha)$, then
+\subsubsection*{Sine and cosine as functions of a number}
+
+The trigonometric ratios were first defined for acute geometric angles. We now
+extend them to a full turn. For $t\in[0,2\pi)$, let $\beta\in[0,\pi/2]$ be the
+acute reference angle between the direction of $t$ and the nearest horizontal
+ray. The magnitudes $\sin\beta$ and $\cos\beta$ come from the right-triangle
+definition; their signs are determined by the quadrant:
 \[
-\cos t:=\cos\alpha,
-\qquad
-\sin t:=\sin\alpha.
+\begin{array}{c|cc}
+&\cos t&\sin t\\ \hline
+0\le t\le \pi/2&+\cos\beta&+\sin\beta\\
+\pi/2\le t\le \pi&-\cos\beta&+\sin\beta\\
+\pi\le t\le 3\pi/2&-\cos\beta&-\sin\beta\\
+3\pi/2\le t<2\pi&+\cos\beta&-\sin\beta
+\end{array}
 \]
-Thus $\cos\alpha$ refers to the geometric angle, while
-$\cos(m_{\mathrm{rad}}(\alpha))$ is the same value written as a function of its
-radian measure.
+At the axes this gives the familiar values $0$, $1$, and $-1$. For arbitrary
+real $t$, define sine and cosine periodically:
+\[
+\sin(t+2\pi k)=\sin t,
+\qquad
+\cos(t+2\pi k)=\cos t,
+\qquad k\in\mathbb Z.
+\]
+If $t=m_{\mathrm{rad}}(\alpha)$, then $\cos t$ is the same value as the geometric
+cosine $\cos\alpha$. This explains the notation
+$\cos(m_{\mathrm{rad}}(\alpha))$.
 
 \subsubsection*{The Euclidean law of cosines}
 
