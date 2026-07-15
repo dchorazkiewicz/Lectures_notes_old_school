@@ -1,37 +1,63 @@
-\subsection{A Vector Records a Change of Coordinates}
+\subsection{A Vector Is a Displacement, Not a Place}
 
-For arbitrary points
+Let
 \[
 A=(x_1,y_1),
 \qquad
-B=(x_2,y_2),
+B=(x_2,y_2).
 \]
-the displacement from $A$ to $B$ is
+The point $A$ is a position and the point $B$ is another position. The arrow
+from $A$ to $B$ asks a different question:
+
+\begin{center}
+what change of coordinates carries the starting point to the endpoint?
+\end{center}
+
+The horizontal change is $x_2-x_1$ and the vertical change is $y_2-y_1$.
+Therefore
 \[
 \overrightarrow{AB}
 =
 (x_2-x_1,\,y_2-y_1).
 \]
+This subtraction is not an arbitrary convention. It is forced by the equations
+\[
+x_1+\Delta x=x_2,
+\qquad
+y_1+\Delta y=y_2.
+\]
+Solving them gives
+\[
+\Delta x=x_2-x_1,
+\qquad
+\Delta y=y_2-y_1.
+\]
 
 \begin{definitionbox}
-A vector in the Cartesian plane is an ordered pair
+A vector in the Cartesian plane is a coordinate displacement
 \[
-\mathbf v=(v_1,v_2)
+\mathbf v=(v_1,v_2).
 \]
-interpreted as a coordinate displacement: $v_1$ units horizontally and $v_2$
-units vertically.
+It instructs us to change the first coordinate by $v_1$ and the second
+coordinate by $v_2$.
 \end{definitionbox}
 
-This makes the phrase ``the same vector starting elsewhere'' precise. If
-$P=(p_1,p_2)$ and
+A vector is therefore not tied to one starting point. If $P=(p_1,p_2)$ and we
+apply the same displacement $\mathbf v=(v_1,v_2)$, then the endpoint must be
 \[
 Q=(p_1+v_1,\,p_2+v_2),
 \]
-then
+and indeed
 \[
-\overrightarrow{PQ}=(v_1,v_2)=\mathbf v.
+\overrightarrow{PQ}
+=
+(v_1,v_2)
+=
+\mathbf v.
 \]
-The same two coordinate changes have simply been applied at another point.
+Two arrows drawn in different places represent the same vector when they have
+the same coordinate changes. Their positions may differ; their displacement is
+the same.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -43,18 +69,30 @@ The same two coordinate changes have simply been applied at another point.
     \coordinate (Q) at (5.5,4.2);
     \draw[subset,->] (A) -- (B) node[midway,below right] {$(3,2)$};
     \draw[subset,->] (P) -- (Q) node[midway,above left] {$(3,2)$};
+    \draw[helper,dashed] (A) -- (4,1);
+    \draw[helper,dashed] (4,1) -- (B);
     \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
     \fill[geometricSubsetColor] (B) circle (2pt) node[below right] {$B$};
     \fill[geometricSubsetColor] (P) circle (2pt) node[above left] {$P$};
     \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
+    \node[align=left,anchor=west] at (5.7,1.25)
+        {same horizontal change\\same vertical change};
 \end{tikzpicture}
 \end{center}
 
-The zero displacement is
+The zero vector
 \[
-\mathbf0=(0,0).
+\mathbf0=(0,0)
 \]
-Reversing $\mathbf v=(v_1,v_2)$ gives
+means no change at all. Starting anywhere and applying $\mathbf0$ leaves the
+point fixed.
+
+The opposite vector
 \[
--\mathbf v=(-v_1,-v_2).
+-\mathbf v=(-v_1,-v_2)
+\]
+undoes the original displacement. If $\mathbf v$ carries $A$ to $B$, then
+$-\mathbf v$ carries $B$ back to $A$. Thus
+\[
+\overrightarrow{BA}=-\overrightarrow{AB}.
 \]
