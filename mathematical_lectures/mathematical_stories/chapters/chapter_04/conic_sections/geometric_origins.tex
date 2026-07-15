@@ -192,25 +192,74 @@ The four distance constructions also arise from one spatial experiment: intersec
 a double cone by a plane and vary the inclination of the cutting plane.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.78]
-    \foreach \s/\lab/\ang in {0/circle/0,4.2/ellipse/12,8.4/parabola/28,12.6/hyperbola/65} {
-        \begin{scope}[xshift=\s cm]
-            \draw[gray!70] (0,0)--(-1.4,2.4);
-            \draw[gray!70] (0,0)--(1.4,2.4);
-            \draw[gray!70] (0,0)--(-1.4,-2.4);
-            \draw[gray!70] (0,0)--(1.4,-2.4);
-            \draw[blue!70!black,line width=1.1pt,rotate around={\ang:(0,0.65)}]
-                (-1.45,0.65)--(1.45,0.65);
-            \node[below] at (0,-2.7) {\lab};
-        \end{scope}
-    }
+\begin{tikzpicture}[scale=0.72,>=stealth,
+    cone edge/.style={gray!70,line width=0.7pt},
+    cone rim/.style={gray!55,line width=0.6pt},
+    cutting plane/.style={fill=blue!12,draw=blue!55!black,line width=0.7pt,opacity=0.78},
+    section curve/.style={draw=geometricSubsetColor,line width=1.5pt}]
+
+    % Circle
+    \begin{scope}[xshift=0cm]
+        \fill[gray!6] (0,0)--(-1.25,2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \fill[gray!6] (0,0)--(-1.25,-2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \draw[cone edge] (0,0)--(-1.25,2.35) (0,0)--(1.25,2.35);
+        \draw[cone edge] (0,0)--(-1.25,-2.35) (0,0)--(1.25,-2.35);
+        \draw[cone rim] (0,2.35) ellipse (1.25 and 0.30);
+        \draw[cone rim] (0,-2.35) ellipse (1.25 and 0.30);
+        \filldraw[cutting plane] (-1.55,1.05)--(1.55,1.05)--(1.15,1.45)--(-1.95,1.45)--cycle;
+        \draw[section curve] (-0.15,1.25) ellipse (0.67 and 0.16);
+        \node[below] at (0,-2.85) {circle};
+    \end{scope}
+
+    % Ellipse
+    \begin{scope}[xshift=4.0cm]
+        \fill[gray!6] (0,0)--(-1.25,2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \fill[gray!6] (0,0)--(-1.25,-2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \draw[cone edge] (0,0)--(-1.25,2.35) (0,0)--(1.25,2.35);
+        \draw[cone edge] (0,0)--(-1.25,-2.35) (0,0)--(1.25,-2.35);
+        \draw[cone rim] (0,2.35) ellipse (1.25 and 0.30);
+        \draw[cone rim] (0,-2.35) ellipse (1.25 and 0.30);
+        \filldraw[cutting plane] (-1.75,0.75)--(1.45,1.45)--(1.15,1.85)--(-2.05,1.15)--cycle;
+        \draw[section curve,rotate around={12:(-0.20,1.30)}] (-0.20,1.30) ellipse (0.82 and 0.19);
+        \node[below] at (0,-2.85) {ellipse};
+    \end{scope}
+
+    % Parabola
+    \begin{scope}[xshift=8.0cm]
+        \fill[gray!6] (0,0)--(-1.25,2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \fill[gray!6] (0,0)--(-1.25,-2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \draw[cone edge] (0,0)--(-1.25,2.35) (0,0)--(1.25,2.35);
+        \draw[cone edge] (0,0)--(-1.25,-2.35) (0,0)--(1.25,-2.35);
+        \draw[cone rim] (0,2.35) ellipse (1.25 and 0.30);
+        \draw[cone rim] (0,-2.35) ellipse (1.25 and 0.30);
+        \filldraw[cutting plane] (-1.45,-0.25)--(1.05,2.45)--(1.65,2.20)--(-0.85,-0.50)--cycle;
+        \draw[section curve] plot[smooth] coordinates {(-0.47,0.00) (-0.18,0.52) (0.15,1.05) (0.55,1.55) (1.00,2.02)};
+        \node[below] at (0,-2.85) {parabola};
+    \end{scope}
+
+    % Hyperbola
+    \begin{scope}[xshift=12.0cm]
+        \fill[gray!6] (0,0)--(-1.25,2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \fill[gray!6] (0,0)--(-1.25,-2.35) arc[start angle=180,end angle=360,x radius=1.25,y radius=0.30]--cycle;
+        \draw[cone edge] (0,0)--(-1.25,2.35) (0,0)--(1.25,2.35);
+        \draw[cone edge] (0,0)--(-1.25,-2.35) (0,0)--(1.25,-2.35);
+        \draw[cone rim] (0,2.35) ellipse (1.25 and 0.30);
+        \draw[cone rim] (0,-2.35) ellipse (1.25 and 0.30);
+        \filldraw[cutting plane] (-0.75,-2.65)--(0.45,-2.40)--(1.05,2.55)--(-0.15,2.30)--cycle;
+        \draw[section curve] plot[smooth] coordinates {(-0.30,2.10) (-0.10,1.55) (0.02,1.02) (0.08,0.55)};
+        \draw[section curve] plot[smooth] coordinates {(0.25,-0.55) (0.38,-1.05) (0.58,-1.58) (0.82,-2.10)};
+        \node[below] at (0,-2.85) {hyperbola};
+    \end{scope}
 \end{tikzpicture}
 \end{center}
 
-A nearly horizontal cut gives a circle; an oblique cut through one nappe gives an
-ellipse; a cut parallel to a generating side gives a parabola; and a cut meeting
-both nappes gives a hyperbola. The changing curve records how one geometric
-requirement changes while the cone remains fixed.
+In each panel the gray surface is the same double cone, the pale blue polygon is
+the cutting plane, and the dark curve is their intersection. A horizontal plane
+produces a circle. Tilting it while it still cuts only one nappe produces an
+ellipse. When the plane becomes parallel to a generating line of the cone, the
+intersection opens into a parabola. A steeper plane meeting both nappes produces
+the two branches of a hyperbola. Thus the four curves arise by continuously
+changing one geometric requirement while leaving the cone fixed.
 
 \begin{remarkbox}
 The rest of the chapter studies how these geometric sets appear in Cartesian
