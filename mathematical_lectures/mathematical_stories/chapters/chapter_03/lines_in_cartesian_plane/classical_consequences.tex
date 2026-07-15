@@ -1,0 +1,107 @@
+\subsection{What the familiar Cartesian forms let us read}
+
+Once the same line has been described as
+\[
+P=P_0+t\mathbf v,
+\qquad
+\mathbf n\cdot(P-P_0)=0,
+\qquad
+\text{or}\qquad
+y=mx+b,
+\]
+we may choose the form best adapted to the question. The forms are not competing
+definitions; they expose different information about one geometric set.
+
+\subsubsection*{Intersections with the coordinate axes}
+
+For a nonvertical line
+\[
+y=mx+b,
+\]
+setting $x=0$ gives the intersection with the $y$-axis:
+\[
+\boxed{(0,b)}.
+\]
+If $m\neq0$, setting $y=0$ gives
+\[
+x=-\frac bm,
+\]
+so the intersection with the $x$-axis is
+\[
+\boxed{\left(-\frac bm,0\right)}.
+\]
+This illustrates a general habit: to find an intersection with a known set, impose
+both defining conditions at once.
+
+\begin{examplebox}
+For
+\[
+y=-\frac12x+3,
+\]
+the $y$-axis intersection is $(0,3)$. Setting $y=0$ gives $x=6$, so the
+$x$-axis intersection is $(6,0)$.
+\end{examplebox}
+
+\subsubsection*{The line through two points}
+
+Let
+\[
+P=(x_1,y_1),\qquad Q=(x_2,y_2),\qquad P\neq Q.
+\]
+The displacement
+\[
+Q-P=(x_2-x_1,y_2-y_1)
+\]
+is a direction vector, so the line is immediately
+\[
+\boxed{L=\{P+t(Q-P):t\in\mathbb R\}.}
+\]
+This formula treats vertical and nonvertical lines uniformly.
+
+If $x_1\neq x_2$, the horizontal component of $Q-P$ is nonzero and the slope form
+may be recovered:
+\[
+\boxed{
+m=\frac{y_2-y_1}{x_2-x_1}
+}
+\]
+and
+\[
+\boxed{y-y_1=m(x-x_1).}
+\]
+If $x_1=x_2$, no real slope exists and the line is simply
+\[
+\boxed{x=x_1.}
+\]
+The exceptional case belongs only to slope notation, not to the geometric line.
+
+\subsubsection*{Parallel lines in slope notation}
+
+Two nonvertical lines
+\[
+y=m_1x+b_1,
+\qquad
+y=m_2x+b_2
+\]
+have direction vectors $(1,m_1)$ and $(1,m_2)$. They have the same direction
+precisely when
+\[
+m_1=m_2.
+\]
+If also $b_1=b_2$, the equations describe the same line. If $b_1\neq b_2$, the
+lines are distinct and parallel. Thus
+\[
+\boxed{
+L_1\parallel L_2
+\iff
+m_1=m_2\text{ and }b_1\neq b_2
+}
+\]
+for distinct nonvertical lines.
+
+\begin{remarkbox}
+The slope formulas are efficient coordinate consequences of the vector
+construction. They should be used when they simplify a question, but they should
+not hide the more general descriptions, which also handle vertical lines and
+extend unchanged to three-dimensional space.
+\end{remarkbox}
