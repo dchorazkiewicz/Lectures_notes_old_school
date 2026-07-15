@@ -1,49 +1,165 @@
-\subsection{The Same Coordinate Ideas in Three Dimensions}
+\subsection{From the Plane to Three-Dimensional Space}
 
-In $\mathbb R^3$, a vector is a displacement
+Nothing essential changes when a third coordinate direction is added. A vector
+in space records three coordinate changes:
 \[
-\mathbf v=(v_1,v_2,v_3),
+\mathbf v=(v_1,v_2,v_3).
 \]
-and addition and scaling remain componentwise. Applying the Pythagorean theorem
-twice gives
+Addition and scalar multiplication remain componentwise because successive
+changes in each coordinate still add independently.
+
+To find the length, first combine the changes in the first two coordinates and
+then include the third. Applying the Pythagorean theorem twice gives
 \[
+\boxed{
 \|\mathbf v\|
 =
-\sqrt{v_1^2+v_2^2+v_3^2}.
+\sqrt{v_1^2+v_2^2+v_3^2}
+}.
 \]
-
-Two nonparallel vectors in space determine two independent directions. To
-construct a vector perpendicular to both, solve the corresponding two dot-product
-conditions. The resulting expression is
+The dot product extends in the same way:
 \[
+\mathbf u\cdot\mathbf v
+=u_1v_1+u_2v_2+u_3v_3.
+\]
+It still measures the cosine of the angle and still detects perpendicularity.
+
+\subsubsection*{A new geometric question}
+
+In the plane, one nonzero vector determines a line and two nonparallel vectors
+already determine the whole plane. In three-dimensional space, two nonparallel
+vectors determine a plane through the origin. We can therefore ask:
+
+\begin{center}
+\emph{Can we construct a vector perpendicular to that entire plane?}
+\end{center}
+
+Such a vector must be perpendicular to both given vectors. If
+\[
+\mathbf u=(u_1,u_2,u_3),
+\qquad
+\mathbf v=(v_1,v_2,v_3),
+\]
+and
+\[
+\mathbf n=(n_1,n_2,n_3),
+\]
+then the two perpendicularity conditions are
+\[
+\begin{aligned}
+n_1u_1+n_2u_2+n_3u_3&=0,\\
+n_1v_1+n_2v_2+n_3v_3&=0.
+\end{aligned}
+\]
+They describe one line of possible perpendicular vectors. The two opposite
+directions on that line are both geometrically perpendicular to the plane.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.2,0.8);
+    \coordinate (V) at (1.4,2.7);
+    \coordinate (S) at (5.6,3.5);
+    \coordinate (N) at (2.4,4.8);
+
+    \fill[gray!10] (O) -- (U) -- (S) -- (V) -- cycle;
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (U)
+        node[midway,below] {$\mathbf u$};
+    \draw[orange!85!black,line width=1.1pt,->] (O) -- (V)
+        node[midway,left] {$\mathbf v$};
+    \draw[helper,dashed] (U) -- (S);
+    \draw[helper,dashed] (V) -- (S);
+    \draw[very thick,->] (O) -- (N)
+        node[midway,left] {$\mathbf u\times\mathbf v$};
+    \node at (4.6,2.8) {plane spanned by $\mathbf u,\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Choosing one of the two perpendicular directions}
+
+The two possible perpendicular vectors differ only by sign. To choose one
+consistently, we use the right-hand rule: curl the fingers of the right hand
+from $\mathbf u$ toward $\mathbf v$ through the smaller angle; the thumb points
+in the direction assigned to $\mathbf u\times\mathbf v$.
+
+Reversing the order reverses the chosen direction:
+\[
+\boxed{
+\mathbf v\times\mathbf u
+=-(\mathbf u\times\mathbf v)
+}.
+\]
+Thus the cross product remembers orientation, unlike the ordinary angle between
+vectors.
+
+\subsubsection*{Deriving the coordinate formula}
+
+A convenient solution of the two perpendicularity equations is
+\[
+\boxed{
 \mathbf u\times\mathbf v
 =
 \bigl(
  u_2v_3-u_3v_2,
  u_3v_1-u_1v_3,
  u_1v_2-u_2v_1
-\bigr).
+\bigr)
+}.
 \]
-Direct substitution verifies
+This formula is not accepted without verification. Substitution gives
 \[
 (\mathbf u\times\mathbf v)\cdot\mathbf u=0,
 \qquad
-(\mathbf u\times\mathbf v)\cdot\mathbf v=0.
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0,
 \]
-Thus the cross product is introduced as a constructed solution to two explicit
-perpendicularity conditions.
+so the resulting vector is indeed perpendicular to both inputs.
+
+\subsubsection*{Its length is an area}
+
+Let $\theta\in[0,\pi]$ be the angle between $\mathbf u$ and $\mathbf v$. The
+parallelogram built on these vectors has base $\|\mathbf u\|$ and height
+$\|\mathbf v\|\sin\theta$. Its area is therefore
+\[
+\|\mathbf u\|\,\|\mathbf v\|\sin\theta.
+\]
+The cross product is chosen so that its length equals this area:
+\[
+\boxed{
+\|\mathbf u\times\mathbf v\|
+=
+\|\mathbf u\|\,\|\mathbf v\|\sin\theta
+}.
+\]
+This explains two important cases immediately:
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u\times\mathbf v=\mathbf0,
+\]
+because the parallelogram then has zero height, while perpendicular vectors
+produce the largest possible area for fixed lengths.
+
+\begin{remarkbox}
+The cross product is special to three-dimensional Euclidean space. It combines
+three pieces of information: the plane determined by the two vectors, an
+orientation of that plane, and the area of their parallelogram.
+\end{remarkbox}
 
 \begin{summarybox}
-A vector was introduced as a coordinate displacement. Successive displacements
-forced vector addition, and repetition forced scalar multiplication. Writing
-arbitrary vectors through their lengths and inclination angles allowed the sine
-of the angle difference to produce the parallelism test and the cosine of the
-same difference to produce the dot product, perpendicularity, and the formula
+The vector chapter now follows one continuous chain of ideas:
 \[
-\mathbf u\cdot\mathbf v
-=
-\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\text{displacement}
+\longrightarrow
+\text{addition and scaling}
+\longrightarrow
+\text{linear combinations}
+\longrightarrow
+\text{length and direction}
+\longrightarrow
+\text{dot product and angle}
+\longrightarrow
+\text{projection and orthogonal decomposition}.
 \]
-Expanding $\|\mathbf u-\mathbf v\|^2$ then produced the cosine theorem. Projection
-and the cross product arose by solving explicit perpendicularity conditions.
+In three dimensions the same language leads naturally to a vector perpendicular
+to a plane and to the cross product, whose length records area.
 \end{summarybox}
