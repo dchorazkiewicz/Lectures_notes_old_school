@@ -320,6 +320,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/angle_between_vectors.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/change_of_basis.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/cosine_theorem.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/dot_product_properties.tex
