@@ -293,6 +293,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_00_introduction.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/LECTURE_GUIDE.md
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/common_unit_length.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/euclidean_distance_formula.tex
