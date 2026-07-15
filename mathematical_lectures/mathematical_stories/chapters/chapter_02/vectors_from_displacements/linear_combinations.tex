@@ -1,0 +1,58 @@
+\subsection{Linear Combinations: What Addition and Scaling Can Build}
+
+Addition and scalar multiplication were introduced as two separate operations,
+but they are most useful when they are combined. Given vectors $\mathbf u$ and
+$\mathbf v$ and real numbers $a$ and $b$, the vector
+\[
+a\mathbf u+b\mathbf v
+\]
+is called a \emph{linear combination} of $\mathbf u$ and $\mathbf v$.
+
+The phrase has a direct geometric meaning. First scale $\mathbf u$ by $a$ and
+$\mathbf v$ by $b$; then add the two resulting displacements. Thus a linear
+combination is not a new operation. It is a controlled use of the two operations
+already understood.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (AU) at (3.4,0.9);
+    \coordinate (BV) at (1.0,2.7);
+    \coordinate (S) at (4.4,3.6);
+
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (AU)
+        node[midway,below] {$a\mathbf u$};
+    \draw[orange!85!black,line width=1.1pt,->] (AU) -- (S)
+        node[midway,right] {$b\mathbf v$};
+    \draw[very thick,->] (O) -- (S)
+        node[midway,above left] {$a\mathbf u+b\mathbf v$};
+    \draw[helper,dashed] (O) -- (BV);
+    \draw[helper,dashed] (BV) -- (S);
+\end{tikzpicture}
+\end{center}
+
+A single nonzero vector can generate only one line through the origin:
+\[
+\{\lambda\mathbf v:\lambda\in\mathbb R\}.
+\]
+Changing $\lambda$ changes the length and possibly the orientation, but never
+the underlying line of motion.
+
+Two vectors behave differently. If $\mathbf u$ and $\mathbf v$ are parallel,
+then every linear combination still lies on one line. If they are not parallel,
+then their linear combinations fill the whole plane. Geometrically, the two
+independent directions allow us to reach any endpoint by a suitable
+parallelogram.
+
+\begin{theorembox}
+Two nonparallel vectors $\mathbf u$ and $\mathbf v$ determine every vector in
+the plane uniquely in the form
+\[
+\mathbf w=a\mathbf u+b\mathbf v.
+\]
+The numbers $a$ and $b$ record how much motion occurs in each chosen direction.
+\end{theorembox}
+
+This observation is the bridge to the later notion of a basis. A basis is not
+an unrelated new object: it is a pair of directions whose linear combinations
+can describe every vector uniquely.
