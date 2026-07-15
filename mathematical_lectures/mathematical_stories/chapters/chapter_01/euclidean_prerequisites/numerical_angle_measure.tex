@@ -98,6 +98,18 @@ m_{\deg}(\text{right angle})=90^\circ.
 The angle is still the geometric region; $\pi/2$ and $90^\circ$ are two numbers
 assigned to it by two different measurement systems.
 
+The trigonometric functions were first defined for geometric angles. Numerical
+notation is obtained by composition with radian measure: if
+$t=m_{\mathrm{rad}}(\alpha)$, then
+\[
+\cos t:=\cos\alpha,
+\qquad
+\sin t:=\sin\alpha.
+\]
+Thus $\cos\alpha$ refers to the geometric angle, while
+$\cos(m_{\mathrm{rad}}(\alpha))$ is the same value written as a function of its
+radian measure.
+
 \subsubsection*{The Euclidean law of cosines}
 
 Directly measuring an arc is often difficult. A triangle provides another way
@@ -145,9 +157,11 @@ The points form the Euclidean triangle $OAB$.
 If $\alpha=\angle AOB$, then the side lengths of the Euclidean triangle satisfy
 \[
 \boxed{
-|AB|^2=|OA|^2+|OB|^2-2|OA|\,|OB|\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr)
+|AB|^2=|OA|^2+|OB|^2-2|OA|\,|OB|\cos\alpha
 }.
 \]
+Equivalently, the last factor may be written as
+$\cos(m_{\mathrm{rad}}(\alpha))$.
 \end{theorembox}
 
 The theorem belongs to Euclidean geometry; it does not require Cartesian
