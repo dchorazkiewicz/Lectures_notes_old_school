@@ -325,6 +325,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_02_lines_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_03_planes_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/length_and_inclination.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/scalar_multiplication.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/vector_addition.tex
