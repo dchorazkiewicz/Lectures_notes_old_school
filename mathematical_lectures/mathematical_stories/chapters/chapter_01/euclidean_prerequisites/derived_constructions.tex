@@ -4,15 +4,15 @@
 
 Let $A$ and $B$ be distinct points. Draw two circles with the same radius,
 one centred at $A$ and one centred at $B$, choosing the radius larger than half
-of $AB$. Let their intersection points be $P$ and $Q$.
+of $|AB|$. Let their intersection points be $P$ and $Q$.
 
 Because $P$ lies on both circles,
 \[
-PA=PB,
+|PA|=|PB|,
 \]
 and similarly,
 \[
-QA=QB.
+|QA|=|QB|.
 \]
 Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is the
 perpendicular bisector of $AB$.
@@ -44,17 +44,17 @@ Let $P$ lie on a line $\ell$.
 \textbf{Step 1.} Draw a circle centred at $P$. It meets $\ell$ at two points
 $A$ and $B$. Since $A$ and $B$ lie on the same circle,
 \[
-PA=PB.
+|PA|=|PB|.
 \]
 Thus $P$ is the midpoint of $AB$.
 
 \textbf{Step 2.} Draw two circles with the same radius, one centred at $A$ and
-one centred at $B$, choosing the radius larger than $AP$. Let their intersection
+one centred at $B$, choosing the radius larger than $|AP|$. Let their intersection
 points be $Q$ and $R$. Then
 \[
-AQ=BQ
+|AQ|=|BQ|
 \qquad\text{and}\qquad
-AR=BR.
+|AR|=|BR|.
 \]
 Both $Q$ and $R$ are therefore equidistant from $A$ and $B$, so the line $QR$
 is the perpendicular bisector of $AB$. Because $P$ is the midpoint of $AB$, the
@@ -74,17 +74,10 @@ The required perpendicular is the line $m=QR$.
     \coordinate (Q) at (0,2.4);
     \coordinate (R) at (0,-2.4);
 
-    % Given line
     \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
-
-    % Step 1: circle centred at P
     \draw[dashed,line width=0.9pt,draw=blue!65] (P) circle (2.2);
-
-    % Step 2: equal circles centred at A and B
     \draw[dashed,line width=0.9pt,draw=orange!85!black] (A) circle (3.25);
     \draw[dashed,line width=0.9pt,draw=orange!85!black] (B) circle (3.25);
-
-    % Final perpendicular
     \draw[very thick] (Q) -- (R) node[below] {$m=QR$};
     \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
 
@@ -111,15 +104,15 @@ Let $P$ lie outside a line $\ell$.
 \textbf{Step 1.} Draw a circle centred at $P$ with radius large enough to meet
 $\ell$ at two points $A$ and $B$. Since $A$ and $B$ lie on the same circle,
 \[
-PA=PB.
+|PA|=|PB|.
 \]
 
-\textbf{Step 2.} Draw two circles of radius $PA$: one centred at $A$ and one
+\textbf{Step 2.} Draw two circles of radius $|PA|$: one centred at $A$ and one
 centred at $B$. The two circles meet at $P$ and at a second point $Q$. Therefore
 \[
-AP=BP
+|AP|=|BP|
 \qquad\text{and}\qquad
-AQ=BQ.
+|AQ|=|BQ|.
 \]
 Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is
 therefore the perpendicular bisector of $AB$.
@@ -140,17 +133,10 @@ The required perpendicular is the line $m=PQ$.
     \coordinate (A) at (-2.1,0);
     \coordinate (B) at (2.1,0);
 
-    % Given line
     \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
-
-    % Step 1: circle centred at P
     \draw[dashed,line width=0.9pt,draw=blue!65] (P) circle (2.9);
-
-    % Step 2: equal circles centred at A and B
     \draw[dashed,line width=0.9pt,draw=orange!85!black] (A) circle (2.9);
     \draw[dashed,line width=0.9pt,draw=orange!85!black] (B) circle (2.9);
-
-    % Final perpendicular
     \draw[very thick] (0,-2.8) -- (0,2.8) node[above] {$m=PQ$};
     \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
 
@@ -174,14 +160,13 @@ intersection points, and drawing the line through two constructed points.
 
 Let two rays with common endpoint $O$ form an angle. Draw a circle centred at
 $O$ meeting the rays at $A$ and $B$. Then draw equal-radius circles centred at
-$A$ and $B$, and let one of their intersections inside the angle be $P$.
-Since
+$A$ and $B$, and let one of their intersections inside the angle be $P$. Since
 \[
-OA=OB,
+|OA|=|OB|,
 \qquad
-AP=BP,
+|AP|=|BP|,
 \qquad
-OP=OP,
+|OP|=|OP|,
 \]
 the triangles $OAP$ and $OBP$ are congruent. Therefore
 \[
@@ -193,10 +178,13 @@ The ray $OP$ is the angle bisector.
 
 Let $P$ lie outside a line $\ell$. First construct a line $m$ through $P$
 perpendicular to $\ell$. Then construct a line $n$ through $P$ perpendicular
-to $m$. Since $n$ and $\ell$ are perpendicular to the same line, they have the
-same direction and do not meet:
+to $m$.
+
+The transversal $m$ forms equal corresponding right angles with $n$ and
+$\ell$. By the converse of the corresponding-angles theorem, the two lines are
+parallel:
 \[
 n\parallel\ell.
 \]
-The fifth postulate guarantees the uniqueness of this parallel in Euclidean
-geometry.
+The fifth postulate, equivalently Playfair's postulate, guarantees that this is
+the unique parallel to $\ell$ through $P$.
