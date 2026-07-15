@@ -1,0 +1,49 @@
+\subsection{Parallel Lines and Proportional Segments}
+
+A central fact of Euclidean geometry is that parallel lines preserve ratios.
+This is the content of Thales' theorem in the form needed here.
+
+\begin{theorembox}
+Let $D$ lie on $AB$ and $E$ lie on $AC$ in a triangle $ABC$. If
+\[
+DE\parallel BC,
+\]
+then
+\[
+\frac{AD}{AB}
+=
+\frac{AE}{AC}
+=
+\frac{DE}{BC}.
+\]
+\end{theorembox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (0,3.6);
+    \coordinate (B) at (-3.2,0);
+    \coordinate (C) at (3.8,0);
+    \coordinate (D) at (-1.6,1.8);
+    \coordinate (E) at (1.9,1.8);
+    \draw[subset] (A) -- (B) -- (C) -- cycle;
+    \draw[very thick] (D) -- (E);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[above] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below left] {$B$};
+    \fill[geometricSubsetColor] (C) circle (2pt) node[below right] {$C$};
+    \fill[geometricSubsetColor] (D) circle (2pt) node[left] {$D$};
+    \fill[geometricSubsetColor] (E) circle (2pt) node[right] {$E$};
+    \node at (0.15,2.05) {$DE\parallel BC$};
+\end{tikzpicture}
+\end{center}
+
+The smaller triangle $ADE$ and the larger triangle $ABC$ have the same three
+angles. Their corresponding sides differ by one common scale factor. This is
+the basic phenomenon of similarity.
+
+\begin{definitionbox}
+Two triangles are similar when their corresponding angles are equal. In that
+case their corresponding side lengths are proportional.
+\end{definitionbox}
+
+Similarity lets us change the size of a figure while preserving its shape. It
+is the reason ratios of corresponding lengths can depend only on angles.
