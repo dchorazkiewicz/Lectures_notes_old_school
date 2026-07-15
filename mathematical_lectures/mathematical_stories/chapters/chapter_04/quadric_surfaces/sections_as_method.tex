@@ -1,0 +1,50 @@
+\section{Understanding Quadric Surfaces Through Sections}
+
+A three-dimensional surface should not be recognised only from a memorised
+formula. We study it by intersecting it with simple planes. Fixing $z=k$ gives a
+horizontal section; fixing $x=k$ or $y=k$ gives a vertical section. The remaining
+equation describes a familiar planar curve.
+
+For the ellipsoid
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\]
+the section $z=k$ satisfies
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1-\frac{k^2}{c^2}.
+\]
+Thus $|k|<c$ gives an ellipse, $|k|=c$ gives one point, and $|k|>c$ gives no
+real points. The surface is understood as ellipses that grow from one endpoint,
+reach their largest size at $z=0$, and shrink to the other endpoint.
+
+For the elliptic paraboloid
+\[
+z=\frac{x^2}{a^2}+\frac{y^2}{b^2},
+\]
+the section $z=k$ is
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=k.
+\]
+There are no points for $k<0$, one vertex for $k=0$, and growing ellipses for
+$k>0$. Setting $y=0$ instead gives the parabola
+\[
+z=\frac{x^2}{a^2}.
+\]
+
+For the hyperboloid of one sheet
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1,
+\]
+the section $z=k$ becomes
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1+\frac{k^2}{c^2}.
+\]
+Every height gives an ellipse, smallest at $k=0$ and larger as $|k|$ grows.
+This explains the connected surface and its central waist.
+
+\begin{remarkbox}
+For every quadric below, ask which planar curve appears after one coordinate is
+fixed, for which values that curve exists, and how it changes as the cutting
+plane moves. The standard-form atlas records the surfaces; their sections
+explain them.
+\end{remarkbox}
