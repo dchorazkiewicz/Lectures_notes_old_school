@@ -18,14 +18,14 @@ Replace large monolithic section files with a stable hierarchy in which each sub
 
 - [x] Create refactor branch.
 - [x] Add `AGENTS.md` with editorial, structural, TikZ, and validation rules.
-- [ ] Split Chapter 1 Euclidean prerequisites into one section directory and subsection files.
-- [ ] Split Chapter 1 Cartesian-coordinate construction into one section directory and subsection files.
-- [ ] Split Chapter 1 polar-coordinate section where independent subsections are useful.
-- [ ] Split Chapter 2 vector section into one section directory and subsection files.
+- [x] Split Chapter 1 Euclidean prerequisites into one section directory and subsection files.
+- [x] Split Chapter 1 Cartesian-coordinate construction into one section directory and subsection files.
+- [x] Move the Chapter 1 polar-coordinate section into its own directory. It has no `\subsection` headings, so its text remains one file.
+- [x] Split Chapter 2 vector section into one section directory and subsection files.
 - [ ] Move line, plane, conic, and quadric sources into the chapter directories that actually include them.
 - [ ] Audit remaining active chapter sources and split only files that are still too large for safe focused editing.
-- [ ] Remove superseded monolithic sources after input-graph verification.
-- [ ] Run available PDF/CI builds after every completed stage.
+- [x] Remove the superseded Chapter 1 and Chapter 2 monolithic sources after input-graph verification.
+- [ ] Run the PDF build in CI. The repository build workflow is manual-dispatch only and local checkout was unavailable because the execution environment could not resolve `github.com`.
 - [ ] Compare the branch with `main` and open a draft pull request.
 
 ## Target convention
@@ -53,10 +53,10 @@ derived_constructions/
 
 ## Validation checklist for every stage
 
-- [ ] Parent `\input` points to the new section entry file.
-- [ ] Every new `\input` target exists.
-- [ ] Heading order matches the old monolithic file.
-- [ ] No active block appears twice.
-- [ ] Old source is unreferenced before deletion.
-- [ ] Commit diff contains structural changes only.
-- [ ] PDF build or repository CI succeeds when available.
+- [x] Parent `\input` points to the new section entry file for the migrated Chapter 1 and Chapter 2 sections.
+- [x] Every new `\input` target was created before the parent was switched.
+- [x] Heading order follows the old monolithic files.
+- [x] No migrated source remains active twice.
+- [x] Old migrated sources were unreferenced before deletion.
+- [x] Structural commits were kept separate from mathematical editing.
+- [ ] PDF build succeeds in GitHub Actions.
