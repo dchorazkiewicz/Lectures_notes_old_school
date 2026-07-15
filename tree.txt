@@ -304,11 +304,8 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_03_planes_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_03/section_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/section_02_quadric_surfaces.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_04
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_04/section_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_05
 ./mathematical_lectures/mathematical_stories/chapters/chapter_05.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_05/section_01.tex
