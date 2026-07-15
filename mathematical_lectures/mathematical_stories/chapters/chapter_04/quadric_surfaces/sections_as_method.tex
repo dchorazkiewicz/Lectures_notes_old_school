@@ -2,10 +2,22 @@
 
 A three-dimensional surface should not be recognised only from a memorised
 formula. We study it by intersecting it with simple planes. Fixing $z=k$ gives a
-horizontal section; fixing $x=k$ or $y=k$ gives a vertical section. The remaining
-equation describes a familiar planar curve.
+horizontal section; fixing $x=k$ or $y=k$ gives vertical sections. The remaining
+equation describes a planar curve already studied in this chapter.
 
-For the ellipsoid
+The same questions will be asked repeatedly:
+\begin{enumerate}
+    \item Which curve appears in a chosen cutting plane?
+    \item For which values of the parameter does that curve exist?
+    \item How does the section change as the plane moves?
+    \item What does that family of sections reveal about the whole surface?
+\end{enumerate}
+This repetition is intentional. It is a method of investigation, not a list of
+unrelated recognition tricks.
+
+\subsection{Ellipsoid}
+
+For
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
 \]
@@ -17,7 +29,9 @@ Thus $|k|<c$ gives an ellipse, $|k|=c$ gives one point, and $|k|>c$ gives no
 real points. The surface is understood as ellipses that grow from one endpoint,
 reach their largest size at $z=0$, and shrink to the other endpoint.
 
-For the elliptic paraboloid
+\subsection{Elliptic paraboloid}
+
+For
 \[
 z=\frac{x^2}{a^2}+\frac{y^2}{b^2},
 \]
@@ -26,12 +40,35 @@ the section $z=k$ is
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=k.
 \]
 There are no points for $k<0$, one vertex for $k=0$, and growing ellipses for
-$k>0$. Setting $y=0$ instead gives the parabola
+$k>0$. Setting $y=0$ gives the parabola
 \[
 z=\frac{x^2}{a^2}.
 \]
+The horizontal and vertical sections together explain both the opening direction
+and the shape near the vertex.
 
-For the hyperboloid of one sheet
+\subsection{Hyperbolic paraboloid}
+
+For
+\[
+z=\frac{x^2}{a^2}-\frac{y^2}{b^2},
+\]
+the horizontal section $z=k$ is
+\[
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=k.
+\]
+For $k>0$ the hyperbolas open in the $x$ direction; for $k<0$ they open in the
+$y$ direction. At $k=0$ the equation factors into two lines:
+\[
+\left(\frac xa-\frac yb\right)
+\left(\frac xa+\frac yb\right)=0.
+\]
+The vertical sections $y=0$ and $x=0$ are parabolas opening in opposite
+directions. These changing sections explain the saddle shape.
+
+\subsection{Hyperboloid of one sheet}
+
+For
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1,
 \]
@@ -40,11 +77,56 @@ the section $z=k$ becomes
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1+\frac{k^2}{c^2}.
 \]
 Every height gives an ellipse, smallest at $k=0$ and larger as $|k|$ grows.
-This explains the connected surface and its central waist.
+Because a nonempty section exists at every height, the surface remains connected
+and has a central waist.
 
-\begin{remarkbox}
-For every quadric below, ask which planar curve appears after one coordinate is
-fixed, for which values that curve exists, and how it changes as the cutting
-plane moves. The standard-form atlas records the surfaces; their sections
-explain them.
-\end{remarkbox}
+\subsection{Hyperboloid of two sheets}
+
+For
+\[
+-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\]
+the section $z=k$ satisfies
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}-1.
+\]
+There are no points when $|k|<c$, one point when $|k|=c$, and ellipses when
+$|k|>c$. The empty band around $z=0$ separates the surface into two components.
+The algebraic absence of sections explains the geometric gap.
+
+\subsection{Elliptic cone}
+
+For
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0,
+\]
+the section $z=k$ is
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}.
+\]
+At $k=0$ the section is one point. For positive and negative $k$ we obtain
+ellipses of the same size whenever the absolute heights agree. This symmetry
+produces two nappes meeting at the origin.
+
+\subsection{Cylinders}
+
+If one coordinate is absent, moving in that coordinate direction never changes
+whether the equation is satisfied. For example,
+\[
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+\]
+has the same elliptical section for every value of $z$. The ellipse is therefore
+carried unchanged along the $z$ direction, producing an elliptic cylinder.
+Likewise,
+\[
+y=x^2
+\]
+produces the same parabola in every plane $z=k$, hence a parabolic cylinder.
+
+\begin{summarybox}
+A standard equation names a surface, but its sections explain the surface. Empty
+sections reveal gaps, shrinking sections reveal endpoints or vertices, changing
+conic types reveal saddle behaviour, and an absent coordinate reveals a direction
+of translation. The atlas below records the standard forms; this method explains
+why those forms have the geometry shown in their diagrams.
+\end{summarybox}
