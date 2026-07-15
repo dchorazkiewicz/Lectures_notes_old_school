@@ -339,6 +339,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_cartesian_plane
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_cartesian_plane/core.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_cartesian_plane/geometric_construction.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_cartesian_plane/parametric_equation.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_cartesian_plane/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03/lines_in_space
