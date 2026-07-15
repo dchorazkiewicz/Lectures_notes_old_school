@@ -4,21 +4,171 @@ An angle exists geometrically before it is assigned a number. We can compare,
 copy, add, and bisect angles without degrees or radians. A numerical angle
 measure requires an additional choice of unit.
 
-Degrees divide one full turn into $360$ equal parts. Radians use the geometry
-of a circle. If an angle at the centre of a circle cuts off an arc of length
-$s$ on a circle of radius $r$, its radian measure is
+\begin{definitionbox}
+Let $r_1$ and $r_2$ be two rays with the same initial point $O$. The rays,
+together with a choice of one of the two regions between them, determine an
+angle $\alpha$ with vertex $O$.
+\end{definitionbox}
+
+The angle is the chosen geometric region. It is neither the small arc drawn
+near the vertex nor a number. The arc is only a graphical mark indicating
+which region has been selected.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.4,0);
+    \coordinate (B) at (1.7,2.8);
+    \fill[blue!8] (O) -- (A) arc[start angle=0,end angle=58.7,radius=3.4] -- cycle;
+    \draw[axis] (O) -- (A) node[right] {$r_1$};
+    \draw[axis] (O) -- (B) node[above] {$r_2$};
+    \draw[subset] (0.9,0) arc[start angle=0,end angle=58.7,radius=0.9];
+    \node[subset label] at (0.95,0.48) {$\alpha$};
+    \fill (O) circle (2pt) node[below left] {$O$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Why circles give a consistent measure}
+
+Draw a circle centred at $O$. The rays cut from the circle an arc corresponding
+to the chosen angle.
+
+\begin{theorembox}
+For every Euclidean circle, the ratio of circumference $C$ to diameter $D$ is
+the same constant:
 \[
-\theta=\frac{s}{r}.
+\frac{C}{D}=\pi.
 \]
-The ratio does not depend on the size of the circle: scaling the circle by a
-factor scales both $s$ and $r$ by that factor. Again, similarity makes the
-quantity well defined.
+This constant is called $\pi$. Since $D=2r$, every circle of radius $r$ has
+circumference
+\[
+\boxed{C=2\pi r}.
+\]
+\end{theorembox}
+
+The constancy of $C/D$ follows from similarity: enlarging a circle by a factor
+$\lambda$ multiplies every length, including its diameter, circumference, and
+corresponding arc lengths, by $\lambda$.
+
+If the same two rays meet two circles of radii $r_1$ and $r_2$ and cut arc
+lengths $s_1$ and $s_2$, then
+\[
+\frac{s_1}{s_2}=\frac{r_1}{r_2},
+\]
+and therefore
+\[
+\frac{s_1}{r_1}=\frac{s_2}{r_2}.
+\]
+Thus the quotient $s/r$ depends only on the angle, not on the chosen circle.
+
+\begin{definitionbox}
+Let $s$ be the length of the selected arc on a circle of radius $r$ centred at
+the vertex. The radian measure of $\alpha$ is
+\[
+\boxed{m_{\mathrm{rad}}(\alpha)=\frac{s}{r}}.
+\]
+\end{definitionbox}
+
+For a full turn, $s=2\pi r$, so
+\[
+m_{\mathrm{rad}}(\text{full turn})=2\pi.
+\]
+A half-turn has radian measure $\pi$, and a quarter-turn has radian measure
+$\pi/2$.
+
+Degrees are a second numerical scale. A full turn is assigned $360^\circ$, so
+\[
+2\pi\text{ radians}=360^\circ
+\]
+and
+\[
+\boxed{
+m_{\deg}(\alpha)
+=
+\frac{180^\circ}{\pi}\,m_{\mathrm{rad}}(\alpha)
+}.
+\]
+
+In particular, a constructible right angle has the numerical measures
+\[
+m_{\mathrm{rad}}(\text{right angle})=\frac{\pi}{2},
+\qquad
+m_{\deg}(\text{right angle})=90^\circ.
+\]
+The angle is still the geometric region; $\pi/2$ and $90^\circ$ are two numbers
+assigned to it by two different measurement systems.
+
+\subsubsection*{The Euclidean law of cosines}
+
+Directly measuring an arc is often difficult. A triangle provides another way
+to recover the measure of an angle. Choose points
+\[
+A\in r_1\setminus\{O\},
+\qquad
+B\in r_2\setminus\{O\}.
+\]
+The points form the Euclidean triangle $OAB$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (4.4,0);
+    \coordinate (B) at (1.55,3.0);
+
+    \fill[blue!6] (O) -- (1.0,0)
+        arc[start angle=0,end angle=62.7,radius=1.0] -- cycle;
+
+    \draw[subset] (O) -- (A) node[midway,below=5pt] {$OA$};
+    \draw[subset] (O) -- (B) node[midway,left=7pt] {$OB$};
+    \draw[subset] (A) -- (B) node[midway,above right=3pt] {$AB$};
+
+    \draw[subset] (0.78,0)
+        arc[start angle=0,end angle=62.7,radius=0.78];
+    \node[subset label] at (0.88,0.42) {$\alpha$};
+
+    \fill (O) circle (2.1pt) node[below left] {$O$};
+    \fill (A) circle (2.1pt) node[below right] {$A$};
+    \fill (B) circle (2.1pt) node[above] {$B$};
+
+    \node[align=left,anchor=west] at (5.0,2.35) {
+        adjacent to $\alpha$:\\
+        $OA$ and $OB$
+    };
+    \node[align=left,anchor=west] at (5.0,0.65) {
+        opposite $\alpha$:\\
+        $AB$
+    };
+\end{tikzpicture}
+\end{center}
+
+\begin{theorembox}
+If $\alpha=\angle AOB$, then the side lengths of the Euclidean triangle satisfy
+\[
+\boxed{
+AB^2=OA^2+OB^2-2(OA)(OB)\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr)
+}.
+\]
+\end{theorembox}
+
+The theorem belongs to Euclidean geometry; it does not require Cartesian
+coordinates. Solving it for the angle measure gives
+\[
+\boxed{
+m_{\mathrm{rad}}(\alpha)
+=
+\arccos\left(
+\frac{OA^2+OB^2-AB^2}{2(OA)(OB)}
+\right)
+}.
+\]
+Later, coordinates will provide a convenient arithmetic method for calculating
+the three Euclidean lengths $OA$, $OB$, and $AB$.
 
 \begin{remarkbox}
 At this point no vector has been introduced. We have only Euclidean objects,
-postulates, constructions, similarity, trigonometric ratios, and numerical
-angle measure. Vectors will appear only in the next chapter, after the
-Cartesian coordinate system has been constructed.
+postulates, constructions, similarity, trigonometric ratios, numerical angle
+measure, and the Euclidean law of cosines. Vectors will appear only in the next
+chapter, after the Cartesian coordinate system has been constructed.
 \end{remarkbox}
 
 The next step is to choose two perpendicular lines, an origin, directions, and
