@@ -118,9 +118,9 @@ The points form the Euclidean triangle $OAB$.
     \fill[blue!6] (O) -- (1.0,0)
         arc[start angle=0,end angle=62.7,radius=1.0] -- cycle;
 
-    \draw[subset] (O) -- (A) node[midway,below=5pt] {$OA$};
-    \draw[subset] (O) -- (B) node[midway,left=7pt] {$OB$};
-    \draw[subset] (A) -- (B) node[midway,above right=3pt] {$AB$};
+    \draw[subset] (O) -- (A) node[midway,below=5pt] {$|OA|$};
+    \draw[subset] (O) -- (B) node[midway,left=7pt] {$|OB|$};
+    \draw[subset] (A) -- (B) node[midway,above right=3pt] {$|AB|$};
 
     \draw[subset] (0.78,0)
         arc[start angle=0,end angle=62.7,radius=0.78];
@@ -132,11 +132,11 @@ The points form the Euclidean triangle $OAB$.
 
     \node[align=left,anchor=west] at (5.0,2.35) {
         adjacent to $\alpha$:\\
-        $OA$ and $OB$
+        $|OA|$ and $|OB|$
     };
     \node[align=left,anchor=west] at (5.0,0.65) {
         opposite $\alpha$:\\
-        $AB$
+        $|AB|$
     };
 \end{tikzpicture}
 \end{center}
@@ -145,7 +145,7 @@ The points form the Euclidean triangle $OAB$.
 If $\alpha=\angle AOB$, then the side lengths of the Euclidean triangle satisfy
 \[
 \boxed{
-AB^2=OA^2+OB^2-2(OA)(OB)\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr)
+|AB|^2=|OA|^2+|OB|^2-2|OA|\,|OB|\cos\bigl(m_{\mathrm{rad}}(\alpha)\bigr)
 }.
 \]
 \end{theorembox}
@@ -157,12 +157,12 @@ coordinates. Solving it for the angle measure gives
 m_{\mathrm{rad}}(\alpha)
 =
 \arccos\left(
-\frac{OA^2+OB^2-AB^2}{2(OA)(OB)}
+\frac{|OA|^2+|OB|^2-|AB|^2}{2|OA|\,|OB|}
 \right)
 }.
 \]
 Later, coordinates will provide a convenient arithmetic method for calculating
-the three Euclidean lengths $OA$, $OB$, and $AB$.
+the three Euclidean lengths $|OA|$, $|OB|$, and $|AB|$.
 
 \begin{remarkbox}
 At this point no vector has been introduced. We have only Euclidean objects,
