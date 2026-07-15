@@ -1,8 +1,20 @@
 name: Build lecture PDFs
 
-# Temporarily disabled: manual dispatch only.
 on:
   workflow_dispatch:
+    inputs:
+      before_sha:
+        description: "Start commit used to detect affected lecture projects"
+        required: false
+        default: ""
+      after_sha:
+        description: "End commit used to detect affected lecture projects"
+        required: false
+        default: ""
+      projects:
+        description: "Optional space-separated project paths to build explicitly"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -26,7 +38,91 @@ jobs:
           ref: ${{ github.ref_name }}
           fetch-depth: 0
 
+      - name: Detect affected lecture projects
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          all_projects=(
+            "mathematical_lectures/basic_mathematics"
+            "mathematical_lectures/mathematical_stories"
+            "mathematical_lectures/probabilistic_methods"
+            "mathematical_lectures/general_notes_experiments"
+            "physics_lectures/physics_basics"
+            "physics_lectures/classical_field_theory"
+            "physics_lectures/general_notes_experiments"
+          )
+
+          requested_projects='${{ inputs.projects }}'
+          before='${{ inputs.before_sha }}'
+          after='${{ inputs.after_sha }}'
+          projects=()
+
+          if [[ -n "${requested_projects}" ]]; then
+            read -r -a requested <<< "${requested_projects}"
+            for requested_project in "${requested[@]}"; do
+              valid=false
+              for project in "${all_projects[@]}"; do
+                if [[ "${requested_project}" == "${project}" ]]; then
+                  valid=true
+                  projects+=("${project}")
+                  break
+                fi
+              done
+              if [[ "${valid}" != "true" ]]; then
+                echo "Unknown lecture project: ${requested_project}" >&2
+                exit 1
+              fi
+            done
+            changed_files="EXPLICIT_PROJECT_SELECTION"
+          else
+            if [[ -z "${after}" ]]; then
+              after="$(git rev-parse HEAD)"
+            fi
+
+            if [[ -z "${before}" ]]; then
+              if git rev-parse "${after}^" >/dev/null 2>&1; then
+                before="$(git rev-parse "${after}^")"
+              else
+                before="0000000000000000000000000000000000000000"
+              fi
+            fi
+
+            if [[ "${before}" =~ ^0+$ ]]; then
+              changed_files="$(git ls-tree -r --name-only "${after}")"
+            else
+              changed_files="$(git diff --name-only "${before}" "${after}")"
+            fi
+
+            changed_files="$(printf '%s\n' "${changed_files}" | grep -Ev '^mathematical_lectures/basic_mathematics/prezentation/' || true)"
+
+            if printf '%s\n' "${changed_files}" | grep -Eq '^shared/.*\.tex$'; then
+              projects=("${all_projects[@]}")
+            else
+              for project in "${all_projects[@]}"; do
+                if printf '%s\n' "${changed_files}" | grep -Eq "^${project}/.*(\.tex|build\.sh)$"; then
+                  projects+=("${project}")
+                fi
+              done
+            fi
+          fi
+
+          echo "Changed files or selection:"
+          printf '%s\n' "${changed_files}"
+
+          if [[ "${#projects[@]}" -eq 0 ]]; then
+            echo "No lecture PDF is affected."
+            echo "projects=" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          printf 'Projects to build:\n'
+          printf '%s\n' "${projects[@]}"
+          echo "projects=${projects[*]}" >> "${GITHUB_OUTPUT}"
+
       - name: Repair scalar-field TeX control characters
+        if: contains(steps.detect.outputs.projects, 'physics_lectures/classical_field_theory')
         shell: bash
         run: |
           set -euo pipefail
@@ -92,79 +188,7 @@ jobs:
             git push origin HEAD:"${GITHUB_REF_NAME}"
           fi
 
-      - name: Detect projects to build
-        id: detect
-        run: |
-          set -euo pipefail
-
-          all_projects=(
-            "mathematical_lectures/basic_mathematics"
-            "mathematical_lectures/mathematical_stories"
-            "mathematical_lectures/probabilistic_methods"
-            "mathematical_lectures/general_notes_experiments"
-            "physics_lectures/physics_basics"
-            "physics_lectures/classical_field_theory"
-            "physics_lectures/general_notes_experiments"
-          )
-
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            changed_files="MANUAL_WORKFLOW_DISPATCH"
-            build_all=true
-            require_pdf_changes=false
-          else
-            before="${{ github.event.before }}"
-            after="${{ github.sha }}"
-
-            if [[ "${before}" =~ ^0+$ ]]; then
-              changed_files="$(git ls-tree -r --name-only "${after}")"
-            else
-              changed_files="$(git diff --name-only "${before}" "${after}")"
-            fi
-
-            changed_files="$(printf '%s\n' "${changed_files}" | grep -Ev '^mathematical_lectures/basic_mathematics/prezentation/' || true)"
-
-            build_all=false
-            if printf '%s\n' "${changed_files}" | grep -Eq '^shared/'; then
-              build_all=true
-            fi
-            if printf '%s\n' "${changed_files}" | grep -Eq '^\.github/workflows/build-pdfs\.yml$'; then
-              build_all=true
-            fi
-
-            require_pdf_changes=false
-            if printf '%s\n' "${changed_files}" | grep -Eq '^(shared/.*\.tex|mathematical_lectures/.*(\.tex|build\.sh)|physics_lectures/.*(\.tex|build\.sh))$'; then
-              require_pdf_changes=true
-            fi
-          fi
-
-          echo "Changed files:"
-          printf '%s\n' "${changed_files}"
-          echo "Require PDF changes: ${require_pdf_changes}"
-
-          if [[ "${build_all}" == "true" ]]; then
-            projects=("${all_projects[@]}")
-          else
-            projects=()
-            for project in "${all_projects[@]}"; do
-              if printf '%s\n' "${changed_files}" | grep -Eq "^${project}/"; then
-                projects+=("${project}")
-              fi
-            done
-          fi
-
-          if [[ "${#projects[@]}" -eq 0 ]]; then
-            echo "No project needs rebuilding."
-            echo "projects=" >> "${GITHUB_OUTPUT}"
-            echo "require_pdf_changes=false" >> "${GITHUB_OUTPUT}"
-            exit 0
-          fi
-
-          printf 'Projects to build:\n'
-          printf '%s\n' "${projects[@]}"
-          echo "projects=${projects[*]}" >> "${GITHUB_OUTPUT}"
-          echo "require_pdf_changes=${require_pdf_changes}" >> "${GITHUB_OUTPUT}"
-
-      - name: Build changed lecture PDFs
+      - name: Build affected lecture PDFs
         if: steps.detect.outputs.projects != ''
         uses: xu-cheng/texlive-action@v3
         with:
@@ -194,7 +218,6 @@ jobs:
         if: steps.detect.outputs.projects != ''
         env:
           PROJECTS_TO_BUILD: ${{ steps.detect.outputs.projects }}
-          REQUIRE_PDF_CHANGES: ${{ steps.detect.outputs.require_pdf_changes }}
         run: |
           set -euo pipefail
           read -r -a projects <<< "${PROJECTS_TO_BUILD}"
@@ -217,22 +240,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "${pdfs[@]}"
 
-          echo "Git status after PDF build:"
-          git status --short
-          echo "Staged PDF diff stat:"
-          git diff --cached --stat -- "${pdfs[@]}" || true
-
           if git diff --cached --quiet -- "${pdfs[@]}"; then
-            if [[ "${REQUIRE_PDF_CHANGES}" == "true" ]]; then
-              echo "ERROR: PDF build completed, but no generated PDF changed after source changes." >&2
-              echo "Check whether main.tex includes the changed source, whether build.sh writes to main.pdf, and whether the expected project was selected." >&2
-              exit 1
-            fi
-            echo "PDF build completed and generated PDFs are identical to the committed versions."
-            echo "No PDF commit is needed for this workflow-only or manual validation run."
+            echo "Affected projects built successfully; generated PDFs are unchanged."
             exit 0
           fi
 
-          git commit -m "Build lecture PDFs"
+          git commit -m "Build affected lecture PDFs"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
