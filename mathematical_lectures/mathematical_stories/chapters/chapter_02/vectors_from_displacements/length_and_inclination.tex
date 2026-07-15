@@ -1,0 +1,42 @@
+\subsection{Length and Inclination}
+
+Draw $\mathbf v=(v_1,v_2)$ from the origin. Its endpoint and the coordinate axes
+form a right triangle. The Pythagorean theorem gives
+\[
+\|\mathbf v\|^2=v_1^2+v_2^2,
+\qquad
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2}.
+\]
+Consequently,
+\[
+d(A,B)=\|B-A\|.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (4,2.7);
+    \coordinate (R) at (4,0);
+    \draw[subset,->] (O) -- (P) node[midway,above left] {$\mathbf v$};
+    \draw[helper] (O) -- (R) node[midway,below] {$|v_1|$};
+    \draw[helper] (R) -- (P) node[midway,right] {$|v_2|$};
+    \draw (R) ++(-0.28,0) -- ++(0,0.28) -- ++(0.28,0);
+\end{tikzpicture}
+\end{center}
+
+Let $\alpha$ be the angle of inclination of a nonzero vector $\mathbf v$ from
+the positive horizontal direction. The coordinate projections of $\mathbf v$
+are
+\[
+v_1=\|\mathbf v\|\cos\alpha,
+\qquad
+v_2=\|\mathbf v\|\sin\alpha.
+\]
+Thus
+\[
+\mathbf v
+=
+\|\mathbf v\|(\cos\alpha,\sin\alpha).
+\]
+This representation applies to every nonzero vector; no vector has been chosen
+as a special coordinate axis.
