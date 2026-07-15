@@ -1,0 +1,49 @@
+\subsection{The Same Coordinate Ideas in Three Dimensions}
+
+In $\mathbb R^3$, a vector is a displacement
+\[
+\mathbf v=(v_1,v_2,v_3),
+\]
+and addition and scaling remain componentwise. Applying the Pythagorean theorem
+twice gives
+\[
+\|\mathbf v\|
+=
+\sqrt{v_1^2+v_2^2+v_3^2}.
+\]
+
+Two nonparallel vectors in space determine two independent directions. To
+construct a vector perpendicular to both, solve the corresponding two dot-product
+conditions. The resulting expression is
+\[
+\mathbf u\times\mathbf v
+=
+\bigl(
+ u_2v_3-u_3v_2,
+ u_3v_1-u_1v_3,
+ u_1v_2-u_2v_1
+\bigr).
+\]
+Direct substitution verifies
+\[
+(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
+\qquad
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0.
+\]
+Thus the cross product is introduced as a constructed solution to two explicit
+perpendicularity conditions.
+
+\begin{summarybox}
+A vector was introduced as a coordinate displacement. Successive displacements
+forced vector addition, and repetition forced scalar multiplication. Writing
+arbitrary vectors through their lengths and inclination angles allowed the sine
+of the angle difference to produce the parallelism test and the cosine of the
+same difference to produce the dot product, perpendicularity, and the formula
+\[
+\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\]
+Expanding $\|\mathbf u-\mathbf v\|^2$ then produced the cosine theorem. Projection
+and the cross product arose by solving explicit perpendicularity conditions.
+\end{summarybox}
