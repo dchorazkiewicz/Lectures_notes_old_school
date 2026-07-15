@@ -321,7 +321,6 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_04_second_degree_equations.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_01_vectors_revised.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_02_lines_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/section_03_planes_in_space.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements
