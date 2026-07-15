@@ -1,0 +1,130 @@
+\section{Conic Sections: From Geometric Conditions to Equations}
+
+The previous chapter studied sets determined by first-degree equations. A line
+could be constructed from a point and a direction, or characterised by a
+perpendicularity condition. We now ask a different kind of question:
+
+\begin{center}
+\emph{What curves arise when distances between moving and fixed geometric
+objects are constrained?}
+\end{center}
+
+Distance in Cartesian coordinates contains squares. When a geometric distance
+condition is written algebraically and square roots are removed, second-degree
+terms appear naturally. Quadratic equations are therefore not introduced as an
+arbitrary next list of formulas; they arise from simple Euclidean questions.
+
+\subsection{A circle: one fixed point and one fixed distance}
+
+Fix a centre $C=(h,k)$ and a number $r>0$. A point $P=(x,y)$ belongs to the
+circle precisely when
+\[
+d(P,C)=r.
+\]
+Using the Euclidean distance formula,
+\[
+\sqrt{(x-h)^2+(y-k)^2}=r.
+\]
+Both sides are nonnegative, so squaring preserves the condition:
+\[
+\boxed{(x-h)^2+(y-k)^2=r^2.}
+\]
+The familiar quadratic equation has therefore been derived from the geometric
+definition of a circle.
+
+\subsection{A parabola: equal distance from a point and a line}
+
+Fix a point $F$, called the focus, and a line $D$, called the directrix. A
+parabola is the set of points whose distance from $F$ equals their distance from
+$D$.
+
+Choose coordinates so that
+\[
+F=(0,p),
+\qquad
+D:\ y=-p,
+\qquad p>0.
+\]
+For $P=(x,y)$, the two distances are
+\[
+d(P,F)=\sqrt{x^2+(y-p)^2}
+\]
+and
+\[
+d(P,D)=|y+p|.
+\]
+On the resulting parabola $y\geq-p$, so $|y+p|=y+p$. The defining equality gives
+\[
+\sqrt{x^2+(y-p)^2}=y+p.
+\]
+Squaring and cancelling equal terms,
+\[
+x^2+y^2-2py+p^2=y^2+2py+p^2,
+\]
+so
+\[
+\boxed{x^2=4py.}
+\]
+The equation is not the definition. It is the Cartesian form of the equal-distance
+condition.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85,>=stealth]
+    \draw[axis] (-4.0,0) -- (4.2,0) node[right] {$x$};
+    \draw[axis] (0,-2.0) -- (0,5.0) node[above] {$y$};
+    \draw[gray,thick] (-3.7,-1.2) -- (3.7,-1.2)
+        node[right] {directrix $D$};
+    \coordinate (F) at (0,1.2);
+    \coordinate (P) at (2.4,1.2);
+    \coordinate (H) at (2.4,-1.2);
+    \draw[subset,domain=-3.0:3.0,samples=100] plot (\x,{0.2083*\x*\x});
+    \draw[blue!70!black,line width=1pt] (F)--(P)
+        node[midway,above] {$d(P,F)$};
+    \draw[orange!85!black,line width=1pt] (P)--(H)
+        node[midway,right] {$d(P,D)$};
+    \fill[geometricSubsetColor] (F) circle (2pt) node[above left] {$F$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Two foci: ellipse and hyperbola}
+
+Fix two distinct points $F_1,F_2$.
+
+\begin{definitionbox}
+An ellipse is the set of points $P$ for which
+\[
+\boxed{d(P,F_1)+d(P,F_2)=2a}
+\]
+for a fixed constant $2a>d(F_1,F_2)$.
+\end{definitionbox}
+
+The sum condition keeps the moving point in a bounded region. It is the
+principle behind the classical string construction of an ellipse.
+
+\begin{definitionbox}
+A hyperbola is the set of points $P$ for which
+\[
+\boxed{|d(P,F_1)-d(P,F_2)|=2a}
+\]
+for a fixed positive constant smaller than $d(F_1,F_2)$.
+\end{definitionbox}
+
+The difference condition produces two separated branches. After choosing axes
+adapted to the symmetry of the two foci and eliminating square roots, these
+conditions yield the standard equations developed below.
+
+\subsection{Why these curves form one family}
+
+A circle, ellipse, parabola, and hyperbola can also be obtained by intersecting
+a double cone with planes of different inclination. This geometric origin gives
+the name \emph{conic sections}. The distance definitions explain the curves in
+the plane; the cone picture explains why the same four forms belong to one
+family.
+
+\begin{remarkbox}
+The rest of the chapter studies how these geometric sets appear in Cartesian
+equations. Standard forms, translations, rotations, and discriminants are tools
+for recognising the object already present in the equation. They do not replace
+the geometric definition of the curve.
+\end{remarkbox}
