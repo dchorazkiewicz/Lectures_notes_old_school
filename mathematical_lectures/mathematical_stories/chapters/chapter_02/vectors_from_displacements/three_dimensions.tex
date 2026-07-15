@@ -48,13 +48,107 @@ In three dimensions there is another natural question. Given two vectors
 \(\mathbf u\) and \(\mathbf v\), can we construct a new vector perpendicular to
 both of them?
 
-For
+Let
 \[
 \mathbf u=(u_1,u_2,u_3),
 \qquad
 \mathbf v=(v_1,v_2,v_3),
 \]
-define
+and seek
+\[
+\mathbf n=(n_1,n_2,n_3)
+\]
+satisfying
+\[
+\mathbf n\cdot\mathbf u=0,
+\qquad
+\mathbf n\cdot\mathbf v=0.
+\]
+Written in coordinates, these are the two equations
+\[
+\begin{aligned}
+n_1u_1+n_2u_2+n_3u_3&=0,\\
+n_1v_1+n_2v_2+n_3v_3&=0.
+\end{aligned}
+\]
+We now derive one explicit nonzero solution when the two given vectors are not
+parallel.
+
+Multiply the first equation by \(v_3\), multiply the second by \(u_3\), and
+subtract. The terms containing \(n_3\) cancel:
+\[
+\begin{aligned}
+&n_1u_1v_3+n_2u_2v_3+n_3u_3v_3\\
+&\qquad-
+\left(n_1v_1u_3+n_2v_2u_3+n_3v_3u_3\right)=0,
+\end{aligned}
+\]
+so
+\[
+n_1(u_1v_3-u_3v_1)
++n_2(u_2v_3-u_3v_2)=0.
+\]
+Choose
+\[
+n_1=u_2v_3-u_3v_2,
+\qquad
+n_2=u_3v_1-u_1v_3.
+\]
+Then the preceding equation becomes
+\[
+\begin{aligned}
+&(u_2v_3-u_3v_2)(u_1v_3-u_3v_1)\\
+&\qquad+
+(u_3v_1-u_1v_3)(u_2v_3-u_3v_2)=0,
+\end{aligned}
+\]
+because the second factor in the first product is the negative of the first
+factor in the second product.
+
+To satisfy the original equations as well, take
+\[
+n_3=u_1v_2-u_2v_1.
+\]
+This gives the vector
+\[
+\boxed{
+\mathbf n
+=
+\bigl(
+ u_2v_3-u_3v_2,
+ u_3v_1-u_1v_3,
+ u_1v_2-u_2v_1
+\bigr)
+}.
+\]
+Now verify the first perpendicularity condition by expanding every term:
+\[
+\begin{aligned}
+\mathbf n\cdot\mathbf u
+&=u_1(u_2v_3-u_3v_2)
+ +u_2(u_3v_1-u_1v_3)
+ +u_3(u_1v_2-u_2v_1)\\
+&=u_1u_2v_3-u_1u_3v_2
+ +u_2u_3v_1-u_1u_2v_3
+ +u_1u_3v_2-u_2u_3v_1\\
+&=0.
+\end{aligned}
+\]
+The same calculation for the second vector gives
+\[
+\begin{aligned}
+\mathbf n\cdot\mathbf v
+&=v_1(u_2v_3-u_3v_2)
+ +v_2(u_3v_1-u_1v_3)
+ +v_3(u_1v_2-u_2v_1)\\
+&=u_2v_1v_3-u_3v_1v_2
+ +u_3v_1v_2-u_1v_2v_3
+ +u_1v_2v_3-u_2v_1v_3\\
+&=0.
+\end{aligned}
+\]
+Thus the formula has been constructed from the two right-angle conditions; it
+has not been postulated. We now give this derived vector a name:
 \[
 \boxed{
 \mathbf u\times\mathbf v
@@ -66,8 +160,7 @@ define
 \bigr)
 }.
 \]
-This formula is useful only because of what it guarantees. Direct substitution
-gives
+Consequently,
 \[
 \boxed{
 (\mathbf u\times\mathbf v)\cdot\mathbf u=0,
@@ -75,8 +168,6 @@ gives
 (\mathbf u\times\mathbf v)\cdot\mathbf v=0
 }.
 \]
-Therefore \(\mathbf u\times\mathbf v\) is perpendicular to both original
-vectors.
 
 The statement is stronger. Every linear combination
 \[
