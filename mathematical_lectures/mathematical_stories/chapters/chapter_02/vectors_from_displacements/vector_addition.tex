@@ -1,55 +1,103 @@
-\subsection{Two Successive Displacements Force Vector Addition}
+\subsection{Two Journeys Become One: Why Vectors Add}
 
-Start at an arbitrary point $(x,y)$. First apply
+Suppose a point is moved twice. The first displacement is
 \[
 \mathbf u=(u_1,u_2),
 \]
-and then
+and the second is
 \[
 \mathbf v=(v_1,v_2).
 \]
-The successive endpoints are
+We want one vector that has exactly the same final effect as these two moves
+performed successively.
+
+Start at an arbitrary point $(x,y)$. After applying $\mathbf u$ we are at
 \[
-(x,y)
-\longmapsto
-(x+u_1,y+u_2)
-\longmapsto
-(x+u_1+v_1,y+u_2+v_2).
+(x+u_1,\,y+u_2).
 \]
-Therefore the single displacement with the same effect must be
+Applying $\mathbf v$ from there gives
 \[
+(x+u_1+v_1,\,y+u_2+v_2).
+\]
+Relative to the original point, the total horizontal change is $u_1+v_1$ and
+the total vertical change is $u_2+v_2$. Therefore the single displacement with
+the same effect is forced to be
+\[
+\boxed{
 \mathbf u+\mathbf v
 =
-(u_1+v_1,\,u_2+v_2).
+(u_1+v_1,\,u_2+v_2)
+}.
 \]
-The rule is forced by the experiment; it is not introduced as a convention to
-memorise.
 
-Because addition of real numbers is commutative, applying $\mathbf u$ and then
-$\mathbf v$ reaches the same endpoint as applying $\mathbf v$ and then
-$\mathbf u$. This produces the parallelogram rule.
+The formula is simply bookkeeping for a journey performed in two stages. It
+adds changes of the same kind: horizontal change to horizontal change and
+vertical change to vertical change.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.95]
+\begin{tikzpicture}[scale=0.95,>=stealth]
     \coordinate (O) at (0,0);
     \coordinate (U) at (3.2,0.9);
     \coordinate (V) at (1.0,2.5);
     \coordinate (S) at (4.2,3.4);
-    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
-    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
-    \draw[helper] (U) -- (S);
-    \draw[helper] (V) -- (S);
-    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
+
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (U)
+        node[midway,below] {$\mathbf u$};
+    \draw[orange!85!black,line width=1.1pt,->] (U) -- (S)
+        node[midway,right] {$\mathbf v$};
+    \draw[very thick,->] (O) -- (S)
+        node[midway,above left] {$\mathbf u+\mathbf v$};
+
+    \draw[orange!85!black,dashed,->] (O) -- (V)
+        node[midway,left] {$\mathbf v$};
+    \draw[blue!70!black,dashed,->] (V) -- (S)
+        node[midway,above] {$\mathbf u$};
+
+    \fill (O) circle (2pt) node[below left] {start};
+    \fill (U) circle (2pt);
+    \fill (V) circle (2pt);
+    \fill (S) circle (2pt) node[above right] {finish};
 \end{tikzpicture}
 \end{center}
 
-Subtraction is the displacement that undoes another displacement:
+The diagram contains two routes to the same endpoint:
 \[
+\mathbf u\text{ then }\mathbf v,
+\qquad
+\mathbf v\text{ then }\mathbf u.
+\]
+They agree because addition of real numbers is commutative:
+\[
+u_1+v_1=v_1+u_1,
+\qquad
+u_2+v_2=v_2+u_2.
+\]
+Hence
+\[
+\mathbf u+\mathbf v=\mathbf v+\mathbf u.
+\]
+Geometrically this is the parallelogram rule. Algebraically it is the fact that
+the order of adding coordinate changes does not affect the final position.
+
+Subtraction answers a different practical question: what displacement must be
+performed after $\mathbf v$ in order to have the same effect as $\mathbf u$?
+We seek a vector $\mathbf w$ satisfying
+\[
+\mathbf v+\mathbf w=\mathbf u.
+\]
+Solving coordinate by coordinate gives
+\[
+\boxed{
 \mathbf u-\mathbf v
 =
-(u_1-v_1,\,u_2-v_2).
+(u_1-v_1,\,u_2-v_2)
+}.
 \]
-In particular,
+In particular, the displacement from $A$ to $B$ is the position of $B$ minus
+the position of $A$:
 \[
 \overrightarrow{AB}=B-A.
 \]
+The expression does not subtract geometric points as physical objects. It
+subtracts their coordinate addresses to recover the change carrying one to the
+other.
