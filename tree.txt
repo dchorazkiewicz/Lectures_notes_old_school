@@ -352,6 +352,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04/conic_sections
+./mathematical_lectures/mathematical_stories/chapters/chapter_04/conic_sections/classification_scope.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04/conic_sections/geometric_origins.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04/conic_sections/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_04/quadric_surfaces
