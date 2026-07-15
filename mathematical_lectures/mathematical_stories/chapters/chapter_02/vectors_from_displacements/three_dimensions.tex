@@ -64,99 +64,108 @@ satisfying
 \qquad
 \mathbf n\cdot\mathbf v=0.
 \]
-Written in coordinates, these are the two equations
+In coordinates:
 \[
 \begin{aligned}
-n_1u_1+n_2u_2+n_3u_3&=0,\\
-n_1v_1+n_2v_2+n_3v_3&=0.
+u_1n_1+u_2n_2+u_3n_3&=0,\\
+v_1n_1+v_2n_2+v_3n_3&=0.
 \end{aligned}
 \]
-We now derive one explicit nonzero solution when the two given vectors are not
-parallel.
 
-Multiply the first equation by \(v_3\), multiply the second by \(u_3\), and
-subtract. The terms containing \(n_3\) cancel:
+We first assume that
 \[
-\begin{aligned}
-&n_1u_1v_3+n_2u_2v_3+n_3u_3v_3\\
-&\qquad-
-\left(n_1v_1u_3+n_2v_2u_3+n_3v_3u_3\right)=0,
-\end{aligned}
-\]
-so
-\[
-n_1(u_1v_3-u_3v_1)
-+n_2(u_2v_3-u_3v_2)=0.
+\Delta=u_1v_2-u_2v_1\neq0.
 \]
 Choose
 \[
-n_1=u_2v_3-u_3v_2,
-\qquad
-n_2=u_3v_1-u_1v_3.
+n_3=\Delta.
 \]
-Then the preceding equation becomes
+The two perpendicularity equations become the ordinary \(2\times2\) system
 \[
 \begin{aligned}
-&(u_2v_3-u_3v_2)(u_1v_3-u_3v_1)\\
-&\qquad+
-(u_3v_1-u_1v_3)(u_2v_3-u_3v_2)=0,
+u_1n_1+u_2n_2&=-u_3\Delta,\\
+v_1n_1+v_2n_2&=-v_3\Delta.
 \end{aligned}
 \]
-because the second factor in the first product is the negative of the first
-factor in the second product.
 
-To satisfy the original equations as well, take
+To find \(n_1\), multiply the first equation by \(v_2\), the second by
+\(u_2\), and subtract:
 \[
-n_3=u_1v_2-u_2v_1.
+\Delta n_1
+=
+\Delta(u_2v_3-u_3v_2).
 \]
-This gives the vector
+Because \(\Delta\neq0\),
+\[
+\boxed{n_1=u_2v_3-u_3v_2}.
+\]
+
+To find \(n_2\), multiply the first equation by \(v_1\), the second by
+\(u_1\), and subtract:
+\[
+-\Delta n_2
+=
+\Delta(u_1v_3-u_3v_1).
+\]
+Hence
+\[
+\boxed{n_2=u_3v_1-u_1v_3}.
+\]
+Together with
+\[
+\boxed{n_3=u_1v_2-u_2v_1},
+\]
+we have constructed
 \[
 \boxed{
 \mathbf n
 =
 \bigl(
- u_2v_3-u_3v_2,
- u_3v_1-u_1v_3,
- u_1v_2-u_2v_1
+u_2v_3-u_3v_2,
+\;u_3v_1-u_1v_3,
+\;u_1v_2-u_2v_1
 \bigr)
 }.
 \]
-Now verify the first perpendicularity condition by expanding every term:
+
+If \(\Delta=0\) but \(\mathbf u\) and \(\mathbf v\) are not parallel, then
+one of the other two coordinate pairs gives a nonzero determinant. Repeating the
+same elimination with that pair produces the same cyclic formula.
+
+Now verify the two right-angle conditions explicitly. First,
 \[
 \begin{aligned}
 \mathbf n\cdot\mathbf u
-&=u_1(u_2v_3-u_3v_2)
- +u_2(u_3v_1-u_1v_3)
- +u_3(u_1v_2-u_2v_1)\\
-&=u_1u_2v_3-u_1u_3v_2
- +u_2u_3v_1-u_1u_2v_3
- +u_1u_3v_2-u_2u_3v_1\\
+&=
+(u_1u_2v_3-u_1u_2v_3)\\
+&\quad+(-u_1u_3v_2+u_1u_3v_2)\\
+&\quad+(u_2u_3v_1-u_2u_3v_1)\\
 &=0.
 \end{aligned}
 \]
-The same calculation for the second vector gives
+Similarly,
 \[
 \begin{aligned}
 \mathbf n\cdot\mathbf v
-&=v_1(u_2v_3-u_3v_2)
- +v_2(u_3v_1-u_1v_3)
- +v_3(u_1v_2-u_2v_1)\\
-&=u_2v_1v_3-u_3v_1v_2
- +u_3v_1v_2-u_1v_2v_3
- +u_1v_2v_3-u_2v_1v_3\\
+&=
+(u_2v_1v_3-u_2v_1v_3)\\
+&\quad+(-u_3v_1v_2+u_3v_1v_2)\\
+&\quad+(-u_1v_2v_3+u_1v_2v_3)\\
 &=0.
 \end{aligned}
 \]
-Thus the formula has been constructed from the two right-angle conditions; it
-has not been postulated. We now give this derived vector a name:
+Every term has visibly cancelled with an equal term of opposite sign.
+
+The vector has therefore been derived from the two perpendicularity equations.
+We now give it a name:
 \[
 \boxed{
 \mathbf u\times\mathbf v
 =
 \bigl(
- u_2v_3-u_3v_2,
- u_3v_1-u_1v_3,
- u_1v_2-u_2v_1
+u_2v_3-u_3v_2,
+\;u_3v_1-u_1v_3,
+\;u_1v_2-u_2v_1
 \bigr)
 }.
 \]
