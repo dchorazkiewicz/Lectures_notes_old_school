@@ -1,0 +1,22 @@
+\subsection{Third Construction: The Perpendicular Line}
+
+Through $O$, construct the unique line perpendicular to the first line. The two
+constructed lines now intersect at a right angle. Only now do we have the
+geometric framework from which two coordinate axes can be made.
+
+We call the first line the $x$-axis, the perpendicular line the $y$-axis, and
+their intersection $O$ the origin.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-4.2,0) -- (4.4,0) node[right] {$x$};
+    \draw[axis] (0,-3.1) -- (0,3.3) node[above] {$y$};
+    \fill (0,0) circle (2pt);
+    \node[below left] at (0,0) {$O$};
+    \draw (0.26,0) -- (0.26,0.26) -- (0,0.26);
+\end{tikzpicture}
+\end{center}
+
+The axes are perpendicular because this was required in their geometric
+construction. No coordinate formula and no numerical angle measure has been
+used.

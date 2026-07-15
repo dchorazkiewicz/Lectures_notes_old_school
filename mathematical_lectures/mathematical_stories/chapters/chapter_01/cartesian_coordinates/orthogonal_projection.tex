@@ -1,0 +1,52 @@
+\subsection{Assigning Coordinates by Orthogonal Projection}
+
+Only after the axes, directions, common unit, integer marks, refined scale, and
+real labels have been constructed can an arbitrary point of the plane be given
+coordinates.
+
+Let $P$ be any point of the plane. Through $P$, construct the line perpendicular
+to the $x$-axis. It meets the $x$-axis at a unique point $P_x$. Through $P$,
+construct the line perpendicular to the $y$-axis. It meets the $y$-axis at a
+unique point $P_y$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-1.1,0) -- (5.0,0) node[right] {$x$};
+    \draw[axis] (0,-1.1) -- (0,4.0) node[above] {$y$};
+    \coordinate (P) at (3.2,2.4);
+    \coordinate (Px) at (3.2,0);
+    \coordinate (Py) at (0,2.4);
+    \draw[helper] (P) -- (Px);
+    \draw[helper] (P) -- (Py);
+    \fill (P) circle (2.2pt) node[above right] {$P$};
+    \fill (Px) circle (1.8pt) node[below] {$P_x$};
+    \fill (Py) circle (1.8pt) node[left] {$P_y$};
+\end{tikzpicture}
+\end{center}
+
+If the signed real labels of $P_x$ and $P_y$ are $x$ and $y$, respectively, we
+assign to $P$ the ordered pair
+\[
+P\longleftrightarrow(x,y).
+\]
+
+The construction is unambiguous because the perpendicular through a given point
+to a given line is unique. Conversely, given real numbers $x$ and $y$, locate
+the corresponding points on the two axes and construct through them lines
+perpendicular to their respective axes. Those two lines meet in exactly one
+point of the plane.
+
+\begin{theorembox}
+Once the two perpendicular axes, their positive directions, and a common unit
+are fixed, orthogonal projection gives a one-to-one correspondence
+\[
+\boxed{
+\text{points of the Euclidean plane}
+\longleftrightarrow
+\text{pairs }(x,y)\in\mathbb R^2
+}.
+\]
+The ordered pair is the numerical address of a geometric point in the chosen
+coordinate system. It is not the point itself and it is not the source of the
+geometry.
+\end{theorembox}

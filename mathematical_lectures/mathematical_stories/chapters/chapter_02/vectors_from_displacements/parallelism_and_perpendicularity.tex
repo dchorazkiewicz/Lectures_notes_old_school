@@ -1,0 +1,217 @@
+\subsection{One Angle Calculation, Two Geometric Tests}
+
+Take two arbitrary nonzero vectors
+\[
+\mathbf u=(u_1,u_2),
+\qquad
+\mathbf v=(v_1,v_2).
+\]
+Let their angles of inclination be $\alpha$ and $\beta$. Then
+\[
+\mathbf u
+=
+\|\mathbf u\|(\cos\alpha,\sin\alpha),
+\]
+\[
+\mathbf v
+=
+\|\mathbf v\|(\cos\beta,\sin\beta).
+\]
+The difference $\beta-\alpha$ measures the directed turn from $\mathbf u$ to
+$\mathbf v$. The ordinary angle between the vectors will be denoted by
+\[
+\theta=|\beta-\alpha|
+\]
+when the smaller angle is intended.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.2,1.6);
+    \coordinate (V) at (1.6,3.6);
+    \draw[axis] (-0.4,0) -- (5.2,0) node[right] {$x$};
+    \draw[subset,->] (O) -- (U) node[above right] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[above] {$\mathbf v$};
+    \draw (0.8,0) arc[start angle=0,end angle=20.9,radius=0.8];
+    \node at (0.97,0.18) {$\alpha$};
+    \draw (0.66,0.25) arc[start angle=20.9,end angle=66.0,radius=0.71];
+    \node at (0.61,0.62) {$\theta$};
+    \draw (1.35,0) arc[start angle=0,end angle=66.0,radius=1.35];
+    \node at (1.02,1.08) {$\beta$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Parallel directions arise from the sine of the angle difference}
+
+Two nonzero vectors determine the same unoriented direction precisely when the
+turn from one to the other is an integer multiple of a half-turn:
+\[
+\beta-\alpha\equiv0\pmod{\pi}.
+\]
+Equivalently,
+\[
+\sin(\beta-\alpha)=0.
+\]
+Using the sine-difference identity,
+\[
+\sin(\beta-\alpha)
+=
+\sin\beta\cos\alpha-
+\cos\beta\sin\alpha.
+\]
+Now substitute
+\[
+\cos\alpha=\frac{u_1}{\|\mathbf u\|},
+\qquad
+\sin\alpha=\frac{u_2}{\|\mathbf u\|},
+\]
+\[
+\cos\beta=\frac{v_1}{\|\mathbf v\|},
+\qquad
+\sin\beta=\frac{v_2}{\|\mathbf v\|}.
+\]
+We obtain
+\[
+\begin{aligned}
+\sin(\beta-\alpha)
+&=
+\frac{v_2}{\|\mathbf v\|}
+\frac{u_1}{\|\mathbf u\|}
+-
+\frac{v_1}{\|\mathbf v\|}
+\frac{u_2}{\|\mathbf u\|}\\
+&=
+\frac{u_1v_2-u_2v_1}
+{\|\mathbf u\|\,\|\mathbf v\|}.
+\end{aligned}
+\]
+The denominator is nonzero. Therefore
+\[
+\sin(\beta-\alpha)=0
+\iff
+u_1v_2-u_2v_1=0.
+\]
+We have discovered the coordinate test
+\[
+\mathbf u\parallel\mathbf v
+\iff
+u_1v_2-u_2v_1=0.
+\]
+
+The same condition implies that one vector is a scalar multiple of the other.
+Indeed, if $v_1\neq0$, set $\lambda=u_1/v_1$. The equality
+\[
+u_1v_2-u_2v_1=0
+\]
+gives $u_2=\lambda v_2$, and hence
+\[
+\mathbf u=\lambda\mathbf v.
+\]
+If $v_1=0$, then $v_2\neq0$ and the same argument uses
+$\lambda=u_2/v_2$. Thus
+\[
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\quad\text{for some }\lambda\neq0.
+\]
+This scalar-multiple criterion is a conclusion of the angle calculation, not a
+rule imposed in advance.
+
+\subsubsection{The cosine of the same difference reveals perpendicularity}
+
+The vectors are perpendicular precisely when their angle difference is a
+quarter-turn modulo a half-turn:
+\[
+\beta-\alpha
+\equiv
+\frac{\pi}{2}
+\pmod{\pi}.
+\]
+Equivalently,
+\[
+\cos(\beta-\alpha)=0.
+\]
+The cosine-difference identity gives
+\[
+\cos(\beta-\alpha)
+=
+\cos\beta\cos\alpha+
+\sin\beta\sin\alpha.
+\]
+Substituting the coordinate ratios gives
+\[
+\begin{aligned}
+\cos(\beta-\alpha)
+&=
+\frac{v_1}{\|\mathbf v\|}
+\frac{u_1}{\|\mathbf u\|}
++
+\frac{v_2}{\|\mathbf v\|}
+\frac{u_2}{\|\mathbf u\|}\\
+&=
+\frac{u_1v_1+u_2v_2}
+{\|\mathbf u\|\,\|\mathbf v\|}.
+\end{aligned}
+\]
+Since the denominator is nonzero,
+\[
+\mathbf u\perp\mathbf v
+\iff
+u_1v_1+u_2v_2=0.
+\]
+The coordinate expression has emerged from the geometry. Only now do we give it
+a name.
+
+\begin{definitionbox}
+For vectors in the plane, their \emph{dot product} is
+\[
+\mathbf u\cdot\mathbf v
+=
+u_1v_1+u_2v_2.
+\]
+In three-dimensional space,
+\[
+(u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
+=
+u_1v_1+u_2v_2+u_3v_3.
+\]
+\end{definitionbox}
+
+The preceding calculation proves
+\[
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0.
+\]
+It proves more than the right-angle case. Because cosine is even and
+$\theta=|\beta-\alpha|$,
+\[
+\cos(\beta-\alpha)=\cos\theta.
+\]
+Therefore
+\[
+\boxed{\mathbf u\cdot\mathbf v
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta}
+\]
+for every pair of nonzero vectors in the plane.
+
+\begin{examplebox}
+Take
+\[
+\mathbf u=(3,2),
+\qquad
+\mathbf v=(-2,3).
+\]
+Then
+\[
+\mathbf u\cdot\mathbf v
+=3(-2)+2(3)=0.
+\]
+The coordinate calculation says that
+\[
+\cos\theta=0,
+\]
+so the angle between the vectors is a right angle.
+\end{examplebox}

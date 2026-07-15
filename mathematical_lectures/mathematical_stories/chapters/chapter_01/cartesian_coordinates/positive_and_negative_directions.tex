@@ -1,0 +1,19 @@
+\subsection{Choosing Positive and Negative Directions}
+
+Each axis is divided by $O$ into two opposite rays. Choose one ray on the
+$x$-axis as positive and one ray on the $y$-axis as positive. The opposite rays
+are then called negative.
+
+These choices are not forced by the Euclidean plane. Reversing one of them would
+produce a different coordinate system on the same geometric plane.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis,->] (-4.2,0) -- (4.4,0) node[right] {positive $x$};
+    \draw[axis,->] (0,-3.1) -- (0,3.3) node[above] {positive $y$};
+    \fill (0,0) circle (2pt);
+    \node[below left] at (0,0) {$O$};
+    \node[below] at (-2.7,0) {negative $x$};
+    \node[left] at (0,-2.2) {negative $y$};
+\end{tikzpicture}
+\end{center}

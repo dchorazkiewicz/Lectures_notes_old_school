@@ -1,0 +1,68 @@
+\subsection{The Cosine Theorem Emerges Immediately}
+
+Draw $\mathbf u$ and $\mathbf v$ from a common point. The displacement from the
+endpoint of $\mathbf v$ to the endpoint of $\mathbf u$ is
+\[
+\mathbf u-\mathbf v.
+\]
+Thus these three vectors determine a triangle with side lengths
+\[
+\|\mathbf u\|,
+\qquad
+\|\mathbf v\|,
+\qquad
+\|\mathbf u-\mathbf v\|.
+\]
+We calculate the square of the third side:
+\[
+\begin{aligned}
+\|\mathbf u-\mathbf v\|^2
+&=(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)\\
+&=\mathbf u\cdot\mathbf u
+-\mathbf u\cdot\mathbf v
+-\mathbf v\cdot\mathbf u
++\mathbf v\cdot\mathbf v\\
+&=\|\mathbf u\|^2+
+\|\mathbf v\|^2-
+2\mathbf u\cdot\mathbf v\\
+&=\|\mathbf u\|^2+
+\|\mathbf v\|^2-
+2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+\end{aligned}
+\]
+If
+\[
+a=\|\mathbf u\|,
+\qquad
+b=\|\mathbf v\|,
+\qquad
+c=\|\mathbf u-\mathbf v\|,
+\]
+then
+\[
+\boxed{c^2=a^2+b^2-2ab\cos\theta}.
+\]
+
+\begin{theorembox}
+For a triangle with side lengths $a$, $b$, and $c$, where $\theta$ is the angle
+between the sides of lengths $a$ and $b$,
+\[
+c^2=a^2+b^2-2ab\cos\theta.
+\]
+\end{theorembox}
+
+The cosine theorem is not inserted as an external formula. It is the coordinate
+expansion of the displacement between the endpoints of two arbitrary vectors.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.4,1.5);
+    \coordinate (V) at (1.3,3.5);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[very thick,->] (V) -- (U) node[midway,above right] {$\mathbf u-\mathbf v$};
+    \draw (0.72,0.25) arc[start angle=19,end angle=69.6,radius=0.76];
+    \node at (0.70,0.65) {$\theta$};
+\end{tikzpicture}
+\end{center}

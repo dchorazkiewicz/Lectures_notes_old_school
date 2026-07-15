@@ -1,0 +1,55 @@
+\subsection{Two Successive Displacements Force Vector Addition}
+
+Start at an arbitrary point $(x,y)$. First apply
+\[
+\mathbf u=(u_1,u_2),
+\]
+and then
+\[
+\mathbf v=(v_1,v_2).
+\]
+The successive endpoints are
+\[
+(x,y)
+\longmapsto
+(x+u_1,y+u_2)
+\longmapsto
+(x+u_1+v_1,y+u_2+v_2).
+\]
+Therefore the single displacement with the same effect must be
+\[
+\mathbf u+\mathbf v
+=
+(u_1+v_1,\,u_2+v_2).
+\]
+The rule is forced by the experiment; it is not introduced as a convention to
+memorise.
+
+Because addition of real numbers is commutative, applying $\mathbf u$ and then
+$\mathbf v$ reaches the same endpoint as applying $\mathbf v$ and then
+$\mathbf u$. This produces the parallelogram rule.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (3.2,0.9);
+    \coordinate (V) at (1.0,2.5);
+    \coordinate (S) at (4.2,3.4);
+    \draw[subset,->] (O) -- (U) node[midway,below] {$\mathbf u$};
+    \draw[subset,->] (O) -- (V) node[midway,left] {$\mathbf v$};
+    \draw[helper] (U) -- (S);
+    \draw[helper] (V) -- (S);
+    \draw[very thick,->] (O) -- (S) node[midway,above left] {$\mathbf u+\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+Subtraction is the displacement that undoes another displacement:
+\[
+\mathbf u-\mathbf v
+=
+(u_1-v_1,\,u_2-v_2).
+\]
+In particular,
+\[
+\overrightarrow{AB}=B-A.
+\]

@@ -1,0 +1,18 @@
+\subsection{First Construction: A Straight Line}
+
+Choose two distinct points of the plane and construct the unique straight line
+through them. At this stage it is only a chosen Euclidean line. It is not yet an
+axis, because there is not yet a second line, an origin, a direction, or a
+scale.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \fill[gray!8] (-4,-2.1) rectangle (4,2.1);
+    \coordinate (A) at (-2.8,-0.7);
+    \coordinate (B) at (2.7,0.8);
+    \draw[subset] (-3.8,-0.97) -- (3.8,1.10);
+    \fill (A) circle (2pt) node[below left] {$A$};
+    \fill (B) circle (2pt) node[above right] {$B$};
+    \node at (0,-2.45) {the first constructed line};
+\end{tikzpicture}
+\end{center}
