@@ -294,7 +294,6 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates
-./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/angle_measure_calculation.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/common_unit_length.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/euclidean_distance_formula.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/first_straight_line.tex
