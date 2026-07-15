@@ -1,0 +1,148 @@
+\section{Lines in the Cartesian Plane}
+
+A line should not first appear as a formula to be recognised. We already have
+all the ingredients needed to construct it geometrically: a point tells us where
+to begin, and a nonzero vector tells us in which direction motion is allowed.
+The question is therefore:
+
+\begin{center}
+\emph{Which points can be reached from one fixed point by moving only in one
+fixed direction?}
+\end{center}
+
+Let
+\[
+P_0=(x_0,y_0)
+\]
+be fixed and let
+\[
+\mathbf v=(u,v)\neq\mathbf0
+\]
+be a fixed direction vector. Every permitted displacement is a scalar multiple
+$t\mathbf v$. Starting from $P_0$ gives
+\[
+P=P_0+t\mathbf v,
+\qquad t\in\mathbb R.
+\]
+
+\begin{definitionbox}
+The line through $P_0$ with direction vector $\mathbf v\neq\mathbf0$ is
+\[
+\boxed{
+L=\{P_0+t\mathbf v:t\in\mathbb R\}.
+}
+\]
+In coordinates,
+\[
+\boxed{
+\begin{aligned}
+x&=x_0+tu,\\
+y&=y_0+tv,
+\end{aligned}
+\qquad t\in\mathbb R.
+}
+\]
+\end{definitionbox}
+
+The parameter has a direct meaning. At $t=0$ we are at $P_0$; positive and
+negative values move in the two opposite orientations along the same direction.
+Changing the length of $\mathbf v$ only changes how quickly the parameter runs
+through the points, not the geometric line itself.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis] (-0.8,0) -- (6.2,0) node[right] {$x$};
+    \draw[axis] (0,-0.8) -- (0,4.8) node[above] {$y$};
+    \coordinate (P) at (1.2,1.1);
+    \coordinate (Q) at (4.8,3.5);
+    \coordinate (D) at (3.0,2.3);
+    \draw[subset] (0.3,0.5) -- (5.6,4.03) node[above right] {$L$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt)
+        node[below right] {$P_0$};
+    \draw[->,blue!70!black,line width=1.1pt] (P) -- (D)
+        node[midway,above left] {$\mathbf v$};
+    \fill[geometricSubsetColor] (Q) circle (2.2pt)
+        node[above left] {$P_0+t\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{The same line described by a perpendicular direction}
+
+A direction vector tells us how to move along the line. There is a second,
+equally important description: choose a nonzero vector $\mathbf n=(a,b)$
+perpendicular to $\mathbf v$. A point $P=(x,y)$ lies on the line precisely when
+the displacement $P-P_0$ is perpendicular to $\mathbf n$. The dot-product test
+from the previous chapter gives
+\[
+\mathbf n\cdot(P-P_0)=0.
+\]
+Written in coordinates,
+\[
+a(x-x_0)+b(y-y_0)=0.
+\]
+After collecting the constant terms,
+\[
+\boxed{ax+by=c},
+\qquad c=ax_0+by_0.
+\]
+Thus the general linear equation is not a second, unrelated definition of a
+line. It records the same object by specifying a direction that no displacement
+along the line may contain.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \coordinate (P0) at (1.1,1.1);
+    \coordinate (P) at (4.6,3.2);
+    \coordinate (N) at (0.0,3.1);
+    \draw[subset] (0.2,0.56) -- (5.5,3.74) node[above right] {$L$};
+    \draw[blue!70!black,line width=1.1pt,->] (P0) -- (P)
+        node[midway,below right] {$P-P_0$};
+    \draw[orange!85!black,line width=1.1pt,->] (P0) -- (N)
+        node[midway,left] {$\mathbf n$};
+    \draw (P0) ++(0.28,0.17) -- ++(-0.16,0.27) -- ++(-0.28,-0.17);
+    \fill[geometricSubsetColor] (P0) circle (2.2pt) node[below left] {$P_0$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Slope form as a special coordinate description}
+
+If the horizontal component $u$ of the direction vector is nonzero, eliminate
+$t$ from
+\[
+x=x_0+tu,
+\qquad
+y=y_0+tv.
+\]
+Since
+\[
+t=\frac{x-x_0}{u},
+\]
+we obtain
+\[
+y-y_0=\frac vu(x-x_0).
+\]
+Therefore the slope is
+\[
+\boxed{m=\frac vu},
+\]
+and after collecting constants the equation takes the familiar form
+\[
+y=mx+b.
+\]
+If $u=0$, the line is vertical and is described by $x=x_0$. The vector and
+normal descriptions treat this case without any exception; only slope notation
+fails.
+
+\begin{remarkbox}
+The three forms answer different questions about the same set:
+\[
+\begin{array}{c|c}
+P_0+t\mathbf v & \text{how to move along the line},\\
+\mathbf n\cdot(P-P_0)=0 & \text{which displacements are allowed},\\
+y=mx+b & \text{how vertical position depends on horizontal position}.
+\end{array}
+\]
+No representation is the line itself. The line is the geometric set of points
+that all these descriptions identify.
+\end{remarkbox}
