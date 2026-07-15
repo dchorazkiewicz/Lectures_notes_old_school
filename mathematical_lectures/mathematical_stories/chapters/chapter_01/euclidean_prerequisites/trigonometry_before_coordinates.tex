@@ -1,0 +1,52 @@
+\subsection{Sine and Cosine Before Coordinates}
+
+Take a right triangle containing an acute angle $\alpha$. Let $h$ denote the
+hypotenuse, let $a$ be the leg adjacent to $\alpha$, and let $b$ be the leg
+opposite $\alpha$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4.8,0);
+    \coordinate (C) at (4.8,2.9);
+    \draw[subset] (A) -- (B) -- (C) -- cycle;
+    \draw (B) ++(-0.3,0) -- ++(0,0.3) -- ++(0.3,0);
+    \draw (0.85,0) arc[start angle=0,end angle=31.1,radius=0.85];
+    \node at (1.08,0.28) {$\alpha$};
+    \node[below] at (2.4,0) {$a$};
+    \node[right] at (4.8,1.45) {$b$};
+    \node[above left] at (2.4,1.45) {$h$};
+\end{tikzpicture}
+\end{center}
+
+We define
+\[
+\cos\alpha=\frac{a}{h},
+\qquad
+\sin\alpha=\frac{b}{h}.
+\]
+
+These expressions are well defined. Indeed, any two right triangles containing
+the same acute angle $\alpha$ have the same third angle and are therefore
+similar. Their corresponding sides are proportional, so the ratios $a/h$ and
+$b/h$ do not depend on the particular triangle chosen. They depend only on the
+angle.
+
+This is the essential role of Thales' theorem and similarity: they turn the two
+ratios above into genuine functions of an angle.
+
+The Pythagorean theorem gives
+\[
+a^2+b^2=h^2.
+\]
+Dividing by $h^2$ yields
+\[
+\left(\frac{a}{h}\right)^2+
+\left(\frac{b}{h}\right)^2=1,
+\]
+and hence
+\[
+\cos^2\alpha+\sin^2\alpha=1.
+\]
+Thus the fundamental trigonometric identity is a direct reformulation of the
+Pythagorean theorem.
