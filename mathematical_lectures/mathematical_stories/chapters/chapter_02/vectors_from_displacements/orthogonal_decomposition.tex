@@ -1,0 +1,93 @@
+\subsection{Orthogonal Decomposition and Its Consequences}
+
+The projection formula splits $\mathbf u$ into two geometrically different parts:
+\[
+\mathbf u
+=
+\operatorname{proj}_{\mathbf v}\mathbf u
++
+\left(\mathbf u-\operatorname{proj}_{\mathbf v}\mathbf u\right).
+\]
+The first term is parallel to $\mathbf v$ and the second is perpendicular to
+$\mathbf v$. This is the orthogonal decomposition of $\mathbf u$ relative to
+the direction of $\mathbf v$.
+
+Because the two components are perpendicular, the Pythagorean theorem gives
+\[
+\boxed{
+\|\mathbf u\|^2
+=
+\left\|\operatorname{proj}_{\mathbf v}\mathbf u\right\|^2
++
+\left\|\mathbf u-\operatorname{proj}_{\mathbf v}\mathbf u\right\|^2
+}.
+\]
+
+\subsubsection*{Scalar component and vector projection}
+
+The signed scalar component of $\mathbf u$ in the direction of nonzero
+$\mathbf v$ is
+\[
+\boxed{
+\operatorname{comp}_{\mathbf v}\mathbf u
+=
+\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|}
+}.
+\]
+It measures how much signed length of $\mathbf u$ lies along the direction of
+$\mathbf v$. The vector projection is obtained by multiplying this number by
+the unit vector in that direction:
+\[
+\operatorname{proj}_{\mathbf v}\mathbf u
+=
+\operatorname{comp}_{\mathbf v}\mathbf u
+\frac{\mathbf v}{\|\mathbf v\|}.
+\]
+
+\subsubsection*{The Cauchy--Schwarz inequality}
+
+The length of the parallel component cannot exceed the length of the entire
+vector:
+\[
+\left|\operatorname{comp}_{\mathbf v}\mathbf u\right|
+\leq \|\mathbf u\|.
+\]
+Substitution gives
+\[
+\boxed{
+|\mathbf u\cdot\mathbf v|
+\leq
+\|\mathbf u\|\,\|\mathbf v\|
+}.
+\]
+Therefore
+\[
+-1\leq
+\frac{\mathbf u\cdot\mathbf v}
+{\|\mathbf u\|\,\|\mathbf v\|}
+\leq1,
+\]
+which guarantees that the angle formula using $\arccos$ is meaningful.
+
+\subsubsection*{The triangle inequality}
+
+The direct displacement $\mathbf u+\mathbf v$ cannot be longer than travelling
+first by $\mathbf u$ and then by $\mathbf v$. Algebraically,
+\[
+\begin{aligned}
+\|\mathbf u+\mathbf v\|^2
+&=\|\mathbf u\|^2+2\mathbf u\cdot\mathbf v+\|\mathbf v\|^2\\
+&\leq\|\mathbf u\|^2+2\|\mathbf u\|\,\|\mathbf v\|+\|\mathbf v\|^2\\
+&=(\|\mathbf u\|+\|\mathbf v\|)^2.
+\end{aligned}
+\]
+Hence
+\[
+\boxed{
+\|\mathbf u+\mathbf v\|
+\leq
+\|\mathbf u\|+\|\mathbf v\|
+}.
+\]
+This is the algebraic form of the geometric fact that the straight segment is
+the shortest route between two points.
