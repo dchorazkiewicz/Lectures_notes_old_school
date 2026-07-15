@@ -294,6 +294,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/levels_of_geometric_statements.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_00_euclidean_prerequisites.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_01_revised.tex
