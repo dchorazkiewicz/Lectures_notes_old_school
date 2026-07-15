@@ -10,7 +10,6 @@ on:
       - "physics_lectures/**/*.tex"
       - "physics_lectures/**/build.sh"
       - "shared/**/*.tex"
-      - ".github/workflows/build-pdfs.yml"
 
 permissions:
   actions: write
@@ -24,7 +23,14 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch lecture PDF build
+      - name: Dispatch affected lecture PDF build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run build-pdfs.yml --repo "${{ github.repository }}" --ref main
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          gh workflow run build-pdfs.yml \
+            --repo "${{ github.repository }}" \
+            --ref main \
+            -f before_sha="${BEFORE_SHA}" \
+            -f after_sha="${AFTER_SHA}"
