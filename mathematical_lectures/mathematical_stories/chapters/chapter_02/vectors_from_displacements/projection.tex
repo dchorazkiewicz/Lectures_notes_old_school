@@ -5,7 +5,57 @@ the remainder
 \[
 \mathbf u-\lambda\mathbf v
 \]
-is perpendicular to $\mathbf v$. The criterion just derived requires
+is perpendicular to $\mathbf v$. Geometrically, this means decomposing
+$\mathbf u$ into a component parallel to $\mathbf v$ and a component
+perpendicular to $\mathbf v$:
+\[
+\mathbf u
+=
+\lambda\mathbf v+(\mathbf u-\lambda\mathbf v).
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (H) at (3.5,0);
+    \coordinate (U) at (3.5,2.5);
+    \coordinate (V) at (5.2,0);
+
+    % Direction determined by v
+    \draw[helper,->] (O) -- (V)
+        node[right] {$\mathbf v$ direction};
+
+    % Original vector u
+    \draw[very thick,->] (O) -- (U)
+        node[midway,above left] {$\mathbf u$};
+
+    % Parallel component lambda v
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (H)
+        node[midway,below=5pt] {$\lambda\mathbf v
+        =\operatorname{proj}_{\mathbf v}\mathbf u$};
+
+    % Perpendicular remainder
+    \draw[orange!85!black,line width=1.1pt,->] (H) -- (U)
+        node[midway,right=5pt] {$\mathbf u-\lambda\mathbf v$};
+
+    % Right-angle marker
+    \draw (H) ++(-0.28,0) -- ++(0,0.28) -- ++(0.28,0);
+
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (H) circle (2pt) node[below right] {$H$};
+    \fill (U) circle (2pt);
+
+    \node[orange!85!black,anchor=west] at (4.0,1.55)
+        {$\mathbf u-\lambda\mathbf v\perp\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+The point $H$ is chosen on the line spanned by $\mathbf v$. The vector from
+$O$ to $H$ is the parallel component $\lambda\mathbf v$, while the vector from
+$H$ to the endpoint of $\mathbf u$ is the perpendicular remainder. The
+right-angle condition determines the value of $\lambda$.
+
+The criterion just derived requires
 \[
 (\mathbf u-\lambda\mathbf v)\cdot\mathbf v=0.
 \]
