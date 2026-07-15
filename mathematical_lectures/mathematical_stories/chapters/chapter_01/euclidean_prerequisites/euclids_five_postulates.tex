@@ -1,0 +1,98 @@
+\subsection{Euclid's Five Postulates}
+
+The following are the five postulates used in the first book of Euclid's
+\emph{Elements}. The diagrams illustrate their meaning; they are not proofs.
+
+\subsubsection{Postulate I: Joining Two Points}
+
+A straight segment can be drawn from any point to any other point.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.4,-0.6);
+    \coordinate (B) at (2.1,0.8);
+    \draw[subset] (A) -- (B);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above] {$B$};
+    \node at (0,-1.55) {a segment is drawn from $A$ to $B$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Postulate II: Extending a Segment}
+
+A finite straight segment can be extended continuously in the same straight
+line.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.2,0);
+    \coordinate (B) at (1.2,0);
+    \coordinate (C) at (3.1,0);
+    \draw[subset] (A) -- (B);
+    \draw[helper,->] (B) -- (C);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \node[below] at (C) {$C$};
+    \node at (0,-1.15) {$AB$ is extended beyond $B$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Postulate III: Drawing a Circle}
+
+A circle can be drawn with any chosen centre and any chosen radius.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.2,0);
+    \draw[helper] (O) circle (2.2);
+    \draw[subset] (O) -- (A) node[midway,below] {$r$};
+    \fill[geometricSubsetColor] (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[right] {$A$};
+    \node at (0,-2.75) {centre $O$ and radius $r$ determine a circle};
+\end{tikzpicture}
+\end{center}
+
+This postulate is what permits a length to be copied geometrically without
+first assigning a number to it.
+
+\subsubsection{Postulate IV: Equality of Right Angles}
+
+All right angles are congruent.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[subset] (-3.2,0) -- (-0.2,0);
+    \draw[subset] (-1.7,-1.3) -- (-1.7,1.6);
+    \draw (-1.42,0) -- (-1.42,0.28) -- (-1.7,0.28);
+
+    \draw[subset] (0.8,-0.8) -- (3.5,0.7);
+    \draw[subset] (2.9,-1.25) -- (1.4,1.45);
+    \draw (2.24,0.02) -- (2.10,0.27) -- (1.85,0.13);
+
+    \node at (0,-2.0) {every right angle represents the same geometric magnitude};
+\end{tikzpicture}
+\end{center}
+
+This postulate does not say that a perpendicular may simply be drawn without
+construction. It says that once right angles have been constructed, they are
+all equal.
+
+\subsubsection{Postulate V: The Parallel Postulate}
+
+If a transversal meets two straight lines and the interior angles on one side
+sum to less than two right angles, then the two lines, when extended, meet on
+that side.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[subset] (-3.4,1.15) -- (3.5,0.15) node[right] {$\ell$};
+    \draw[subset] (-3.4,-1.2) -- (3.5,-0.35) node[right] {$m$};
+    \draw[helper] (-1.0,-2.0) -- (0.6,2.0) node[above] {$t$};
+    \node at (0,-2.45) {the angle condition determines on which side $\ell$ and $m$ meet};
+\end{tikzpicture}
+\end{center}
+
+A familiar modern equivalent is Playfair's formulation: through a point outside
+a given line there passes exactly one parallel to that line. We shall use that
+form later, after the relation between the two formulations has been made clear.
