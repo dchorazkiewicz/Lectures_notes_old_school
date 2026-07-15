@@ -1,0 +1,160 @@
+\subsection{Constructions Derived from the Toolkit}
+
+\subsubsection{The Perpendicular Bisector and the Midpoint}
+
+Let $A$ and $B$ be distinct points. Draw two circles with the same radius,
+one centred at $A$ and one centred at $B$, choosing the radius larger than half
+of $AB$. Let their intersection points be $P$ and $Q$.
+
+Because $P$ lies on both circles,
+\[
+PA=PB,
+\]
+and similarly,
+\[
+QA=QB.
+\]
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is the
+perpendicular bisector of $AB$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \coordinate (A) at (-2.2,0);
+    \coordinate (B) at (2.2,0);
+    \coordinate (P) at (0,2.4);
+    \coordinate (Q) at (0,-2.4);
+    \draw[helper] (A) circle (3.25);
+    \draw[helper] (B) circle (3.25);
+    \draw[subset] (A) -- (B);
+    \draw[very thick] (0,-3.0) -- (0,3.0);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[below] {$Q$};
+\end{tikzpicture}
+\end{center}
+
+The intersection of $PQ$ with $AB$ is the midpoint of $AB$. Thus midpoint and
+perpendicularity have been constructed from equal radii and intersections.
+
+\subsubsection{A Perpendicular Through a Point on a Line}
+
+Let $P$ lie on a line $\ell$. Choose points $A$ and $B$ on $\ell$ with
+\[
+PA=PB.
+\]
+Construct the perpendicular bisector of $AB$. Since $P$ is the midpoint of
+$AB$, this perpendicular bisector passes through $P$ and is perpendicular to
+$\ell$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (A) at (-2.4,0);
+    \coordinate (P) at (0,0);
+    \coordinate (B) at (2.4,0);
+    \draw[subset] (-3.4,0) -- (3.4,0) node[right] {$\ell$};
+    \draw[very thick] (0,-2.0) -- (0,2.4) node[above] {$m$};
+    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[below right] {$P$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+    \node at (0,-2.45) {$m$ is constructed through $P$ and satisfies $m\perp\ell$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{A Perpendicular Through a Point Outside a Line}
+
+Let $P$ lie outside a line $\ell$.
+
+\textbf{Step 1.} Draw a circle centred at $P$ with radius large enough to meet
+$\ell$ at two points $A$ and $B$. Since $A$ and $B$ lie on the same circle,
+\[
+PA=PB.
+\]
+
+\textbf{Step 2.} Draw two circles of radius $PA$: one centred at $A$ and one
+centred at $B$. The two circles meet at $P$ and at a second point $Q$. Therefore
+\[
+AP=BP
+\qquad\text{and}\qquad
+AQ=BQ.
+\]
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is
+therefore the perpendicular bisector of $AB$.
+
+Because $A$ and $B$ lie on $\ell$, the segment $AB$ is contained in $\ell$.
+Consequently,
+\[
+PQ\perp AB,
+\qquad\text{hence}\qquad
+PQ\perp\ell.
+\]
+The required perpendicular is the line $m=PQ$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (P) at (0,2.0);
+    \coordinate (Q) at (0,-2.0);
+    \coordinate (A) at (-2.1,0);
+    \coordinate (B) at (2.1,0);
+
+    % Given line
+    \draw[subset] (-3.5,0) -- (3.5,0) node[right] {$\ell$};
+
+    % Step 1: circle centred at P
+    \draw[blue!65,dashed,line width=0.9pt] (P) circle (2.9);
+
+    % Step 2: equal circles centred at A and B
+    \draw[orange!85!black,dashed,line width=0.9pt] (A) circle (2.9);
+    \draw[orange!85!black,dashed,line width=0.9pt] (B) circle (2.9);
+
+    % Final perpendicular
+    \draw[very thick] (0,-2.8) -- (0,2.8) node[above] {$m=PQ$};
+    \draw (0.28,0) -- (0.28,0.28) -- (0,0.28);
+
+    \fill[geometricSubsetColor] (P) circle (2pt) node[right] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[right] {$Q$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below] {$B$};
+
+    \node[blue!65,align=left] at (-3.0,2.65)
+        {\small Step 1: circle centred at $P$};
+    \node[orange!85!black,align=left] at (3.0,-2.65)
+        {\small Step 2: circles centred at $A$ and $B$};
+\end{tikzpicture}
+\end{center}
+
+The perpendicular has now been obtained entirely from the permitted
+straightedge-and-compass operations: drawing circles, retaining their
+intersection points, and drawing the line through two constructed points.
+
+\subsubsection{Bisecting an Angle}
+
+Let two rays with common endpoint $O$ form an angle. Draw a circle centred at
+$O$ meeting the rays at $A$ and $B$. Then draw equal-radius circles centred at
+$A$ and $B$, and let one of their intersections inside the angle be $P$.
+Since
+\[
+OA=OB,
+\qquad
+AP=BP,
+\qquad
+OP=OP,
+\]
+the triangles $OAP$ and $OBP$ are congruent. Therefore
+\[
+\angle AOP=\angle POB.
+\]
+The ray $OP$ is the angle bisector.
+
+\subsubsection{Constructing a Parallel Through a Point}
+
+Let $P$ lie outside a line $\ell$. First construct a line $m$ through $P$
+perpendicular to $\ell$. Then construct a line $n$ through $P$ perpendicular
+to $m$. Since $n$ and $\ell$ are perpendicular to the same line, they have the
+same direction and do not meet:
+\[
+n\parallel\ell.
+\]
+The fifth postulate guarantees the uniqueness of this parallel in Euclidean
+geometry.
