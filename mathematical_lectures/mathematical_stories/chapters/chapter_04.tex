@@ -6,7 +6,16 @@
     dashed/.append style={draw=gray}
 }
 
+\input{chapters/chapter_04/conic_sections/geometric_origins}
+
+% The existing material is retained as the algebraic recognition layer that
+% follows the geometric construction of the curves.
+\begingroup
+\renewcommand{\section}[1]{\subsection{Algebraic Classification of Second-Degree Curves}}
+\renewcommand{\subsection}[1]{\subsubsection{##1}}
 \input{chapters/chapter_04/conic_sections/section}
+\endgroup
+
 \input{chapters/chapter_04/quadric_surfaces/section}
 
 \endgroup
