@@ -87,40 +87,130 @@ condition.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Two foci: ellipse and hyperbola}
+\subsection{An ellipse: a fixed sum of two distances}
 
-Fix two distinct points $F_1,F_2$.
-
-\begin{definitionbox}
-An ellipse is the set of points $P$ for which
+Fix two foci
 \[
-\boxed{d(P,F_1)+d(P,F_2)=2a}
+F_1=(-c,0),\qquad F_2=(c,0),\qquad c>0,
 \]
-for a fixed constant $2a>d(F_1,F_2)$.
-\end{definitionbox}
-
-The sum condition keeps the moving point in a bounded region. It is the
-principle behind the classical string construction of an ellipse.
-
-\begin{definitionbox}
-A hyperbola is the set of points $P$ for which
+and require
 \[
-\boxed{|d(P,F_1)-d(P,F_2)|=2a}
+d(P,F_1)+d(P,F_2)=2a,
+\qquad a>c.
 \]
-for a fixed positive constant smaller than $d(F_1,F_2)$.
-\end{definitionbox}
+The inequality $a>c$ is necessary: the prescribed sum must be larger than the
+distance $2c$ between the foci.
 
-The difference condition produces two separated branches. After choosing axes
-adapted to the symmetry of the two foci and eliminating square roots, these
-conditions yield the standard equations developed below.
+For $P=(x,y)$ write
+\[
+r_1=\sqrt{(x+c)^2+y^2},
+\qquad
+r_2=\sqrt{(x-c)^2+y^2}.
+\]
+The condition is $r_1+r_2=2a$. Isolate $r_1=2a-r_2$ and square:
+\[
+(x+c)^2+y^2=4a^2-4ar_2+(x-c)^2+y^2.
+\]
+After cancellation,
+\[
+r_2=a-\frac ca x.
+\]
+Squaring once more gives
+\[
+(x-c)^2+y^2=\left(a-\frac ca x\right)^2.
+\]
+The linear terms cancel, leaving
+\[
+\left(1-\frac{c^2}{a^2}\right)x^2+y^2=a^2-c^2.
+\]
+Define
+\[
+b^2=a^2-c^2>0.
+\]
+Then
+\[
+\boxed{
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
+}
+\]
+The bounded oval is therefore not introduced by its equation. It is forced by the
+requirement that the total journey from one focus to the moving point and then to
+the other focus remain constant.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[axis] (-4.2,0)--(4.4,0) node[right] {$x$};
+    \draw[axis] (0,-2.8)--(0,3.0) node[above] {$y$};
+    \coordinate (F1) at (-1.8,0);
+    \coordinate (F2) at (1.8,0);
+    \coordinate (P) at (1.2,1.65);
+    \draw[subset] (0,0) ellipse (3.2 and 2.0);
+    \draw[blue!70!black,line width=1pt] (F1)--(P)
+        node[midway,above left] {$r_1$};
+    \draw[orange!85!black,line width=1pt] (P)--(F2)
+        node[midway,above right] {$r_2$};
+    \fill[geometricSubsetColor] (F1) circle (2pt) node[below] {$F_1$};
+    \fill[geometricSubsetColor] (F2) circle (2pt) node[below] {$F_2$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{A hyperbola: a fixed difference of two distances}
+
+Keep the same foci, but now require
+\[
+|d(P,F_1)-d(P,F_2)|=2a,
+\qquad 0<a<c.
+\]
+The absolute value allows either focus to be the nearer one, producing two
+branches. On the right branch we have
+\[
+r_1-r_2=2a.
+\]
+Thus $r_1=2a+r_2$. Squaring, isolating the remaining square root, and squaring a
+second time gives
+\[
+\left(\frac{c^2}{a^2}-1\right)x^2-y^2=c^2-a^2.
+\]
+Set
+\[
+b^2=c^2-a^2>0.
+\]
+Then
+\[
+\boxed{
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1.
+}
+\]
+Changing a constant sum into a constant difference changes a bounded curve into
+two unbounded branches. The new geometry is produced by changing the demand, not
+by choosing an unrelated formula.
 
 \subsection{Why these curves form one family}
 
-A circle, ellipse, parabola, and hyperbola can also be obtained by intersecting
-a double cone with planes of different inclination. This geometric origin gives
-the name \emph{conic sections}. The distance definitions explain the curves in
-the plane; the cone picture explains why the same four forms belong to one
-family.
+The four distance constructions also arise from one spatial experiment: intersect
+a double cone by a plane and vary the inclination of the cutting plane.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+    \foreach \s/\lab/\ang in {0/circle/0,4.2/ellipse/12,8.4/parabola/28,12.6/hyperbola/65} {
+        \begin{scope}[xshift=\s cm]
+            \draw[gray!70] (0,0)--(-1.4,2.4);
+            \draw[gray!70] (0,0)--(1.4,2.4);
+            \draw[gray!70] (0,0)--(-1.4,-2.4);
+            \draw[gray!70] (0,0)--(1.4,-2.4);
+            \draw[blue!70!black,line width=1.1pt,rotate around={\ang:(0,0.65)}]
+                (-1.45,0.65)--(1.45,0.65);
+            \node[below] at (0,-2.7) {\lab};
+        \end{scope}
+    }
+\end{tikzpicture}
+\end{center}
+
+A nearly horizontal cut gives a circle; an oblique cut through one nappe gives an
+ellipse; a cut parallel to a generating side gives a parabola; and a cut meeting
+both nappes gives a hyperbola. The changing curve records how one geometric
+requirement changes while the cone remains fixed.
 
 \begin{remarkbox}
 The rest of the chapter studies how these geometric sets appear in Cartesian
