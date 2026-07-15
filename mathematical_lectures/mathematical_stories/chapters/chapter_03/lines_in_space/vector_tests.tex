@@ -1,0 +1,68 @@
+\subsection{Vector tests for lines in space}
+
+Let
+\[
+L_1=P_1+t\mathbf v_1,
+\qquad
+L_2=P_2+s\mathbf v_2.
+\]
+The directions are parallel precisely when
+\[
+\boxed{
+\mathbf v_1\times\mathbf v_2=\mathbf0.
+}
+\]
+This is the three-dimensional parallelism test established in the vector
+chapter. It determines whether the directions agree, but it does not by itself
+distinguish identical lines from distinct parallel lines. For that, one must
+also check whether $P_2-P_1$ is parallel to the common direction.
+
+The direction vectors are perpendicular precisely when
+\[
+\mathbf v_1\cdot\mathbf v_2=0.
+\]
+However, in space this alone does not imply that the geometric lines are
+perpendicular. Two lines are perpendicular only when they both intersect and
+their directions form a right angle. Without intersection they may be skew even
+though their direction vectors are perpendicular.
+
+\begin{examplebox}
+Consider
+\[
+L_1=(0,0,0)+t(1,0,0)
+\]
+and
+\[
+L_2=(0,1,1)+s(0,1,0).
+\]
+Their direction vectors satisfy
+\[
+(1,0,0)\cdot(0,1,0)=0.
+\]
+Yet a point on $L_1$ has third coordinate $0$, while every point on $L_2$ has
+third coordinate $1$. The lines cannot intersect. They have perpendicular
+directions but are skew, not perpendicular lines.
+\end{examplebox}
+
+To decide whether two nonparallel lines intersect, solve
+\[
+P_1+t\mathbf v_1=P_2+s\mathbf v_2.
+\]
+This produces three scalar equations for the two parameters. A common pair
+$(t,s)$ gives the intersection point; an inconsistent system proves that the
+lines are skew.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[blue!70!black,line width=1.1pt] (0.2,0.8) -- (5.4,0.8)
+        node[right] {$L_1$};
+    \draw[orange!85!black,line width=1.1pt] (2.0,2.0) -- (2.0,4.8)
+        node[above] {$L_2$};
+    \draw[gray,dashed] (2.0,2.0) -- (2.0,0.8);
+    \node[gray,anchor=west] at (2.15,1.4) {separation in space};
+    \draw[blue!70!black,->] (1.0,0.8) -- (2.2,0.8)
+        node[midway,below] {$\mathbf v_1$};
+    \draw[orange!85!black,->] (2.0,2.4) -- (2.0,3.6)
+        node[midway,right] {$\mathbf v_2$};
+\end{tikzpicture}
+\end{center}
