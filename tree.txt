@@ -313,8 +313,6 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/straightedge_and_compass_rules.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/trigonometry_before_coordinates.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_01/polar_coordinates
-./mathematical_lectures/mathematical_stories/chapters/chapter_01/polar_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis
