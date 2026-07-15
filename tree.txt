@@ -300,6 +300,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/perpendicular_axis.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/plane_before_coordinates.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/positive_and_negative_directions.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/refining_the_scale.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/derived_constructions.tex
