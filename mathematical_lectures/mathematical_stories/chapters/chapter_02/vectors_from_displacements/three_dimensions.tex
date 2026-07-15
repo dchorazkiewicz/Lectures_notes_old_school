@@ -48,169 +48,13 @@ In three dimensions there is another natural question. Given two vectors
 \(\mathbf u\) and \(\mathbf v\), can we construct a new vector perpendicular to
 both of them?
 
-\begingroup
-\setlength{\fboxsep}{9pt}
-
-\begin{center}
-\fcolorbox{blue!65!black}{blue!4}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{blue!65!black}{\textbf{Step 1: translate the geometric requirement into equations.}}
-
-Let
+For
 \[
 \mathbf u=(u_1,u_2,u_3),
 \qquad
 \mathbf v=(v_1,v_2,v_3),
-\qquad
-\mathbf n=(n_1,n_2,n_3).
 \]
-We require \(\mathbf n\) to be perpendicular to both inputs:
-\[
-\mathbf n\cdot\mathbf u=0,
-\qquad
-\mathbf n\cdot\mathbf v=0.
-\]
-Therefore
-\[
-\begin{aligned}
-u_1n_1+u_2n_2+u_3n_3&=0,\\
-v_1n_1+v_2n_2+v_3n_3&=0.
-\end{aligned}
-\]
-\end{minipage}}
-\end{center}
-
-\begin{center}
-\fcolorbox{violet!65!black}{violet!4}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{violet!65!black}{\textbf{Step 2: choose one component so that the remaining system is easy.}}
-
-Set
-\[
-\textcolor{violet!75!black}{\Delta=u_1v_2-u_2v_1}.
-\]
-Assume first that \(\Delta\neq0\), and choose
-\[
-\textcolor{violet!75!black}{n_3=\Delta}.
-\]
-The two equations reduce to the ordinary \(2\times2\) system
-\[
-\begin{aligned}
-u_1n_1+u_2n_2&=-u_3\Delta,\\
-v_1n_1+v_2n_2&=-v_3\Delta.
-\end{aligned}
-\]
-\end{minipage}}
-\end{center}
-
-\begin{center}
-\fcolorbox{orange!80!black}{orange!5}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{orange!80!black}{\textbf{Step 3: eliminate \(n_2\) and find \(n_1\).}}
-
-Multiply the first equation by \(v_2\), the second by \(u_2\), and subtract:
-\[
-\begin{aligned}
-&v_2(u_1n_1+u_2n_2)
--u_2(v_1n_1+v_2n_2)\\
-&\qquad=-u_3v_2\Delta+u_2v_3\Delta.
-\end{aligned}
-\]
-The \(n_2\)-terms cancel, so
-\[
-\Delta n_1=\Delta(u_2v_3-u_3v_2).
-\]
-Since \(\Delta\neq0\),
-\[
-\boxed{\textcolor{orange!80!black}{n_1=u_2v_3-u_3v_2}}.
-\]
-\end{minipage}}
-\end{center}
-
-\begin{center}
-\fcolorbox{orange!80!black}{orange!5}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{orange!80!black}{\textbf{Step 4: eliminate \(n_1\) and find \(n_2\).}}
-
-Multiply the first equation by \(v_1\), the second by \(u_1\), and subtract:
-\[
-\begin{aligned}
-&v_1(u_1n_1+u_2n_2)
--u_1(v_1n_1+v_2n_2)\\
-&\qquad=-u_3v_1\Delta+u_1v_3\Delta.
-\end{aligned}
-\]
-The \(n_1\)-terms cancel, giving
-\[
--\Delta n_2=\Delta(u_1v_3-u_3v_1).
-\]
-Hence
-\[
-\boxed{\textcolor{orange!80!black}{n_2=u_3v_1-u_1v_3}}.
-\]
-\end{minipage}}
-\end{center}
-
-\begin{center}
-\fcolorbox{green!55!black}{green!4}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{green!45!black}{\textbf{Step 5: assemble the three components.}}
-
-Together with
-\[
-\textcolor{violet!75!black}{n_3=u_1v_2-u_2v_1},
-\]
-we obtain
-\[
-\boxed{
-\mathbf n
-=
-\bigl(
-\textcolor{orange!80!black}{u_2v_3-u_3v_2},
-\;\textcolor{orange!80!black}{u_3v_1-u_1v_3},
-\;\textcolor{violet!75!black}{u_1v_2-u_2v_1}
-\bigr)
-}.
-\]
-If the displayed \(\Delta\) is zero but the vectors are not parallel, one of the
-other two coordinate pairs is nonzero. Repeating the same elimination with that
-pair gives the same cyclic formula.
-\end{minipage}}
-\end{center}
-
-\begin{center}
-\fcolorbox{gray!70!black}{gray!5}{%
-\begin{minipage}{0.90\textwidth}
-\textcolor{gray!70!black}{\textbf{Step 6: verify that the constructed vector really works.}}
-
-For the first input vector, the terms cancel in three visible pairs:
-\[
-\begin{aligned}
-\mathbf n\cdot\mathbf u
-&=\textcolor{blue!65!black}{(u_1u_2v_3-u_1u_2v_3)}\\
-&\quad+\textcolor{orange!80!black}{(-u_1u_3v_2+u_1u_3v_2)}\\
-&\quad+\textcolor{green!45!black}{(u_2u_3v_1-u_2u_3v_1)}\\
-&=0.
-\end{aligned}
-\]
-Likewise,
-\[
-\begin{aligned}
-\mathbf n\cdot\mathbf v
-&=\textcolor{blue!65!black}{(u_2v_1v_3-u_2v_1v_3)}\\
-&\quad+\textcolor{orange!80!black}{(-u_3v_1v_2+u_3v_1v_2)}\\
-&\quad+\textcolor{green!45!black}{(-u_1v_2v_3+u_1v_2v_3)}\\
-&=0.
-\end{aligned}
-\]
-Thus \(\mathbf n\perp\mathbf u\) and \(\mathbf n\perp\mathbf v\).
-\end{minipage}}
-\end{center}
-
-\endgroup
-
-The vector has therefore been derived from the two perpendicularity equations.
-We now give it a name:
+the \emph{cross product} is defined by
 \[
 \boxed{
 \mathbf u\times\mathbf v
@@ -222,12 +66,28 @@ u_2v_3-u_3v_2,
 \bigr)
 }.
 \]
-Consequently,
+
+The coordinate formula is less important than the geometric property it
+encodes. A direct substitution shows that
+\[
+\begin{aligned}
+(\mathbf u\times\mathbf v)\cdot\mathbf u
+&=(u_2v_3-u_3v_2)u_1
+ +(u_3v_1-u_1v_3)u_2
+ +(u_1v_2-u_2v_1)u_3\\
+&=0,
+\end{aligned}
+\]
+and similarly
+\[
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0.
+\]
+Therefore
 \[
 \boxed{
-(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
+(\mathbf u\times\mathbf v)\perp\mathbf u,
 \qquad
-(\mathbf u\times\mathbf v)\cdot\mathbf v=0
+(\mathbf u\times\mathbf v)\perp\mathbf v
 }.
 \]
 
