@@ -331,6 +331,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/projection.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/scalar_multiplication.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/section.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/three_dimensions.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/vector_addition.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/vector_as_coordinate_change.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_03
