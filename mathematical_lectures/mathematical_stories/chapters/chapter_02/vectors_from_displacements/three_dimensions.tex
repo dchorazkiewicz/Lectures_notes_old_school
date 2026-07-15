@@ -1,15 +1,16 @@
-\subsection{From the Plane to Three-Dimensional Space}
+\subsection{From the Plane to Three-Dimensional Vectors}
 
-Nothing essential changes when a third coordinate direction is added. A vector
-in space records three coordinate changes:
+Adding a third coordinate does not change the basic meaning of a vector. A
+vector still records a displacement, but now it records three independent
+coordinate changes:
 \[
 \mathbf v=(v_1,v_2,v_3).
 \]
-Addition and scalar multiplication remain componentwise because successive
-changes in each coordinate still add independently.
+Addition and scalar multiplication remain componentwise, because successive
+changes in each coordinate direction still combine independently.
 
-To find the length, first combine the changes in the first two coordinates and
-then include the third. Applying the Pythagorean theorem twice gives
+Applying the Pythagorean theorem first to the first two coordinate changes and
+then to the third gives
 \[
 \boxed{
 \|\mathbf v\|
@@ -17,84 +18,43 @@ then include the third. Applying the Pythagorean theorem twice gives
 \sqrt{v_1^2+v_2^2+v_3^2}
 }.
 \]
-The dot product extends in the same way:
+The dot product extends in exactly the same way:
+\[
+\boxed{
+\mathbf u\cdot\mathbf v
+=
+u_1v_1+u_2v_2+u_3v_3
+}.
+\]
+Its geometric role is unchanged:
 \[
 \mathbf u\cdot\mathbf v
-=u_1v_1+u_2v_2+u_3v_3.
+=
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
 \]
-It still measures the cosine of the angle and still detects perpendicularity.
+Consequently,
+\[
+\boxed{
+\mathbf u\perp\mathbf v
+\iff
+\mathbf u\cdot\mathbf v=0
+}.
+\]
+Thus the dot product detects perpendicularity in both two and three dimensions.
 
-\subsubsection*{A new geometric question}
+\subsubsection*{A second product available in three dimensions}
 
-In the plane, one nonzero vector determines a line and two nonparallel vectors
-already determine the whole plane. In three-dimensional space, two nonparallel
-vectors determine a plane through the origin. We can therefore ask:
+In three dimensions there is another natural question. Given two vectors
+\(\mathbf u\) and \(\mathbf v\), can we construct a new vector perpendicular to
+both of them?
 
-\begin{center}
-\emph{Can we construct a vector perpendicular to that entire plane?}
-\end{center}
-
-Such a vector must be perpendicular to both given vectors. If
+For
 \[
 \mathbf u=(u_1,u_2,u_3),
 \qquad
 \mathbf v=(v_1,v_2,v_3),
 \]
-and
-\[
-\mathbf n=(n_1,n_2,n_3),
-\]
-then the two perpendicularity conditions are
-\[
-\begin{aligned}
-n_1u_1+n_2u_2+n_3u_3&=0,\\
-n_1v_1+n_2v_2+n_3v_3&=0.
-\end{aligned}
-\]
-They describe one line of possible perpendicular vectors. The two opposite
-directions on that line are both geometrically perpendicular to the plane.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9,>=stealth]
-    \coordinate (O) at (0,0);
-    \coordinate (U) at (4.2,0.8);
-    \coordinate (V) at (1.4,2.7);
-    \coordinate (S) at (5.6,3.5);
-    \coordinate (N) at (2.4,4.8);
-
-    \fill[gray!10] (O) -- (U) -- (S) -- (V) -- cycle;
-    \draw[blue!70!black,line width=1.1pt,->] (O) -- (U)
-        node[midway,below] {$\mathbf u$};
-    \draw[orange!85!black,line width=1.1pt,->] (O) -- (V)
-        node[midway,left] {$\mathbf v$};
-    \draw[helper,dashed] (U) -- (S);
-    \draw[helper,dashed] (V) -- (S);
-    \draw[very thick,->] (O) -- (N)
-        node[midway,left] {$\mathbf u\times\mathbf v$};
-    \node at (4.6,2.8) {plane spanned by $\mathbf u,\mathbf v$};
-\end{tikzpicture}
-\end{center}
-
-\subsubsection*{Choosing one of the two perpendicular directions}
-
-The two possible perpendicular vectors differ only by sign. To choose one
-consistently, we use the right-hand rule: curl the fingers of the right hand
-from $\mathbf u$ toward $\mathbf v$ through the smaller angle; the thumb points
-in the direction assigned to $\mathbf u\times\mathbf v$.
-
-Reversing the order reverses the chosen direction:
-\[
-\boxed{
-\mathbf v\times\mathbf u
-=-(\mathbf u\times\mathbf v)
-}.
-\]
-Thus the cross product remembers orientation, unlike the ordinary angle between
-vectors.
-
-\subsubsection*{Deriving the coordinate formula}
-
-A convenient solution of the two perpendicularity equations is
+define
 \[
 \boxed{
 \mathbf u\times\mathbf v
@@ -106,60 +66,138 @@ A convenient solution of the two perpendicularity equations is
 \bigr)
 }.
 \]
-This formula is not accepted without verification. Substitution gives
-\[
-(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
-\qquad
-(\mathbf u\times\mathbf v)\cdot\mathbf v=0,
-\]
-so the resulting vector is indeed perpendicular to both inputs.
-
-\subsubsection*{Its length is an area}
-
-Let $\theta\in[0,\pi]$ be the angle between $\mathbf u$ and $\mathbf v$. The
-parallelogram built on these vectors has base $\|\mathbf u\|$ and height
-$\|\mathbf v\|\sin\theta$. Its area is therefore
-\[
-\|\mathbf u\|\,\|\mathbf v\|\sin\theta.
-\]
-The cross product is chosen so that its length equals this area:
+This formula is useful only because of what it guarantees. Direct substitution
+gives
 \[
 \boxed{
-\|\mathbf u\times\mathbf v\|
-=
-\|\mathbf u\|\,\|\mathbf v\|\sin\theta
+(\mathbf u\times\mathbf v)\cdot\mathbf u=0,
+\qquad
+(\mathbf u\times\mathbf v)\cdot\mathbf v=0
 }.
 \]
-This explains two important cases immediately:
+Therefore \(\mathbf u\times\mathbf v\) is perpendicular to both original
+vectors.
+
+The statement is stronger. Every linear combination
 \[
+a\mathbf u+b\mathbf v
+\]
+is also perpendicular to \(\mathbf u\times\mathbf v\), because
+\[
+\begin{aligned}
+(\mathbf u\times\mathbf v)\cdot
+(a\mathbf u+b\mathbf v)
+&=
+a(\mathbf u\times\mathbf v)\cdot\mathbf u
++b(\mathbf u\times\mathbf v)\cdot\mathbf v\\
+&=a\cdot0+b\cdot0\\
+&=0.
+\end{aligned}
+\]
+We do not yet turn this family of linear combinations into a theory of planes.
+That geometric construction belongs to the later chapter on lines and planes.
+For now, the important fact is simply that one cross product produces a vector
+perpendicular to every combination of its two inputs.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (U) at (4.4,0.8);
+    \coordinate (V) at (1.5,2.7);
+    \coordinate (S) at (5.9,3.5);
+    \coordinate (N) at (2.2,4.8);
+
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (U)
+        node[midway,below] {$\mathbf u$};
+    \draw[orange!85!black,line width=1.1pt,->] (O) -- (V)
+        node[midway,left] {$\mathbf v$};
+    \draw[helper,dashed] (U) -- (S);
+    \draw[helper,dashed] (V) -- (S);
+    \draw[very thick,->] (O) -- (N)
+        node[midway,left] {$\mathbf u\times\mathbf v$};
+
+    \node[align=left,anchor=west] at (4.8,4.5)
+        {perpendicular to $\mathbf u$\\
+         perpendicular to $\mathbf v$\\
+         perpendicular to $a\mathbf u+b\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{The cross product detects parallelism}
+
+If \(\mathbf u\) and \(\mathbf v\) are parallel, then one is a scalar multiple
+of the other. Let \(\mathbf v=\lambda\mathbf u\). Substitution into the
+coordinate formula makes every component of the cross product vanish, so
+\[
+\mathbf u\times\mathbf v=\mathbf0.
+\]
+Conversely, if two nonzero vectors have zero cross product, then their
+directions are parallel. Hence
+\[
+\boxed{
 \mathbf u\parallel\mathbf v
 \iff
-\mathbf u\times\mathbf v=\mathbf0,
+\mathbf u\times\mathbf v=\mathbf0
+}
 \]
-because the parallelogram then has zero height, while perpendicular vectors
-produce the largest possible area for fixed lengths.
+for nonzero vectors.
 
-\begin{remarkbox}
-The cross product is special to three-dimensional Euclidean space. It combines
-three pieces of information: the plane determined by the two vectors, an
-orientation of that plane, and the area of their parallelogram.
-\end{remarkbox}
+This gives two complementary geometric tests:
+\[
+\boxed{
+\begin{aligned}
+\mathbf u\cdot\mathbf v=0
+&\quad\Longleftrightarrow\quad
+\mathbf u\perp\mathbf v,\\
+\mathbf u\times\mathbf v=\mathbf0
+&\quad\Longleftrightarrow\quad
+\mathbf u\parallel\mathbf v
+\quad(\mathbf u,\mathbf v\neq\mathbf0).
+\end{aligned}
+}
+\]
+
+\subsubsection*{Order and orientation}
+
+There are two opposite directions perpendicular to both nonparallel vectors. To
+choose one consistently, we use the right-hand rule: curl the fingers of the
+right hand from \(\mathbf u\) toward \(\mathbf v\); the thumb indicates the
+direction of \(\mathbf u\times\mathbf v\).
+
+Reversing the order reverses the result:
+\[
+\boxed{
+\mathbf v\times\mathbf u
+=-(\mathbf u\times\mathbf v)
+}.
+\]
+Thus the cross product is not commutative.
+
+Its length satisfies
+\[
+\|\mathbf u\times\mathbf v\|
+=
+\|\mathbf u\|\,\|\mathbf v\|\sin\theta.
+\]
+This formula explains the parallelism test: for parallel vectors,
+\(\theta=0\) or \(\theta=\pi\), so the sine and therefore the cross product
+vanish. The later geometry chapters will use the same quantity when areas,
+lines, and planes are constructed.
 
 \begin{summarybox}
-The vector chapter now follows one continuous chain of ideas:
+The two vector products answer different geometric questions:
 \[
-\text{displacement}
-\longrightarrow
-\text{addition and scaling}
-\longrightarrow
-\text{linear combinations}
-\longrightarrow
-\text{length and direction}
-\longrightarrow
-\text{dot product and angle}
-\longrightarrow
-\text{projection and orthogonal decomposition}.
+\begin{array}{c|c|c}
+\text{operation}&\text{output}&\text{main test}\\
+\hline
+\mathbf u\cdot\mathbf v&\text{number}&
+\mathbf u\perp\mathbf v\iff\mathbf u\cdot\mathbf v=0\\
+\mathbf u\times\mathbf v&\text{vector}&
+\mathbf u\parallel\mathbf v\iff\mathbf u\times\mathbf v=\mathbf0
+\end{array}
 \]
-In three dimensions the same language leads naturally to a vector perpendicular
-to a plane and to the cross product, whose length records area.
+Moreover, \(\mathbf u\times\mathbf v\) is perpendicular to \(\mathbf u\), to
+\(\mathbf v\), and to every linear combination \(a\mathbf u+b\mathbf v\).
+These facts are developed here as properties of vectors. They will become tools
+for constructing and analysing lines and planes only in the following chapter.
 \end{summarybox}
