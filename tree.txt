@@ -294,6 +294,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/plane_before_coordinates.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/derived_constructions.tex
