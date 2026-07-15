@@ -1,0 +1,254 @@
+\section{Beyond a Change of Basis: Polar Coordinates}
+
+The preceding section changed the basis of the plane. In every such change we
+kept two fixed, nonparallel vector directions and described a vector by the
+signed amounts of those two directions. The coordinate grid could become
+slanted, but it still consisted of two families of parallel straight lines.
+
+There is a more radical possibility. We may keep the same Euclidean plane and
+describe a point by quantities that are not coefficients of two fixed basis
+vectors. Polar coordinates provide the first important example.
+
+\begin{remarkbox}
+A change from one vector basis to another is a \emph{linear} change of
+coordinates. Polar coordinates are not obtained from a new vector basis. Their
+coordinate curves are rays and circles, and the directions used to read the
+coordinates vary from point to point.
+\end{remarkbox}
+
+\subsection*{Two different questions about the same point}
+
+The Cartesian description of a point uses two signed coordinate values obtained
+from projections parallel to the coordinate directions:
+\[
+P=(x,y).
+\]
+This is natural when two fixed straight directions are important. We may instead
+ask:
+\begin{enumerate}
+    \item How far is the point from the origin?
+    \item In which direction do we move from the origin to reach it?
+\end{enumerate}
+
+These questions lead to the polar pair
+\[
+(r,\theta),
+\]
+where, for a point different from the origin,
+\[
+r>0,
+\qquad
+0\leq\theta<2\pi.
+\]
+The number $r$ is the Euclidean distance from the origin, and $\theta$ is the
+angle measured counterclockwise from the positive $x$-axis.
+
+The origin is handled separately. In the usual non-unique polar notation every
+pair $(0,\theta)$ represents the origin. In this course we choose the single
+representative
+\[
+O=(0,0)
+\]
+so that every point has exactly one allowed polar pair. Thus
+\[
+\mathcal P
+=
+\{(0,0)\}
+\cup
+\bigl((0,\infty)\times[0,2\pi)\bigr).
+\]
+
+\subsection*{Rectangular and polar grids}
+
+The two descriptions below refer to the same Euclidean plane. What changes is
+the family of curves used to locate a point.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78,>=stealth]
+    % Cartesian grid
+    \begin{scope}[xshift=0cm]
+        \draw[gray!35,step=1] (-3.2,-3.2) grid (3.2,3.2);
+        \draw[axis,->] (-3.4,0) -- (3.5,0) node[right] {$x$};
+        \draw[axis,->] (0,-3.4) -- (0,3.5) node[above] {$y$};
+        \coordinate (P1) at (2.4,1.8);
+        \draw[helper,dashed] (P1) -- (2.4,0);
+        \draw[helper,dashed] (P1) -- (0,1.8);
+        \fill[geometricSubsetColor] (P1) circle (2.3pt) node[above right] {$P$};
+        \node[align=center] at (0,-4.15)
+            {Cartesian grid\\two families of parallel lines};
+    \end{scope}
+
+    % Polar grid
+    \begin{scope}[xshift=9.2cm]
+        \draw[axis,->] (-3.4,0) -- (3.5,0) node[right] {$x$};
+        \draw[axis,->] (0,-3.4) -- (0,3.5) node[above] {$y$};
+        \foreach \r in {1,2,3} {
+            \draw[gray!45] (0,0) circle (\r);
+        }
+        \foreach \a in {0,30,...,330} {
+            \draw[gray!45] (0,0) -- ({3.2*cos(\a)},{3.2*sin(\a)});
+        }
+        \coordinate (P2) at (2.4,1.8);
+        \draw[very thick,->] (0,0) -- (P2) node[midway,above left] {$r$};
+        \draw (0.8,0) arc[start angle=0,end angle=36.87,radius=0.8];
+        \node at (1.05,0.34) {$\theta$};
+        \fill[geometricSubsetColor] (P2) circle (2.3pt) node[above right] {$P$};
+        \node[align=center] at (0,-4.15)
+            {polar grid\\rays and concentric circles};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+In the Cartesian grid, keeping $x$ fixed gives a vertical straight line and
+keeping $y$ fixed gives a horizontal straight line. In the polar grid, keeping
+$\theta$ fixed gives a ray from the origin, while keeping $r$ fixed gives a
+circle. This is the visible reason polar coordinates are not merely a slanted
+basis.
+
+\subsection*{Converting between the descriptions}
+
+Let $P$ have polar coordinates $(r,\theta)$. The right triangle determined by
+$P$ gives
+\[
+\boxed{
+x=r\cos\theta,
+\qquad
+y=r\sin\theta
+}.
+\]
+Thus the position vector of $P$ may be written as
+\[
+\overrightarrow{OP}
+=
+r(\cos\theta,\sin\theta).
+\]
+This resembles a scalar multiple of a unit vector, but the direction
+$(\cos\theta,\sin\theta)$ depends on the coordinate $\theta$. There are not two
+fixed basis vectors whose constant coefficients are $r$ and $\theta$.
+
+Conversely, if $(x,y)\neq(0,0)$, then
+\[
+\boxed{r=\sqrt{x^2+y^2}}.
+\]
+The polar angle is the unique number $\theta\in[0,2\pi)$ satisfying
+\[
+\boxed{
+\cos\theta=\frac{x}{r},
+\qquad
+\sin\theta=\frac{y}{r}
+}.
+\]
+These two equations determine both the quadrant and the exact direction. The
+single expression $\arctan(y/x)$ is insufficient because it loses quadrant
+information and is undefined when $x=0$. In computation the correct angle is
+usually obtained with the two-argument function $\operatorname{atan2}(y,x)$,
+with a negative output shifted by $2\pi$.
+
+\begin{examplebox}
+For
+\[
+(r,\theta)=\left(2,\frac{\pi}{3}\right),
+\]
+we obtain
+\[
+x=2\cos\frac{\pi}{3}=1,
+\qquad
+y=2\sin\frac{\pi}{3}=\sqrt3.
+\]
+Thus the same point is written as
+\[
+P=(1,\sqrt3)
+\]
+in Cartesian coordinates and as
+\[
+P=\left(2,\frac{\pi}{3}\right)
+\]
+in polar coordinates.
+\end{examplebox}
+
+\subsection*{Why the transformation is nonlinear}
+
+For a change of vector basis, multiplying a vector by $\lambda$ multiplies each
+of its coordinates by $\lambda$, and the coordinates of a sum are obtained by
+adding coordinate pairs. Polar coordinates do not behave this way.
+
+For example, the points with polar pairs
+\[
+(1,0)
+\qquad\text{and}\qquad
+\left(1,\frac{\pi}{2}\right)
+\]
+have Cartesian position vectors $(1,0)$ and $(0,1)$. Their vector sum is
+$(1,1)$, whose polar coordinates are
+\[
+\left(\sqrt2,\frac{\pi}{4}\right),
+\]
+not
+\[
+\left(2,\frac{\pi}{2}\right).
+\]
+Therefore polar coordinate pairs cannot be added componentwise to add vectors.
+The formulas
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta
+\]
+contain trigonometric functions and describe a genuinely nonlinear change of
+coordinates.
+
+\subsection*{A circle becomes simple}
+
+Polar coordinates are useful when distance from the origin is the main
+geometric feature. Let
+\[
+C_R
+=
+\{(x,y)\in\mathbb R^2:x^2+y^2=R^2\},
+\qquad R>0.
+\]
+Substituting
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta
+\]
+gives
+\[
+r^2\cos^2\theta+r^2\sin^2\theta=R^2.
+\]
+Since $\cos^2\theta+\sin^2\theta=1$, this reduces to
+\[
+\boxed{r=R}.
+\]
+Thus
+\[
+x^2+y^2=R^2
+\qquad\text{and}\qquad
+r=R
+\]
+describe the same geometric circle. The set has not changed; only the coordinate
+language has changed.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->,thick] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \draw[very thick] (0,0) circle (2);
+    \draw[thick] (0,0) -- ({2*cos(35)},{2*sin(35)})
+        node[midway,above left] {$R$};
+    \fill (0,0) circle (1.7pt) node[below left] {$O$};
+    \node[above right] at (1.4,1.4) {$C_R$};
+\end{tikzpicture}
+\end{center}
+
+\begin{summarybox}
+A vector basis uses fixed straight directions and leads to linear coordinate
+changes. Polar coordinates instead use a distance and an angle:
+\[
+(r,\theta)\longleftrightarrow(r\cos\theta,r\sin\theta).
+\]
+Their coordinate curves are circles and rays, their directions vary across the
+plane, and vector addition is not performed by adding polar coordinate pairs.
+This is our first example of a nonlinear coordinate system.
+\end{summarybox}
