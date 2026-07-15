@@ -317,6 +317,8 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/polar_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/change_of_basis.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/cosine_theorem.tex
