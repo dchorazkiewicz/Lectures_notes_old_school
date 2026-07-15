@@ -1,0 +1,60 @@
+\subsection{A Vector Records a Change of Coordinates}
+
+For arbitrary points
+\[
+A=(x_1,y_1),
+\qquad
+B=(x_2,y_2),
+\]
+the displacement from $A$ to $B$ is
+\[
+\overrightarrow{AB}
+=
+(x_2-x_1,\,y_2-y_1).
+\]
+
+\begin{definitionbox}
+A vector in the Cartesian plane is an ordered pair
+\[
+\mathbf v=(v_1,v_2)
+\]
+interpreted as a coordinate displacement: $v_1$ units horizontally and $v_2$
+units vertically.
+\end{definitionbox}
+
+This makes the phrase ``the same vector starting elsewhere'' precise. If
+$P=(p_1,p_2)$ and
+\[
+Q=(p_1+v_1,\,p_2+v_2),
+\]
+then
+\[
+\overrightarrow{PQ}=(v_1,v_2)=\mathbf v.
+\]
+The same two coordinate changes have simply been applied at another point.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.0) node[above] {$y$};
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (4,3);
+    \coordinate (P) at (2.5,2.2);
+    \coordinate (Q) at (5.5,4.2);
+    \draw[subset,->] (A) -- (B) node[midway,below right] {$(3,2)$};
+    \draw[subset,->] (P) -- (Q) node[midway,above left] {$(3,2)$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[below right] {$B$};
+    \fill[geometricSubsetColor] (P) circle (2pt) node[above left] {$P$};
+    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
+\end{tikzpicture}
+\end{center}
+
+The zero displacement is
+\[
+\mathbf0=(0,0).
+\]
+Reversing $\mathbf v=(v_1,v_2)$ gives
+\[
+-\mathbf v=(-v_1,-v_2).
+\]
