@@ -318,6 +318,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis
+./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis/negative_coordinate_example.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/change_of_basis/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements
 ./mathematical_lectures/mathematical_stories/chapters/chapter_02/vectors_from_displacements/angle_between_vectors.tex
