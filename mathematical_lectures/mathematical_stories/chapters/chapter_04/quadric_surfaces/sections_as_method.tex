@@ -29,6 +29,18 @@ Thus $|k|<c$ gives an ellipse, $|k|=c$ gives one point, and $|k|>c$ gives no
 real points. The surface is understood as ellipses that grow from one endpoint,
 reach their largest size at $z=0$, and shrink to the other endpoint.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
+    \draw[axis] (0,-2.8) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.8,-1.4) node[below left] {$y$};
+    \draw[subset] (0,0) ellipse (2.8 and 1.7);
+    \draw[subset,dashed] (0,0) ellipse (1.0 and 1.7);
+    \draw[subset] (0,-1.7) arc[start angle=-90,end angle=90,x radius=1.0,y radius=1.7];
+    \draw[subset,dashed] (0,1.7) arc[start angle=90,end angle=270,x radius=1.0,y radius=1.7];
+\end{tikzpicture}
+\end{center}
+
 \subsection{Elliptic paraboloid}
 
 For
@@ -46,6 +58,19 @@ z=\frac{x^2}{a^2}.
 \]
 The horizontal and vertical sections together explain both the opening direction
 and the shape near the vertex.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,4.6) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.7,-1.3) node[below left] {$y$};
+    \draw[subset,domain=-2.2:2.2,samples=100] plot (\x,{0.72*\x*\x});
+    \draw[subset] (0,1.1) ellipse (1.25 and 0.42);
+    \draw[subset] (0,2.4) ellipse (1.85 and 0.62);
+    \draw[subset] (0,3.8) ellipse (2.35 and 0.78);
+    \fill[geometricSubsetColor] (0,0) circle (2pt) node[below right] {vertex};
+\end{tikzpicture}
+\end{center}
 
 \subsection{Hyperbolic paraboloid}
 
@@ -66,6 +91,18 @@ $y$ direction. At $k=0$ the equation factors into two lines:
 The vertical sections $y=0$ and $x=0$ are parabolas opening in opposite
 directions. These changing sections explain the saddle shape.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-3.5,0) -- (3.7,0) node[right] {$x$};
+    \draw[axis] (0,-2.6) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-2.0,-1.5) node[below left] {$y$};
+    \draw[subset,domain=-2.4:2.4,samples=100] plot (\x,{0.42*\x*\x});
+    \draw[subset,domain=-2.2:2.2,samples=100] plot ({0.8*\x},{-0.42*\x*\x});
+    \draw[helper] (-2.3,-1.15) -- (2.3,1.15);
+    \draw[helper] (-2.3,1.15) -- (2.3,-1.15);
+\end{tikzpicture}
+\end{center}
+
 \subsection{Hyperboloid of one sheet}
 
 For
@@ -79,6 +116,21 @@ the section $z=k$ becomes
 Every height gives an ellipse, smallest at $k=0$ and larger as $|k|$ grows.
 Because a nonempty section exists at every height, the surface remains connected
 and has a central waist.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.8,0) -- (4.0,0) node[right] {$x$};
+    \draw[axis] (0,-3.3) -- (0,3.5) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.8,-1.4) node[below left] {$y$};
+    \draw[subset] (0,0) ellipse (1.35 and 0.45);
+    \draw[subset] (0,2.2) ellipse (2.15 and 0.72);
+    \draw[subset] (0,-2.2) ellipse (2.15 and 0.72);
+    \draw[subset] (-1.35,0) .. controls (-1.55,1.0) and (-1.9,1.7) .. (-2.15,2.2);
+    \draw[subset] (1.35,0) .. controls (1.55,1.0) and (1.9,1.7) .. (2.15,2.2);
+    \draw[subset] (-1.35,0) .. controls (-1.55,-1.0) and (-1.9,-1.7) .. (-2.15,-2.2);
+    \draw[subset] (1.35,0) .. controls (1.55,-1.0) and (1.9,-1.7) .. (2.15,-2.2);
+\end{tikzpicture}
+\end{center}
 
 \subsection{Hyperboloid of two sheets}
 
@@ -94,6 +146,22 @@ There are no points when $|k|<c$, one point when $|k|=c$, and ellipses when
 $|k|>c$. The empty band around $z=0$ separates the surface into two components.
 The algebraic absence of sections explains the geometric gap.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-4.0) -- (0,4.2) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.6,-1.2) node[below left] {$y$};
+    \draw[subset] (0,1.5) ellipse (0.75 and 0.25);
+    \draw[subset] (0,3.0) ellipse (1.75 and 0.58);
+    \draw[subset] (-0.75,1.5) .. controls (-1.0,2.0) and (-1.45,2.6) .. (-1.75,3.0);
+    \draw[subset] (0.75,1.5) .. controls (1.0,2.0) and (1.45,2.6) .. (1.75,3.0);
+    \draw[subset] (0,-1.5) ellipse (0.75 and 0.25);
+    \draw[subset] (0,-3.0) ellipse (1.75 and 0.58);
+    \draw[subset] (-0.75,-1.5) .. controls (-1.0,-2.0) and (-1.45,-2.6) .. (-1.75,-3.0);
+    \draw[subset] (0.75,-1.5) .. controls (1.0,-2.0) and (1.45,-2.6) .. (1.75,-3.0);
+\end{tikzpicture}
+\end{center}
+
 \subsection{Elliptic cone}
 
 For
@@ -107,6 +175,20 @@ the section $z=k$ is
 At $k=0$ the section is one point. For positive and negative $k$ we obtain
 ellipses of the same size whenever the absolute heights agree. This symmetry
 produces two nappes meeting at the origin.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-3.5) -- (0,3.7) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.6,-1.2) node[below left] {$y$};
+    \draw[subset] (0,0) -- (-2.2,2.8);
+    \draw[subset] (0,0) -- (2.2,2.8);
+    \draw[subset] (0,0) -- (-2.2,-2.8);
+    \draw[subset] (0,0) -- (2.2,-2.8);
+    \draw[subset] (0,2.8) ellipse (2.2 and 0.72);
+    \draw[subset] (0,-2.8) ellipse (2.2 and 0.72);
+\end{tikzpicture}
+\end{center}
 
 \subsection{Cylinders}
 
@@ -123,10 +205,23 @@ y=x^2
 \]
 produces the same parabola in every plane $z=k$, hence a parabolic cylinder.
 
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-3.4,0) -- (3.6,0) node[right] {$x$};
+    \draw[axis] (0,-2.7) -- (0,3.0) node[above] {$z$};
+    \draw[axis] (0,0) -- (-1.7,-1.3) node[below left] {$y$};
+    \draw[subset] (0,1.8) ellipse (1.8 and 0.65);
+    \draw[subset] (0,-1.8) ellipse (1.8 and 0.65);
+    \draw[subset] (-1.8,1.8) -- (-1.8,-1.8);
+    \draw[subset] (1.8,1.8) -- (1.8,-1.8);
+    \draw[subset,dashed] (0,1.8) arc[start angle=0,end angle=180,x radius=1.8,y radius=0.65];
+    \draw[subset,dashed] (0,-1.8) arc[start angle=180,end angle=360,x radius=1.8,y radius=0.65];
+\end{tikzpicture}
+\end{center}
+
 \begin{summarybox}
 A standard equation names a surface, but its sections explain the surface. Empty
 sections reveal gaps, shrinking sections reveal endpoints or vertices, changing
 conic types reveal saddle behaviour, and an absent coordinate reveals a direction
-of translation. The atlas below records the standard forms; this method explains
-why those forms have the geometry shown in their diagrams.
+of translation.
 \end{summarybox}
