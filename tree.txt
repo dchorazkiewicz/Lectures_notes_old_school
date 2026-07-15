@@ -296,6 +296,7 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/first_straight_line.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/origin_on_the_line.tex
+./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/perpendicular_axis.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/plane_before_coordinates.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/cartesian_coordinates/section.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites
