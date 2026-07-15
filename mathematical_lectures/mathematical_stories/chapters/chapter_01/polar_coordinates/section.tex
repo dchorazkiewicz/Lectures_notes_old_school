@@ -1,15 +1,13 @@
 \section{Another Way to Describe a Point: Polar Coordinates}
 
-The Cartesian description of a point uses two signed distances:
-
+The Cartesian description of a point uses two signed coordinate values obtained
+by orthogonal projection onto the axes:
 \[
 P=(x,y).
 \]
-
 This is natural when horizontal and vertical directions are important. It is not,
 however, the only possible way to describe position in the plane. We may instead
 ask two different questions:
-
 \begin{enumerate}
     \item How far is the point from the origin?
     \item In which direction do we move from the origin to reach it?
@@ -17,33 +15,28 @@ ask two different questions:
 
 These questions lead to \emph{polar coordinates}. For a point different from the
 origin, we use a pair
-
 \[
 (r,\theta),
 \]
-
 where
-
 \[
 r>0,
 \qquad
 0\leq \theta<2\pi.
 \]
+The number $r$ is the Euclidean distance from the origin, and $\theta$ is the
+angle measured counterclockwise from the positive $x$-axis. The interval for the
+angle is half-open: it contains $0$, but it does not contain $2\pi$. This choice
+prevents the same direction from being written twice.
 
-The number $r$ is the distance from the origin, and $\theta$ is the angle measured
-counterclockwise from the positive $x$-axis. The interval for the angle is
-half-open: it contains $0$, but it does not contain $2\pi$. This choice prevents
-the same direction from being written twice.
-
-The origin is handled separately. We assign to it the single polar coordinate
-pair
-
+The origin is handled separately. In the usual non-unique polar notation every
+pair $(0,\theta)$ represents the origin. In this course we choose the single
+representative
 \[
-O=(0,0).
+O=(0,0)
 \]
-
-Thus the set of coordinate pairs used in this course is
-
+so that every point has exactly one allowed polar pair. Thus the set of coordinate
+pairs used here is
 \[
 \mathcal{P}
 =
@@ -51,10 +44,6 @@ Thus the set of coordinate pairs used in this course is
 \cup
 \bigl((0,\infty)\times[0,2\pi)\bigr).
 \]
-
-This should be read as follows: either we have the distinguished pair $(0,0)$,
-which represents the origin, or we have a positive radius together with an angle
-from $0$ up to, but not including, $2\pi$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.05]
@@ -74,107 +63,90 @@ from $0$ up to, but not including, $2\pi$.
 
 The Cartesian and polar descriptions refer to the same point. The right triangle
 in the figure gives
-
 \[
 x=r\cos\theta,
 \qquad
 y=r\sin\theta.
 \]
-
-Conversely, if the Cartesian coordinates are known, then
-
+Conversely, if $(x,y)\neq(0,0)$, then
 \[
-r=\sqrt{x^2+y^2}.
+r=\sqrt{x^2+y^2}>0.
 \]
-
-For a point different from the origin, the angle is chosen uniquely from the
-interval $[0,2\pi)$ so that its sine and cosine have the correct signs. For this
-reason, the formula $\theta=\arctan(y/x)$ must be used with care: by itself it
-does not distinguish all four quadrants.
+The polar angle is the unique number $\theta\in[0,2\pi)$ satisfying
+\[
+\boxed{
+\cos\theta=\frac{x}{r},
+\qquad
+\sin\theta=\frac{y}{r}
+}.
+\]
+These two equations determine both the quadrant and the exact direction. The
+single formula $\arctan(y/x)$ is insufficient because it loses quadrant
+information and is undefined when $x=0$. In computation this unique angle is
+usually obtained with the two-argument function $\operatorname{atan2}(y,x)$,
+with a negative output shifted by $2\pi$.
 
 \begin{examplebox}
 Consider the point whose polar coordinates are
-
 \[
 (r,\theta)=\left(2,\frac{\pi}{3}\right).
 \]
-
 Its Cartesian coordinates are
-
 \[
 x=2\cos\frac{\pi}{3}=1,
 \qquad
 y=2\sin\frac{\pi}{3}=\sqrt{3}.
 \]
-
 Thus the same point may be written as
-
 \[
 P=\left(1,\sqrt{3}\right)
 \]
-
 in Cartesian coordinates and as
-
 \[
 P=\left(2,\frac{\pi}{3}\right)
 \]
-
 in polar coordinates.
 \end{examplebox}
 
 Polar coordinates are especially convenient when distance from the origin is the
 main geometric feature. Let
-
 \[
 C_R
 =
 \{(x,y)\in\mathbb{R}^2:x^2+y^2=R^2\},
 \qquad R>0.
 \]
-
 This is the set of all points in the Cartesian plane whose coordinates satisfy
-the condition
-
 \[
 x^2+y^2=R^2.
 \]
-
 Geometrically, $C_R$ is the circle of radius $R$ centred at the origin. After
 substituting
-
 \[
 x=r\cos\theta,
 \qquad
 y=r\sin\theta,
 \]
-
 the Cartesian condition becomes
-
 \[
 r^2\cos^2\theta+r^2\sin^2\theta=R^2.
 \]
-
 Since $\cos^2\theta+\sin^2\theta=1$, this reduces to
-
 \[
 \boxed{r=R}.
 \]
-
 In polar coordinates, the same circle is therefore represented by the set
-
 \[
 \{(R,\theta):0\leq\theta<2\pi\}.
 \]
 
 The set $C_R$ has not changed. The conditions
-
 \[
 x^2+y^2=R^2
 \qquad\text{and}\qquad
 r=R,
 \quad 0\leq\theta<2\pi,
 \]
-
 describe the same geometric subset of the plane, but they use different
 coordinates. In Cartesian coordinates we express a relation between horizontal
 and vertical position. In polar coordinates we state directly that every point
@@ -194,7 +166,7 @@ of the set has the same distance from the origin.
 
 \begin{remarkbox}
 The restriction $0\leq\theta<2\pi$ is part of the definition used here. The
-angle $2\pi$ is not included, because it points in the same direction as $0$.
-We do not identify or glue the endpoints of the interval. We simply choose one
-representative angle for each direction.
+angle $2\pi$ is not included because it has the same direction as $0$. We choose
+one representative angle for each direction rather than identifying the two
+endpoints of the interval.
 \end{remarkbox}
