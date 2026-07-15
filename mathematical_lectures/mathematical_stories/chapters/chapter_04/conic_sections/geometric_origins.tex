@@ -191,97 +191,116 @@ by choosing an unrelated formula.
 The four distance constructions also arise from one spatial experiment: intersect
 a double cone by a plane and vary the inclination of the cutting plane.
 
+% The cone construction below is adapted from the public TikZ example
+% MartinThoma/LaTeX-examples, tikz/circular-cone/circular-cone.tex.
+% The intersection curves are computed from x^2+y^2=(Rz/H)^2 together
+% with the displayed cutting-plane equations.
 \begin{center}
-\begin{tikzpicture}[scale=0.78,>=stealth,
-    cone front/.style={gray!70,line width=0.8pt},
-    cone back/.style={gray!55,dashed,line width=0.65pt},
-    cone fill/.style={fill=gray!7},
-    cutting plane/.style={fill=blue!10,draw=blue!55!black,line width=0.8pt,opacity=0.72},
-    section front/.style={draw=geometricSubsetColor,line width=1.6pt},
-    section back/.style={draw=geometricSubsetColor,dashed,line width=1.15pt}]
+\tdplotsetmaincoords{68}{118}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.78,
+    cone/.style={gray!65,line width=0.65pt},
+    hidden cone/.style={gray!50,dashed,line width=0.55pt},
+    plane/.style={fill=blue!10,draw=blue!55!black,opacity=0.68},
+    cut/.style={draw=geometricSubsetColor,line width=1.5pt}]
 
-% Circle
-\begin{scope}[xshift=-3.8cm,yshift=3.0cm]
-    \path[cone fill] (0,0)--(-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \path[cone fill] (0,0)--(-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \draw[cone back] (-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone back] (-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,-2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone front] (0,0)--(-1.55,2.55) (0,0)--(1.55,2.55)
-        (0,0)--(-1.55,-2.55) (0,0)--(1.55,-2.55);
-    \path[cutting plane] (-2.05,1.00)--(1.55,1.00)--(2.05,1.38)--(-1.55,1.38)--cycle;
-    \draw[section back] (-0.18,1.19) arc[start angle=180,end angle=360,x radius=0.73,y radius=0.18];
-    \draw[section front] (1.28,1.19) arc[start angle=0,end angle=180,x radius=0.73,y radius=0.18];
-    \node[font=\bfseries] at (0,-3.00) {circle};
+\def\R{1.45}
+\def\H{2.35}
+\pgfmathsetmacro{\K}{\R/\H}
+
+% Reusable double cone based on the circular-cone example.
+\newcommand{\DrawDoubleCone}{%
+    \draw[hidden cone]
+      plot[domain=0:180,samples=50,variable=\t]
+      ({\R*cos(\t)},{\R*sin(\t)},\H);
+    \draw[cone]
+      plot[domain=180:360,samples=50,variable=\t]
+      ({\R*cos(\t)},{\R*sin(\t)},\H);
+    \draw[hidden cone]
+      plot[domain=0:180,samples=50,variable=\t]
+      ({\R*cos(\t)},{\R*sin(\t)},-\H);
+    \draw[cone]
+      plot[domain=180:360,samples=50,variable=\t]
+      ({\R*cos(\t)},{\R*sin(\t)},-\H);
+    \foreach \a in {0,60,120,180,240,300}{
+      \draw[cone] (0,0,0)--({\R*cos(\a)},{\R*sin(\a)},\H);
+      \draw[cone] (0,0,0)--({\R*cos(\a)},{\R*sin(\a)},-\H);
+    }
+}
+
+% Circle: z=c.
+\begin{scope}[xshift=-4.0cm,yshift=3.0cm]
+    \DrawDoubleCone
+    \def\c{1.05}
+    \pgfmathsetmacro{\rc}{\K*\c}
+    \path[plane] (-1.65,-1.65,\c)--(1.65,-1.65,\c)--
+                 (1.65,1.65,\c)--(-1.65,1.65,\c)--cycle;
+    \draw[cut] plot[domain=0:360,samples=100,variable=\t]
+       ({\rc*cos(\t)},{\rc*sin(\t)},\c);
+    \node[font=\bfseries] at (0,0,-3.05) {circle};
 \end{scope}
 
-% Ellipse
-\begin{scope}[xshift=3.8cm,yshift=3.0cm]
-    \path[cone fill] (0,0)--(-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \path[cone fill] (0,0)--(-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \draw[cone back] (-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone back] (-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,-2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone front] (0,0)--(-1.55,2.55) (0,0)--(1.55,2.55)
-        (0,0)--(-1.55,-2.55) (0,0)--(1.55,-2.55);
-    \path[cutting plane] (-2.10,0.62)--(1.72,1.42)--(2.08,1.82)--(-1.74,1.02)--cycle;
-    \begin{scope}[rotate around={12:(0.02,1.22)}]
-        \draw[section back] (0.02,1.22) ++(-0.94,0) arc[start angle=180,end angle=360,x radius=0.94,y radius=0.22];
-        \draw[section front] (0.02,1.22) ++(0.94,0) arc[start angle=0,end angle=180,x radius=0.94,y radius=0.22];
-    \end{scope}
-    \node[font=\bfseries] at (0,-3.00) {ellipse};
+% Ellipse: z=c+a x with |K a|<1.
+\begin{scope}[xshift=4.0cm,yshift=3.0cm]
+    \DrawDoubleCone
+    \def\c{0.95}
+    \def\a{0.55}
+    \path[plane] (-1.70,-1.55,{\c-1.70*\a})--
+                 (1.70,-1.55,{\c+1.70*\a})--
+                 (1.70,1.55,{\c+1.70*\a})--
+                 (-1.70,1.55,{\c-1.70*\a})--cycle;
+    \draw[cut] plot[domain=0:360,samples=160,variable=\t]
+       ({(\K*\c*cos(\t))/(1-\K*\a*cos(\t))},
+        {(\K*\c*sin(\t))/(1-\K*\a*cos(\t))},
+        {\c+\a*(\K*\c*cos(\t))/(1-\K*\a*cos(\t))});
+    \node[font=\bfseries] at (0,0,-3.05) {ellipse};
 \end{scope}
 
-% Parabola
-\begin{scope}[xshift=-3.8cm,yshift=-3.7cm]
-    \path[cone fill] (0,0)--(-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \path[cone fill] (0,0)--(-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \draw[cone back] (-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone back] (-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,-2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone front] (0,0)--(-1.55,2.55) (0,0)--(1.55,2.55)
-        (0,0)--(-1.55,-2.55) (0,0)--(1.55,-2.55);
-    \path[cutting plane] (-1.70,-0.45)--(0.85,2.62)--(1.65,2.38)--(-0.90,-0.69)--cycle;
-    \draw[section back] plot[smooth] coordinates {(-0.38,0.05) (-0.18,0.42) (0.03,0.78)};
-    \draw[section front] plot[smooth] coordinates {(0.03,0.78) (0.35,1.28) (0.76,1.80) (1.20,2.25)};
-    \node[font=\bfseries] at (0,-3.00) {parabola};
-    \node[font=\scriptsize,align=center] at (2.15,1.78)
-        {plane parallel $\to$ a generator};
+% Parabola: z=c+a x with K a=1, hence the plane is parallel
+% to one generator of the cone.
+\begin{scope}[xshift=-4.0cm,yshift=-4.2cm]
+    \DrawDoubleCone
+    \def\c{0.38}
+    \pgfmathsetmacro{\a}{1/\K}
+    \path[plane] (-1.35,-1.45,{\c-1.35*\a})--
+                 (1.35,-1.45,{\c+1.35*\a})--
+                 (1.35,1.45,{\c+1.35*\a})--
+                 (-1.35,1.45,{\c-1.35*\a})--cycle;
+    \draw[cut] plot[domain=58:302,samples=150,variable=\t]
+       ({(\K*\c*cos(\t))/(1-cos(\t))},
+        {(\K*\c*sin(\t))/(1-cos(\t))},
+        {\c+\a*(\K*\c*cos(\t))/(1-cos(\t))});
+    \node[font=\bfseries] at (0,0,-3.05) {parabola};
 \end{scope}
 
-% Hyperbola
-\begin{scope}[xshift=3.8cm,yshift=-3.7cm]
-    \path[cone fill] (0,0)--(-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \path[cone fill] (0,0)--(-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34]--cycle;
-    \draw[cone back] (-1.55,2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone back] (-1.55,-2.55) arc[start angle=180,end angle=360,x radius=1.55,y radius=0.34];
-    \draw[cone front] (1.55,-2.55) arc[start angle=0,end angle=180,x radius=1.55,y radius=0.34];
-    \draw[cone front] (0,0)--(-1.55,2.55) (0,0)--(1.55,2.55)
-        (0,0)--(-1.55,-2.55) (0,0)--(1.55,-2.55);
-    \path[cutting plane] (-0.82,-2.80)--(0.58,-2.55)--(1.12,2.72)--(-0.28,2.47)--cycle;
-    \draw[section back] plot[smooth] coordinates {(-0.20,2.20) (-0.07,1.78) (0.02,1.32)};
-    \draw[section front] plot[smooth] coordinates {(0.02,1.32) (0.08,0.87) (0.12,0.48)};
-    \draw[section back] plot[smooth] coordinates {(0.25,-0.48) (0.34,-0.90) (0.48,-1.36)};
-    \draw[section front] plot[smooth] coordinates {(0.48,-1.36) (0.68,-1.82) (0.94,-2.23)};
-    \node[font=\bfseries] at (0,-3.00) {hyperbola};
-    \node[font=\scriptsize,align=center] at (2.10,0.0)
-        {plane meets $\to$ both nappes};
+% Hyperbola: z=c+a x with |K a|>1; the plane meets both nappes.
+\begin{scope}[xshift=4.0cm,yshift=-4.2cm]
+    \DrawDoubleCone
+    \def\c{0.25}
+    \def\a{2.05}
+    \path[plane] (-1.20,-1.55,{\c-1.20*\a})--
+                 (1.20,-1.55,{\c+1.20*\a})--
+                 (1.20,1.55,{\c+1.20*\a})--
+                 (-1.20,1.55,{\c-1.20*\a})--cycle;
+    \draw[cut] plot[domain=72:288,samples=150,variable=\t]
+       ({(\K*\c*cos(\t))/(1-\K*\a*cos(\t))},
+        {(\K*\c*sin(\t))/(1-\K*\a*cos(\t))},
+        {\c+\a*(\K*\c*cos(\t))/(1-\K*\a*cos(\t))});
+    \draw[cut] plot[domain=-72:72,samples=100,variable=\t]
+       ({(\K*\c*cos(\t))/(1-\K*\a*cos(\t))},
+        {(\K*\c*sin(\t))/(1-\K*\a*cos(\t))},
+        {\c+\a*(\K*\c*cos(\t))/(1-\K*\a*cos(\t))});
+    \node[font=\bfseries] at (0,0,-3.05) {hyperbola};
 \end{scope}
+
 \end{tikzpicture}
 \end{center}
 
-The four panels show the same geometric experiment at a readable scale. The
-front half of each intersection is drawn with a solid line and the hidden half
-with a dashed line. A plane perpendicular to the cone axis gives a circle. A
-moderate tilt, still meeting only one nappe, gives an ellipse. At the limiting
-inclination, when the plane is parallel to a generator of the cone, the closed
-curve opens into a parabola. A steeper plane crosses both nappes and produces the
-two branches of a hyperbola. Thus the family changes continuously as one demand
-on the cutting plane is varied.
+The four panels now use the same cone and the same algebraic construction. A
+horizontal plane gives a circle. Tilting the plane while it still meets only one
+nappe gives an ellipse. At the limiting inclination, when the plane is parallel
+to a generator, the intersection is a parabola. A steeper plane meets both
+nappes and produces a hyperbola. Thus the family changes because one geometric
+requirement on the cutting plane is varied while the cone remains fixed.
 
 \begin{remarkbox}
 The rest of the chapter studies how these geometric sets appear in Cartesian
