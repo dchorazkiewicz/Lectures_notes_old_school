@@ -316,7 +316,6 @@
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/euclidean_prerequisites/trigonometry_before_coordinates.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/polar_coordinates
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/polar_coordinates/section.tex
-./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_02.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_03.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_03_parametric.tex
 ./mathematical_lectures/mathematical_stories/chapters/chapter_01/section_04_second_degree_equations.tex
