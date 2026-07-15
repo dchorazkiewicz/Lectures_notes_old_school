@@ -1,0 +1,200 @@
+\section{Another Way to Describe a Point: Polar Coordinates}
+
+The Cartesian description of a point uses two signed distances:
+
+\[
+P=(x,y).
+\]
+
+This is natural when horizontal and vertical directions are important. It is not,
+however, the only possible way to describe position in the plane. We may instead
+ask two different questions:
+
+\begin{enumerate}
+    \item How far is the point from the origin?
+    \item In which direction do we move from the origin to reach it?
+\end{enumerate}
+
+These questions lead to \emph{polar coordinates}. For a point different from the
+origin, we use a pair
+
+\[
+(r,\theta),
+\]
+
+where
+
+\[
+r>0,
+\qquad
+0\leq \theta<2\pi.
+\]
+
+The number $r$ is the distance from the origin, and $\theta$ is the angle measured
+counterclockwise from the positive $x$-axis. The interval for the angle is
+half-open: it contains $0$, but it does not contain $2\pi$. This choice prevents
+the same direction from being written twice.
+
+The origin is handled separately. We assign to it the single polar coordinate
+pair
+
+\[
+O=(0,0).
+\]
+
+Thus the set of coordinate pairs used in this course is
+
+\[
+\mathcal{P}
+=
+\{(0,0)\}
+\cup
+\bigl((0,\infty)\times[0,2\pi)\bigr).
+\]
+
+This should be read as follows: either we have the distinguished pair $(0,0)$,
+which represents the origin, or we have a positive radius together with an angle
+from $0$ up to, but not including, $2\pi$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+    \draw[->] (-0.5,0) -- (4.8,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3.8) node[above] {$y$};
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (3.6,2.4);
+    \draw[thick] (O) -- (P) node[midway,above left] {$r$};
+    \draw[dashed] (P) -- (3.6,0);
+    \draw[dashed] (P) -- (0,2.4);
+    \draw (0.9,0) arc[start angle=0,end angle=33.69,radius=0.9];
+    \node at (1.15,0.35) {$\theta$};
+    \fill (P) circle (2pt) node[above right] {$P$};
+    \fill (O) circle (1.5pt) node[below left] {$O$};
+\end{tikzpicture}
+\end{center}
+
+The Cartesian and polar descriptions refer to the same point. The right triangle
+in the figure gives
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta.
+\]
+
+Conversely, if the Cartesian coordinates are known, then
+
+\[
+r=\sqrt{x^2+y^2}.
+\]
+
+For a point different from the origin, the angle is chosen uniquely from the
+interval $[0,2\pi)$ so that its sine and cosine have the correct signs. For this
+reason, the formula $\theta=\arctan(y/x)$ must be used with care: by itself it
+does not distinguish all four quadrants.
+
+\begin{examplebox}
+Consider the point whose polar coordinates are
+
+\[
+(r,\theta)=\left(2,\frac{\pi}{3}\right).
+\]
+
+Its Cartesian coordinates are
+
+\[
+x=2\cos\frac{\pi}{3}=1,
+\qquad
+y=2\sin\frac{\pi}{3}=\sqrt{3}.
+\]
+
+Thus the same point may be written as
+
+\[
+P=\left(1,\sqrt{3}\right)
+\]
+
+in Cartesian coordinates and as
+
+\[
+P=\left(2,\frac{\pi}{3}\right)
+\]
+
+in polar coordinates.
+\end{examplebox}
+
+Polar coordinates are especially convenient when distance from the origin is the
+main geometric feature. Let
+
+\[
+C_R
+=
+\{(x,y)\in\mathbb{R}^2:x^2+y^2=R^2\},
+\qquad R>0.
+\]
+
+This is the set of all points in the Cartesian plane whose coordinates satisfy
+the condition
+
+\[
+x^2+y^2=R^2.
+\]
+
+Geometrically, $C_R$ is the circle of radius $R$ centred at the origin. After
+substituting
+
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta,
+\]
+
+the Cartesian condition becomes
+
+\[
+r^2\cos^2\theta+r^2\sin^2\theta=R^2.
+\]
+
+Since $\cos^2\theta+\sin^2\theta=1$, this reduces to
+
+\[
+\boxed{r=R}.
+\]
+
+In polar coordinates, the same circle is therefore represented by the set
+
+\[
+\{(R,\theta):0\leq\theta<2\pi\}.
+\]
+
+The set $C_R$ has not changed. The conditions
+
+\[
+x^2+y^2=R^2
+\qquad\text{and}\qquad
+r=R,
+\quad 0\leq\theta<2\pi,
+\]
+
+describe the same geometric subset of the plane, but they use different
+coordinates. In Cartesian coordinates we express a relation between horizontal
+and vertical position. In polar coordinates we state directly that every point
+of the set has the same distance from the origin.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->,thick] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[->,thick] (0,-3.2) -- (0,3.4) node[above] {$y$};
+    \draw[very thick] (0,0) circle (2);
+    \draw[thick] (0,0) -- ({2*cos(35)},{2*sin(35)})
+        node[midway,above left] {$R$};
+    \fill (0,0) circle (1.7pt) node[below left] {$O$};
+    \node[above right] at (1.4,1.4) {$C_R$};
+\end{tikzpicture}
+\end{center}
+
+\begin{remarkbox}
+The restriction $0\leq\theta<2\pi$ is part of the definition used here. The
+angle $2\pi$ is not included, because it points in the same direction as $0$.
+We do not identify or glue the endpoints of the interval. We simply choose one
+representative angle for each direction.
+\end{remarkbox}
