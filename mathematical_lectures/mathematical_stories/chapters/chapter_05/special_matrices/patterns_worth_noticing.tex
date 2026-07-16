@@ -1,0 +1,24 @@
+\subsection{Patterns Worth Noticing}
+
+When a matrix appears, inspect its structure before calculating. Useful questions
+include:
+\begin{itemize}
+    \item Is the matrix diagonal or symmetric?
+    \item Does it contain many zeros?
+    \item Are two rows or columns equal?
+    \item Is one row or column a scalar multiple of another?
+    \item Does the matrix split naturally into simpler blocks?
+\end{itemize}
+
+\begin{interpretationbox}[Seeing structure is part of solving]
+A visible pattern can explain why an operation simplifies, why two matrices
+commute, or why some information is redundant. Recognising such a pattern is not
+a computational trick added after the mathematics; it is part of understanding
+the mathematical object.
+\end{interpretationbox}
+
+\begin{summarybox}[Read before calculating]
+The zero, identity, transpose, symmetric, and diagonal patterns provide a first
+vocabulary for structural reasoning. Before applying a general algorithm, check
+whether the matrix already reveals a simpler route.
+\end{summarybox}
