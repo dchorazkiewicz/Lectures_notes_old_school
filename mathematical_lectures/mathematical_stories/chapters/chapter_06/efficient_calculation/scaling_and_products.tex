@@ -1,0 +1,20 @@
+\subsection{Scaling the Matrix and Multiplying Matrices}
+
+If every row of an $n\times n$ matrix is multiplied by $\lambda$, multilinearity contributes one factor from each row:
+\[
+\boxed{\det(\lambda A)=\lambda^n\det A}.
+\]
+This explains why the determinant is not linear as a function of the whole matrix.
+
+\begin{theorembox}[Determinant of a product]
+For square matrices of the same size,
+\[
+\boxed{\det(AB)=\det A\,\det B}.
+\]
+\end{theorembox}
+
+For diagonal matrices the rule is immediate because both matrix multiplication and the determinant reduce to products of diagonal entries.
+
+\begin{remarkbox}
+The product rule concerns ordinary matrix multiplication. It is unrelated to entry-by-entry multiplication and must not be confused with linearity in one row or column.
+\end{remarkbox}
