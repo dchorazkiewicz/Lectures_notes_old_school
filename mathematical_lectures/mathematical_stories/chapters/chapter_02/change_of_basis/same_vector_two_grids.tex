@@ -1,0 +1,90 @@
+\subsection{The Same Vector on Two Different Grids}
+
+\begin{examplebox}
+Let the ordinary Cartesian basis be
+\[
+\mathcal E=(\mathbf e_1,\mathbf e_2),
+\qquad
+\mathbf e_1=(1,0),
+\qquad
+\mathbf e_2=(0,1),
+\]
+and choose the slanted basis
+\[
+\mathcal B=(\mathbf b_1,\mathbf b_2),
+\qquad
+\mathbf b_1=(2,1),
+\qquad
+\mathbf b_2=(1,2).
+\]
+Consider the geometric vector
+\[
+\mathbf u=(5,4)
+\]
+in Cartesian coordinates. On the rectangular grid,
+\[
+[\mathbf u]_{\mathcal E}=(5,4).
+\]
+On the slanted grid, we seek $c_1,c_2$ such that
+\[
+\mathbf u=c_1\mathbf b_1+c_2\mathbf b_2.
+\]
+The two pictures show the same arrow. Only the grid used to read its coordinates
+has changed.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72,>=stealth]
+    \begin{scope}[xshift=0cm]
+        \draw[gray!35,step=1] (-0.3,-0.3) grid (5.7,4.7);
+        \draw[axis,->] (-0.3,0) -- (5.9,0) node[right] {$\mathbf e_1$};
+        \draw[axis,->] (0,-0.3) -- (0,4.9) node[above] {$\mathbf e_2$};
+        \coordinate (OL) at (0,0);
+        \coordinate (UL) at (5,4);
+        \draw[helper,dashed] (UL) -- (5,0);
+        \draw[helper,dashed] (UL) -- (0,4);
+        \draw[very thick,->] (OL) -- (UL)
+            node[midway,above left] {$\mathbf u$};
+        \node[below] at (5,0) {$5$};
+        \node[left] at (0,4) {$4$};
+        \node[align=center] at (2.7,-1.0)
+            {rectangular grid\\$[\mathbf u]_{\mathcal E}=(5,4)$};
+    \end{scope}
+
+    \begin{scope}[xshift=10.2cm]
+        \coordinate (OR) at (0,0);
+        \coordinate (B1) at (2,1);
+        \coordinate (B2) at (1,2);
+        \coordinate (TwoB1) at (4,2);
+        \coordinate (UR) at (5,4);
+
+        \foreach \i in {-1,0,1,2,3} {
+            \draw[gray!45,dashed]
+                ({-1+2*\i},{-2+\i}) -- ({3+2*\i},{6+\i});
+        }
+        \foreach \j in {-1,0,1,2,3} {
+            \draw[gray!45,dashed]
+                ({-2+\j},{-1+2*\j}) -- ({6+\j},{3+2*\j});
+        }
+
+        \draw[blue!70!black,line width=1pt,->] (OR) -- (B1)
+            node[midway,below right] {$\mathbf b_1$};
+        \draw[orange!85!black,line width=1pt,->] (OR) -- (B2)
+            node[midway,left] {$\mathbf b_2$};
+        \draw[blue!70!black,line width=1pt,->] (OR) -- (TwoB1)
+            node[midway,below right] {$2\mathbf b_1$};
+        \draw[orange!85!black,line width=1pt,->] (TwoB1) -- (UR)
+            node[midway,right] {$\mathbf b_2$};
+        \draw[very thick,->] (OR) -- (UR)
+            node[midway,above left] {$\mathbf u$};
+        \draw[orange!85!black,dashed] (UR) -- (TwoB1);
+        \draw[blue!70!black,dashed] (UR) -- (B2);
+        \node[align=center] at (2.8,-1.0)
+            {slanted grid\\$[\mathbf u]_{\mathcal B}=(2,1)$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+On the rectangular grid the coordinates are read along perpendicular axes. On
+the slanted grid the lines through the endpoint are drawn parallel to the other
+basis vector, producing an oblique parallelogram rather than a rectangle.
+\end{examplebox}
