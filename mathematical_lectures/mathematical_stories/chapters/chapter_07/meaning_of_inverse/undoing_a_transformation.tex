@@ -1,0 +1,30 @@
+\subsection{Undoing a Transformation}
+
+If
+\[
+Ax=y
+\]
+and $A^{-1}$ exists, then
+\[
+A^{-1}Ax=A^{-1}y,
+\]
+so
+\[
+\boxed{x=A^{-1}y}.
+\]
+
+\begin{interpretationbox}[Recovering the original input]
+An inverse matrix reconstructs the input from the output. If different inputs have been collapsed into the same output, unique recovery is impossible and no inverse can exist.
+\end{interpretationbox}
+
+\begin{examplebox}[A diagonal transformation]
+For
+\[
+D=\begin{pmatrix}2&0\\0&3\end{pmatrix},
+\]
+the first coordinate is doubled and the second is tripled. Therefore
+\[
+D^{-1}=\begin{pmatrix}\frac12&0\\0&\frac13\end{pmatrix},
+\]
+and direct multiplication gives $DD^{-1}=I_2$.
+\end{examplebox}
