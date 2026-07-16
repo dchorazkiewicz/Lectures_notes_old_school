@@ -1,0 +1,22 @@
+\subsection{What a Zero Coefficient Determinant Means}
+
+If $\det A=0$, Cramer's rule does not apply. This does not automatically mean that the system is inconsistent; it means only that a unique solution cannot be obtained from an invertible coefficient matrix.
+
+\begin{examplebox}
+For
+\[
+\begin{cases}
+x+y=2,\\
+2x+2y=4,
+\end{cases}
+\]
+the coefficient determinant is zero, but the second equation repeats the first. The system has infinitely many solutions.
+\end{examplebox}
+
+\begin{corebox}[Loss of uniqueness is not loss of existence]
+When $\det A=0$, further elimination or equation comparison is required to distinguish no solution from infinitely many solutions.
+\end{corebox}
+
+\begin{summarybox}[Using Cramer's rule responsibly]
+Check that the system is square, compute $\det A$, replace the correct column for each unknown, verify the answer, and classify singular cases separately.
+\end{summarybox}
