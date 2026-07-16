@@ -51,39 +51,41 @@
 % Do not draw a second frame around formulas already placed in a colored box.
 \newcommand{\plainformula}[1]{#1}
 
-% Colored boxes
-\newtcolorbox{definitionbox}{
+% Colored boxes. Every environment accepts an optional title. This keeps the
+% visual hierarchy consistent and prevents [Custom title] from leaking into the
+% body when a chapter supplies a more descriptive heading.
+\newtcolorbox{definitionbox}[1][Definition]{
     breakable,
     colback=AccentBlue!28,
     colframe=SectionBlue,
-    title=Definition,
+    title={#1},
     fonttitle=\bfseries,
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{theorembox}{
+\newtcolorbox{theorembox}[1][Theorem]{
     breakable,
     colback=TheoremOrangeBack,
     colframe=TheoremOrange,
-    title=Theorem,
+    title={#1},
     fonttitle=\bfseries,
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{examplebox}{
+\newtcolorbox{examplebox}[1][Example]{
     breakable,
     colback=ExampleGreenBack,
     colframe=ExampleGreen,
-    title=Example,
+    title={#1},
     fonttitle=\bfseries,
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{remarkbox}{
+\newtcolorbox{remarkbox}[1][Remark]{
     breakable,
     colback=gray!4,
     colframe=SubsectionBlue!75,
-    title=Remark,
+    title={#1},
     fonttitle=\bfseries,
     before upper={\let\boxed\plainformula}
 }
