@@ -3,107 +3,88 @@
 \subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
-\item Let
-\[
-f(x)=x^2-4x+3.
-\]
-Compute $f(-1)$, $f(0)$, $f(2)$, and $f(5)$. Find the zeros and determine where the function is positive and negative.
+\item For $f(x)=x^2-4x+3$, compute $f(-1)$, $f(0)$, $f(2)$, and $f(5)$. Find the zeros and determine where the function is positive or negative.
 
-\item Determine the natural domain of each function:
+\item Determine the natural domain of
 \[
-f(x)=\frac{1}{x-3},
+f(x)=\frac1{x-3},
 \qquad
 g(x)=\sqrt{x+2},
 \qquad
 h(x)=\frac{\sqrt{5-x}}{x+1}.
 \]
 
-\item Prepare a value table for
-\[
-f(x)=|x-1|
-\]
-at $x=-2,-1,0,1,2,3,4$, and use the table to sketch the graph.
+\item Prepare a value table for $f(x)=|x-1|$ at $x=-2,-1,0,1,2,3,4$ and sketch the graph.
 
-\item Starting from the graph of $y=x^2$, sketch and label
+\item Starting from $y=x^2$, sketch
 \[
 y=(x-2)^2+1,
 \qquad
 y=-x^2,
 \qquad
-y=2x^2.
+y=2x^2,
 \]
-For each graph, state the transformation that was applied.
+and state each transformation.
+
+\item Let $f(x)=2x-1$ and $g(x)=x^2+3$. Compute $f\circ g$, $g\circ f$, and both values at $x=2$.
+
+\item Find the inverse of $f(x)=3x-5$ and verify both compositions.
+
+\item An arithmetic sequence has $a_1=4$ and $d=-3$. Find $a_2,a_3,a_{10}$ and an explicit formula.
+
+\item A geometric sequence has $b_1=2$ and $q=\frac12$. Find $b_2,b_3,b_6$ and an explicit formula.
+
+\item For $a_1=1$ and $a_{n+1}=2a_n+1$, compute the first six terms and plot $(n,a_n)$.
+
+\item Decide whether each sequence is increasing, decreasing, bounded above, or bounded below:
+\[
+\frac1n,
+\qquad n-3,
+\qquad(-1)^n,
+\qquad2-\frac1n.
+\]
+Justify each answer briefly.
+\end{enumerate}
+
+\subsection{Development and reasoning exercises}
+
+\begin{enumerate}
+\item For
+\[
+f(x)=\frac{x+1}{x-2},
+\]
+determine the domain, make a small value table on both sides of $x=2$, find the zero and axis intercepts, and sketch the main features. Explain which information came from algebra and which from the table.
 
 \item Let
 \[
-f(x)=2x-1,
+f(x)=x^2-4,
 \qquad
-g(x)=x^2+3.
+g(x)=2x+1.
 \]
-Compute $f\circ g$, $g\circ f$, $(f\circ g)(2)$, and $(g\circ f)(2)$.
+Find the domains and formulas for $f\circ g$ and $g\circ f$, solve $(f\circ g)(x)=0$, and explain why the order of composition matters.
 
-\item Find the inverse of
+\item The function $f(x)=x^2$ is not one-to-one on $\mathbb R$. Restrict its domain in two different natural ways, find the corresponding inverse functions, and compare their graphs.
+
+\item A function is described by
 \[
-f(x)=3x-5.
+f(x)=|x-2|-1.
 \]
-Verify by computing both $f(f^{-1}(x))$ and $f^{-1}(f(x))$.
+Produce a table, graph, zeros, sign intervals, minimum value, and a description of the transformations from $|x|$.
 
-\item An arithmetic sequence satisfies
+\item The arithmetic sequence satisfies $a_4=11$ and $a_{10}=29$. Find $a_1$, the common difference, and the explicit formula. Explain how two known terms determine the whole sequence.
+
+\item The geometric sequence satisfies $b_2=6$ and $b_5=162$. Find all real possibilities for the ratio and determine the corresponding explicit formulas.
+
+\item Starting from the recursion
 \[
-a_1=4,
-\qquad d=-3.
+a_{n+1}=a_n+3,
+\qquad a_1=2,
 \]
-Find $a_2,a_3,a_{10}$ and write an explicit formula for $a_n$.
+derive the explicit formula. Then prove it by induction and explain the roles of the recursive and explicit descriptions.
 
-\item A geometric sequence satisfies
-\[
-b_1=2,
-\qquad q=\frac12.
-\]
-Find $b_2,b_3,b_6$ and write an explicit formula for $b_n$.
+\item Prove directly that $a_n=2-1/n$ is increasing and bounded above. Identify the inequalities that express direction and confinement.
 
-\item The sequence is defined recursively by
-\[
-a_1=1,
-\qquad a_{n+1}=2a_n+1.
-\]
-Compute the first six terms and plot the points $(n,a_n)$.
+\item Explain why a sequence is a function on a discrete domain. Compare a graph of isolated sequence points with the graph of a real function and state which operations or questions remain meaningful in both settings.
 
-\item For each sequence, decide whether it is increasing, decreasing, bounded above, bounded below, or neither:
-\[
-a_n=\frac1n,
-\qquad b_n=n-3,
-\qquad c_n=(-1)^n,
-\qquad d_n=2-\frac1n.
-\]
-Support every answer with a short calculation or inequality.
-\end{enumerate}
-
-\subsection{Conceptual and reasoning exercises}
-
-\begin{enumerate}
-\item Explain what it means for a function to be an assignment. Why must every admissible input have exactly one output?
-
-\item Distinguish domain, codomain, and actual set of attained values. Give a simple function for which the codomain is larger than the set of attained values.
-
-\item A formula, a table, and a graph may describe the same function. Explain what information each representation reveals especially clearly and what it may hide.
-
-\item Explain why a vertical translation, a horizontal translation, a reflection, and a scaling change a graph in different ways. Relate each change to the corresponding formula.
-
-\item Composition is generally not commutative. Explain why the order in
-\[
-f\circ g
-\qquad\text{and}\qquad g\circ f
-\]
-matters, using the interpretation of successive assignments.
-
-\item Explain why a function must be one-to-one on the chosen domain before it can have an inverse function. Use a graph or a concrete counterexample.
-
-\item A sequence is a function whose domain is discrete. Explain what is gained by viewing sequences as functions rather than as unrelated lists of numbers.
-
-\item Compare an explicit definition and a recursive definition of a sequence. What information is immediately available in each form?
-
-\item Explain the structural difference between arithmetic and geometric sequences. Which operation remains constant in each case?
-
-\item Monotonicity and boundedness are introduced before limits. Explain why these two properties are natural preliminary questions when studying long-term behaviour.
+\item Give a complete analysis of one elementary function and one elementary sequence: specify their domains, representations, transformations or recurrence, monotonicity, boundedness, and the long-term question that leads naturally to limits.
 \end{enumerate}
