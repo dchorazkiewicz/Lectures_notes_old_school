@@ -1,11 +1,13 @@
 \subsection{Euclid's Five Postulates}
 
 The following are the five postulates used in the first book of Euclid's
-\emph{Elements}. The diagrams illustrate their meaning; they are not proofs.
+\emph{Elements}. They specify the elementary geometric operations and relations
+from which the later constructions begin. The diagrams illustrate their meaning;
+they are not proofs.
 
-\subsubsection{Postulate I: Joining Two Points}
-
+\begin{corebox}[Postulate I: joining two points]
 A straight segment can be drawn from any point to any other point.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -18,10 +20,10 @@ A straight segment can be drawn from any point to any other point.
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Postulate II: Extending a Segment}
-
+\begin{corebox}[Postulate II: extending a segment]
 A finite straight segment can be extended continuously in the same straight
 line.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -37,9 +39,9 @@ line.
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Postulate III: Drawing a Circle}
-
+\begin{corebox}[Postulate III: drawing a circle]
 A circle can be drawn with any chosen centre and any chosen radius.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -53,12 +55,14 @@ A circle can be drawn with any chosen centre and any chosen radius.
 \end{tikzpicture}
 \end{center}
 
-This postulate is what permits a length to be copied geometrically without
-first assigning a number to it.
+\begin{interpretationbox}[Why the circle postulate matters]
+This postulate permits a length to be copied geometrically without first
+assigning a number to it. The compass transfers a geometric magnitude directly.
+\end{interpretationbox}
 
-\subsubsection{Postulate IV: Equality of Right Angles}
-
+\begin{corebox}[Postulate IV: equality of right angles]
 All right angles are congruent.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -74,15 +78,17 @@ All right angles are congruent.
 \end{tikzpicture}
 \end{center}
 
+\begin{remarkbox}
 This postulate does not say that a perpendicular may simply be drawn without
-construction. It says that once right angles have been constructed, they are
-all equal.
+construction. It says that once right angles have been constructed, they are all
+congruent.
+\end{remarkbox}
 
-\subsubsection{Postulate V: The Parallel Postulate}
-
+\begin{corebox}[Postulate V: the parallel postulate]
 If a transversal meets two straight lines and the interior angles on one side
 sum to less than two right angles, then the two lines, when extended, meet on
 that side.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -93,6 +99,15 @@ that side.
 \end{tikzpicture}
 \end{center}
 
-A familiar modern equivalent is Playfair's formulation: through a point outside
-a given line there passes exactly one parallel to that line. We shall use that
+\begin{interpretationbox}[Modern working form]
+A familiar equivalent is Playfair's formulation: through a point outside a
+given line there passes exactly one parallel to that line. We shall use that
 form later, after the relation between the two formulations has been made clear.
+\end{interpretationbox}
+
+\begin{summarybox}[What the postulates provide]
+The first three postulates provide elementary constructions, the fourth makes
+right angles comparable, and the fifth controls parallelism. Together they
+specify the geometric world available before coordinates and algebra are
+introduced.
+\end{summarybox}
