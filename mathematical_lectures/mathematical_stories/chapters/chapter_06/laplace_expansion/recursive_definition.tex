@@ -1,0 +1,43 @@
+\subsection{The Recursive Definition}
+
+The base case is
+\[
+\det\begin{pmatrix}a\end{pmatrix}=a.
+\]
+For $n\ge2$, expand along the first row.
+
+\begin{definitionbox}[Laplace definition]
+For $A=(a_{ij})\in\mathbb R^{n\times n}$,
+\[
+\boxed{\det A=\sum_{j=1}^{n}a_{1j}C_{1j}}.
+\]
+\end{definitionbox}
+
+The definition reduces the size by one at each step. Eventually every branch reaches determinants of size $1\times1$.
+
+\begin{proofbox}[Compatibility with the $2\times2$ formula]
+For
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\]
+Laplace expansion gives
+\[
+\det A=a\det\begin{pmatrix}d\end{pmatrix}
+-b\det\begin{pmatrix}c\end{pmatrix}=ad-bc.
+\]
+\end{proofbox}
+
+\begin{proofbox}[Compatibility with the $3\times3$ formula]
+For
+\[
+A=\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix},
+\]
+\begin{align*}
+\det A
+&=a\begin{vmatrix}e&f\\h&i\end{vmatrix}
+-b\begin{vmatrix}d&f\\g&i\end{vmatrix}
++c\begin{vmatrix}d&e\\g&h\end{vmatrix}\\
+&=a(ei-fh)-b(di-fg)+c(dh-eg),
+\end{align*}
+which expands to the earlier six-term expression.
+\end{proofbox}
