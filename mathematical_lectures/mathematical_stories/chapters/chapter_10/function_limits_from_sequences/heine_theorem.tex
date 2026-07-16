@@ -1,0 +1,73 @@
+\subsection{From sequence limits to function limits}
+
+A function limit can be tested by following the function along every sequence of inputs approaching the point. This is the natural bridge from the discrete theory of sequences to the local behavior of functions.
+
+\begin{definitionbox}[Approaching a point through a sequence]
+Let \((x_n)\) be a sequence such that
+\[
+x_n\ne a
+\qquad\text{and}\qquad
+x_n\to a.
+\]
+Then the values
+\[
+f(x_1),f(x_2),f(x_3),\ldots
+\]
+form a new sequence. A function limit asks whether every such output sequence approaches the same number.
+\end{definitionbox}
+
+\begin{theorembox}[Heine's theorem]
+Let \(a\) be an accumulation point of the domain of \(f\). Then
+\[
+\lim_{x\to a}f(x)=L
+\]
+if and only if, for every sequence \((x_n)\) in the domain of \(f\) satisfying
+\[
+x_n\ne a
+\qquad\text{and}\qquad
+x_n\to a,
+\]
+we have
+\[
+f(x_n)\to L.
+\]
+\end{theorembox}
+
+\begin{examplebox}[Using Heine's theorem]
+Consider
+\[
+f(x)=2x+1.
+\]
+Take any sequence \(x_n\to3\). Then
+\[
+f(x_n)=2x_n+1\to2\cdot3+1=7.
+\]
+Because the conclusion holds for every sequence approaching \(3\),
+\[
+\lim_{x\to3}(2x+1)=7.
+\]
+\end{examplebox}
+
+\begin{examplebox}[How to disprove a function limit]
+For
+\[
+f(x)=\frac{x}{|x|},\qquad x\ne0,
+\]
+choose
+\[
+x_n=\frac1n
+\qquad\text{and}\qquad
+y_n=-\frac1n.
+\]
+Both sequences approach \(0\), but
+\[
+f(x_n)=1,
+\qquad
+f(y_n)=-1.
+\]
+The output sequences have different limits, so \(\lim_{x\to0}f(x)\) does not exist.
+\end{examplebox}
+
+\begin{interpretationbox}[A function limit must survive every route]
+One chosen sequence can support a candidate limit, but it cannot prove the limit by itself. Heine's theorem requires the same output limit for every sequence of admissible inputs approaching the point.
+\end{interpretationbox}
