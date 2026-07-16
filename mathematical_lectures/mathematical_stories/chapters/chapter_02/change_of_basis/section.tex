@@ -3,8 +3,8 @@
 The preceding section developed the basic geometry and algebra of vectors:
 addition, scalar multiplication, linear combinations, length, angle, the dot
 product, parallelism, perpendicularity, and orthogonal projection. We now use
-that entire toolkit to study a new question: how the coordinate description of
-one fixed geometric vector changes when the basis is changed.
+that toolkit to study how the coordinate description of one fixed geometric
+vector changes when the basis is changed.
 
 \begin{corebox}[What changes and what does not]
 Changing the basis does not change the geometric vector. It changes only the
@@ -13,12 +13,11 @@ directions. Coordinates belong to a vector relative to a basis; the vector
 itself is independent of that description.
 \end{corebox}
 
-\begingroup
-\let\savedsubsection\subsection
-\renewcommand{\subsection}[1]{}
-\input{chapters/chapter_02/vectors_from_displacements/change_of_basis}
-\endgroup
-
+\input{chapters/chapter_02/change_of_basis/basis_definition_and_geometry}
+\input{chapters/chapter_02/change_of_basis/same_vector_two_grids}
+\input{chapters/chapter_02/change_of_basis/coordinates_from_linear_system}
+\input{chapters/chapter_02/change_of_basis/general_coordinate_formula}
+\input{chapters/chapter_02/change_of_basis/change_between_bases_and_projection}
 \input{chapters/chapter_02/change_of_basis/negative_coordinate_example}
 
 \begin{summarybox}[Basis coordinates]
@@ -26,4 +25,6 @@ A basis is an ordered pair of nonparallel vectors. Every vector in the plane has
 one coordinate pair relative to that basis. Positive and negative coefficients
 are signed instructions telling us how much of each basis vector is required.
 Different bases give different coordinate pairs for the same geometric vector.
+To change coordinates, reconstruct the vector from the old basis and then solve
+for its coefficients in the new basis.
 \end{summarybox}
