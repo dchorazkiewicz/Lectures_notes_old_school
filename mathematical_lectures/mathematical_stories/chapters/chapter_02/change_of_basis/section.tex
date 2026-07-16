@@ -6,6 +6,13 @@ product, parallelism, perpendicularity, and orthogonal projection. We now use
 that entire toolkit to study a new question: how the coordinate description of
 one fixed geometric vector changes when the basis is changed.
 
+\begin{corebox}[What changes and what does not]
+Changing the basis does not change the geometric vector. It changes only the
+pair of coefficients used to reconstruct that vector from the chosen basis
+directions. Coordinates belong to a vector relative to a basis; the vector
+itself is independent of that description.
+\end{corebox}
+
 \begingroup
 \let\savedsubsection\subsection
 \renewcommand{\subsection}[1]{}
@@ -13,3 +20,10 @@ one fixed geometric vector changes when the basis is changed.
 \endgroup
 
 \input{chapters/chapter_02/change_of_basis/negative_coordinate_example}
+
+\begin{summarybox}[Basis coordinates]
+A basis is an ordered pair of nonparallel vectors. Every vector in the plane has
+one coordinate pair relative to that basis. Positive and negative coefficients
+are signed instructions telling us how much of each basis vector is required.
+Different bases give different coordinate pairs for the same geometric vector.
+\end{summarybox}
