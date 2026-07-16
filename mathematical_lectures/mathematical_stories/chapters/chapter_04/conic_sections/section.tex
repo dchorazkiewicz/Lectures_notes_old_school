@@ -1,40 +1,41 @@
 \section{Second-Degree Equations and Conic Sections}
 
 Lines arise from equations in which the coordinates occur only to the first
-power. The next natural class consists of equations in which terms of total
-degree two are allowed.
+power. The next natural class allows terms of total degree two.
 
 \begin{definitionbox}
 A \emph{second-degree equation} in the Cartesian plane has the form
 \[
-Ax^2+Bxy+Cy^2+Dx+Ey+F=0,
+\boxed{Ax^2+Bxy+Cy^2+Dx+Ey+F=0},
 \]
-where $A,B,C,D,E,F\in\mathbb{R}$ and at least one of $A$, $B$, or $C$ is
-nonzero. Its solution set is the collection of all points
-$(x,y)\in\mathbb{R}^2$ whose coordinates satisfy the equation.
+where $A,B,C,D,E,F\in\mathbb R$ and at least one of $A,B,C$ is nonzero. Its
+solution set consists of all points $(x,y)$ satisfying the equation.
 \end{definitionbox}
 
+\begin{interpretationbox}[The role of the quadratic part]
 The terms
 \[
 Ax^2+Bxy+Cy^2
 \]
-form the quadratic part. The remaining terms affect the position and size of
-the curve, while the quadratic part largely determines its geometric type.
+form the quadratic part. They largely determine the geometric type, while the
+linear and constant terms mainly control position and scale.
+\end{interpretationbox}
 
 \subsection{A First Classification}
 
-For the equation
+\begin{definitionbox}
+For
 \[
 Ax^2+Bxy+Cy^2+Dx+Ey+F=0,
 \]
-define
+define the conic discriminant
 \[
-\Delta=B^2-4AC.
+\boxed{\Delta=B^2-4AC}.
 \]
+\end{definitionbox}
 
 \begin{theorembox}
-For a non-degenerate real conic, the sign of $\Delta$ gives the following
-classification:
+For a nondegenerate real conic,
 \[
 \begin{array}{c|c}
 \Delta<0 & \text{ellipse type, including circles},\\
@@ -42,34 +43,46 @@ classification:
 \Delta>0 & \text{hyperbola type}.
 \end{array}
 \]
+The sign is preserved by translations and rotations of the coordinate system.
 \end{theorembox}
 
-This classification is preserved by rotations and translations of the
-coordinate system. A rotation can remove the mixed term $Bxy$, while a
-translation can move the centre or vertex to a simpler position.
+\begin{interpretationbox}[Why translations and rotations are used]
+A translation moves the centre or vertex to a simpler position. A rotation
+aligns the axes with the natural symmetry directions and can remove the mixed
+term $Bxy$. These transformations simplify the description without changing the
+underlying geometric curve.
+\end{interpretationbox}
 
 \begin{remarkbox}
 The sign of $\Delta$ identifies the conic type only after degenerate cases are
-separated. A second-degree equation may also describe a single point, no real
-points, one line, or two lines. These possibilities are discussed below.
+separated. A second-degree equation may describe a point, no real points, one
+line, or two lines.
 \end{remarkbox}
 
 \subsection{Circle}
 
-A circle with centre $(h,k)$ and radius $r>0$ is described by
+\begin{definitionbox}
+A circle with centre $(h,k)$ and radius $r>0$ has standard equation
 \[
-(x-h)^2+(y-k)^2=r^2.
+\boxed{(x-h)^2+(y-k)^2=r^2}.
 \]
-After expansion,
+\end{definitionbox}
+
+\begin{derivationbox}[Classification by the discriminant]
+Expanding gives
 \[
 x^2+y^2-2hx-2ky+h^2+k^2-r^2=0.
 \]
 Here $A=C=1$ and $B=0$, so
 \[
-\Delta=0^2-4\cdot1\cdot1=-4<0.
+\Delta=-4<0.
 \]
-A circle is therefore a special ellipse-type conic in which the coefficients of
-$x^2$ and $y^2$ are equal and there is no mixed term after a suitable rotation.
+\end{derivationbox}
+
+\begin{interpretationbox}[Circle as a special ellipse]
+A circle is an ellipse-type conic whose two quadratic coefficients are equal and
+whose natural axes have the same scale.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.82]
@@ -84,12 +97,19 @@ $x^2$ and $y^2$ are equal and there is no mixed term after a suitable rotation.
 
 \subsection{Ellipse}
 
-The standard ellipse centred at the origin has equation
+\begin{definitionbox}
+A standard ellipse centred at the origin has equation
 \[
-\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,
+\boxed{
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+},
 \qquad a>0,\quad b>0.
 \]
-Equivalently,
+The parameters $a$ and $b$ are the semi-axis lengths.
+\end{definitionbox}
+
+\begin{derivationbox}[Classification by the discriminant]
+Multiplying by $a^2b^2$ gives
 \[
 b^2x^2+a^2y^2-a^2b^2=0.
 \]
@@ -97,8 +117,11 @@ Thus $A=b^2$, $B=0$, and $C=a^2$, so
 \[
 \Delta=-4a^2b^2<0.
 \]
-The parameters $a$ and $b$ are the semi-axis lengths. When $a=b$, the ellipse
-becomes a circle.
+\end{derivationbox}
+
+\begin{remarkbox}
+When $a=b$, the ellipse becomes a circle.
+\end{remarkbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -112,25 +135,34 @@ becomes a circle.
 
 \subsection{Parabola}
 
+\begin{definitionbox}
 A standard vertical parabola has equation
 \[
-y=ax^2,
-\qquad a\neq0,
+\boxed{y=ax^2},
+\qquad a\neq0.
 \]
-or equivalently
+A translated form is
+\[
+\boxed{y-k=a(x-h)^2},
+\]
+with vertex $(h,k)$.
+\end{definitionbox}
+
+\begin{derivationbox}[Classification by the discriminant]
+The equation $y=ax^2$ is equivalent to
 \[
 ax^2-y=0.
 \]
-Here $A=a$, $B=0$, and $C=0$, hence
+Here $A=a$, $B=0$, and $C=0$, so
 \[
 \Delta=0.
 \]
-The sign of $a$ determines whether the parabola opens upward or downward. A
-translated form is
-\[
-y-k=a(x-h)^2,
-\]
-whose vertex is $(h,k)$.
+\end{derivationbox}
+
+\begin{interpretationbox}[What the coefficient $a$ controls]
+The sign of $a$ determines whether the parabola opens upward or downward, while
+its magnitude controls how rapidly it widens.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.82]
@@ -143,25 +175,32 @@ whose vertex is $(h,k)$.
 
 \subsection{Hyperbola}
 
+\begin{definitionbox}
 A standard hyperbola centred at the origin has equation
 \[
-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1,
+\boxed{
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+},
 \qquad a>0,\quad b>0.
-\]
-Equivalently,
-\[
-b^2x^2-a^2y^2-a^2b^2=0.
-\]
-Here $A=b^2$, $B=0$, and $C=-a^2$, so
-\[
-\Delta=4a^2b^2>0.
 \]
 Its asymptotes are
 \[
-y=\frac{b}{a}x,
+\boxed{y=\frac ba x},
 \qquad
-y=-\frac{b}{a}x.
+\boxed{y=-\frac ba x}.
 \]
+\end{definitionbox}
+
+\begin{derivationbox}[Classification by the discriminant]
+Multiplying by $a^2b^2$ gives
+\[
+b^2x^2-a^2y^2-a^2b^2=0.
+\]
+Thus $A=b^2$, $B=0$, and $C=-a^2$, so
+\[
+\Delta=4a^2b^2>0.
+\]
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.78]
@@ -178,41 +217,53 @@ y=-\frac{b}{a}x.
 
 \subsection{The Mixed Term and Rotation}
 
-The term $Bxy$ indicates that the natural axes of the conic may be rotated
-relative to the chosen Cartesian axes. For example,
+\begin{corebox}[What $Bxy$ signals]
+A mixed term indicates that the chosen Cartesian axes may not coincide with the
+natural symmetry directions of the conic.
+\end{corebox}
+
+\begin{examplebox}
+The equation
 \[
 x^2+2xy+y^2=1
 \]
 can be written as
 \[
-(x+y)^2=1,
+(x+y)^2=1.
 \]
-so it is not a non-degenerate ellipse: it describes the two parallel lines
+It is degenerate and describes the two parallel lines
 \[
 x+y=1,
 \qquad
 x+y=-1.
 \]
+\end{examplebox}
 
-For a genuine rotated conic, one introduces new coordinates $(u,v)$ obtained by
-a rotation through an angle $\theta$:
+\begin{derivationbox}[Rotating coordinates]
+Introduce new coordinates $(u,v)$ by
 \[
 x=u\cos\theta-v\sin\theta,
 \qquad
 y=u\sin\theta+v\cos\theta.
 \]
 Choosing $\theta$ appropriately removes the $uv$ term. When $A\neq C$, one may
-choose $\theta$ so that
+choose
 \[
-\tan(2\theta)=\frac{B}{A-C}.
+\boxed{
+\tan(2\theta)=\frac{B}{A-C}
+}.
 \]
-The resulting equation can then be classified in the new coordinates using the
-standard forms above.
+The resulting equation can then be classified in the rotated coordinates using
+standard forms.
+\end{derivationbox}
 
 \subsection{Degenerate Second-Degree Equations}
 
-Not every second-degree equation describes a non-degenerate conic. Factorisation
-or completing squares may reveal a simpler set.
+\begin{corebox}[A quadratic equation need not be a conic curve]
+Factorisation or completing squares may reveal a point, no real points, one
+line, or two lines instead of a nondegenerate circle, ellipse, parabola, or
+hyperbola.
+\end{corebox}
 
 \begin{examplebox}
 The equation
@@ -240,11 +291,12 @@ y=-x.
 \end{tikzpicture}
 \end{center}
 
-Other common degenerate cases include
+\begin{examplebox}
+Other common degenerate cases are
 \[
 x^2+y^2=0,
 \]
-which gives only the point $(0,0)$,
+which gives only $(0,0)$,
 \[
 x^2+y^2+1=0,
 \]
@@ -252,23 +304,15 @@ which has no real solutions, and
 \[
 x^2=0,
 \]
-which describes the single line $x=0$ counted algebraically twice.
+which describes the line $x=0$ counted algebraically twice.
+\end{examplebox}
 
-\begin{summarybox}
-Second-degree equations have the general form
+\begin{summarybox}[Recognition procedure]
+Second-degree equations have the form
 \[
 Ax^2+Bxy+Cy^2+Dx+Ey+F=0.
 \]
-For non-degenerate real conics, the discriminant
-\[
-\Delta=B^2-4AC
-\]
-separates the three principal types:
-\[
-\Delta<0\text{ gives ellipse type},\qquad
-\Delta=0\text{ gives parabola type},\qquad
-\Delta>0\text{ gives hyperbola type}.
-\]
-Translations and rotations reduce many equations to standard forms, while
-factorisation and completing squares expose degenerate cases.
+For nondegenerate real conics, $\Delta=B^2-4AC$ separates ellipse, parabola, and
+hyperbola types. Translations and rotations reduce equations to standard forms,
+while factorisation and completing squares expose degenerate cases.
 \end{summarybox}
