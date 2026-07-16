@@ -1,0 +1,33 @@
+\subsection{The intermediate value theorem}
+
+Continuity has consequences that go beyond evaluating limits.
+
+\begin{theorembox}[Intermediate value theorem]
+If \(f\) is continuous on \([a,b]\), then every value between \(f(a)\) and \(f(b)\) is attained at some point of the interval.
+\end{theorembox}
+
+\begin{examplebox}[Proving that a root exists]
+Let
+\[
+f(x)=x^3-x-1.
+\]
+The function is continuous everywhere. Moreover,
+\[
+f(1)=-1,
+\qquad
+f(2)=5.
+\]
+Since \(0\) lies between \(-1\) and \(5\), there is at least one \(c\in(1,2)\) such that
+\[
+f(c)=0.
+\]
+This argument proves existence without finding an exact formula for the root.
+\end{examplebox}
+
+\begin{interpretationbox}[Continuity prevents jumps over values]
+A continuous graph cannot move from below a horizontal level to above it without crossing that level. The theorem turns this geometric intuition into a precise existence statement.
+\end{interpretationbox}
+
+\begin{remarkbox}
+The theorem guarantees at least one solution, not uniqueness. Additional information, such as monotonicity, is needed to prove that the solution is unique.
+\end{remarkbox}
