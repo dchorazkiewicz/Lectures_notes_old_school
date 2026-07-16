@@ -1,0 +1,39 @@
+\subsection{The Zero Matrix and the Identity Matrix}
+
+\begin{definitionbox}[Zero matrix]
+The zero matrix is the matrix whose entries are all zero. For every matrix $A$ of
+the same size,
+\[
+A+0=A.
+\]
+\end{definitionbox}
+
+\begin{definitionbox}[Identity matrix]
+The $n\times n$ identity matrix is
+\[
+I_n=
+\begin{pmatrix}
+1&0&\cdots&0\\
+0&1&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&1
+\end{pmatrix}.
+\]
+If $A\in\mathbb R^{m\times n}$, then
+\[
+I_mA=A,
+\qquad
+AI_n=A.
+\]
+\end{definitionbox}
+
+\begin{interpretationbox}[The identity represents no change]
+The identity matrix plays the role of the number $1$ in multiplication. The size
+must match the side on which it is used: the left identity has size $m\times m$,
+while the right identity has size $n\times n$.
+\end{interpretationbox}
+
+\begin{remarkbox}[Identity matrices are size-dependent]
+There is not one universal identity matrix for every product. The dimensions of
+the surrounding matrices determine which identity matrix is required.
+\end{remarkbox}
