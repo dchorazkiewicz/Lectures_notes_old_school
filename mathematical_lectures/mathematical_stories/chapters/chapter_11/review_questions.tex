@@ -1,30 +1,95 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Explain the transition from average rate of change to instantaneous rate of change. How does the geometry of secant and tangent lines represent this transition?
+\item For
+\[
+f(x)=x^2-1,
+\]
+compute the average rate of change on $[1,3]$ and on $[2,2.5]$. Interpret each result as a secant slope.
 
-\item State the definition of the derivative at a point. Derive the derivative of $f(x)=x^2$ from the difference quotient and interpret the result.
+\item Use the difference quotient to compute the derivative of
+\[
+f(x)=x^2
+\]
+at a general point $a$. Then evaluate $f'(3)$ and write the tangent-line equation at $(3,9)$.
 
-\item Distinguish continuity from differentiability. Why does differentiability imply continuity, and what geometric behaviours can cause differentiability to fail?
+\item Differentiate:
+\[
+f(x)=4x^3-3x^2+2x-7,
+\qquad
+g(x)=3e^x-2\sin x+\cos x.
+\]
 
-\item State the elementary derivative rules used in the chapter. For each of the product, quotient, and chain rules, describe the structural pattern that the rule recognises.
+\item Differentiate using the product, quotient, or chain rule as appropriate:
+\[
+f(x)=x^2e^x,
+\qquad
+g(x)=\frac{x+1}{x-2},
+\qquad
+h(x)=(x^2+1)^4.
+\]
 
-\item Differentiate one low-degree polynomial, one elementary trigonometric function, and one simple composition. Keep the calculation short and explain the meaning of the resulting derivative in each case.
+\item Find the tangent and normal lines to
+\[
+f(x)=x^3-x
+\]
+at $x=1$. Verify that their slopes have product $-1$.
 
-\item Explain how the sign of $f'$ determines monotonicity. What role does the mean value theorem play in passing from local derivative values to behaviour on an interval?
+\item For
+\[
+f(x)=x^3-3x,
+\]
+find all critical points, determine the intervals on which $f$ is increasing or decreasing, and classify the local extrema.
 
-\item Define a critical point. Explain why $f'(c)=0$ identifies only a candidate for an extremum and how a sign chart distinguishes maxima, minima, and non-extremal critical points.
+\item Find the absolute maximum and minimum of
+\[
+f(x)=x^2-4x+1
+\]
+on $[0,5]$. Check the critical points and both endpoints.
 
-\item Explain what the second derivative reveals about concavity and changes of graph shape. What additional condition is required before a zero of $f''$ is called an inflection point?
+\item For
+\[
+f(x)=x^4-4x^2,
+\]
+compute $f'$ and $f''$. Determine the intervals of increase and decrease, the local extrema, the intervals of concavity, and the inflection points.
 
-\item Solve one elementary optimisation problem by following the full modelling workflow:
+\item A particle has position
+\[
+s(t)=t^3-6t^2+9t,
+\qquad 0\le t\le4.
+\]
+Find velocity and acceleration, determine when the particle is at rest, and identify the intervals of positive and negative velocity.
+
+\item A rectangle has perimeter $20$. Let one side have length $x$.
 \begin{enumerate}
-\item define the quantity to optimise;
-\item reduce it to one variable;
-\item determine the allowed domain;
-\item find and compare all relevant candidates;
-\item interpret the result in the original setting.
+\item write the area as a function of $x$ and determine its physical domain;
+\item find the critical point;
+\item compare it with the endpoint behaviour and determine the maximum-area rectangle.
+\end{enumerate}
 \end{enumerate}
 
-\item Given qualitative information about $f'$ and $f''$, sketch a plausible graph of $f$. Mark intervals of increase and decrease, local extrema, concavity, and possible inflection points, and explain which conclusions are forced and which remain undetermined.
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Explain how the derivative connects an average rate of change, a limiting secant slope, a tangent slope, and an instantaneous rate.
+
+\item Why does differentiability at a point imply continuity there? Give an example showing that continuity does not imply differentiability.
+
+\item Explain why the units of a derivative are ``output units per input unit''. Give one geometric and one physical example.
+
+\item Interpret the product rule and chain rule structurally. Why does the chain rule multiply by the rate of change of the inner function?
+
+\item Explain how the mean value theorem connects local derivative information with finite changes over an interval.
+
+\item Why does $f'(x)>0$ throughout an interval imply that $f$ is increasing there? State clearly where the mean value theorem enters the argument.
+
+\item A critical point need not be a local extremum. Give an example and explain why solving $f'(x)=0$ is only the beginning of the analysis.
+
+\item Explain what new information is supplied by the second derivative. Distinguish concavity, inflection points, and local extrema.
+
+\item In an optimisation problem, why must the model, domain, critical points, and endpoints all be checked? Explain how ignoring the domain can produce a mathematically correct but physically meaningless answer.
+
+\item Describe a complete qualitative analysis of a differentiable function: domain, zeros, first derivative, critical points, monotonicity, extrema, second derivative, concavity, inflection points, and long-term behaviour. Explain how these pieces form one coherent picture rather than a checklist of unrelated calculations.
 \end{enumerate}
