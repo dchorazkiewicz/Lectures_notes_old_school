@@ -1,0 +1,35 @@
+\subsection{Full Classification Examples}
+
+\begin{examplebox}[A parameter in the coefficient matrix]
+Classify
+\[
+\begin{cases}
+x+y=3,\\
+2x+ay=6.
+\end{cases}
+\]
+The coefficient determinant is
+\[
+\det\begin{pmatrix}1&1\\2&a\end{pmatrix}=a-2.
+\]
+If $a\neq2$, there is exactly one solution. If $a=2$, the second equation is twice the first, so there are infinitely many solutions.
+\end{examplebox}
+
+\begin{examplebox}[A parameter in the right-hand side]
+Classify
+\[
+\begin{cases}
+x+y=3,\\
+2x+2y=a.
+\end{cases}
+\]
+The coefficient determinant is always zero. Comparing with twice the first equation gives:
+\begin{itemize}
+\item if $a=6$, the equations coincide and there are infinitely many solutions;
+\item if $a\neq6$, the equations are inconsistent and there is no solution.
+\end{itemize}
+\end{examplebox}
+
+\begin{interpretationbox}[Determinant first, compatibility second]
+A parameter in the coefficient matrix may create isolated values where uniqueness fails. A parameter in the right-hand side may decide whether dependent equations agree or contradict one another.
+\end{interpretationbox}
