@@ -1,0 +1,13 @@
+\subsection{Why the same method works in every dimension}
+
+For an invertible $n\times n$ matrix, the construction is always
+\[
+[A\mid I_n]\longrightarrow[I_n\mid A^{-1}].
+\]
+The number of rows and columns changes, but the idea does not: choose a pivot, use it to eliminate the other entries in its column, and perform every row operation on both blocks.
+
+\begin{corebox}[Dimension changes the workload, not the principle]
+A larger example contains more pivots and more arithmetic, but no new logical step. Once the complete $2\times2$ example is understood, a $3\times3$ calculation is repetition of the same reversible operations.
+\end{corebox}
+
+If the left block can be reduced to $I_n$, the accumulated operations on the right block form $A^{-1}$. If reduction cannot create all required pivots, information has been lost and the inverse does not exist.
