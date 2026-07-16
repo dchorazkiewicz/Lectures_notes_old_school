@@ -1,0 +1,48 @@
+\subsection{The Cauchy criterion for a function limit}
+
+Heine's theorem translates a function limit into convergence of output sequences. The corresponding Cauchy criterion removes the need to name the candidate limit in advance.
+
+\begin{theorembox}[Cauchy criterion for a finite function limit]
+A finite limit
+\[
+\lim_{x\to a}f(x)
+\]
+exists if and only if, for every \(\varepsilon>0\), there is \(\delta>0\) such that whenever
+\[
+0<|x-a|<\delta,
+\qquad
+0<|y-a|<\delta,
+\]
+we have
+\[
+|f(x)-f(y)|<\varepsilon.
+\]
+\end{theorembox}
+
+The criterion says that all function values sufficiently near \(a\) must be close to one another. It does not initially specify the number to which they converge.
+
+\begin{examplebox}[A jump fails the Cauchy test]
+Let
+\[
+f(x)=
+\begin{cases}
+-1,&x<0,\\
+1,&x>0.
+\end{cases}
+\]
+No matter how small \(\delta\) is, we can choose \(x<0<y\) with
+\[
+|x|<\delta,
+\qquad
+|y|<\delta.
+\]
+Then
+\[
+|f(x)-f(y)|=|-1-1|=2.
+\]
+The nearby values do not become mutually close, so the limit at \(0\) does not exist.
+\end{examplebox}
+
+\begin{interpretationbox}[Heine and Cauchy describe the same settling]
+Heine follows every approaching input sequence. Cauchy compares nearby output values directly. Both formulations express that all admissible approaches must settle into one common behavior.
+\end{interpretationbox}
