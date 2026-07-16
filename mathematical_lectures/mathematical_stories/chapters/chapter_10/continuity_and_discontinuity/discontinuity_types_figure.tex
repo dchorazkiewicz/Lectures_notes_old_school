@@ -1,0 +1,44 @@
+\subsection{Three visible ways continuity can fail}
+
+The pictures below separate three common phenomena. The algebraic formulas may differ, but the graph reveals the type of failure immediately.
+
+\begin{center}
+\begin{tikzpicture}[x=0.75cm,y=0.75cm]
+  % removable
+  \begin{scope}[xshift=0cm]
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,2.5) node[above] {$y$};
+    \draw[thick,domain=-1.7:1.7,samples=2] plot (\x,{0.6*\x+1});
+    \fill[white] (0.7,1.42) circle (2.8pt);
+    \draw[thick] (0.7,1.42) circle (2.8pt);
+    \fill (0.7,2.05) circle (2.2pt);
+    \node at (0,-1.45) {removable};
+  \end{scope}
+
+  % jump
+  \begin{scope}[xshift=5.2cm]
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,2.5) node[above] {$y$};
+    \draw[thick] (-1.7,0.65) -- (0,0.65);
+    \fill (0,0.65) circle (2.2pt);
+    \draw[thick] (0,1.75) -- (1.7,1.75);
+    \fill[white] (0,1.75) circle (2.8pt);
+    \draw[thick] (0,1.75) circle (2.8pt);
+    \node at (0,-1.45) {jump};
+  \end{scope}
+
+  % infinite
+  \begin{scope}[xshift=10.4cm]
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-1) -- (0,2.5) node[above] {$y$};
+    \draw[dashed] (0,-0.8) -- (0,2.3);
+    \draw[thick,domain=-1.7:-0.25,samples=60] plot (\x,{-0.35/\x});
+    \draw[thick,domain=0.25:1.7,samples=60] plot (\x,{0.35/\x});
+    \node at (0,-1.45) {infinite};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Classify the failure geometrically]
+A removable discontinuity has a common nearby height but the wrong or missing value. A jump has different one-sided limits. An infinite discontinuity occurs when values become unbounded near a vertical line.
+\end{interpretationbox}
