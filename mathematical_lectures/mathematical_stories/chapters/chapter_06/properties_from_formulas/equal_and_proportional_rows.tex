@@ -1,0 +1,30 @@
+\subsection{Equal and Proportional Rows}
+
+If the two rows are equal, exchanging them leaves the matrix unchanged, but the row-exchange theorem changes the sign of the determinant. Hence
+\[
+\det A=-\det A,
+\]
+so $\det A=0$.
+
+\begin{proofbox}[Direct check for proportional rows]
+If
+\[
+A=\begin{pmatrix}a&b\\ka&kb\end{pmatrix},
+\]
+then
+\begin{align*}
+\det A
+&=a(kb)-b(ka)\\
+&=kab-kab\\
+&=0.
+\end{align*}
+The six-term formula produces the same cancellation for $3\times3$ matrices with proportional rows.
+\end{proofbox}
+
+\begin{theorembox}[Dependent rows force zero]
+For the small determinants already defined, equal or proportional rows give determinant zero.
+\end{theorembox}
+
+\begin{interpretationbox}[A relation removes freedom]
+When one row repeats or rescales another, the rows do not carry independent information. The determinant records this loss by vanishing.
+\end{interpretationbox}
