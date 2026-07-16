@@ -1,0 +1,36 @@
+\subsection{A First Elimination Example}
+
+Consider
+\[
+\begin{cases}
+x+y=5,\\
+2x-y=1.
+\end{cases}
+\]
+Its augmented matrix is
+\[
+\left[\begin{array}{cc|c}
+1&1&5\\2&-1&1
+\end{array}\right].
+\]
+
+\begin{derivationbox}[Eliminate and back-substitute]
+Apply
+\[
+R_2\leftarrow R_2-2R_1,
+\]
+obtaining
+\[
+\left[\begin{array}{cc|c}
+1&1&5\\0&-3&-9
+\end{array}\right].
+\]
+The second row gives $y=3$. Substitution into the first row gives $x=2$.
+\end{derivationbox}
+
+Therefore
+\[
+\boxed{(x,y)=(2,3)}.
+\]
+
+The essential strategy is to simplify until variables can be read from the bottom upward.
