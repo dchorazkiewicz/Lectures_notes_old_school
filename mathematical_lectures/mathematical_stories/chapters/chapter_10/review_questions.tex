@@ -3,25 +3,15 @@
 \subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Compute the first six terms and determine the limit of each sequence:
+\item Compute the first six terms and determine the limit of
 \[
 a_n=\frac1n,
-\qquad
-b_n=2-\frac1n,
-\qquad
-c_n=\left(\frac12\right)^n.
+\qquad b_n=2-\frac1n,
+\qquad c_n=\left(\frac12\right)^n.
 \]
-State whether each sequence is increasing or decreasing and whether it is bounded.
+State monotonicity and boundedness.
 
-\item For the sequence
-\[
-a_n=\frac1n,
-\]
-find an integer $N$ such that
-\[
-n\ge N\quad\Longrightarrow\quad |a_n|<0.01.
-\]
-Then give a formula for a suitable $N$ for an arbitrary $\varepsilon>0$.
+\item For $a_n=1/n$, find $N$ such that $n\ge N$ implies $|a_n|<0.01$. Then give a suitable formula for arbitrary $\varepsilon>0$.
 
 \item Compute
 \[
@@ -29,99 +19,104 @@ Then give a formula for a suitable $N$ for an arbitrary $\varepsilon>0$.
 \qquad
 \lim_{n\to\infty}\frac{2n^2-n}{5n^2+3},
 \qquad
-\lim_{n\to\infty}\frac{4}{n^2+1}.
+\lim_{n\to\infty}\frac4{n^2+1}.
 \]
 
-\item Let
+\item For $a_n=1-2^{-n}$, show that the sequence is increasing and bounded above, then calculate its limit.
+
+\item For $f(x)=2x+1$, $a=3$, and $L=7$, find $\delta$ in terms of $\varepsilon$ so that
 \[
-a_n=1-\frac1{2^n}.
-\]
-Show directly that it is increasing and bounded above by $1$, and calculate its limit.
-
-\item For $f(x)=2x+1$, $a=3$, and $L=7$, find a value of $\delta$ in terms of $\varepsilon$ such that
-\[
-0<|x-3|<\delta
-\quad\Longrightarrow\quad
-|f(x)-7|<\varepsilon.
+0<|x-3|<\delta\Longrightarrow |f(x)-7|<\varepsilon.
 \]
 
-\item Let
-\[
-x_n=3+\frac{(-1)^n}{n}.
-\]
-Compute $f(x_n)$ for $f(x)=2x+1$ and determine its limit. Use the calculation to illustrate Heine's theorem at $a=3$.
+\item Let $x_n=3+(-1)^n/n$. Compute $f(x_n)$ for $f(x)=2x+1$ and use the result to illustrate Heine's theorem.
 
-\item Compute the limits by factoring and cancellation:
+\item Compute by factoring and cancellation:
 \[
 \lim_{x\to4}\frac{x^2-2x-8}{x^2-9x+20},
 \qquad
 \lim_{x\to2}\frac{x^2-4}{x-2}.
 \]
-State which original expressions are undefined at the limiting point.
 
 \item Compute
 \[
 \lim_{x\to0}\frac{\sqrt{1+x}-1}{x}
 \]
-using the conjugate. Then compute
+using the conjugate and
 \[
 \lim_{x\to0}\frac{\sin x}{x}
 \]
-using the standard limit from the chapter.
+using the standard limit.
 
 \item For
 \[
-f(x)=
-\begin{cases}
+f(x)=\begin{cases}
 x+1,&x<0,\\
 2-x,&x>0,
 \end{cases}
 \]
-compute the left-hand and right-hand limits at $0$. Decide whether the two-sided limit exists and whether any value assigned to $f(0)$ could make the function continuous.
+compute the one-sided limits at $0$ and decide whether a value of $f(0)$ can make the function continuous.
 
-\item Determine the horizontal or vertical asymptotes suggested by the following limits:
+\item Find the vertical and horizontal asymptotes of
 \[
-f(x)=\frac{3x^2+x}{x^2+4},
+f(x)=\frac1{x-2},
 \qquad
-g(x)=\frac1{x-2}.
+g(x)=\frac{3x^2+x}{x^2+4}
 \]
-Compute the relevant one-sided and infinite limits. Then use the intermediate value theorem to show that
-\[
-h(x)=x^3-x-1
-\]
-has a zero in $(1,2)$.
+from the relevant limits.
 \end{enumerate}
 
-\subsection{Conceptual and reasoning exercises}
+\subsection{Development and reasoning exercises}
 
 \begin{enumerate}
-\item Explain the meaning of the definition
+\item Prove from the $\varepsilon$--$N$ definition that
 \[
-a_n\to L.
+\frac{3}{2n+1}\longrightarrow0.
 \]
-What is controlled by $\varepsilon$, what is controlled by $N$, and why only the tail of the sequence matters?
+Give an explicit $N(\varepsilon)$ and explain every inequality.
 
-\item Compare the ordinary definition of sequence convergence with the Cauchy criterion. Why does the Cauchy condition avoid naming the candidate limit?
-
-\item Explain why the implication ``convergent sequence $\Rightarrow$ Cauchy sequence'' follows from the triangle inequality. What deeper property of $\mathbb R$ is used in the reverse implication?
-
-\item Explain why monotonicity alone and boundedness alone do not guarantee convergence, but their combination does for real sequences.
-
-\item Interpret the $\varepsilon$--$\delta$ definition of a function limit using the vertical input strip and horizontal output band. Why is $x=a$ excluded?
-
-\item State Heine's theorem in words. Explain why a function limit requires every admissible sequence approaching $a$ to produce the same output limit.
-
-\item Why can one carefully chosen sequence disprove a proposed function limit, while one sequence cannot prove the limit? Give a concrete example.
-
-\item Distinguish
+\item Prove that
 \[
-f(a)
-\qquad\text{from}\qquad
-\lim_{x\to a}f(x).
+\frac{2n+1}{n+3}\longrightarrow2
 \]
-Explain why changing a single value $f(a)$ does not change the nearby limit.
+using the formal definition, not only dominant terms.
 
-\item Explain how one-sided limits diagnose jump discontinuities and vertical asymptotes. Why must the left-hand and right-hand limits agree for a finite two-sided limit to exist?
+\item For $f(x)=x^2$, prove
+\[
+\lim_{x\to2}x^2=4
+\]
+with an $\varepsilon$--$\delta$ argument. First control $|x+2|$ by restricting $\delta$, then choose a complete formula for $\delta(\varepsilon)$.
 
-\item The intermediate value theorem proves existence without giving a formula for a solution. Explain why continuity is the essential hypothesis and why the theorem does not guarantee uniqueness.
+\item Use Heine's theorem to disprove the existence of
+\[
+\lim_{x\to0}\frac{x}{|x|}.
+\]
+Construct two sequences, compute both output sequences, and state precisely where the common-limit requirement fails.
+
+\item Investigate the Cauchy condition for
+\[
+f(x)=\sin(1/x),\qquad x\ne0.
+\]
+Choose nearby sequences whose function values remain separated and explain why no finite limit exists at $0$.
+
+\item Determine constants $a,b$ so that
+\[
+f(x)=\begin{cases}
+ax+b,&x<1,\\
+x^2,&x\ge1
+\end{cases}
+\]
+is continuous at $1$ and also satisfies $f(0)=2$. Show the two conditions separately.
+
+\item Analyse
+\[
+f(x)=\frac{x^2-1}{x-1}
+\]
+at $x=1$: calculate the nearby limit, identify the discontinuity, define a continuous extension, and explain why changing one point does not alter the limit.
+
+\item Use the intermediate value theorem to prove that $x^3-x-1=0$ has a solution in $(1,2)$. Then use monotonicity on a suitable interval to discuss uniqueness.
+
+\item Compare the $\varepsilon$--$\delta$, Heine, and Cauchy descriptions of a function limit. Apply all three viewpoints to the same simple linear function and identify what each formulation controls.
+
+\item Give a complete limit-analysis strategy: determine the domain, inspect direct substitution, simplify when necessary, compare one-sided behaviour, use sequences to test failure, identify asymptotes, and decide continuity. Apply the strategy to one rational or piecewise function.
 \end{enumerate}
