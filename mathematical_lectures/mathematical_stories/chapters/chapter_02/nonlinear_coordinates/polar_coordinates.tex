@@ -1,71 +1,63 @@
 \section{Beyond a Change of Basis: Polar Coordinates}
 
-The preceding section changed the basis of the plane. In every such change we
-kept two fixed, nonparallel vector directions and described a vector by the
-signed amounts of those two directions. The coordinate grid could become
-slanted, but it still consisted of two families of parallel straight lines.
+The preceding section changed the basis of the plane while keeping two fixed,
+nonparallel vector directions. Polar coordinates make a more radical change:
+they describe a point by distance and direction rather than by coefficients of
+two fixed basis vectors.
 
-There is a more radical possibility. We may keep the same Euclidean plane and
-describe a point by quantities that are not coefficients of two fixed basis
-vectors. Polar coordinates provide the first important example.
+\begin{corebox}[Linear and nonlinear coordinate changes]
+A basis change keeps two fixed straight directions and produces a grid of
+parallel lines. Polar coordinates use rays and concentric circles, and the
+direction used to read the coordinates varies from point to point.
+\end{corebox}
 
-\begin{remarkbox}
-A change from one vector basis to another is a \emph{linear} change of
-coordinates. Polar coordinates are not obtained from a new vector basis. Their
-coordinate curves are rays and circles, and the directions used to read the
-coordinates vary from point to point.
-\end{remarkbox}
+\subsection*{Two Different Questions About the Same Point}
 
-\subsection*{Two different questions about the same point}
-
-The Cartesian description of a point uses two signed coordinate values obtained
-from projections parallel to the coordinate directions:
-\[
-P=(x,y).
-\]
-This is natural when two fixed straight directions are important. We may instead
-ask:
+\begin{corebox}[The polar questions]
+Instead of asking for two signed projections, ask:
 \begin{enumerate}
     \item How far is the point from the origin?
-    \item In which direction do we move from the origin to reach it?
+    \item In which direction must we move from the origin to reach it?
 \end{enumerate}
+\end{corebox}
 
-These questions lead to the polar pair
+\begin{definitionbox}
+For a point different from the origin, its polar coordinates are
 \[
-(r,\theta),
-\]
-where, for a point different from the origin,
-\[
-r>0,
+\boxed{(r,\theta)},
 \qquad
-0\leq\theta<2\pi.
+r>0,
+\quad
+0\leq\theta<2\pi,
 \]
-The number $r$ is the Euclidean distance from the origin, and $\theta$ is the
-angle measured counterclockwise from the positive $x$-axis.
+where $r$ is the Euclidean distance from the origin and $\theta$ is measured
+counterclockwise from the positive $x$-axis.
+\end{definitionbox}
 
-The origin is handled separately. In the usual non-unique polar notation every
-pair $(0,\theta)$ represents the origin. In this course we choose the single
-representative
+\begin{definitionbox}
+To make the representation unique in this course, the origin is represented only
+by $(0,0)$. The allowed polar coordinate set is
 \[
-O=(0,0)
-\]
-so that every point has exactly one allowed polar pair. Thus
-\[
+\boxed{
 \mathcal P
 =
 \{(0,0)\}
 \cup
-\bigl((0,\infty)\times[0,2\pi)\bigr).
+\bigl((0,\infty)\times[0,2\pi)\bigr)
+}.
 \]
+\end{definitionbox}
 
-\subsection*{Rectangular and polar grids}
+\begin{remarkbox}
+In the usual nonunique convention, every pair $(0,\theta)$ represents the
+origin. The restricted convention above is chosen only to give each point one
+allowed coordinate pair.
+\end{remarkbox}
 
-The two descriptions below refer to the same Euclidean plane. What changes is
-the family of curves used to locate a point.
+\subsection*{Rectangular and Polar Grids}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.78,>=stealth]
-    % Cartesian grid
     \begin{scope}[xshift=0cm]
         \draw[gray!35,step=1] (-3.2,-3.2) grid (3.2,3.2);
         \draw[axis,->] (-3.4,0) -- (3.5,0) node[right] {$x$};
@@ -78,7 +70,6 @@ the family of curves used to locate a point.
             {Cartesian grid\\two families of parallel lines};
     \end{scope}
 
-    % Polar grid
     \begin{scope}[xshift=9.2cm]
         \draw[axis,->] (-3.4,0) -- (3.5,0) node[right] {$x$};
         \draw[axis,->] (0,-3.4) -- (0,3.5) node[above] {$y$};
@@ -99,16 +90,31 @@ the family of curves used to locate a point.
 \end{tikzpicture}
 \end{center}
 
-In the Cartesian grid, keeping $x$ fixed gives a vertical straight line and
-keeping $y$ fixed gives a horizontal straight line. In the polar grid, keeping
-$\theta$ fixed gives a ray from the origin, while keeping $r$ fixed gives a
-circle. This is the visible reason polar coordinates are not merely a slanted
-basis.
+\begin{interpretationbox}[Coordinate curves]
+In Cartesian coordinates, $x=\text{constant}$ and $y=\text{constant}$ are
+straight lines. In polar coordinates, $\theta=\text{constant}$ is a ray and
+$r=\text{constant}$ is a circle. This visible difference shows that polar
+coordinates are not merely a slanted basis.
+\end{interpretationbox}
 
-\subsection*{Converting between the descriptions}
+\subsection*{Converting Between the Descriptions}
 
-Let $P$ have polar coordinates $(r,\theta)$. The right triangle determined by
-$P$ gives
+\begin{derivationbox}[From polar to Cartesian]
+The right triangle determined by a point with polar coordinates $(r,\theta)$
+gives
+\[
+x=r\cos\theta,
+\qquad
+y=r\sin\theta.
+\]
+Hence
+\[
+\overrightarrow{OP}=r(\cos\theta,\sin\theta).
+\]
+\end{derivationbox}
+
+\begin{theorembox}
+The conversion from polar to Cartesian coordinates is
 \[
 \boxed{
 x=r\cos\theta,
@@ -116,21 +122,27 @@ x=r\cos\theta,
 y=r\sin\theta
 }.
 \]
-Thus the position vector of $P$ may be written as
-\[
-\overrightarrow{OP}
-=
-r(\cos\theta,\sin\theta).
-\]
-This resembles a scalar multiple of a unit vector, but the direction
-$(\cos\theta,\sin\theta)$ depends on the coordinate $\theta$. There are not two
-fixed basis vectors whose constant coefficients are $r$ and $\theta$.
+\end{theorembox}
 
-Conversely, if $(x,y)\neq(0,0)$, then
+\begin{derivationbox}[From Cartesian to polar]
+For $(x,y)\neq(0,0)$, the Euclidean distance formula gives
 \[
-\boxed{r=\sqrt{x^2+y^2}}.
+r=\sqrt{x^2+y^2}.
 \]
-The polar angle is the unique number $\theta\in[0,2\pi)$ satisfying
+The direction is the unique $\theta\in[0,2\pi)$ satisfying
+\[
+\cos\theta=\frac{x}{r},
+\qquad
+\sin\theta=\frac{y}{r}.
+\]
+\end{derivationbox}
+
+\begin{theorembox}
+For $(x,y)\neq(0,0)$,
+\[
+\boxed{r=\sqrt{x^2+y^2}},
+\]
+and $\theta$ is determined by
 \[
 \boxed{
 \cos\theta=\frac{x}{r},
@@ -138,11 +150,14 @@ The polar angle is the unique number $\theta\in[0,2\pi)$ satisfying
 \sin\theta=\frac{y}{r}
 }.
 \]
-These two equations determine both the quadrant and the exact direction. The
-single expression $\arctan(y/x)$ is insufficient because it loses quadrant
-information and is undefined when $x=0$. In computation the correct angle is
-usually obtained with the two-argument function $\operatorname{atan2}(y,x)$,
-with a negative output shifted by $2\pi$.
+\end{theorembox}
+
+\begin{remarkbox}
+The expression $\arctan(y/x)$ is insufficient because it loses quadrant
+information and is undefined when $x=0$. In computation, the two-argument
+function $\operatorname{atan2}(y,x)$ is used, with a negative output shifted by
+$2\pi$ when the chosen range is $[0,2\pi)$.
+\end{remarkbox}
 
 \begin{examplebox}
 For
@@ -155,80 +170,83 @@ x=2\cos\frac{\pi}{3}=1,
 \qquad
 y=2\sin\frac{\pi}{3}=\sqrt3.
 \]
-Thus the same point is written as
-\[
-P=(1,\sqrt3)
-\]
-in Cartesian coordinates and as
-\[
-P=\left(2,\frac{\pi}{3}\right)
-\]
-in polar coordinates.
+Thus the same point is written as $P=(1,\sqrt3)$ in Cartesian coordinates and as
+$P=(2,\pi/3)$ in polar coordinates.
 \end{examplebox}
 
-\subsection*{Why the transformation is nonlinear}
+\subsection*{Why the Transformation Is Nonlinear}
 
-For a change of vector basis, multiplying a vector by $\lambda$ multiplies each
-of its coordinates by $\lambda$, and the coordinates of a sum are obtained by
-adding coordinate pairs. Polar coordinates do not behave this way.
-
-For example, the points with polar pairs
+\begin{examplebox}
+The polar pairs
 \[
 (1,0)
 \qquad\text{and}\qquad
 \left(1,\frac{\pi}{2}\right)
 \]
-have Cartesian position vectors $(1,0)$ and $(0,1)$. Their vector sum is
-$(1,1)$, whose polar coordinates are
+represent Cartesian vectors $(1,0)$ and $(0,1)$. Their sum is $(1,1)$, whose
+polar coordinates are
 \[
 \left(\sqrt2,\frac{\pi}{4}\right),
 \]
-not
-\[
-\left(2,\frac{\pi}{2}\right).
-\]
-Therefore polar coordinate pairs cannot be added componentwise to add vectors.
+not $(2,\pi/2)$. Polar coordinate pairs therefore cannot be added componentwise
+to add vectors.
+\end{examplebox}
+
+\begin{interpretationbox}[What nonlinearity means here]
 The formulas
 \[
 x=r\cos\theta,
 \qquad
 y=r\sin\theta
 \]
-contain trigonometric functions and describe a genuinely nonlinear change of
-coordinates.
+contain trigonometric functions. The direction $(\cos\theta,\sin\theta)$ changes
+with $\theta$, so $r$ and $\theta$ are not coefficients of two fixed basis
+vectors.
+\end{interpretationbox}
 
-\subsection*{A circle becomes simple}
+\subsection*{A Circle Becomes Simple}
 
-Polar coordinates are useful when distance from the origin is the main
-geometric feature. Let
+Let
 \[
-C_R
-=
-\{(x,y)\in\mathbb R^2:x^2+y^2=R^2\},
+C_R=\{(x,y)\in\mathbb R^2:x^2+y^2=R^2\},
 \qquad R>0.
 \]
-Substituting
+
+\begin{derivationbox}[Rewriting the circle]
+Substitute
 \[
 x=r\cos\theta,
 \qquad
-y=r\sin\theta
+y=r\sin\theta.
 \]
-gives
+Then
 \[
 r^2\cos^2\theta+r^2\sin^2\theta=R^2.
 \]
-Since $\cos^2\theta+\sin^2\theta=1$, this reduces to
+Using $\cos^2\theta+\sin^2\theta=1$ gives
 \[
-\boxed{r=R}.
+r^2=R^2.
 \]
-Thus
+Since $r\geq0$ and $R>0$, this reduces to $r=R$.
+\end{derivationbox}
+
+\begin{theorembox}
+The Cartesian equation
 \[
 x^2+y^2=R^2
-\qquad\text{and}\qquad
-r=R
 \]
-describe the same geometric circle. The set has not changed; only the coordinate
-language has changed.
+and the polar equation
+\[
+\boxed{r=R}
+\]
+describe the same circle.
+\end{theorembox}
+
+\begin{interpretationbox}[Choose coordinates adapted to the geometry]
+Polar coordinates are efficient when distance from the origin is the dominant
+feature. The geometric set does not change; only its coordinate language becomes
+simpler.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -242,13 +260,12 @@ language has changed.
 \end{tikzpicture}
 \end{center}
 
-\begin{summarybox}
-A vector basis uses fixed straight directions and leads to linear coordinate
-changes. Polar coordinates instead use a distance and an angle:
+\begin{summarybox}[First nonlinear coordinate system]
+A basis uses fixed directions and leads to linear coordinate changes. Polar
+coordinates use a distance and an angle:
 \[
 (r,\theta)\longleftrightarrow(r\cos\theta,r\sin\theta).
 \]
-Their coordinate curves are circles and rays, their directions vary across the
-plane, and vector addition is not performed by adding polar coordinate pairs.
-This is our first example of a nonlinear coordinate system.
+Their coordinate curves are circles and rays, and vector addition is not
+performed by adding polar coordinate pairs.
 \end{summarybox}
