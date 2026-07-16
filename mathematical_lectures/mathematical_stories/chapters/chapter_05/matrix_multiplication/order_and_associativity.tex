@@ -1,0 +1,50 @@
+\subsection{Order, Noncommutativity, and Associativity}
+
+\begin{corebox}[Changing the order changes the question]
+The product $AB$ combines rows of $A$ with columns of $B$. Reversing the order
+produces a different interaction, so matrix multiplication is not generally
+commutative.
+\end{corebox}
+
+\begin{examplebox}[The same matrices in the opposite order]
+For
+\[
+A=\begin{pmatrix}1&3\\-2&4\end{pmatrix},
+\qquad
+B=\begin{pmatrix}2&0\\5&-1\end{pmatrix},
+\]
+we already found
+\[
+AB=\begin{pmatrix}17&-3\\16&-4\end{pmatrix}.
+\]
+In the opposite order,
+\[
+BA=
+\begin{pmatrix}2&0\\5&-1\end{pmatrix}
+\begin{pmatrix}1&3\\-2&4\end{pmatrix}
+=
+\begin{pmatrix}2&6\\7&11\end{pmatrix}.
+\]
+Hence $AB\neq BA$.
+\end{examplebox}
+
+\begin{remarkbox}[Commutativity is a property to check]
+Some pairs of matrices do commute, but this is never automatic. Whenever the
+order matters in an argument, commutativity must be proved from the structure of
+the matrices involved.
+\end{remarkbox}
+
+\begin{theorembox}[Associativity]
+Whenever all products are defined,
+\[
+(AB)C=A(BC).
+\]
+Associativity allows products in a fixed order to be grouped differently. It does
+not allow the matrices themselves to be rearranged.
+\end{theorembox}
+
+\begin{interpretationbox}[Grouping versus reordering]
+Parentheses determine which multiplication is carried out first; the written
+order determines which transformations or interactions occur first. Associativity
+changes grouping only, while commutativity would change order.
+\end{interpretationbox}
