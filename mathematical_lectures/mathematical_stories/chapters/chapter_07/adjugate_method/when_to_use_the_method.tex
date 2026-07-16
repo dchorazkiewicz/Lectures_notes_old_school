@@ -1,11 +1,14 @@
-\subsection{When the Adjugate Method Is Appropriate}
+\subsection{What the Adjugate Method Is For}
 
-For hand calculations, the adjugate method is convenient for $2\times2$ matrices and sometimes manageable for $3\times3$ matrices. For larger matrices, computing every cofactor becomes expensive.
+For hand calculations, the adjugate method is natural in the $2\times2$ case because it reproduces the familiar inverse formula immediately. In larger dimensions, computing every cofactor quickly becomes longer than elimination.
 
-\begin{interpretationbox}[Computational and conceptual value]
-Gauss--Jordan elimination is often more efficient, but the adjugate method explains why determinants and cofactors govern invertibility.
+\begin{interpretationbox}[Conceptual rather than algorithmic value]
+Gauss--Jordan is the principal construction method. The adjugate is retained because it explains why cofactors and the determinant control invertibility and why the condition $\det A\neq0$ appears in every inverse formula.
 \end{interpretationbox}
 
-\begin{summarybox}[Adjugate procedure]
-Compute $\det A$. If it is nonzero, compute all cofactors, form the cofactor matrix, transpose it, and divide by the determinant.
-\end{summarybox}
+The student should understand the chain
+\[
+\text{cofactors}\longrightarrow\operatorname{adj}(A)
+\longrightarrow A\operatorname{adj}(A)=(\det A)I,
+\]
+without treating a long cofactor table as the central skill of the chapter.
