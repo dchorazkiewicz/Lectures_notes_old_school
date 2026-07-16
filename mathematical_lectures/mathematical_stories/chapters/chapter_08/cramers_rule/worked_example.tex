@@ -1,0 +1,44 @@
+\subsection{A Worked Cramer Example}
+
+Solve
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1.
+\end{cases}
+\]
+The coefficient matrix is
+\[
+A=\begin{pmatrix}2&1\\1&-1\end{pmatrix},
+\qquad
+\det A=-3.
+\]
+
+\begin{derivationbox}[Replace one column at a time]
+For $x$,
+\[
+A_x=\begin{pmatrix}5&1\\1&-1\end{pmatrix},
+\qquad
+\det A_x=-6,
+\]
+so
+\[
+x=\frac{-6}{-3}=2.
+\]
+For $y$,
+\[
+A_y=\begin{pmatrix}2&5\\1&1\end{pmatrix},
+\qquad
+\det A_y=-3,
+\]
+so
+\[
+y=\frac{-3}{-3}=1.
+\]
+\end{derivationbox}
+
+Thus
+\[
+\boxed{(x,y)=(2,1)}.
+\]
+Substitution verifies both original equations.
