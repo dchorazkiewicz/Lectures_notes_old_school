@@ -1,0 +1,25 @@
+\subsection{A hole does not determine the nearby limit}
+
+Consider the function that agrees with \(y=x+1\) near \(x=1\) but is not defined at \(x=1\). The graph has a hole at \((1,2)\), yet every sequence of inputs approaching \(1\) produces output values approaching \(2\).
+
+\begin{center}
+\begin{tikzpicture}[x=1.25cm,y=1.05cm]
+  \draw[->] (-2.3,0) -- (3.1,0) node[right] {$x$};
+  \draw[->] (0,-1.1) -- (0,4.3) node[above] {$y$};
+  \draw[thick,domain=-1.8:2.6,samples=2] plot (\x,{\x+1});
+  \fill[white] (1,2) circle (3pt);
+  \draw[thick] (1,2) circle (3pt);
+  \draw[dashed] (1,0) -- (1,2);
+  \draw[dashed] (0,2) -- (1,2);
+  \node[below] at (1,0) {$1$};
+  \node[left] at (0,2) {$2$};
+  \draw[->] (0.15,1.55) -- (0.82,1.93);
+  \draw[->] (1.85,2.85) -- (1.18,2.12);
+  \node at (-0.3,1.25) {from the left};
+  \node at (2.2,3.15) {from the right};
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Sequential reading of the graph]
+Points may approach \(x=1\) from either side or alternate between the two sides. In every case their heights on the line approach \(2\). This is the geometric content of Heine's theorem in this example.
+\end{interpretationbox}
