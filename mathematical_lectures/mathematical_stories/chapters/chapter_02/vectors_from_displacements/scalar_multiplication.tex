@@ -3,30 +3,39 @@
 Addition combines different displacements. A second operation appears when the
 same displacement is repeated.
 
+\begin{corebox}[The geometric idea]
+Scalar multiplication changes how much of one displacement is taken. It may
+stretch, shrink, erase, or reverse a vector, but it does not introduce a new
+line of direction.
+\end{corebox}
+
+\begin{derivationbox}[From repetition to continuous scaling]
 If
 \[
 \mathbf v=(v_1,v_2),
 \]
 then performing it twice gives
 \[
-\mathbf v+\mathbf v=(2v_1,2v_2).
+\mathbf v+\mathbf v=(2v_1,2v_2),
 \]
-Performing it three times gives
+and performing it three times gives
 \[
 3\mathbf v=(3v_1,3v_2).
 \]
-The coordinates are multiplied by the same number because both components must
-be stretched by the same factor if the direction is to remain unchanged.
+Both components must be multiplied by the same factor if the direction is to
+remain unchanged. Extending repetition from integers to arbitrary real factors
+leads to the general operation.
+\end{derivationbox}
 
-This suggests the general definition
+\begin{definitionbox}
+For a real number $\lambda$ and a vector $\mathbf v=(v_1,v_2)$,
 \[
 \boxed{
-\lambda\mathbf v=(\lambda v_1,\lambda v_2),
-\qquad \lambda\in\mathbb R
+\lambda\mathbf v=(\lambda v_1,\lambda v_2)
 }.
 \]
-The number $\lambda$ is called a scalar. It does not provide a new direction;
-it changes how much of the old displacement is taken.
+The number $\lambda$ is called a \emph{scalar}.
+\end{definitionbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,>=stealth]
@@ -50,22 +59,33 @@ it changes how much of the old displacement is taken.
 \end{tikzpicture}
 \end{center}
 
-The picture separates the possible cases:
-
+\begin{interpretationbox}[How the scalar changes the vector]
 \begin{itemize}
     \item if $\lambda>1$, the vector is stretched;
     \item if $0<\lambda<1$, it is shortened;
     \item if $\lambda=0$, it collapses to the zero vector;
     \item if $\lambda<0$, it is also reversed.
 \end{itemize}
+The scalar changes the amount and possibly the orientation of the displacement,
+not the underlying line on which it lies.
+\end{interpretationbox}
 
-In every case the result lies on the same line through the origin as
-$\mathbf v$. This gives a first geometric meaning of scalar multiples:
-nonzero vectors $\mathbf u$ and $\mathbf v$ are parallel precisely when one is
-a scalar multiple of the other.
+\begin{theorembox}
+Two nonzero vectors $\mathbf u$ and $\mathbf v$ are parallel if and only if one
+is a scalar multiple of the other:
+\[
+\boxed{
+\mathbf u\parallel\mathbf v
+\iff
+\mathbf u=\lambda\mathbf v
+\text{ for some }\lambda\in\mathbb R\setminus\{0\}
+}.
+\]
+\end{theorembox}
 
-Scalar multiplication also explains why fractions and real factors are natural.
-The vector $\tfrac12\mathbf v$ is the displacement that must be repeated twice
-to produce $\mathbf v$, while $\sqrt2\,\mathbf v$ has the same direction and
-$\sqrt2$ times the length. The operation extends the simple idea of repetition
-to continuous scaling.
+\begin{remarkbox}
+Fractions and irrational factors are natural extensions of repetition. The
+vector $\tfrac12\mathbf v$ must be repeated twice to produce $\mathbf v$, while
+$\sqrt2\,\mathbf v$ has the same direction and $\sqrt2$ times the length.
+Scalar multiplication turns discrete repetition into continuous scaling.
+\end{remarkbox}
