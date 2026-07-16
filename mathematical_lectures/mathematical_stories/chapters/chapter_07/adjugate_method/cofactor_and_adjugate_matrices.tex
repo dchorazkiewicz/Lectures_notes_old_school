@@ -4,14 +4,7 @@ For $A=(a_{ij})$, let
 \[
 C_{ij}=(-1)^{i+j}M_{ij}
 \]
-be the cofactor of $a_{ij}$. Arrange all cofactors in the matrix
-\[
-C=\begin{pmatrix}
-C_{11}&\cdots&C_{1n}\\
-\vdots&\ddots&\vdots\\
-C_{n1}&\cdots&C_{nn}
-\end{pmatrix}.
-\]
+be the cofactor of $a_{ij}$. Arrange all cofactors in the cofactor matrix $C$.
 
 \begin{definitionbox}
 The adjugate of $A$ is the transpose of the cofactor matrix:
@@ -20,6 +13,18 @@ The adjugate of $A$ is the transpose of the cofactor matrix:
 \]
 \end{definitionbox}
 
-\begin{remarkbox}[The transpose is essential]
-The adjugate is not the cofactor matrix itself. Rows and columns must be exchanged after all cofactors are computed.
-\end{remarkbox}
+The transpose is essential: cofactors associated with rows become columns in the matrix that reverses the action.
+
+\begin{examplebox}[The construction in dimension two]
+For
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\]
+the cofactor matrix and adjugate are
+\[
+C=\begin{pmatrix}d&-c\\-b&a\end{pmatrix},
+\qquad
+\operatorname{adj}(A)=\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
+\]
+Thus the familiar $2\times2$ inverse formula is already the adjugate formula in its simplest complete form.
+\end{examplebox}
