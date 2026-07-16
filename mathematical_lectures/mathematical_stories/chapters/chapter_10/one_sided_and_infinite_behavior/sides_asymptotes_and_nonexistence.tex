@@ -1,0 +1,41 @@
+\subsection{Approaching from a side and growing without bound}
+
+\begin{definitionbox}[One-sided limits]
+The symbols
+\[
+\lim_{x\to a^-}f(x)
+\qquad\text{and}\qquad
+\lim_{x\to a^+}f(x)
+\]
+describe approach from values smaller and larger than $a$, respectively.
+\end{definitionbox}
+
+A two-sided finite limit exists only when both one-sided limits exist and are equal.
+
+\begin{examplebox}[A jump]
+For
+\[
+f(x)=\begin{cases}0,&x<0,\\1,&x\ge0,\end{cases}
+\]
+we have
+\[
+\lim_{x\to0^-}f(x)=0,
+\qquad
+\lim_{x\to0^+}f(x)=1.
+\]
+Therefore the two-sided limit at zero does not exist.
+\end{examplebox}
+
+\begin{examplebox}[A vertical asymptote]
+For $f(x)=1/x$,
+\[
+\lim_{x\to0^+}\frac1x=\infty,
+\qquad
+\lim_{x\to0^-}\frac1x=-\infty.
+\]
+The line $x=0$ is a vertical asymptote.
+\end{examplebox}
+
+\begin{interpretationbox}[Infinite limits]
+The symbol $\infty$ does not denote a real output value. It records unbounded growth of the function values.
+\end{interpretationbox}
