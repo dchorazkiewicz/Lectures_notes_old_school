@@ -1,0 +1,29 @@
+\subsection{The $2\times2$ Rule}
+
+For
+\[
+\begin{cases}
+ax+by=e,\\
+cx+dy=f,
+\end{cases}
+\qquad
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\]
+assume $\det A\neq0$. Replace one coefficient column at a time by the right-hand side:
+\[
+A_x=\begin{pmatrix}e&b\\f&d\end{pmatrix},
+\qquad
+A_y=\begin{pmatrix}a&e\\c&f\end{pmatrix}.
+\]
+
+\begin{theorembox}[Cramer's rule in dimension two]
+\[
+\boxed{x=\frac{\det A_x}{\det A},
+\qquad
+y=\frac{\det A_y}{\det A}}.
+\]
+\end{theorembox}
+
+\begin{remarkbox}
+The denominator condition is structural. If $\det A=0$, the coefficient matrix is singular and Cramer's rule does not apply.
+\end{remarkbox}
