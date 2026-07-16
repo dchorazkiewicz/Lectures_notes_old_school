@@ -88,11 +88,11 @@
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{summarybox}{
+\newtcolorbox{summarybox}[1][Summary]{
     breakable,
     colback=gray!5,
     colframe=ChapterBlue,
-    title=Summary,
+    title={#1},
     fonttitle=\bfseries,
     before upper={\let\boxed\plainformula}
 }
