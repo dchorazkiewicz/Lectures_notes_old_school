@@ -1,0 +1,17 @@
+\subsection{Repeated or Dependent Rows}
+
+If two rows are equal, one is a multiple of another, or one can be constructed from the remaining rows, then the determinant is zero and the matrix is not invertible.
+
+\begin{examplebox}
+For
+\[
+A=\begin{pmatrix}
+1&2&1\\3&6&3\\0&1&4
+\end{pmatrix},
+\]
+the second row is three times the first. Hence $\det A=0$ and $A$ has no inverse.
+\end{examplebox}
+
+\begin{interpretationbox}[Repeated information cannot be reversed]
+A dependent row contributes no genuinely new information. The matrix therefore lacks enough independent directions to recover arbitrary inputs uniquely.
+\end{interpretationbox}
