@@ -4,6 +4,7 @@ The dot product was discovered from the cosine of the angle between two
 vectors. Before using it in longer calculations, we must verify how it behaves
 under addition and scalar multiplication.
 
+\begin{proofbox}[Verification from coordinates]
 Let
 \[
 \mathbf u=(u_1,u_2),\qquad
@@ -28,6 +29,11 @@ The symmetry of multiplication of real numbers also gives
 \[
 \mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u.
 \]
+Finally,
+\[
+\mathbf u\cdot\mathbf u=u_1^2+u_2^2=\|\mathbf u\|^2.
+\]
+\end{proofbox}
 
 \begin{theorembox}
 For vectors $\mathbf u,\mathbf v,\mathbf w$ and a real number $\lambda$,
@@ -47,11 +53,9 @@ Moreover,
 \]
 \end{theorembox}
 
-The last identity follows immediately:
-\[
-\mathbf u\cdot\mathbf u=u_1^2+u_2^2=\|\mathbf u\|^2.
-\]
+\begin{remarkbox}
 These properties justify every later expansion involving expressions such as
 $(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)$. They are not formal rules
 borrowed from elsewhere; they follow from the coordinate definition of the dot
 product.
+\end{remarkbox}
