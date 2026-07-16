@@ -1,0 +1,36 @@
+\subsection{Linearity in One Row}
+
+\begin{corebox}[Experiment, general calculation, theorem]
+A numerical example can suggest a property, but only a calculation with general entries explains why it always holds.
+\end{corebox}
+
+Keep the second row fixed and consider two possible first rows $(a,b)$ and $(p,q)$. Then
+\begin{derivationbox}[Addition in one row]
+\begin{align*}
+\det\begin{pmatrix}a+p&b+q\\c&d\end{pmatrix}
+&=(a+p)d-(b+q)c\\
+&=(ad-bc)+(pd-qc)\\
+&=\det\begin{pmatrix}a&b\\c&d\end{pmatrix}
++\det\begin{pmatrix}p&q\\c&d\end{pmatrix}.
+\end{align*}
+\end{derivationbox}
+
+Similarly, multiplying only the first row by $k$ gives
+\begin{derivationbox}[Scaling one row]
+\begin{align*}
+\det\begin{pmatrix}ka&kb\\c&d\end{pmatrix}
+&=(ka)d-(kb)c\\
+&=k(ad-bc)\\
+&=k\det\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\end{align*}
+\end{derivationbox}
+
+\begin{theorembox}[Linearity in one row]
+For the determinants already defined, addition in one selected row becomes addition of determinants, and multiplying that row by a scalar multiplies the determinant by the same scalar, provided all other rows remain fixed.
+\end{theorembox}
+
+\begin{remarkbox}[Not linear in the whole matrix]
+In general $\det(A+B)\neq\det A+\det B$. For example, with $A=B=I_2$, the left side is $\det(2I_2)=4$, while the right side is $2$.
+\end{remarkbox}
+
+The same mechanism appears in the $3\times3$ formula because every term contains exactly one entry from each row.
