@@ -1,12 +1,14 @@
 \subsection{How Much Motion and in Which Direction?}
 
 The coordinate pair of a vector records two changes, but it does not immediately
-answer two basic geometric questions:
+answer two basic geometric questions.
 
+\begin{corebox}[Two questions carried by every nonzero vector]
 \begin{enumerate}
     \item How long is the displacement?
     \item In which direction does it point?
 \end{enumerate}
+\end{corebox}
 
 Let
 \[
@@ -37,74 +39,75 @@ $|v_1|$ and $|v_2|$, while the vector itself is the hypotenuse.
 \end{tikzpicture}
 \end{center}
 
-By the Pythagorean theorem,
+\begin{derivationbox}[Length from the Pythagorean theorem]
+The right triangle gives
 \[
-\|\mathbf v\|^2=v_1^2+v_2^2,
+\|\mathbf v\|^2=v_1^2+v_2^2.
 \]
-so the nonnegative length of the vector is
+The length is nonnegative, so
 \[
-\boxed{
-\|\mathbf v\|=\sqrt{v_1^2+v_2^2}
-}.
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2}.
+\]
+\end{derivationbox}
+
+\begin{definitionbox}
+The Euclidean length, or norm, of $\mathbf v=(v_1,v_2)$ is
+\[
+\boxed{\|\mathbf v\|=\sqrt{v_1^2+v_2^2}}.
 \]
 The double bars distinguish the vector from the number measuring its length.
-In particular,
-\[
-\|\mathbf0\|=0,
-\]
-and every nonzero vector has positive length.
+\end{definitionbox}
 
-This formula also reconnects vectors with the Euclidean distance between
-points. Since
+\begin{theorembox}
 \[
-\overrightarrow{AB}=B-A,
+\boxed{\|\mathbf0\|=0},
+\qquad
+\boxed{\mathbf v\neq\mathbf0\implies\|\mathbf v\|>0}.
 \]
-the length of the displacement from $A$ to $B$ is
+Moreover, for points $A$ and $B$,
 \[
-\boxed{
-d_E(A,B)=\|B-A\|
-}.
+\boxed{d_E(A,B)=\|B-A\|}.
 \]
-A vector therefore packages both the direction from one point to another and
-the distance travelled.
+\end{theorembox}
+
+\begin{interpretationbox}[A displacement packages distance and direction]
+The vector $B-A$ records how to move from $A$ to $B$, while its norm records the
+Euclidean distance travelled. The same object therefore carries both directional
+and metric information.
+\end{interpretationbox}
 
 Now assume $\mathbf v\neq\mathbf0$ and let $\alpha$ be its angle of inclination,
-measured from the positive $x$-axis. The right triangle gives
+measured from the positive $x$-axis.
+
+\begin{derivationbox}[Separating magnitude from direction]
+The right triangle gives
 \[
 \cos\alpha=\frac{v_1}{\|\mathbf v\|},
 \qquad
 \sin\alpha=\frac{v_2}{\|\mathbf v\|}.
 \]
-Rearranging,
+Therefore
 \[
 v_1=\|\mathbf v\|\cos\alpha,
 \qquad
 v_2=\|\mathbf v\|\sin\alpha.
 \]
-Hence
+\end{derivationbox}
+
+\begin{theorembox}
+Every nonzero vector admits the decomposition
 \[
 \boxed{
-\mathbf v
-=
-\|\mathbf v\|(\cos\alpha,\sin\alpha)
+\mathbf v=\|\mathbf v\|(\cos\alpha,\sin\alpha)
 }.
 \]
+The vector $(\cos\alpha,\sin\alpha)$ has length one.
+\end{theorembox}
 
-This formula separates the two pieces of information carried by a nonzero
-vector:
-
+\begin{interpretationbox}[The two pieces of a vector]
 \begin{itemize}
     \item $\|\mathbf v\|$ says how much displacement occurs;
-    \item $(\cos\alpha,\sin\alpha)$ is a unit vector saying in which direction.
+    \item $(\cos\alpha,\sin\alpha)$ says in which direction it occurs.
 \end{itemize}
-
-Indeed,
-\[
-\|(\cos\alpha,\sin\alpha)\|
-=
-\sqrt{\cos^2\alpha+\sin^2\alpha}
-=1.
-\]
-Thus every nonzero vector is a positive length multiplied by a unit direction.
-This decomposition will make comparison of two vectors by their angle possible
-in the next subsection.
+Thus every nonzero vector is a positive magnitude multiplied by a unit direction.
+\end{interpretationbox}
