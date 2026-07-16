@@ -1,0 +1,30 @@
+\subsection{Diagonal and Triangular Matrices}
+
+For
+\[
+D=\operatorname{diag}(d_1,\ldots,d_n),
+\]
+we have
+\[
+\det D=d_1\cdots d_n.
+\]
+Thus $D$ is invertible exactly when every $d_i$ is nonzero, and then
+\[
+\boxed{D^{-1}=\operatorname{diag}\left(\frac1{d_1},\ldots,\frac1{d_n}\right)}.
+\]
+
+\begin{examplebox}
+For
+\[
+D=\begin{pmatrix}4&0&0\\0&-2&0\\0&0&5\end{pmatrix},
+\]
+\[
+D^{-1}=\begin{pmatrix}\frac14&0&0\\0&-\frac12&0\\0&0&\frac15\end{pmatrix}.
+\]
+\end{examplebox}
+
+For a triangular matrix, the determinant is the product of the diagonal entries. Therefore it is invertible exactly when all diagonal entries are nonzero.
+
+\begin{interpretationbox}[Pivots and reversibility]
+A zero diagonal entry in triangular form means a missing pivot. Without one pivot in each coordinate direction, the matrix cannot be reduced to the identity.
+\end{interpretationbox}
