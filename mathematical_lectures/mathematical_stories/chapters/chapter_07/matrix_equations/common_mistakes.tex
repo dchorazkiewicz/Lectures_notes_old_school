@@ -1,0 +1,19 @@
+\subsection{Common Mistakes and a Reliable Procedure}
+
+From
+\[
+AX=B
+\]
+it is generally wrong to write $X=BA^{-1}$. Multiplying on the right does not cancel the matrix $A$ standing on the left of $X$.
+
+\begin{remarkbox}[Do not move matrix factors like numbers]
+The correct operation is
+\[
+A^{-1}AX=A^{-1}B,
+\]
+which gives $X=A^{-1}B$. Every cancellation must respect adjacency and order.
+\end{remarkbox}
+
+\begin{summarybox}[Solving matrix equations]
+Identify the position of the unknown, check that the matrices to be inverted are invertible, multiply on the side where cancellation is valid, preserve factor order, and verify the answer by substitution whenever practical.
+\end{summarybox}
