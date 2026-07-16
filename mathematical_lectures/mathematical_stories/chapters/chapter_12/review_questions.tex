@@ -3,105 +3,99 @@
 \subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Find the following antiderivatives:
+\item Find
 \[
 \int(3x^2-4x+5)\,dx,
 \qquad
 \int(2e^x+3\cos x)\,dx,
 \qquad
-\int\frac{1}{\sqrt{x}}\,dx.
+\int x^{-1/2}\,dx.
 \]
-Differentiate each result to verify it.
+Differentiate each answer.
 
-\item Find the function $F$ satisfying
+\item Find $F$ satisfying
 \[
 F'(x)=4x-3,
-\qquad
-F(2)=5.
+\qquad F(2)=5,
 \]
-Then compute $F(0)$.
+and compute $F(0)$.
 
 \item Evaluate by substitution:
 \[
 \int 2x(x^2+1)^3\,dx,
 \qquad
-\int_0^1 2x e^{x^2}\,dx.
+\int_0^1 2xe^{x^2}\,dx.
 \]
-State the substitution explicitly.
 
-\item Evaluate by integration by parts:
+\item Evaluate by parts:
 \[
 \int xe^x\,dx,
 \qquad
-\int_0^1 x\,e^x\,dx.
-\]
-Verify the indefinite result by differentiation.
-
-\item For $f(x)=x$ on $[0,2]$, compute the right-endpoint Riemann sums with $n=2$ and $n=4$ equal subintervals. Compare them with
-\[
-\int_0^2 x\,dx.
+\int_0^1 xe^x\,dx.
 \]
 
-\item Evaluate using the fundamental theorem of calculus:
+\item For $f(x)=x$ on $[0,2]$, compute right-endpoint Riemann sums for $n=2$ and $n=4$, then compare them with the exact integral.
+
+\item Evaluate
 \[
 \int_0^3(2x+1)\,dx,
 \qquad
-\int_{-1}^{2}(x^2-1)\,dx.
+\int_{-1}^{2}(x^2-1)\,dx
 \]
-Interpret the sign of each answer.
+using the fundamental theorem of calculus.
 
-\item Compute the area between the graphs
+\item Compute the area under $y=x^2$ on $[0,2]$ and draw the region.
+
+\item Find the average value of $f(x)=x^2$ on $[0,3]$ and a point where the function attains that value.
+
+\item A particle has velocity $v(t)=t-1$ on $[0,3]$. Compute displacement and total distance, splitting at the sign change.
+
+\item A force $F(x)=2x+1$ acts from $x=0$ to $x=3$. Compute the work and state its units when force is in newtons and distance in metres.
+\end{enumerate}
+
+\subsection{Development and reasoning exercises}
+
+\begin{enumerate}
+\item Evaluate without being told the method:
+\[
+\int x(x^2+4)^5\,dx,
+\qquad
+\int x\cos x\,dx,
+\qquad
+\int(3x^2+2e^x)\,dx.
+\]
+For each integral, justify the method before calculating.
+
+\item Find the intersection points of
 \[
 y=x
 \qquad\text{and}\qquad
-y=x^2
+y=x^2-2x,
 \]
-on $[0,1]$. State which function is above the other.
-
-\item Find the average value of
-\[
-f(x)=x^2
-\]
-on $[0,3]$. Find a point $c\in[0,3]$ at which $f(c)$ equals this average value.
+determine which graph is above on each interval, and compute the enclosed area.
 
 \item A particle has velocity
 \[
-v(t)=t-1,
-\qquad 0\le t\le3.
+v(t)=(t-1)(t-3),
+\qquad0\le t\le4.
 \]
-Compute its displacement and total distance travelled. Split the integral at every sign change.
+Compute displacement and total distance. Explain why the interval must be divided at both zeros.
 
-\item Complete both calculations:
-\begin{enumerate}
-\item A force $F(x)=2x+1$ acts from $x=0$ to $x=3$. Compute the work.
-\item The graph $y=x$ on $[0,2]$ is rotated about the $x$-axis. Compute the volume using the disk method.
-\end{enumerate}
-State the units of each result when force is measured in newtons and length in metres.
-\end{enumerate}
+\item The region under $y=\sqrt{x}$ on $[0,4]$ is rotated about the $x$-axis. Build the cross-sectional area and compute the volume.
 
-\subsection{Conceptual and reasoning exercises}
+\item A quantity enters a system at rate $r(t)=3t^2+2$ units per minute for $0\le t\le2$. Find the accumulated amount and explain the units of the integrand, differential, and integral.
 
-\begin{enumerate}
-\item Distinguish an indefinite integral from a definite integral. Why is the first a family of functions while the second is a number?
-
-\item Explain why the constant $C$ is necessary in an indefinite integral. What information is lost when a function is differentiated?
-
-\item Interpret a Riemann sum as accumulation of local contributions. What happens to the approximation as the partition is refined?
-
-\item A definite integral is signed. Explain how regions below the axis affect the value and why the integral need not equal geometric area.
-
-\item Explain the central connection expressed by the fundamental theorem of calculus. Why is it surprising that a limit of sums can be computed using an antiderivative?
-
-\item Explain why substitution reverses the chain rule and integration by parts reverses the product rule. What structural pattern should be recognised before applying each method?
-
-\item Compare area under a graph, area between two graphs, and volume by disks. Identify the local quantity being accumulated in each case.
-
-\item Explain the difference between displacement and total distance. Why does the absolute value of velocity appear only in the distance calculation?
-
-\item The formulas for work, accumulated flow, mass from density, and total change look similar. Explain the common principle
+\item Define
 \[
-\text{total}=\int \text{local contribution}.
+A(x)=\int_0^x(t^2+1)\,dt.
 \]
+Find $A(x)$ and $A'(x)$, then explain geometrically why the derivative recovers the current integrand value.
 
-\item Give a method-selection strategy for an elementary integral. Explain when to use direct antiderivatives, substitution, integration by parts, geometric interpretation, or the fundamental theorem, and why unnecessarily complicated techniques should be avoided.
+\item Compare right-endpoint Riemann sums for an increasing function with the exact integral. Use $f(x)=x^2$ on $[0,1]$ and explain why the sums overestimate.
+
+\item Construct an example where the definite integral is zero but the total geometric area is positive. Compute both quantities and explain the cancellation.
+
+\item Show explicitly that substitution reverses the chain rule and integration by parts reverses the product rule. Derive both formulas and attach one example to each.
+
+\item Give a complete modelling strategy for accumulated quantities: identify the local contribution and units, choose the interval, determine whether signs or intersections require subdivision, select a method, compute, and interpret the result. Apply it to area, motion, or work.
 \end{enumerate}
