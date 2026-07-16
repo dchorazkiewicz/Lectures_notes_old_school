@@ -1,0 +1,48 @@
+\subsection{Diagonal Matrices}
+
+\begin{definitionbox}[Diagonal matrix]
+A square matrix $D=(d_{ij})$ is diagonal when
+\[
+d_{ij}=0
+\qquad\text{for every }i\neq j.
+\]
+We write
+\[
+D=\operatorname{diag}(d_1,d_2,\ldots,d_n).
+\]
+\end{definitionbox}
+
+\begin{interpretationbox}[No mixing between coordinates]
+A diagonal matrix acts independently on the coordinate positions. Since every
+off-diagonal entry is zero, one coordinate does not contribute to another. This
+is why products and powers of diagonal matrices are especially transparent.
+\end{interpretationbox}
+
+\begin{examplebox}[Powers of a diagonal matrix]
+For
+\[
+D=\operatorname{diag}(3,-1,2),
+\]
+we have
+\[
+D^2=\operatorname{diag}(9,1,4),
+\qquad
+D^3=\operatorname{diag}(27,-1,8).
+\]
+Each diagonal entry is raised to the corresponding power.
+\end{examplebox}
+
+\begin{theorembox}[Diagonal matrices commute]
+If
+\[
+D_1=\operatorname{diag}(a_1,\ldots,a_n),
+\qquad
+D_2=\operatorname{diag}(b_1,\ldots,b_n),
+\]
+then
+\[
+D_1D_2=D_2D_1
+=\operatorname{diag}(a_1b_1,\ldots,a_nb_n).
+\]
+The commutativity follows from ordinary multiplication of the diagonal entries.
+\end{theorembox}
