@@ -1,0 +1,25 @@
+\subsection{A sequence is drawn as separate points}
+
+A sequence has the natural numbers as inputs, so its graph is not a continuous curve. For
+\[
+a_n=\frac{1}{n},
+\]
+the terms form isolated points that move closer to the horizontal axis.
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm,y=4.2cm]
+  \draw[->] (0.5,0) -- (8.8,0) node[right] {$n$};
+  \draw[->] (1,-0.05) -- (1,1.15) node[above] {$a_n$};
+  \foreach \n in {1,...,8}{
+    \fill (\n,{1/\n}) circle (1.8pt);
+    \draw (\n,0.012) -- (\n,-0.012) node[below] {\small $\n$};
+  }
+  \draw[dashed] (0.7,0) -- (8.5,0);
+  \node[anchor=west] at (5.2,0.72) {$a_n=1/n$};
+  \draw[->] (4.9,0.67) -- (4.1,0.27);
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Discrete approach]
+The points do not fill the spaces between consecutive integers. Nevertheless, their heights approach zero. This is the first visual model for the statement $a_n\to0$ as $n\to\infty$.
+\end{interpretationbox}
