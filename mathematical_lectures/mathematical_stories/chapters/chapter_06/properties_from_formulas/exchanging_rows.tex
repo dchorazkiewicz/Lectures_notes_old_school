@@ -1,0 +1,30 @@
+\subsection{Exchanging Two Rows}
+
+For
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\qquad
+\det A=ad-bc.
+\]
+After exchanging the rows,
+\[
+B=\begin{pmatrix}c&d\\a&b\end{pmatrix}.
+\]
+
+\begin{proofbox}[Why the sign changes]
+\begin{align*}
+\det B
+&=cb-da\\
+&=bc-ad\\
+&=-(ad-bc)\\
+&=-\det A.
+\end{align*}
+\end{proofbox}
+
+\begin{theorembox}[Row exchange]
+Exchanging two rows changes the sign of the determinant.
+\end{theorembox}
+
+\begin{interpretationbox}[Order is recorded]
+The determinant is sensitive not only to the entries but also to the order of the rows and columns.
+\end{interpretationbox}
