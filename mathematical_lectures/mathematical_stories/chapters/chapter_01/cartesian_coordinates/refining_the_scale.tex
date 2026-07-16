@@ -1,14 +1,16 @@
 \subsection{Refining the Scale by Bisection}
 
-The compass and straightedge construction does not stop at integer marks.
+\begin{derivationbox}[Constructing finer marks]
+The compass-and-straightedge construction does not stop at integer marks.
 Bisecting each unit segment constructs halves. Bisecting again constructs
 quarters, then eighths, and so on. Repeating this process on every integer
 interval and on both sides of the origin gives all dyadic marks
 \[
-\frac{k}{2^n},
+\boxed{\frac{k}{2^n}},
 \qquad k\in\mathbb Z,
 \quad n\in\mathbb N.
 \]
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
@@ -20,9 +22,11 @@ interval and on both sides of the origin gives all dyadic marks
 \end{tikzpicture}
 \end{center}
 
-The dyadic marks are dense on the axis: every interval, however small, contains
-such marks. They therefore provide arbitrarily fine numerical approximations to
-positions on the line.
+\begin{theorembox}
+The dyadic marks are dense on the axis: every nonempty interval contains a
+number of the form $k/2^n$. They provide arbitrarily fine numerical
+approximations to positions on the line.
+\end{theorembox}
 
 \begin{definitionbox}
 \textbf{Continuity assumption.} Once an origin, a positive direction, and a unit
@@ -31,8 +35,9 @@ exactly one real number, and every real number corresponds to exactly one point
 of the line.
 \end{definitionbox}
 
-This assumption is additional to the finite straightedge-and-compass operations.
-Those operations construct many particular positions, including all dyadic
-marks, but not every real position. Continuity supplies the complete real scale
-used by coordinates. After this step, every point of each axis has a unique
-signed real label.
+\begin{interpretationbox}[What continuity contributes]
+Finite straightedge-and-compass operations construct many particular positions,
+including every dyadic mark, but not every real position. Continuity supplies
+the complete real scale. After this additional assumption, every point of each
+axis has a unique signed real label.
+\end{interpretationbox}
