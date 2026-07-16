@@ -1,12 +1,8 @@
 name: Repair scalar field TeX sources
 
+# Temporarily disabled: manual dispatch only.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - .github/workflows/repair-scalar-field-tex.yml
-      - physics_lectures/classical_field_theory/chapters/chapter_05_the_real_scalar_field.tex
+  workflow_dispatch:
 
 permissions:
   contents: write
