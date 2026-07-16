@@ -1,0 +1,42 @@
+\subsection{From average change to instantaneous change}
+
+If the input changes from $a$ to $a+h$, then the output changes by
+\[
+f(a+h)-f(a).
+\]
+The quotient
+\[
+\frac{f(a+h)-f(a)}{h}
+\]
+is the average rate of change over that interval.
+
+\begin{definitionbox}[Derivative at a point]
+The derivative of $f$ at $a$ is
+\[
+f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
+\]
+provided the limit exists.
+\end{definitionbox}
+
+\begin{examplebox}[The derivative of $x^2$]
+For $f(x)=x^2$,
+\[
+\frac{(a+h)^2-a^2}{h}=2a+h,
+\]
+so
+\[
+f'(a)=2a.
+\]
+\end{examplebox}
+
+\begin{interpretationbox}[Slope and local change]
+The difference quotient is the slope of a secant line. As $h\to0$, the secant approaches the tangent, and the derivative gives its slope. In applications the same number represents an instantaneous rate, such as velocity or growth rate.
+\end{interpretationbox}
+
+\begin{examplebox}[Velocity]
+If position is $s(t)=t^2$, then
+\[
+v(t)=s'(t)=2t.
+\]
+At time $t=3$, the instantaneous velocity is $6$ units of distance per unit of time.
+\end{examplebox}
