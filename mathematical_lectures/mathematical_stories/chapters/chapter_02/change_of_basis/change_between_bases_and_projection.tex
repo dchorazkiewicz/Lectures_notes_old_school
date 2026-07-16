@@ -1,0 +1,79 @@
+\subsection{Changing Directly from One Basis to Another}
+
+Suppose
+\[
+\mathcal B=(\mathbf b_1,\mathbf b_2)
+\qquad\text{and}\qquad
+\mathcal C=(\mathbf c_1,\mathbf c_2)
+\]
+are two bases and
+\[
+[\mathbf u]_{\mathcal B}=(p,q).
+\]
+
+\begin{derivationbox}[Reconstruct first, then describe again]
+First reconstruct the geometric vector:
+\[
+\mathbf u=p\mathbf b_1+q\mathbf b_2.
+\]
+If
+\[
+\mathbf b_1=(a_1,a_2),
+\qquad
+\mathbf b_2=(b_1,b_2),
+\]
+then
+\[
+\mathbf u=(pa_1+qb_1,\,pa_2+qb_2).
+\]
+Now seek $r,s$ such that
+\[
+\mathbf u=r\mathbf c_1+s\mathbf c_2.
+\]
+Writing
+\[
+\mathbf c_1=(d_1,d_2),
+\qquad
+\mathbf c_2=(e_1,e_2),
+\]
+we solve
+\[
+\begin{aligned}
+ d_1r+e_1s&=pa_1+qb_1,\\
+ d_2r+e_2s&=pa_2+qb_2.
+\end{aligned}
+\]
+The solution $(r,s)$ is exactly $[\mathbf u]_{\mathcal C}$.
+\end{derivationbox}
+
+\begin{corebox}[The basis-change procedure]
+A change from one basis to another consists of two familiar steps:
+\[
+\boxed{
+\text{old coordinates}
+\longrightarrow
+\text{the geometric vector}
+\longrightarrow
+\text{new coordinates}.}
+\]
+At no stage does the geometric vector itself change.
+\end{corebox}
+
+\subsection{Why Perpendicular Projection Is Special}
+
+\begin{interpretationbox}[Rectangular and oblique coordinates]
+For the Cartesian basis, the coordinate directions are perpendicular unit
+vectors, so coordinates can be read from perpendicular projections. For a
+slanted basis this is generally false. Perpendicular shadows on
+$\mathbf b_1$ and $\mathbf b_2$ need not add back to $\mathbf u$.
+
+The correct geometric construction draws through the endpoint lines parallel to
+the other basis vector. The resulting oblique parallelogram records the basis
+coefficients.
+\end{interpretationbox}
+
+\begin{remarkbox}
+After matrices are introduced, the same systems of equations will be written
+more compactly. Matrix notation will not create a new method; it will abbreviate
+the reconstruction and elimination calculations performed here.
+\end{remarkbox}
