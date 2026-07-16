@@ -1,0 +1,40 @@
+\subsection{Parameters and Exceptional Values}
+
+When a matrix contains a parameter, the equation
+\[
+\det A(t)=0
+\]
+identifies values at which a relation among rows or columns appears.
+
+\begin{examplebox}[A quadratic parameter condition]
+Let
+\[
+A(t)=\begin{pmatrix}t&1\\4&t\end{pmatrix}.
+\]
+Then
+\[
+\det A(t)=t^2-4=(t-2)(t+2).
+\]
+Thus the determinant vanishes for $t=2$ or $t=-2$. At $t=2$ the second row is twice the first; at $t=-2$ it is $-2$ times the first.
+\end{examplebox}
+
+\begin{examplebox}[A row relation in three dimensions]
+For
+\[
+B(s)=\begin{pmatrix}
+1&0&1\\0&1&1\\1&s&2
+\end{pmatrix},
+\]
+we obtain
+\[
+\det B(s)=1-s.
+\]
+At $s=1$ the third row satisfies
+\[
+(1,1,2)=(1,0,1)+(0,1,1).
+\]
+\end{examplebox}
+
+\begin{summarybox}[How to read a zero determinant]
+Solve $\det A=0$, then inspect the exceptional matrices for an explicit relation among rows or columns. The roots are not merely numerical answers; they locate the loss of independence.
+\end{summarybox}
