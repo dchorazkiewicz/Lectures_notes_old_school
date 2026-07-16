@@ -1,9 +1,9 @@
 \subsection{The Cauchy criterion}
 
-The definition of convergence refers to a candidate limit \(L\). Sometimes we want to decide whether a sequence converges before knowing that limit. The Cauchy criterion compares late terms directly with one another.
+The definition of convergence refers to a candidate limit $L$. Sometimes we want to decide whether a sequence converges before knowing that limit. The Cauchy criterion compares late terms directly with one another.
 
 \begin{definitionbox}[Cauchy sequence]
-A sequence \((a_n)\) is a Cauchy sequence if, for every \(\varepsilon>0\), there exists \(N\in\mathbb N\) such that
+A sequence $(a_n)$ is a Cauchy sequence if, for every $\varepsilon>0$, there exists $N\in\mathbb N$ such that
 \[
 m,n\ge N \quad\Longrightarrow\quad |a_m-a_n|<\varepsilon.
 \]
@@ -11,16 +11,16 @@ m,n\ge N \quad\Longrightarrow\quad |a_m-a_n|<\varepsilon.
 
 Thus, sufficiently late terms must be arbitrarily close to each other. The definition does not name the value they approach.
 
-\begin{theorembox}[Cauchy criterion in \(\mathbb R\)]
+\begin{theorembox}[Cauchy criterion in $\mathbb R$]
 A real sequence converges if and only if it is a Cauchy sequence.
 \end{theorembox}
 
 \begin{proofbox}[Why convergence implies the Cauchy property]
-Suppose \(a_n\to L\). Given \(\varepsilon>0\), choose \(N\) so that
+Suppose $a_n\to L$. Given $\varepsilon>0$, choose $N$ so that
 \[
 n\ge N \quad\Longrightarrow\quad |a_n-L|<\frac\varepsilon2.
 \]
-Then for \(m,n\ge N\), the triangle inequality gives
+Then for $m,n\ge N$, the triangle inequality gives
 \[
 |a_m-a_n|
 \le |a_m-L|+|a_n-L|
@@ -30,10 +30,12 @@ Then for \(m,n\ge N\), the triangle inequality gives
 Hence every convergent sequence is Cauchy.
 \end{proofbox}
 
-The reverse implication uses the completeness of the real numbers: real Cauchy sequences cannot approach a missing point outside \(\mathbb R\).
+\begin{remarkbox}[Proof status]
+Only the forward implication is proved here. The reverse implication uses completeness of the real numbers: a real Cauchy sequence cannot approach a missing point outside $\mathbb R$. We use that completeness result without developing its full construction.
+\end{remarkbox}
 
 \begin{examplebox}[A sequence that is not Cauchy]
-For \(a_n=(-1)^n\), choose arbitrarily large even \(m\) and odd \(n\). Then
+For $a_n=(-1)^n$, choose arbitrarily large even $m$ and odd $n$. Then
 \[
 |a_m-a_n|=|1-(-1)|=2.
 \]
@@ -41,5 +43,5 @@ The late terms do not become close to one another, so the sequence is not Cauchy
 \end{examplebox}
 
 \begin{interpretationbox}[Internal test for convergence]
-The ordinary definition compares terms with an external target \(L\). The Cauchy criterion tests whether the tail has internally settled down enough that a limit must exist.
+The ordinary definition compares terms with an external target $L$. The Cauchy criterion tests whether the tail has internally settled down enough that a limit must exist.
 \end{interpretationbox}
