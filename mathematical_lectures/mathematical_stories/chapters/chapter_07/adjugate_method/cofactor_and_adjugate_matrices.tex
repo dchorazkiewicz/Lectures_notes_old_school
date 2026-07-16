@@ -1,0 +1,25 @@
+\subsection{The Cofactor Matrix and the Adjugate}
+
+For $A=(a_{ij})$, let
+\[
+C_{ij}=(-1)^{i+j}M_{ij}
+\]
+be the cofactor of $a_{ij}$. Arrange all cofactors in the matrix
+\[
+C=\begin{pmatrix}
+C_{11}&\cdots&C_{1n}\\
+\vdots&\ddots&\vdots\\
+C_{n1}&\cdots&C_{nn}
+\end{pmatrix}.
+\]
+
+\begin{definitionbox}
+The adjugate of $A$ is the transpose of the cofactor matrix:
+\[
+\boxed{\operatorname{adj}(A)=C^{\mathsf T}}.
+\]
+\end{definitionbox}
+
+\begin{remarkbox}[The transpose is essential]
+The adjugate is not the cofactor matrix itself. Rows and columns must be exchanged after all cofactors are computed.
+\end{remarkbox}
