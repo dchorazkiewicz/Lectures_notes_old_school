@@ -1,11 +1,11 @@
 \chapter{Limits and Continuity}
 
-\begin{corebox}[Behavior before procedure]
-A limit describes what values are approached. The chapter develops enough techniques and consequences to support a full study of local behavior, long-term behavior, asymptotes, continuity, and existence arguments, while keeping the algebra elementary.
+\begin{corebox}[Sequences before function limits]
+The idea of a limit is developed first for sequences, where approaching means moving along natural-number indices. Function limits are then introduced through sequences approaching a point, using Heine's theorem and the Cauchy criterion. Only after this foundation do we study computational methods, one-sided behavior, asymptotes, and continuity.
 \end{corebox}
 
-\input{chapters/chapter_10/approaching_and_limits/section}
 \input{chapters/chapter_10/sequence_limits/section}
+\input{chapters/chapter_10/function_limits_from_sequences/section}
 \input{chapters/chapter_10/elementary_limit_methods/section}
 \input{chapters/chapter_10/limit_laws_and_standard_patterns/section}
 \input{chapters/chapter_10/one_sided_and_infinite_behavior/section}
@@ -13,5 +13,5 @@ A limit describes what values are approached. The chapter develops enough techni
 \input{chapters/chapter_10/continuity_consequences/section}
 
 \begin{summarybox}[Limits and continuity]
-Read the type of approach first. Use limit laws and the simplest transformation that exposes the behavior. One-sided and infinite limits describe boundaries and asymptotes. Continuity connects nearby behavior with assigned values and, through the intermediate value theorem, can prove that solutions exist even when they cannot be written explicitly.
+Sequence limits provide the basic definition of convergence, the Cauchy criterion, and the monotone convergence theorem. Heine's theorem transfers this language to functions: a function has a limit precisely when every admissible approaching sequence produces the same output limit. The later techniques and continuity results are applications of this structure, not the starting point.
 \end{summarybox}
