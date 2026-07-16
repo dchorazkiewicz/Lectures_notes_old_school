@@ -1,0 +1,31 @@
+\subsection{Computing accumulated change}
+
+\begin{theorembox}[Fundamental theorem of calculus]
+If $F'(x)=f(x)$ on an interval, then
+\[
+\int_a^b f(x)\,dx=F(b)-F(a).
+\]
+\end{theorembox}
+
+\begin{interpretationbox}[Why the theorem is fundamental]
+Local change and total change are inverse viewpoints. The derivative describes the rate at each point, while the definite integral accumulates that rate across an interval.
+\end{interpretationbox}
+
+\begin{examplebox}[Area under a simple graph]
+For $f(x)=x$ on $[0,2]$,
+\[
+\int_0^2 x\,dx=\left[\frac{x^2}{2}\right]_0^2=2.
+\]
+This agrees with the area of a triangle of base $2$ and height $2$.
+\end{examplebox}
+
+\begin{examplebox}[Signed accumulation]
+\[
+\int_{-1}^{1}x\,dx=0.
+\]
+The positive and negative contributions cancel. The integral is signed area, not total geometric area.
+\end{examplebox}
+
+\begin{remarkbox}
+For a non-negative integrand, the definite integral is non-negative. This simple sign check is often enough to detect an incorrect calculation.
+\end{remarkbox}
