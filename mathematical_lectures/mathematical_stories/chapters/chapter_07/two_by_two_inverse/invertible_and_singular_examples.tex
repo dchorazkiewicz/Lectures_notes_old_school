@@ -1,0 +1,28 @@
+\subsection{Invertible and Singular Examples}
+
+\begin{examplebox}[An invertible matrix]
+For
+\[
+A=\begin{pmatrix}2&1\\5&3\end{pmatrix},
+\]
+$\det A=1$, so
+\[
+A^{-1}=\begin{pmatrix}3&-1\\-5&2\end{pmatrix}.
+\]
+Verification gives
+\[
+AA^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\]
+\end{examplebox}
+
+\begin{examplebox}[A singular matrix]
+For
+\[
+B=\begin{pmatrix}1&2\\3&6\end{pmatrix},
+\]
+$\det B=0$. The formula would require division by zero, but the deeper reason is that the second row is three times the first. Independent information has been lost, so the action cannot be undone uniquely.
+\end{examplebox}
+
+\begin{remarkbox}[Verification is part of the method]
+The output is not merely a candidate matrix. It must multiply with the original matrix to produce the identity.
+\end{remarkbox}
