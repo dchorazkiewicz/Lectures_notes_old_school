@@ -1,78 +1,95 @@
-\subsection{Vector tests behind the slope rules}
+\subsection{Vector Tests Behind the Slope Rules}
 
+\begin{theorembox}
 Let two lines have nonzero direction vectors $\mathbf v_1$ and $\mathbf v_2$.
-Their geometric directions are parallel precisely when one direction vector is a
-nonzero scalar multiple of the other:
+Their directions are parallel precisely when
 \[
 \boxed{
 \mathbf v_1\parallel\mathbf v_2
 \iff
 \mathbf v_2=\lambda\mathbf v_1
-\text{ for some }\lambda\neq0.
-}
+\text{ for some }\lambda\neq0
+}.
 \]
-In three coordinates the same condition will be detected by a zero cross
-product. In the plane, the scalar-multiple criterion is already sufficient.
-
-The directions are perpendicular precisely when
+They are perpendicular precisely when
 \[
 \boxed{
 \mathbf v_1\perp\mathbf v_2
 \iff
-\mathbf v_1\cdot\mathbf v_2=0.
-}
+\mathbf v_1\cdot\mathbf v_2=0
+}.
 \]
-These tests do not require a slope and therefore include vertical directions
-without a separate convention.
+\end{theorembox}
 
-For nonvertical lines with slopes $m_1,m_2$, convenient direction vectors are
+\begin{interpretationbox}[Why vector tests are more general]
+These criteria do not require a slope and therefore include vertical directions
+without any special convention. In three dimensions, parallel directions will
+also be detected by a zero cross product.
+\end{interpretationbox}
+
+\begin{derivationbox}[Recovering the familiar slope rule]
+For nonvertical lines with slopes $m_1,m_2$, choose direction vectors
 \[
 \mathbf v_1=(1,m_1),
 \qquad
 \mathbf v_2=(1,m_2).
 \]
-Their dot product is
+Then
 \[
 \mathbf v_1\cdot\mathbf v_2=1+m_1m_2.
 \]
-Consequently,
+Therefore
 \[
 \mathbf v_1\perp\mathbf v_2
 \iff
-1+m_1m_2=0
-\iff
-\boxed{m_1m_2=-1}.
+1+m_1m_2=0.
 \]
-Thus the familiar slope rule is not an independent fact. It is the coordinate
-form of the dot-product test for the special direction vectors $(1,m)$.
+\end{derivationbox}
 
-\subsection{The nearest point on a line}
+\begin{theorembox}
+For two nonvertical lines,
+\[
+\boxed{
+L_1\perp L_2
+\iff
+m_1m_2=-1
+}.
+\]
+This is the slope form of the dot-product criterion, not an independent rule.
+\end{theorembox}
+
+\subsection{The Nearest Point on a Line}
 
 Let
 \[
 L=\{P_0+t\mathbf v:t\in\mathbb R\},
 \qquad \mathbf v\neq\mathbf0,
 \]
-and let $P$ be a point not necessarily on $L$. The displacement
-\[
-P-P_0
-\]
-can be decomposed into a component parallel to $\mathbf v$ and a component
-perpendicular to $\mathbf v$. The parallel component is
+and let $P$ be any point.
+
+\begin{derivationbox}[Projecting onto the allowed direction]
+Decompose the displacement $P-P_0$ into a component parallel to $\mathbf v$ and
+a component perpendicular to $\mathbf v$. The parallel component is
 \[
 \operatorname{proj}_{\mathbf v}(P-P_0)
 =
 \frac{(P-P_0)\cdot\mathbf v}{\mathbf v\cdot\mathbf v}\,\mathbf v.
 \]
-Starting from $P_0$ and moving by this component reaches the foot of the
-perpendicular:
+Starting from $P_0$ and moving by this component reaches
+\[
+Q=P_0+\operatorname{proj}_{\mathbf v}(P-P_0).
+\]
+\end{derivationbox}
+
+\begin{theorembox}
+The nearest point on $L$ to $P$ is
 \[
 \boxed{
-Q=P_0+\operatorname{proj}_{\mathbf v}(P-P_0).
-}
+Q=P_0+\operatorname{proj}_{\mathbf v}(P-P_0)
+}.
 \]
-The point $Q$ lies on the line, and $P-Q$ is perpendicular to the line. It is
-therefore the shortest displacement from $P$ to any point of $L$.
+The remainder $P-Q$ is perpendicular to the line.
+\end{theorembox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.95,>=stealth]
@@ -94,43 +111,59 @@ therefore the shortest displacement from $P$ to any point of $L$.
 \end{tikzpicture}
 \end{center}
 
-Hence
+\begin{definitionbox}
+The distance from $P$ to the line $L$ is
 \[
 \boxed{
 d(P,L)
 =
 \left\|
 (P-P_0)-\operatorname{proj}_{\mathbf v}(P-P_0)
-\right\|.
-}
+\right\|
+}.
 \]
+\end{definitionbox}
 
-\subsection{Distance from the normal equation}
+\begin{interpretationbox}[Why the perpendicular is shortest]
+Every other route from $P$ to a point of the line contains the same perpendicular
+component together with an additional component along the line. The orthogonal
+component alone is therefore the shortest possible displacement.
+\end{interpretationbox}
 
-Suppose the same line is written as
+\subsection{Distance from the Normal Equation}
+
+Suppose the line is written as
 \[
 ax+by=c,
 \qquad (a,b)\neq(0,0),
 \]
-with normal vector
-\[
-\mathbf n=(a,b).
-\]
+with normal vector $\mathbf n=(a,b)$.
+
+\begin{derivationbox}[Reading the normal component]
 For $P=(x_P,y_P)$ and any fixed $P_0$ on the line,
 \[
 \mathbf n\cdot(P-P_0)=ax_P+by_P-c.
 \]
-The signed scalar component of $P-P_0$ in the normal direction is therefore
+The signed scalar component in the normal direction is
 \[
 \frac{ax_P+by_P-c}{\sqrt{a^2+b^2}}.
 \]
-Distance is nonnegative, so
+Distance is its absolute value.
+\end{derivationbox}
+
+\begin{theorembox}
+For the line $ax+by=c$ and the point $P=(x_P,y_P)$,
 \[
 \boxed{
 d(P,L)
 =
-\frac{|ax_P+by_P-c|}{\sqrt{a^2+b^2}}.
-}
+\frac{|ax_P+by_P-c|}{\sqrt{a^2+b^2}}
+}.
 \]
-This formula is not a new rule detached from projection. It is the length of the
-normal component of the displacement from the line to the point.
+\end{theorembox}
+
+\begin{interpretationbox}[The formula is a projection]
+The numerator measures signed displacement in the normal direction, and the
+denominator normalises the normal vector. The formula is therefore the length
+of a projection, not a detached rule to memorise.
+\end{interpretationbox}
