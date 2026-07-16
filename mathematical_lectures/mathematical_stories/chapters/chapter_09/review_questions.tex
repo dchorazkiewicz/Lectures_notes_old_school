@@ -1,32 +1,109 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
-\item Define a function as an assignment. Distinguish domain, codomain, and range, and explain why a formula alone may not determine the whole function.
-
-\item Compare a formula, a table, and a graph as representations of the same function. What information is especially visible in each representation?
-
-\item For $f(x)=x^2-4$, determine the domain, zeros, sign intervals, symmetry, and visible long-term behaviour. Explain how each property appears on the graph.
-
-\item Compare the qualitative behaviour of a polynomial, $e^x$, and $\sin x$. Focus on zeros, sign, monotonicity, boundedness, and periodicity rather than on detailed calculation.
-
-\item Explain geometrically the transformations
+\item Let
 \[
-f(x)+c,\qquad f(x-c),\qquad -f(x),\qquad f(-x).
+f(x)=x^2-4x+3.
 \]
-Which affect outputs, which affect inputs, and why do horizontal shifts often appear with the opposite sign?
+Compute $f(-1)$, $f(0)$, $f(2)$, and $f(5)$. Find the zeros and determine where the function is positive and negative.
 
-\item Define composition of functions. For two elementary functions, compute both $f\circ g$ and $g\circ f$, state the relevant domains, and explain why the two compositions need not agree.
+\item Determine the natural domain of each function:
+\[
+f(x)=\frac{1}{x-3},
+\qquad
+g(x)=\sqrt{x+2},
+\qquad
+h(x)=\frac{\sqrt{5-x}}{x+1}.
+\]
 
-\item What does it mean for a function to be one-to-one? Explain why this property is necessary for an inverse function and describe the horizontal-line test.
+\item Prepare a value table for
+\[
+f(x)=|x-1|
+\]
+at $x=-2,-1,0,1,2,3,4$, and use the table to sketch the graph.
 
-\item Explain why a sequence is a function with a discrete domain. Compare explicit and recursive descriptions, and give one advantage of each.
+\item Starting from the graph of $y=x^2$, sketch and label
+\[
+y=(x-2)^2+1,
+\qquad
+y=-x^2,
+\qquad
+y=2x^2.
+\]
+For each graph, state the transformation that was applied.
 
-\item For an arithmetic sequence and a geometric sequence:
-\begin{enumerate}
-\item identify the defining pattern;
-\item write an explicit formula;
-\item describe the qualitative behaviour for representative positive, negative, and fractional parameters.
+\item Let
+\[
+f(x)=2x-1,
+\qquad
+g(x)=x^2+3.
+\]
+Compute $f\circ g$, $g\circ f$, $(f\circ g)(2)$, and $(g\circ f)(2)$.
+
+\item Find the inverse of
+\[
+f(x)=3x-5.
+\]
+Verify by computing both $f(f^{-1}(x))$ and $f^{-1}(f(x))$.
+
+\item An arithmetic sequence satisfies
+\[
+a_1=4,
+\qquad d=-3.
+\]
+Find $a_2,a_3,a_{10}$ and write an explicit formula for $a_n$.
+
+\item A geometric sequence satisfies
+\[
+b_1=2,
+\qquad q=\frac12.
+\]
+Find $b_2,b_3,b_6$ and write an explicit formula for $b_n$.
+
+\item The sequence is defined recursively by
+\[
+a_1=1,
+\qquad a_{n+1}=2a_n+1.
+\]
+Compute the first six terms and plot the points $(n,a_n)$.
+
+\item For each sequence, decide whether it is increasing, decreasing, bounded above, bounded below, or neither:
+\[
+a_n=\frac1n,
+\qquad b_n=n-3,
+\qquad c_n=(-1)^n,
+\qquad d_n=2-\frac1n.
+\]
+Support every answer with a short calculation or inequality.
 \end{enumerate}
 
-\item Compare the sequences $1/n$, $n$, and $(-1)^n$ in terms of monotonicity and boundedness. Which properties prepare the later study of convergence, and why is neither monotonicity nor boundedness alone sufficient?
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Explain what it means for a function to be an assignment. Why must every admissible input have exactly one output?
+
+\item Distinguish domain, codomain, and actual set of attained values. Give a simple function for which the codomain is larger than the set of attained values.
+
+\item A formula, a table, and a graph may describe the same function. Explain what information each representation reveals especially clearly and what it may hide.
+
+\item Explain why a vertical translation, a horizontal translation, a reflection, and a scaling change a graph in different ways. Relate each change to the corresponding formula.
+
+\item Composition is generally not commutative. Explain why the order in
+\[
+f\circ g
+\qquad\text{and}\qquad g\circ f
+\]
+matters, using the interpretation of successive assignments.
+
+\item Explain why a function must be one-to-one on the chosen domain before it can have an inverse function. Use a graph or a concrete counterexample.
+
+\item A sequence is a function whose domain is discrete. Explain what is gained by viewing sequences as functions rather than as unrelated lists of numbers.
+
+\item Compare an explicit definition and a recursive definition of a sequence. What information is immediately available in each form?
+
+\item Explain the structural difference between arithmetic and geometric sequences. Which operation remains constant in each case?
+
+\item Monotonicity and boundedness are introduced before limits. Explain why these two properties are natural preliminary questions when studying long-term behaviour.
 \end{enumerate}
