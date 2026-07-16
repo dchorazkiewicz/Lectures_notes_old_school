@@ -1,0 +1,34 @@
+\subsection{The Three Cases in One Picture}
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.78]
+  \begin{scope}[xshift=-6cm]
+    \draw[->] (-2.7,0)--(2.7,0);
+    \draw[->] (0,-2.3)--(0,2.5);
+    \draw[blue!75!black,thick] (-2.2,-1.7)--(2.2,1.7);
+    \draw[orange!85!black,thick] (-2.2,1.5)--(2.2,-1.5);
+    \fill (0,0) circle (2.5pt) node[above right] {one common point};
+    \node at (0,-2.8) {one solution};
+  \end{scope}
+
+  \begin{scope}
+    \draw[->] (-2.7,0)--(2.7,0);
+    \draw[->] (0,-2.3)--(0,2.5);
+    \draw[blue!75!black,thick] (-2.2,-1.5)--(2.2,1.3);
+    \draw[orange!85!black,thick] (-2.2,-0.4)--(2.2,2.4);
+    \node[align=center] at (0,-2.8) {no common point\\no solution};
+  \end{scope}
+
+  \begin{scope}[xshift=6cm]
+    \draw[->] (-2.7,0)--(2.7,0);
+    \draw[->] (0,-2.3)--(0,2.5);
+    \draw[blue!75!black,line width=2.4pt] (-2.2,-1.5)--(2.2,1.3);
+    \draw[orange!85!black,thick,dashed] (-2.2,-1.5)--(2.2,1.3);
+    \node[align=center] at (0,-2.8) {the same line twice\\infinitely many solutions};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Algebra must reproduce the geometry]
+A unique pivot in each variable corresponds to one intersection point. A contradictory row corresponds to parallel distinct lines. A zero row without contradiction means that one equation repeats information already contained in the other, leaving an entire line of solutions.
+\end{interpretationbox}
