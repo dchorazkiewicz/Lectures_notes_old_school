@@ -3,6 +3,11 @@
 The Euclidean distance between two points is the length of the straight segment
 joining them. Coordinates now allow this geometric length to be calculated.
 
+\begin{corebox}[The question]
+Given the Cartesian coordinates of two points, how can the already existing
+Euclidean length of the segment between them be recovered algebraically?
+\end{corebox}
+
 For points
 \[
 P=(x_1,y_1),
@@ -36,13 +41,19 @@ construction; no numerical measure of that angle is required.
 \end{tikzpicture}
 \end{center}
 
+\begin{derivationbox}[From the right triangle to the formula]
 By the Pythagorean theorem,
 \[
 d_E(P,Q)^2
 =
-(x_2-x_1)^2+(y_2-y_1)^2,
+(x_2-x_1)^2+(y_2-y_1)^2.
 \]
-and therefore
+Distance is nonnegative, so taking the nonnegative square root gives the desired
+coordinate expression.
+\end{derivationbox}
+
+\begin{theorembox}
+For points $P=(x_1,y_1)$ and $Q=(x_2,y_2)$ in the Cartesian plane,
 \[
 \boxed{
 d_E(P,Q)
@@ -50,12 +61,16 @@ d_E(P,Q)
 \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 }.
 \]
+\end{theorembox}
 
+\begin{interpretationbox}[What the formula means]
 The formula does not create a new notion of distance. It is the numerical
 coordinate expression of the Euclidean segment length already present in the
-plane.
+plane. This is the first major payoff of the Cartesian construction: a geometric
+magnitude has become computable by algebra.
+\end{interpretationbox}
 
-\begin{summarybox}
+\begin{summarybox}[From Euclidean plane to Cartesian distance]
 The construction proceeds in the following order:
 \begin{enumerate}
     \item begin with a Euclidean plane containing no chosen coordinates;
