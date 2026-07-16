@@ -1,0 +1,39 @@
+\subsection{A Structured Vandermonde-Type Example}
+
+Consider
+\[
+V=\begin{pmatrix}
+1&1&1\\x&y&z\\x^2&y^2&z^2
+\end{pmatrix}.
+\]
+Apply the determinant-preserving column operations
+\[
+C_2\leftarrow C_2-C_1,
+\qquad
+C_3\leftarrow C_3-C_1.
+\]
+Then
+\[
+\det V=
+\det\begin{pmatrix}
+1&0&0\\x&y-x&z-x\\x^2&y^2-x^2&z^2-x^2
+\end{pmatrix}.
+\]
+Expanding along the first row gives
+\[
+\det V=
+\det\begin{pmatrix}
+y-x&z-x\\y^2-x^2&z^2-x^2
+\end{pmatrix}.
+\]
+Factoring the columns,
+\begin{align*}
+\det V
+&=(y-x)(z-x)
+\det\begin{pmatrix}1&1\\y+x&z+x\end{pmatrix}\\
+&=(y-x)(z-x)(z-y).
+\end{align*}
+
+\begin{interpretationbox}[The factors expose the zero cases]
+The factorization vanishes exactly when two of $x,y,z$ coincide, which is precisely when two columns of the original matrix are equal.
+\end{interpretationbox}
