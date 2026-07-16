@@ -1,0 +1,52 @@
+\subsection{The Row-by-Column Rule}
+
+\begin{definitionbox}[Product of two matrices]
+Let $A=(a_{ij})$ be an $m\times n$ matrix and let $B=(b_{ij})$ be an
+$n\times p$ matrix. Their product is the $m\times p$ matrix $C=AB$ whose
+entries are
+\[
+c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}.
+\]
+Thus $c_{ij}$ is obtained from row $i$ of $A$ and column $j$ of $B$.
+\end{definitionbox}
+
+\begin{interpretationbox}[Why the inner dimensions must match]
+A row of $A$ contains $n$ entries. It can be paired with a column of $B$ only
+when that column also contains $n$ entries. Therefore
+\[
+(m\times n)(n\times p)=m\times p.
+\]
+The inner dimensions test whether multiplication is possible; the outer
+dimensions determine the size of the result.
+\end{interpretationbox}
+
+\begin{examplebox}[Computing a product]
+Let
+\[
+A=\begin{pmatrix}1&3\\-2&4\end{pmatrix},
+\qquad
+B=\begin{pmatrix}2&0\\5&-1\end{pmatrix}.
+\]
+The first entry of $AB$ is
+\[
+1\cdot2+3\cdot5=17,
+\]
+while the first row and second column give
+\[
+1\cdot0+3\cdot(-1)=-3.
+\]
+Continuing row by column,
+\[
+AB=
+\begin{pmatrix}
+17&-3\\
+16&-4
+\end{pmatrix}.
+\]
+\end{examplebox}
+
+\begin{summarybox}[What each product entry records]
+Every entry of $AB$ measures one interaction between a row of $A$ and a column
+of $B$. Matrix multiplication is therefore a structured combination of whole
+rows and columns, not a position-by-position product.
+\end{summarybox}
