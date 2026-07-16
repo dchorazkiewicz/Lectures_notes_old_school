@@ -1,21 +1,19 @@
 \subsection{Row Reduction with Parameters}
 
-For larger systems, row reduction is often the safest classification method. It exposes contradictions, zero rows, missing pivots, and free variables directly.
+For a parameter-dependent $2\times2$ system, row reduction is often the safest classification method. It exposes contradictions, zero rows, missing pivots, and exceptional parameter values directly.
 
-The patterns remain:
+The diagnostic patterns remain
 \[
 0=0
 \]
-means redundancy,
+for redundancy and
 \[
 0=5
 \]
-means inconsistency, and a missing pivot produces a free variable.
+for inconsistency. A missing pivot produces a free variable.
 
 \begin{remarkbox}[Do not divide before separating exceptional cases]
 If a row operation would divide by an expression such as $a-2$, first consider the case $a-2=0$. Values that make a proposed divisor vanish must be treated separately.
 \end{remarkbox}
 
-\begin{interpretationbox}[Why parameter calculations branch]
 A symbolic elimination step may be reversible for generic parameter values but invalid at exceptional values. Correct classification therefore requires explicit case separation.
-\end{interpretationbox}
