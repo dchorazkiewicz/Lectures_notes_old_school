@@ -1,0 +1,39 @@
+\subsection{Algebra of limits}
+
+When individual limits exist, sums, differences, products, and quotients can often be handled term by term.
+
+\begin{theorembox}[Elementary limit laws]
+If
+\[
+\lim_{x\to a}f(x)=L,
+\qquad
+\lim_{x\to a}g(x)=M,
+\]
+then
+\[
+\lim_{x\to a}(f+g)=L+M,
+\qquad
+\lim_{x\to a}(fg)=LM,
+\]
+and, when \(M\ne0\),
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{L}{M}.
+\]
+The same principles hold for sequence limits.
+\end{theorembox}
+
+\begin{examplebox}[Using laws before using tricks]
+For
+\[
+\lim_{x\to2}\frac{x^2+3x}{x+1},
+\]
+the denominator tends to \(3\ne0\), so direct use of the laws gives
+\[
+\frac{2^2+3\cdot2}{2+1}=\frac{10}{3}.
+\]
+No transformation is needed.
+\end{examplebox}
+
+\begin{remarkbox}
+The expressions \(0/0\), \(\infty/\infty\), and \(\infty-\infty\) are not results. They indicate that the elementary laws cannot be applied directly and that the expression must be reorganized.
+\end{remarkbox}
