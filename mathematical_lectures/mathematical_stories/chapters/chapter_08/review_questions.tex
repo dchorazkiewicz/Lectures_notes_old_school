@@ -10,7 +10,7 @@ x+y=7,\\
 2x-y=2.
 \end{cases}
 \]
-Write the augmented matrix and verify the solution in both equations.
+Write the augmented matrix and verify the solution.
 
 \item Solve by elimination:
 \[
@@ -19,25 +19,25 @@ Write the augmented matrix and verify the solution in both equations.
 5x-2y=12.
 \end{cases}
 \]
-Choose the elimination step so that no fractions appear before the final line.
+Choose a step that avoids early fractions.
 
-\item Classify and solve when possible:
+\item Classify and solve:
 \[
 \begin{cases}
 x+2y=3,\\
 2x+4y=6.
 \end{cases}
 \]
-Write the solution set using one parameter.
+Write the solution set with one parameter.
 
-\item Classify:
+\item Classify
 \[
 \begin{cases}
 x-3y=2,\\
 2x-6y=7.
 \end{cases}
 \]
-Show the contradictory row produced by elimination.
+and display the contradictory row.
 
 \item Solve
 \[
@@ -46,7 +46,7 @@ Show the contradictory row produced by elimination.
 x-y=1
 \end{cases}
 \]
-with Cramer's rule. Compute $\det A$, $\det A_x$, and $\det A_y$ separately.
+with Cramer's rule.
 
 \item Solve
 \[
@@ -55,7 +55,7 @@ with Cramer's rule. Compute $\det A$, $\det A_x$, and $\det A_y$ separately.
 x+y=3
 \end{cases}
 \]
-using the inverse-matrix method. Compute $A^{-1}$ first and verify the solution by substitution.
+with the inverse-matrix method.
 
 \item For the parameter $a$, classify
 \[
@@ -64,7 +64,6 @@ x+y=3,\\
 2x+ay=6.
 \end{cases}
 \]
-Find all exceptional values and determine the solution type in every case.
 
 \item For the parameter $b$, classify
 \[
@@ -73,15 +72,14 @@ x-2y=1,\\
 3x-6y=b.
 \end{cases}
 \]
-State when the system has no solution and when it has infinitely many solutions.
 
-\item Find the intersection point of the lines
+\item Find and plot the intersection of
 \[
 y=2x-3,
 \qquad
 y=-x+6
 \]
-by solving the corresponding system. Plot both lines and mark the solution.
+by solving the corresponding system.
 
 \item Reduce
 \[
@@ -93,30 +91,64 @@ by solving the corresponding system. Plot both lines and mark the solution.
 to echelon form, identify the pivot and free variable, and write the full solution set.
 \end{enumerate}
 
-\subsection{Conceptual and reasoning exercises}
+\subsection{Development and reasoning exercises}
 
 \begin{enumerate}
-\item Explain why a solution of a system must satisfy every equation simultaneously. How is this represented geometrically for two equations in two unknowns?
+\item Solve by Gaussian elimination:
+\[
+\begin{cases}
+x+y+z=6,\\
+2x-y+z=3,\\
+x+2y-z=2.
+\end{cases}
+\]
+State the pivot goal at each stage and verify the final triple.
 
-\item Describe the geometric meaning of exactly one solution, no solution, and infinitely many solutions for two lines in the plane.
+\item Classify and solve:
+\[
+\begin{cases}
+x+y+z=3,\\
+2x+2y+2z=6,\\
+x-y+z=1.
+\end{cases}
+\]
+Identify a free variable and explain why the same pivot logic as in $2\times2$ still applies.
 
-\item Explain why elementary row operations preserve the solution set. Relate each operation to an equivalent transformation of the equations.
+\item Classify
+\[
+\begin{cases}
+x+y+z=1,\\
+2x+2y+2z=3,\\
+x-y=0.
+\end{cases}
+\]
+Show the contradictory row and explain what incompatibility means geometrically.
 
-\item A row
+\item Solve the parameter-dependent system
+\[
+\begin{cases}
+x+y+z=2,\\
+x+ay+z=2,\\
+x+y+az=2.
+\end{cases}
+\]
+Separate exceptional values before division and classify every case.
+
+\item Solve one invertible $2\times2$ system by elimination, Cramer's rule, and the inverse method. Compare the intermediate objects and explain why all three methods produce the same point.
+
+\item For a singular coefficient matrix, construct one right-hand side giving no solution and another giving infinitely many solutions. Solve both and explain why $\det A=0$ alone does not decide between the two cases.
+
+\item Explain why elementary row operations preserve the solution set. Demonstrate each of the three operation types on one concrete system and compare the equations before and after.
+
+\item Interpret the rows
 \[
 [\,0\quad0\mid5\,]
+\qquad\text{and}\qquad
+[\,0\quad0\mid0\,].
 \]
-appears during elimination. Explain why it proves inconsistency. What different information is carried by the row $[\,0\quad0\mid0\,]$?
+Give a system producing each row and describe the corresponding geometry.
 
-\item Explain why a missing pivot produces a free variable and infinitely many solutions when no contradiction is present.
+\item Compare Gaussian elimination, Cramer's rule, and the inverse-matrix method. Include method scope, classification power, required assumptions, and computational cost.
 
-\item Compare Gaussian elimination, Cramer's rule, and the inverse-matrix method. Which method is the main classification tool, and under what condition do the other two apply?
-
-\item Explain why $\det A\neq0$ guarantees one solution for every right-hand side, while $\det A=0$ does not by itself distinguish no solution from infinitely many solutions.
-
-\item In a parameter-dependent system, why must values that make a proposed divisor zero be separated before division? Give a simple example.
-
-\item Two equations have proportional left-hand sides. Explain how the right-hand sides determine whether the corresponding lines coincide or are distinct and parallel.
-
-\item Give a complete strategy for a $2\times2$ system: translate it into matrix form, choose a method, classify the result, and interpret the solution set geometrically.
+\item Give a complete strategy for a linear system: translate conditions into an augmented matrix, select pivots, preserve equivalence, detect contradiction or freedom, write the solution set, verify it, and interpret the result geometrically.
 \end{enumerate}
