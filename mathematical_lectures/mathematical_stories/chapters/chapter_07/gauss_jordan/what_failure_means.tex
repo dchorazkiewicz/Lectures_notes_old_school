@@ -1,0 +1,33 @@
+\subsection{What Failure of the Reduction Means}
+
+\begin{examplebox}[A singular left block]
+For
+\[
+B=\begin{pmatrix}1&2\\2&4\end{pmatrix},
+\]
+start with
+\[
+\left[\begin{array}{cc|cc}
+1&2&1&0\\2&4&0&1
+\end{array}\right].
+\]
+After
+\[
+R_2\leftarrow R_2-2R_1,
+\]
+the left block contains a zero row:
+\[
+\left[\begin{array}{cc|cc}
+1&2&1&0\\0&0&-2&1
+\end{array}\right].
+\]
+It cannot be reduced to the identity, so $B$ is not invertible.
+\end{examplebox}
+
+\begin{interpretationbox}[The method reveals singularity]
+A missing pivot is not a defect of Gauss--Jordan elimination. It is evidence that the matrix has no inverse.
+\end{interpretationbox}
+
+\begin{summarybox}[Gauss--Jordan procedure]
+Form $[A\mid I]$, reduce the left block using elementary row operations, and read the inverse from the right block if the left becomes $I$. If the identity cannot be reached, the matrix is singular.
+\end{summarybox}
