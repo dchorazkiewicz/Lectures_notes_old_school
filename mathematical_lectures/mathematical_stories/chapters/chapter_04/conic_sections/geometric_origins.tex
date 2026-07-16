@@ -1,42 +1,52 @@
 \section{Conic Sections: From Geometric Conditions to Equations}
 
-The previous chapter studied sets determined by first-degree equations. A line
-could be constructed from a point and a direction, or characterised by a
-perpendicularity condition. We now ask a different kind of question:
+The previous chapter studied sets determined by first-degree equations. We now
+ask what curves arise when distances between moving and fixed geometric objects
+are constrained.
 
-\begin{center}
-\emph{What curves arise when distances between moving and fixed geometric
-objects are constrained?}
-\end{center}
+\begin{corebox}[Why quadratic equations appear]
+Euclidean distance contains squares. When a geometric distance condition is
+translated into Cartesian coordinates and square roots are removed,
+second-degree terms arise naturally. Quadratic equations are consequences of
+geometry, not an arbitrary next list of formulas.
+\end{corebox}
 
-Distance in Cartesian coordinates contains squares. When a geometric distance
-condition is written algebraically and square roots are removed, second-degree
-terms appear naturally. Quadratic equations are therefore not introduced as an
-arbitrary next list of formulas; they arise from simple Euclidean questions.
+\subsection{A Circle: One Fixed Point and One Fixed Distance}
 
-\subsection{A circle: one fixed point and one fixed distance}
-
-Fix a centre $C=(h,k)$ and a number $r>0$. A point $P=(x,y)$ belongs to the
-circle precisely when
+\begin{definitionbox}
+Fix a centre $C=(h,k)$ and a number $r>0$. The circle with centre $C$ and radius
+$r$ is the set of points $P=(x,y)$ satisfying
 \[
-d(P,C)=r.
+\boxed{d(P,C)=r}.
 \]
+\end{definitionbox}
+
+\begin{derivationbox}[Cartesian equation of the circle]
 Using the Euclidean distance formula,
 \[
 \sqrt{(x-h)^2+(y-k)^2}=r.
 \]
-Both sides are nonnegative, so squaring preserves the condition:
+Both sides are nonnegative, so squaring preserves the condition and gives
 \[
-\boxed{(x-h)^2+(y-k)^2=r^2.}
+\boxed{(x-h)^2+(y-k)^2=r^2}.
 \]
-The familiar quadratic equation has therefore been derived from the geometric
-definition of a circle.
+\end{derivationbox}
 
-\subsection{A parabola: equal distance from a point and a line}
+\begin{interpretationbox}[Definition versus equation]
+The equation is not the definition of the circle. It is the Cartesian expression
+of the geometric requirement that every point remain a fixed distance from one
+centre.
+\end{interpretationbox}
 
+\subsection{A Parabola: Equal Distance from a Point and a Line}
+
+\begin{definitionbox}
 Fix a point $F$, called the focus, and a line $D$, called the directrix. A
-parabola is the set of points whose distance from $F$ equals their distance from
-$D$.
+parabola is the set of points $P$ satisfying
+\[
+\boxed{d(P,F)=d(P,D)}.
+\]
+\end{definitionbox}
 
 Choose coordinates so that
 \[
@@ -45,28 +55,27 @@ F=(0,p),
 D:\ y=-p,
 \qquad p>0.
 \]
-For $P=(x,y)$, the two distances are
+
+\begin{derivationbox}[Cartesian equation of the parabola]
+For $P=(x,y)$,
 \[
-d(P,F)=\sqrt{x^2+(y-p)^2}
-\]
-and
-\[
+d(P,F)=\sqrt{x^2+(y-p)^2},
+\qquad
 d(P,D)=|y+p|.
 \]
-On the resulting parabola $y\geq-p$, so $|y+p|=y+p$. The defining equality gives
+On the resulting parabola $y\geq-p$, so $|y+p|=y+p$. Hence
 \[
 \sqrt{x^2+(y-p)^2}=y+p.
 \]
-Squaring and cancelling equal terms,
+Squaring and cancelling equal terms gives
 \[
 x^2+y^2-2py+p^2=y^2+2py+p^2,
 \]
-so
+and therefore
 \[
-\boxed{x^2=4py.}
+\boxed{x^2=4py}.
 \]
-The equation is not the definition. It is the Cartesian form of the equal-distance
-condition.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85,>=stealth]
@@ -87,39 +96,38 @@ condition.
 \end{tikzpicture}
 \end{center}
 
-\subsection{An ellipse: a fixed sum of two distances}
+\begin{interpretationbox}[What the parabola equation records]
+The equation $x^2=4py$ is the Cartesian form of the equal-distance condition.
+It should always be read together with the focus and directrix geometry that
+produced it.
+\end{interpretationbox}
 
+\subsection{An Ellipse: A Fixed Sum of Two Distances}
+
+\begin{definitionbox}
 Fix two foci
 \[
 F_1=(-c,0),\qquad F_2=(c,0),\qquad c>0,
 \]
-and require
+and choose $a>c$. An ellipse is the set of points $P$ satisfying
 \[
-d(P,F_1)+d(P,F_2)=2a,
-\qquad a>c.
+\boxed{d(P,F_1)+d(P,F_2)=2a}.
 \]
-The inequality $a>c$ is necessary: the prescribed sum must be larger than the
-distance $2c$ between the foci.
+\end{definitionbox}
 
-For $P=(x,y)$ write
+\begin{remarkbox}
+The inequality $a>c$ is necessary: the prescribed sum must exceed the distance
+$2c$ between the foci.
+\end{remarkbox}
+
+\begin{derivationbox}[Cartesian equation of the ellipse]
+Write
 \[
 r_1=\sqrt{(x+c)^2+y^2},
 \qquad
 r_2=\sqrt{(x-c)^2+y^2}.
 \]
-The condition is $r_1+r_2=2a$. Isolate $r_1=2a-r_2$ and square:
-\[
-(x+c)^2+y^2=4a^2-4ar_2+(x-c)^2+y^2.
-\]
-After cancellation,
-\[
-r_2=a-\frac ca x.
-\]
-Squaring once more gives
-\[
-(x-c)^2+y^2=\left(a-\frac ca x\right)^2.
-\]
-The linear terms cancel, leaving
+The condition is $r_1+r_2=2a$. Isolating and squaring twice gives
 \[
 \left(1-\frac{c^2}{a^2}\right)x^2+y^2=a^2-c^2.
 \]
@@ -130,12 +138,10 @@ b^2=a^2-c^2>0.
 Then
 \[
 \boxed{
-\frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
-}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+}.
 \]
-The bounded oval is therefore not introduced by its equation. It is forced by the
-requirement that the total journey from one focus to the moving point and then to
-the other focus remain constant.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.82,>=stealth]
@@ -155,20 +161,25 @@ the other focus remain constant.
 \end{tikzpicture}
 \end{center}
 
-\subsection{A hyperbola: a fixed difference of two distances}
+\begin{interpretationbox}[Why the ellipse is bounded]
+The total journey from one focus to the moving point and then to the other focus
+is fixed. This constraint prevents the point from moving arbitrarily far away
+and produces a bounded oval.
+\end{interpretationbox}
 
-Keep the same foci, but now require
+\subsection{A Hyperbola: A Fixed Difference of Two Distances}
+
+\begin{definitionbox}
+With the same foci, choose $0<a<c$. A hyperbola is the set of points $P$
+satisfying
 \[
-|d(P,F_1)-d(P,F_2)|=2a,
-\qquad 0<a<c.
+\boxed{|d(P,F_1)-d(P,F_2)|=2a}.
 \]
-The absolute value allows either focus to be the nearer one, producing two
-branches. On the right branch we have
-\[
-r_1-r_2=2a.
-\]
-Thus $r_1=2a+r_2$. Squaring, isolating the remaining square root, and squaring a
-second time gives
+\end{definitionbox}
+
+\begin{derivationbox}[Cartesian equation of the hyperbola]
+On the right branch, write $r_1-r_2=2a$. Isolating the remaining square root and
+squaring twice gives
 \[
 \left(\frac{c^2}{a^2}-1\right)x^2-y^2=c^2-a^2.
 \]
@@ -179,28 +190,42 @@ b^2=c^2-a^2>0.
 Then
 \[
 \boxed{
-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1.
-}
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+}.
 \]
-Changing a constant sum into a constant difference changes a bounded curve into
-two unbounded branches. The new geometry is produced by changing the demand, not
-by choosing an unrelated formula.
+\end{derivationbox}
 
-\subsection{Why these curves form one family}
+\begin{interpretationbox}[Why two branches appear]
+The absolute value allows either focus to be nearer. Changing a fixed sum into a
+fixed difference changes a bounded curve into two unbounded branches. The new
+geometry comes from changing the distance condition, not from choosing an
+unrelated formula.
+\end{interpretationbox}
 
-The four distance constructions also arise from one spatial experiment: intersect
-a double cone with a plane and vary the inclination of the cutting plane. A plane
-perpendicular to the cone axis gives a circle. A tilted plane that meets only one
-nappe gives an ellipse. At the limiting inclination, when the plane is parallel to
-a generator of the cone, the intersection is a parabola. A steeper plane meeting
-both nappes gives a hyperbola.
+\subsection{Why These Curves Form One Family}
 
-Thus the four curves are not an arbitrary list. They arise by varying one geometric
-requirement while keeping the cone fixed.
+\begin{corebox}[One spatial experiment]
+Intersect a double cone with a plane and vary the inclination of the cutting
+plane. A perpendicular cut gives a circle; a tilted cut meeting one nappe gives
+an ellipse; the limiting parallel cut gives a parabola; and a cut meeting both
+nappes gives a hyperbola.
+\end{corebox}
+
+\begin{interpretationbox}[The unity of conic sections]
+The four curves are not an arbitrary list. They arise by varying one geometric
+operation while keeping the cone fixed. Their different equations record
+different outcomes of the same spatial construction.
+\end{interpretationbox}
 
 \begin{remarkbox}
 The rest of the chapter studies how these geometric sets appear in Cartesian
 equations. Standard forms, translations, rotations, and discriminants are tools
-for recognising the object already present in the equation. They do not replace
+for recognising the object already present in an equation. They do not replace
 the geometric definition of the curve.
 \end{remarkbox}
+
+\begin{summarybox}[Geometric definition before algebraic recognition]
+A circle fixes one distance, a parabola equates two distances, an ellipse fixes
+a sum, and a hyperbola fixes a difference. In each case the quadratic equation
+is derived from the geometric condition and should be interpreted through it.
+\end{summarybox}
