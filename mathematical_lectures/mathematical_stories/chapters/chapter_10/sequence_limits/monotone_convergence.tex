@@ -1,0 +1,28 @@
+\subsection{Monotone and bounded sequences}
+
+The previous chapter introduced monotonicity and boundedness before limits. We can now explain why that combination is so important.
+
+\begin{theorembox}[Monotone convergence theorem]
+Every increasing sequence that is bounded above converges. Every decreasing sequence that is bounded below converges.
+\end{theorembox}
+
+For an increasing bounded sequence, the limit is the least upper bound of the set of its terms. For a decreasing bounded sequence, it is the greatest lower bound.
+
+\begin{examplebox}[A geometric sequence]
+Let
+\[
+a_n=1-\frac1{2^n}.
+\]
+The sequence is increasing because \(2^{-n}\) decreases. It is bounded above by \(1\). Therefore it converges. Since \(2^{-n}\to0\), its limit is
+\[
+\lim_{n\to\infty}\left(1-\frac1{2^n}\right)=1.
+\]
+\end{examplebox}
+
+\begin{examplebox}[Why one condition is not enough]
+The sequence \(a_n=n\) is increasing but not bounded above, and it does not converge to a real number. The sequence \(b_n=(-1)^n\) is bounded but not monotone, and it also does not converge.
+\end{examplebox}
+
+\begin{interpretationbox}[Direction plus confinement]
+Monotonicity prevents repeated reversal of direction. Boundedness prevents escape. Together they force the terms to settle toward a finite boundary value.
+\end{interpretationbox}
