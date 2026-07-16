@@ -1,37 +1,40 @@
-\subsection{What the familiar Cartesian forms let us read}
+\subsection{What the Familiar Cartesian Forms Let Us Read}
 
-Once the same line has been described as
-\[
-P=P_0+t\mathbf v,
-\qquad
-\mathbf n\cdot(P-P_0)=0,
-\qquad
-\text{or}\qquad
-y=mx+b,
-\]
-we may choose the form best adapted to the question. The forms are not competing
-definitions; they expose different information about one geometric set.
+\begin{corebox}[Choose the representation adapted to the question]
+The parametric, normal, and slope forms are not competing definitions. They
+expose different information about the same geometric line, so the useful form
+depends on what must be calculated or interpreted.
+\end{corebox}
 
 \subsubsection*{Intersections with the coordinate axes}
 
+\begin{derivationbox}[Impose both defining conditions]
 For a nonvertical line
 \[
 y=mx+b,
 \]
-setting $x=0$ gives the intersection with the $y$-axis:
+setting $x=0$ imposes the condition for the $y$-axis and gives $(0,b)$. If
+$m\neq0$, setting $y=0$ imposes the condition for the $x$-axis and gives
 \[
-\boxed{(0,b)}.
+x=-\frac bm.
 \]
-If $m\neq0$, setting $y=0$ gives
+\end{derivationbox}
+
+\begin{theorembox}
+For $y=mx+b$,
 \[
-x=-\frac bm,
+\boxed{L\cap\{x=0\}=\{(0,b)\}},
 \]
-so the intersection with the $x$-axis is
+and, when $m\neq0$,
 \[
-\boxed{\left(-\frac bm,0\right)}.
+\boxed{L\cap\{y=0\}=\left\{\left(-\frac bm,0\right)\right\}}.
 \]
-This illustrates a general habit: to find an intersection with a known set, impose
-both defining conditions at once.
+\end{theorembox}
+
+\begin{interpretationbox}[General intersection principle]
+To find an intersection of two sets, impose both defining conditions at once.
+Axis intercepts are the simplest example of this general method.
+\end{interpretationbox}
 
 \begin{examplebox}
 For
@@ -44,6 +47,7 @@ $x$-axis intersection is $(6,0)$.
 
 \subsubsection*{The line through two points}
 
+\begin{derivationbox}[Extracting a direction from two points]
 Let
 \[
 P=(x_1,y_1),\qquad Q=(x_2,y_2),\qquad P\neq Q.
@@ -52,56 +56,66 @@ The displacement
 \[
 Q-P=(x_2-x_1,y_2-y_1)
 \]
-is a direction vector, so the line is immediately
-\[
-\boxed{L=\{P+t(Q-P):t\in\mathbb R\}.}
-\]
-This formula treats vertical and nonvertical lines uniformly.
+is nonzero and therefore provides a direction vector of the unique line through
+the points.
+\end{derivationbox}
 
-If $x_1\neq x_2$, the horizontal component of $Q-P$ is nonzero and the slope form
-may be recovered:
+\begin{theorembox}
+The unique line through distinct points $P$ and $Q$ is
 \[
-\boxed{
-m=\frac{y_2-y_1}{x_2-x_1}
-}
+\boxed{L=\{P+t(Q-P):t\in\mathbb R\}}.
+\]
+This formula handles vertical and nonvertical lines uniformly.
+\end{theorembox}
+
+\begin{derivationbox}[Recovering slope notation]
+If $x_1\neq x_2$, the horizontal component of $Q-P$ is nonzero, so
+\[
+\boxed{m=\frac{y_2-y_1}{x_2-x_1}}
 \]
 and
 \[
-\boxed{y-y_1=m(x-x_1).}
+\boxed{y-y_1=m(x-x_1)}.
 \]
-If $x_1=x_2$, no real slope exists and the line is simply
+If $x_1=x_2$, the line is vertical and is described by
 \[
-\boxed{x=x_1.}
+\boxed{x=x_1}.
 \]
-The exceptional case belongs only to slope notation, not to the geometric line.
+\end{derivationbox}
+
+\begin{remarkbox}
+The exceptional vertical case belongs only to slope notation. The geometric line
+and its parametric description require no exception.
+\end{remarkbox}
 
 \subsubsection*{Parallel lines in slope notation}
 
-Two nonvertical lines
+\begin{proofbox}[Why equal slopes mean equal directions]
+The nonvertical lines
 \[
 y=m_1x+b_1,
 \qquad
 y=m_2x+b_2
 \]
-have direction vectors $(1,m_1)$ and $(1,m_2)$. They have the same direction
-precisely when
-\[
-m_1=m_2.
-\]
-If also $b_1=b_2$, the equations describe the same line. If $b_1\neq b_2$, the
-lines are distinct and parallel. Thus
+have direction vectors $(1,m_1)$ and $(1,m_2)$. These directions are parallel
+exactly when $m_1=m_2$.
+\end{proofbox}
+
+\begin{theorembox}
+For distinct nonvertical lines,
 \[
 \boxed{
 L_1\parallel L_2
 \iff
 m_1=m_2\text{ and }b_1\neq b_2
-}
+}.
 \]
-for distinct nonvertical lines.
+If also $b_1=b_2$, the two equations describe the same line.
+\end{theorembox}
 
 \begin{remarkbox}
-The slope formulas are efficient coordinate consequences of the vector
-construction. They should be used when they simplify a question, but they should
-not hide the more general descriptions, which also handle vertical lines and
-extend unchanged to three-dimensional space.
+Slope formulas are efficient coordinate consequences of the vector
+construction. They should be used when they simplify a question, but not at the
+cost of hiding the more general descriptions that handle vertical lines and
+extend directly to space.
 \end{remarkbox}
