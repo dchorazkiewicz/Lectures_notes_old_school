@@ -1,0 +1,55 @@
+\subsection{A General Coordinate Formula in the Plane}
+
+\begin{derivationbox}[Eliminating the basis coefficients]
+Starting from
+\[
+\begin{aligned}
+ a_1c_1+b_1c_2&=x,\\
+ a_2c_1+b_2c_2&=y,
+\end{aligned}
+\]
+multiply the first equation by $b_2$ and the second by $b_1$:
+\[
+\begin{aligned}
+ a_1b_2c_1+b_1b_2c_2&=xb_2,\\
+ a_2b_1c_1+b_1b_2c_2&=yb_1.
+\end{aligned}
+\]
+Subtracting eliminates $c_2$:
+\[
+(a_1b_2-a_2b_1)c_1=xb_2-yb_1.
+\]
+Similarly, eliminating $c_1$ gives
+\[
+(a_1b_2-a_2b_1)c_2=a_1y-a_2x.
+\]
+\end{derivationbox}
+
+\begin{theorembox}[Coordinates in a planar basis]
+If
+\[
+\mathcal B=(\mathbf b_1,\mathbf b_2),
+\qquad
+\mathbf b_1=(a_1,a_2),
+\qquad
+\mathbf b_2=(b_1,b_2)
+\]
+is a basis and $\mathbf u=(x,y)$, then
+\[
+\boxed{
+ c_1=\frac{xb_2-yb_1}{a_1b_2-a_2b_1},
+ \qquad
+ c_2=\frac{a_1y-a_2x}{a_1b_2-a_2b_1}
+}.
+\]
+\end{theorembox}
+
+\begin{interpretationbox}[Why the denominator matters]
+The denominator
+\[
+a_1b_2-a_2b_1
+\]
+is nonzero precisely because the basis vectors are not parallel. If it vanished,
+the two chosen directions would collapse onto one line and the coordinates would
+not be uniquely determined.
+\end{interpretationbox}
