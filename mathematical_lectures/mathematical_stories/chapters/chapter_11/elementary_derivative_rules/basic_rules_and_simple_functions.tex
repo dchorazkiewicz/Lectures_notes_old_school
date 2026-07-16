@@ -1,0 +1,70 @@
+\subsection{Rules sufficient for elementary models}
+
+The computational goal is deliberately limited. We need enough rules to differentiate low-degree polynomials, exponentials, sine and cosine, and simple compositions.
+
+\begin{theorembox}[Basic rules]
+For differentiable functions,
+\[
+(c)'=0,
+\qquad
+(x^n)'=nx^{n-1},
+\qquad
+(cf)'=cf',
+\qquad
+(f+g)'=f'+g'.
+\]
+We also use
+\[
+(e^x)'=e^x,
+\qquad
+(\sin x)'=\cos x,
+\qquad
+(\cos x)'=-\sin x.
+\]
+\end{theorembox}
+
+\begin{examplebox}[A polynomial]
+For
+\[
+f(x)=x^3-3x,
+\]
+we obtain
+\[
+f'(x)=3x^2-3.
+\]
+\end{examplebox}
+
+\begin{examplebox}[A simple oscillation]
+If
+\[
+y(t)=2\sin t,
+\]
+then
+\[
+y'(t)=2\cos t.
+\]
+The derivative describes how rapidly the oscillating quantity changes.
+\end{examplebox}
+
+\begin{theorembox}[Product, quotient, and chain rules]
+\[
+(fg)'=f'g+fg',
+\qquad
+\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2},
+\]
+and
+\[
+(f\circ g)'(x)=f'(g(x))g'(x).
+\]
+\end{theorembox}
+
+\begin{examplebox}[An elementary chain rule]
+For
+\[
+f(x)=(x^2+1)^3,
+\]
+\[
+f'(x)=3(x^2+1)^2\cdot2x.
+\]
+The example is chosen to display the nested structure, not to create difficult algebra.
+\end{examplebox}
