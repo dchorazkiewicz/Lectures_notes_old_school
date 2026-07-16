@@ -1,0 +1,34 @@
+\subsection{Adding a Multiple of One Row to Another}
+
+Start with
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+\]
+and replace the second row by
+\[
+(c,d)+k(a,b)=(c+ka,d+kb).
+\]
+
+\begin{derivationbox}[The added terms cancel]
+\begin{align*}
+\det\begin{pmatrix}a&b\\c+ka&d+kb\end{pmatrix}
+&=a(d+kb)-b(c+ka)\\
+&=ad+kab-bc-kab\\
+&=ad-bc\\
+&=\det A.
+\end{align*}
+\end{derivationbox}
+
+\begin{theorembox}[Row replacement]
+Adding a multiple of one row to another row does not change the determinant.
+\end{theorembox}
+
+This can also be reconstructed from linearity: the added part creates a determinant with proportional rows, and that determinant is zero.
+
+\begin{examplebox}[A determinant-preserving operation]
+For
+\[
+A=\begin{pmatrix}2&1\\5&3\end{pmatrix},
+\]
+replace $R_2$ by $R_2-2R_1=(1,1)$. Both the original and transformed matrices have determinant $1$.
+\end{examplebox}
