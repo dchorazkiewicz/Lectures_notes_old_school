@@ -1,0 +1,76 @@
+\subsection{Addition, Subtraction, and Scalar Multiplication}
+
+\begin{definitionbox}[Entrywise operations]
+Let $A=(a_{ij})$ and $B=(b_{ij})$ be matrices of the same size $m\times n$.
+Their sum and difference are defined by
+\[
+A+B=(a_{ij}+b_{ij}),
+\qquad
+A-B=(a_{ij}-b_{ij}).
+\]
+For a scalar $\lambda$,
+\[
+\lambda A=(\lambda a_{ij}).
+\]
+\end{definitionbox}
+
+\begin{interpretationbox}[Why the sizes must agree]
+Each entry of $A$ must have a partner in the same position in $B$. If the shapes
+differ, there is no complete position-by-position correspondence, so addition and
+subtraction are not defined.
+\end{interpretationbox}
+
+\begin{examplebox}[Three entrywise calculations]
+Let
+\[
+A=\begin{pmatrix}2&-1\\0&3\end{pmatrix},
+\qquad
+B=\begin{pmatrix}5&4\\-2&1\end{pmatrix}.
+\]
+Then
+\[
+A+B=
+\begin{pmatrix}
+2+5&-1+4\\
+0+(-2)&3+1
+\end{pmatrix}
+=
+\begin{pmatrix}7&3\\-2&4\end{pmatrix},
+\]
+\[
+A-B=
+\begin{pmatrix}
+2-5&-1-4\\
+0-(-2)&3-1
+\end{pmatrix}
+=
+\begin{pmatrix}-3&-5\\2&2\end{pmatrix},
+\]
+and
+\[
+-3A=
+\begin{pmatrix}-6&3\\0&-9\end{pmatrix}.
+\]
+\end{examplebox}
+
+\begin{theorembox}[Rules inherited from ordinary arithmetic]
+For matrices of the same size,
+\[
+A+B=B+A,
+\qquad
+(A+B)+C=A+(B+C).
+\]
+More generally, the usual linear rules hold because every statement reduces to
+the corresponding statement for each individual entry.
+\end{theorembox}
+
+\begin{remarkbox}[Do not transfer this picture to multiplication]
+These operations are defined entry by entry. Matrix multiplication will combine
+rows with columns instead, so its definition and properties must be developed
+separately.
+\end{remarkbox}
+
+\begin{summarybox}[Position-by-position arithmetic]
+Entrywise operations preserve matrix size and respect fixed positions. Always
+check compatibility of shapes before calculating.
+\end{summarybox}
