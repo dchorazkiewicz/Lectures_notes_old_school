@@ -1,0 +1,28 @@
+\subsection{Detecting No Solution}
+
+A row of the form
+\[
+\left[\begin{array}{ccc|c}0&0&0&5\end{array}\right]
+\]
+represents the impossible equation $0=5$.
+
+\begin{examplebox}
+For
+\[
+\begin{cases}
+x+y=1,\\
+2x+2y=5,
+\end{cases}
+\]
+row reduction gives
+\[
+\left[\begin{array}{cc|c}
+1&1&1\\0&0&3
+\end{array}\right].
+\]
+The second row says $0=3$, so the system has no solution.
+\end{examplebox}
+
+\begin{interpretationbox}[Contradiction means incompatibility]
+The contradiction is the algebraic record of geometric conditions that cannot be satisfied simultaneously.
+\end{interpretationbox}
