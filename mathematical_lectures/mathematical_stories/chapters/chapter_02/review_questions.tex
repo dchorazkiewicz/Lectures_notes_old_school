@@ -1,38 +1,93 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational and construction exercises}
 
 \begin{enumerate}
-\item Explain the difference between a point and a vector. Why can the same vector be drawn from different starting points?
+\item Let $A=(1,2)$ and $B=(5,-1)$. Compute the displacement vector $\overrightarrow{AB}$ and draw the same vector with tail at the origin and with tail at $P=(-2,3)$.
 
-\item For points $A=(1,-2)$ and $B=(5,3)$:
+\item For
+\[
+u=(3,-2),\qquad v=(-1,4),
+\]
+compute $u+v$, $u-v$, $2u$, and $-3v$. Draw $u$, $v$, and $u+v$ using the parallelogram rule.
+
+\item Compute the linear combination
+\[
+2u-3v
+\]
+for $u=(1,2)$ and $v=(2,-1)$. Verify the result by carrying out the corresponding geometric sequence of displacements.
+
+\item Compute the length of each vector:
+\[
+u=(3,4),\qquad v=(-5,12),\qquad w=(2,-2).
+\]
+Then find the corresponding unit vector in each direction.
+
+\item For
+\[
+u=(2,1),\qquad v=(1,-2),\qquad w=(4,2),
+\]
+compute all three dot products $u\cdot v$, $u\cdot w$, and $v\cdot w$. Decide which pairs are perpendicular and which are parallel.
+
+\item Find the angle between
+\[
+u=(1,0),\qquad v=(1,1).
+\]
+Then find the angle between $v=(1,1)$ and $w=(-1,1)$.
+
+\item Compute the projection of
+\[
+u=(4,3)
+\]
+onto $v=(1,0)$ and onto $w=(1,1)$. For each case, write the orthogonal decomposition of $u$ into a component parallel to the chosen vector and a perpendicular remainder.
+
+\item Let
+\[
+b_1=(1,1),\qquad b_2=(1,-1),\qquad u=(4,2).
+\]
+Find the coordinates $(\alpha,\beta)$ such that
+\[
+u=\alpha b_1+\beta b_2.
+\]
+Check the answer by reconstruction.
+
+\item The same vector has basis coordinates $[u]_B=(2,-1)$ in the basis
+\[
+B=(b_1,b_2),\qquad b_1=(1,2),\quad b_2=(2,1).
+\]
+Find its Cartesian coordinates. Then solve for its coordinates in the standard basis directly.
+
+\item Convert between Cartesian and polar coordinates:
 \begin{enumerate}
-\item find the displacement from $A$ to $B$;
-\item interpret both components geometrically;
-\item find the displacement from $B$ to $A$ and explain the relation between the two vectors.
+\item find polar coordinates of $(\sqrt3,1)$ and $(-1,\sqrt3)$;
+\item find Cartesian coordinates of $(r,\theta)=(4,\pi/6)$ and $(3,\pi)$.
+\end{enumerate}
 \end{enumerate}
 
-\item Describe vector addition both geometrically and in coordinates. Why does addition represent the composition of successive displacements?
+\subsection{Conceptual and reasoning exercises}
 
-\item What does scalar multiplication do to the length and direction of a vector? Discuss separately positive, negative, and zero scalars.
-
-\item Explain what a linear combination of two vectors represents. Under what geometric condition can two vectors generate every vector in the plane?
-
-\item For $u=(3,4)$ and $v=(-4,3)$:
 \begin{enumerate}
-\item compute their lengths and scalar product;
-\item decide whether they are perpendicular;
-\item explain what the scalar product reveals that the coordinate list alone does not immediately show.
-\end{enumerate}
+\item Explain the difference between a point and a vector. Why can the same vector be drawn from different starting points while a point cannot be translated without becoming a different point?
 
-\item Derive the formula for the angle between nonzero vectors from the scalar product. What information is lost when one of the vectors is zero?
+\item Prove from the geometric meaning of successive displacements that vector addition is associative. Do not begin from the coordinate formula.
 
-\item Explain projection as the decomposition of one vector into a component parallel to another vector and a perpendicular remainder. State how the sign of the projection coefficient should be interpreted.
+\item A student claims that $u+v$ must always be longer than both $u$ and $v$. Give a counterexample and explain geometrically what causes the failure.
 
-\item What is a basis? Explain carefully the difference between a geometric vector and its coordinate pair relative to a basis. Why may the same vector have different coordinates in two bases?
+\item Explain why scalar multiplication by a negative number changes both length and direction. What remains unchanged when a vector is multiplied by any nonzero scalar?
 
-\item Compare Cartesian and polar coordinates:
-\begin{enumerate}
-\item what quantities are used in each system;
-\item where nonuniqueness appears in polar coordinates;
-\item which geometric questions are naturally simplified by the polar description.
-\end{enumerate}
+\item Show that two nonzero vectors are parallel exactly when one is a scalar multiple of the other. Explain how the coordinate criterion expresses a geometric fact.
+
+\item Use the cosine theorem to explain why the dot-product formula
+\[
+u\cdot v=\|u\|\|v\|\cos\theta
+\]
+contains information about both lengths and angle.
+
+\item Explain why $u\cdot v=0$ characterises perpendicularity only when both vectors are interpreted in Euclidean geometry. What geometric role is played by the common coordinate scale?
+
+\item A basis changes but the geometric vector does not. Explain precisely what changes and what stays fixed. Why are basis coordinates properties of the pair ``vector plus basis'' rather than of the vector alone?
+
+\item Explain why two nonparallel vectors form a basis of the plane. What fails if the two proposed basis vectors are parallel?
+
+\item Compare Cartesian and polar coordinates as two languages for the same point or displacement. Give one kind of problem for which each system reveals the geometry more naturally.
 \end{enumerate}
