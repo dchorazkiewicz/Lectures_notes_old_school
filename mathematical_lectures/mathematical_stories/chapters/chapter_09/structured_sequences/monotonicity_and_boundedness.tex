@@ -1,0 +1,31 @@
+\subsection{Monotonicity and boundedness}
+
+Before asking whether a sequence has a limit, we can ask how its terms are ordered and whether they remain inside a fixed range.
+
+\begin{definitionbox}[Monotone sequence]
+A sequence is increasing if \(a_{n+1}\ge a_n\) for every relevant \(n\), and decreasing if \(a_{n+1}\le a_n\). It is monotone if it is increasing or decreasing.
+\end{definitionbox}
+
+\begin{definitionbox}[Bounded sequence]
+A sequence is bounded above if there is a number \(M\) such that \(a_n\le M\) for all \(n\). It is bounded below if there is a number \(m\) such that \(m\le a_n\) for all \(n\).
+\end{definitionbox}
+
+\begin{examplebox}[A decreasing bounded sequence]
+For
+\[
+a_n=\frac1n,
+\]
+we have \(a_{n+1}<a_n\), so the sequence is decreasing. Also \(0<a_n\le1\), so it is bounded below by \(0\) and above by \(1\).
+\end{examplebox}
+
+\begin{examplebox}[Bounded but not monotone]
+The sequence
+\[
+a_n=(-1)^n
+\]
+alternates between \(-1\) and \(1\). It is bounded, but it is neither increasing nor decreasing.
+\end{examplebox}
+
+\begin{interpretationbox}[Preparing the limit question]
+Monotonicity describes direction; boundedness describes confinement. Together they give strong information about long-term behavior, but neither property alone is the same as convergence.
+\end{interpretationbox}
