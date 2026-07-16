@@ -1,36 +1,20 @@
 \subsection{The value at a point and the nearby limit}
 
-After the sequential theory is established, we can separate two questions that concern a function near a point.
+After the local and sequential descriptions of a function limit have been connected, we can separate two questions that concern a function near a point.
 
 \begin{corebox}[Two different questions]
 The value
 \[
 f(a)
 \]
-asks what the function assigns at the input \(a\). The limit
+asks what the function assigns at the input $a$. The limit
 \[
 \lim_{x\to a}f(x)
 \]
-asks what values are approached along inputs near \(a\), with \(x\ne a\).
+asks what values are approached at nearby inputs, with $x\ne a$.
 \end{corebox}
 
-\begin{definitionbox}[Function limit]
-We write
-\[
-\lim_{x\to a}f(x)=L
-\]
-when every admissible sequence \((x_n)\) satisfying
-\[
-x_n\ne a,
-\qquad
-x_n\to a
-\]
-produces an output sequence satisfying
-\[
-f(x_n)\to L.
-\]
-By Heine's theorem, this sequential statement is equivalent to the usual local definition of a function limit.
-\end{definitionbox}
+By Heine's theorem, the nearby limit can be tested along every admissible sequence $x_n\to a$ with $x_n\ne a$. The value $f(a)$ is not part of that test.
 
 \begin{examplebox}[A removable hole]
 For
@@ -42,7 +26,7 @@ we have
 \[
 f(x)=x+1
 \]
-for every admissible \(x\). Therefore, for every sequence \(x_n\to1\) with \(x_n\ne1\),
+for every admissible $x$. Therefore, for every sequence $x_n\to1$ with $x_n\ne1$,
 \[
 f(x_n)=x_n+1\to2.
 \]
@@ -50,9 +34,9 @@ Hence
 \[
 \lim_{x\to1}f(x)=2,
 \]
-even though \(f(1)\) is not defined.
+even though $f(1)$ is not defined.
 \end{examplebox}
 
 \begin{interpretationbox}[The point itself is excluded from the limit test]
-Changing, deleting, or redefining the single value \(f(a)\) does not change \(\lim_{x\to a}f(x)\). The limit is determined by values at nearby inputs.
+Changing, deleting, or redefining the single value $f(a)$ does not change $\lim_{x\to a}f(x)$. The limit is determined by values at nearby inputs.
 \end{interpretationbox}
