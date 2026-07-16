@@ -1,0 +1,35 @@
+\subsection{Column Vectors as Matrices}
+
+A column vector may be viewed as a matrix with one column. This allows vector and
+matrix equations to be written in one language.
+
+\begin{examplebox}[One vector, two orientations]
+For
+\[
+u=
+\begin{pmatrix}
+2\\-1\\4
+\end{pmatrix},
+\]
+we have a $3\times1$ matrix. Its transpose is the $1\times3$ row matrix
+\[
+u^{\mathsf T}=\begin{pmatrix}2&-1&4\end{pmatrix}.
+\]
+\end{examplebox}
+
+\begin{interpretationbox}[Orientation changes what products mean]
+The distinction between a row and a column is structural. The products
+\[
+u^{\mathsf T}u
+\qquad\text{and}\qquad
+uu^{\mathsf T}
+\]
+have different sizes: the first is $1\times1$, while the second is $3\times3$.
+Even when the same entries occur, their arrangement determines which operations
+are possible and what object is produced.
+\end{interpretationbox}
+
+\begin{remarkbox}[Read dimensions before multiplying]
+The notation may look compact, but dimensions carry the compatibility check.
+Always determine the shapes before applying the row-by-column rule.
+\end{remarkbox}
