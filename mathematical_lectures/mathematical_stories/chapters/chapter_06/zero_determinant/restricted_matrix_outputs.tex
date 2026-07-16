@@ -1,0 +1,36 @@
+\subsection{A First Restriction on Matrix Outputs}
+
+Suppose the second row is $\lambda$ times the first:
+\[
+A=\begin{pmatrix}a&b\\\lambda a&\lambda b\end{pmatrix}.
+\]
+For
+\[
+x=\begin{pmatrix}u\\v\end{pmatrix},
+\]
+we obtain
+\[
+Ax=
+\begin{pmatrix}au+bv\\\lambda au+\lambda bv\end{pmatrix}
+=
+\begin{pmatrix}t\\\lambda t\end{pmatrix},
+\qquad t=au+bv.
+\]
+
+\begin{interpretationbox}[The outputs satisfy a fixed relation]
+No matter which input is chosen, the second output coordinate is $\lambda$ times the first. A zero determinant therefore signals that the possible outputs are restricted.
+\end{interpretationbox}
+
+\begin{examplebox}
+For
+\[
+A=\begin{pmatrix}1&2\\2&4\end{pmatrix},
+\]
+$\det A=0$, and every output has the form
+\[
+Ax=\begin{pmatrix}t\\2t\end{pmatrix}.
+\]
+The outputs lie in one fixed pattern rather than filling the whole plane.
+\end{examplebox}
+
+A similar phenomenon occurs with three rows: if $r_3=r_1+r_2$, then the third entry of every output $Ax$ is the sum of the first two.
