@@ -1,0 +1,27 @@
+\subsection{Finding and checking an inverse}
+
+For an elementary formula, solve \(y=f(x)\) for \(x\), then exchange the roles of input and output.
+
+\begin{examplebox}[Inverse of an affine function]
+Let \(f(x)=3x-2\). From \(y=3x-2\) we obtain
+\[
+x=\frac{y+2}{3}.
+\]
+Hence
+\[
+f^{-1}(x)=\frac{x+2}{3}.
+\]
+The check is composition:
+\[
+f^{-1}(f(x))=\frac{3x-2+2}{3}=x,
+\qquad
+f(f^{-1}(x))=3\frac{x+2}{3}-2=x.
+\]
+\end{examplebox}
+
+\begin{remarkbox}
+The notation \(f^{-1}\) means inverse function, not reciprocal. In general,
+\[
+f^{-1}(x)\ne\frac1{f(x)}.
+\]
+\end{remarkbox}
