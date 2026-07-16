@@ -1,15 +1,8 @@
 name: Auto-dispatch lecture builds
 
+# Temporarily disabled: manual dispatch only.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "mathematical_lectures/**/*.tex"
-      - "mathematical_lectures/**/build.sh"
-      - "physics_lectures/**/*.tex"
-      - "physics_lectures/**/build.sh"
-      - "shared/**/*.tex"
+  workflow_dispatch:
 
 permissions:
   actions: write
