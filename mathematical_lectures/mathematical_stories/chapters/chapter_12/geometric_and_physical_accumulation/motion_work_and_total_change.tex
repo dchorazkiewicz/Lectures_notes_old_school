@@ -1,0 +1,40 @@
+\subsection{Motion, work, and total change}
+
+If \(v(t)\) is velocity, then
+\[
+\int_a^b v(t)\,dt
+\]
+is displacement. Distance requires integrating speed \(|v(t)|\), so sign changes must be handled.
+
+\begin{examplebox}[Displacement and distance]
+Let \(v(t)=t-1\) on \([0,2]\). Then
+\[
+\int_0^2 (t-1)\,dt=0,
+\]
+so the net displacement is zero. But the particle moves one-half unit before \(t=1\) and one-half unit after \(t=1\), so the total distance is
+\[
+\int_0^2 |t-1|\,dt=1.
+\]
+\end{examplebox}
+
+If a force \(F(x)\) acts along a line, the work done from \(x=a\) to \(x=b\) is
+\[
+W=\int_a^b F(x)\,dx.
+\]
+
+\begin{examplebox}[Work by a linearly increasing force]
+For \(F(x)=2x+1\) from \(x=0\) to \(x=3\),
+\[
+W=\int_0^3(2x+1)\,dx
+=\left[x^2+x\right]_0^3=12.
+\]
+If force is measured in newtons and distance in metres, the result is \(12\) joules.
+\end{examplebox}
+
+\begin{corebox}[Total change from a rate]
+Whenever \(Q'(t)\) is a rate of change,
+\[
+Q(b)-Q(a)=\int_a^b Q'(t)\,dt.
+\]
+This single principle unifies displacement from velocity, accumulated flow from a flow rate, mass from a linear density, and work from force.
+\end{corebox}
