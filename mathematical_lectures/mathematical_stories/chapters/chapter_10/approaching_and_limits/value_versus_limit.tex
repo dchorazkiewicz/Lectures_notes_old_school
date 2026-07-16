@@ -1,0 +1,33 @@
+\subsection{Approaching is not the same as arriving}
+
+\begin{corebox}[Two different questions]
+The value $f(a)$ asks what happens at the input $a$. The limit
+\[
+\lim_{x\to a}f(x)
+\]
+asks what values are approached when $x$ is near $a$. These questions may have different answers.
+\end{corebox}
+
+\begin{examplebox}[A removable hole]
+For
+\[
+f(x)=\frac{x^2-1}{x-1},\qquad x\ne1,
+\]
+we have $f(x)=x+1$ whenever $x\ne1$. Hence
+\[
+\lim_{x\to1}f(x)=2,
+\]
+even though $f(1)$ is not defined.
+\end{examplebox}
+
+\begin{definitionbox}[Function limit]
+We write
+\[
+\lim_{x\to a}f(x)=L
+\]
+when the values $f(x)$ can be made arbitrarily close to $L$ by taking $x$ sufficiently close to $a$, without requiring $x=a$.
+\end{definitionbox}
+
+\begin{interpretationbox}[A limit describes behavior]
+A limit is not primarily a substitution rule. It describes a stable pattern of nearby values. Substitution is only one possible method for recognizing that pattern.
+\end{interpretationbox}
