@@ -1,0 +1,36 @@
+\subsection{Elementary optimisation models}
+
+An optimisation problem has two parts: building the correct function and analyzing it on the allowed domain.
+
+\begin{examplebox}[Maximum area with fixed perimeter]
+A rectangle has perimeter \(20\). If its width is \(x\), then its length is \(10-x\), so
+\[
+A(x)=x(10-x)=10x-x^2,
+\qquad 0<x<10.
+\]
+We compute
+\[
+A'(x)=10-2x.
+\]
+The critical point is \(x=5\). Since
+\[
+A''(x)=-2<0,
+\]
+this point gives a maximum. The optimal rectangle is a square of side \(5\), with area \(25\).
+\end{examplebox}
+
+\begin{examplebox}[Minimum material in a simple open box model]
+An open box with square base has volume \(32\). If the base side is \(x>0\), then the height is \(h=32/x^2\). Its surface area is
+\[
+S(x)=x^2+4xh=x^2+\frac{128}{x}.
+\]
+Thus
+\[
+S'(x)=2x-\frac{128}{x^2}.
+\]
+The condition \(S'(x)=0\) gives \(2x^3=128\), hence \(x=4\). The corresponding height is \(h=2\).
+\end{examplebox}
+
+\begin{interpretationbox}[Why the model matters more than the derivative]
+The differentiation is elementary. The substantial reasoning lies in choosing a variable, expressing all quantities through it, identifying the admissible domain, and interpreting the critical point in the original problem.
+\end{interpretationbox}
