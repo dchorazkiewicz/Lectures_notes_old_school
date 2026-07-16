@@ -3,11 +3,11 @@
 Heine's theorem translates a function limit into convergence of output sequences. The corresponding Cauchy criterion removes the need to name the candidate limit in advance.
 
 \begin{theorembox}[Cauchy criterion for a finite function limit]
-A finite limit
+Let $f\colon D\to\mathbb R$, where $D\subseteq\mathbb R$, and let $a$ be an accumulation point of $D$. A finite limit
 \[
 \lim_{x\to a}f(x)
 \]
-exists if and only if, for every \(\varepsilon>0\), there is \(\delta>0\) such that whenever
+exists if and only if, for every $\varepsilon>0$, there is $\delta>0$ such that whenever $x,y\in D$ satisfy
 \[
 0<|x-a|<\delta,
 \qquad
@@ -19,7 +19,11 @@ we have
 \]
 \end{theorembox}
 
-The criterion says that all function values sufficiently near \(a\) must be close to one another. It does not initially specify the number to which they converge.
+\begin{remarkbox}[Proof status]
+The criterion is the function analogue of the Cauchy criterion for sequences and ultimately uses completeness of $\mathbb R$. We use the equivalence and explain its meaning, but do not repeat the full completeness argument.
+\end{remarkbox}
+
+The criterion says that all function values sufficiently near $a$ must be close to one another. It does not initially specify the number to which they converge.
 
 \begin{examplebox}[A jump fails the Cauchy test]
 Let
@@ -30,7 +34,7 @@ f(x)=
 1,&x>0.
 \end{cases}
 \]
-No matter how small \(\delta\) is, we can choose \(x<0<y\) with
+No matter how small $\delta$ is, we can choose $x<0<y$ with
 \[
 |x|<\delta,
 \qquad
@@ -40,9 +44,9 @@ Then
 \[
 |f(x)-f(y)|=|-1-1|=2.
 \]
-The nearby values do not become mutually close, so the limit at \(0\) does not exist.
+The nearby values do not become mutually close, so the limit at $0$ does not exist.
 \end{examplebox}
 
 \begin{interpretationbox}[Heine and Cauchy describe the same settling]
-Heine follows every approaching input sequence. Cauchy compares nearby output values directly. Both formulations express that all admissible approaches must settle into one common behavior.
+Heine follows every approaching input sequence. Cauchy compares nearby output values directly. Both formulations express that all admissible approaches must settle into one common behaviour.
 \end{interpretationbox}
