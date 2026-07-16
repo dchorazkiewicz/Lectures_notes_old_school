@@ -1,24 +1,16 @@
 \subsection{Unknowns, Coefficients, Constants, and Solution Sets}
 
-A linear equation in $x_1,\ldots,x_n$ has the form
-\[
-a_1x_1+\cdots+a_nx_n=b.
-\]
-The numbers $a_i$ are coefficients and $b$ is the right-hand side.
-
-A system with $m$ equations and $n$ unknowns has the form
+Throughout this chapter we work with two equations in two unknowns:
 \[
 \begin{cases}
-a_{11}x_1+\cdots+a_{1n}x_n=b_1,\\
-\vdots\\
-a_{m1}x_1+\cdots+a_{mn}x_n=b_m.
+a_{11}x+a_{12}y=b_1,\\
+a_{21}x+a_{22}y=b_2.
 \end{cases}
 \]
+The numbers $a_{ij}$ are coefficients, while $b_1$ and $b_2$ are the right-hand sides. The same notation extends to larger systems, but the $2\times2$ case already contains the essential classification and solution methods.
 
-\begin{definitionbox}
-The solution set is the set of all assignments satisfying every equation. For a linear system, it may contain exactly one point, no points, or infinitely many points.
+\begin{definitionbox}[Solution set]
+The solution set is the set of all pairs $(x,y)$ satisfying both equations. It may contain exactly one point, no points, or infinitely many points.
 \end{definitionbox}
 
-\begin{remarkbox}
-The coefficients describe how the unknowns enter the conditions; the right-hand sides specify the required values of those linear combinations.
-\end{remarkbox}
+The coefficients determine the directions of the two lines, while the right-hand sides determine their positions. Solving the system means finding their common points.
