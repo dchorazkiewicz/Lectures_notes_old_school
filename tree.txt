@@ -288,6 +288,7 @@
 ./mathematical_lectures/mathematical_stories
 ./mathematical_lectures/mathematical_stories/AGENTS.md
 ./mathematical_lectures/mathematical_stories/REFACTOR_PLAN.md
+./mathematical_lectures/mathematical_stories/basic_mathematics_contents.md
 ./mathematical_lectures/mathematical_stories/build.sh
 ./mathematical_lectures/mathematical_stories/chapters
 ./mathematical_lectures/mathematical_stories/chapters/chapter_00_introduction.tex
