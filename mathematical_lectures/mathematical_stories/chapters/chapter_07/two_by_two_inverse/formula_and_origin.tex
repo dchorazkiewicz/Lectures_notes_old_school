@@ -1,0 +1,32 @@
+\subsection{The Formula and Where It Comes From}
+
+Let
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\qquad
+A^{-1}=\begin{pmatrix}p&q\\r&s\end{pmatrix}.
+\]
+The condition $AA^{-1}=I_2$ produces two systems:
+\[
+\begin{cases}ap+br=1,\\cp+dr=0,
+\end{cases}
+\qquad
+\begin{cases}aq+bs=0,\\cq+ds=1.
+\end{cases}
+\]
+Thus finding an inverse already amounts to solving linear systems.
+
+\begin{theorembox}[Inverse of a $2\times2$ matrix]
+If
+\[
+\det A=ad-bc\neq0,
+\]
+then
+\[
+\boxed{A^{-1}=\frac1{ad-bc}
+\begin{pmatrix}d&-b\\-c&a\end{pmatrix}}.
+\]
+If $ad-bc=0$, the inverse does not exist.
+\end{theorembox}
+
+The diagonal entries are exchanged, the off-diagonal signs are reversed, and the entire matrix is scaled by the reciprocal determinant.
