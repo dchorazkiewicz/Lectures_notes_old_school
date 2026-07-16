@@ -1,0 +1,18 @@
+\subsection{Multilinearity and Alternating Behaviour}
+
+\begin{theorembox}[General row and column properties]
+The determinant is linear in each row separately while all other rows are fixed, and likewise in each column. Exchanging two rows changes the sign. Consequently, a matrix with two equal rows has determinant zero.
+\end{theorembox}
+
+If one row is a linear combination of the others, multilinearity reduces the determinant to terms with repeated rows. For example, if
+\[
+r_3=2r_1-r_2,
+\]
+then
+\begin{align*}
+\det(r_1,r_2,r_3)
+&=2\det(r_1,r_2,r_1)-\det(r_1,r_2,r_2)\\
+&=0.
+\end{align*}
+
+Because $\det(A^{\mathsf T})=\det A$, all corresponding statements hold for columns.
