@@ -1,25 +1,24 @@
 \subsection{Pivots, Back Substitution, and Row Echelon Form}
 
-A pivot is a leading nonzero entry used to eliminate other entries in its column. Pivots mark independent information and usually identify variables that can be solved.
+A pivot is a leading nonzero entry used to eliminate other entries in its column. Pivots mark independent information and identify the variables that can be solved.
 
-\begin{examplebox}[Back substitution]
+\begin{examplebox}[Back substitution in a $2\times2$ system]
 For
 \[
-\left[\begin{array}{ccc|c}
-1&2&-1&3\\
-0&1&4&5\\
-0&0&2&6
+\left[\begin{array}{cc|c}
+1&2&5\\
+0&3&6
 \end{array}\right],
 \]
-the last row gives $z=3$, the second gives $y=-7$, and the first gives $x=20$.
+the second row gives $y=2$, and the first row then gives $x=1$.
 \end{examplebox}
 
-\begin{definitionbox}
+\begin{definitionbox}[Row echelon form]
 A matrix is in row echelon form when leading nonzero entries move strictly to the right as one moves downward, and all zero rows are placed at the bottom.
 \end{definitionbox}
 
 A row such as
 \[
-\left[\begin{array}{ccc|c}0&0&0&0\end{array}\right]
+\left[\begin{array}{cc|c}0&0&0\end{array}\right]
 \]
 represents $0=0$ and imposes no new restriction.
