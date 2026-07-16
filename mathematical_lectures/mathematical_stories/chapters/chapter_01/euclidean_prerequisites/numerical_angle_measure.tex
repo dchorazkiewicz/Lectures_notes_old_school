@@ -1,8 +1,10 @@
 \subsection{Angles and Their Numerical Measure}
 
+\begin{corebox}[Angle and angle measure are different objects]
 An angle exists geometrically before it is assigned a number. We can compare,
 copy, add, and bisect angles without degrees or radians. A numerical angle
 measure requires an additional choice of unit.
+\end{corebox}
 
 \begin{definitionbox}
 Let $r_1$ and $r_2$ be two rays with the same initial point $O$. The rays,
@@ -10,9 +12,11 @@ together with a choice of one of the two regions between them, determine an
 angle $\alpha$ with vertex $O$.
 \end{definitionbox}
 
-The angle is the chosen geometric region. It is neither the small arc drawn
-near the vertex nor a number. The arc is only a graphical mark indicating
-which region has been selected.
+\begin{remarkbox}
+The angle is the chosen geometric region. It is neither the small arc drawn near
+the vertex nor a number. The arc is only a graphical mark indicating which
+region has been selected.
+\end{remarkbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
@@ -39,27 +43,23 @@ the same constant:
 \[
 \frac{C}{D}=\pi.
 \]
-This constant is called $\pi$. Since $D=2r$, every circle of radius $r$ has
-circumference
+Since $D=2r$, every circle of radius $r$ has circumference
 \[
 \boxed{C=2\pi r}.
 \]
 \end{theorembox}
 
-The constancy of $C/D$ follows from similarity: enlarging a circle by a factor
-$\lambda$ multiplies every length, including its diameter, circumference, and
-corresponding arc lengths, by $\lambda$.
-
-If the same two rays meet two circles of radii $r_1$ and $r_2$ and cut arc
-lengths $s_1$ and $s_2$, then
+\begin{proofbox}[Why the quotient $s/r$ is independent of the circle]
+Similarity implies that enlarging a circle by a factor $\lambda$ multiplies its
+diameter, circumference, and corresponding arc lengths by $\lambda$. If the
+same rays cut arc lengths $s_1,s_2$ from circles of radii $r_1,r_2$, then
 \[
 \frac{s_1}{s_2}=\frac{r_1}{r_2},
-\]
-and therefore
-\[
+\qquad\text{hence}\qquad
 \frac{s_1}{r_1}=\frac{s_2}{r_2}.
 \]
-Thus the quotient $s/r$ depends only on the angle, not on the chosen circle.
+The quotient therefore depends only on the angle.
+\end{proofbox}
 
 \begin{definitionbox}
 Let $s$ be the length of the selected arc on a circle of radius $r$ centred at
@@ -69,34 +69,35 @@ the vertex. The radian measure of $\alpha$ is
 \]
 \end{definitionbox}
 
+\begin{derivationbox}[Full turn, half-turn, and right angle]
 For a full turn, $s=2\pi r$, so
 \[
 m_{\mathrm{rad}}(\text{full turn})=2\pi.
 \]
-A half-turn has radian measure $\pi$, and a quarter-turn has radian measure
-$\pi/2$.
+A half-turn therefore has measure $\pi$, and a quarter-turn has measure $\pi/2$.
+\end{derivationbox}
 
-Degrees are a second numerical scale. A full turn is assigned $360^\circ$, so
+\begin{definitionbox}
+Degrees provide a second numerical scale. A full turn is assigned $360^\circ$,
+so
 \[
-2\pi\text{ radians}=360^\circ
-\]
-and
-\[
+2\pi\text{ radians}=360^\circ,
+\qquad
 \boxed{
-m_{\deg}(\alpha)
-=
-\frac{180^\circ}{\pi}\,m_{\mathrm{rad}}(\alpha)
+m_{\deg}(\alpha)=\frac{180^\circ}{\pi}\,m_{\mathrm{rad}}(\alpha)
 }.
 \]
+\end{definitionbox}
 
-In particular, a constructible right angle has the numerical measures
+\begin{examplebox}
+A constructible right angle has the two numerical descriptions
 \[
 m_{\mathrm{rad}}(\text{right angle})=\frac{\pi}{2},
 \qquad
 m_{\deg}(\text{right angle})=90^\circ.
 \]
-The angle is still the geometric region; $\pi/2$ and $90^\circ$ are two numbers
-assigned to it by two different measurement systems.
+The geometric angle is the same object; only the chosen numerical scale changes.
+\end{examplebox}
 
 \subsubsection*{Sine and cosine as functions of a number}
 
@@ -114,17 +115,24 @@ definition; their signs are determined by the quadrant:
 3\pi/2\le t<2\pi&+\cos\beta&-\sin\beta
 \end{array}
 \]
-At the axes this gives the familiar values $0$, $1$, and $-1$. For arbitrary
-real $t$, define sine and cosine periodically:
+
+\begin{definitionbox}
+For arbitrary real $t$, define sine and cosine periodically:
 \[
+\boxed{
 \sin(t+2\pi k)=\sin t,
 \qquad
 \cos(t+2\pi k)=\cos t,
-\qquad k\in\mathbb Z.
+\qquad k\in\mathbb Z
+}.
 \]
-If $t=m_{\mathrm{rad}}(\alpha)$, then $\cos t$ is the same value as the geometric
-cosine $\cos\alpha$. This explains the notation
-$\cos(m_{\mathrm{rad}}(\alpha))$.
+\end{definitionbox}
+
+\begin{interpretationbox}[From a geometric angle to a numerical input]
+If $t=m_{\mathrm{rad}}(\alpha)$, then $\cos t$ is the same value as the
+geometric cosine $\cos\alpha$. The notation $\cos t$ therefore treats the
+numerical measure as an input while preserving the earlier geometric meaning.
+\end{interpretationbox}
 
 \subsubsection*{The Euclidean law of cosines}
 
@@ -157,20 +165,11 @@ The points form the Euclidean triangle $OAB$.
     \fill (O) circle (2.1pt) node[below left] {$O$};
     \fill (A) circle (2.1pt) node[below right] {$A$};
     \fill (B) circle (2.1pt) node[above] {$B$};
-
-    \node[align=left,anchor=west] at (5.0,2.35) {
-        adjacent to $\alpha$:\\
-        $|OA|$ and $|OB|$
-    };
-    \node[align=left,anchor=west] at (5.0,0.65) {
-        opposite $\alpha$:\\
-        $|AB|$
-    };
 \end{tikzpicture}
 \end{center}
 
 \begin{theorembox}
-If $\alpha=\angle AOB$, then the side lengths of the Euclidean triangle satisfy
+If $\alpha=\angle AOB$, then
 \[
 \boxed{
 |AB|^2=|OA|^2+|OB|^2-2|OA|\,|OB|\cos\alpha
@@ -180,8 +179,8 @@ Equivalently, the last factor may be written as
 $\cos(m_{\mathrm{rad}}(\alpha))$.
 \end{theorembox}
 
-The theorem belongs to Euclidean geometry; it does not require Cartesian
-coordinates. Solving it for the angle measure gives
+\begin{derivationbox}[Recovering the angle from side lengths]
+Solving the law of cosines for the angle measure gives
 \[
 \boxed{
 m_{\mathrm{rad}}(\alpha)
@@ -191,16 +190,19 @@ m_{\mathrm{rad}}(\alpha)
 \right)
 }.
 \]
-Later, coordinates will provide a convenient arithmetic method for calculating
-the three Euclidean lengths $|OA|$, $|OB|$, and $|AB|$.
+Later, coordinates will provide an arithmetic method for calculating the three
+Euclidean lengths in this formula.
+\end{derivationbox}
 
 \begin{remarkbox}
 At this point no vector has been introduced. We have only Euclidean objects,
 postulates, constructions, similarity, trigonometric ratios, numerical angle
-measure, and the Euclidean law of cosines. Vectors will appear only in the next
-chapter, after the Cartesian coordinate system has been constructed.
+measure, and the Euclidean law of cosines. Vectors will appear only after the
+Cartesian coordinate system has been constructed.
 \end{remarkbox}
 
-The next step is to choose two perpendicular lines, an origin, directions, and
-a unit length. Those choices will convert the Euclidean plane into a Cartesian
-coordinate plane.
+\begin{summarybox}[What numerical measurement adds]
+The angle is geometric; radians and degrees are numerical descriptions of it.
+Similarity makes the radian quotient $s/r$ independent of scale, while the law
+of cosines allows the same angle to be recovered from three side lengths.
+\end{summarybox}
