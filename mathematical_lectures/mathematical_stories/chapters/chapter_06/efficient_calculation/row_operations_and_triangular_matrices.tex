@@ -1,0 +1,39 @@
+\subsection{Row Operations and Triangular Matrices}
+
+\begin{corebox}[Effect of elementary row operations]
+Exchanging two rows multiplies the determinant by $-1$; multiplying one row by $\lambda$ multiplies the determinant by $\lambda$; adding a multiple of one row to another leaves the determinant unchanged.
+\end{corebox}
+
+\begin{examplebox}[Reduction to triangular form]
+For
+\[
+A=\begin{pmatrix}
+1&2&1\\2&5&3\\1&0&4
+\end{pmatrix},
+\]
+use
+\[
+R_2\leftarrow R_2-2R_1,
+\qquad
+R_3\leftarrow R_3-R_1,
+\]
+then
+\[
+R_3\leftarrow R_3+2R_2.
+\]
+All three operations preserve the determinant and produce
+\[
+\begin{pmatrix}
+1&2&1\\0&1&1\\0&0&5
+\end{pmatrix}.
+\]
+Therefore $\det A=1\cdot1\cdot5=5$.
+\end{examplebox}
+
+\begin{theorembox}[Triangular determinant]
+For an upper or lower triangular matrix,
+\[
+\boxed{\det A=a_{11}a_{22}\cdots a_{nn}}.
+\]
+Hence a triangular matrix has determinant zero exactly when at least one diagonal entry is zero.
+\end{theorembox}
