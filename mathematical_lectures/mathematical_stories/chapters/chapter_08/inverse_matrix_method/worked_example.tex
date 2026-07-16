@@ -1,0 +1,34 @@
+\subsection{A Worked Inverse-Matrix Example}
+
+Solve
+\[
+\begin{cases}
+2x+y=5,\\
+x+y=3.
+\end{cases}
+\]
+Write
+\[
+A=\begin{pmatrix}2&1\\1&1\end{pmatrix},
+\qquad
+b=\begin{pmatrix}5\\3\end{pmatrix}.
+\]
+Since $\det A=1$,
+\[
+A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\]
+
+\begin{derivationbox}[Apply the inverse]
+\[
+\begin{pmatrix}x\\y\end{pmatrix}
+=A^{-1}b
+=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}
+\begin{pmatrix}5\\3\end{pmatrix}
+=\begin{pmatrix}2\\1\end{pmatrix}.
+\]
+\end{derivationbox}
+
+Thus
+\[
+\boxed{x=2,\qquad y=1}.
+\]
