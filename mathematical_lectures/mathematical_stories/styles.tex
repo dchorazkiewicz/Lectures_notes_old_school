@@ -1,5 +1,53 @@
 \input{../../shared/styles}
 
+% Local visual language for the dual use of these notes: the lecturer must be
+% able to identify the core material quickly, while the student keeps access to
+% complete arguments after the lecture.
+\definecolor{CoreBlue}{HTML}{0B4F6C}
+\definecolor{CoreBlueBack}{HTML}{EAF4F8}
+\definecolor{DerivationViolet}{HTML}{665191}
+\definecolor{DerivationVioletBack}{HTML}{F4F0FA}
+\definecolor{ProofBrown}{HTML}{795548}
+\definecolor{ProofBrownBack}{HTML}{F8F3F1}
+\definecolor{InterpretationGray}{HTML}{52616B}
+\definecolor{InterpretationGrayBack}{HTML}{F3F5F6}
+
+\newtcolorbox{corebox}[1][Core idea]{
+    breakable,
+    colback=CoreBlueBack,
+    colframe=CoreBlue,
+    title=#1,
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
+}
+
+\newtcolorbox{derivationbox}[1][Derivation]{
+    breakable,
+    colback=DerivationVioletBack,
+    colframe=DerivationViolet,
+    title=#1,
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
+}
+
+\newtcolorbox{proofbox}[1][Proof]{
+    breakable,
+    colback=ProofBrownBack,
+    colframe=ProofBrown,
+    title=#1,
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
+}
+
+\newtcolorbox{interpretationbox}[1][Interpretation]{
+    breakable,
+    colback=InterpretationGrayBack,
+    colframe=InterpretationGray,
+    title=#1,
+    fonttitle=\bfseries,
+    before upper={\let\boxed\plainformula}
+}
+
 % Local visual language for geometric diagrams in this lecture.
 % Coordinate axes remain black; the subset currently being studied is dark blue;
 % auxiliary construction lines are neutral gray.
