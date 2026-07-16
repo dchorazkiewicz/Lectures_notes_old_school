@@ -1,0 +1,46 @@
+\subsection{Equations of the Forms $AX=B$ and $XA=B$}
+
+If
+\[
+AX=B
+\]
+and $A$ is invertible, multiply on the left:
+\[
+A^{-1}AX=A^{-1}B,
+\qquad
+\boxed{X=A^{-1}B}.
+\]
+
+If instead
+\[
+XA=B,
+\]
+multiply on the right:
+\[
+XAA^{-1}=BA^{-1},
+\qquad
+\boxed{X=BA^{-1}}.
+\]
+
+\begin{corebox}[The side is determined by the equation]
+An inverse cancels a matrix only when it is placed next to that matrix on the correct side. Matrix factors cannot be moved through an equation as if they were ordinary numbers.
+\end{corebox}
+
+\begin{examplebox}[Different sides give different answers]
+For
+\[
+A=\begin{pmatrix}1&2\\3&7\end{pmatrix},
+\qquad
+A^{-1}=\begin{pmatrix}7&-2\\-3&1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}4&1\\5&2\end{pmatrix},
+\]
+$AX=B$ gives
+\[
+X=A^{-1}B=\begin{pmatrix}18&3\\-7&-1\end{pmatrix},
+\]
+whereas $XA=B$ gives
+\[
+X=BA^{-1}=\begin{pmatrix}25&-7\\29&-8\end{pmatrix}.
+\]
+\end{examplebox}
