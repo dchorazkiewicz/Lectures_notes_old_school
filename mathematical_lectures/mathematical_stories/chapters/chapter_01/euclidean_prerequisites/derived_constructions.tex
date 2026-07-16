@@ -1,7 +1,11 @@
 \subsection{Constructions Derived from the Toolkit}
 
+The following objects are not added as new primitive permissions. Each is
+constructed from lines, circles, and their intersections.
+
 \subsubsection{The Perpendicular Bisector and the Midpoint}
 
+\begin{derivationbox}[Construction]
 Let $A$ and $B$ be distinct points. Draw two circles with the same radius,
 one centred at $A$ and one centred at $B$, choosing the radius larger than half
 of $|AB|$. Let their intersection points be $P$ and $Q$.
@@ -14,8 +18,8 @@ and similarly,
 \[
 |QA|=|QB|.
 \]
-Thus both $P$ and $Q$ are equidistant from $A$ and $B$. The line $PQ$ is the
-perpendicular bisector of $AB$.
+Thus both $P$ and $Q$ are equidistant from $A$ and $B$.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -34,19 +38,23 @@ perpendicular bisector of $AB$.
 \end{tikzpicture}
 \end{center}
 
-The intersection of $PQ$ with $AB$ is the midpoint of $AB$. Thus midpoint and
-perpendicularity have been constructed from equal radii and intersections.
+\begin{theorembox}
+The line $PQ$ is the perpendicular bisector of $AB$. Its intersection with
+$AB$ is the midpoint of $AB$. Thus both midpoint and perpendicularity are
+constructed from equal radii and intersections.
+\end{theorembox}
 
 \subsubsection{A Perpendicular Through a Point on a Line}
 
+\begin{derivationbox}[Construction]
 Let $P$ lie on a line $\ell$.
 
 \textbf{Step 1.} Draw a circle centred at $P$. It meets $\ell$ at two points
 $A$ and $B$. Since $|PA|=|PB|$, the point $P$ is the midpoint of $AB$.
 
 \textbf{Step 2.} Apply the perpendicular-bisector construction to $AB$. The
-resulting perpendicular bisector passes through its midpoint $P$, and since
-$AB$ lies on $\ell$, it is perpendicular to $\ell$.
+resulting perpendicular bisector passes through its midpoint $P$.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -76,8 +84,13 @@ $AB$ lies on $\ell$, it is perpendicular to $\ell$.
 \end{tikzpicture}
 \end{center}
 
+\begin{theorembox}
+The constructed line $m$ passes through $P$ and is perpendicular to $\ell$.
+\end{theorembox}
+
 \subsubsection{A Perpendicular Through a Point Outside a Line}
 
+\begin{derivationbox}[Construction]
 Let $P$ lie outside a line $\ell$.
 
 \textbf{Step 1.} Draw a circle centred at $P$ with radius large enough to meet
@@ -85,9 +98,9 @@ $\ell$ at two points $A$ and $B$. Then $|PA|=|PB|$, so $P$ lies on the
 perpendicular bisector of $AB$.
 
 \textbf{Step 2.} Draw equal-radius circles centred at $A$ and $B$, chosen so that
-they meet again at a second point $Q$. By the perpendicular-bisector construction,
-the line through the two points equidistant from $A$ and $B$, namely $P$ and $Q$,
-is perpendicular to $AB$ and hence to $\ell$.
+they meet again at a second point $Q$. The points $P$ and $Q$ are both
+equidistant from $A$ and $B$.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -115,8 +128,14 @@ is perpendicular to $AB$ and hence to $\ell$.
 \end{tikzpicture}
 \end{center}
 
+\begin{theorembox}
+The line $PQ$ is the perpendicular bisector of $AB$ and therefore is
+perpendicular to $\ell$ through the prescribed external point $P$.
+\end{theorembox}
+
 \subsubsection{Bisecting an Angle}
 
+\begin{derivationbox}[Construction and justification]
 Let two rays with common endpoint $O$ form an angle. Draw a circle centred at
 $O$ meeting the rays at $A$ and $B$. Then draw equal-radius circles centred at
 $A$ and $B$, and let one of their intersections inside the angle be $P$. Since
@@ -127,23 +146,34 @@ $A$ and $B$, and let one of their intersections inside the angle be $P$. Since
 \qquad
 |OP|=|OP|,
 \]
-the triangles $OAP$ and $OBP$ are congruent. Therefore
+the triangles $OAP$ and $OBP$ are congruent.
+\end{derivationbox}
+
+\begin{theorembox}
+The congruence of $OAP$ and $OBP$ gives
 \[
 \angle AOP=\angle POB.
 \]
-The ray $OP$ is the angle bisector.
+Therefore the ray $OP$ bisects the angle.
+\end{theorembox}
 
 \subsubsection{Constructing a Parallel Through a Point}
 
+\begin{derivationbox}[Construction]
 Let $P$ lie outside a line $\ell$. First construct a line $m$ through $P$
 perpendicular to $\ell$. Then construct a line $n$ through $P$ perpendicular
 to $m$.
 
 The transversal $m$ forms equal corresponding right angles with $n$ and
 $\ell$. By the converse of the corresponding-angles theorem, the two lines are
-parallel:
+parallel.
+\end{derivationbox}
+
+\begin{theorembox}
+The constructed line satisfies
 \[
-n\parallel\ell.
+\boxed{n\parallel\ell}.
 \]
 The fifth postulate, equivalently Playfair's postulate, guarantees that this is
 the unique parallel to $\ell$ through $P$.
+\end{theorembox}
