@@ -10,6 +10,12 @@ The question is therefore:
 fixed direction?}
 \end{center}
 
+\begin{corebox}[Data that determine a line]
+A line in the Cartesian plane is determined by one point $P_0$ on the line and
+one nonzero direction vector $\mathbf v$. Every point of the line is reached by
+adding a scalar multiple of $\mathbf v$ to $P_0$.
+\end{corebox}
+
 Let
 \[
 P_0=(x_0,y_0)
@@ -44,10 +50,12 @@ y&=y_0+tv,
 \]
 \end{definitionbox}
 
-The parameter has a direct meaning. At $t=0$ we are at $P_0$; positive and
-negative values move in the two opposite orientations along the same direction.
-Changing the length of $\mathbf v$ only changes how quickly the parameter runs
-through the points, not the geometric line itself.
+\begin{interpretationbox}[Meaning of the parameter]
+At $t=0$ we are at $P_0$; positive and negative values move in the two opposite
+orientations along the same direction. Changing the length of $\mathbf v$ only
+changes how quickly the parameter runs through the points, not the geometric
+line itself.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,>=stealth]
@@ -71,8 +79,10 @@ through the points, not the geometric line itself.
 A direction vector tells us how to move along the line. There is a second,
 equally important description: choose a nonzero vector $\mathbf n=(a,b)$
 perpendicular to $\mathbf v$. A point $P=(x,y)$ lies on the line precisely when
-the displacement $P-P_0$ is perpendicular to $\mathbf n$. The dot-product test
-from the previous chapter gives
+the displacement $P-P_0$ is perpendicular to $\mathbf n$.
+
+\begin{derivationbox}[From direction to normal form]
+The dot-product test from the previous chapter gives
 \[
 \mathbf n\cdot(P-P_0)=0.
 \]
@@ -85,9 +95,13 @@ After collecting the constant terms,
 \boxed{ax+by=c},
 \qquad c=ax_0+by_0.
 \]
-Thus the general linear equation is not a second, unrelated definition of a
-line. It records the same object by specifying a direction that no displacement
-along the line may contain.
+\end{derivationbox}
+
+\begin{interpretationbox}
+The general linear equation is not a second, unrelated definition of a line. It
+records the same object by specifying a direction that no displacement along the
+line may contain.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,>=stealth]
@@ -107,6 +121,7 @@ along the line may contain.
 
 \subsection{Slope form as a special coordinate description}
 
+\begin{derivationbox}[Eliminating the parameter]
 If the horizontal component $u$ of the direction vector is nonzero, eliminate
 $t$ from
 \[
@@ -130,11 +145,15 @@ and after collecting constants the equation takes the familiar form
 \[
 y=mx+b.
 \]
+\end{derivationbox}
+
+\begin{remarkbox}
 If $u=0$, the line is vertical and is described by $x=x_0$. The vector and
 normal descriptions treat this case without any exception; only slope notation
 fails.
+\end{remarkbox}
 
-\begin{remarkbox}
+\begin{summarybox}
 The three forms answer different questions about the same set:
 \[
 \begin{array}{c|c}
@@ -145,4 +164,4 @@ y=mx+b & \text{how vertical position depends on horizontal position}.
 \]
 No representation is the line itself. The line is the geometric set of points
 that all these descriptions identify.
-\end{remarkbox}
+\end{summarybox}
