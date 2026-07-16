@@ -1,29 +1,88 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational and construction exercises}
 
 \begin{enumerate}
-\item Explain why a line is determined by one point and one nonzero direction. Why is a plane determined by one point and two independent directions?
+\item Write a parametric equation of the line through $P=(2,-1)$ with direction vector $v=(3,4)$. Find the points corresponding to $t=-1,0,2$ and plot them.
 
-\item Write the parametric equation of the line through $P=(1,2)$ with direction $v=(3,-1)$. Explain what the parameter means geometrically.
+\item Find an implicit equation of the line through $P=(1,3)$ with normal vector $n=(2,-1)$. Check directly that $P$ satisfies the equation.
 
-\item Find a parametric description of the line through two distinct points $P$ and $Q$. Why does this description also work for vertical lines?
+\item Convert the line
+\[
+2x-3y=6
+\]
+to slope-intercept form, find both axis intercepts, and give one direction vector and one normal vector.
 
-\item Compare parametric, slope, and implicit equations of a line. For each form, name one question that it answers especially efficiently.
+\item Find the equation of the line through
+\[
+A=(-1,2),\qquad B=(3,-4)
+\]
+in parametric form and, when possible, in slope form.
 
-\item Given the line $2x-3y=6$:
+\item Find the intersection point of
+\[
+L_1:\ y=2x-1,
+\qquad
+L_2:\ x+y=5.
+\]
+Verify the point in both equations.
+
+\item Determine whether each pair of lines is parallel, perpendicular, identical, or intersecting without either special relation:
 \begin{enumerate}
-\item identify a normal vector;
-\item find a direction vector;
-\item determine its intersections with the coordinate axes;
-\item explain how these pieces of information are encoded in the same equation.
+\item $2x-y=1$ and $4x-2y=7$;
+\item $x+2y=3$ and $2x-y=4$;
+\item $3x+y=5$ and $6x+2y=10$.
 \end{enumerate}
 
-\item State and justify tests for parallelism and perpendicularity using direction vectors and normal vectors. How do these tests relate to slope formulas in the nonvertical case?
+\item Compute the distance from $P=(3,1)$ to the line
+\[
+2x-y-4=0.
+\]
+Find the foot of the perpendicular projection and verify the distance using coordinates.
 
-\item Explain the general principle used to find an intersection of geometric sets. Apply it to two lines and describe the possible outcomes.
+\item In space, write a parametric equation of the line through
+\[
+P=(1,0,-2)
+\]
+with direction $v=(2,-1,3)$. Test whether $Q=(5,-2,4)$ lies on the line.
 
-\item Derive the normal equation of a plane from a point $P_0$ and a normal vector $n$. What geometric condition is imposed on every displacement $P-P_0$ lying in the plane?
+\item Write a parametric equation of the plane through
+\[
+P=(1,2,0)
+\]
+with direction vectors $u=(1,0,1)$ and $v=(0,2,-1)$. Find three distinct points of the plane.
 
-\item Compare the parametric and normal descriptions of a plane. Which data are fixed in each description, and which questions are easier in one form than the other?
+\item Find a normal vector and an implicit equation of the plane through $P=(1,-1,2)$ spanned by
+\[
+u=(1,1,0),\qquad v=(0,1,1).
+\]
+Check that both direction vectors are perpendicular to the normal.
+\end{enumerate}
 
-\item A formula may fail to cover a special coordinate case even when the geometric object remains ordinary. Explain this statement using vertical lines and then give an analogous example involving planes or lines in space.
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Explain why one point and one nonzero direction determine a line, while one point alone does not.
+
+\item Compare parametric, normal, implicit, and slope descriptions of a line. For each form, state one kind of question that it answers especially efficiently.
+
+\item Why does slope notation require a separate vertical-line case while the parametric description does not? Explain what this reveals about representations and geometric objects.
+
+\item Prove that the line through distinct points $P$ and $Q$ can be written as
+\[
+L=\{P+t(Q-P):t\in\mathbb R\}.
+\]
+Explain why every point in this set lies on the same geometric line.
+
+\item Two equations look different but may describe the same line. Give a criterion for recognising this in implicit form and justify it.
+
+\item Explain why finding an intersection means imposing two defining conditions simultaneously. Relate this principle to axis intercepts and to the intersection of two arbitrary lines.
+
+\item Show why equal nonzero normal vectors up to scaling produce parallel or identical lines. What additional information distinguishes the two cases?
+
+\item Explain why one point and two nonparallel directions determine a plane. What geometric object is obtained if the two directions are parallel?
+
+\item Compare a plane described by two spanning directions with a plane described by a normal vector. Why are these two kinds of information complementary?
+
+\item A student solves every line problem by converting immediately to slope form. Explain why this strategy can hide structure or create unnecessary exceptional cases. Give two examples where another representation is preferable.
 \end{enumerate}
