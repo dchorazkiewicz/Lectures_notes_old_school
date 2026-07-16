@@ -1,33 +1,45 @@
 \section{Understanding Quadric Surfaces Through Sections}
 
+\begin{corebox}[The method]
 A three-dimensional surface should not be recognised only from a memorised
-formula. We study it by intersecting it with simple planes. Fixing $z=k$ gives a
-horizontal section; fixing $x=k$ or $y=k$ gives vertical sections. The remaining
-equation describes a planar curve already studied in this chapter.
+formula. Intersect it with simple planes, identify the resulting planar curves,
+and study how those curves change as the cutting plane moves.
+\end{corebox}
 
-The same questions will be asked repeatedly:
+Fixing $z=k$ gives a horizontal section; fixing $x=k$ or $y=k$ gives vertical
+sections. The same questions will be asked repeatedly:
 \begin{enumerate}
-    \item Which curve appears in a chosen cutting plane?
-    \item For which values of the parameter does that curve exist?
-    \item How does the section change as the plane moves?
-    \item What does that family of sections reveal about the whole surface?
+    \item Which curve appears in the cutting plane?
+    \item For which parameter values does it exist?
+    \item How does its size or type change?
+    \item What does the family of sections reveal about the whole surface?
 \end{enumerate}
-This repetition is intentional. It is a method of investigation, not a list of
-unrelated recognition tricks.
 
 \subsection{Ellipsoid}
 
-For
+\begin{definitionbox}
+An ellipsoid has standard equation
 \[
-\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\boxed{
+\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1
+}.
 \]
-the section $z=k$ satisfies
+\end{definitionbox}
+
+\begin{derivationbox}[Horizontal sections]
+Setting $z=k$ gives
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1-\frac{k^2}{c^2}.
 \]
 Thus $|k|<c$ gives an ellipse, $|k|=c$ gives one point, and $|k|>c$ gives no
-real points. The surface is understood as ellipses that grow from one endpoint,
-reach their largest size at $z=0$, and shrink to the other endpoint.
+real points.
+\end{derivationbox}
+
+\begin{interpretationbox}[Reading the whole surface]
+The sections grow from one endpoint, reach their largest size at $z=0$, and
+shrink to the other endpoint. The disappearance of sections beyond $|k|=c$
+shows that the surface is bounded.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -41,13 +53,19 @@ reach their largest size at $z=0$, and shrink to the other endpoint.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Elliptic paraboloid}
+\subsection{Elliptic Paraboloid}
 
-For
+\begin{definitionbox}
+An elliptic paraboloid has standard equation
 \[
-z=\frac{x^2}{a^2}+\frac{y^2}{b^2},
+\boxed{
+z=\frac{x^2}{a^2}+\frac{y^2}{b^2}
+}.
 \]
-the section $z=k$ is
+\end{definitionbox}
+
+\begin{derivationbox}[Horizontal and vertical sections]
+For $z=k$,
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=k.
 \]
@@ -56,8 +74,13 @@ $k>0$. Setting $y=0$ gives the parabola
 \[
 z=\frac{x^2}{a^2}.
 \]
-The horizontal and vertical sections together explain both the opening direction
-and the shape near the vertex.
+\end{derivationbox}
+
+\begin{interpretationbox}[Reading the opening]
+Horizontal sections show that the surface widens as height increases. Vertical
+sections show the parabolic profile and the direction in which the surface
+opens.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -72,24 +95,37 @@ and the shape near the vertex.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Hyperbolic paraboloid}
+\subsection{Hyperbolic Paraboloid}
 
-For
+\begin{definitionbox}
+A hyperbolic paraboloid has standard equation
 \[
-z=\frac{x^2}{a^2}-\frac{y^2}{b^2},
+\boxed{
+z=\frac{x^2}{a^2}-\frac{y^2}{b^2}
+}.
 \]
-the horizontal section $z=k$ is
+\end{definitionbox}
+
+\begin{derivationbox}[Sections change type and orientation]
+For $z=k$,
 \[
 \frac{x^2}{a^2}-\frac{y^2}{b^2}=k.
 \]
 For $k>0$ the hyperbolas open in the $x$ direction; for $k<0$ they open in the
-$y$ direction. At $k=0$ the equation factors into two lines:
+$y$ direction. At $k=0$,
 \[
 \left(\frac xa-\frac yb\right)
-\left(\frac xa+\frac yb\right)=0.
+\left(\frac xa+\frac yb\right)=0,
 \]
-The vertical sections $y=0$ and $x=0$ are parabolas opening in opposite
-directions. These changing sections explain the saddle shape.
+so the section is two intersecting lines. The vertical sections $y=0$ and $x=0$
+are parabolas opening in opposite directions.
+\end{derivationbox}
+
+\begin{interpretationbox}[Why the surface is a saddle]
+The change of hyperbola orientation across $k=0$, together with vertical
+parabolas opening oppositely, reveals a surface that bends upward in one
+direction and downward in the perpendicular direction.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -103,19 +139,29 @@ directions. These changing sections explain the saddle shape.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Hyperboloid of one sheet}
+\subsection{Hyperboloid of One Sheet}
 
-For
+\begin{definitionbox}
+A hyperboloid of one sheet has standard equation
 \[
-\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1,
+\boxed{
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1
+}.
 \]
-the section $z=k$ becomes
+\end{definitionbox}
+
+\begin{derivationbox}[Horizontal sections]
+For $z=k$,
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1+\frac{k^2}{c^2}.
 \]
 Every height gives an ellipse, smallest at $k=0$ and larger as $|k|$ grows.
-Because a nonempty section exists at every height, the surface remains connected
-and has a central waist.
+\end{derivationbox}
+
+\begin{interpretationbox}[Connected surface with a waist]
+Because a nonempty section exists at every height, the surface remains connected.
+The smallest central ellipse produces the visible waist.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -132,19 +178,30 @@ and has a central waist.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Hyperboloid of two sheets}
+\subsection{Hyperboloid of Two Sheets}
 
-For
+\begin{definitionbox}
+A hyperboloid of two sheets has standard equation
 \[
--\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1,
+\boxed{
+-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1
+}.
 \]
-the section $z=k$ satisfies
+\end{definitionbox}
+
+\begin{derivationbox}[Horizontal sections]
+For $z=k$,
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}-1.
 \]
 There are no points when $|k|<c$, one point when $|k|=c$, and ellipses when
-$|k|>c$. The empty band around $z=0$ separates the surface into two components.
-The algebraic absence of sections explains the geometric gap.
+$|k|>c$.
+\end{derivationbox}
+
+\begin{interpretationbox}[Why the surface separates]
+The empty band around $z=0$ creates a genuine gap. The absence of sections in
+that interval explains why the surface has two disconnected components.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -162,19 +219,30 @@ The algebraic absence of sections explains the geometric gap.
 \end{tikzpicture}
 \end{center}
 
-\subsection{Elliptic cone}
+\subsection{Elliptic Cone}
 
-For
+\begin{definitionbox}
+An elliptic cone has standard equation
 \[
-\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0,
+\boxed{
+\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0
+}.
 \]
-the section $z=k$ is
+\end{definitionbox}
+
+\begin{derivationbox}[Horizontal sections]
+For $z=k$,
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}.
 \]
-At $k=0$ the section is one point. For positive and negative $k$ we obtain
-ellipses of the same size whenever the absolute heights agree. This symmetry
-produces two nappes meeting at the origin.
+At $k=0$ the section is one point. Equal positive and negative heights give
+ellipses of the same size.
+\end{derivationbox}
+
+\begin{interpretationbox}[Two nappes and one vertex]
+The symmetry in $|k|$ produces two congruent nappes meeting at the origin. The
+single-point section at $k=0$ identifies the vertex.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -192,18 +260,25 @@ produces two nappes meeting at the origin.
 
 \subsection{Cylinders}
 
-If one coordinate is absent, moving in that coordinate direction never changes
-whether the equation is satisfied. For example,
+\begin{corebox}[An absent coordinate creates translation symmetry]
+If one coordinate does not appear in the equation, moving in that coordinate
+direction never changes whether the equation is satisfied. A planar curve is
+therefore carried unchanged along a line to produce a cylinder.
+\end{corebox}
+
+\begin{examplebox}
+The equation
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
 \]
-has the same elliptical section for every value of $z$. The ellipse is therefore
-carried unchanged along the $z$ direction, producing an elliptic cylinder.
-Likewise,
+has the same elliptical section for every $z$ and produces an elliptic cylinder.
+The equation
 \[
 y=x^2
 \]
-produces the same parabola in every plane $z=k$, hence a parabolic cylinder.
+produces the same parabola in every plane $z=k$ and therefore gives a parabolic
+cylinder.
+\end{examplebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -219,9 +294,9 @@ produces the same parabola in every plane $z=k$, hence a parabolic cylinder.
 \end{tikzpicture}
 \end{center}
 
-\begin{summarybox}
-A standard equation names a surface, but its sections explain the surface. Empty
-sections reveal gaps, shrinking sections reveal endpoints or vertices, changing
-conic types reveal saddle behaviour, and an absent coordinate reveals a direction
-of translation.
+\begin{summarybox}[What sections reveal]
+A standard equation names a surface, but its sections explain it. Empty sections
+reveal gaps, shrinking sections reveal endpoints or vertices, changing conic
+types reveal saddle behaviour, and an absent coordinate reveals a direction of
+translation.
 \end{summarybox}
