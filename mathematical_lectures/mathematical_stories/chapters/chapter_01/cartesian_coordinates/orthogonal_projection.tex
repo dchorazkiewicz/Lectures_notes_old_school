@@ -1,13 +1,17 @@
 \subsection{Assigning Coordinates by Orthogonal Projection}
 
-Only after the axes, directions, common unit, integer marks, refined scale, and
-real labels have been constructed can an arbitrary point of the plane be given
-coordinates.
+\begin{corebox}[When coordinates can be assigned]
+Only after the axes, orientations, common unit, refined scale, and real labels
+have been constructed can an arbitrary point of the plane receive a coordinate
+pair.
+\end{corebox}
 
+\begin{derivationbox}[Constructing the two coordinate values]
 Let $P$ be any point of the plane. Through $P$, construct the line perpendicular
-to the $x$-axis. It meets the $x$-axis at a unique point $P_x$. Through $P$,
-construct the line perpendicular to the $y$-axis. It meets the $y$-axis at a
-unique point $P_y$.
+to the $x$-axis; it meets that axis at a unique point $P_x$. Through $P$,
+construct the line perpendicular to the $y$-axis; it meets that axis at a unique
+point $P_y$.
+\end{derivationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -24,17 +28,20 @@ unique point $P_y$.
 \end{tikzpicture}
 \end{center}
 
-If the signed real labels of $P_x$ and $P_y$ are $x$ and $y$, respectively, we
-assign to $P$ the ordered pair
+\begin{definitionbox}
+If the signed real labels of $P_x$ and $P_y$ are $x$ and $y$, respectively, the
+coordinates of $P$ are the ordered pair
 \[
-P\longleftrightarrow(x,y).
+\boxed{P\longleftrightarrow(x,y)}.
 \]
+\end{definitionbox}
 
+\begin{proofbox}[Why the correspondence is one-to-one]
 The construction is unambiguous because the perpendicular through a given point
 to a given line is unique. Conversely, given real numbers $x$ and $y$, locate
-the corresponding points on the two axes and construct through them lines
-perpendicular to their respective axes. Those two lines meet in exactly one
-point of the plane.
+the corresponding points on the axes and construct through them lines
+perpendicular to the respective axes. The two lines meet in exactly one point.
+\end{proofbox}
 
 \begin{theorembox}
 Once the two perpendicular axes, their positive directions, and a common unit
@@ -46,7 +53,10 @@ are fixed, orthogonal projection gives a one-to-one correspondence
 \text{pairs }(x,y)\in\mathbb R^2
 }.
 \]
+\end{theorembox}
+
+\begin{interpretationbox}[Coordinates are addresses]
 The ordered pair is the numerical address of a geometric point in the chosen
 coordinate system. It is not the point itself and it is not the source of the
 geometry.
-\end{theorembox}
+\end{interpretationbox}
