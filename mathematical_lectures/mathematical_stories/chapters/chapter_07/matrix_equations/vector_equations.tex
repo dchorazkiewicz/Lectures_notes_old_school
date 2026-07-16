@@ -1,0 +1,33 @@
+\subsection{Solving Vector Equations}
+
+The equation
+\[
+Ax=b
+\]
+with column vectors $x$ and $b$ is a special case of $AX=B$. If $A$ is invertible, then
+\[
+\boxed{x=A^{-1}b}.
+\]
+
+\begin{examplebox}
+Solve
+\[
+\begin{pmatrix}2&1\\1&1\end{pmatrix}
+\begin{pmatrix}x\\y\end{pmatrix}
+=
+\begin{pmatrix}5\\3\end{pmatrix}.
+\]
+The coefficient matrix has determinant $1$ and inverse
+\[
+A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\]
+Hence
+\[
+\begin{pmatrix}x\\y\end{pmatrix}
+=A^{-1}b
+=\begin{pmatrix}2\\1\end{pmatrix}.
+\]
+Thus $x=2$ and $y=1$.
+\end{examplebox}
+
+This prepares the next chapter, where elimination, inverse matrices, and Cramer's rule will be compared as methods for solving linear systems.
