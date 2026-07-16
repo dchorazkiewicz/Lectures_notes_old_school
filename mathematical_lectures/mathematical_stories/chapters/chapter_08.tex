@@ -1,4 +1,16 @@
-\chapter*{Chapter 8}
-\addcontentsline{toc}{chapter}{Chapter 8}
+\chapter{Systems of Linear Equations}
 
-\input{chapters/chapter_08/section_01}
+\begin{corebox}[Several conditions, one solution set]
+A linear system asks for values satisfying all equations simultaneously. Matrices organise the coefficients, geometry interprets the common solution set, and elimination, determinants, and inverse matrices provide complementary methods for determining its structure.
+\end{corebox}
+
+\input{chapters/chapter_08/systems_as_conditions/section}
+\input{chapters/chapter_08/geometric_solution_sets/section}
+\input{chapters/chapter_08/gaussian_elimination/section}
+\input{chapters/chapter_08/cramers_rule/section}
+\input{chapters/chapter_08/inverse_matrix_method/section}
+\input{chapters/chapter_08/parametric_systems/section}
+
+\begin{summarybox}[Systems of linear equations]
+A system may have one solution, no solution, or infinitely many solutions. Gaussian elimination is the general classification method. For square systems, a nonzero coefficient determinant guarantees one solution and permits both Cramer's rule and the inverse formula $x=A^{-1}b$. Singular and parametric cases require separate compatibility analysis.
+\end{summarybox}
