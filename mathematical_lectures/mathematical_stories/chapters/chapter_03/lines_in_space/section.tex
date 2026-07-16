@@ -1,41 +1,38 @@
 \section{Lines in Three-Dimensional Space}
 
-A point in three-dimensional Cartesian space has coordinates
-\[
-P=(x,y,z)\in\mathbb{R}^3.
-\]
-A line is determined by one point and one nonzero direction.
+\begin{corebox}[The same construction in one more coordinate]
+A line in space is still determined by one point and one nonzero direction. The
+third coordinate changes the arithmetic, but not the geometric idea.
+\end{corebox}
 
 \begin{definitionbox}
 Let
 \[
-P_0=(x_0,y_0,z_0)
+P_0=(x_0,y_0,z_0),
+\qquad
+\mathbf v=(a,b,c)\neq\mathbf0.
 \]
-and let
+The line through $P_0$ with direction $\mathbf v$ is
 \[
-\mathbf{v}=(a,b,c)\neq(0,0,0).
-\]
-The line through $P_0$ with direction vector $\mathbf{v}$ is
-\[
-L=\{P_0+t\mathbf{v}:t\in\mathbb{R}\}.
+\boxed{L=\{P_0+t\mathbf v:t\in\mathbb R\}}.
 \]
 Equivalently,
 \[
-(x,y,z)=(x_0,y_0,z_0)+t(a,b,c).
-\]
-\end{definitionbox}
-
-In coordinates this becomes the system
-\[
+\boxed{
 \begin{cases}
 x=x_0+at,\\
 y=y_0+bt,\\
-z=z_0+ct,
+z=z_0+ct.
 \end{cases}
-\qquad t\in\mathbb{R}.
+}
 \]
-As $t$ varies, the point moves along the line. Positive and negative values of
-$t$ describe the two opposite directions along the same geometric line.
+\end{definitionbox}
+
+\begin{interpretationbox}[Meaning of the parameter]
+As $t$ varies, the point moves along the line. Positive and negative values give
+the two orientations. Rescaling the direction vector changes only the speed at
+which the parameter traverses the same set of points.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -53,30 +50,34 @@ $t$ describe the two opposite directions along the same geometric line.
 
 \subsection{The Line Through Two Points in Space}
 
+\begin{derivationbox}[The direction is the displacement between the points]
 Let
 \[
 P=(x_1,y_1,z_1),
 \qquad
 Q=(x_2,y_2,z_2)
 \]
-be distinct points. Their difference
+be distinct. Then
 \[
 Q-P=(x_2-x_1,\,y_2-y_1,\,z_2-z_1)
 \]
-is a nonzero direction vector of the line through them.
+is a nonzero direction vector.
+\end{derivationbox}
 
 \begin{theorembox}
-The unique line through two distinct points $P,Q\in\mathbb{R}^3$ is
+The unique line through distinct points $P,Q\in\mathbb R^3$ is
 \[
-L=\{P+t(Q-P):t\in\mathbb{R}\}.
+\boxed{L=\{P+t(Q-P):t\in\mathbb R\}}.
 \]
 In coordinates,
 \[
+\boxed{
 \begin{cases}
 x=x_1+t(x_2-x_1),\\
 y=y_1+t(y_2-y_1),\\
 z=z_1+t(z_2-z_1).
 \end{cases}
+}
 \]
 \end{theorembox}
 
@@ -87,11 +88,7 @@ P=(1,0,2),
 \qquad
 Q=(3,4,1),
 \]
-a direction vector is
-\[
-Q-P=(2,4,-1).
-\]
-Therefore the line through $P$ and $Q$ is
+a direction vector is $Q-P=(2,4,-1)$. Therefore
 \[
 (x,y,z)=(1,0,2)+t(2,4,-1),
 \]
@@ -107,24 +104,30 @@ z=2-t.
 
 \subsection{Symmetric Form}
 
-If $a$, $b$, and $c$ are all nonzero, the parameter can be eliminated from
+\begin{derivationbox}[Eliminating the parameter]
+If $a,b,c$ are all nonzero, then
 \[
-x=x_0+at,
-\qquad
-y=y_0+bt,
-\qquad z=z_0+ct.
+t=\frac{x-x_0}{a}
+=\frac{y-y_0}{b}
+=\frac{z-z_0}{c}.
 \]
-This gives
+Hence
 \[
+\boxed{
 \frac{x-x_0}{a}
 =
 \frac{y-y_0}{b}
 =
-\frac{z-z_0}{c}.
+\frac{z-z_0}{c}
+}.
 \]
-If one component of the direction vector is zero, the corresponding coordinate
-is constant. For example, if $c=0$, then $z=z_0$, while the remaining two
-coordinates may still be written in symmetric form.
+\end{derivationbox}
+
+\begin{remarkbox}
+If a direction component is zero, the corresponding coordinate is constant. For
+example, $c=0$ gives $z=z_0$. The parametric form handles this without division
+by zero and is therefore the more fundamental representation.
+\end{remarkbox}
 
 \subsection{Parallel, Perpendicular, Intersecting, and Skew Lines}
 
@@ -134,31 +137,37 @@ L_1=P_1+t\mathbf v_1,
 \qquad
 L_2=P_2+s\mathbf v_2.
 \]
-Their directions are parallel precisely when
-\[
-\boxed{\mathbf v_1\times\mathbf v_2=\mathbf0.}
-\]
-Equivalently, one direction vector is a nonzero scalar multiple of the other.
-This test alone does not distinguish identical lines from distinct parallel
-lines: one must also check whether $P_2-P_1$ is parallel to the common direction.
 
-The direction vectors are perpendicular precisely when
+\begin{theorembox}
+The directions are parallel precisely when
 \[
-\boxed{\mathbf v_1\cdot\mathbf v_2=0.}
+\boxed{\mathbf v_1\times\mathbf v_2=\mathbf0}.
 \]
-In space this does not by itself make the geometric lines perpendicular. The
-lines must also intersect; otherwise they may be skew.
+They are perpendicular precisely when
+\[
+\boxed{\mathbf v_1\cdot\mathbf v_2=0}.
+\]
+\end{theorembox}
 
-To decide whether two nonparallel lines intersect, solve
+\begin{remarkbox}
+Parallel directions do not by themselves distinguish identical lines from
+distinct parallel lines; one must also test whether $P_2-P_1$ is parallel to the
+common direction. Likewise, perpendicular directions do not make the geometric
+lines perpendicular unless the lines also intersect.
+\end{remarkbox}
+
+\begin{derivationbox}[Testing intersection]
+Solve
 \[
 P_1+t\mathbf v_1=P_2+s\mathbf v_2.
 \]
-This gives three scalar equations for the two parameters. A common solution
-produces the intersection point. If the system is inconsistent, the lines are
-skew.
+This gives three scalar equations for two parameters. A common solution produces
+the intersection point. If the directions are nonparallel but the system is
+inconsistent, the lines are skew.
+\end{derivationbox}
 
 \begin{definitionbox}
-Two lines in $\mathbb{R}^3$ are \emph{skew} when they are neither parallel nor
+Two lines in $\mathbb R^3$ are \emph{skew} when they are neither parallel nor
 intersecting.
 \end{definitionbox}
 
@@ -171,13 +180,10 @@ and
 \[
 L_2=(0,1,1)+s(0,1,0).
 \]
-Their direction vectors satisfy
-\[
-(1,0,0)\cdot(0,1,0)=0.
-\]
-Yet a point on $L_1$ has third coordinate $0$, while every point on $L_2$ has
-third coordinate $1$. The lines cannot intersect. They have perpendicular
-directions but are skew, not perpendicular lines.
+Their direction vectors have dot product zero. Yet every point on $L_1$ has
+third coordinate $0$, while every point on $L_2$ has third coordinate $1$.
+Thus the lines do not intersect: their directions are perpendicular, but the
+lines are skew.
 \end{examplebox}
 
 \begin{center}
@@ -195,17 +201,15 @@ directions but are skew, not perpendicular lines.
 \end{tikzpicture}
 \end{center}
 
-Skew lines have no analogue in the plane. In two dimensions, two distinct
-nonparallel lines must intersect; in three dimensions, one line may pass above
-or beside another without meeting it.
+\begin{interpretationbox}[A genuinely three-dimensional possibility]
+Skew lines have no analogue in the plane. In two dimensions, distinct
+nonparallel lines must intersect. In space, one line can pass above or beside
+another without meeting it.
+\end{interpretationbox}
 
-\begin{summarybox}
-A line in $\mathbb{R}^3$ is described by
-\[
-L=\{P_0+t\mathbf v:t\in\mathbb{R}\},
-\qquad \mathbf v\neq\mathbf 0.
-\]
-Two distinct points determine the direction $Q-P$. Parallel directions have zero
-cross product, perpendicular directions have zero dot product, and nonparallel
-lines are either intersecting or skew.
+\begin{summarybox}[Lines in space]
+A line is $P_0+t\mathbf v$. Two points determine the direction $Q-P$. A zero
+cross product detects parallel directions, a zero dot product detects
+perpendicular directions, and a parameter system distinguishes intersection
+from skewness.
 \end{summarybox}
