@@ -1,0 +1,29 @@
+\subsection{A rate proportional to the current amount}
+
+A simple differential model begins with a law of change rather than a ready-made formula.
+
+\begin{corebox}[Proportional growth law]
+If a quantity $P(t)$ changes at a rate proportional to its current value, then
+\[
+P'(t)=kP(t).
+\]
+Positive $k$ models growth and negative $k$ models decay.
+\end{corebox}
+
+\begin{examplebox}[Checking an exponential model]
+Let
+\[
+P(t)=P_0e^{kt}.
+\]
+Then
+\[
+P'(t)=kP_0e^{kt}=kP(t),
+\]
+so the exponential function satisfies the proportional-rate law.
+\end{examplebox}
+
+\begin{interpretationbox}[The derivative states the mechanism]
+The equation $P'=kP$ says that the present rate depends on the present amount. The exponential formula is a function whose derivative reproduces precisely that mechanism.
+\end{interpretationbox}
+
+The aim here is not a general course in differential equations. The example shows how a derivative can encode a modelling assumption and how a proposed function can be tested against it.
