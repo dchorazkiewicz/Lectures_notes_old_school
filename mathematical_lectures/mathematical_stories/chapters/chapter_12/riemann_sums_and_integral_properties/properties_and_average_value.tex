@@ -1,0 +1,32 @@
+\subsection{Properties and average value}
+
+The definite integral respects addition and interval decomposition:
+\[
+\int_a^b (f+g)=\int_a^b f+\int_a^b g,
+\qquad
+\int_a^c f=\int_a^b f+\int_b^c f.
+\]
+Reversing the limits changes the sign:
+\[
+\int_b^a f(x)\,dx=-\int_a^b f(x)\,dx.
+\]
+
+\begin{definitionbox}[Average value of a function]
+For a continuous function on \([a,b]\), its average value is
+\[
+f_{\mathrm{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx.
+\]
+\end{definitionbox}
+
+\begin{examplebox}[Average height of a linear graph]
+For \(f(x)=x\) on \([0,2]\),
+\[
+f_{\mathrm{avg}}=\frac12\int_0^2 x\,dx
+=\frac12\left[\frac{x^2}{2}\right]_0^2=1.
+\]
+This agrees with the geometric average of the endpoint values \(0\) and \(2\).
+\end{examplebox}
+
+\begin{interpretationbox}[Average value as equal redistribution]
+The average value is the constant height that would produce the same total accumulated area over the interval.
+\end{interpretationbox}
