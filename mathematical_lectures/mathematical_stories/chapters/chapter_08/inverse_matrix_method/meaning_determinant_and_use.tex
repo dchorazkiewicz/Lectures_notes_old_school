@@ -1,0 +1,26 @@
+\subsection{Determinant Condition and When the Method Is Useful}
+
+The inverse method applies exactly when
+\[
+\det A\neq0.
+\]
+If $\det A=0$, no inverse exists. The system may then have no solution or infinitely many solutions, but it cannot be solved by multiplying by $A^{-1}$.
+
+\begin{examplebox}
+For
+\[
+\begin{cases}
+x+y=2,\\
+2x+2y=4,
+\end{cases}
+\]
+the coefficient determinant is zero, yet every point on $x+y=2$ is a solution. Failure of invertibility means loss of uniqueness, not automatic inconsistency.
+\end{examplebox}
+
+\begin{interpretationbox}[When inversion is efficient]
+The method is especially useful when $A^{-1}$ is already known, when several right-hand sides share the same coefficient matrix, or when the system is being studied explicitly as a matrix transformation. Direct elimination is often cheaper for a single routine system.
+\end{interpretationbox}
+
+\begin{summarybox}[Inverse method checklist]
+Write $Ax=b$, check that $A$ is square and invertible, multiply on the left by $A^{-1}$, and verify the resulting vector in the original equations.
+\end{summarybox}
