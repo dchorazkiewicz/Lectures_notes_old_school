@@ -1,0 +1,33 @@
+\subsection{Composition of functions}
+
+Functions can be applied in sequence. If \(g\) acts first and \(f\) acts second, the resulting function is
+\[
+(f\circ g)(x)=f(g(x)).
+\]
+The order is part of the definition.
+
+\begin{examplebox}[Two orders, two results]
+Let
+\[
+f(x)=x^2,
+\qquad
+g(x)=x+1.
+\]
+Then
+\[
+(f\circ g)(x)=(x+1)^2,
+\]
+whereas
+\[
+(g\circ f)(x)=x^2+1.
+\]
+These functions are different. At \(x=1\), the first gives \(4\), while the second gives \(2\).
+\end{examplebox}
+
+\begin{corebox}[Domain must be checked]
+For \(f(g(x))\) to be defined, the input \(x\) must belong to the domain of \(g\), and the output \(g(x)\) must belong to the domain of \(f\). Composition is therefore both an algebraic and a domain question.
+\end{corebox}
+
+\begin{interpretationbox}[A model as a chain]
+Composition describes multi-stage dependence: time may determine temperature, and temperature may determine length; position may determine density, and density may determine mass per unit length. The composed function records the whole chain.
+\end{interpretationbox}
