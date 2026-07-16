@@ -1,0 +1,28 @@
+\subsection{The Adjugate Inverse Formula}
+
+\begin{theorembox}[Adjugate identity]
+For every square matrix,
+\[
+A\operatorname{adj}(A)=(\det A)I.
+\]
+If $\det A\neq0$, then
+\[
+\boxed{A^{-1}=\frac1{\det A}\operatorname{adj}(A)}.
+\]
+\end{theorembox}
+
+\begin{derivationbox}[Why the formula gives an inverse]
+Starting from
+\[
+A\operatorname{adj}(A)=(\det A)I,
+\]
+divide by the nonzero scalar $\det A$:
+\[
+A\left(\frac1{\det A}\operatorname{adj}(A)\right)=I.
+\]
+The matrix in parentheses is therefore the inverse.
+\end{derivationbox}
+
+\begin{interpretationbox}[Determinants and cofactors build the inverse]
+The same smaller determinants used in Laplace expansion also assemble the matrix that reverses $A$. A zero determinant prevents the final division and signals non-invertibility.
+\end{interpretationbox}
