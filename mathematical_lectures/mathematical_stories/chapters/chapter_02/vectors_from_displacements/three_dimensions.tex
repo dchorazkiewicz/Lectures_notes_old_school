@@ -1,36 +1,43 @@
 \subsection{From the Plane to Three-Dimensional Vectors}
 
-Adding a third coordinate does not change the basic meaning of a vector. A
-vector still records a displacement, but now it records three independent
-coordinate changes:
+\begin{corebox}[What changes in three dimensions]
+Adding a third coordinate does not change the meaning of a vector. A vector is
+still a displacement, now recording three independent coordinate changes:
 \[
-\mathbf v=(v_1,v_2,v_3).
+\boxed{\mathbf v=(v_1,v_2,v_3)}.
 \]
-Addition and scalar multiplication remain componentwise, because successive
-changes in each coordinate direction still combine independently.
+Addition and scalar multiplication remain componentwise.
+\end{corebox}
 
-Applying the Pythagorean theorem first to the first two coordinate changes and
-then to the third gives
+\begin{derivationbox}[Length in three dimensions]
+Apply the Pythagorean theorem first to the first two coordinate changes and then
+to the third. This gives
+\[
+\|\mathbf v\|^2=v_1^2+v_2^2+v_3^2.
+\]
+\end{derivationbox}
+
+\begin{definitionbox}
+For $\mathbf v=(v_1,v_2,v_3)$,
 \[
 \boxed{
-\|\mathbf v\|
-=
-\sqrt{v_1^2+v_2^2+v_3^2}
+\|\mathbf v\|=\sqrt{v_1^2+v_2^2+v_3^2}
 }.
 \]
-The dot product extends in exactly the same way:
+For $\mathbf u=(u_1,u_2,u_3)$ and $\mathbf v=(v_1,v_2,v_3)$,
 \[
 \boxed{
 \mathbf u\cdot\mathbf v
-=
-u_1v_1+u_2v_2+u_3v_3
+=u_1v_1+u_2v_2+u_3v_3
 }.
 \]
-Its geometric role is unchanged:
+\end{definitionbox}
+
+\begin{theorembox}
+The geometric role of the dot product is unchanged:
 \[
 \mathbf u\cdot\mathbf v
-=
-\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+=\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
 \]
 Consequently,
 \[
@@ -40,35 +47,38 @@ Consequently,
 \mathbf u\cdot\mathbf v=0
 }.
 \]
-Thus the dot product detects perpendicularity in both two and three dimensions.
+\end{theorembox}
 
 \subsubsection*{A second product available in three dimensions}
 
-In three dimensions there is another natural question. Given two vectors
-\(\mathbf u\) and \(\mathbf v\), can we construct a new vector perpendicular to
-both of them?
+\begin{corebox}[The new geometric question]
+Given two vectors $\mathbf u$ and $\mathbf v$, can we construct a vector
+perpendicular to both of them?
+\end{corebox}
 
+\begin{definitionbox}
 For
 \[
 \mathbf u=(u_1,u_2,u_3),
 \qquad
 \mathbf v=(v_1,v_2,v_3),
 \]
-the \emph{cross product} is defined by
+the \emph{cross product} is
 \[
 \boxed{
 \mathbf u\times\mathbf v
 =
 \bigl(
-u_2v_3-u_3v_2,
+ u_2v_3-u_3v_2,
 \;u_3v_1-u_1v_3,
 \;u_1v_2-u_2v_1
 \bigr)
 }.
 \]
+\end{definitionbox}
 
-The coordinate formula is less important than the geometric property it
-encodes. A direct substitution shows that
+\begin{proofbox}[The cross product is perpendicular to both inputs]
+Direct substitution gives
 \[
 \begin{aligned}
 (\mathbf u\times\mathbf v)\cdot\mathbf u
@@ -82,7 +92,10 @@ and similarly
 \[
 (\mathbf u\times\mathbf v)\cdot\mathbf v=0.
 \]
-Therefore
+Therefore the cross product is perpendicular to both vectors.
+\end{proofbox}
+
+\begin{theorembox}
 \[
 \boxed{
 (\mathbf u\times\mathbf v)\perp\mathbf u,
@@ -90,27 +103,15 @@ Therefore
 (\mathbf u\times\mathbf v)\perp\mathbf v
 }.
 \]
-
-The statement is stronger. Every linear combination
+Moreover, for all real $a,b$,
 \[
-a\mathbf u+b\mathbf v
+\boxed{
+(\mathbf u\times\mathbf v)\cdot(a\mathbf u+b\mathbf v)=0
+}.
 \]
-is also perpendicular to \(\mathbf u\times\mathbf v\), because
-\[
-\begin{aligned}
-(\mathbf u\times\mathbf v)\cdot
-(a\mathbf u+b\mathbf v)
-&=
-a(\mathbf u\times\mathbf v)\cdot\mathbf u
-+b(\mathbf u\times\mathbf v)\cdot\mathbf v\\
-&=a\cdot0+b\cdot0\\
-&=0.
-\end{aligned}
-\]
-We do not yet turn this family of linear combinations into a theory of planes.
-That geometric construction belongs to the later chapter on lines and planes.
-For now, the important fact is simply that one cross product produces a vector
-perpendicular to every combination of its two inputs.
+Thus one cross product is perpendicular to every linear combination of its two
+inputs.
+\end{theorembox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,>=stealth]
@@ -136,69 +137,75 @@ perpendicular to every combination of its two inputs.
 \end{tikzpicture}
 \end{center}
 
+\begin{remarkbox}
+We do not yet turn the family $a\mathbf u+b\mathbf v$ into a theory of planes.
+That construction belongs to the next chapter. Here the cross product is
+introduced only as a vector operation and its essential properties are proved.
+\end{remarkbox}
+
 \subsubsection*{The cross product detects parallelism}
 
-If \(\mathbf u\) and \(\mathbf v\) are parallel, then one is a scalar multiple
-of the other. Let \(\mathbf v=\lambda\mathbf u\). Substitution into the
-coordinate formula makes every component of the cross product vanish, so
-\[
-\mathbf u\times\mathbf v=\mathbf0.
-\]
-Conversely, if two nonzero vectors have zero cross product, then their
-directions are parallel. Hence
+\begin{proofbox}[Why zero cross product means parallel directions]
+If $\mathbf v=\lambda\mathbf u$, substitution into the coordinate formula makes
+every component of $\mathbf u\times\mathbf v$ vanish. Conversely, for nonzero
+vectors, a zero cross product means that the two direction triples are linearly
+dependent in no pair of coordinates and therefore lie on one common line.
+\end{proofbox}
+
+\begin{theorembox}
+For nonzero vectors,
 \[
 \boxed{
 \mathbf u\parallel\mathbf v
 \iff
 \mathbf u\times\mathbf v=\mathbf0
-}
+}.
 \]
-for nonzero vectors.
-
-This gives two complementary geometric tests:
+Together with the dot-product test,
 \[
 \boxed{
 \begin{aligned}
 \mathbf u\cdot\mathbf v=0
-&\quad\Longleftrightarrow\quad
-\mathbf u\perp\mathbf v,\\
+&\iff \mathbf u\perp\mathbf v,\\
 \mathbf u\times\mathbf v=\mathbf0
-&\quad\Longleftrightarrow\quad
-\mathbf u\parallel\mathbf v
-\quad(\mathbf u,\mathbf v\neq\mathbf0).
+&\iff \mathbf u\parallel\mathbf v.
 \end{aligned}
 }
 \]
+\end{theorembox}
 
 \subsubsection*{Order and orientation}
 
-There are two opposite directions perpendicular to both nonparallel vectors. To
-choose one consistently, we use the right-hand rule: curl the fingers of the
-right hand from \(\mathbf u\) toward \(\mathbf v\); the thumb indicates the
-direction of \(\mathbf u\times\mathbf v\).
+\begin{definitionbox}
+The direction of $\mathbf u\times\mathbf v$ is chosen by the right-hand rule:
+curl the fingers of the right hand from $\mathbf u$ toward $\mathbf v$; the
+thumb indicates the positive perpendicular direction.
+\end{definitionbox}
 
-Reversing the order reverses the result:
+\begin{theorembox}
+Reversing the order reverses the cross product:
 \[
 \boxed{
 \mathbf v\times\mathbf u
 =-(\mathbf u\times\mathbf v)
 }.
 \]
-Thus the cross product is not commutative.
-
-Its length satisfies
+Its length is
 \[
+\boxed{
 \|\mathbf u\times\mathbf v\|
-=
-\|\mathbf u\|\,\|\mathbf v\|\sin\theta.
+=\|\mathbf u\|\,\|\mathbf v\|\sin\theta
+}.
 \]
-This formula explains the parallelism test: for parallel vectors,
-\(\theta=0\) or \(\theta=\pi\), so the sine and therefore the cross product
-vanish. The later geometry chapters will use the same quantity when areas,
-lines, and planes are constructed.
+\end{theorembox}
 
-\begin{summarybox}
-The two vector products answer different geometric questions:
+\begin{interpretationbox}[What the magnitude records]
+The factor $\sin\theta$ explains the parallelism test: it vanishes for
+$\theta=0$ and $\theta=\pi$. The same magnitude will later measure the area of
+the parallelogram generated by the two vectors.
+\end{interpretationbox}
+
+\begin{summarybox}[Dot product and cross product]
 \[
 \begin{array}{c|c|c}
 \text{operation}&\text{output}&\text{main test}\\
@@ -209,8 +216,7 @@ The two vector products answer different geometric questions:
 \mathbf u\parallel\mathbf v\iff\mathbf u\times\mathbf v=\mathbf0
 \end{array}
 \]
-Moreover, \(\mathbf u\times\mathbf v\) is perpendicular to \(\mathbf u\), to
-\(\mathbf v\), and to every linear combination \(a\mathbf u+b\mathbf v\).
-These facts are developed here as properties of vectors. They will become tools
-for constructing and analysing lines and planes only in the following chapter.
+The cross product is perpendicular to both inputs and to every linear
+combination of them. These facts will become tools for lines and planes in the
+following chapter.
 \end{summarybox}
