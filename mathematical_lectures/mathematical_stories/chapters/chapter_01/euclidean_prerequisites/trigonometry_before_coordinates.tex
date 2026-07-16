@@ -12,26 +12,21 @@ opposite $\alpha$.
     \coordinate (D) at (3.0,0);
     \coordinate (E) at (3.0,1.8125);
 
-    % Large right triangle
     \draw[subset] (A) -- (B) -- (C) -- cycle;
     \draw (B) ++(-0.3,0) -- ++(0,0.3) -- ++(0.3,0);
 
-    % Smaller similar triangle cut out by a parallel segment
     \draw[orange!85!black,line width=1pt] (D) -- (E);
     \draw (D) ++(-0.22,0) -- ++(0,0.22) -- ++(0.22,0);
     \draw[orange!85!black,->] (3.13,0.63) -- (3.13,1.03);
     \draw[orange!85!black,->] (4.93,1.05) -- (4.93,1.45);
 
-    % Common angle
     \draw (0.85,0) arc[start angle=0,end angle=31.1,radius=0.85];
     \node at (1.08,0.28) {$\alpha$};
 
-    % Side labels for the large triangle
     \node[below] at (3.9,0) {$a$};
     \node[right] at (4.8,2.05) {$b$};
     \node[above left] at (3.9,2.35) {$h$};
 
-    % Side labels for the smaller triangle
     \node[below] at (1.5,0) {$a'$};
     \node[left,orange!85!black] at (3.0,0.92) {$b'$};
     \node[above left] at (1.55,0.98) {$h'$};
@@ -49,32 +44,44 @@ opposite $\alpha$.
 \]
 \end{center}
 
-For an acute geometric angle $\alpha$, define
+\begin{proofbox}[Why the ratios depend only on the angle]
+All right triangles containing the same acute angle are similar. Corresponding
+side lengths therefore differ by one common scale factor, which cancels in the
+ratios $a/h$ and $b/h$. These ratios depend on the angle, not on the size of the
+triangle chosen to represent it.
+\end{proofbox}
+
+\begin{definitionbox}
+For an acute geometric angle $\alpha$,
 \[
+\boxed{
 \cos\alpha=\frac{a}{h},
 \qquad
-\sin\alpha=\frac{b}{h}.
+\sin\alpha=\frac{b}{h}
+}.
 \]
-These ratios are independent of the chosen right triangle because all right
-triangles containing the same acute angle are similar.
+\end{definitionbox}
 
-For angles occurring in an arbitrary Euclidean triangle, we also need the right
-and obtuse cases. We set
+\begin{definitionbox}
+For a right angle,
 \[
-\cos(\text{right angle})=0.
+\boxed{\cos\alpha=0}.
 \]
-If $\alpha$ is obtuse and $\beta$ is its acute supplement, so that together they
-form a straight angle, define
+If $\alpha$ is obtuse and $\beta$ is its acute supplement, define
 \[
-\cos\alpha=-\cos\beta.
+\boxed{\cos\alpha=-\cos\beta}.
 \]
-Thus the geometric cosine is defined for every angle between $0$ and a straight
-angle. For acute angles it is positive, for a right angle it is zero, and for
-obtuse angles it is negative.
+Thus cosine is positive for acute angles, zero for a right angle, and negative
+for obtuse angles.
+\end{definitionbox}
 
-The essential role of Thales' theorem and similarity is that these values depend
-only on the angle, not on the size of the triangle used to represent it.
+\begin{interpretationbox}[Trigonometry is geometric before it is coordinate-based]
+Sine and cosine are ratios determined by similarity. Their definitions do not
+require Cartesian axes or ordered pairs. Coordinates will later provide a new
+way to calculate and use these same geometric quantities.
+\end{interpretationbox}
 
+\begin{derivationbox}[The fundamental identity]
 For an acute angle, the Pythagorean theorem gives
 \[
 a^2+b^2=h^2.
@@ -82,11 +89,15 @@ a^2+b^2=h^2.
 Dividing by $h^2$ yields
 \[
 \left(\frac{a}{h}\right)^2+
-\left(\frac{b}{h}\right)^2=1,
+\left(\frac{b}{h}\right)^2=1.
 \]
-and hence
+Substituting the definitions of cosine and sine gives the identity below.
+\end{derivationbox}
+
+\begin{theorembox}
+For every angle in the geometric range considered here,
 \[
-\cos^2\alpha+\sin^2\alpha=1.
+\boxed{\cos^2\alpha+\sin^2\alpha=1}.
 \]
-Thus the fundamental trigonometric identity is a direct reformulation of the
-Pythagorean theorem.
+For acute angles this is a direct reformulation of the Pythagorean theorem.
+\end{theorembox}
