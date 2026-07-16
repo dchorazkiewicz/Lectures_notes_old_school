@@ -1,0 +1,26 @@
+\subsection{The Principle and Elementary Matrices}
+
+To find $A^{-1}$, place the identity beside $A$ and perform the same row operations on both blocks:
+\[
+[A\mid I]\longrightarrow[I\mid A^{-1}].
+\]
+
+\begin{definitionbox}
+An elementary matrix is obtained from an identity matrix by one elementary row operation. If $E$ represents that operation, then $EA$ applies it to $A$.
+\end{definitionbox}
+
+\begin{proofbox}[Why the right block becomes the inverse]
+If
+\[
+E_k\cdots E_2E_1A=I,
+\]
+then
+\[
+E_k\cdots E_2E_1=A^{-1}.
+\]
+Applying the same operations to the identity block constructs exactly this product of elementary matrices.
+\end{proofbox}
+
+\begin{corebox}[Gauss--Jordan goal]
+Create pivots, eliminate entries below and above them, and reduce the entire left block to the identity while preserving every operation on the right block.
+\end{corebox}
