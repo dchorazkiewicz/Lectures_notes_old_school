@@ -1,30 +1,122 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Explain a linear system as a collection of simultaneous conditions. What does it mean for an ordered pair to belong to the solution set?
+\item Solve by elimination:
+\[
+\begin{cases}
+x+y=7,\\
+2x-y=2.
+\end{cases}
+\]
+Write the augmented matrix and verify the solution in both equations.
 
-\item Interpret a $2\times2$ linear system geometrically. Describe the configurations corresponding to one solution, no solution, and infinitely many solutions.
+\item Solve by elimination:
+\[
+\begin{cases}
+3x+2y=4,\\
+5x-2y=12.
+\end{cases}
+\]
+Choose the elimination step so that no fractions appear before the final line.
 
-\item Write a given pair of linear equations in matrix form $Ax=b$ and as an augmented matrix. Explain what information belongs to each block.
+\item Classify and solve when possible:
+\[
+\begin{cases}
+x+2y=3,\\
+2x+4y=6.
+\end{cases}
+\]
+Write the solution set using one parameter.
 
-\item Solve one simple $2\times2$ system by Gaussian elimination. At every row operation, state why the new system has the same solution set as the previous one.
+\item Classify:
+\[
+\begin{cases}
+x-3y=2,\\
+2x-6y=7.
+\end{cases}
+\]
+Show the contradictory row produced by elimination.
 
-\item Explain the roles of pivots and echelon form. How do pivots identify independent conditions and determined variables?
+\item Solve
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1
+\end{cases}
+\]
+with Cramer's rule. Compute $\det A$, $\det A_x$, and $\det A_y$ separately.
 
-\item What algebraic pattern signals inconsistency? Give a $2\times2$ example and connect the contradictory row with the geometry of parallel lines.
+\item Solve
+\[
+\begin{cases}
+2x+y=5,\\
+x+y=3
+\end{cases}
+\]
+using the inverse-matrix method. Compute $A^{-1}$ first and verify the solution by substitution.
 
-\item How does a free variable arise in a dependent $2\times2$ system? Parameterise the solutions of one example and explain geometrically what the parameter measures.
-
-\item State Cramer's rule for a $2\times2$ system. Why must the coefficient determinant be nonzero, and why does the rule not classify singular systems by itself?
-
-\item Explain the inverse-matrix method $x=A^{-1}b$. Compare its meaning and practical role with Gaussian elimination and Cramer's rule.
-
-\item Classify the parameter-dependent system
+\item For the parameter $a$, classify
 \[
 \begin{cases}
 x+y=3,\\
-2x+ay=b.
+2x+ay=6.
 \end{cases}
 \]
-Identify the generic and exceptional parameter cases, and explain why determinant information must sometimes be followed by a compatibility check.
+Find all exceptional values and determine the solution type in every case.
+
+\item For the parameter $b$, classify
+\[
+\begin{cases}
+x-2y=1,\\
+3x-6y=b.
+\end{cases}
+\]
+State when the system has no solution and when it has infinitely many solutions.
+
+\item Find the intersection point of the lines
+\[
+y=2x-3,
+\qquad
+y=-x+6
+\]
+by solving the corresponding system. Plot both lines and mark the solution.
+
+\item Reduce
+\[
+\left[\begin{array}{cc|c}
+1&2&5\\
+3&6&15
+\end{array}\right]
+\]
+to echelon form, identify the pivot and free variable, and write the full solution set.
+\end{enumerate}
+
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Explain why a solution of a system must satisfy every equation simultaneously. How is this represented geometrically for two equations in two unknowns?
+
+\item Describe the geometric meaning of exactly one solution, no solution, and infinitely many solutions for two lines in the plane.
+
+\item Explain why elementary row operations preserve the solution set. Relate each operation to an equivalent transformation of the equations.
+
+\item A row
+\[
+[\,0\quad0\mid5\,]
+\]
+appears during elimination. Explain why it proves inconsistency. What different information is carried by the row $[\,0\quad0\mid0\,]$?
+
+\item Explain why a missing pivot produces a free variable and infinitely many solutions when no contradiction is present.
+
+\item Compare Gaussian elimination, Cramer's rule, and the inverse-matrix method. Which method is the main classification tool, and under what condition do the other two apply?
+
+\item Explain why $\det A\neq0$ guarantees one solution for every right-hand side, while $\det A=0$ does not by itself distinguish no solution from infinitely many solutions.
+
+\item In a parameter-dependent system, why must values that make a proposed divisor zero be separated before division? Give a simple example.
+
+\item Two equations have proportional left-hand sides. Explain how the right-hand sides determine whether the corresponding lines coincide or are distinct and parallel.
+
+\item Give a complete strategy for a $2\times2$ system: translate it into matrix form, choose a method, classify the result, and interpret the solution set geometrically.
 \end{enumerate}
