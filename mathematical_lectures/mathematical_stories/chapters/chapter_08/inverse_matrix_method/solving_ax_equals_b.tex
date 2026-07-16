@@ -1,0 +1,22 @@
+\subsection{Solving $Ax=b$ by Reversing the Coefficient Matrix}
+
+If $A$ is invertible, multiply
+\[
+Ax=b
+\]
+on the left by $A^{-1}$:
+\[
+A^{-1}Ax=A^{-1}b.
+\]
+Therefore
+\[
+\boxed{x=A^{-1}b}.
+\]
+
+\begin{theorembox}[Unique solution from an inverse]
+If $A$ is an invertible square matrix, then $Ax=b$ has the unique solution $x=A^{-1}b$.
+\end{theorembox}
+
+\begin{interpretationbox}[Undoing the coefficient action]
+The matrix $A$ transforms the unknown vector into $b$. Applying the inverse to $b$ reconstructs the original input vector.
+\end{interpretationbox}
