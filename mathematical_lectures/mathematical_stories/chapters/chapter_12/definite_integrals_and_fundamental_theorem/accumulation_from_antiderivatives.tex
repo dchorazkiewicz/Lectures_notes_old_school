@@ -1,15 +1,35 @@
-\subsection{Computing accumulated change}
+\subsection{The bridge between accumulation and antiderivatives}
+
+Suppose
+\[
+A(x)=\int_a^x f(t)\,dt.
+\]
+Increasing $x$ by a small amount $h$ adds approximately a thin contribution of width $h$ and height $f(x)$. Thus
+\[
+A(x+h)-A(x)\approx f(x)h,
+\]
+so the quotient
+\[
+\frac{A(x+h)-A(x)}{h}
+\]
+should approach $f(x)$. Accumulation therefore creates a function whose derivative recovers the local rate.
 
 \begin{theorembox}[Fundamental theorem of calculus]
-If $F'(x)=f(x)$ on an interval, then
+If $f$ is continuous and
+\[
+A(x)=\int_a^x f(t)\,dt,
+\]
+then $A'(x)=f(x)$. Consequently, if $F'(x)=f(x)$ on an interval, then
 \[
 \int_a^b f(x)\,dx=F(b)-F(a).
 \]
 \end{theorembox}
 
-\begin{interpretationbox}[Why the theorem is fundamental]
-Local change and total change are inverse viewpoints. The derivative describes the rate at each point, while the definite integral accumulates that rate across an interval.
-\end{interpretationbox}
+\begin{remarkbox}[Proof status]
+The thin-strip argument explains the mechanism of the theorem. A complete proof requires estimates controlling the error in the approximation and is not developed in full here.
+\end{remarkbox}
+
+This is why the theorem is fundamental: a total defined by a limit of sums can be computed using a function whose derivative is the local contribution.
 
 \begin{examplebox}[Area under a simple graph]
 For $f(x)=x$ on $[0,2]$,
@@ -26,6 +46,4 @@ This agrees with the area of a triangle of base $2$ and height $2$.
 The positive and negative contributions cancel. The integral is signed area, not total geometric area.
 \end{examplebox}
 
-\begin{remarkbox}
 For a non-negative integrand, the definite integral is non-negative. This simple sign check is often enough to detect an incorrect calculation.
-\end{remarkbox}
