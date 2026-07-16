@@ -1,0 +1,41 @@
+\subsection{Undoing differentiation and measuring total change}
+
+\begin{corebox}[Two connected meanings]
+An indefinite integral asks for antiderivatives. A definite integral measures accumulated signed change over an interval. The fundamental theorem will connect these two meanings.
+\end{corebox}
+
+\begin{definitionbox}[Antiderivative]
+A function $F$ is an antiderivative of $f$ when
+\[
+F'(x)=f(x).
+\]
+We write
+\[
+\int f(x)\,dx=F(x)+C.
+\]
+\end{definitionbox}
+
+The constant $C$ is necessary because differentiation removes additive constants.
+
+\begin{definitionbox}[Definite integral]
+The expression
+\[
+\int_a^b f(x)\,dx
+\]
+represents accumulated signed contribution of $f$ from $a$ to $b$.
+\end{definitionbox}
+
+\begin{examplebox}[The same integrand, two questions]
+\[
+\int 2x\,dx=x^2+C,
+\]
+while
+\[
+\int_0^3 2x\,dx=9.
+\]
+The first answer is a family of functions; the second is a number.
+\end{examplebox}
+
+\begin{interpretationbox}[Accumulation from small pieces]
+The integral combines many small contributions. For a non-negative function this can be seen as area; for a rate it represents total change.
+\end{interpretationbox}
