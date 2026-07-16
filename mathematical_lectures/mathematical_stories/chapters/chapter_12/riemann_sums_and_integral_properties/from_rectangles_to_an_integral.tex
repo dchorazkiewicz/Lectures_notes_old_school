@@ -1,0 +1,33 @@
+\subsection{From rectangles to an integral}
+
+A definite integral can be approached through finite sums. Divide \([a,b]\) into subintervals of width \(\Delta x\), choose a sample point \(x_i^*\) in each subinterval, and form
+\[
+\sum_{i=1}^{n} f(x_i^*)\Delta x.
+\]
+Each term is the area of a thin rectangle when \(f\ge0\), or a signed contribution when \(f\) may be negative.
+
+\begin{definitionbox}[Riemann-sum idea]
+The definite integral
+\[
+\int_a^b f(x)\,dx
+\]
+is the limiting value of such sums as the partition becomes finer, provided the limit exists.
+\end{definitionbox}
+
+\begin{examplebox}[A simple right-endpoint sum]
+For \(f(x)=x\) on \([0,1]\), divide the interval into \(n\) equal parts. With right endpoints \(x_i=i/n\),
+\[
+\sum_{i=1}^{n} f(x_i)\frac1n
+=\frac1{n^2}\sum_{i=1}^{n}i
+=\frac{n(n+1)}{2n^2}
+=\frac{n+1}{2n}.
+\]
+As \(n\to\infty\), this tends to \(1/2\). Hence
+\[
+\int_0^1 x\,dx=\frac12.
+\]
+\end{examplebox}
+
+\begin{interpretationbox}[Accumulation from local pieces]
+The integral is not introduced merely as an antiderivative evaluated at endpoints. It represents a total built from many small contributions. The fundamental theorem later connects this accumulation viewpoint with antidifferentiation.
+\end{interpretationbox}
