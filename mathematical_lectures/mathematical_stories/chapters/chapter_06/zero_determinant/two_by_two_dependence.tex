@@ -1,0 +1,32 @@
+\subsection{The $2\times2$ Case}
+
+Let
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\]
+Then
+\[
+\det A=0\iff ad=bc.
+\]
+
+\begin{proofbox}[Zero determinant and proportional rows]
+Assume first that the first row is nonzero. If $a\neq0$, then
+\[
+d=\frac{bc}{a},
+\qquad
+(c,d)=\frac ca(a,b).
+\]
+If $a=0$, then $b\neq0$ and $ad=bc$ gives $c=0$, so
+\[
+(c,d)=\frac db(0,b).
+\]
+If the first row is zero, the relation is immediate.
+\end{proofbox}
+
+\begin{theorembox}[Dependence criterion in dimension two]
+For a $2\times2$ matrix,
+\[
+\det A=0
+\]
+if and only if its rows are proportional. The same statement holds for its columns.
+\end{theorembox}
