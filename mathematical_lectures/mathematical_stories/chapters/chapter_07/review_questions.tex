@@ -7,26 +7,26 @@
 \[
 A=\begin{pmatrix}2&1\\3&2\end{pmatrix}
 \]
-is invertible. If it is, compute $A^{-1}$ with the $2\times2$ formula and verify both products $AA^{-1}$ and $A^{-1}A$.
+is invertible. If so, compute $A^{-1}$ with the $2\times2$ formula and verify both products.
 
 \item Compute the inverse of
 \[
 A=\begin{pmatrix}1&3\\2&5\end{pmatrix}
 \]
-by Gauss--Jordan elimination, starting from $[A\mid I]$ and recording every row operation.
+by Gauss--Jordan elimination, recording every row operation.
 
-\item Compute the inverse of the diagonal matrix
+\item Compute the inverse of
 \[
-D=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&5\end{pmatrix}.
+D=\begin{pmatrix}2&0\\0&-4\end{pmatrix}
 \]
-Verify the result by multiplication.
+and explain the visible coordinate action that is being reversed.
 
-\item Decide which matrices are invertible and compute the inverses when they exist:
+\item Decide which matrices are invertible and compute the inverse when it exists:
 \[
 A=\begin{pmatrix}1&2\\2&4\end{pmatrix},
-\qquad
+\quad
 B=\begin{pmatrix}0&1\\1&0\end{pmatrix},
-\qquad
+\quad
 C=\begin{pmatrix}3&0\\0&1\end{pmatrix}.
 \]
 
@@ -36,34 +36,22 @@ A=\begin{pmatrix}2&-1\\1&1\end{pmatrix},
 \qquad
 b=\begin{pmatrix}5\\1\end{pmatrix},
 \]
-compute $A^{-1}$ and then solve $Ax=b$ using $x=A^{-1}b$.
+compute $A^{-1}$ and solve $Ax=b$.
 
-\item Solve the matrix equation
-\[
-AX=B
-\]
-for
+\item Solve $AX=B$ for
 \[
 A=\begin{pmatrix}1&1\\0&2\end{pmatrix},
 \qquad
 B=\begin{pmatrix}3&1\\4&2\end{pmatrix}.
 \]
 
-\item Solve
-\[
-XA=B
-\]
-for the same matrices $A$ and $B$. Compare the answer with the previous exercise.
+\item Solve $XA=B$ for the same matrices and compare the multiplication order with the previous exercise.
 
 \item For
 \[
 A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
 \]
-write its cofactor matrix, its adjugate, and the expression
-\[
-\frac1{\det A}\operatorname{adj}(A).
-\]
-Then specialise the formula to $A=\begin{pmatrix}2&3\\1&4\end{pmatrix}$.
+write the cofactor matrix, the adjugate, and the inverse formula. Specialise to $A=\begin{pmatrix}2&3\\1&4\end{pmatrix}$.
 
 \item Let
 \[
@@ -71,50 +59,83 @@ A=\begin{pmatrix}1&2\\0&1\end{pmatrix},
 \qquad
 B=\begin{pmatrix}2&0\\1&1\end{pmatrix}.
 \]
-Compute $A^{-1}$, $B^{-1}$, $(AB)^{-1}$, and $B^{-1}A^{-1}$. Verify that the last two matrices agree.
+Compute $A^{-1}$, $B^{-1}$, $(AB)^{-1}$, and $B^{-1}A^{-1}$.
 
-\item During Gauss--Jordan elimination the left block becomes
+\item During Gauss--Jordan elimination the left block reduces to
 \[
-\begin{pmatrix}1&0\\0&0\end{pmatrix}
+\begin{pmatrix}1&0\\0&0\end{pmatrix}.
 \]
-instead of the identity. Explain what this means computationally, and confirm the conclusion by computing the determinant of the original matrix
-\[
-A=\begin{pmatrix}1&2\\2&4\end{pmatrix}.
-\]
+Explain the computational conclusion and confirm it for $A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$ using the determinant.
 \end{enumerate}
 
-\subsection{Conceptual and reasoning exercises}
+\subsection{Development and reasoning exercises}
 
 \begin{enumerate}
-\item Explain the meaning of an inverse matrix as a reversal of an action. Why are both equations $AA^{-1}=I$ and $A^{-1}A=I$ important?
+\item Invert
+\[
+A=\begin{pmatrix}
+1&1&0\\
+0&1&1\\
+1&0&1
+\end{pmatrix}
+\]
+by Gauss--Jordan elimination. Before every major step, state the pivot goal; after the calculation, verify one product $AA^{-1}$.
 
-\item Show why a zero determinant prevents invertibility. Your explanation should connect determinant, loss of information, and failure of unique reversal.
+\item Invert the triangular matrix
+\[
+T=\begin{pmatrix}
+1&2&0\\
+0&1&3\\
+0&0&2
+\end{pmatrix}
+\]
+by Gauss--Jordan elimination. Explain how the zero pattern reduces the work without changing the method.
 
-\item Explain why the Gauss--Jordan construction
+\item Apply Gauss--Jordan elimination to
+\[
+S=\begin{pmatrix}
+1&2&3\\
+2&4&6\\
+0&1&1
+\end{pmatrix}.
+\]
+Show where a required pivot fails, identify the row relation, and connect the failure with $\det S=0$.
+
+\item For
+\[
+A=\begin{pmatrix}
+2&0&0\\
+0&-1&0\\
+0&0&4
+\end{pmatrix},
+\]
+find the inverse directly from structure and again by Gauss--Jordan. Compare the two approaches and explain why structural inspection should come first.
+
+\item Compute the inverse of
+\[
+A=\begin{pmatrix}2&1\\1&1\end{pmatrix}
+\]
+with both the formula and Gauss--Jordan. Match the corresponding steps and explain what each method makes most visible.
+
+\item Prove that the Gauss--Jordan construction
 \[
 [A\mid I]\longrightarrow[I\mid A^{-1}]
 \]
-works. Use elementary matrices or reversible row operations in your argument.
+works by interpreting row operations as multiplication by elementary matrices. Use a concrete $2\times2$ example inside the argument.
 
-\item Why does increasing the dimension of a matrix make Gauss--Jordan longer but not conceptually different? Identify the steps that remain unchanged.
-
-\item Compare the $2\times2$ inverse formula with Gauss--Jordan elimination. What idea does each method reveal most clearly?
-
-\item Explain the structural content of
+\item Explain structurally why
 \[
 A\operatorname{adj}(A)=(\det A)I.
 \]
-Why do cofactors produce diagonal entries equal to $\det A$ and off-diagonal entries equal to zero?
+Verify the identity for one $2\times2$ matrix and state why the adjugate method is conceptually useful even when it is not efficient.
 
-\item The adjugate method is usually inefficient for large matrices. Explain why it is still conceptually valuable in this course.
-
-\item A student solves $AX=B$ by writing $X=BA^{-1}$. Explain the error and state the correct multiplication order. Then discuss why the order changes for $XA=B$.
-
-\item Prove that if $A$ and $B$ are invertible, then
+\item Prove
 \[
-(AB)^{-1}=B^{-1}A^{-1}.
+(AB)^{-1}=B^{-1}A^{-1}
 \]
-Explain why the order must reverse.
+and illustrate the reversed order using two simple geometric actions, such as a scaling and a coordinate swap.
 
-\item Give a coherent decision procedure for an inversion problem: how to test existence, which method to choose, how to verify the result, and how to interpret a failure.
+\item A student writes $AX=B\Rightarrow X=BA^{-1}$. Diagnose the error, solve one numerical equation $AX=B$, and explain why the correct side of multiplication follows from the order of actions.
+
+\item Give a complete inversion strategy: inspect structure, test existence, choose between a direct formula and Gauss--Jordan, perform and record reversible steps, verify the answer, and interpret a failure. Apply the strategy briefly to one matrix of your choice.
 \end{enumerate}
