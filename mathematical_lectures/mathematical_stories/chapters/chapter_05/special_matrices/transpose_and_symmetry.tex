@@ -1,0 +1,42 @@
+\subsection{Transpose and Symmetry}
+
+\begin{definitionbox}[Transpose]
+For $A=(a_{ij})\in\mathbb R^{m\times n}$, the transpose is the
+$n\times m$ matrix
+\[
+A^{\mathsf T}=(a_{ji}).
+\]
+Rows of $A$ become columns of $A^{\mathsf T}$, and columns become rows.
+\end{definitionbox}
+
+\begin{examplebox}[Transposing a rectangular matrix]
+\[
+\begin{pmatrix}
+1&2&3\\
+4&5&6
+\end{pmatrix}^{\mathsf T}
+=
+\begin{pmatrix}
+1&4\\
+2&5\\
+3&6
+\end{pmatrix}.
+\]
+The original matrix has size $2\times3$, while its transpose has size
+$3\times2$.
+\end{examplebox}
+
+\begin{definitionbox}[Symmetric matrix]
+A square matrix is symmetric when
+\[
+A^{\mathsf T}=A.
+\]
+Equivalently, its entries satisfy $a_{ij}=a_{ji}$, so the matrix is mirrored
+across the main diagonal.
+\end{definitionbox}
+
+\begin{interpretationbox}[What symmetry makes visible]
+In a symmetric matrix, information recorded in position $(i,j)$ agrees with the
+information in position $(j,i)$. The pattern can therefore be recognised before
+any calculation is performed.
+\end{interpretationbox}
