@@ -26,6 +26,48 @@ h(x)=\sin x,
 the values repeat every $2\pi$. The function oscillates between $-1$ and $1$.
 \end{examplebox}
 
+\begin{center}
+\begin{tikzpicture}[x=0.72cm,y=0.55cm,>=Latex]
+  % Quadratic function
+  \begin{scope}
+    \draw[->] (-2.8,0) -- (2.8,0) node[right] {$x$};
+    \draw[->] (0,-4.6) -- (0,3.2) node[above] {$y$};
+    \draw[thick,blue,domain=-2.65:2.65,samples=80]
+      plot (\x,{\x*\x-4});
+    \fill (-2,0) circle (2pt) node[above left] {$-2$};
+    \fill (2,0) circle (2pt) node[above right] {$2$};
+    \node[below] at (0,-4.6) {$f(x)=x^2-4$};
+  \end{scope}
+
+  % Exponential function
+  \begin{scope}[xshift=5.3cm]
+    \draw[->] (-2.4,0) -- (2.1,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4.8) node[above] {$y$};
+    \draw[thick,teal!80!black,domain=-2.2:1.5,samples=80]
+      plot (\x,{exp(\x)});
+    \fill (0,1) circle (2pt) node[left] {$1$};
+    \node[below] at (0,-0.5) {$g(x)=e^x$};
+  \end{scope}
+
+  % Sine function
+  \begin{scope}[xshift=10.4cm]
+    \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,-1.6) -- (0,1.7) node[above] {$y$};
+    \draw[thick,red!75!black,domain=-3.3:3.3,samples=100]
+      plot (\x,{sin(\x r)});
+    \draw[dashed] (-3.3,1) -- (3.3,1);
+    \draw[dashed] (-3.3,-1) -- (3.3,-1);
+    \node[left] at (0,1) {$1$};
+    \node[left] at (0,-1) {$-1$};
+    \node[below] at (0,-1.6) {$h(x)=\sin x$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Three graphs, three kinds of behavior]
+The parabola is organized by its zeros and sign, the exponential by positivity and persistent growth, and the sine function by bounded oscillation and repetition. These visible differences motivate the later questions of limits, derivatives, and integrals.
+\end{interpretationbox}
+
 \begin{corebox}[Questions before calculus]
 For an elementary function ask about its domain, values, zeros, sign, symmetry, and visible long-term behavior. Calculus will later make statements about change and limits precise.
 \end{corebox}
