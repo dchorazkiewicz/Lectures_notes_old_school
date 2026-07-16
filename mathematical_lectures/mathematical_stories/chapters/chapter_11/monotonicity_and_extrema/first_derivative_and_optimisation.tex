@@ -1,10 +1,18 @@
 \subsection{Reading change and solving elementary optimisation problems}
 
-\begin{theorembox}[Sign of the derivative]
-On an interval, $f'(x)>0$ indicates that $f$ is increasing, while $f'(x)<0$ indicates that $f$ is decreasing.
+\begin{theorembox}[Derivative sign and monotonicity]
+Let $f$ be continuous on an interval and differentiable in its interior. If $f'(x)>0$ throughout the interior, then $f$ is increasing. If $f'(x)<0$ throughout the interior, then $f$ is decreasing.
 \end{theorembox}
 
-A critical point occurs where $f'(x)=0$ or where the derivative does not exist. A change from positive to negative derivative gives a local maximum; a change from negative to positive gives a local minimum.
+\begin{interpretationbox}[Why local slopes control an interval]
+For two points $a<b$, the mean value theorem gives a point $c\in(a,b)$ such that
+\[
+\frac{f(b)-f(a)}{b-a}=f'(c).
+\]
+If every derivative value is positive, then the secant slope is positive and therefore $f(b)>f(a)$. This is the bridge from local derivative information to global monotonicity. The full proof of the mean value theorem is not developed here.
+\end{interpretationbox}
+
+A critical point occurs where $f'(x)=0$ or where the derivative does not exist. A critical point is only a candidate. A change from positive to negative derivative gives a local maximum; a change from negative to positive gives a local minimum.
 
 \begin{examplebox}[Reading a cubic]
 For
@@ -30,9 +38,7 @@ Then
 \[
 A'(x)=10-2x,
 \]
-so the only interior critical point is $x=5$. The rectangle of maximum area is therefore a $5\times5$ square.
+so the only interior critical point is $x=5$. The endpoint areas are zero, while $A(5)=25$. Therefore the maximum occurs for a $5\times5$ square.
 \end{examplebox}
 
-\begin{interpretationbox}[The derivative serves the model]
-The derivative calculation is short. The substantive work is identifying the correct function, its restrictions, and the meaning of the critical point.
-\end{interpretationbox}
+The derivative calculation is short. The substantive work is identifying the correct function, its restrictions, the relevant candidates, and the meaning of the result.
