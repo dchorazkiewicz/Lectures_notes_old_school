@@ -13,7 +13,8 @@ Thus these three vectors determine a triangle with side lengths
 \qquad
 \|\mathbf u-\mathbf v\|.
 \]
-We calculate the square of the third side:
+
+\begin{derivationbox}[Expanding the third side]
 \[
 \begin{aligned}
 \|\mathbf u-\mathbf v\|^2
@@ -22,12 +23,9 @@ We calculate the square of the third side:
 -\mathbf u\cdot\mathbf v
 -\mathbf v\cdot\mathbf u
 +\mathbf v\cdot\mathbf v\\
-&=\|\mathbf u\|^2+
-\|\mathbf v\|^2-
-2\mathbf u\cdot\mathbf v\\
-&=\|\mathbf u\|^2+
-\|\mathbf v\|^2-
-2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
+&=\|\mathbf u\|^2+\|\mathbf v\|^2-2\mathbf u\cdot\mathbf v\\
+&=\|\mathbf u\|^2+\|\mathbf v\|^2
+-2\|\mathbf u\|\,\|\mathbf v\|\cos\theta.
 \end{aligned}
 \]
 If
@@ -38,21 +36,22 @@ b=\|\mathbf v\|,
 \qquad
 c=\|\mathbf u-\mathbf v\|,
 \]
-then
-\[
-\boxed{c^2=a^2+b^2-2ab\cos\theta}.
-\]
+then the familiar triangle formula follows.
+\end{derivationbox}
 
 \begin{theorembox}
 For a triangle with side lengths $a$, $b$, and $c$, where $\theta$ is the angle
 between the sides of lengths $a$ and $b$,
 \[
-c^2=a^2+b^2-2ab\cos\theta.
+\boxed{c^2=a^2+b^2-2ab\cos\theta}.
 \]
 \end{theorembox}
 
-The cosine theorem is not inserted as an external formula. It is the coordinate
-expansion of the displacement between the endpoints of two arbitrary vectors.
+\begin{interpretationbox}[Why the theorem appears here]
+The cosine theorem is not inserted as an external formula. It is the expansion
+of the squared displacement between the endpoints of two arbitrary vectors.
+The triangle law is therefore encoded in vector subtraction and the dot product.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
