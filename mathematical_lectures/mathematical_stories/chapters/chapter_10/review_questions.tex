@@ -1,33 +1,127 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item State the $\varepsilon$--$N$ definition of convergence of a sequence and explain the roles of $\varepsilon$, $N$, and the tail of the sequence.
-
-\item Prove directly from the definition that $1/n\to0$. Which choice of $N$ is sufficient for a prescribed $\varepsilon>0$?
-
-\item Explain the difference between a convergent sequence and a Cauchy sequence. Why does the reverse implication from Cauchy to convergence depend on completeness of $\mathbb R$?
-
-\item State the monotone convergence theorem. Explain why monotonicity and boundedness work together, and give examples showing that either property alone is insufficient.
-
-\item State the $\varepsilon$--$\delta$ definition of
+\item Compute the first six terms and determine the limit of each sequence:
 \[
-\lim_{x\to a}f(x)=L.
+a_n=\frac1n,
+\qquad
+b_n=2-\frac1n,
+\qquad
+c_n=\left(\frac12\right)^n.
 \]
-Use the diagrammatic language of the input interval and output band, and explain why $x=a$ is excluded.
+State whether each sequence is increasing or decreasing and whether it is bounded.
 
-\item State Heine's theorem. Explain why one approaching sequence can disprove a proposed limit but cannot by itself prove the existence of the limit.
+\item For the sequence
+\[
+a_n=\frac1n,
+\]
+find an integer $N$ such that
+\[
+n\ge N\quad\Longrightarrow\quad |a_n|<0.01.
+\]
+Then give a formula for a suitable $N$ for an arbitrary $\varepsilon>0$.
 
-\item Compare the ordinary limit definition, Heine's theorem, and the Cauchy criterion for a function limit. What quantities are compared in each formulation?
+\item Compute
+\[
+\lim_{n\to\infty}\frac{3n+1}{n+4},
+\qquad
+\lim_{n\to\infty}\frac{2n^2-n}{5n^2+3},
+\qquad
+\lim_{n\to\infty}\frac{4}{n^2+1}.
+\]
 
-\item Determine the following elementary limits and explain the method chosen in each case:
-\begin{enumerate}
-\item a limit evaluated by direct substitution;
-\item a removable $0/0$ form resolved by factorisation;
-\item a radical limit resolved with a conjugate;
-\item a rational-function limit at infinity using dominant powers.
+\item Let
+\[
+a_n=1-\frac1{2^n}.
+\]
+Show directly that it is increasing and bounded above by $1$, and calculate its limit.
+
+\item For $f(x)=2x+1$, $a=3$, and $L=7$, find a value of $\delta$ in terms of $\varepsilon$ such that
+\[
+0<|x-3|<\delta
+\quad\Longrightarrow\quad
+|f(x)-7|<\varepsilon.
+\]
+
+\item Let
+\[
+x_n=3+\frac{(-1)^n}{n}.
+\]
+Compute $f(x_n)$ for $f(x)=2x+1$ and determine its limit. Use the calculation to illustrate Heine's theorem at $a=3$.
+
+\item Compute the limits by factoring and cancellation:
+\[
+\lim_{x\to4}\frac{x^2-2x-8}{x^2-9x+20},
+\qquad
+\lim_{x\to2}\frac{x^2-4}{x-2}.
+\]
+State which original expressions are undefined at the limiting point.
+
+\item Compute
+\[
+\lim_{x\to0}\frac{\sqrt{1+x}-1}{x}
+\]
+using the conjugate. Then compute
+\[
+\lim_{x\to0}\frac{\sin x}{x}
+\]
+using the standard limit from the chapter.
+
+\item For
+\[
+f(x)=
+\begin{cases}
+x+1,&x<0,\\
+2-x,&x>0,
+\end{cases}
+\]
+compute the left-hand and right-hand limits at $0$. Decide whether the two-sided limit exists and whether any value assigned to $f(0)$ could make the function continuous.
+
+\item Determine the horizontal or vertical asymptotes suggested by the following limits:
+\[
+f(x)=\frac{3x^2+x}{x^2+4},
+\qquad
+g(x)=\frac1{x-2}.
+\]
+Compute the relevant one-sided and infinite limits. Then use the intermediate value theorem to show that
+\[
+h(x)=x^3-x-1
+\]
+has a zero in $(1,2)$.
 \end{enumerate}
 
-\item Explain the difference among a two-sided limit, one-sided limits, and an infinite limit. How are vertical and horizontal asymptotes expressed as limit statements?
+\subsection{Conceptual and reasoning exercises}
 
-\item Define continuity at a point and classify removable, jump, and infinite discontinuities. Then state the intermediate value theorem and explain what it proves about roots without actually finding them.
+\begin{enumerate}
+\item Explain the meaning of the definition
+\[
+a_n\to L.
+\]
+What is controlled by $\varepsilon$, what is controlled by $N$, and why only the tail of the sequence matters?
+
+\item Compare the ordinary definition of sequence convergence with the Cauchy criterion. Why does the Cauchy condition avoid naming the candidate limit?
+
+\item Explain why the implication ``convergent sequence $\Rightarrow$ Cauchy sequence'' follows from the triangle inequality. What deeper property of $\mathbb R$ is used in the reverse implication?
+
+\item Explain why monotonicity alone and boundedness alone do not guarantee convergence, but their combination does for real sequences.
+
+\item Interpret the $\varepsilon$--$\delta$ definition of a function limit using the vertical input strip and horizontal output band. Why is $x=a$ excluded?
+
+\item State Heine's theorem in words. Explain why a function limit requires every admissible sequence approaching $a$ to produce the same output limit.
+
+\item Why can one carefully chosen sequence disprove a proposed function limit, while one sequence cannot prove the limit? Give a concrete example.
+
+\item Distinguish
+\[
+f(a)
+\qquad\text{from}\qquad
+\lim_{x\to a}f(x).
+\]
+Explain why changing a single value $f(a)$ does not change the nearby limit.
+
+\item Explain how one-sided limits diagnose jump discontinuities and vertical asymptotes. Why must the left-hand and right-hand limits agree for a finite two-sided limit to exist?
+
+\item The intermediate value theorem proves existence without giving a formula for a solution. Explain why continuity is the essential hypothesis and why the theorem does not guarantee uniqueness.
 \end{enumerate}
