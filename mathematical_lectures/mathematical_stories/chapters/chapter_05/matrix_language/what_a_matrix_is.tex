@@ -1,0 +1,71 @@
+\subsection{What a Matrix Is}
+
+A matrix is a rectangular arrangement of mathematical objects, usually numbers.
+That description is correct, but incomplete. A matrix may organise data, record
+coefficients of equations, describe relations between quantities, or encode a rule
+that transforms one vector into another. The same array can therefore play
+very different roles in different problems.
+
+\begin{definitionbox}[Matrix and its size]
+A matrix with $m$ rows and $n$ columns is called an $m\times n$ matrix. It has
+the form
+\[
+A=
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}.
+\]
+The entry $a_{ij}$ lies in row $i$ and column $j$.
+\end{definitionbox}
+
+\begin{interpretationbox}[How to read the indices]
+The first index identifies the row and the second identifies the column. Thus
+$a_{ij}$ is found by moving first to row $i$ and then to column $j$. This order
+will matter later when matrices are multiplied and when systems of equations are
+encoded.
+\end{interpretationbox}
+
+\begin{examplebox}[Reading a matrix before calculating]
+Consider
+\[
+M=
+\begin{pmatrix}
+4 & -2 & 0\\
+7 & 1 & 5
+\end{pmatrix}.
+\]
+The matrix has two rows and three columns, so it is a $2\times3$ matrix. Its
+entries include
+\[
+m_{11}=4,
+\qquad
+m_{12}=-2,
+\qquad
+m_{23}=5.
+\]
+No operation has been performed. We have only identified the shape and read the
+positions correctly.
+\end{examplebox}
+
+\begin{definitionbox}[Square matrix]
+A matrix is square when it has the same number of rows and columns. An
+$n\times n$ matrix is called a square matrix of order $n$.
+\end{definitionbox}
+
+\begin{interpretationbox}[Shape is part of the mathematical meaning]
+A row matrix, a column matrix, a square matrix, and a rectangular matrix may
+contain similar entries but need not represent the same kind of object. A column
+matrix may represent a vector, a square matrix may represent a transformation
+from a space to itself, and a rectangular matrix may relate collections of
+different sizes.
+\end{interpretationbox}
+
+\begin{summarybox}[Reading a matrix]
+Before calculating, determine the number of rows and columns, identify the role
+of the entries, and decide what the rows and columns represent. A matrix is not
+understood merely by seeing its numbers; it is understood by reading its
+structure.
+\end{summarybox}
