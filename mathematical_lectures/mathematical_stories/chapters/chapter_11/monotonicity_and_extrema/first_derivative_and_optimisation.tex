@@ -1,0 +1,38 @@
+\subsection{Reading change and solving elementary optimisation problems}
+
+\begin{theorembox}[Sign of the derivative]
+On an interval, $f'(x)>0$ indicates that $f$ is increasing, while $f'(x)<0$ indicates that $f$ is decreasing.
+\end{theorembox}
+
+A critical point occurs where $f'(x)=0$ or where the derivative does not exist. A change from positive to negative derivative gives a local maximum; a change from negative to positive gives a local minimum.
+
+\begin{examplebox}[Reading a cubic]
+For
+\[
+f(x)=x^3-3x,
+\qquad
+f'(x)=3(x-1)(x+1).
+\]
+The derivative is positive on $(-\infty,-1)$, negative on $(-1,1)$, and positive on $(1,\infty)$. Hence $f$ has a local maximum at $x=-1$ and a local minimum at $x=1$.
+\end{examplebox}
+
+\begin{corebox}[Optimisation workflow]
+Choose the quantity to optimise, express it as a function of one variable, determine the allowed domain, find critical points, check endpoints when relevant, and interpret the result in the original problem.
+\end{corebox}
+
+\begin{examplebox}[Maximum area with fixed perimeter]
+A rectangle has perimeter $20$. If one side is $x$, the other is $10-x$, so
+\[
+A(x)=x(10-x)=10x-x^2,
+\qquad 0\le x\le10.
+\]
+Then
+\[
+A'(x)=10-2x,
+\]
+so the only interior critical point is $x=5$. The rectangle of maximum area is therefore a $5\times5$ square.
+\end{examplebox}
+
+\begin{interpretationbox}[The derivative serves the model]
+The derivative calculation is short. The substantive work is identifying the correct function, its restrictions, and the meaning of the critical point.
+\end{interpretationbox}
