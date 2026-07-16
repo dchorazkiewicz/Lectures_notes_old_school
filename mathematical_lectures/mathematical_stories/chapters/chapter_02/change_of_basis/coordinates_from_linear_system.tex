@@ -1,0 +1,69 @@
+\subsection{Finding New Coordinates from a Linear System}
+
+The geometric picture tells us what must be true. To calculate the coefficients,
+write
+\[
+\mathbf b_1=(a_1,a_2),
+\qquad
+\mathbf b_2=(b_1,b_2),
+\qquad
+\mathbf u=(x,y).
+\]
+
+\begin{derivationbox}[From a vector equation to scalar equations]
+The equation
+\[
+\mathbf u=c_1\mathbf b_1+c_2\mathbf b_2
+\]
+means equality of corresponding Cartesian components. Therefore
+\[
+\boxed{
+\begin{aligned}
+ a_1c_1+b_1c_2&=x,\\
+ a_2c_1+b_2c_2&=y.
+\end{aligned}}
+\]
+This system of two linear equations is the algebraic content of changing from
+the Cartesian basis to $\mathcal B$.
+\end{derivationbox}
+
+\begin{examplebox}
+For
+\[
+\mathbf b_1=(2,1),
+\qquad
+\mathbf b_2=(1,2),
+\qquad
+\mathbf u=(5,4),
+\]
+we solve
+\[
+\begin{aligned}
+2c_1+c_2&=5,\\
+c_1+2c_2&=4.
+\end{aligned}
+\]
+From the first equation,
+\[
+c_2=5-2c_1.
+\]
+Substituting into the second gives
+\[
+c_1+2(5-2c_1)=4,
+\]
+so
+\[
+-3c_1=-6,
+\qquad
+c_1=2.
+\]
+Then
+\[
+c_2=5-2\cdot2=1.
+\]
+Hence
+\[
+\boxed{[\mathbf u]_{\mathcal B}=(2,1)}.
+\]
+The calculation agrees with the oblique parallelogram.
+\end{examplebox}
