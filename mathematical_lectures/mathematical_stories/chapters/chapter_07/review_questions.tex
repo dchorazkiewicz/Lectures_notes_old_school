@@ -1,36 +1,120 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Define an inverse matrix. Why are both identities $AA^{-1}=I$ and $A^{-1}A=I$ relevant in a noncommutative setting?
-
-\item Explain an inverse as the reversal of a matrix action. What kind of information loss prevents such a reversal?
-
-\item State the invertibility criterion involving the determinant and interpret both cases $\det A\neq0$ and $\det A=0$ structurally.
-
-\item Derive the inverse formula for
+\item Determine whether
 \[
-A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+A=\begin{pmatrix}2&1\\3&2\end{pmatrix}
 \]
-when $ad-bc\neq0$. Identify exactly where the determinant enters and why division by zero is impossible.
+is invertible. If it is, compute $A^{-1}$ with the $2\times2$ formula and verify both products $AA^{-1}$ and $A^{-1}A$.
 
-\item Use the $2\times2$ formula to invert one simple matrix and verify the answer by multiplication. What does the verification test?
-
-\item Explain the Gauss--Jordan construction
+\item Compute the inverse of
 \[
-[A\mid I]\longrightarrow[I\mid A^{-1}].
+A=\begin{pmatrix}1&3\\2&5\end{pmatrix}
 \]
-Why must every row operation be applied to both blocks?
+by Gauss--Jordan elimination, starting from $[A\mid I]$ and recording every row operation.
 
-\item What does failure to reduce the left block to the identity reveal? Describe the connection among missing pivots, a zero determinant, and non-invertibility.
+\item Compute the inverse of the diagonal matrix
+\[
+D=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&5\end{pmatrix}.
+\]
+Verify the result by multiplication.
 
-\item Define the cofactor matrix and the adjugate. For a general $2\times2$ matrix, show how the adjugate recovers the familiar inverse formula.
+\item Decide which matrices are invertible and compute the inverses when they exist:
+\[
+A=\begin{pmatrix}1&2\\2&4\end{pmatrix},
+\qquad
+B=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\qquad
+C=\begin{pmatrix}3&0\\0&1\end{pmatrix}.
+\]
 
-\item Compare the $2\times2$ formula, Gauss--Jordan elimination, and the adjugate formula:
-\begin{enumerate}
-\item which is the simplest in dimension two;
-\item which is the principal general hand method;
-\item which best exposes the determinant--cofactor structure?
+\item For
+\[
+A=\begin{pmatrix}2&-1\\1&1\end{pmatrix},
+\qquad
+b=\begin{pmatrix}5\\1\end{pmatrix},
+\]
+compute $A^{-1}$ and then solve $Ax=b$ using $x=A^{-1}b$.
+
+\item Solve the matrix equation
+\[
+AX=B
+\]
+for
+\[
+A=\begin{pmatrix}1&1\\0&2\end{pmatrix},
+\qquad
+B=\begin{pmatrix}3&1\\4&2\end{pmatrix}.
+\]
+
+\item Solve
+\[
+XA=B
+\]
+for the same matrices $A$ and $B$. Compare the answer with the previous exercise.
+
+\item For
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\]
+write its cofactor matrix, its adjugate, and the expression
+\[
+\frac1{\det A}\operatorname{adj}(A).
+\]
+Then specialise the formula to $A=\begin{pmatrix}2&3\\1&4\end{pmatrix}$.
+
+\item Let
+\[
+A=\begin{pmatrix}1&2\\0&1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}2&0\\1&1\end{pmatrix}.
+\]
+Compute $A^{-1}$, $B^{-1}$, $(AB)^{-1}$, and $B^{-1}A^{-1}$. Verify that the last two matrices agree.
+
+\item During Gauss--Jordan elimination the left block becomes
+\[
+\begin{pmatrix}1&0\\0&0\end{pmatrix}
+\]
+instead of the identity. Explain what this means computationally, and confirm the conclusion by computing the determinant of the original matrix
+\[
+A=\begin{pmatrix}1&2\\2&4\end{pmatrix}.
+\]
 \end{enumerate}
 
-\item Solve a matrix equation such as $AXB=C$ under suitable invertibility assumptions. Explain the order in which inverses must be applied and why ordinary scalar-style cancellation would be unsafe.
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Explain the meaning of an inverse matrix as a reversal of an action. Why are both equations $AA^{-1}=I$ and $A^{-1}A=I$ important?
+
+\item Show why a zero determinant prevents invertibility. Your explanation should connect determinant, loss of information, and failure of unique reversal.
+
+\item Explain why the Gauss--Jordan construction
+\[
+[A\mid I]\longrightarrow[I\mid A^{-1}]
+\]
+works. Use elementary matrices or reversible row operations in your argument.
+
+\item Why does increasing the dimension of a matrix make Gauss--Jordan longer but not conceptually different? Identify the steps that remain unchanged.
+
+\item Compare the $2\times2$ inverse formula with Gauss--Jordan elimination. What idea does each method reveal most clearly?
+
+\item Explain the structural content of
+\[
+A\operatorname{adj}(A)=(\det A)I.
+\]
+Why do cofactors produce diagonal entries equal to $\det A$ and off-diagonal entries equal to zero?
+
+\item The adjugate method is usually inefficient for large matrices. Explain why it is still conceptually valuable in this course.
+
+\item A student solves $AX=B$ by writing $X=BA^{-1}$. Explain the error and state the correct multiplication order. Then discuss why the order changes for $XA=B$.
+
+\item Prove that if $A$ and $B$ are invertible, then
+\[
+(AB)^{-1}=B^{-1}A^{-1}.
+\]
+Explain why the order must reverse.
+
+\item Give a coherent decision procedure for an inversion problem: how to test existence, which method to choose, how to verify the result, and how to interpret a failure.
 \end{enumerate}
