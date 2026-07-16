@@ -1,0 +1,32 @@
+\subsection{Area between curves and a simple volume model}
+
+If \(f(x)\ge g(x)\) on \([a,b]\), then the area between the graphs is
+\[
+\int_a^b \bigl(f(x)-g(x)\bigr)\,dx.
+\]
+
+\begin{examplebox}[Area between a line and a parabola]
+On \([0,1]\), the line \(y=x\) lies above the parabola \(y=x^2\). Therefore
+\[
+A=\int_0^1 (x-x^2)\,dx
+=\left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+=\frac16.
+\]
+\end{examplebox}
+
+A simple volume of revolution about the horizontal axis is obtained by disks:
+\[
+V=\pi\int_a^b r(x)^2\,dx.
+\]
+
+\begin{examplebox}[Rotating a line segment]
+Rotating \(y=x\) on \([0,1]\) about the horizontal axis produces a cone. The disk formula gives
+\[
+V=\pi\int_0^1 x^2\,dx=\frac{\pi}{3},
+\]
+which agrees with the elementary cone formula.
+\end{examplebox}
+
+\begin{interpretationbox}[Geometry as accumulation of slices]
+Area accumulates vertical differences; volume accumulates cross-sectional areas. The integral changes meaning through the quantity being summed, not through a more complicated computational technique.
+\end{interpretationbox}
