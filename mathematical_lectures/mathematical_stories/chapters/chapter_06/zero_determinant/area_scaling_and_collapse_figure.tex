@@ -1,0 +1,40 @@
+\subsection{Area Scaling and Collapse in the Plane}
+
+For a $2\times2$ matrix, the absolute determinant measures how the area of the unit square changes. A nonzero determinant produces a genuine parallelogram; a zero determinant makes the two output directions parallel and the area collapses.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.78]
+  \begin{scope}[xshift=-6cm]
+    \draw[->] (-0.4,0) -- (3.2,0);
+    \draw[->] (0,-0.4) -- (0,3.2);
+    \filldraw[fill=gray!12,draw=gray!70] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+    \draw[blue!75!black,very thick,->] (0,0)--(1,0) node[midway,below] {$e_1$};
+    \draw[orange!85!black,very thick,->] (0,0)--(0,1) node[midway,left] {$e_2$};
+    \node[align=center] at (1.25,-0.9) {unit square\\area $1$};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm]
+    \draw[->] (-0.4,0) -- (4.2,0);
+    \draw[->] (0,-0.4) -- (0,3.7);
+    \coordinate (U) at (2,0.5);
+    \coordinate (V) at (1,2);
+    \filldraw[fill=green!12,draw=green!45!black,thick] (0,0)--(U)--($(U)+(V)$)--(V)--cycle;
+    \draw[blue!75!black,very thick,->] (0,0)--(U) node[midway,below right] {$Ae_1$};
+    \draw[orange!85!black,very thick,->] (0,0)--(V) node[midway,left] {$Ae_2$};
+    \node[align=center] at (1.7,-0.9) {$\det A\ne0$\\area is scaled};
+  \end{scope}
+
+  \begin{scope}[xshift=6cm]
+    \draw[->] (-0.4,0) -- (4.5,0);
+    \draw[->] (0,-0.4) -- (0,4.5);
+    \draw[gray!50,line width=3pt] (0,0)--(2.5,5);
+    \draw[blue!75!black,very thick,->] (0,0)--(1,2) node[midway,left] {$Be_1$};
+    \draw[orange!85!black,very thick,->] (0,0)--(2,4) node[midway,right] {$Be_2$};
+    \node[align=center] at (2.0,-0.9) {$\det B=0$\\area collapses to a line};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[What zero means geometrically]
+When the column images are independent, they span a parallelogram of nonzero area. When one image is a multiple of the other, every combination remains on one line. The determinant is then zero because a two-dimensional set has been compressed into one dimension.
+\end{interpretationbox}
