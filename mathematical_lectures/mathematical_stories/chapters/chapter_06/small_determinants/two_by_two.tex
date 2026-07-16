@@ -1,0 +1,52 @@
+\subsection{The Determinant of a $2\times2$ Matrix}
+
+\begin{definitionbox}
+For
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix},
+\]
+the determinant is
+\[
+\boxed{\det A=ad-bc}.
+\]
+We also write
+\[
+\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc.
+\]
+\end{definitionbox}
+
+The products use the two diagonals, but the order is essential: the second product is subtracted from the first.
+
+\begin{examplebox}[A nonzero determinant]
+For
+\[
+A=\begin{pmatrix}3&1\\2&5\end{pmatrix},
+\]
+we obtain
+\[
+\det A=3\cdot5-1\cdot2=13.
+\]
+\end{examplebox}
+
+\begin{examplebox}[A zero determinant]
+For
+\[
+B=\begin{pmatrix}1&2\\3&6\end{pmatrix},
+\]
+\[
+\det B=1\cdot6-2\cdot3=0.
+\]
+The cancellation will later be explained by the proportional rows.
+\end{examplebox}
+
+\begin{interpretationbox}[Position matters]
+Exchanging the rows changes
+\[
+\det\begin{pmatrix}1&2\\3&4\end{pmatrix}=-2
+\]
+into
+\[
+\det\begin{pmatrix}3&4\\1&2\end{pmatrix}=2.
+\]
+The same entries in different positions can give a different determinant.
+\end{interpretationbox}
