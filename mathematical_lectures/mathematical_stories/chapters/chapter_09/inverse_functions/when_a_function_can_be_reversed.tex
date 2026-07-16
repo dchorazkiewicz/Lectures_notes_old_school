@@ -1,0 +1,21 @@
+\subsection{When a function can be reversed}
+
+An inverse function reverses an assignment. If \(f\) sends \(x\) to \(y\), then \(f^{-1}\) should send \(y\) back to \(x\). This is possible only when different allowed inputs do not produce the same output.
+
+\begin{definitionbox}[One-to-one function]
+A function is one-to-one on its domain if
+\[
+f(x_1)=f(x_2)
+\quad\Longrightarrow\quad
+x_1=x_2.
+\]
+Only a one-to-one function can have an inverse on its entire range.
+\end{definitionbox}
+
+\begin{examplebox}[Why \(x^2\) needs a restricted domain]
+On all real numbers, \(f(x)=x^2\) is not one-to-one because \(f(2)=f(-2)=4\). On the restricted domain \([0,\infty)\), however, every output has one non-negative input, so the inverse is \(f^{-1}(y)=\sqrt y\).
+\end{examplebox}
+
+\begin{interpretationbox}[Horizontal-line test]
+A graph represents a one-to-one function precisely when every horizontal line meets it at most once. The test asks whether an output identifies a unique input.
+\end{interpretationbox}
