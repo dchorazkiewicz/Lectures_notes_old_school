@@ -8,21 +8,16 @@ Take two arbitrary nonzero vectors
 \]
 Let their angles of inclination be $\alpha$ and $\beta$. Then
 \[
-\mathbf u
-=
-\|\mathbf u\|(\cos\alpha,\sin\alpha),
+\mathbf u=\|\mathbf u\|(\cos\alpha,\sin\alpha),
+\qquad
+\mathbf v=\|\mathbf v\|(\cos\beta,\sin\beta).
 \]
-\[
-\mathbf v
-=
-\|\mathbf v\|(\cos\beta,\sin\beta).
-\]
-The difference $\beta-\alpha$ measures the directed turn from $\mathbf u$ to
-$\mathbf v$. The ordinary angle between the vectors will be denoted by
-\[
-\theta=|\beta-\alpha|
-\]
-when the smaller angle is intended.
+
+\begin{corebox}[One comparison controls both tests]
+The directed turn from $\mathbf u$ to $\mathbf v$ is $\beta-\alpha$. Its sine
+detects parallel directions, while its cosine detects perpendicular directions.
+The coordinate tests will be derived from these geometric facts.
+\end{corebox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -43,159 +38,129 @@ when the smaller angle is intended.
 
 \subsubsection{Parallel directions arise from the sine of the angle difference}
 
-Two nonzero vectors determine the same unoriented direction precisely when the
-turn from one to the other is an integer multiple of a half-turn:
+\begin{derivationbox}[Deriving the determinant test]
+Two nonzero vectors determine the same unoriented direction precisely when
 \[
-\beta-\alpha\equiv0\pmod{\pi}.
+\beta-\alpha\equiv0\pmod{\pi},
 \]
-Equivalently,
+equivalently when $\sin(\beta-\alpha)=0$. Using
 \[
-\sin(\beta-\alpha)=0.
+\sin(\beta-\alpha)=\sin\beta\cos\alpha-\cos\beta\sin\alpha
 \]
-Using the sine-difference identity,
+and substituting
+\[
+\cos\alpha=\frac{u_1}{\|\mathbf u\|},
+\quad
+\sin\alpha=\frac{u_2}{\|\mathbf u\|},
+\quad
+\cos\beta=\frac{v_1}{\|\mathbf v\|},
+\quad
+\sin\beta=\frac{v_2}{\|\mathbf v\|},
+\]
+we obtain
 \[
 \sin(\beta-\alpha)
 =
-\sin\beta\cos\alpha-
-\cos\beta\sin\alpha.
+\frac{u_1v_2-u_2v_1}{\|\mathbf u\|\,\|\mathbf v\|}.
 \]
-Now substitute
+The denominator is nonzero, so the sine vanishes exactly when the numerator
+vanishes.
+\end{derivationbox}
+
+\begin{theorembox}
+For nonzero vectors in the plane,
 \[
-\cos\alpha=\frac{u_1}{\|\mathbf u\|},
-\qquad
-\sin\alpha=\frac{u_2}{\|\mathbf u\|},
-\]
-\[
-\cos\beta=\frac{v_1}{\|\mathbf v\|},
-\qquad
-\sin\beta=\frac{v_2}{\|\mathbf v\|}.
-\]
-We obtain
-\[
-\begin{aligned}
-\sin(\beta-\alpha)
-&=
-\frac{v_2}{\|\mathbf v\|}
-\frac{u_1}{\|\mathbf u\|}
--
-\frac{v_1}{\|\mathbf v\|}
-\frac{u_2}{\|\mathbf u\|}\\
-&=
-\frac{u_1v_2-u_2v_1}
-{\|\mathbf u\|\,\|\mathbf v\|}.
-\end{aligned}
-\]
-The denominator is nonzero. Therefore
-\[
-\sin(\beta-\alpha)=0
-\iff
-u_1v_2-u_2v_1=0.
-\]
-We have discovered the coordinate test
-\[
+\boxed{
 \mathbf u\parallel\mathbf v
 \iff
-u_1v_2-u_2v_1=0.
-\]
-
-The same condition implies that one vector is a scalar multiple of the other.
-Indeed, if $v_1\neq0$, set $\lambda=u_1/v_1$. The equality
-\[
 u_1v_2-u_2v_1=0
+}.
 \]
-gives $u_2=\lambda v_2$, and hence
+Equivalently,
 \[
-\mathbf u=\lambda\mathbf v.
-\]
-If $v_1=0$, then $v_2\neq0$ and the same argument uses
-$\lambda=u_2/v_2$. Thus
-\[
+\boxed{
 \mathbf u\parallel\mathbf v
 \iff
 \mathbf u=\lambda\mathbf v
-\quad\text{for some }\lambda\neq0.
+\text{ for some }\lambda\neq0
+}.
 \]
-This scalar-multiple criterion is a conclusion of the angle calculation, not a
-rule imposed in advance.
+\end{theorembox}
+
+\begin{proofbox}[Why the determinant condition gives a scalar multiple]
+If $v_1\neq0$, set $\lambda=u_1/v_1$. The equality
+$u_1v_2-u_2v_1=0$ gives $u_2=\lambda v_2$, hence
+$\mathbf u=\lambda\mathbf v$. If $v_1=0$, then $v_2\neq0$ and the same argument
+uses $\lambda=u_2/v_2$.
+\end{proofbox}
+
+\begin{interpretationbox}[Meaning of the determinant expression]
+The quantity $u_1v_2-u_2v_1$ measures whether the two coordinate directions
+span genuine area. It is zero exactly when both vectors lie on one line.
+\end{interpretationbox}
 
 \subsubsection{The cosine of the same difference reveals perpendicularity}
 
-The vectors are perpendicular precisely when their angle difference is a
-quarter-turn modulo a half-turn:
+\begin{derivationbox}[Deriving the dot-product test]
+The vectors are perpendicular precisely when
 \[
-\beta-\alpha
-\equiv
-\frac{\pi}{2}
-\pmod{\pi}.
+\beta-\alpha\equiv\frac{\pi}{2}\pmod{\pi},
 \]
-Equivalently,
-\[
-\cos(\beta-\alpha)=0.
-\]
-The cosine-difference identity gives
+equivalently when $\cos(\beta-\alpha)=0$. The identity
 \[
 \cos(\beta-\alpha)
 =
-\cos\beta\cos\alpha+
-\sin\beta\sin\alpha.
+\cos\beta\cos\alpha+\sin\beta\sin\alpha
 \]
-Substituting the coordinate ratios gives
+gives
 \[
-\begin{aligned}
 \cos(\beta-\alpha)
-&=
-\frac{v_1}{\|\mathbf v\|}
-\frac{u_1}{\|\mathbf u\|}
-+
-\frac{v_2}{\|\mathbf v\|}
-\frac{u_2}{\|\mathbf u\|}\\
-&=
-\frac{u_1v_1+u_2v_2}
-{\|\mathbf u\|\,\|\mathbf v\|}.
-\end{aligned}
+=
+\frac{u_1v_1+u_2v_2}{\|\mathbf u\|\,\|\mathbf v\|}.
 \]
-Since the denominator is nonzero,
-\[
-\mathbf u\perp\mathbf v
-\iff
-u_1v_1+u_2v_2=0.
-\]
-The coordinate expression has emerged from the geometry. Only now do we give it
-a name.
+Since the denominator is nonzero, perpendicularity is equivalent to the
+vanishing of the numerator.
+\end{derivationbox}
 
 \begin{definitionbox}
-For vectors in the plane, their \emph{dot product} is
+For vectors in the plane, the \emph{dot product} is
 \[
-\mathbf u\cdot\mathbf v
-=
-u_1v_1+u_2v_2.
+\boxed{
+\mathbf u\cdot\mathbf v=u_1v_1+u_2v_2
+}.
 \]
 In three-dimensional space,
 \[
+\boxed{
 (u_1,u_2,u_3)\cdot(v_1,v_2,v_3)
-=
-u_1v_1+u_2v_2+u_3v_3.
+=u_1v_1+u_2v_2+u_3v_3
+}.
 \]
 \end{definitionbox}
 
-The preceding calculation proves
+\begin{theorembox}
+For nonzero vectors,
 \[
+\boxed{
 \mathbf u\perp\mathbf v
 \iff
-\mathbf u\cdot\mathbf v=0.
+\mathbf u\cdot\mathbf v=0
+}.
 \]
-It proves more than the right-angle case. Because cosine is even and
-$\theta=|\beta-\alpha|$,
+More generally, if $\theta$ is the smaller angle between them, then
 \[
-\cos(\beta-\alpha)=\cos\theta.
-\]
-Therefore
-\[
-\boxed{\mathbf u\cdot\mathbf v
+\boxed{
+\mathbf u\cdot\mathbf v
 =
-\|\mathbf u\|\,\|\mathbf v\|\cos\theta}
+\|\mathbf u\|\,\|\mathbf v\|\cos\theta
+}.
 \]
-for every pair of nonzero vectors in the plane.
+\end{theorembox}
+
+\begin{interpretationbox}[What the sign of the dot product says]
+The dot product is positive for an acute angle, zero for a right angle, and
+negative for an obtuse angle. It converts angular information into one scalar.
+\end{interpretationbox}
 
 \begin{examplebox}
 Take
@@ -206,12 +171,14 @@ Take
 \]
 Then
 \[
-\mathbf u\cdot\mathbf v
-=3(-2)+2(3)=0.
+\mathbf u\cdot\mathbf v=3(-2)+2(3)=0.
 \]
-The coordinate calculation says that
-\[
-\cos\theta=0,
-\]
-so the angle between the vectors is a right angle.
+Therefore $\cos\theta=0$, so the vectors are perpendicular.
 \end{examplebox}
+
+\begin{summarybox}[Two coordinate tests from one geometric comparison]
+The sine of the angle difference produces the parallelism test
+$u_1v_2-u_2v_1=0$. The cosine of the same difference produces the
+perpendicularity test $\mathbf u\cdot\mathbf v=0$. Neither rule is imposed
+arbitrarily; both are consequences of the geometry of angle.
+\end{summarybox}
