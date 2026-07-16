@@ -1,0 +1,40 @@
+\subsection{Explicit rules, recursion, and long-term behavior}
+
+\begin{definitionbox}[Sequence]
+A real sequence is a function
+\[
+a:\mathbb N\to\mathbb R.
+\]
+Its value at the input $n$ is usually written $a_n$ rather than $a(n)$.
+\end{definitionbox}
+
+A sequence may be given explicitly, for example
+\[
+a_n=\frac{1}{n},
+\]
+or recursively, for example
+\[
+a_1=1,
+\qquad
+a_{n+1}=\frac12a_n.
+\]
+
+\begin{examplebox}[Reading an explicit sequence]
+For $a_n=1/n$, the first terms are
+\[
+1,\frac12,\frac13,\frac14,\ldots
+\]
+They remain positive and get closer to zero as $n$ grows.
+\end{examplebox}
+
+\begin{examplebox}[Reading a recursive sequence]
+If $a_1=8$ and $a_{n+1}=a_n/2$, then
+\[
+8,4,2,1,\frac12,\ldots
+\]
+Each term is determined from the previous one.
+\end{examplebox}
+
+\begin{interpretationbox}[Discrete input]
+A sequence does not fill an interval of inputs. Its graph consists of separated points indexed by natural numbers. This is why the long-term question is phrased as $n\to\infty$.
+\end{interpretationbox}
