@@ -1,0 +1,81 @@
+\subsection{A Basis Is a Pair of Independent Directions}
+
+Up to this point every vector has been described with respect to the horizontal
+and vertical coordinate directions. That choice was natural because the
+Cartesian axes had already been constructed, but it was still only a choice.
+The geometric vector itself does not contain a preferred pair of coordinate
+axes.
+
+\begin{corebox}[The question of basis coordinates]
+What numbers describe the same vector when we choose two different coordinate
+directions? The vector remains fixed. Only the language used to describe it
+changes.
+\end{corebox}
+
+\begin{definitionbox}
+Two nonparallel vectors $\mathbf b_1$ and $\mathbf b_2$ form a basis of the
+plane. Every vector $\mathbf u$ can be written in one and only one way as
+\[
+\boxed{\mathbf u=c_1\mathbf b_1+c_2\mathbf b_2}.
+\]
+The numbers $c_1$ and $c_2$ are the coordinates of $\mathbf u$ in the ordered
+basis
+\[
+\mathcal B=(\mathbf b_1,\mathbf b_2),
+\qquad
+[\mathbf u]_{\mathcal B}=(c_1,c_2).
+\]
+\end{definitionbox}
+
+The basis vectors need not be perpendicular and need not have length one. They
+must only be nonparallel. Otherwise both directions collapse onto one line and
+cannot describe every displacement in the plane.
+
+\begin{interpretationbox}[Coordinates as signed instructions]
+The equation
+\[
+\mathbf u=c_1\mathbf b_1+c_2\mathbf b_2
+\]
+means: move by $c_1\mathbf b_1$, then by $c_2\mathbf b_2$. The endpoint must
+coincide with the endpoint of $\mathbf u$. The coefficients are signed amounts
+of the chosen basis directions, not lengths of perpendicular shadows.
+\end{interpretationbox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (B1) at (2.0,0.8);
+    \coordinate (B2) at (0.8,1.8);
+    \coordinate (TwoB1) at (4.0,1.6);
+    \coordinate (U) at (4.8,3.4);
+
+    \foreach \i in {-1,0,1,2,3} {
+        \draw[gray!45,dashed]
+            ({-0.8+2.0*\i},{-1.8+0.8*\i}) --
+            ({2.4+2.0*\i},{5.4+0.8*\i});
+    }
+    \foreach \j in {-1,0,1,2,3} {
+        \draw[gray!45,dashed]
+            ({-2.0+0.8*\j},{-0.8+1.8*\j}) --
+            ({6.0+0.8*\j},{2.4+1.8*\j});
+    }
+
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (B1)
+        node[midway,below] {$\mathbf b_1$};
+    \draw[orange!85!black,line width=1.1pt,->] (O) -- (B2)
+        node[midway,left] {$\mathbf b_2$};
+    \draw[blue!70!black,line width=1.1pt,->] (O) -- (TwoB1)
+        node[midway,below right] {$2\mathbf b_1$};
+    \draw[orange!85!black,line width=1.1pt,->] (TwoB1) -- (U)
+        node[midway,right] {$\mathbf b_2$};
+    \draw[very thick,->] (O) -- (U)
+        node[midway,above left] {$\mathbf u$};
+    \draw[blue!70!black,dashed] (B2) -- (U);
+    \draw[orange!85!black,dashed] (TwoB1) -- (U);
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (U) circle (2pt);
+    \node[align=left,anchor=west] at (5.3,3.0)
+        {$\mathbf u=2\mathbf b_1+\mathbf b_2$\\
+         $[\mathbf u]_{\mathcal B}=(2,1)$};
+\end{tikzpicture}
+\end{center}
