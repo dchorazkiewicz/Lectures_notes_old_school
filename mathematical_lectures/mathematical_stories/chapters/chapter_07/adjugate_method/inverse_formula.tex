@@ -11,7 +11,11 @@ If $\det A\neq0$, then
 \]
 \end{theorembox}
 
-\begin{derivationbox}[Why the formula gives an inverse]
+\begin{remarkbox}[Proof status]
+The identity comes from Laplace expansion: diagonal entries of $A\operatorname{adj}(A)$ reproduce $\det A$, while off-diagonal entries cancel because they correspond to determinants with repeated rows or columns. This mechanism is the point retained here; a full index-by-index proof is not developed.
+\end{remarkbox}
+
+\begin{derivationbox}[Why the identity gives an inverse]
 Starting from
 \[
 A\operatorname{adj}(A)=(\det A)I,
@@ -24,5 +28,5 @@ The matrix in parentheses is therefore the inverse.
 \end{derivationbox}
 
 \begin{interpretationbox}[Determinants and cofactors build the inverse]
-The same smaller determinants used in Laplace expansion also assemble the matrix that reverses $A$. A zero determinant prevents the final division and signals non-invertibility.
+The same smaller determinants used in Laplace expansion assemble the matrix that reverses $A$. A zero determinant prevents the final division and records the loss of invertibility.
 \end{interpretationbox}
