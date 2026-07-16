@@ -1,0 +1,50 @@
+\subsection{Elementary Row Operations}
+
+\begin{definitionbox}[The three elementary row operations]
+The elementary row operations are:
+\begin{itemize}
+    \item swapping two rows;
+    \item multiplying one row by a nonzero scalar;
+    \item adding a scalar multiple of one row to another row.
+\end{itemize}
+\end{definitionbox}
+
+\begin{interpretationbox}[Why these operations are controlled]
+Each operation can be reversed: a swap is undone by the same swap, a nonzero
+scaling is undone by multiplying by the reciprocal, and adding a multiple of one
+row is undone by subtracting the same multiple. This reversibility is why row
+operations can transform a problem without losing its essential information.
+\end{interpretationbox}
+
+\begin{examplebox}[Eliminating information already carried by another row]
+Consider
+\[
+A=
+\begin{pmatrix}
+1&2&-1\\
+2&4&3\\
+0&1&5
+\end{pmatrix}.
+\]
+Replace the second row by the second row minus twice the first:
+\[
+(2,4,3)-2(1,2,-1)=(0,0,5).
+\]
+The transformed matrix is
+\[
+\begin{pmatrix}
+1&2&-1\\
+0&0&5\\
+0&1&5
+\end{pmatrix}.
+\]
+The first two entries of the old second row were already explained by twice the
+first row. The new row isolates the part that was not.
+\end{examplebox}
+
+\begin{interpretationbox}[Three layers of a row operation]
+A row operation contains arithmetic, a transformation of the matrix, and an
+interpretation. The arithmetic produces the new row; the transformation changes
+the representation; the interpretation explains what relation has become
+visible.
+\end{interpretationbox}
