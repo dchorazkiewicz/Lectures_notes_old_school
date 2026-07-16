@@ -1,17 +1,22 @@
 \subsection{Linear Combinations: What Addition and Scaling Can Build}
 
 Addition and scalar multiplication were introduced as two separate operations,
-but they are most useful when they are combined. Given vectors $\mathbf u$ and
-$\mathbf v$ and real numbers $a$ and $b$, the vector
+but they are most useful when they are combined.
+
+\begin{definitionbox}
+Given vectors $\mathbf u$ and $\mathbf v$ and real numbers $a$ and $b$, the
+vector
 \[
-a\mathbf u+b\mathbf v
+\boxed{a\mathbf u+b\mathbf v}
 \]
 is called a \emph{linear combination} of $\mathbf u$ and $\mathbf v$.
+\end{definitionbox}
 
-The phrase has a direct geometric meaning. First scale $\mathbf u$ by $a$ and
-$\mathbf v$ by $b$; then add the two resulting displacements. Thus a linear
-combination is not a new operation. It is a controlled use of the two operations
-already understood.
+\begin{interpretationbox}[How a linear combination is constructed]
+First scale $\mathbf u$ by $a$ and $\mathbf v$ by $b$; then add the resulting
+displacements. A linear combination is therefore not a new operation. It is a
+controlled use of addition and scalar multiplication.
+\end{interpretationbox}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,>=stealth]
@@ -31,28 +36,34 @@ already understood.
 \end{tikzpicture}
 \end{center}
 
-A single nonzero vector can generate only one line through the origin:
+\begin{corebox}[One direction versus two directions]
+A single nonzero vector generates only the line
 \[
 \{\lambda\mathbf v:\lambda\in\mathbb R\}.
 \]
-Changing $\lambda$ changes the length and possibly the orientation, but never
-the underlying line of motion.
+Two parallel vectors still generate only one line. Two nonparallel vectors
+provide two independent directions and can generate the entire plane.
+\end{corebox}
 
-Two vectors behave differently. If $\mathbf u$ and $\mathbf v$ are parallel,
-then every linear combination still lies on one line. If they are not parallel,
-then their linear combinations fill the whole plane. Geometrically, the two
-independent directions allow us to reach any endpoint by a suitable
-parallelogram.
+\begin{proofbox}[Why nonparallel directions reach the plane]
+If $\mathbf u$ and $\mathbf v$ are parallel, every scalar multiple of either
+vector lies on the same line, so every sum $a\mathbf u+b\mathbf v$ remains on
+that line. If they are not parallel, the parallelogram construction allows a
+target displacement to be decomposed into one component along each direction.
+The two coefficients record those two signed motions.
+\end{proofbox}
 
 \begin{theorembox}
 Two nonparallel vectors $\mathbf u$ and $\mathbf v$ determine every vector in
 the plane uniquely in the form
 \[
-\mathbf w=a\mathbf u+b\mathbf v.
+\boxed{\mathbf w=a\mathbf u+b\mathbf v}.
 \]
 The numbers $a$ and $b$ record how much motion occurs in each chosen direction.
 \end{theorembox}
 
-This observation is the bridge to the later notion of a basis. A basis is not
-an unrelated new object: it is a pair of directions whose linear combinations
-can describe every vector uniquely.
+\begin{interpretationbox}[Bridge to a basis]
+A basis is not an unrelated new object. It is a pair of independent directions
+whose linear combinations describe every vector uniquely. Basis coordinates are
+precisely the coefficients in that reconstruction.
+\end{interpretationbox}
