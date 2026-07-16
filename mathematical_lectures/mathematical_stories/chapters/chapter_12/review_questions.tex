@@ -1,34 +1,107 @@
-\section{Review Questions}
+\section{Review Exercises}
+
+\subsection{Elementary computational exercises}
 
 \begin{enumerate}
-\item Distinguish an antiderivative from a definite integral. Why is the first answer a family of functions while the second is a number?
-
-\item Explain the role of the constant of integration. What information is lost when a function is differentiated?
-
-\item Find several elementary antiderivatives and verify each answer by differentiation. Explain why verification is especially natural for indefinite integration.
-
-\item Describe substitution as the reversal of the chain rule. In a simple example, identify the inner function, its derivative, and the new variable.
-
-\item Derive integration by parts from the product rule and use it in one elementary example. What structural choice determines which factor is differentiated?
-
-\item Explain how a Riemann sum approximates accumulated change. Identify the meanings of the partition, subinterval width, sample point, and local contribution.
-
-\item State both parts of the fundamental theorem of calculus. Explain why this theorem is the bridge between a limit of sums and antiderivatives.
-
-\item Compare signed area with total geometric area. Give an example in which cancellation makes the definite integral zero although the graph encloses positive geometric area.
-
-\item Formulate each of the following as an integral of a local contribution:
-\begin{enumerate}
-\item area between two curves;
-\item volume by cross-sectional areas;
-\item displacement and total distance from velocity;
-\item work from a variable force.
-\end{enumerate}
-State what the integrand and differential represent in each model.
-
-\item A quantity $Q$ changes at rate $Q'(t)$. Explain and apply the principle
+\item Find the following antiderivatives:
 \[
-Q(b)-Q(a)=\int_a^b Q'(t)\,dt.
+\int(3x^2-4x+5)\,dx,
+\qquad
+\int(2e^x+3\cos x)\,dx,
+\qquad
+\int\frac{1}{\sqrt{x}}\,dx.
 \]
-Why does this one statement unify many apparently different applications of integration?
+Differentiate each result to verify it.
+
+\item Find the function $F$ satisfying
+\[
+F'(x)=4x-3,
+\qquad
+F(2)=5.
+\]
+Then compute $F(0)$.
+
+\item Evaluate by substitution:
+\[
+\int 2x(x^2+1)^3\,dx,
+\qquad
+\int_0^1 2x e^{x^2}\,dx.
+\]
+State the substitution explicitly.
+
+\item Evaluate by integration by parts:
+\[
+\int xe^x\,dx,
+\qquad
+\int_0^1 x\,e^x\,dx.
+\]
+Verify the indefinite result by differentiation.
+
+\item For $f(x)=x$ on $[0,2]$, compute the right-endpoint Riemann sums with $n=2$ and $n=4$ equal subintervals. Compare them with
+\[
+\int_0^2 x\,dx.
+\]
+
+\item Evaluate using the fundamental theorem of calculus:
+\[
+\int_0^3(2x+1)\,dx,
+\qquad
+\int_{-1}^{2}(x^2-1)\,dx.
+\]
+Interpret the sign of each answer.
+
+\item Compute the area between the graphs
+\[
+y=x
+\qquad\text{and}\qquad
+y=x^2
+\]
+on $[0,1]$. State which function is above the other.
+
+\item Find the average value of
+\[
+f(x)=x^2
+\]
+on $[0,3]$. Find a point $c\in[0,3]$ at which $f(c)$ equals this average value.
+
+\item A particle has velocity
+\[
+v(t)=t-1,
+\qquad 0\le t\le3.
+\]
+Compute its displacement and total distance travelled. Split the integral at every sign change.
+
+\item Complete both calculations:
+\begin{enumerate}
+\item A force $F(x)=2x+1$ acts from $x=0$ to $x=3$. Compute the work.
+\item The graph $y=x$ on $[0,2]$ is rotated about the $x$-axis. Compute the volume using the disk method.
+\end{enumerate}
+State the units of each result when force is measured in newtons and length in metres.
+\end{enumerate}
+
+\subsection{Conceptual and reasoning exercises}
+
+\begin{enumerate}
+\item Distinguish an indefinite integral from a definite integral. Why is the first a family of functions while the second is a number?
+
+\item Explain why the constant $C$ is necessary in an indefinite integral. What information is lost when a function is differentiated?
+
+\item Interpret a Riemann sum as accumulation of local contributions. What happens to the approximation as the partition is refined?
+
+\item A definite integral is signed. Explain how regions below the axis affect the value and why the integral need not equal geometric area.
+
+\item Explain the central connection expressed by the fundamental theorem of calculus. Why is it surprising that a limit of sums can be computed using an antiderivative?
+
+\item Explain why substitution reverses the chain rule and integration by parts reverses the product rule. What structural pattern should be recognised before applying each method?
+
+\item Compare area under a graph, area between two graphs, and volume by disks. Identify the local quantity being accumulated in each case.
+
+\item Explain the difference between displacement and total distance. Why does the absolute value of velocity appear only in the distance calculation?
+
+\item The formulas for work, accumulated flow, mass from density, and total change look similar. Explain the common principle
+\[
+\text{total}=\int \text{local contribution}.
+\]
+
+\item Give a method-selection strategy for an elementary integral. Explain when to use direct antiderivatives, substitution, integration by parts, geometric interpretation, or the fundamental theorem, and why unnecessarily complicated techniques should be avoided.
 \end{enumerate}
