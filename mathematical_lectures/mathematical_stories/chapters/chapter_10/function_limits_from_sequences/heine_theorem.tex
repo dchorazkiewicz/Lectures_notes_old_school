@@ -1,20 +1,23 @@
 \subsection{From sequence limits to function limits}
 
-A function limit can be tested by following the function along every sequence of inputs approaching the point. This is the natural bridge from the discrete theory of sequences to the local behaviour of functions.
+A sequence approaches its limit through its tail. For a function, the input may approach a point through infinitely many different values, so we first state the local definition that every route must satisfy.
 
-\begin{definitionbox}[Approaching a point through a sequence]
-Let $(x_n)$ be a sequence such that
+\begin{definitionbox}[Function limit]
+Let $f\colon D\to\mathbb R$ and let $a$ be an accumulation point of $D$. We write
 \[
-x_n\ne a
-\qquad\text{and}\qquad
-x_n\to a.
+\lim_{x\to a}f(x)=L
 \]
-Then the values
+when, for every $\varepsilon>0$, there exists $\delta>0$ such that for every $x\in D$,
 \[
-f(x_1),f(x_2),f(x_3),\ldots
+0<|x-a|<\delta
+\quad\Longrightarrow\quad
+|f(x)-L|<\varepsilon.
 \]
-form a new sequence. A function limit asks whether every such output sequence approaches the same number.
 \end{definitionbox}
+
+The condition excludes $x=a$: a function limit is determined by nearby inputs, not by the value assigned at the point itself.
+
+A function limit can also be tested by following the function along every sequence of inputs approaching the point. This gives the natural bridge from the discrete theory of sequences to local function behaviour.
 
 \begin{theorembox}[Heine's theorem]
 Let $a$ be an accumulation point of the domain of $f$. Then
@@ -34,7 +37,7 @@ f(x_n)\to L.
 \end{theorembox}
 
 \begin{remarkbox}[Proof status]
-The theorem is used as the bridge from sequence limits to function limits. The forward implication follows by applying the neighbourhood definition to the terms $x_n$. The reverse implication is proved by contradiction: if no common function limit existed, one could choose a sequence of inputs approaching $a$ whose outputs stay away from $L$. The full quantified proof is not expanded here.
+The forward implication follows by applying the $\varepsilon$--$\delta$ definition to sufficiently late terms $x_n$. The reverse implication is proved by contradiction: if the local definition failed, one could choose inputs successively closer to $a$ whose outputs remain a fixed distance from $L$. Those inputs would form a sequence contradicting the sequential condition. The full quantified proof is not expanded here.
 \end{remarkbox}
 
 \begin{examplebox}[Using Heine's theorem]
@@ -73,5 +76,5 @@ The output sequences have different limits, so $\lim_{x\to0}f(x)$ does not exist
 \end{examplebox}
 
 \begin{interpretationbox}[A function limit must survive every route]
-One chosen sequence can support a candidate limit, but it cannot prove the limit by itself. Heine's theorem requires the same output limit for every sequence of admissible inputs approaching the point.
+The local definition controls all sufficiently near inputs at once. Heine's theorem expresses the same requirement through every admissible approaching sequence. One chosen sequence can disprove a limit when it behaves differently, but it cannot prove a limit by itself.
 \end{interpretationbox}
