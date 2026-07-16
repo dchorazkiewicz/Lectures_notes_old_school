@@ -1,0 +1,47 @@
+\subsection{Reversing the chain rule and product rule}
+
+\begin{corebox}[Only the elementary cases]
+Substitution and integration by parts are introduced to reveal the ideas behind them. The examples are chosen so that the method, not algebraic complexity, is the main difficulty.
+\end{corebox}
+
+\begin{examplebox}[A direct substitution]
+Consider
+\[
+\int 2x(x^2+1)^3\,dx.
+\]
+Let
+\[
+u=x^2+1,
+\qquad du=2x\,dx.
+\]
+Then
+\[
+\int 2x(x^2+1)^3\,dx=\int u^3\,du=\frac{u^4}{4}+C
+=\frac{(x^2+1)^4}{4}+C.
+\]
+\end{examplebox}
+
+\begin{interpretationbox}[Substitution]
+Substitution reverses the chain rule: an inner function and its derivative are recognized as one new variable.
+\end{interpretationbox}
+
+\begin{theorembox}[Integration by parts]
+\[
+\int u\,dv=uv-\int v\,du.
+\]
+\end{theorembox}
+
+\begin{examplebox}[An elementary example by parts]
+For
+\[
+\int xe^x\,dx,
+\]
+choose $u=x$ and $dv=e^x\,dx$. Then $du=dx$ and $v=e^x$, so
+\[
+\int xe^x\,dx=xe^x-\int e^x\,dx=xe^x-e^x+C.
+\]
+\end{examplebox}
+
+\begin{interpretationbox}[Integration by parts]
+The method reverses the product rule. One factor is differentiated while the other is integrated.
+\end{interpretationbox}
