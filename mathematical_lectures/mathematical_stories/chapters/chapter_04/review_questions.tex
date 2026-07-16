@@ -1,43 +1,39 @@
 \section{Review Exercises}
 
-\subsection{Elementary computational and construction exercises}
+\subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
 \item Find the centre and radius of
 \[
 (x-2)^2+(y+3)^2=25.
 \]
-Plot the centre and the four points where the circle meets the horizontal and vertical lines through its centre.
+Sketch the circle and mark the four points directly above, below, left, and right of the centre.
 
 \item Rewrite
 \[
 x^2+y^2-6x+4y-3=0
 \]
-in standard circle form by completing squares. State the centre and radius.
+in standard circle form. State the centre and radius.
 
-\item A parabola has focus $F=(0,2)$ and directrix $y=-2$.
-\begin{enumerate}
-\item derive its Cartesian equation from the equal-distance condition;
-\item identify its vertex and direction of opening.
-\end{enumerate}
+\item A parabola has focus $F=(0,2)$ and directrix $y=-2$. Derive its equation from the equal-distance condition and identify the vertex and opening direction.
 
-\item For the parabola
+\item For
 \[
 x^2=12y,
 \]
-find the value of $p$, the focus, and the directrix. Check that the point $(6,3)$ satisfies the equal-distance condition.
+find $p$, the focus, the directrix, and the vertex. Check the equal-distance condition at $(6,3)$.
 
 \item For the ellipse
 \[
 \frac{x^2}{25}+\frac{y^2}{9}=1,
 \]
-find the semiaxes, vertices, foci, and the value of $c$. Sketch the curve.
+find the semiaxes, vertices, foci, and $c$. Sketch the curve.
 
 \item Rewrite
 \[
 9x^2+4y^2-36x+8y+4=0
 \]
-in standard ellipse form. Find its centre and semiaxes.
+in standard ellipse form and find its centre and semiaxes.
 
 \item For the hyperbola
 \[
@@ -49,42 +45,71 @@ find the vertices, foci, and asymptotes. Sketch both branches.
 \[
 4x^2-9y^2-8x-18y-41=0
 \]
-in standard hyperbola form and identify its centre and transverse direction.
+in standard hyperbola form and identify the centre and transverse direction.
 
-\item Identify each surface and describe three useful coordinate-plane sections:
-\begin{enumerate}
-\item $x^2+y^2+z^2=9$;
-\item $z=x^2+y^2$;
-\item $x^2+y^2-z^2=1$.
+\item Classify and sketch each curve from the signs and missing terms:
+\[
+x^2+4y^2=4,
+\qquad
+x^2-y^2=1,
+\qquad
+x^2=4y.
+\]
+State the decisive feature in each equation.
+
+\item Find the intersections of
+\[
+y=x^2
+\qquad\text{and}\qquad
+y=2x+3.
+\]
+Plot both curves and verify every intersection in both equations.
 \end{enumerate}
 
-\item For the surface
+\subsection{Development and reasoning exercises}
+
+\begin{enumerate}
+\item Starting from the fixed-distance definition, derive the equation of a circle with centre $(h,k)$ and radius $r$. Then specialise it to a concrete circle and compare the geometric and algebraic descriptions.
+
+\item Starting from the focus-directrix definition, derive the equation of the parabola with focus $(p,0)$ and directrix $x=-p$. Explain why the equation contains only one squared variable.
+
+\item An ellipse has foci $(-3,0)$ and $(3,0)$ and constant sum of distances $10$. Determine its standard equation, vertices, and minor semiaxis. Explain where the condition $10>6$ is used.
+
+\item A hyperbola has foci $(-5,0)$ and $(5,0)$ and constant absolute difference of distances $6$. Determine its standard equation and asymptotes, and explain why two branches appear.
+
+\item Rewrite and classify
+\[
+4x^2+9y^2-16x+18y-11=0.
+\]
+Show every completing-square step and explain which geometric information becomes visible after each translation.
+
+\item Compare the curves
+\[
+x^2+y^2=0,
+\qquad
+x^2-y^2=0,
+\qquad
+x^2+y^2=-1.
+\]
+Classify the degenerate or empty cases and explain why a second-degree equation need not produce a nondegenerate conic.
+
+\item The equation
+\[
+x^2+4xy+4y^2=1
+\]
+contains a mixed term. Factor its quadratic part, describe the geometry suggested by the factorisation, and explain why a rotation or new coordinate direction is natural.
+
+\item For
+\[
+z=x^2+y^2,
+\]
+compute and sketch the sections $x=0$, $y=0$, and $z=c$ for several positive values of $c$. Use the sections to justify the name elliptic paraboloid.
+
+\item For
 \[
 z=x^2-y^2,
 \]
-compute and sketch the sections obtained from $x=0$, $y=0$, and $z=0$. Use them to make a rough sketch of the surface.
-\end{enumerate}
+compute the sections $x=0$, $y=0$, and $z=0$. Explain how the different section types reveal saddle behaviour.
 
-\subsection{Conceptual and reasoning exercises}
-
-\begin{enumerate}
-\item Explain why quadratic terms arise naturally when Euclidean distance conditions are translated into Cartesian coordinates.
-
-\item Distinguish a geometric definition of a conic from its standard Cartesian equation. Why should the equation be regarded as a representation rather than the object itself?
-
-\item Starting from the fixed-distance definition of a circle, derive its standard equation and identify exactly where the Pythagorean theorem enters.
-
-\item Explain geometrically why a parabola has one branch and is unbounded even though its points remain equally distant from a fixed point and a fixed line.
-
-\item The ellipse is defined by a fixed sum of distances to two foci. Explain why this condition forces boundedness. What would fail if the prescribed sum were not larger than the distance between the foci?
-
-\item The hyperbola replaces a fixed sum by a fixed difference. Explain why this change creates two unbounded branches.
-
-\item Describe how circle, ellipse, parabola, and hyperbola arise from one experiment of cutting a double cone with planes of different inclinations. Why is this more informative than memorising four unrelated formulas?
-
-\item Completing squares may translate the centre of a conic. Explain what changes in the equation and what geometric object remains unchanged.
-
-\item A second-degree equation contains an $xy$ term. Explain why rotating the coordinate axes may reveal a standard conic. What changes under the rotation: the curve, the coordinates, or both?
-
-\item Explain why planar sections are an effective way to understand a quadric surface. Give an example where different sections reveal boundedness, disconnected components, or saddle behaviour.
+\item Explain the two complementary tasks of the chapter: constructing a conic from a geometric condition and recognising geometry hidden in an equation. Use one complete example of each and compare the reasoning required.
 \end{enumerate}
