@@ -57,31 +57,31 @@
 % use run-in labels instead of panels. This preserves their semantic role
 % without interrupting the page with repeated boxes and colour changes.
 \renewenvironment{corebox}[1][Core idea]
-  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
 \renewenvironment{derivationbox}[1][Derivation]
-  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
 \renewenvironment{proofbox}[1][Proof]
-  {\begin{proof}[#1]}
+  {\let\boxed\plainformula\begin{proof}[#1]}
   {\end{proof}}
 
 \renewenvironment{interpretationbox}[1][Interpretation]
-  {\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
   {\par\smallskip}
 
 \renewenvironment{examplebox}[1][Example]
-  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
 \renewenvironment{remarkbox}[1][Remark]
-  {\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
   {\par\smallskip}
 
 \renewenvironment{summarybox}[1][Summary]
-  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
 % Local visual language for geometric diagrams in this lecture.
