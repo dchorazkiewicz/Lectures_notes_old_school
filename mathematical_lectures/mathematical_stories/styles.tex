@@ -1,52 +1,88 @@
 \input{../../shared/styles}
 
-% Local visual language for the dual use of these notes: the lecturer must be
-% able to identify the core material quickly, while the student keeps access to
-% complete arguments after the lecture.
+% Local visual language for these notes. Formal mathematical statements remain
+% easy to locate, while explanatory material stays inside the reading flow.
 \definecolor{CoreBlue}{HTML}{0B4F6C}
 \definecolor{CoreBlueBack}{HTML}{EAF4F8}
-\definecolor{DerivationViolet}{HTML}{665191}
-\definecolor{DerivationVioletBack}{HTML}{F4F0FA}
-\definecolor{ProofBrown}{HTML}{795548}
-\definecolor{ProofBrownBack}{HTML}{F8F3F1}
-\definecolor{InterpretationGray}{HTML}{52616B}
-\definecolor{InterpretationGrayBack}{HTML}{F3F5F6}
 
-\newtcolorbox{corebox}[1][Core idea]{
+% Definitions and theorems are the only routinely highlighted environments.
+% A quiet background and a single left rule replace full coloured frames.
+\renewtcolorbox{definitionbox}[1][Definition]{
+    enhanced,
     breakable,
-    colback=CoreBlueBack,
+    colback=CoreBlueBack!55,
     colframe=CoreBlue,
+    boxrule=0pt,
+    leftrule=1.2pt,
+    arc=0pt,
+    outer arc=0pt,
+    boxsep=0pt,
+    left=8pt,
+    right=6pt,
+    top=5pt,
+    bottom=5pt,
+    before skip=0.8em,
+    after skip=0.8em,
     title={#1},
+    coltitle=CoreBlue,
     fonttitle=\bfseries,
+    attach title to upper={\par\smallskip},
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{derivationbox}[1][Derivation]{
+\renewtcolorbox{theorembox}[1][Theorem]{
+    enhanced,
     breakable,
-    colback=DerivationVioletBack,
-    colframe=DerivationViolet,
+    colback=CoreBlueBack!35,
+    colframe=CoreBlue,
+    boxrule=0pt,
+    leftrule=1.2pt,
+    arc=0pt,
+    outer arc=0pt,
+    boxsep=0pt,
+    left=8pt,
+    right=6pt,
+    top=5pt,
+    bottom=5pt,
+    before skip=0.8em,
+    after skip=0.8em,
     title={#1},
+    coltitle=CoreBlue,
     fonttitle=\bfseries,
+    attach title to upper={\par\smallskip},
     before upper={\let\boxed\plainformula}
 }
 
-\newtcolorbox{proofbox}[1][Proof]{
-    breakable,
-    colback=ProofBrownBack,
-    colframe=ProofBrown,
-    title={#1},
-    fonttitle=\bfseries,
-    before upper={\let\boxed\plainformula}
-}
+% Explanations, examples, remarks, interpretations, derivations, and summaries
+% use run-in labels instead of panels. This preserves their semantic role
+% without interrupting the page with repeated boxes and colour changes.
+\renewenvironment{corebox}[1][Core idea]
+  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\par\medskip}
 
-\newtcolorbox{interpretationbox}[1][Interpretation]{
-    breakable,
-    colback=InterpretationGrayBack,
-    colframe=InterpretationGray,
-    title={#1},
-    fonttitle=\bfseries,
-    before upper={\let\boxed\plainformula}
-}
+\renewenvironment{derivationbox}[1][Derivation]
+  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\par\medskip}
+
+\renewenvironment{proofbox}[1][Proof]
+  {\begin{proof}[#1]}
+  {\end{proof}}
+
+\renewenvironment{interpretationbox}[1][Interpretation]
+  {\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
+  {\par\smallskip}
+
+\renewenvironment{examplebox}[1][Example]
+  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\par\medskip}
+
+\renewenvironment{remarkbox}[1][Remark]
+  {\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
+  {\par\smallskip}
+
+\renewenvironment{summarybox}[1][Summary]
+  {\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
+  {\par\medskip}
 
 % Local visual language for geometric diagrams in this lecture.
 % Coordinate axes remain black; the subset currently being studied is dark blue;
