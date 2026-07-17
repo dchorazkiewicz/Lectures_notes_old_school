@@ -23,14 +23,20 @@ The lecture currently consists of twelve numbered chapters.
 
 The intended source hierarchy is:
 
-1. `chapters/chapter_XX.tex` contains the chapter title, chapter-level settings, and the ordered `\input` statements for active sections.
-2. Each substantial section belongs to its own directory inside the corresponding chapter directory.
-3. A section directory contains `section.tex`, which holds the `\section{...}` heading and the ordered inputs for its contents.
-4. Each substantial subsection, mathematical argument, example, construction, derivation, proof, or diagram should live in a small, descriptively named `.tex` file.
-5. Files should remain small enough to read, review, and edit independently.
-6. Use lowercase snake_case names that describe mathematical content. Do not use names such as `new`, `revised`, `final`, or `copy`.
+1. Each chapter has a chapter file `chapters/chapter_XX.tex` and a corresponding chapter directory `chapters/chapter_XX/`.
+2. The chapter file contains the chapter title, chapter-level settings, and the ordered `\input` statements for active sections.
+3. Inside the chapter directory, each section has its own directory.
+4. Each section directory contains `section.tex`, which holds the `\section{...}` heading and the ordered `\input` statements for the subsection files.
+5. Each subsection is a descriptively named `.tex` file inside its section directory.
+6. Definitions, examples, proofs, derivations, constructions, diagrams, explanations, and other mathematical material belong inside the appropriate subsection file. They are content of the subsection, not separate structural levels that should automatically receive their own files or directories.
+7. Subsection files should remain small enough to read, review, and edit independently, but they should represent coherent subsections rather than arbitrary fragments.
+8. Use lowercase snake_case names that describe mathematical content. Do not use names such as `new`, `revised`, `final`, or `copy`.
 
-The purpose of this structure is not bureaucracy. It exists so that a precise mathematical idea can be changed without rewriting an entire chapter or disturbing unrelated material.
+The natural hierarchy is therefore:
+
+`chapter directory -> section directory -> subsection files`.
+
+The purpose of this structure is not bureaucracy. It exists so that a precise mathematical subsection can be changed without rewriting an entire chapter or disturbing unrelated material.
 
 ## Authorial authority
 
