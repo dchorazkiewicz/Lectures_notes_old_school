@@ -57,6 +57,18 @@ Do not add material merely because it is mathematically standard or because simi
 
 Do not make the lecture flat, generic, neutral, or complete for its own sake. Every part of the lecture must follow the mathematical intention given by the user.
 
+## Strict work scope
+
+When working on a chapter, section, subsection, diagram, proof, example, definition, or any other specific element, change only that element and only the file that contains it.
+
+Do not modify neighbouring files, related sections, surrounding prose, formatting elsewhere, or any other part of the lecture unless the user explicitly names those additional files or elements.
+
+The small-file structure exists precisely to keep work focused, efficient, and reviewable. Use it to isolate every change.
+
+If a task concerns several concepts, sections, subsections, or files, do not change them all at once. Work interactively, one file at a time. Finish the currently selected file or element, report what was changed, and then continue to the next file only after the user directs the next step.
+
+Do not broaden the scope because another change appears useful, related, necessary for stylistic consistency, or mathematically natural. Ask or wait for explicit instruction.
+
 ## Editing rule
 
 Do exactly what the user requests and nothing more.
