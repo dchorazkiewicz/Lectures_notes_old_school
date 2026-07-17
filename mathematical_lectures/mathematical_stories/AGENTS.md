@@ -8,13 +8,12 @@ These instructions apply to `mathematical_lectures/mathematical_stories/` and al
 
 The lecture is written as a logically ordered mathematical story. Concepts must appear only after the geometric or algebraic objects needed to define them have been introduced. Do not use later machinery merely because it shortens an earlier argument. In particular, preserve the intended order of Euclidean constructions, Cartesian coordinates, vectors, lines, planes, and later analytic tools.
 
-The PDF has two simultaneous uses. During a lecture it must make the conceptual core immediately visible. After the lecture it must remain a self-contained source from which a student can recover the complete argument without searching elsewhere. Do not remove necessary derivations merely to shorten the document; instead distinguish the role of each block visually.
+The PDF has two simultaneous uses. During a lecture it must make the conceptual core immediately visible. After the lecture it must remain a self-contained source from which a student can recover the complete argument without searching elsewhere. Do not remove necessary derivations merely to shorten the document; distinguish mathematical roles through restrained typography rather than repeated panels.
 
 ## Information hierarchy
 
-Use the established environments consistently:
+Use the established environments consistently, but do not give every semantic role equal graphical weight:
 
-- `corebox` for the central idea, indispensable interpretation, or minimal knowledge that should remain after the lecture;
 - `definitionbox` for definitions and canonical formulas that define an object;
 - `theorembox` for theorems, criteria, and reusable mathematical results;
 - `examplebox` for every worked example;
@@ -22,9 +21,12 @@ Use the established environments consistently:
 - `proofbox` for proofs or explicit verification of a stated result;
 - `interpretationbox` for the geometric or conceptual meaning of a formula;
 - `remarkbox` for cautions, exceptions, and secondary comments;
-- `summarybox` for a compact comparison or end-of-section synthesis.
+- `summarybox` for a compact comparison or genuine end-of-section synthesis;
+- `corebox` only for a genuinely central principle that cannot be expressed clearly as ordinary prose.
 
-Do not place every paragraph in a box. Narrative transitions and short motivation remain ordinary prose. The boxes identify function and priority; they must not become decorative noise.
+Definitions and important theorems are the only environments that should routinely receive a visible panel. Examples, derivations, proofs, interpretations, remarks, summaries, and core statements use restrained text labels and remain part of the reading flow. Do not create a separate colour code for each rhetorical function.
+
+The introduction contains no boxed environments. Chapter openings use ordinary prose and lists. Avoid consecutive highlighted panels; when everything is emphasised, nothing is emphasised. Narrative transitions, motivations, explanations, and short conclusions remain ordinary prose.
 
 ## Source structure
 
