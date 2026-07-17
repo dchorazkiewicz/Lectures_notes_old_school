@@ -56,19 +56,19 @@
 % Explanations, examples, remarks, interpretations, derivations, and summaries
 % use run-in labels instead of panels. This preserves their semantic role
 % without interrupting the page with repeated boxes and colour changes.
-\renewenvironment{corebox}[1][Core idea]
+\newenvironment{corebox}[1][Core idea]
   {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
-\renewenvironment{derivationbox}[1][Derivation]
+\newenvironment{derivationbox}[1][Derivation]
   {\let\boxed\plainformula\par\medskip\noindent\textbf{#1.}\enspace\ignorespaces}
   {\par\medskip}
 
-\renewenvironment{proofbox}[1][Proof]
+\newenvironment{proofbox}[1][Proof]
   {\let\boxed\plainformula\begin{proof}[#1]}
   {\end{proof}}
 
-\renewenvironment{interpretationbox}[1][Interpretation]
+\newenvironment{interpretationbox}[1][Interpretation]
   {\let\boxed\plainformula\par\smallskip\noindent\textit{#1.}\enspace\ignorespaces}
   {\par\smallskip}
 
