@@ -1,7 +1,12 @@
 name: Build Beamer presentations
 
-# Temporarily disabled: manual dispatch only.
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mathematical_lectures/basic_mathematics/prezentation/**/*.tex'
+      - '.github/workflows/build-beamer-presentations.yml'
   workflow_dispatch:
 
 permissions:
