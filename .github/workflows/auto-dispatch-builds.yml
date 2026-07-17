@@ -1,7 +1,17 @@
 name: Auto-dispatch lecture builds
 
-# Temporarily disabled: manual dispatch only.
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'shared/**/*.tex'
+      - 'mathematical_lectures/**/*.tex'
+      - 'mathematical_lectures/**/build.sh'
+      - 'physics_lectures/**/*.tex'
+      - 'physics_lectures/**/build.sh'
+      - '.github/workflows/build-pdfs.yml'
+      - '.github/workflows/auto-dispatch-builds.yml'
   workflow_dispatch:
 
 permissions:
@@ -24,6 +34,6 @@ jobs:
         run: |
           gh workflow run build-pdfs.yml \
             --repo "${{ github.repository }}" \
-            --ref main \
+            --ref "${{ github.ref_name }}" \
             -f before_sha="${BEFORE_SHA}" \
             -f after_sha="${AFTER_SHA}"
