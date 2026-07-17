@@ -1,14 +1,15 @@
 \subsection{Constructing a Common Unit Length}
 
-\begin{derivationbox}[Choosing and transferring the unit]
-Choose a positive segment length and call it one unit. Using a compass, transfer
-this same length from $O$ repeatedly along both axes and in both directions. The
-first marks are labelled $1$ and $-1$; repetition constructs the integer marks
-\[
-\ldots,-3,-2,-1,0,1,2,3,\ldots
-\]
-on each axis.
-\end{derivationbox}
+Place the point of the compass at the origin $O$ and draw a circle with any
+chosen radius. This radius becomes the unit length. The circle meets each axis
+in two points. On the positive parts of the axes these points are labelled $1$,
+and on the negative parts they are labelled $-1$.
+
+To construct the next marks, keep the same compass opening. Place the compass
+at the point $1$ on the $x$-axis and draw another circle. Its next intersection
+with the positive part of the axis gives the point $2$. Repeating the same step
+gives $3,4,\ldots$. Moving in the opposite direction constructs
+$-2,-3,-4,\ldots$. The same construction is carried out on the $y$-axis.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.72]
@@ -48,15 +49,3 @@ on each axis.
     \node[gray,below] at (0.5,-4.0) {one common unit};
 \end{tikzpicture}
 \end{center}
-
-\begin{corebox}[Why the unit must be common]
-A segment labelled as one unit on the $x$-axis must be congruent to a segment
-labelled as one unit on the $y$-axis. Otherwise the two coordinate numbers would
-measure lengths in incompatible scales.
-\end{corebox}
-
-\begin{interpretationbox}[Connection with distance]
-The common scale is what later allows horizontal and vertical coordinate
-differences to be combined by the Pythagorean theorem in the standard Euclidean
-distance formula.
-\end{interpretationbox}
