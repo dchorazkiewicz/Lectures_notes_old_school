@@ -1,6 +1,127 @@
 \subsection{Elementary Graphs and Their Intersections}
 
-Once coordinates are available, an equation can be read as a condition selecting points of the plane. At this stage we do not yet develop a general theory of lines or parabolas; we use simple examples to practise the Cartesian language.
+Once coordinates are available, equations and inequalities can be read as conditions selecting points of the plane. The following examples show how familiar geometric objects can be described in the Cartesian language.
+
+\begin{examplebox}[A triangle described by its vertices]
+Consider the three points
+\[
+A=(-2,0),\qquad B=(3,0),\qquad C=(1,3).
+\]
+These three ordered pairs determine the vertices of a triangle. Joining $A$ to $B$, $B$ to $C$, and $C$ to $A$ gives its three sides.
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm,y=0.9cm,>=Latex]
+    \draw[step=1cm,gray!20,very thin] (-3.2,-1.0) grid (4.0,4.0);
+    \draw[->] (-3.3,0) -- (4.1,0) node[right] {$x$};
+    \draw[->] (0,-1.1) -- (0,4.1) node[above] {$y$};
+    \draw[very thick] (-2,0) -- (3,0) -- (1,3) -- cycle;
+    \fill (-2,0) circle (2.2pt) node[below left] {$A=(-2,0)$};
+    \fill (3,0) circle (2.2pt) node[below right] {$B=(3,0)$};
+    \fill (1,3) circle (2.2pt) node[above] {$C=(1,3)$};
+\end{tikzpicture}
+\end{center}
+
+Coordinates therefore allow a geometric figure to be specified by listing a finite collection of points and declaring how they are connected.
+\end{examplebox}
+
+\begin{examplebox}[A circle and a disk]
+The equation
+\[
+x^2+y^2=4
+\]
+selects exactly the points whose distance from the origin is $2$. It describes the \emph{circle}: only the boundary.
+
+The inequality
+\[
+x^2+y^2\leq 4
+\]
+selects the boundary together with every point inside it. It describes the \emph{disk}.
+
+\begin{center}
+\begin{tikzpicture}[x=0.8cm,y=0.8cm,>=Latex]
+    \begin{scope}[shift={(-3.2,0)}]
+        \draw[->] (-2.6,0) -- (2.6,0) node[right] {$x$};
+        \draw[->] (0,-2.6) -- (0,2.6) node[above] {$y$};
+        \draw[very thick] (0,0) circle (2);
+        \node[below] at (0,-2.8) {$x^2+y^2=4$};
+        \node at (0,-3.3) {circle};
+    \end{scope}
+    \begin{scope}[shift={(3.2,0)}]
+        \draw[->] (-2.6,0) -- (2.6,0) node[right] {$x$};
+        \draw[->] (0,-2.6) -- (0,2.6) node[above] {$y$};
+        \fill[gray!20] (0,0) circle (2);
+        \draw[very thick] (0,0) circle (2);
+        \node[below] at (0,-2.8) {$x^2+y^2\leq 4$};
+        \node at (0,-3.3) {disk};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{examplebox}
+
+\begin{examplebox}[Several curves described by equations]
+Different equations select different shapes:
+\[
+\begin{array}{rcll}
+x^2+y^2&=&4, & \text{circle},\\[2mm]
+\dfrac{x^2}{9}+\dfrac{y^2}{4}&=&1, & \text{ellipse},\\[3mm]
+\dfrac{x^2}{4}-\dfrac{y^2}{1}&=&1, & \text{hyperbola},\\[3mm]
+y&=&\dfrac{x^2}{2}, & \text{parabola}.
+\end{array}
+\]
+
+\begin{center}
+\begin{tikzpicture}[x=0.72cm,y=0.72cm,>=Latex]
+    \begin{scope}[shift={(-4.2,2.6)}]
+        \draw[->] (-2.6,0) -- (2.6,0);
+        \draw[->] (0,-2.2) -- (0,2.2);
+        \draw[very thick] (0,0) circle (1.6);
+        \node[below] at (0,-2.4) {circle};
+    \end{scope}
+    \begin{scope}[shift={(2.0,2.6)}]
+        \draw[->] (-3.2,0) -- (3.2,0);
+        \draw[->] (0,-2.2) -- (0,2.2);
+        \draw[very thick] (0,0) ellipse (2.6 and 1.6);
+        \node[below] at (0,-2.4) {ellipse};
+    \end{scope}
+    \begin{scope}[shift={(-4.2,-2.5)}]
+        \draw[->] (-3.0,0) -- (3.0,0);
+        \draw[->] (0,-2.2) -- (0,2.2);
+        \draw[very thick,domain=-1.25:1.25,samples=100] plot ({2*cosh(\x)},{sinh(\x)});
+        \draw[very thick,domain=-1.25:1.25,samples=100] plot ({-2*cosh(\x)},{sinh(\x)});
+        \node[below] at (0,-2.4) {hyperbola};
+    \end{scope}
+    \begin{scope}[shift={(2.0,-2.5)}]
+        \draw[->] (-3.0,0) -- (3.0,0);
+        \draw[->] (0,-0.8) -- (0,3.0);
+        \draw[very thick,domain=-2.4:2.4,samples=100] plot (\x,{0.5*\x*\x});
+        \node[below] at (0,-1.0) {parabola};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+At this point these formulas are examples of how equations encode shapes. Their systematic study will come later.
+\end{examplebox}
+
+\begin{examplebox}[The graph of the sine function]
+The equation
+\[
+y=\sin x
+\]
+selects a periodic curve. The same pattern repeats every $2\pi$ units along the $x$-axis.
+
+\begin{center}
+\begin{tikzpicture}[x=0.72cm,y=1.2cm,>=Latex]
+    \draw[->] (-6.8,0) -- (6.8,0) node[right] {$x$};
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+    \draw[very thick,domain=-6.4:6.4,samples=200] plot (\x,{sin(\x r)});
+    \foreach \x/\lab in {-6.283/-2\pi,-3.142/-\pi,3.142/\pi,6.283/2\pi} {
+        \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {$\lab$};
+    }
+    \draw (0.08,1) -- (-0.08,1) node[left] {$1$};
+    \draw (0.08,-1) -- (-0.08,-1) node[left] {$-1$};
+\end{tikzpicture}
+\end{center}
+\end{examplebox}
 
 \begin{examplebox}[A line from a value table]
 For
@@ -17,7 +138,7 @@ y&0&1&2&3&4
 Plotting these points reveals a straight line. The equation is a rule for generating all points of the graph.
 \end{examplebox}
 
-\begin{examplebox}[A parabola and a common point problem]
+\begin{examplebox}[A parabola and a line]
 For
 \[
 y=x^2
@@ -38,22 +159,20 @@ The graphs meet at
 \qquad\text{and}\qquad
 (2,4).
 \]
-\end{examplebox}
 
 \begin{center}
 \begin{tikzpicture}[x=0.95cm,y=0.8cm,>=Latex]
-  \draw[step=1cm,gray!20,very thin] (-3.2,-0.8) grid (3.4,5.3);
-  \draw[->] (-3.3,0) -- (3.5,0) node[right] {$x$};
-  \draw[->] (0,-0.9) -- (0,5.4) node[above] {$y$};
-  \draw[blue!75!black,thick,domain=-2.3:2.3,samples=100] plot (\x,{\x*\x});
-  \draw[orange!85!black,thick,domain=-3:3,samples=2] plot (\x,{\x+2});
-  \fill (-1,1) circle (2.3pt) node[above left] {$(-1,1)$};
-  \fill (2,4) circle (2.3pt) node[above right] {$(2,4)$};
-  \node[blue!75!black] at (2.55,5.0) {$y=x^2$};
-  \node[orange!85!black] at (-2.2,0.45) {$y=x+2$};
+    \draw[step=1cm,gray!20,very thin] (-3.2,-0.8) grid (3.4,5.3);
+    \draw[->] (-3.3,0) -- (3.5,0) node[right] {$x$};
+    \draw[->] (0,-0.9) -- (0,5.4) node[above] {$y$};
+    \draw[very thick,domain=-2.3:2.3,samples=100] plot (\x,{\x*\x});
+    \draw[thick,domain=-3:3,samples=2] plot (\x,{\x+2});
+    \fill (-1,1) circle (2.3pt) node[above left] {$(-1,1)$};
+    \fill (2,4) circle (2.3pt) node[above right] {$(2,4)$};
+    \node at (2.55,5.0) {$y=x^2$};
+    \node at (-2.2,0.45) {$y=x+2$};
 \end{tikzpicture}
 \end{center}
+\end{examplebox}
 
-\begin{interpretationbox}[Intersection means simultaneous satisfaction]
-A plotted point belongs to a graph when its coordinates satisfy the graph's equation. An intersection point belongs to both graphs, so its coordinates must satisfy both equations simultaneously. This principle will later organise line intersections, systems of equations, and intersections of more complicated curves.
-\end{interpretationbox}
+A point belongs to a graph when its coordinates satisfy the equation or inequality that defines it. An intersection point belongs to both graphs, so its coordinates satisfy both conditions simultaneously.
