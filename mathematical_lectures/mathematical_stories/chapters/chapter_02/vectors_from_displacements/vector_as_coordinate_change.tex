@@ -1,96 +1,109 @@
-\subsection{A Vector Is a Displacement, Not a Place}
+\subsection{Position Vectors and Displacement Vectors}
 
-Let
+Let the origin of the coordinate system be $O=(0,0)$, and let
 \[
 A=(x_1,y_1),
 \qquad
 B=(x_2,y_2).
 \]
-The point $A$ is a position and the point $B$ is another position. The arrow
-from $A$ to $B$ asks a different question.
 
-\begin{corebox}[The question answered by a vector]
-What change of coordinates carries the starting point to the endpoint?
-\end{corebox}
+The arrow from the origin to a point records the position of that point relative
+to the chosen origin. We write
+\[
+\boxed{\mathbf r_A=\overrightarrow{OA}=(x_1,y_1)},
+\qquad
+\boxed{\mathbf r_B=\overrightarrow{OB}=(x_2,y_2)}.
+\]
+These are the \emph{position vectors} of $A$ and $B$.
 
-\begin{derivationbox}[Why endpoint minus starting point appears]
-The required changes satisfy
+If an object moves from $A$ to $B$, we are no longer asking where either point
+is. We are asking what change carries the initial position to the final one. The
+answer is the \emph{displacement vector}
 \[
-x_1+\Delta x=x_2,
-\qquad
-y_1+\Delta y=y_2.
+\Delta\mathbf r=\overrightarrow{AB}.
 \]
-Solving gives
-\[
-\Delta x=x_2-x_1,
-\qquad
-\Delta y=y_2-y_1.
-\]
-Therefore
+Its components are obtained by subtracting the initial coordinates from the
+final coordinates:
 \[
 \boxed{
-\overrightarrow{AB}=(x_2-x_1,\,y_2-y_1)
+\overrightarrow{AB}
+=(x_2-x_1,\,y_2-y_1)
 }.
 \]
-This subtraction is forced by the requirement that the displacement carry $A$
-to $B$.
-\end{derivationbox}
 
-\begin{definitionbox}
-A vector in the Cartesian plane is a coordinate displacement
+The relation between the two kinds of vectors is therefore
 \[
-\boxed{\mathbf v=(v_1,v_2)}.
+\boxed{
+\Delta\mathbf r
+=\overrightarrow{AB}
+=\mathbf r_B-\mathbf r_A
+}.
 \]
-It instructs us to change the first coordinate by $v_1$ and the second
-coordinate by $v_2$.
-\end{definitionbox}
-
-\begin{interpretationbox}[A vector is independent of its starting point]
-If $P=(p_1,p_2)$ and the displacement is $\mathbf v=(v_1,v_2)$, then the endpoint
-is
+Equivalently,
 \[
-Q=(p_1+v_1,\,p_2+v_2),
+\boxed{
+\mathbf r_B=\mathbf r_A+\Delta\mathbf r
+}.
 \]
-and $\overrightarrow{PQ}=\mathbf v$. Two arrows drawn in different places
-represent the same vector when they produce the same coordinate changes.
-\end{interpretationbox}
+The final position is obtained by adding the displacement to the initial
+position.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.85]
+\begin{tikzpicture}[scale=0.9]
     \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
-    \draw[axis] (0,-0.5) -- (0,5.0) node[above] {$y$};
-    \coordinate (A) at (1,1);
-    \coordinate (B) at (4,3);
-    \coordinate (P) at (2.5,2.2);
-    \coordinate (Q) at (5.5,4.2);
-    \draw[subset,->] (A) -- (B) node[midway,below right] {$(3,2)$};
-    \draw[subset,->] (P) -- (Q) node[midway,above left] {$(3,2)$};
-    \draw[helper,dashed] (A) -- (4,1);
-    \draw[helper,dashed] (4,1) -- (B);
-    \fill[geometricSubsetColor] (A) circle (2pt) node[below left] {$A$};
-    \fill[geometricSubsetColor] (B) circle (2pt) node[below right] {$B$};
-    \fill[geometricSubsetColor] (P) circle (2pt) node[above left] {$P$};
-    \fill[geometricSubsetColor] (Q) circle (2pt) node[above right] {$Q$};
-    \node[align=left,anchor=west] at (5.7,1.25)
-        {same horizontal change\\same vertical change};
+    \draw[axis] (0,-0.5) -- (0,5.2) node[above] {$y$};
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2,1.4);
+    \coordinate (B) at (5.4,4.0);
+
+    \draw[helper,->] (O) -- (A)
+        node[midway,below right] {$\mathbf r_A$};
+    \draw[helper,->] (O) -- (B)
+        node[midway,above left] {$\mathbf r_B$};
+    \draw[subset,->] (A) -- (B)
+        node[midway,below right] {$\Delta\mathbf r=\overrightarrow{AB}$};
+
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[below right] {$A$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above right] {$B$};
 \end{tikzpicture}
 \end{center}
 
-\begin{definitionbox}
+A position vector depends on the chosen origin: moving the origin changes the
+coordinates assigned to the same point. A displacement vector compares two
+positions. If the whole coordinate system is translated, both position vectors
+change in the same way, but their difference remains the same.
+
+The same vector can also be drawn from another starting point. If
+$P=(p_1,p_2)$ and
+\[
+\mathbf v=(v_1,v_2),
+\]
+then applying this displacement at $P$ produces
+\[
+Q=P+\mathbf v=(p_1+v_1,\,p_2+v_2).
+\]
+Thus a displacement vector is not tied to one particular place: it describes
+the same change wherever it is applied.
+
 The zero vector
 \[
-\boxed{\mathbf0=(0,0)}
+\boxed{\mathbf 0=(0,0)}
 \]
 means no displacement. The opposite vector
 \[
 \boxed{-\mathbf v=(-v_1,-v_2)}
 \]
-reverses the displacement.
-\end{definitionbox}
-
-\begin{theorembox}
-If $\mathbf v$ carries $A$ to $B$, then $-\mathbf v$ carries $B$ back to $A$:
+reverses a displacement. In particular,
 \[
 \boxed{\overrightarrow{BA}=-\overrightarrow{AB}}.
 \]
-\end{theorembox}
+
+For motion depending on time, the position will later be written as
+$\mathbf r(t)$. The displacement between two moments $t_1$ and $t_2$ will then
+have exactly the same form:
+\[
+\Delta\mathbf r
+=\mathbf r(t_2)-\mathbf r(t_1).
+\]
