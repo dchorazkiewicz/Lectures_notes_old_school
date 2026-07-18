@@ -1,42 +1,32 @@
-\section{Vectors from Coordinate Displacements}
+\section{Position and Displacement Vectors}
 
-A coordinate pair tells us where a point is. It does not yet tell us how one
-point is related to another. To describe motion from one point to another we
-need a new object: not another position, but a record of the change of position.
-
-Choose
+Coordinates allow us to describe where a point is. Once an origin $O$ has been
+chosen, the position of a point $A$ can be represented by the arrow from the
+origin to that point. This is the \emph{position vector}
 \[
-A=(1,2),
-\qquad
-B=(4,6).
+\mathbf r_A=\overrightarrow{OA}.
 \]
-To travel from $A$ to $B$, the horizontal coordinate must increase by $3$ and
-the vertical coordinate by $4$. The pair
+
+Motion requires a second use of vectors. If an object moves from $A$ to $B$,
+the arrow from the initial position to the final position is the
+\emph{displacement vector}
 \[
-(3,4)
+\Delta\mathbf r=\overrightarrow{AB}.
 \]
-therefore records an instruction:
+The two ideas are connected by
+\[
+\boxed{\overrightarrow{AB}=\mathbf r_B-\mathbf r_A}.
+\]
+Thus position vectors describe where points are relative to the chosen origin,
+while displacement vectors describe how one position changes into another.
+This distinction will later make it possible to describe motion in physics
+without confusing a place with a change of place.
 
-\begin{center}
-move three units in the positive $x$ direction and four units in the positive
-$y$ direction.
-\end{center}
-
-This instruction can be carried out from $A$, but it can also be carried out
-from any other point. The starting point may change while the displacement
-remains the same. That distinction is the idea from which vectors arise.
-
-\noindent\textbf{What a vector is.} A point records a position. A vector records a displacement: a change of
-position that can be translated to a different starting point without changing
-the displacement itself. Vector operations describe how such displacements are
-combined, reversed, and rescaled.
-
-The development below follows a fixed question-driven order. We first decide
-when two arrows represent the same displacement. We then ask how successive
-displacements combine, what it means to repeat or reverse one, what addition and
-scaling can build, how to measure length and direction, and how two
-displacements can be compared geometrically. The coordinate formulas will be
-consequences of those questions, not isolated rules introduced for memorisation.
+The same pair of components can therefore play two different roles. Written as
+$\mathbf r_A$, it locates a point relative to the origin. Written as a
+displacement, it is an instruction that can be applied from any starting point.
+The operations developed below describe how positions change when
+displacements are combined, reversed, rescaled, and compared geometrically.
 
 \input{chapters/chapter_02/vectors_from_displacements/vector_as_coordinate_change}
 \input{chapters/chapter_02/vectors_from_displacements/vector_addition}
@@ -51,9 +41,4 @@ consequences of those questions, not isolated rules introduced for memorisation.
 \input{chapters/chapter_02/vectors_from_displacements/orthogonal_decomposition}
 \input{chapters/chapter_02/vectors_from_displacements/three_dimensions}
 
-\noindent\textbf{Vector toolkit.} A vector is a displacement, not a point. The essential operations are addition
-and scalar multiplication; together they form linear combinations. Length and
-the dot product encode metric information, while parallelism, perpendicularity,
-angles, projections, and orthogonal decompositions translate geometric
-questions into coordinate calculations. The same ideas extend from the plane to
-three-dimensional space.
+\noindent\textbf{Vector toolkit.} Position vectors identify points relative to an origin, while displacement vectors describe changes between positions. Addition and scalar multiplication combine and rescale these changes; length and the dot product encode metric information; and parallelism, perpendicularity, angles, projections, and orthogonal decompositions translate geometric questions into coordinate calculations. The same ideas extend from the plane to three-dimensional space.
