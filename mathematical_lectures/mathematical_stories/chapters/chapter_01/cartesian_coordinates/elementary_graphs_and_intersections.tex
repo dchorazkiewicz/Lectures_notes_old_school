@@ -71,30 +71,30 @@ y&=&\dfrac{x^2}{2}, & \text{parabola}.
 
 \begin{center}
 \begin{tikzpicture}[x=0.72cm,y=0.72cm,>=Latex]
-    \begin{scope}[shift={(-4.2,2.6)}]
-        \draw[->] (-2.6,0) -- (2.6,0);
-        \draw[->] (0,-2.2) -- (0,2.2);
-        \draw[very thick] (0,0) circle (1.6);
-        \node[below] at (0,-2.4) {circle};
-    \end{scope}
-    \begin{scope}[shift={(2.0,2.6)}]
-        \draw[->] (-3.2,0) -- (3.2,0);
-        \draw[->] (0,-2.2) -- (0,2.2);
-        \draw[very thick] (0,0) ellipse (2.6 and 1.6);
-        \node[below] at (0,-2.4) {ellipse};
-    \end{scope}
-    \begin{scope}[shift={(-4.2,-2.5)}]
+    \begin{scope}[shift={(-3.6,2.7)}]
         \draw[->] (-3.0,0) -- (3.0,0);
-        \draw[->] (0,-2.2) -- (0,2.2);
+        \draw[->] (0,-2.3) -- (0,2.3);
+        \draw[very thick] (0,0) circle (1.6);
+        \node at (0,-2.75) {circle};
+    \end{scope}
+    \begin{scope}[shift={(3.6,2.7)}]
+        \draw[->] (-3.0,0) -- (3.0,0);
+        \draw[->] (0,-2.3) -- (0,2.3);
+        \draw[very thick] (0,0) ellipse (2.6 and 1.6);
+        \node at (0,-2.75) {ellipse};
+    \end{scope}
+    \begin{scope}[shift={(-3.6,-3.2)}]
+        \draw[->] (-3.0,0) -- (3.0,0);
+        \draw[->] (0,-2.3) -- (0,2.3);
         \draw[very thick,domain=-1.25:1.25,samples=100] plot ({2*cosh(\x)},{sinh(\x)});
         \draw[very thick,domain=-1.25:1.25,samples=100] plot ({-2*cosh(\x)},{sinh(\x)});
-        \node[below] at (0,-2.4) {hyperbola};
+        \node at (0,-2.75) {hyperbola};
     \end{scope}
-    \begin{scope}[shift={(2.0,-2.5)}]
+    \begin{scope}[shift={(3.6,-3.2)}]
         \draw[->] (-3.0,0) -- (3.0,0);
-        \draw[->] (0,-0.8) -- (0,3.0);
-        \draw[very thick,domain=-2.4:2.4,samples=100] plot (\x,{0.5*\x*\x});
-        \node[below] at (0,-1.0) {parabola};
+        \draw[->] (0,-2.3) -- (0,2.3);
+        \draw[very thick,domain=-2.1:2.1,samples=100] plot (\x,{0.5*\x*\x-1.5});
+        \node at (0,-2.75) {parabola};
     \end{scope}
 \end{tikzpicture}
 \end{center}
