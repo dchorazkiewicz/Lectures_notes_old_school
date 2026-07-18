@@ -1,52 +1,86 @@
 \subsection{Position Vectors and Displacement Vectors}
 
-Let the origin of the coordinate system be $O=(0,0)$, and let
+We begin with a single point in the Cartesian plane. Let
+\[
+P=(p_1,p_2).
+\]
+The arrow drawn from the origin $O=(0,0)$ to the point $P$ is called the
+\emph{position vector} of $P$:
+\[
+\boxed{\mathbf r_P=\overrightarrow{OP}=(p_1,p_2)}.
+\]
+
+The point and its position vector contain the same coordinate information, but
+they describe it in two different ways. The point $P$ marks a place in the
+plane. The vector $\mathbf r_P$ describes how to reach that place from the
+chosen origin: change the first coordinate by $p_1$ and the second by $p_2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.86]
+    \draw[axis] (-4.8,0) -- (5.0,0) node[right] {$x$};
+    \draw[axis] (0,-3.8) -- (0,4.2) node[above] {$y$};
+
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.2,2.4);
+    \coordinate (B) at (-3.4,2.0);
+    \coordinate (C) at (-2.3,-2.5);
+    \coordinate (D) at (2.8,-2.2);
+
+    \draw[subset,->] (O) -- (A) node[midway,above left] {$\mathbf r_A$};
+    \draw[subset,->] (O) -- (B) node[midway,above right] {$\mathbf r_B$};
+    \draw[subset,->] (O) -- (C) node[midway,below right] {$\mathbf r_C$};
+    \draw[subset,->] (O) -- (D) node[midway,below left] {$\mathbf r_D$};
+
+    \draw[helper,dashed] (A) -- (3.2,0);
+    \draw[helper,dashed] (A) -- (0,2.4);
+    \draw[helper,dashed] (B) -- (-3.4,0);
+    \draw[helper,dashed] (B) -- (0,2.0);
+    \draw[helper,dashed] (C) -- (-2.3,0);
+    \draw[helper,dashed] (C) -- (0,-2.5);
+    \draw[helper,dashed] (D) -- (2.8,0);
+    \draw[helper,dashed] (D) -- (0,-2.2);
+
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (A) circle (2pt) node[above right] {$A=(3.2,2.4)$};
+    \fill[geometricSubsetColor] (B) circle (2pt) node[above left] {$B=(-3.4,2.0)$};
+    \fill[geometricSubsetColor] (C) circle (2pt) node[below left] {$C=(-2.3,-2.5)$};
+    \fill[geometricSubsetColor] (D) circle (2pt) node[below right] {$D=(2.8,-2.2)$};
+\end{tikzpicture}
+\end{center}
+
+Each point has its own position vector, always beginning at the same origin.
+For example,
+\[
+\mathbf r_A=(3.2,2.4),\qquad
+\mathbf r_B=(-3.4,2.0),\qquad
+\mathbf r_C=(-2.3,-2.5),\qquad
+\mathbf r_D=(2.8,-2.2).
+\]
+The signs of the components show in which directions one must move from the
+origin, while their magnitudes describe how far the point lies along the two
+coordinate directions.
+
+A position vector is therefore tied to the chosen origin. If the origin is
+changed, the vector describing the same point also changes.
+
+Only after position vectors have been introduced do we compare two positions.
+Let
 \[
 A=(x_1,y_1),
 \qquad
-B=(x_2,y_2).
+B=(x_2,y_2),
 \]
-
-The arrow from the origin to a point records the position of that point relative
-to the chosen origin. We write
+with position vectors
 \[
-\boxed{\mathbf r_A=\overrightarrow{OA}=(x_1,y_1)},
+\mathbf r_A=\overrightarrow{OA},
 \qquad
-\boxed{\mathbf r_B=\overrightarrow{OB}=(x_2,y_2)}.
+\mathbf r_B=\overrightarrow{OB}.
 \]
-These are the \emph{position vectors} of $A$ and $B$.
-
-If an object moves from $A$ to $B$, we are no longer asking where either point
-is. We are asking what change carries the initial position to the final one. The
-answer is the \emph{displacement vector}
+If an object moves from $A$ to $B$, the arrow from the initial point to the
+final point is the \emph{displacement vector}:
 \[
 \Delta\mathbf r=\overrightarrow{AB}.
 \]
-Its components are obtained by subtracting the initial coordinates from the
-final coordinates:
-\[
-\boxed{
-\overrightarrow{AB}
-=(x_2-x_1,\,y_2-y_1)
-}.
-\]
-
-The relation between the two kinds of vectors is therefore
-\[
-\boxed{
-\Delta\mathbf r
-=\overrightarrow{AB}
-=\mathbf r_B-\mathbf r_A
-}.
-\]
-Equivalently,
-\[
-\boxed{
-\mathbf r_B=\mathbf r_A+\Delta\mathbf r
-}.
-\]
-The final position is obtained by adding the displacement to the initial
-position.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -70,39 +104,31 @@ position.
 \end{tikzpicture}
 \end{center}
 
-A position vector depends on the chosen origin: moving the origin changes the
-coordinates assigned to the same point. A displacement vector compares two
-positions. If the whole coordinate system is translated, both position vectors
-change in the same way, but their difference remains the same.
-
-The same vector can also be drawn from another starting point. If
-$P=(p_1,p_2)$ and
+The displacement is the change required to turn the initial position vector
+into the final position vector:
 \[
-\mathbf v=(v_1,v_2),
+\mathbf r_A+\Delta\mathbf r=\mathbf r_B.
 \]
-then applying this displacement at $P$ produces
+Therefore
 \[
-Q=P+\mathbf v=(p_1+v_1,\,p_2+v_2).
+\boxed{
+\Delta\mathbf r
+=\overrightarrow{AB}
+=\mathbf r_B-\mathbf r_A
+}
 \]
-Thus a displacement vector is not tied to one particular place: it describes
-the same change wherever it is applied.
-
-The zero vector
+and, in coordinates,
 \[
-\boxed{\mathbf 0=(0,0)}
-\]
-means no displacement. The opposite vector
-\[
-\boxed{-\mathbf v=(-v_1,-v_2)}
-\]
-reverses a displacement. In particular,
-\[
-\boxed{\overrightarrow{BA}=-\overrightarrow{AB}}.
+\boxed{
+\overrightarrow{AB}
+=(x_2-x_1,\,y_2-y_1)
+}.
 \]
 
-For motion depending on time, the position will later be written as
-$\mathbf r(t)$. The displacement between two moments $t_1$ and $t_2$ will then
-have exactly the same form:
+A position vector describes where an object is relative to the origin. A
+displacement vector describes how its position changes. This distinction will
+later allow motion to be written as a time-dependent position vector
+$\mathbf r(t)$, with displacement between two moments given by
 \[
 \Delta\mathbf r
 =\mathbf r(t_2)-\mathbf r(t_1).
