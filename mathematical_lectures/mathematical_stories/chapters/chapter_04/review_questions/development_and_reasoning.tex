@@ -1,17 +1,30 @@
 \subsection{Development and reasoning exercises}
 
 \begin{enumerate}
+
 \item Draw one point in both Cartesian and polar coordinates. Derive
 \[
 x=r\cos\theta,
 \qquad
 y=r\sin\theta,
 \qquad
-r=\sqrt{x^2+y^2},
+r=\sqrt{x^2+y^2}.
 \]
-and explain why the polar description is better adapted to a distinguished focus.
+Explain why the polar description is better adapted to a problem with one
+distinguished focus.
 
-\item Starting from
+\item The same circle can be described by
+\[
+x^2+y^2=R^2
+\]
+and by
+\[
+r=R.
+\]
+Explain why the polar equation is simpler. Then move the centre away from the
+pole and discuss what simplicity is lost.
+
+\item Starting from the focus--directrix condition
 \[
 d(P,F)=e\,d(P,D),
 \]
@@ -22,35 +35,61 @@ r=\frac{p}{1+e\cos\theta},
 \]
 using a fully labelled geometric diagram.
 
-\item Fix $p=2$ and compare the ellipses obtained for $e=0.2$, $e=0.6$, and $e=0.9$. Explain the changes using $r_{\min}$ and $r_{\max}$ rather than only visual appearance.
+\item Fix $p=2$ and compare the ellipses obtained for
+\[
+e=0.2,\qquad e=0.6,\qquad e=0.9.
+\]
+Explain the changes using the denominator and the values of $r_{\min}$ and
+$r_{\max}$ rather than only visual appearance.
 
-\item Explain directly from the denominator why $e=1$ is the transition between a closed ellipse and an open hyperbola.
+\item Explain directly from
+\[
+r=\frac{p}{1+e\cos\theta}
+\]
+why $e=1$ is the transition between a closed ellipse and an open conic. Your
+argument should discuss whether the denominator can vanish.
 
-\item The polar formula with $e>1$ and $r\geq0$ describes one hyperbolic branch relative to one focus and directrix. Explain how the complete two-branch hyperbola is recovered and why the Cartesian equation displays it more naturally.
+\item For $e>1$ and $r\geq0$, the focal polar equation naturally traces one
+branch of a hyperbola. Explain why this does not mean that the other branch has
+disappeared. Describe how the complete two-branch curve is represented more
+naturally in Cartesian coordinates.
 
-\item Compare
+\item Compare the centre-based ellipse
 \[
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1
 \]
-with
+with the focus-based equation
 \[
 r=\frac{a(1-e^2)}{1+e\cos\theta}.
 \]
-State which geometric information is immediate in each description.
+State which geometric information is immediate in each description and why
+neither description is universally superior.
 
-\item Explain why the parameter $t$ in
+\item The parameterisation
 \[
 x=a\cos t,
 \qquad y=b\sin t
 \]
-is not generally the same as the polar angle $\theta$ measured from a focus.
+and the polar equation
+\[
+r=\frac{a(1-e^2)}{1+e\cos\theta}
+\]
+describe the same ellipse. Explain why $t$ is not generally the polar angle
+$\theta$ measured from a focus. Support the explanation with a labelled
+sketch.
 
-\item An orbit has nearest focal distance $4$ and farthest focal distance $12$. Find $a$, $e$, and $p$, then write its polar equation with periapsis at $\theta=0$.
+\item An orbit has nearest focal distance $4$ and farthest focal distance $12$.
+Determine $a$, $e$, and $p$, and write its polar equation with periapsis at
+$\theta=0$. Explain how the two measured distances determine both the size and
+the shape of the ellipse.
 
-\item Explain how $p$, $e$, and $\theta_0$ separately control scale, shape, and orientation in
+\item Explain separately the roles of $p$, $e$, and $\theta_0$ in
 \[
 r=\frac{p}{1+e\cos(\theta-\theta_0)}.
 \]
+Then summarise the chapter as a change of viewpoint: classical Cartesian
+curves first, direction and distance in polar coordinates second, and one
+focus--directrix law last. Explain why this sequence prepares a later study of
+orbits in mechanics.
 
-\item Summarise the chapter as a change of viewpoint rather than a classification table: Cartesian geometry first, polar coordinates second, one focus--directrix law last. Explain why this sequence prepares a later derivation of orbits in mechanics.
 \end{enumerate}
