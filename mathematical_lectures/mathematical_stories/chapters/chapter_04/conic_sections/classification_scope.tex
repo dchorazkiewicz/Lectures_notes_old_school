@@ -1,35 +1,270 @@
-\subsection{From Construction to Recognition}
+\section{Polar Coordinates and One Equation for the Conics}
 
-The geometric definitions answer the question \emph{what the curves are}. A
-different problem begins when an equation is given first.
+Cartesian coordinates ask for horizontal and vertical displacement. When one
+focus is distinguished, a different pair of questions becomes natural:
 
-\begin{corebox}[The recognition question]
-Which geometric curve, if any, is hidden in a given second-degree algebraic
-condition?
-\end{corebox}
+\begin{center}
+\emph{In which direction is the point, and how far is it from the focus?}
+\end{center}
 
-\begin{corebox}[Two different tasks]
-Constructing a conic starts from a geometric condition and derives an equation.
-Recognising a conic starts from an equation and reconstructs the geometry.
-Standard forms, completing squares, translations, rotations, and discriminants
-belong to the second task; they do not replace the geometric definition.
-\end{corebox}
+\subsection{The polar coordinate system}
 
-\begin{interpretationbox}[First visual clues in the equation]
-When no mixed term is present, squared terms with the same sign suggest an
-ellipse-type set, opposite signs suggest hyperbolic behaviour, and the absence
-of one quadratic direction suggests a parabola. Degenerate cases may instead
-produce points, lines, or no real points.
+Choose a point $O$, called the pole, and a ray from it, called the polar axis. A
+point $P\neq O$ is described by
+\[
+\boxed{(r,\theta)},
+\]
+where $r=d(O,P)>0$ and $\theta$ is the directed angle from the polar axis to the
+ray $OP$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-0.6,0)--(6.0,0) node[right] {polar axis};
+    \coordinate (O) at (0,0);
+    \coordinate (P) at ({4.6*cos(34)},{4.6*sin(34)});
+    \draw[very thick,->] (O)--(P) node[midway,above left] {$r$};
+    \draw (1.2,0) arc[start angle=0,end angle=34,radius=1.2];
+    \node at (1.45,0.48) {$\theta$};
+    \fill[geometricSubsetColor] (O) circle (2.2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+The conversion between Cartesian and polar coordinates is
+\[
+\boxed{x=r\cos\theta,\qquad y=r\sin\theta}.
+\]
+Conversely,
+\[
+\boxed{r=\sqrt{x^2+y^2}},
+\]
+and the angle is chosen so that
+\[
+\cos\theta=\frac xr,
+\qquad
+\sin\theta=\frac yr.
+\]
+
+\begin{interpretationbox}[Coordinate curves]
+In Cartesian coordinates, $x=\text{constant}$ and $y=\text{constant}$ are lines.
+In polar coordinates, $r=\text{constant}$ is a circle centred at the pole, while
+$\theta=\text{constant}$ is a ray. The coordinate system is adapted to distance
+and direction from one distinguished point.
 \end{interpretationbox}
 
-\begin{interpretationbox}[What the mixed term means]
-A term $Bxy$ indicates that the chosen coordinate axes may not follow the
-natural symmetry directions of the curve. Rotating the coordinate system can
-remove the mixed term and reveal the standard geometry.
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+    \begin{scope}[xshift=-4.6cm]
+        \draw[gray!35,step=0.8] (-3.0,-3.0) grid (3.0,3.0);
+        \draw[axis,->] (-3.2,0)--(3.3,0) node[right] {$x$};
+        \draw[axis,->] (0,-3.2)--(0,3.3) node[above] {$y$};
+        \node at (0,-3.8) {Cartesian grid};
+    \end{scope}
+    \begin{scope}[xshift=4.6cm]
+        \draw[axis,->] (-3.2,0)--(3.3,0);
+        \draw[axis,->] (0,-3.2)--(0,3.3);
+        \foreach \r in {0.8,1.6,2.4} {\draw[gray!45] (0,0) circle (\r);}
+        \foreach \a in {0,30,...,330} {
+            \draw[gray!45] (0,0)--({2.8*cos(\a)},{2.8*sin(\a)});
+        }
+        \node at (0,-3.8) {polar grid};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsection{A first polar graph}
+
+A circle centred at the pole has the exceptionally simple equation
+\[
+\boxed{r=R}.
+\]
+Every direction meets the circle at the same distance.
+
+A shifted circle already shows why polar equations can encode geometry in a
+compact way. Consider
+\[
+r=2R\cos\theta.
+\]
+Multiplying by $r$ and using $x=r\cos\theta$ gives
+\[
+r^2=2Rx,
+\]
+so
+\[
+x^2+y^2=2Rx,
+\]
+or
+\[
+\boxed{(x-R)^2+y^2=R^2}.
+\]
+Thus the polar graph is a circle of radius $R$ centred at $(R,0)$ and passing
+through the pole.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-1.0,0)--(5.8,0) node[right] {$x$};
+    \draw[axis,->] (0,-2.8)--(0,2.8) node[above] {$y$};
+    \draw[subset] (2.0,0) circle (2.0);
+    \draw[very thick,->] (0,0)--({4*cos(42)*cos(42)},{4*cos(42)*sin(42)})
+        node[midway,above left] {$r=2R\cos\theta$};
+    \draw (0.8,0) arc[start angle=0,end angle=42,radius=0.8];
+    \node at (1.05,0.35) {$\theta$};
+    \fill[geometricSubsetColor] (0,0) circle (2pt) node[below left] {pole};
+    \fill[geometricSubsetColor] (2,0) circle (2pt) node[below] {centre};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Focus, directrix, and eccentricity}
+
+Fix a focus $F$ and a line $D$ not passing through it. For a number $e>0$,
+consider all points $P$ satisfying
+\[
+\boxed{d(P,F)=e\,d(P,D)}.
+\]
+The number $e$ is called the \emph{eccentricity}.
+
+\begin{theorembox}
+The focus--directrix condition produces
+\[
+\begin{array}{c|c}
+0<e<1 & \text{ellipse},\\
+e=1 & \text{parabola},\\
+e>1 & \text{hyperbola}.
+\end{array}
+\]
+A circle is the limiting ellipse with eccentricity $e=0$.
+\end{theorembox}
+
+\begin{interpretationbox}[What eccentricity measures]
+Eccentricity measures departure from circular symmetry. Small $e$ gives an
+almost circular ellipse. As $e$ approaches $1$, the ellipse becomes more
+elongated. At $e=1$ the curve opens into a parabola; for $e>1$ it becomes a
+hyperbola.
 \end{interpretationbox}
 
-\begin{remarkbox}
-This subsection motivates the recognition problem. The precise classification
-criterion and its exceptional cases are stated once in the algebraic
-classification that follows.
-\end{remarkbox}
+\begin{center}
+\begin{tikzpicture}[scale=0.72,>=stealth]
+    \begin{scope}[xshift=-6cm]
+        \draw[axis,->] (-2.8,0)--(2.9,0);
+        \draw[axis,->] (0,-2.2)--(0,2.3);
+        \draw[subset] (0,0) ellipse (2.3 and 1.6);
+        \fill[geometricSubsetColor] (0.9,0) circle (2pt);
+        \node at (0,-2.8) {$0<e<1$};
+    \end{scope}
+    \begin{scope}
+        \draw[axis,->] (-1.5,0)--(3.6,0);
+        \draw[axis,->] (0,-2.2)--(0,2.3);
+        \draw[subset,domain=-2:2,samples=100] plot ({0.55*\x*\x},{\x});
+        \fill[geometricSubsetColor] (0.9,0) circle (2pt);
+        \node at (0.8,-2.8) {$e=1$};
+    \end{scope}
+    \begin{scope}[xshift=6cm]
+        \draw[axis,->] (-0.8,0)--(4.3,0);
+        \draw[axis,->] (0,-2.2)--(0,2.3);
+        \draw[subset,domain=1.1:3.8,samples=100]
+            plot (\x,{0.85*sqrt(\x*\x-1)});
+        \draw[subset,domain=1.1:3.8,samples=100]
+            plot (\x,{-0.85*sqrt(\x*\x-1)});
+        \fill[geometricSubsetColor] (1.4,0) circle (2pt);
+        \node at (1.8,-2.8) {$e>1$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Deriving the common polar equation}
+
+Place the pole at the focus $F=(0,0)$ and let the directrix be the vertical line
+\[
+x=d,
+\qquad d>0.
+\]
+For a point $P=(r,\theta)$, its distance from the focus is $r$. Its Cartesian
+horizontal coordinate is $r\cos\theta$, so its distance from the directrix is
+\[
+d-r\cos\theta
+\]
+for the branch lying to the left of the directrix.
+
+The focus--directrix condition becomes
+\[
+r=e(d-r\cos\theta).
+\]
+Therefore
+\[
+r+er\cos\theta=ed,
+\]
+and hence
+\[
+\boxed{r(1+e\cos\theta)=ed}.
+\]
+Introduce the focal parameter
+\[
+\boxed{p=ed}.
+\]
+Then all three conics are described by
+\[
+\boxed{r(\theta)=\frac{p}{1+e\cos\theta}}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-1.2,0)--(7.0,0) node[right] {$x$};
+    \draw[axis,->] (0,-3.3)--(0,3.4) node[above] {$y$};
+    \draw[gray,thick] (5.8,-3.0)--(5.8,3.0) node[above] {$D:x=d$};
+    \coordinate (F) at (0,0);
+    \coordinate (P) at ({3.7*cos(32)},{3.7*sin(32)});
+    \coordinate (H) at (5.8,{3.7*sin(32)});
+    \draw[very thick,->] (F)--(P) node[midway,above left] {$r$};
+    \draw[orange!85!black,line width=1.1pt] (P)--(H)
+        node[midway,above] {$d-r\cos\theta$};
+    \draw (1.0,0) arc[start angle=0,end angle=32,radius=1.0];
+    \node at (1.25,0.38) {$\theta$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below left] {$F$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\begin{corebox}[One formula, three geometries]
+The equation
+\[
+r=\frac{p}{1+e\cos\theta}
+\]
+is not a new definition detached from the classical curves. It is the
+focus--directrix condition written in coordinates centred at the focus.
+\end{corebox}
+
+\subsection{Reading the geometry directly from the denominator}
+
+At $\theta=0$,
+\[
+\boxed{r_{\min}=\frac{p}{1+e}}.
+\]
+For an ellipse, at $\theta=\pi$,
+\[
+\boxed{r_{\max}=\frac{p}{1-e}}.
+\]
+Thus the same equation immediately identifies the nearest and farthest points
+from the focus.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.88,>=stealth]
+    \draw[axis,->] (-4.7,0)--(5.2,0) node[right] {polar axis};
+    \draw[axis,->] (0,-3.0)--(0,3.2);
+    \draw[subset] (0.7,0) ellipse (3.6 and 2.1);
+    \coordinate (F) at (-1.9,0);
+    \coordinate (A) at (-2.9,0);
+    \coordinate (B) at (4.3,0);
+    \draw[blue!70!black,line width=1.1pt,<->] (F)--(A)
+        node[midway,below] {$r_{\min}$};
+    \draw[orange!85!black,line width=1.1pt,<->] (F)--(B)
+        node[midway,above] {$r_{\max}$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below] {focus};
+\end{tikzpicture}
+\end{center}
+
+\begin{summarybox}[Why polar coordinates matter]
+Cartesian coordinates display axes, centres, vertices, and algebraic form.
+Polar coordinates centred at a focus display direction, focal distance, and
+eccentricity. The two descriptions represent the same curve but expose
+different geometric information.
+\end{summarybox}
