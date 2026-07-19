@@ -96,7 +96,7 @@ Kiedy ma miejsce znak równości?
 
 Para punktów $p$ i $q$ przestrzeni $C_n$, z uwzględnieniem ich kolejności — czyli para uporządkowana (por. str. 31, notka 1) — nazywa się *wektorem o początku $p$ i końcu $q$*. Wektor ten oznaczamy przez $\overrightarrow{pq}$.
 
-*Współrzędnymi* wektora $\overrightarrow{pq}$ nazywamy współrzędne różnicy $q-p$, a *długością* wektora $\overrightarrow{pq}$ — liczbę $|\overrightarrow{pq}|$ równą odległości punktów $p$ i $q$. A więc
+*Współrzędnymi* wektora $\overrightarrow{pq}$ nazywamy współrzędne różnicy $p-q$, a *długością* wektora $\overrightarrow{pq}$ — liczbę $|\overrightarrow{pq}|$ równą odległości punktów $p$ i $q$. A więc
 
 $$
 |\overrightarrow{pq}|
