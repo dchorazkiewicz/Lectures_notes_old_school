@@ -1,26 +1,83 @@
-\section{Changing the Basis: New Coordinates for the Same Vector}
+\section{One Vector in a Different Basis}
 
-The preceding section developed the basic geometry and algebra of vectors:
-addition, scalar multiplication, linear combinations, length, angle, the dot
-product, parallelism, perpendicularity, and orthogonal projection. We now use
-that toolkit to study how the coordinate description of one fixed geometric
-vector changes when the basis is changed.
+A vector does not change when we describe it in another basis. Only the numbers
+used to reconstruct it from the chosen basis vectors change. One numerical
+example is enough to see the mechanism.
 
-\noindent\textbf{What changes and what does not.} Changing the basis does not change the geometric vector. It changes only the
-pair of coefficients used to reconstruct that vector from the chosen basis
-directions. Coordinates belong to a vector relative to a basis; the vector
-itself is independent of that description.
+Let
+\[
+\mathbf b_1=[1,1],
+\qquad
+\mathbf b_2=[1,-1]
+\]
+and consider the vector
+\[
+\mathbf v=[4,2].
+\]
+We seek numbers $\alpha$ and $\beta$ such that
+\[
+\mathbf v=\alpha\mathbf b_1+\beta\mathbf b_2.
+\]
+Using the Cartesian coordinates of the basis vectors gives
+\[
+[4,2]
+=
+\alpha[1,1]+\beta[1,-1]
+=
+[\alpha+\beta,\alpha-\beta].
+\]
+Therefore
+\[
+\alpha+\beta=4,
+\qquad
+\alpha-\beta=2.
+\]
+Solving this small system gives
+\[
+\alpha=3,
+\qquad
+\beta=1.
+\]
+Hence
+\[
+\boxed{
+\mathbf v=3\mathbf b_1+\mathbf b_2
+}
+\]
+and the coordinates of the same vector in the basis
+$B=(\mathbf b_1,\mathbf b_2)$ are
+\[
+\boxed{
+[\mathbf v]_B=[3,1].
+}
+\]
 
-\input{chapters/chapter_02/change_of_basis/basis_definition_and_geometry}
-\input{chapters/chapter_02/change_of_basis/same_vector_two_grids}
-\input{chapters/chapter_02/change_of_basis/coordinates_from_linear_system}
-\input{chapters/chapter_02/change_of_basis/general_coordinate_formula}
-\input{chapters/chapter_02/change_of_basis/change_between_bases_and_projection}
-\input{chapters/chapter_02/change_of_basis/negative_coordinate_example}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,0);
+    \coordinate (BOne) at (1.4,1.4);
+    \coordinate (BTwo) at (1.4,-1.4);
+    \coordinate (ThreeBOne) at (4.2,4.2);
+    \coordinate (V) at (5.6,2.8);
 
-\noindent\textbf{Basis coordinates.} A basis is an ordered pair of nonparallel vectors. Every vector in the plane has
-one coordinate pair relative to that basis. Positive and negative coefficients
-are signed instructions telling us how much of each basis vector is required.
-Different bases give different coordinate pairs for the same geometric vector.
-To change coordinates, reconstruct the vector from the old basis and then solve
-for its coefficients in the new basis.
+    \draw[subset,->] (O) -- (BOne)
+        node[midway,above left] {$\mathbf b_1$};
+    \draw[subset,->] (O) -- (BTwo)
+        node[midway,below left] {$\mathbf b_2$};
+    \draw[helper,dashed,->] (O) -- (ThreeBOne)
+        node[midway,above left] {$3\mathbf b_1$};
+    \draw[helper,dashed,->] (ThreeBOne) -- (V)
+        node[midway,above right] {$\mathbf b_2$};
+    \draw[very thick,->] (O) -- (V)
+        node[midway,below right] {$\mathbf v$};
+
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (ThreeBOne) circle (2pt);
+    \fill (V) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+The Cartesian coordinates $[4,2]$ and the basis coordinates $[3,1]_B$ are two
+numerical descriptions of the same geometric vector. Changing the basis means
+solving for the coefficients in one concrete linear combination; no additional
+general machinery is needed here.
