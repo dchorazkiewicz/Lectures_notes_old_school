@@ -1,21 +1,15 @@
-\subsection{Points and Anchored Vectors}
+\subsection{Anchored and Free Vectors in Cartesian Space}
 
-The Cartesian plane introduced in the previous chapter is a set of points. Each
-point is described by an ordered pair of real numbers. Thus
+The Cartesian plane is a set of points described by ordered pairs of real
+numbers. Let
 \[
 P=(p_1,p_2),
 \qquad
-Q=(q_1,q_2)
+Q=(q_1,q_2).
 \]
-are two positions in the plane.
-
-A point tells us where something is. To describe a directed change from one
-position to another, we must keep track of both the starting point and the
-endpoint. The ordered pair of points
-\[
-(P,Q)
-\]
-determines the arrow beginning at $P$ and ending at $Q$. We denote it by
+The points $P$ and $Q$ determine an ordered pair of points $(P,Q)$. Geometrically,
+this ordered pair is represented by an arrow beginning at $P$ and ending at $Q$.
+We denote it by
 \[
 \overrightarrow{PQ}
 \]
@@ -26,11 +20,12 @@ and call it an \emph{anchored vector}.
     \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
     \draw[axis] (0,-0.5) -- (0,5.2) node[above] {$y$};
 
-    \coordinate (P) at (1.3,1.2);
-    \coordinate (Q) at (5.3,4.0);
+    \coordinate (P) at (1.2,1.1);
+    \coordinate (Q) at (5.2,4.0);
+    \coordinate (R) at (5.2,1.1);
 
-    \draw[helper,dashed] (P) -- (5.3,1.2);
-    \draw[helper,dashed] (5.3,1.2) -- (Q);
+    \draw[helper,dashed] (P) -- (R);
+    \draw[helper,dashed] (R) -- (Q);
     \draw[subset,->] (P) -- (Q)
         node[midway,above left] {$\overrightarrow{PQ}$};
 
@@ -39,131 +34,164 @@ and call it an \emph{anchored vector}.
     \fill[geometricSubsetColor] (Q) circle (2pt)
         node[above right] {$Q=(q_1,q_2)$};
 
-    \node[align=center] at (3.3,0.55)
-        {horizontal change: $q_1-p_1$};
-    \node[rotate=90] at (5.85,2.6)
-        {vertical change: $q_2-p_2$};
+    \node[below] at (3.2,1.1) {$q_1-p_1$};
+    \node[right,rotate=90] at (5.2,2.55) {$q_2-p_2$};
 \end{tikzpicture}
 \end{center}
 
-The coordinate description of this arrow is obtained by comparing the endpoint
-with the starting point. To move from $P$ to $Q$, the first coordinate must
-change by $q_1-p_1$ and the second by $q_2-p_2$. Therefore
+The arrow records the change needed to pass from its initial point to its final
+point. Its first component is the horizontal change and its second component is
+the vertical change. Therefore
 \[
 \boxed{
-\overrightarrow{PQ}
+[\overrightarrow{PQ}]
+=
+Q-P
 =
 (q_1-p_1,\,q_2-p_2)
 }.
 \]
+The square brackets distinguish the coordinate description of the vector from
+the particular arrow drawn between $P$ and $Q$.
 
-This is the first place where subtraction of points becomes useful. The
-expression
+The order of the points matters. Reversing the ordered pair reverses both
+coordinate changes:
 \[
-Q-P
+[\overrightarrow{QP}]
+=
+P-Q
+=
+-(Q-P).
 \]
-does not denote another point of the plane. It denotes the coordinate change
-that carries $P$ to $Q$:
+
+An anchored vector contains two kinds of information at once. It tells us where
+the arrow is drawn, because its initial and final points are specified, and it
+tells us what directed change the arrow represents. For many geometric and
+physical questions, the place where the arrow is drawn is not important. What
+matters is only the change itself.
+
+Consider two anchored vectors
+\[
+\overrightarrow{PQ}
+\qquad\text{and}\qquad
+\overrightarrow{RS}.
+\]
+They represent the same directed change when their coordinate differences are
+the same:
 \[
 \boxed{
-\overrightarrow{PQ}=Q-P
+\overrightarrow{PQ}=\overrightarrow{RS}
+\quad\Longleftrightarrow\quad
+Q-P=S-R
 }.
 \]
-
-The order matters. Reversing the two points reverses the arrow:
-\[
-\overrightarrow{QP}=P-Q=-\overrightarrow{PQ}.
-\]
-
-A particularly important anchored vector begins at the origin
-\[
-O=(0,0).
-\]
-For a point
-\[
-P=(p_1,p_2),
-\]
-the arrow
-\[
-\overrightarrow{OP}
-\]
-is called the \emph{position vector} of $P$. We write
-\[
-\boxed{
-\mathbf r_P=\overrightarrow{OP}=(p_1,p_2)
-}.
-\]
+Thus equal anchored vectors have the same horizontal and vertical changes, even
+when they begin at different points.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.86]
-    \draw[axis] (-4.8,0) -- (5.0,0) node[right] {$x$};
-    \draw[axis] (0,-3.8) -- (0,4.2) node[above] {$y$};
+    \draw[axis] (-0.5,0) -- (8.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.5) node[above] {$y$};
 
-    \coordinate (O) at (0,0);
-    \coordinate (A) at (3.2,2.4);
-    \coordinate (B) at (-3.4,2.0);
-    \coordinate (C) at (-2.3,-2.5);
-    \coordinate (D) at (2.8,-2.2);
+    \coordinate (P) at (1.0,1.0);
+    \coordinate (Q) at (3.8,2.8);
+    \coordinate (R) at (3.0,0.8);
+    \coordinate (S) at (5.8,2.6);
+    \coordinate (T) at (4.4,2.9);
+    \coordinate (U) at (7.2,4.7);
 
-    \draw[subset,->] (O) -- (A) node[midway,above left] {$\mathbf r_A$};
-    \draw[subset,->] (O) -- (B) node[midway,above right] {$\mathbf r_B$};
-    \draw[subset,->] (O) -- (C) node[midway,below right] {$\mathbf r_C$};
-    \draw[subset,->] (O) -- (D) node[midway,below left] {$\mathbf r_D$};
+    \draw[subset,->] (P) -- (Q);
+    \draw[subset,->] (R) -- (S);
+    \draw[subset,->] (T) -- (U);
 
-    \draw[helper,dashed] (A) -- (3.2,0);
-    \draw[helper,dashed] (A) -- (0,2.4);
-    \draw[helper,dashed] (B) -- (-3.4,0);
-    \draw[helper,dashed] (B) -- (0,2.0);
-    \draw[helper,dashed] (C) -- (-2.3,0);
-    \draw[helper,dashed] (C) -- (0,-2.5);
-    \draw[helper,dashed] (D) -- (2.8,0);
-    \draw[helper,dashed] (D) -- (0,-2.2);
+    \fill (P) circle (1.8pt) node[below left] {$P$};
+    \fill (Q) circle (1.8pt) node[above left] {$Q$};
+    \fill (R) circle (1.8pt) node[below left] {$R$};
+    \fill (S) circle (1.8pt) node[below right] {$S$};
+    \fill (T) circle (1.8pt) node[below left] {$T$};
+    \fill (U) circle (1.8pt) node[above right] {$U$};
 
-    \fill (O) circle (2pt) node[below left] {$O$};
-    \fill[geometricSubsetColor] (A) circle (2pt)
-        node[above right] {$A=(3.2,2.4)$};
-    \fill[geometricSubsetColor] (B) circle (2pt)
-        node[above left] {$B=(-3.4,2.0)$};
-    \fill[geometricSubsetColor] (C) circle (2pt)
-        node[below left] {$C=(-2.3,-2.5)$};
-    \fill[geometricSubsetColor] (D) circle (2pt)
-        node[below right] {$D=(2.8,-2.2)$};
+    \node[align=center] at (4.2,5.15)
+        {the same coordinate change\\drawn from different points};
 \end{tikzpicture}
 \end{center}
 
-The point $P$ and the position vector $\mathbf r_P$ have the same coordinates,
-but they are not the same kind of object. The point is a position. The vector is
-the directed arrow from the chosen origin to that position.
+A \emph{free vector} is the directed change common to all equal anchored
+vectors. It is not tied to one initial point. We may move its arrow parallel to
+itself without changing the vector, provided that its direction, orientation,
+and length remain unchanged.
 
-Now let $A$ and $B$ be two positions. Their anchored vector satisfies
-\[
-\overrightarrow{AB}=B-A.
-\]
-Since
-\[
-\mathbf r_A=A-O,
-\qquad
-\mathbf r_B=B-O,
-\]
-we obtain
+In Cartesian coordinates, a free vector is completely described by one ordered
+pair of real numbers:
 \[
 \boxed{
-\overrightarrow{AB}
-=
-\mathbf r_B-\mathbf r_A
+\mathbf v=(v_1,v_2)
 }.
 \]
-Thus a displacement is the difference between the final and initial position
-vectors.
-
-For motion depending on time, the same relation will later be written as
+This pair means a change of $v_1$ in the first coordinate and a change of $v_2$
+in the second coordinate. Every anchored vector satisfying
 \[
-\Delta\mathbf r
-=
-\mathbf r(t_2)-\mathbf r(t_1).
+Q-P=(v_1,v_2)
 \]
+is a representative of the same free vector $\mathbf v$.
 
-At this stage the vector is still anchored to a particular starting point and
-endpoint. The next step is to decide when arrows drawn in different places
-represent the same directed change. That will lead from anchored vectors to
-free vectors.
+There is a particularly simple representative. Let
+\[
+O=(0,0)
+\qquad\text{and}\qquad
+V=(v_1,v_2).
+\]
+Then
+\[
+[\overrightarrow{OV}]
+=
+V-O
+=
+(v_1,v_2).
+\]
+Hence every free vector can be drawn from the origin to the point whose
+coordinates are the components of the vector:
+\[
+\boxed{
+\mathbf v=(v_1,v_2)
+\quad\longleftrightarrow\quad
+\overrightarrow{OV},
+\qquad V=(v_1,v_2)
+}.
+\]
+This does not identify points and vectors as the same kind of object. It gives a
+convenient canonical representative of a free vector inside the Cartesian
+plane.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[axis] (-0.5,0) -- (7.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.2) node[above] {$y$};
+
+    \coordinate (O) at (0,0);
+    \coordinate (V) at (3.2,2.1);
+    \coordinate (P) at (2.4,1.1);
+    \coordinate (Q) at (5.6,3.2);
+
+    \draw[helper,dashed] (V) -- (3.2,0);
+    \draw[helper,dashed] (V) -- (0,2.1);
+    \draw[subset,->] (O) -- (V)
+        node[midway,above left] {$\mathbf v$};
+    \draw[subset,->] (P) -- (Q)
+        node[midway,below right] {$\mathbf v$};
+
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (V) circle (2pt)
+        node[above left] {$V=(v_1,v_2)$};
+    \fill (P) circle (1.8pt) node[below left] {$P$};
+    \fill (Q) circle (1.8pt) node[above right] {$Q$};
+
+    \node[align=left,anchor=west] at (4.2,0.65)
+        {$Q-P=(v_1,v_2)$};
+\end{tikzpicture}
+\end{center}
+
+The next step is to define operations on these free vectors. Because a free
+vector is represented by its coordinate pair, addition, subtraction, and
+multiplication by a scalar can be introduced through their geometric meaning and
+then written in Cartesian coordinates.
