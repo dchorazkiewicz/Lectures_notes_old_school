@@ -136,15 +136,15 @@ It is the missing vector in the equation
 \begin{center}
 \begin{tikzpicture}[scale=1.0]
     \coordinate (O) at (0,0);
-    \coordinate (B) at (1.35,1.15);
-    \coordinate (A) at (4.25,3.35);
+    \coordinate (B) at (1.25,2.55);
+    \coordinate (A) at (4.55,1.05);
 
     \draw[subset,->] (O) -- (B)
-        node[pos=0.48,below left=3pt] {$\mathbf b$};
+        node[pos=0.48,left=5pt] {$\mathbf b$};
     \draw[very thick,->] (B) -- (A)
-        node[pos=0.55,below right=5pt] {$\mathbf a-\mathbf b$};
+        node[pos=0.53,above right=5pt] {$\mathbf a-\mathbf b$};
     \draw[subset,->] (O) -- (A)
-        node[pos=0.60,above left=5pt] {$\mathbf a$};
+        node[pos=0.58,below=5pt] {$\mathbf a$};
 
     \fill (O) circle (2pt) node[below left] {$O$};
     \fill (B) circle (2pt) node[above left] {$B$};
