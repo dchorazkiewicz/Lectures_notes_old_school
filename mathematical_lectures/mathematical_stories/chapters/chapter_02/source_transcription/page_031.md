@@ -12,6 +12,6 @@ Przez $C_{-1}$ rozumieć będziemy przestrzeń, która jest zbiorem pustym (p. w
 
 $$(x_1,x_2,\ldots,x_n)$$
 
-złożonych z $n$ liczb rzeczywistych.
+złożonych z $n$ liczb
 
 [^1]: Mamy do czynienia z układem uporządkowanym $n$ elementów, jeżeli każdej liczbie $i$ spośród $1,2,\ldots,n$ przyporządkowany jest element $e_i$. Układ taki oznaczamy zwykle przez $(e_1,e_2,\ldots,e_n)$. Pojęcie układu uporządkowanego $n$ elementów nie różni się od pojęcia funkcji, której argumentami są liczby naturalne $1,2,\ldots,n$, a odpowiednimi wartościami $e_1,e_2,\ldots,e_n$.
