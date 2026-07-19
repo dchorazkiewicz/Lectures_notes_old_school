@@ -104,8 +104,12 @@ Ponieważ
 
 $$
 t=\frac{1}{1-\theta},
-\qquad
-a\quad 1-t=\frac{-\theta}{1-\theta},
+$$
+
+a
+
+$$
+1-t=\frac{-\theta}{1-\theta},
 $$
 
 więc każdy punkt $p$ prostej wyznaczonej przez punkty $a,b$ i różny od tych punktów, daje się wyrazić
