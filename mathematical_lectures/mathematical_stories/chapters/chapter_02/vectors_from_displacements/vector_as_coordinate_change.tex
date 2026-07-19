@@ -1,22 +1,52 @@
 \subsection{From Cartesian Points to Free Vectors}
 
-A point of the Cartesian plane is an ordered pair of real numbers. For example,
+A point of the Cartesian plane is an ordered pair of real numbers. Let
 \[
 P=(p_1,p_2),
 \qquad
 Q=(q_1,q_2).
 \]
-Because points are represented by pairs of numbers, we may calculate
-coordinatewise expressions such as
+Before vectors are introduced, we first define several arithmetic operations on
+such points. These definitions are possible because a point of the Cartesian
+plane is represented by an ordered pair of numbers.
+
+The point
 \[
-P+Q,
-\qquad
-Q-P,
-\qquad
-\lambda P.
+O=(0,0)
 \]
-At this stage these operations are only arithmetic shorthand. Their geometric
-meaning has to be established separately.
+plays the role of zero. Addition of points is defined coordinatewise:
+\[
+\boxed{
+P+Q=(p_1+q_1,\,p_2+q_2)
+}.
+\]
+The point opposite to $P$ is
+\[
+\boxed{
+-P=(-p_1,-p_2)
+},
+\]
+so that
+\[
+P+(-P)=O.
+\]
+Subtraction of points is defined by adding the opposite point:
+\[
+\boxed{
+Q-P=Q+(-P)=(q_1-p_1,\,q_2-p_2)
+}.
+\]
+For a real number $\lambda$, multiplication of a point by a number is also
+defined coordinatewise:
+\[
+\boxed{
+\lambda P=(\lambda p_1,\,\lambda p_2)
+}.
+\]
+At this stage these are arithmetic operations on ordered pairs. They are useful
+computational rules, but their geometric meaning has not yet been established.
+The first expression to acquire such a meaning will be the difference $Q-P$.
+It will describe the directed change from the point $P$ to the point $Q$.
 
 \subsubsection*{An ordered pair of points determines an anchored vector}
 
