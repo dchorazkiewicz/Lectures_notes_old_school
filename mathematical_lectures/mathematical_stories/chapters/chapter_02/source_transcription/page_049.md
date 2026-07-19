@@ -48,22 +48,12 @@ $$
 
 ## § 15. Iloczyn skalarny wektorów. Kąt między wektorami
 
-Niech będą dane w przestrzeni $C_n$ dwa wektory
-
-$$
-a=[a_1,a_2,\ldots,a_n]
-$$
-
-i
-
-$$
-b=[b_1,b_2,\ldots,b_n].
-$$
+Niech będą dane w przestrzeni $C_n$ dwa wektory $\mathfrak a=[a_1,a_2,\ldots,a_n]$ i $\mathfrak b=[b_1,b_2,\ldots,b_n]$.
 
 Wobec zależności
 
 $$
-|a+b|^2
+|\mathfrak a+\mathfrak b|^2
 =
 \sum_{i=1}^{n}a_i^2
 +2\sum_{i=1}^{n}a_i b_i
@@ -71,7 +61,7 @@ $$
 $$
 
 $$
-|a-b|^2
+|\mathfrak a-\mathfrak b|^2
 =
 \sum_{i=1}^{n}a_i^2
 -2\sum_{i=1}^{n}a_i b_i
@@ -83,7 +73,7 @@ mamy
 $$
 \sum_{i=1}^{n}a_i b_i
 =
-\frac14\big[|a+b|^2-|a-b|^2\big].
+\frac14\big[|\mathfrak a+\mathfrak b|^2-|\mathfrak a-\mathfrak b|^2\big].
 $$
 
 Stąd wynika, że wielkość
@@ -92,16 +82,16 @@ $$
 \sum_{i=1}^{n}a_i b_i
 $$
 
-jest w sposób niezmienniczy związana z parą wektorów $a$ i $b$.
+jest w sposób niezmienniczy związana z parą wektorów $\mathfrak a$ i $\mathfrak b$.
 
-Wielkość tę nazywamy *iloczynem skalarnym wektorów $a$ i $b$* i oznaczamy przez $a\cdot b$.
+Wielkość tę nazywamy *iloczynem skalarnym wektorów $\mathfrak a$ i $\mathfrak b$* i oznaczamy przez $\mathfrak a\cdot\mathfrak b$.
 
 Mamy więc
 
 **(15.1)**
 
 $$
-a\cdot b
+\mathfrak a\cdot\mathfrak b
 =
 [a_1,a_2,\ldots,a_n]\cdot[b_1,b_2,\ldots,b_n]
 =
@@ -111,9 +101,9 @@ $$
 Zauważmy, że wobec
 
 $$
-|a|=\sqrt{\sum_{i=1}^{n}a_i^2}
+|\mathfrak a|=\sqrt{\sum_{i=1}^{n}a_i^2}
 \qquad\text{i}\qquad
-|b|=\sqrt{\sum_{i=1}^{n}b_i^2},
+|\mathfrak b|=\sqrt{\sum_{i=1}^{n}b_i^2},
 $$
 
 z nierówności Schwarza-Cauchy’ego (6.2) wynika, że
