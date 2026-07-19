@@ -61,7 +61,7 @@ Niech $L$ oznacza prostą łączącą punkty $0$ i $b$. Izometria $\varphi$ prze
 $$
 \varrho(b,b')\geq\gamma
 \qquad\text{oraz}\qquad
-\varrho(b',-b')\geq\gamma.
+\varrho(b,-b')\geq\gamma.
 $$
 
 Punkty prostej $L$ są, w myśl twierdzenia (13.2), postaci
