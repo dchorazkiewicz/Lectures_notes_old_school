@@ -1,0 +1,74 @@
+\subsection{Hyperbola from the polar formula}
+
+Assume
+\[
+e>1.
+\]
+Then the denominator
+\[
+1+e\cos\theta
+\]
+vanishes at two angles satisfying
+\[
+\cos\theta=-\frac1e.
+\]
+These limiting directions are the asymptotic directions of the branch described
+from the chosen focus.
+
+For $r\geq0$, the formula
+\[
+\boxed{r=\frac{p}{1+e\cos\theta}}
+\]
+traces the branch lying on the same side of the directrix as the chosen focus.
+It does not silently represent the entire two-branch hyperbola.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[axis,->] (-1.8,0)--(7.2,0) node[right] {polar axis};
+    \draw[axis,->] (0,-4.2)--(0,4.4);
+    \draw[helper,dashed] (0,0)--(6.4,3.7);
+    \draw[helper,dashed] (0,0)--(6.4,-3.7);
+    \draw[subset,domain=1.45:6.5,samples=130]
+        plot (\x,{1.05*sqrt(\x*\x/2.1-1)});
+    \draw[subset,domain=1.45:6.5,samples=130]
+        plot (\x,{-1.05*sqrt(\x*\x/2.1-1)});
+    \coordinate (F) at (0,0);
+    \coordinate (P) at (3.0,1.72);
+    \draw[blue!70!black,line width=1.1pt,->] (F)--(P)
+        node[midway,above left] {$r$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below left] {chosen focus};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+    \node at (5.0,-3.7) {one focus-centred branch};
+\end{tikzpicture}
+\end{center}
+
+To recover the complete hyperbola, return to the two-focus geometry. The second
+branch is obtained by choosing the other focus and the corresponding directrix,
+or by using the Cartesian equation
+\[
+\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1},
+\]
+which displays both branches at once.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.66,>=stealth]
+    \draw[axis,->] (-6.2,0)--(6.4,0) node[right] {$x$};
+    \draw[axis,->] (0,-4.0)--(0,4.2) node[above] {$y$};
+    \draw[helper,dashed] (-5.7,-3.8)--(5.7,3.8);
+    \draw[helper,dashed] (-5.7,3.8)--(5.7,-3.8);
+    \draw[subset,domain=2.05:5.7,samples=120] plot (\x,{1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=2.05:5.7,samples=120] plot (\x,{-1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=-5.7:-2.05,samples=120] plot (\x,{1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=-5.7:-2.05,samples=120] plot (\x,{-1.333*sqrt(\x*\x/4-1)});
+    \fill[geometricSubsetColor] (-3.33,0) circle (2.1pt) node[below] {$F_1$};
+    \fill[geometricSubsetColor] (3.33,0) circle (2.1pt) node[below] {$F_2$};
+    \node at (0,-4.6) {the complete hyperbola has two branches};
+\end{tikzpicture}
+\end{center}
+
+\begin{corebox}[Why the polar and Cartesian pictures differ]
+The polar equation is adapted to one chosen focus and one directrix. The
+Cartesian equation is adapted to the centre and displays both branches
+symmetrically. Neither description is incomplete when its geometric viewpoint
+is stated correctly.
+\end{corebox}
