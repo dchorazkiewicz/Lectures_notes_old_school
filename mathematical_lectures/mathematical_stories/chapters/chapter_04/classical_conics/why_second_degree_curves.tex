@@ -1,0 +1,52 @@
+\subsection{Why curves of second degree appear}
+
+The previous chapter used first-degree equations to describe lines and planes. A
+new phenomenon appears when the defining condition contains Euclidean distance:
+squares enter automatically.
+
+\begin{corebox}[The question of this chapter]
+Can one choose coordinates so that the geometry of circles, ellipses, parabolas,
+and hyperbolas becomes visible rather than hidden inside algebra?
+\end{corebox}
+
+We begin with the familiar Cartesian pictures. They provide a reference point,
+not the final language. The real goal is to place the origin at a focus and ask
+for the distance to the curve in each direction.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72,>=stealth]
+    \begin{scope}[xshift=-5.4cm]
+        \draw[axis,->] (-2.4,0)--(2.6,0);
+        \draw[axis,->] (0,-2.2)--(0,2.4);
+        \draw[subset] (0,0) circle (1.5);
+        \node at (0,-2.7) {circle};
+    \end{scope}
+    \begin{scope}[xshift=-1.8cm]
+        \draw[axis,->] (-2.5,0)--(2.7,0);
+        \draw[axis,->] (0,-2.2)--(0,2.4);
+        \draw[subset] (0,0) ellipse (2.0 and 1.2);
+        \node at (0,-2.7) {ellipse};
+    \end{scope}
+    \begin{scope}[xshift=2.1cm]
+        \draw[axis,->] (-1.5,0)--(3.1,0);
+        \draw[axis,->] (0,-2.2)--(0,2.4);
+        \draw[subset,domain=-2:2,samples=100] plot ({0.45*\x*\x},{\x});
+        \node at (0.8,-2.7) {parabola};
+    \end{scope}
+    \begin{scope}[xshift=6.0cm]
+        \draw[axis,->] (-2.8,0)--(3.0,0);
+        \draw[axis,->] (0,-2.2)--(0,2.4);
+        \draw[subset,domain=1.05:2.65,samples=80] plot (\x,{0.75*sqrt(\x*\x-1)});
+        \draw[subset,domain=1.05:2.65,samples=80] plot (\x,{-0.75*sqrt(\x*\x-1)});
+        \draw[subset,domain=-2.65:-1.05,samples=80] plot (\x,{0.75*sqrt(\x*\x-1)});
+        \draw[subset,domain=-2.65:-1.05,samples=80] plot (\x,{-0.75*sqrt(\x*\x-1)});
+        \node at (0,-2.7) {hyperbola};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[A map of the argument]
+First we identify the four shapes in Cartesian coordinates. Then we construct
+polar coordinates. Finally one focus--directrix condition produces one polar
+formula whose parameter decides which conic appears.
+\end{interpretationbox}
