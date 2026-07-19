@@ -3,42 +3,57 @@
 \subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
-\item Let $A=(1,2)$ and $B=(5,-1)$. Compute $\overrightarrow{AB}$ and draw the same vector with tail at the origin and with tail at $P=(-2,3)$.
+\item Let $A=(1,2)$ and $B=(5,-1)$. Compute the free vector
+$[\overrightarrow{AB}]$ and draw equal anchored representatives with initial
+points $O=(0,0)$ and $P=(-2,3)$.
 
 \item For
 \[
-u=(3,-2),\qquad v=(-1,4),
+\mathbf u=[3,-2],\qquad \mathbf v=[-1,4],
 \]
-compute $u+v$, $u-v$, $2u$, and $-3v$. Draw $u$, $v$, and $u+v$ using the parallelogram rule.
+compute $\mathbf u+\mathbf v$, $\mathbf u-\mathbf v$, $2\mathbf u$, and
+$-3\mathbf v$. Draw $\mathbf u$, $\mathbf v$, and $\mathbf u+\mathbf v$ using
+the parallelogram rule.
 
-\item Compute $2u-3v$ for $u=(1,2)$ and $v=(2,-1)$. Reproduce the same result as a sequence of geometric displacements.
+\item Compute $2\mathbf u-3\mathbf v$ for $\mathbf u=[1,2]$ and
+$\mathbf v=[2,-1]$. Reproduce the same result by joining anchored
+representatives head to tail.
 
 \item Compute the lengths and unit vectors for
 \[
-u=(3,4),\qquad v=(-5,12),\qquad w=(2,-2).
+\mathbf u=[3,4],\qquad
+\mathbf v=[-5,12],\qquad
+\mathbf w=[2,-2].
 \]
 
 \item For
 \[
-u=(2,1),\qquad v=(1,-2),\qquad w=(4,2),
+\mathbf u=[2,1],\qquad
+\mathbf v=[1,-2],\qquad
+\mathbf w=[4,2],
 \]
-compute the three dot products and decide which pairs are perpendicular or parallel.
+compute the three dot products and decide which pairs are perpendicular or
+parallel.
 
-\item Find the angle between $u=(1,0)$ and $v=(1,1)$, and between $v=(1,1)$ and $w=(-1,1)$.
+\item Find the angle between $\mathbf u=[1,0]$ and $\mathbf v=[1,1]$, and
+between $\mathbf v=[1,1]$ and $\mathbf w=[-1,1]$.
 
-\item Compute the projection of $u=(4,3)$ onto $v=(1,0)$ and onto $w=(1,1)$. In each case write $u$ as a parallel component plus a perpendicular remainder.
+\item Compute the projection of $\mathbf u=[4,3]$ onto $\mathbf v=[1,0]$ and
+onto $\mathbf w=[1,1]$. In each case write $\mathbf u$ as a parallel component
+plus a perpendicular remainder.
 
 \item Let
 \[
-b_1=(1,1),\qquad b_2=(1,-1),\qquad u=(4,2).
+\mathbf b_1=[1,1],\qquad
+\mathbf b_2=[1,-1],\qquad
+\mathbf u=[4,2].
 \]
-Find $\alpha,\beta$ such that $u=\alpha b_1+\beta b_2$ and verify by reconstruction.
-
-\item A vector has basis coordinates $[u]_B=(2,-1)$ in the basis
+Find $\alpha,\beta$ such that
 \[
-b_1=(1,2),\qquad b_2=(2,1).
+\mathbf u=\alpha\mathbf b_1+\beta\mathbf b_2,
 \]
-Find its Cartesian coordinates.
+and verify the result by reconstruction. State the coordinates of $\mathbf u$
+in the basis $B=(\mathbf b_1,\mathbf b_2)$.
 
 \item Convert between Cartesian and polar coordinates:
 \begin{enumerate}
@@ -50,49 +65,42 @@ Find its Cartesian coordinates.
 \subsection{Development and reasoning exercises}
 
 \begin{enumerate}
-\item In $\mathbb R^3$ let
-\[
-u=(1,2,-1),\qquad v=(2,-1,3).
-\]
-Compute $u+v$, $2u-v$, both lengths, and $u\cdot v$. Decide whether the vectors are perpendicular and explain which parts of the two-dimensional method remain unchanged.
-
 \item For
 \[
-u=(5,1),\qquad v=(2,1),
+\mathbf u=[5,1],\qquad \mathbf v=[2,1],
 \]
-compute the projection of $u$ onto $v$, the perpendicular remainder, and verify by a dot product that the remainder is perpendicular to $v$. Draw the decomposition.
+compute the projection of $\mathbf u$ onto $\mathbf v$, the perpendicular
+remainder, and verify by a dot product that the remainder is perpendicular to
+$\mathbf v$. Draw the decomposition.
 
-\item Let
-\[
-b_1=(2,1),\qquad b_2=(1,2),\qquad u=(7,8).
-\]
-Find the coordinates of $u$ in this nonorthogonal basis. Reconstruct $u$ and explain why the calculation is a small linear system.
-
-\item The bases are
-\[
-B=((1,1),(1,-1)),
-\qquad
-C=((2,0),(1,1)).
-\]
-A vector has $[u]_B=(3,-1)$. Find its Cartesian coordinates and then $[u]_C$. State clearly what changed and what did not.
-
-\item Choose two nonzero vectors $u,v$ with the same length but with $u+v$ shorter than either vector. Compute the relevant lengths and explain the geometry causing the cancellation.
+\item Choose two nonzero vectors $\mathbf u,\mathbf v$ with the same length but
+with $\mathbf u+\mathbf v$ shorter than either vector. Compute the relevant
+lengths and explain the geometric cancellation.
 
 \item Find all values of $t$ for which
 \[
-u=(1,t),\qquad v=(2,-1)
+\mathbf u=[1,t],\qquad \mathbf v=[2,-1]
 \]
-are perpendicular. Then find all values for which they are parallel. Interpret both conditions geometrically.
+are perpendicular. Then find all values for which they are parallel. Interpret
+both conditions geometrically.
 
-\item Prove from the displacement interpretation, rather than only from coordinates, that vector addition is associative. Illustrate the argument with three concrete vectors.
+\item Prove from the construction with anchored representatives, rather than
+only from coordinates, that vector addition is associative. Illustrate the
+argument with three concrete vectors.
 
-\item Show that two nonzero vectors in the plane are parallel exactly when one is a scalar multiple of the other. Connect the geometric statement with the coordinate equations.
+\item Show that two nonzero vectors in the plane are parallel exactly when one
+is a scalar multiple of the other. Connect the geometric statement with the
+proportionality of their coordinates.
 
 \item Explain how
 \[
-u\cdot v=\|u\|\|v\|\cos\theta
+\mathbf u\cdot\mathbf v
+=\lVert\mathbf u\rVert\lVert\mathbf v\rVert\cos\theta
 \]
-contains both length and angular information. Use one acute, one right, and one obtuse example.
+contains both length and angular information. Use one acute, one right, and one
+obtuse example.
 
-\item Compare Cartesian coordinates, coordinates in a chosen basis, and polar coordinates as three descriptions of the same vector or point. Give one concrete problem in which each language is the most natural and justify the choice.
+\item Compare Cartesian coordinates, coordinates in the basis
+$B=(\mathbf b_1,\mathbf b_2)$ from the numerical example, and polar coordinates.
+Give one concrete situation in which each description is useful.
 \end{enumerate}
