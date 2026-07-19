@@ -1,0 +1,61 @@
+\subsection{Orientation, one formula, and the bridge to mechanics}
+
+The equation
+\[
+r=\frac{p}{1+e\cos\theta}
+\]
+places the nearest point on the positive polar axis. Rotating the entire conic by
+an angle $\theta_0$ gives
+\[
+\boxed{r=\frac{p}{1+e\cos(\theta-\theta_0)}}.
+\]
+The parameters have separate geometric roles:
+\[
+\begin{array}{c|c}
+p & \text{overall focal scale},\\
+e & \text{shape and conic type},\\
+\theta_0 & \text{orientation in the plane}.
+\end{array}
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,>=stealth]
+    \draw[axis,->] (-5.2,0)--(5.5,0) node[right] {$x$};
+    \draw[axis,->] (0,-4.1)--(0,4.3) node[above] {$y$};
+    \begin{scope}[rotate=32]
+        \draw[subset] (-0.7,0) ellipse (3.7 and 2.0);
+        \fill[geometricSubsetColor] (0,0) circle (2.2pt) node[below left] {focus};
+        \draw[blue!70!black,line width=1.1pt,->] (0,0)--(3.0,0)
+            node[midway,above] {periapsis direction};
+    \end{scope}
+    \draw[orange!85!black,line width=1pt,->] (1.2,0)
+        arc[start angle=0,end angle=32,radius=1.2];
+    \node at (1.35,0.55) {$\theta_0$};
+\end{tikzpicture}
+\end{center}
+
+The same formula now separates the three qualitative regimes:
+\[
+\begin{array}{c|c|c}
+e & \text{conic} & \text{focal motion suggested by the geometry}\\
+\hline
+0\leq e<1 & \text{circle or ellipse} & \text{bounded},\\
+e=1 & \text{parabola} & \text{threshold between bounded and unbounded},\\
+e>1 & \text{hyperbola} & \text{unbounded passage}.
+\end{array}
+\]
+
+\begin{corebox}[What has been achieved]
+The chapter did not merely list four equations. It changed the viewpoint until
+three apparently different curves became outcomes of one radial law. This is the
+analytic-geometric preparation needed before a later mechanics course derives
+the same law from a central force.
+\end{corebox}
+
+\begin{summarybox}[Choose coordinates adapted to the question]
+Cartesian coordinates are best for centres, axes, vertices, and complete
+symmetric pictures. Polar coordinates centred at a focus are best for radial
+distance, orientation, eccentricity, and orbital interpretation. Analytic
+geometry works by choosing the representation in which the geometry speaks most
+clearly.
+\end{summarybox}
