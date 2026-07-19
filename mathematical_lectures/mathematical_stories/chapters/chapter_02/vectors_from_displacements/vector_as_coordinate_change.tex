@@ -1,19 +1,32 @@
-\subsection{Anchored and Free Vectors in Cartesian Space}
+\subsection{From Cartesian Points to Free Vectors}
 
-The Cartesian plane is a set of points described by ordered pairs of real
-numbers. Let
+A point of the Cartesian plane is an ordered pair of real numbers. For example,
 \[
 P=(p_1,p_2),
 \qquad
 Q=(q_1,q_2).
 \]
-The points $P$ and $Q$ determine an ordered pair of points $(P,Q)$. Geometrically,
-this ordered pair is represented by an arrow beginning at $P$ and ending at $Q$.
-We denote it by
+Because points are represented by pairs of numbers, we may calculate
+coordinatewise expressions such as
+\[
+P+Q,
+\qquad
+Q-P,
+\qquad
+\lambda P.
+\]
+At this stage these operations are only arithmetic shorthand. Their geometric
+meaning has to be established separately.
+
+\subsubsection*{An ordered pair of points determines an anchored vector}
+
+The ordered pair $(P,Q)$ determines an arrow beginning at $P$ and ending at
+$Q$. We denote it by
 \[
 \overrightarrow{PQ}
 \]
-and call it an \emph{anchored vector}.
+and call it an \emph{anchored vector}. The order matters: $P$ is its initial
+point and $Q$ is its endpoint.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -39,9 +52,8 @@ and call it an \emph{anchored vector}.
 \end{tikzpicture}
 \end{center}
 
-The arrow records the change needed to pass from its initial point to its final
-point. Its first component is the horizontal change and its second component is
-the vertical change. Therefore
+The coordinates of the anchored vector are the coordinate differences between
+its endpoint and its initial point:
 \[
 \boxed{
 [\overrightarrow{PQ}]
@@ -51,117 +63,139 @@ Q-P
 (q_1-p_1,\,q_2-p_2)
 }.
 \]
-The square brackets distinguish the coordinate description of the vector from
-the particular arrow drawn between $P$ and $Q$.
-
-The order of the points matters. Reversing the ordered pair reverses both
-coordinate changes:
+Its length is the distance between the two points:
+\[
+\boxed{
+|\overrightarrow{PQ}|=\varrho(P,Q)
+}.
+\]
+Reversing the order reverses the arrow and changes the signs of both
+coordinates:
 \[
 [\overrightarrow{QP}]
-=
-P-Q
-=
--(Q-P).
+=P-Q
+=-(Q-P).
 \]
 
-An anchored vector contains two kinds of information at once. It tells us where
-the arrow is drawn, because its initial and final points are specified, and it
-tells us what directed change the arrow represents. For many geometric and
-physical questions, the place where the arrow is drawn is not important. What
-matters is only the change itself.
+\subsubsection*{When do arrows drawn in different places represent the same vector?}
 
-Consider two anchored vectors
+We first define equality geometrically. Consider two anchored vectors
 \[
 \overrightarrow{PQ}
 \qquad\text{and}\qquad
-\overrightarrow{RS}.
+\overrightarrow{P'Q'}.
 \]
-They represent the same directed change when their coordinate differences are
-the same:
-\[
-\boxed{
-\overrightarrow{PQ}=\overrightarrow{RS}
-\quad\Longleftrightarrow\quad
-Q-P=S-R
-}.
-\]
-Thus equal anchored vectors have the same horizontal and vertical changes, even
-when they begin at different points.
+They are called equal when the midpoint of the pair $P,Q'$ is also the midpoint
+of the pair $Q,P'$. Equivalently, the four points form a parallelogram in which
+the two arrows are opposite directed sides.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.86]
-    \draw[axis] (-0.5,0) -- (8.0,0) node[right] {$x$};
-    \draw[axis] (0,-0.5) -- (0,5.5) node[above] {$y$};
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (P) at (0.4,0.5);
+    \coordinate (Q) at (3.5,1.7);
+    \coordinate (Pp) at (1.7,3.0);
+    \coordinate (Qp) at (4.8,4.2);
+    \coordinate (M) at (2.6,2.35);
 
-    \coordinate (P) at (1.0,1.0);
-    \coordinate (Q) at (3.8,2.8);
-    \coordinate (R) at (3.0,0.8);
-    \coordinate (S) at (5.8,2.6);
-    \coordinate (T) at (4.4,2.9);
-    \coordinate (U) at (7.2,4.7);
+    \draw[helper] (P) -- (Pp) -- (Qp) -- (Q) -- cycle;
+    \draw[helper,dashed] (P) -- (Qp);
+    \draw[helper,dashed] (Q) -- (Pp);
 
-    \draw[subset,->] (P) -- (Q);
-    \draw[subset,->] (R) -- (S);
-    \draw[subset,->] (T) -- (U);
+    \draw[subset,->] (P) -- (Q)
+        node[midway,below] {$\overrightarrow{PQ}$};
+    \draw[subset,->] (Pp) -- (Qp)
+        node[midway,above] {$\overrightarrow{P'Q'}$};
 
-    \fill (P) circle (1.8pt) node[below left] {$P$};
-    \fill (Q) circle (1.8pt) node[above left] {$Q$};
-    \fill (R) circle (1.8pt) node[below left] {$R$};
-    \fill (S) circle (1.8pt) node[below right] {$S$};
-    \fill (T) circle (1.8pt) node[below left] {$T$};
-    \fill (U) circle (1.8pt) node[above right] {$U$};
-
-    \node[align=center] at (4.2,5.15)
-        {the same coordinate change\\drawn from different points};
+    \fill (P) circle (2pt) node[below left] {$P$};
+    \fill (Q) circle (2pt) node[below right] {$Q$};
+    \fill (Pp) circle (2pt) node[above left] {$P'$};
+    \fill (Qp) circle (2pt) node[above right] {$Q'$};
+    \fill[geometricSubsetColor] (M) circle (2.2pt)
+        node[right] {common midpoint};
 \end{tikzpicture}
 \end{center}
 
-A \emph{free vector} is the directed change common to all equal anchored
-vectors. It is not tied to one initial point. We may move its arrow parallel to
-itself without changing the vector, provided that its direction, orientation,
-and length remain unchanged.
-
-In Cartesian coordinates, a free vector is completely described by one ordered
-pair of real numbers:
+The midpoint condition is
+\[
+\frac12(P+Q')=\frac12(Q+P').
+\]
+Rearranging this equality gives
+\[
+Q-P=Q'-P'.
+\]
+We have therefore obtained a coordinate criterion for the geometric relation:
 \[
 \boxed{
-\mathbf v=(v_1,v_2)
+\overrightarrow{PQ}=\overrightarrow{P'Q'}
+\quad\Longleftrightarrow\quad
+Q-P=Q'-P'
 }.
 \]
-This pair means a change of $v_1$ in the first coordinate and a change of $v_2$
-in the second coordinate. Every anchored vector satisfying
+Thus two anchored vectors are equal precisely when they produce the same change
+in every coordinate. Their initial points may be different.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \draw[axis] (-0.5,0) -- (8.0,0) node[right] {$x$};
+    \draw[axis] (0,-0.5) -- (0,5.5) node[above] {$y$};
+
+    \coordinate (A) at (0.8,0.8);
+    \coordinate (B) at (3.4,2.3);
+    \coordinate (C) at (2.6,0.6);
+    \coordinate (D) at (5.2,2.1);
+    \coordinate (E) at (4.5,2.8);
+    \coordinate (F) at (7.1,4.3);
+
+    \draw[subset,->] (A) -- (B) node[midway,above left] {$(2.6,1.5)$};
+    \draw[subset,->] (C) -- (D) node[midway,below right] {$(2.6,1.5)$};
+    \draw[subset,->] (E) -- (F) node[midway,above left] {$(2.6,1.5)$};
+
+    \fill (A) circle (1.8pt);
+    \fill (B) circle (1.8pt);
+    \fill (C) circle (1.8pt);
+    \fill (D) circle (1.8pt);
+    \fill (E) circle (1.8pt);
+    \fill (F) circle (1.8pt);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Free vectors}
+
+Equality divides all anchored vectors into disjoint classes. Each class contains
+all arrows representing one and the same directed change. Such a class is called
+a \emph{free vector}.
+
+If $\overrightarrow{PQ}$ is one representative of a free vector $\mathbf v$, we
+may write
+\[
+\mathbf v=[\overrightarrow{PQ}].
+\]
+All representatives have the same coordinate differences. Consequently a free
+vector is completely described by one coordinate pair:
+\[
+\boxed{
+\mathbf v=[v_1,v_2]
+}.
+\]
+Every anchored vector satisfying
 \[
 Q-P=(v_1,v_2)
 \]
-is a representative of the same free vector $\mathbf v$.
+is a representative of this same free vector.
 
-There is a particularly simple representative. Let
+A particularly convenient representative begins at the origin. If
 \[
-O=(0,0)
-\qquad\text{and}\qquad
-V=(v_1,v_2).
+O=(0,0),
+\qquad
+V=(v_1,v_2),
 \]
-Then
+then
 \[
-[\overrightarrow{OV}]
-=
-V-O
-=
-(v_1,v_2).
+[\overrightarrow{OV}]=V-O=(v_1,v_2).
 \]
-Hence every free vector can be drawn from the origin to the point whose
-coordinates are the components of the vector:
-\[
-\boxed{
-\mathbf v=(v_1,v_2)
-\quad\longleftrightarrow\quad
-\overrightarrow{OV},
-\qquad V=(v_1,v_2)
-}.
-\]
-This does not identify points and vectors as the same kind of object. It gives a
-convenient canonical representative of a free vector inside the Cartesian
-plane.
+Thus the point $V$ and the free vector $\mathbf v$ use the same numbers, but they
+are not the same type of object: $V$ is a point, whereas $\mathbf v$ is a class
+of equal anchored arrows.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -169,16 +203,14 @@ plane.
     \draw[axis] (0,-0.5) -- (0,5.2) node[above] {$y$};
 
     \coordinate (O) at (0,0);
-    \coordinate (V) at (3.2,2.1);
-    \coordinate (P) at (2.4,1.1);
-    \coordinate (Q) at (5.6,3.2);
+    \coordinate (V) at (3.0,2.0);
+    \coordinate (P) at (2.3,1.0);
+    \coordinate (Q) at (5.3,3.0);
 
-    \draw[helper,dashed] (V) -- (3.2,0);
-    \draw[helper,dashed] (V) -- (0,2.1);
     \draw[subset,->] (O) -- (V)
-        node[midway,above left] {$\mathbf v$};
+        node[midway,above left] {$\overrightarrow{OV}$};
     \draw[subset,->] (P) -- (Q)
-        node[midway,below right] {$\mathbf v$};
+        node[midway,below right] {$\overrightarrow{PQ}$};
 
     \fill (O) circle (2pt) node[below left] {$O$};
     \fill[geometricSubsetColor] (V) circle (2pt)
@@ -186,12 +218,11 @@ plane.
     \fill (P) circle (1.8pt) node[below left] {$P$};
     \fill (Q) circle (1.8pt) node[above right] {$Q$};
 
-    \node[align=left,anchor=west] at (4.2,0.65)
-        {$Q-P=(v_1,v_2)$};
+    \node[align=left,anchor=west] at (4.0,0.55)
+        {$V-O=Q-P=(v_1,v_2)$};
 \end{tikzpicture}
 \end{center}
 
-The next step is to define operations on these free vectors. Because a free
-vector is represented by its coordinate pair, addition, subtraction, and
-multiplication by a scalar can be introduced through their geometric meaning and
-then written in Cartesian coordinates.
+Only now, after free vectors have been constructed, do we define operations on
+them. Each operation will first be described using representatives and then
+written in coordinates.
