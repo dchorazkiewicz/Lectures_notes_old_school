@@ -1,0 +1,81 @@
+\subsection{Circle and ellipse: from one scale to two}
+
+A circle centred at the origin is described by
+\[
+\boxed{x^2+y^2=R^2}.
+\]
+Its equation treats every direction equally. The parameterisation
+\[
+\boxed{x=R\cos t,\qquad y=R\sin t}
+\]
+makes this symmetry visible: one angle determines one point on the circle.
+
+An ellipse introduces two perpendicular scales:
+\[
+\boxed{\frac{x^2}{a^2}+\frac{y^2}{b^2}=1},
+\qquad a\geq b>0.
+\]
+It is parameterised by
+\[
+\boxed{x=a\cos t,\qquad y=b\sin t}.
+\]
+The same circular parameter is stretched by different factors in the two
+coordinate directions.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \begin{scope}[xshift=-4.2cm]
+        \draw[axis,->] (-3.0,0)--(3.2,0) node[right] {$x$};
+        \draw[axis,->] (0,-2.8)--(0,3.0) node[above] {$y$};
+        \draw[subset] (0,0) circle (2.0);
+        \draw[blue!70!black,line width=1pt,->] (0,0)--(1.53,1.29)
+            node[midway,above left] {$R$};
+        \node at (0,-3.4) {$x^2+y^2=R^2$};
+    \end{scope}
+    \begin{scope}[xshift=4.2cm]
+        \draw[axis,->] (-4.0,0)--(4.2,0) node[right] {$x$};
+        \draw[axis,->] (0,-2.8)--(0,3.0) node[above] {$y$};
+        \draw[subset] (0,0) ellipse (3.1 and 1.8);
+        \draw[blue!70!black,line width=1pt] (0,0)--(3.1,0)
+            node[midway,below] {$a$};
+        \draw[orange!85!black,line width=1pt] (0,0)--(0,1.8)
+            node[midway,left] {$b$};
+        \node at (0,-3.4) {$x^2/a^2+y^2/b^2=1$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+The ellipse also has a second geometric description. Define
+\[
+c=\sqrt{a^2-b^2}.
+\]
+Its foci are $F_1=(-c,0)$ and $F_2=(c,0)$, and every point $P$ on the ellipse
+satisfies
+\[
+\boxed{d(P,F_1)+d(P,F_2)=2a}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-4.5,0)--(4.7,0);
+    \draw[axis,->] (0,-2.7)--(0,2.9);
+    \draw[subset] (0,0) ellipse (3.5 and 2.0);
+    \coordinate (F1) at (-2.87,0);
+    \coordinate (F2) at (2.87,0);
+    \coordinate (P) at (1.4,1.83);
+    \draw[blue!70!black,line width=1.1pt] (F1)--(P)
+        node[midway,above left] {$r_1$};
+    \draw[orange!85!black,line width=1.1pt] (P)--(F2)
+        node[midway,above right] {$r_2$};
+    \fill[geometricSubsetColor] (F1) circle (2.2pt) node[below] {$F_1$};
+    \fill[geometricSubsetColor] (F2) circle (2.2pt) node[below] {$F_2$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above] {$P$};
+    \node at (0,-3.25) {$r_1+r_2=2a$};
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Two useful descriptions]
+The centre-based equation exposes symmetry and semiaxes. The focal description
+exposes distances from the points that later become natural locations of a
+central force source.
+\end{interpretationbox}
