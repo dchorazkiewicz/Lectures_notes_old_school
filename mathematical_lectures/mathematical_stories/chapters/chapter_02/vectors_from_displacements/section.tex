@@ -1,32 +1,15 @@
-\section{Position and Displacement Vectors}
+\section{Vectors in Cartesian Space}
 
-Coordinates allow us to describe where a point is. Once an origin $O$ has been
-chosen, the position of a point $A$ can be represented by the arrow from the
-origin to that point. This is the \emph{position vector}
-\[
-\mathbf r_A=\overrightarrow{OA}.
-\]
+In the previous chapter, points of the plane were described by Cartesian
+coordinates. We now use that numerical description to construct vectors. The
+order is important: we begin with points and the arithmetic already available
+for their coordinates, then introduce an arrow determined by an ordered pair of
+points, decide geometrically when two such arrows are equal, and only then pass
+to free vectors and operations on them.
 
-Motion requires a second use of vectors. If an object moves from $A$ to $B$,
-the arrow from the initial position to the final position is the
-\emph{displacement vector}
-\[
-\Delta\mathbf r=\overrightarrow{AB}.
-\]
-The two ideas are connected by
-\[
-\boxed{\overrightarrow{AB}=\mathbf r_B-\mathbf r_A}.
-\]
-Thus position vectors describe where points are relative to the chosen origin,
-while displacement vectors describe how one position changes into another.
-This distinction will later make it possible to describe motion in physics
-without confusing a place with a change of place.
-
-The same pair of components can therefore play two different roles. Written as
-$\mathbf r_A$, it locates a point relative to the origin. Written as a
-displacement, it is an instruction that can be applied from any starting point.
-The operations developed below describe how positions change when
-displacements are combined, reversed, rescaled, and compared geometrically.
+The coordinate formulas will not replace the geometry. They will provide
+practical criteria for recognising and calculating the geometric objects that
+have already been introduced.
 
 \input{chapters/chapter_02/vectors_from_displacements/vector_as_coordinate_change}
 \input{chapters/chapter_02/vectors_from_displacements/vector_addition}
@@ -40,5 +23,3 @@ displacements are combined, reversed, rescaled, and compared geometrically.
 \input{chapters/chapter_02/vectors_from_displacements/projection}
 \input{chapters/chapter_02/vectors_from_displacements/orthogonal_decomposition}
 \input{chapters/chapter_02/vectors_from_displacements/three_dimensions}
-
-\noindent\textbf{Vector toolkit.} Position vectors identify points relative to an origin, while displacement vectors describe changes between positions. Addition and scalar multiplication combine and rescale these changes; length and the dot product encode metric information; and parallelism, perpendicularity, angles, projections, and orthogonal decompositions translate geometric questions into coordinate calculations. The same ideas extend from the plane to three-dimensional space.
