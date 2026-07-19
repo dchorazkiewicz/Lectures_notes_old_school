@@ -2,7 +2,7 @@
 
 *I. Punkty i wektory w przestrzeniach kartezjańskich*
 
-Niech
+pewne działania, mające na razie znaczenie jedynie skrótów rachunkowych (a nie operacji posiadających treść geometryczną). Niech
 
 $$
 x=(x_1,x_2,\ldots,x_n),
