@@ -1,0 +1,55 @@
+\subsection{Parabola: equal distance from a focus and a line}
+
+Fix a focus $F=(p,0)$ and a directrix $D:x=-p$, where $p>0$. The parabola is the
+set of points $P=(x,y)$ satisfying
+\[
+\boxed{d(P,F)=d(P,D)}.
+\]
+Since
+\[
+d(P,F)=\sqrt{(x-p)^2+y^2},
+\qquad
+d(P,D)=x+p,
+\]
+squaring the equality gives
+\[
+(x-p)^2+y^2=(x+p)^2,
+\]
+and therefore
+\[
+\boxed{y^2=4px}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.88,>=stealth]
+    \draw[axis,->] (-2.5,0)--(6.3,0) node[right] {$x$};
+    \draw[axis,->] (0,-4.0)--(0,4.2) node[above] {$y$};
+    \draw[gray,thick] (-1.2,-3.6)--(-1.2,3.6)
+        node[above] {$D$};
+    \draw[subset,domain=-3.3:3.3,samples=120]
+        plot ({0.42*\x*\x},{\x});
+    \coordinate (F) at (1.2,0);
+    \coordinate (P) at (2.7,2.55);
+    \coordinate (H) at (-1.2,2.55);
+    \draw[blue!70!black,line width=1.1pt] (F)--(P)
+        node[midway,below right] {$d(P,F)$};
+    \draw[orange!85!black,line width=1.1pt] (P)--(H)
+        node[midway,above] {$d(P,D)$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below] {$F$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+    \fill[geometricSubsetColor] (0,0) circle (2.2pt) node[below left] {vertex};
+\end{tikzpicture}
+\end{center}
+
+A convenient parameterisation is
+\[
+\boxed{x=pt^2,\qquad y=2pt}.
+\]
+Substitution gives $y^2=4p^2t^2=4px$, so every parameter value produces a point
+on the curve.
+
+\begin{interpretationbox}[Why the parabola is the boundary case]
+The parabola is neither closed like an ellipse nor split into two branches like
+a hyperbola. It will later appear exactly at the transition between bounded and
+unbounded focal motion.
+\end{interpretationbox}
