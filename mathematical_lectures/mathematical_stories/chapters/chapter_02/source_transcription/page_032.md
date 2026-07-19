@@ -61,7 +61,7 @@ t^2\sum_{i=1}^{n}\alpha_i^2
 +\sum_{i=1}^{n}\beta_i^2.
 $$
 
-Ponieważ w przypadku znikania wszystkich liczb $\alpha_i$ nierówność Schwarza-Cauchy’ego jest spełniona, więc możemy od razu założyć, że $\sum_{i=1}^{n}\alpha_i^2>0$. Biorąc pod uwagę, że prawa strona równości (6.3) jest trójmianem kwadratowym, przyjmującym przy wszelkich wartościach zmiennej $t$ wartości nieujemne,
+Ponieważ w przypadku znikania wszystkich liczb $\alpha_i$ nierówność Schwarza-Cauchy’ego jest spełniona, więc możemy od razu założyć, że $\sum_{i=1}^{n}\alpha_i^2>0$. Biorąc pod uwagę, że prawa strona równości (6.3) jest trójmianem kwadratowym, przyjmującym przy wszelkich wartościach zmien-
 
 [^1]: Jeżeli każdej z liczb całkowitych $i=k,k+1,\ldots,l$ przyporządkowana jest liczba $x_i$, to sumę $x_k+x_{k+1}+\cdots+x_l$ oznaczamy przez $\sum_{i=k}^{l}x_i$. Jasne jest, że przy wszelkim całkowitym $m$ jest $\sum_{i=k}^{l}x_i=\sum_{i=k-m}^{l-m}x_{i+m}$.
 
