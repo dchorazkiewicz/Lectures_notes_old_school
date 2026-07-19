@@ -1,0 +1,41 @@
+\subsection{One geometric rule and one shape parameter}
+
+Fix a focus $F$ and a directrix $D$. A point $P$ belongs to the conic when
+\[
+\boxed{d(P,F)=e\,d(P,D)},
+\]
+where $e>0$ is the eccentricity.
+
+The value of $e$ compares focal distance with distance from the directrix:
+\[
+\begin{array}{c|c}
+0<e<1 & \text{ellipse},\\
+e=1 & \text{parabola},\\
+e>1 & \text{hyperbola}.
+\end{array}
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[gray,thick] (4.2,-3.5)--(4.2,3.5) node[above] {$D$};
+    \coordinate (F) at (0,0);
+    \coordinate (P) at (2.5,1.8);
+    \coordinate (H) at (4.2,1.8);
+    \draw[axis,->] (-1.0,0)--(5.4,0) node[right] {polar axis};
+    \draw[blue!70!black,line width=1.1pt,->] (F)--(P)
+        node[midway,above left] {$r=d(P,F)$};
+    \draw[orange!85!black,line width=1.1pt] (P)--(H)
+        node[midway,above] {$d(P,D)$};
+    \draw (0.9,0) arc[start angle=0,end angle=35.75,radius=0.9];
+    \node at (1.15,0.45) {$\theta$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below left] {$F$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above left] {$P$};
+    \fill (H) circle (1.6pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[Why eccentricity measures shape]
+Small $e$ keeps the focal distance relatively short compared with the distance
+to the directrix, producing a closed curve. At $e=1$ the two distances balance.
+For $e>1$ the focal distance may dominate, producing an open hyperbolic branch.
+\end{interpretationbox}
