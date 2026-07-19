@@ -7,10 +7,10 @@ jest wersorem, którego $i$-ta współrzędna jest jednością, pozostałe zaś 
 Prosta określona równaniem wektorialnym
 
 $$
-p(t)=t(\mathfrak p_i)
+p(t)=t(\mathfrak v_i)
 $$
 
-jest identyczna ze zbiorem punktów $(x_1,x_2,\ldots,x_n)\in C_n$ takich, że $x_r=0$ dla $r\neq i$. Prostą tę nazywamy *osią $x_i$*. Odpowiedniość między jej punktami a liczbami $x$ pozwala ją uważać za oś liczbową w sensie przyjętym w § 2. Wektor $\mathfrak p_i$ nazywamy *wersorem osi $x_i$*.
+jest identyczna ze zbiorem punktów $(x_1,x_2,\ldots,x_n)\in C_n$ takich, że $x_r=0$ dla $r\neq i$. Prostą tę nazywamy *osią $x_i$*. Odpowiedniość między jej punktami a liczbami $x$ pozwala ją uważać za oś liczbową w sensie przyjętym w § 2. Wektor $\mathfrak v_i$ nazywamy *wersorem osi $x_i$*.
 
 ## Ćwiczenia
 
