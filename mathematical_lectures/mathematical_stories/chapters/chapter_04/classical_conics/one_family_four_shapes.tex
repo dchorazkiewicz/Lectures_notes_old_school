@@ -1,0 +1,48 @@
+\subsection{Four familiar shapes, one geometric problem}
+
+The four curves differ in their Cartesian equations, but the decisive geometry
+is already visible:
+
+\[
+\begin{array}{c|c|c}
+\text{curve} & \text{distinguished data} & \text{large-scale behaviour}\\
+\hline
+\text{circle} & \text{one centre and one radius} & \text{closed}\\
+\text{ellipse} & \text{two foci, fixed sum} & \text{closed}\\
+\text{parabola} & \text{one focus and one directrix} & \text{one open branch}\\
+\text{hyperbola} & \text{two foci, fixed difference} & \text{two open branches}
+\end{array}
+\]
+
+The centre is the natural origin for a circle. It is also convenient for a
+Cartesian ellipse or hyperbola. But it is not the natural point from which to
+study focal distance. For that purpose one should move the origin to a focus.
+
+\begin{corebox}[The need for a new coordinate system]
+From a focus, a point on a conic is determined by two questions:
+\begin{enumerate}
+    \item In which direction do we look?
+    \item How far must we travel in that direction before reaching the curve?
+\end{enumerate}
+These are exactly the questions answered by polar coordinates.
+\end{corebox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-4.8,0)--(5.1,0) node[right] {$x$};
+    \draw[axis,->] (0,-3.0)--(0,3.2) node[above] {$y$};
+    \draw[subset] (0.6,0) ellipse (3.8 and 2.1);
+    \coordinate (F) at (-2.55,0);
+    \coordinate (P1) at (2.4,1.55);
+    \coordinate (P2) at (-0.4,2.02);
+    \coordinate (P3) at (-3.0,-0.95);
+    \draw[blue!70!black,line width=1pt,->] (F)--(P1);
+    \draw[blue!70!black,line width=1pt,->] (F)--(P2);
+    \draw[blue!70!black,line width=1pt,->] (F)--(P3);
+    \fill[geometricSubsetColor] (F) circle (2.3pt) node[below] {chosen focus};
+    \node[align=left] at (3.8,-2.35)
+        {different directions\\different focal distances};
+\end{tikzpicture}
+\end{center}
+
+The next section constructs this coordinate language before using it on conics.
