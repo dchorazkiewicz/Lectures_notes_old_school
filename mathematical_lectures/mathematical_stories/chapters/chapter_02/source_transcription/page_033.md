@@ -2,7 +2,7 @@
 
 *§ 6. Punkty przestrzeni $C_n$*
 
-Ponieważ dla wszystkich wartości zmiennej $t$ wartości tego trójmianu są nieujemne, wnosimy, że wyróżnik tego trójmianu jest niedodatni, czyli że
+nej $t$ wartości nieujemne, wnosimy, że wyróżnik tego trójmianu jest niedodatni, czyli że
 
 $$
 \left(\sum_{i=1}^{n}\alpha_i\beta_i\right)^2
@@ -72,7 +72,7 @@ Wywnioskować stąd, że $C_n^*$ nie jest izometryczna z $C_n$.
 3. Okazać, że jeśli
 
 $$
-0\leq \alpha\leq \sum_{i=1}^{n}|x'_i-x''_i|\leq \beta,
+0\leq \alpha<\sum_{i=1}^{n}|x'_i-x''_i|<\beta,
 $$
 
 to
@@ -85,8 +85,8 @@ $$
 \beta.
 $$
 
-## § 7. Działania na punktach w przestrzeni $C_n$
+## § 7$^z$[^1]. Działania na punktach w przestrzeni $C_n$
 
-Okoliczność, że punkty przestrzeni $C_n$ są układami liczb, pozwala wprowadzić pewne działania, mające na razie znaczenie jedynie skrótów rachunkowych (a nie operacji posiadających treść geometryczną).[^1]
+Okoliczność, że punkty przestrzeni $C_n$ są układami liczb, pozwala wprowadzić pewne działania,
 
-[^1]: Jak już wspomnieliśmy (w przedmowie), wskaźnik „$z$” oznaczający zadania z tego paragrafu zachowuje się bez zmiany również w dziedzinie zespolonej.
+[^1]: Jak już wspomnieliśmy (w przedmowie), wskaźnik „$z$” oznacza, że twierdzenia i zadania z tego paragrafu zachowują się bez zmiany również w dziedzinie zespolonej.
