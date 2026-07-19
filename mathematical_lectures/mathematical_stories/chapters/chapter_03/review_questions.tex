@@ -3,17 +3,27 @@
 \subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
-\item Write a parametric equation of the line through $P=(2,-1)$ with direction $v=(3,4)$. Find the points corresponding to $t=-1,0,2$ and plot them.
 
-\item Find an implicit equation of the line through $P=(1,3)$ with normal vector $n=(2,-1)$. Check that $P$ satisfies the equation.
+\item Write a parametric equation of the line through $P=(2,-1)$ with direction
+$\mathbf v=(3,4)$. Find the points corresponding to $t=-1,0,2$ and plot them.
+
+\item Find a normal equation and an implicit equation of the line through
+$P=(1,3)$ with normal vector $\mathbf n=(2,-1)$. Check that $P$ satisfies the
+resulting equation.
 
 \item Convert
 \[
 2x-3y=6
 \]
-to slope-intercept form, find both axis intercepts, and give one direction vector and one normal vector.
+to slope-intercept form. Find both axis intercepts and give one direction
+vector and one normal vector.
 
-\item Find the line through $A=(-1,2)$ and $B=(3,-4)$ in parametric, implicit, and slope form.
+\item Find the line through
+\[
+A=(-1,2),\qquad B=(3,-4)
+\]
+in parametric, implicit, and slope-intercept form. Verify that both points
+satisfy every description.
 
 \item Find and plot the intersection of
 \[
@@ -23,34 +33,109 @@ L_2:x+y=5.
 \]
 Verify the point in both equations.
 
-\item Determine whether each pair is parallel, perpendicular, identical, or neither:
+\item Determine whether each pair of lines is parallel, perpendicular,
+identical, or neither:
 \begin{enumerate}
 \item $2x-y=1$ and $4x-2y=7$;
 \item $x+2y=3$ and $2x-y=4$;
 \item $3x+y=5$ and $6x+2y=10$.
 \end{enumerate}
 
-\item Compute the distance from $P=(3,1)$ to the line $2x-y-4=0$. Find the foot of the perpendicular and verify the distance from coordinates.
+\item Compute the distance from $P=(3,1)$ to the line
+\[
+2x-y-4=0.
+\]
+Find the foot of the perpendicular and verify the distance directly from the
+coordinates of the two points.
 
-\item Find the line through $P=(1,-2)$ perpendicular to $3x+2y=5$. Find their intersection.
+\item Write a parametric equation of the plane through
+\[
+P=(1,2,0)
+\]
+with direction vectors
+\[
+\mathbf u=(1,0,1),\qquad \mathbf v=(0,2,-1).
+\]
+Produce four points of the plane.
 
-\item Find the line through $P=(-1,3)$ parallel to $2x-y=4$. Write it in implicit and parametric form.
-
-\item A line has direction vector $(2,-3)$ and passes through $(4,1)$. Find its intersections with both coordinate axes and draw the line.
-\end{enumerate}
-
-\subsection{Development and reasoning exercises}
-
-\begin{enumerate}
-\item Write a parametric equation of the plane through $P=(1,2,0)$ with directions $u=(1,0,1)$ and $v=(0,2,-1)$. Produce four points of the plane and explain why the nonparallel directions generate a two-dimensional set.
-
-\item For the same plane, compute a normal vector using $u\times v$ and derive an implicit equation. Verify that the points found previously satisfy it.
+\item For the plane from the previous exercise, compute
+\[
+\mathbf n=\mathbf u\times\mathbf v
+\]
+and derive an implicit equation. Verify that the four previously found points
+satisfy it.
 
 \item Find the plane through
 \[
 P=(1,0,0),\qquad Q=(0,1,0),\qquad R=(0,0,1).
 \]
-Give both parametric and normal forms and explain how the three-point problem reduces to two direction vectors.
+Give both parametric and normal forms, and compute the distance from the origin
+to this plane.
+
+\end{enumerate}
+
+\subsection{Development and reasoning exercises}
+
+\begin{enumerate}
+
+\item A line is written as
+\[
+L=\{P_0+t\mathbf v:t\in\mathbb R\}.
+\]
+Explain why replacing $\mathbf v$ by $2\mathbf v$ or by $-\mathbf v$ produces
+the same geometric line, although the parameter traverses it differently.
+
+\item Explain why slope-intercept form cannot represent a vertical line without
+a special case, while parametric and normal forms handle it naturally. Give one
+vertical line in all applicable forms.
+
+\item Starting with a direction vector
+\[
+\mathbf v=(a,b),
+\]
+construct a normal vector and derive an implicit equation of the line through a
+point $P_0=(x_0,y_0)$. Explain why the direction and normal descriptions encode
+the same line.
+
+\item For
+\[
+L=\{P_0+t\mathbf v:t\in\mathbb R\}
+\]
+and a point $P$, derive the formula for the nearest point
+\[
+Q=P_0+\operatorname{proj}_{\mathbf v}(P-P_0).
+\]
+Explain why every other point of the line is farther from $P$.
+
+\item A student says that two lines are perpendicular whenever their direction
+vectors have zero dot product. Explain why this is sufficient in the plane but
+would require an additional intersection condition for geometric lines in
+space. Use a drawing or concrete example to clarify the distinction.
+
+\item Compare
+\[
+P=P_0+t\mathbf v
+\]
+with
+\[
+P=P_0+s\mathbf u+t\mathbf v.
+\]
+Use one concrete line and one concrete plane to explain why one independent
+direction produces a one-dimensional set and two nonparallel directions
+produce a two-dimensional set.
+
+\item The plane generated by $\mathbf u$ and $\mathbf v$ uses
+$\mathbf u\times\mathbf v$ as a normal. Verify the perpendicularity by dot
+products in one numerical example and explain why reversing the order changes
+the normal vector but not the plane.
+
+\item Three points determine a plane only when they are not collinear. Give one
+set of three collinear points and one set of three noncollinear points. Explain
+what happens to
+\[
+(Q-P)\times(R-P)
+\]
+in each case.
 
 \item Determine the relative position of
 \[
@@ -58,21 +143,13 @@ Give both parametric and normal forms and explain how the three-point problem re
 \qquad
 \Pi_2:x-y+z=3.
 \]
-Find a direction vector of their intersection line and one point on it, then write the line parametrically.
+Find a direction vector of their intersection line and one point on it. Explain
+why the cross product of the normals gives the correct direction.
 
-\item Compare the line formula
-\[
-P=P_0+t v
-\]
-with the plane formula
-\[
-P=P_0+s u+t v.
-\]
-Use one concrete line and one concrete plane to show that the number of independent directions determines the geometric dimension.
+\item Give a strategy for choosing between parametric and normal descriptions
+when solving each of the following tasks: constructing an object from points or
+directions, testing membership, finding an intersection, checking
+parallelism or perpendicularity, and computing distance. Support the strategy
+with one line example and one plane example.
 
-\item Explain why a normal equation describes a line in the plane and a plane in space by the same idea: the displacement from a fixed point has zero normal component. Give both formulas side by side.
-
-\item A student converts every line immediately to slope form. Give two problems in which parametric or normal form is more natural, solve them briefly, and explain what slope form hides.
-
-\item Give a complete strategy for choosing a representation of a line or plane. Your answer must discuss constructing the object, testing membership, finding intersections, checking parallelism or perpendicularity, and measuring distance.
 \end{enumerate}
