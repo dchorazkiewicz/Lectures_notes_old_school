@@ -1,0 +1,55 @@
+\subsection{Ellipse from the polar formula}
+
+Assume
+\[
+0<e<1.
+\]
+Then
+\[
+1-e\leq1+e\cos\theta\leq1+e,
+\]
+so the denominator is positive for every angle. The radius is finite in every
+direction and the curve closes around the focus.
+
+The nearest point occurs at $\theta=0$:
+\[
+\boxed{r_{\min}=\frac{p}{1+e}}.
+\]
+The farthest point occurs at $\theta=\pi$:
+\[
+\boxed{r_{\max}=\frac{p}{1-e}}.
+\]
+Thus increasing $e$ makes the two extreme focal distances more unequal.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[axis,->] (-6.0,0)--(5.3,0) node[right] {polar axis};
+    \draw[axis,->] (0,-3.5)--(0,3.7);
+    \draw[blue!70!black,line width=1.1pt]
+        plot[domain=0:360,samples=220]
+        ({2.4*cos(\x)/(1+0.25*cos(\x))},{2.4*sin(\x)/(1+0.25*cos(\x))});
+    \draw[orange!85!black,line width=1.1pt]
+        plot[domain=0:360,samples=220]
+        ({2.4*cos(\x)/(1+0.65*cos(\x))},{2.4*sin(\x)/(1+0.65*cos(\x))});
+    \fill[geometricSubsetColor] (0,0) circle (2.2pt) node[below left] {focus};
+    \node[blue!70!black] at (-3.0,2.6) {$e=0.25$};
+    \node[orange!85!black] at (-5.0,-2.6) {$e=0.65$};
+\end{tikzpicture}
+\end{center}
+
+For a Cartesian ellipse with semimajor axis $a$ and semiminor axis $b$,
+\[
+e=\sqrt{1-\frac{b^2}{a^2}},
+\qquad
+p=a(1-e^2)=\frac{b^2}{a}.
+\]
+Therefore the focus-centred form is
+\[
+\boxed{r(\theta)=\frac{a(1-e^2)}{1+e\cos\theta}}.
+\]
+
+\begin{interpretationbox}[Why the focus-centred form matters]
+The Cartesian equation displays the centre and semiaxes. The polar equation
+displays the distance from a focus as the direction changes. This second view is
+the one that later matches central-force motion.
+\end{interpretationbox}
