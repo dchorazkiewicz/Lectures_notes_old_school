@@ -1,91 +1,140 @@
-\subsection{Stretching, Shrinking, and Reversing a Displacement}
+\subsection{Parallel Vectors and Multiplication by a Number}
 
-Addition combines different displacements. A second operation appears when the
-same displacement is repeated.
+Before multiplying a vector by a number, we identify the geometric relation that
+this operation is meant to preserve.
 
-\begin{corebox}[The geometric idea]
-Scalar multiplication changes how much of one displacement is taken. It may
-stretch, shrink, erase, or reverse a vector, but it does not introduce a new
-line of direction.
-\end{corebox}
-
-\begin{derivationbox}[From repetition to continuous scaling]
-If
+Two nonzero free vectors $\mathbf a$ and $\mathbf b$ have the same direction and
+the same orientation when placing them successively produces no shortening:
 \[
-\mathbf v=(v_1,v_2),
+|\mathbf a+\mathbf b|=|\mathbf a|+|\mathbf b|.
 \]
-then performing it twice gives
+They have the same direction and opposite orientations when
 \[
-\mathbf v+\mathbf v=(2v_1,2v_2),
+|\mathbf a-\mathbf b|=|\mathbf a|+|\mathbf b|.
 \]
-and performing it three times gives
-\[
-3\mathbf v=(3v_1,3v_2).
-\]
-Both components must be multiplied by the same factor if the direction is to
-remain unchanged. Extending repetition from integers to arbitrary real factors
-leads to the general operation.
-\end{derivationbox}
-
-\begin{definitionbox}
-For a real number $\lambda$ and a vector $\mathbf v=(v_1,v_2)$,
-\[
-\boxed{
-\lambda\mathbf v=(\lambda v_1,\lambda v_2)
-}.
-\]
-The number $\lambda$ is called a \emph{scalar}.
-\end{definitionbox}
+In both cases the vectors are called \emph{parallel}.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.9,>=stealth]
+\begin{tikzpicture}[scale=0.9]
+    \coordinate (O1) at (0,2.5);
+    \coordinate (A1) at (2.4,3.4);
+    \coordinate (B1) at (5.2,4.45);
+
+    \coordinate (O2) at (0,0);
+    \coordinate (A2) at (2.4,0.9);
+    \coordinate (B2) at (-2.8,-1.05);
+
+    \draw[subset,->] (O1) -- (A1) node[midway,above left] {$\mathbf a$};
+    \draw[subset,->] (A1) -- (B1) node[midway,above left] {$\mathbf b$};
+    \draw[helper,dashed] (O1) -- (B1);
+    \node[right] at (5.35,4.45) {same orientation};
+
+    \draw[subset,->] (O2) -- (A2) node[midway,above left] {$\mathbf a$};
+    \draw[subset,->] (O2) -- (B2) node[midway,below right] {$\mathbf b$};
+    \draw[helper,dashed] (B2) -- (A2);
+    \node[right] at (3.0,0.9) {opposite orientations};
+
+    \fill (O1) circle (2pt);
+    \fill (A1) circle (2pt);
+    \fill (B1) circle (2pt);
+    \fill (O2) circle (2pt);
+    \fill (A2) circle (2pt);
+    \fill (B2) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+Let
+\[
+\mathbf a=[a_1,a_2],
+\qquad
+\mathbf b=[b_1,b_2].
+\]
+The equality condition in the triangle inequality implies that the two vectors
+are parallel exactly when their coordinate pairs are proportional. Thus
+\[
+\boxed{
+\mathbf a\parallel\mathbf b
+\quad\Longleftrightarrow\quad
+\lambda\mathbf a=\mu\mathbf b
+}
+\]
+for some real numbers $\lambda$ and $\mu$ that are not both zero. In the plane,
+this condition may also be written as
+\[
+\boxed{
+a_1b_2-a_2b_1=0
+}.
+\]
+If $\lambda$ and $\mu$ have the same sign, the vectors have the same
+orientation; if their signs are opposite, the orientations are opposite.
+
+We can now define multiplication of a vector by a real number $t$.
+
+If $t>0$, the vector $t\mathbf a$ is parallel to $\mathbf a$, has the same
+orientation, and has length
+\[
+|t\mathbf a|=t|\mathbf a|.
+\]
+If $t<0$, it is parallel to $\mathbf a$, has the opposite orientation, and has
+length
+\[
+|t\mathbf a|=|t|\,|\mathbf a|.
+\]
+For $t=0$, the result is the zero vector.
+
+In coordinates this geometric definition becomes
+\[
+\boxed{
+t[a_1,a_2]=[ta_1,ta_2]
+}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
     \coordinate (O) at (0,0);
-    \coordinate (Vhalf) at (1.2,0.7);
-    \coordinate (V) at (2.4,1.4);
-    \coordinate (TwoV) at (4.8,2.8);
-    \coordinate (MinusV) at (-2.4,-1.4);
+    \coordinate (Half) at (1.2,0.7);
+    \coordinate (A) at (2.4,1.4);
+    \coordinate (Two) at (4.8,2.8);
+    \coordinate (Minus) at (-2.4,-1.4);
 
-    \draw[green!55!black,line width=1pt,->] (O) -- (Vhalf)
-        node[midway,above left] {$\tfrac12\mathbf v$};
-    \draw[blue!70!black,line width=1.1pt,->] (O) -- (V)
-        node[midway,below right] {$\mathbf v$};
-    \draw[orange!85!black,line width=1.1pt,->] (O) -- (TwoV)
-        node[midway,above left] {$2\mathbf v$};
-    \draw[violet!75,line width=1.1pt,->] (O) -- (MinusV)
-        node[midway,above left] {$-\mathbf v$};
+    \draw[helper,dashed] (-3.0,-1.75) -- (5.4,3.15);
+    \draw[subset,->] (O) -- (Half)
+        node[midway,above left] {$\tfrac12\mathbf a$};
+    \draw[subset,->] (O) -- (A)
+        node[midway,below right] {$\mathbf a$};
+    \draw[subset,->] (O) -- (Two)
+        node[midway,above left] {$2\mathbf a$};
+    \draw[subset,->] (O) -- (Minus)
+        node[midway,above left] {$-\mathbf a$};
 
-    \draw[gray,dashed] (-3.0,-1.75) -- (5.4,3.15);
     \fill (O) circle (2pt) node[below right] {$O$};
 \end{tikzpicture}
 \end{center}
 
-\begin{interpretationbox}[How the scalar changes the vector]
-\begin{itemize}
-    \item if $\lambda>1$, the vector is stretched;
-    \item if $0<\lambda<1$, it is shortened;
-    \item if $\lambda=0$, it collapses to the zero vector;
-    \item if $\lambda<0$, it is also reversed.
-\end{itemize}
-The scalar changes the amount and possibly the orientation of the displacement,
-not the underlying line on which it lies.
-\end{interpretationbox}
+The diagram shows all cases at once:
+\[
+\begin{array}{c|c|c}
+ t & \text{length} & \text{orientation}\
+ \hline
+ t>1 & \text{increased} & \text{unchanged}\
+ 0<t<1 & \text{decreased} & \text{unchanged}\
+ t=0 & 0 & \text{none}\
+ t<0 & |t|\,|\mathbf a| & \text{reversed}
+\end{array}
+\]
 
-\begin{theorembox}
-Two nonzero vectors $\mathbf u$ and $\mathbf v$ are parallel if and only if one
-is a scalar multiple of the other:
+Multiplication by a number is compatible with vector addition:
 \[
 \boxed{
-\mathbf u\parallel\mathbf v
-\iff
-\mathbf u=\lambda\mathbf v
-\text{ for some }\lambda\in\mathbb R\setminus\{0\}
+t(\mathbf a+\mathbf b)=t\mathbf a+t\mathbf b
+}
+\]
+and
+\[
+\boxed{
+(s+t)\mathbf a=s\mathbf a+t\mathbf a
 }.
 \]
-\end{theorembox}
-
-\begin{remarkbox}
-Fractions and irrational factors are natural extensions of repetition. The
-vector $\tfrac12\mathbf v$ must be repeated twice to produce $\mathbf v$, while
-$\sqrt2\,\mathbf v$ has the same direction and $\sqrt2$ times the length.
-Scalar multiplication turns discrete repetition into continuous scaling.
-\end{remarkbox}
+These identities follow directly from coordinatewise addition and
+multiplication, but their geometric content is that scaling commutes with
+combining directed changes.
