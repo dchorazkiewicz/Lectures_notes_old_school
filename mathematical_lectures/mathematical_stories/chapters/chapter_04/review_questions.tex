@@ -3,113 +3,171 @@
 \subsection{Elementary computational and graphical exercises}
 
 \begin{enumerate}
-\item Find the centre and radius of
+
+\item For the circle
 \[
-(x-2)^2+(y+3)^2=25.
+(x-2)^2+(y+1)^2=16,
 \]
-Sketch the circle and mark the four points directly above, below, left, and right of the centre.
+find the centre and radius, sketch the curve, and write a trigonometric
+parameterisation that traverses it once.
 
 \item Rewrite
 \[
 x^2+y^2-6x+4y-3=0
 \]
-in standard circle form. State the centre and radius.
-
-\item A parabola has focus $F=(0,2)$ and directrix $y=-2$. Derive its equation from the equal-distance condition and identify the vertex and opening direction.
-
-\item For
-\[
-x^2=12y,
-\]
-find $p$, the focus, the directrix, and the vertex. Check the equal-distance condition at $(6,3)$.
+in standard circle form. Then describe the same circle in polar coordinates
+centred at its own centre.
 
 \item For the ellipse
 \[
 \frac{x^2}{25}+\frac{y^2}{9}=1,
 \]
-find the semiaxes, vertices, foci, and $c$. Sketch the curve.
+find $a$, $b$, $c$, the foci, and the eccentricity. Write the parameterisation
+$x=5\cos t$, $y=3\sin t$ and plot several points.
 
 \item Rewrite
 \[
 9x^2+4y^2-36x+8y+4=0
 \]
-in standard ellipse form and find its centre and semiaxes.
+in standard ellipse form. Find its centre, semi-axes, and eccentricity.
+
+\item A parabola has focus $F=(2,0)$ and directrix $x=-2$. Derive its Cartesian
+equation and write an algebraic parameterisation.
 
 \item For the hyperbola
 \[
 \frac{x^2}{16}-\frac{y^2}{9}=1,
 \]
-find the vertices, foci, and asymptotes. Sketch both branches.
+find the vertices, foci, eccentricity, and asymptotes. Sketch both branches.
 
-\item Rewrite
+\item Convert the polar equation
 \[
-4x^2-9y^2-8x-18y-41=0
+r=4
 \]
-in standard hyperbola form and identify the centre and transverse direction.
+to Cartesian form and describe the curve.
 
-\item Classify and sketch each curve from the signs and missing terms:
+\item Convert
 \[
-x^2+4y^2=4,
+r=6\cos\theta
+\]
+to Cartesian form. Identify the centre and radius and sketch the circle together
+with the pole.
+
+\item For
+\[
+r=\frac{6}{1+\frac12\cos\theta},
+\]
+identify $p$ and $e$, classify the conic, and compute the nearest and farthest
+distances from the focus.
+
+\item Classify each polar conic and state whether the trajectory is bounded:
+\[
+r=\frac{3}{1+0.4\cos\theta},
 \qquad
-x^2-y^2=1,
+r=\frac{3}{1+\cos\theta},
 \qquad
-x^2=4y.
+r=\frac{3}{1+1.5\cos\theta}.
 \]
-State the decisive feature in each equation.
 
-\item Find the intersections of
-\[
-y=x^2
-\qquad\text{and}\qquad
-y=2x+3.
-\]
-Plot both curves and verify every intersection in both equations.
 \end{enumerate}
 
-\subsection{Development and reasoning exercises}
+\subsection{Development, visualisation, and reasoning exercises}
 
 \begin{enumerate}
-\item Starting from the fixed-distance definition, derive the equation of a circle with centre $(h,k)$ and radius $r$. Then specialise it to a concrete circle and compare the geometric and algebraic descriptions.
 
-\item Starting from the focus-directrix definition, derive the equation of the parabola with focus $(p,0)$ and directrix $x=-p$. Explain why the equation contains only one squared variable.
-
-\item An ellipse has foci $(-3,0)$ and $(3,0)$ and constant sum of distances $10$. Determine its standard equation, vertices, and minor semiaxis. Explain where the condition $10>6$ is used.
-
-\item A hyperbola has foci $(-5,0)$ and $(5,0)$ and constant absolute difference of distances $6$. Determine its standard equation and asymptotes, and explain why two branches appear.
-
-\item Rewrite and classify
+\item Draw one diagram that compares Cartesian and polar coordinates for the same
+point. Label $x$, $y$, $r$, and $\theta$, then derive
 \[
-4x^2+9y^2-16x+18y-11=0.
-\]
-Show every completing-square step and explain which geometric information becomes visible after each translation.
-
-\item Compare the curves
-\[
-x^2+y^2=0,
+x=r\cos\theta,
 \qquad
-x^2-y^2=0,
+y=r\sin\theta.
+\]
+Explain which coordinate system is better adapted to a distinguished focus.
+
+\item Starting from the focus--directrix condition
+\[
+d(P,F)=e\,d(P,D),
+\]
+place the pole at $F$ and the directrix at $x=d$. Derive
+\[
+r=\frac{p}{1+e\cos\theta},
+\qquad p=ed.
+\]
+Include a labelled geometric diagram showing the distance to the directrix.
+
+\item Fix $p=2$ and sketch or plot the polar curves corresponding to
+\[
+e=0.2,
+\qquad e=0.6,
+\qquad e=0.9.
+\]
+Describe how the nearest and farthest focal distances change as eccentricity
+increases.
+
+\item For an ellipse with semi-major axis $a$ and eccentricity $e$, use
+\[
+p=a(1-e^2)
+\]
+to prove
+\[
+r_{\min}=a(1-e),
 \qquad
-x^2+y^2=-1.
+r_{\max}=a(1+e).
 \]
-Classify the degenerate or empty cases and explain why a second-degree equation need not produce a nondegenerate conic.
+Then solve these equations for $a$ and $e$ in terms of $r_{\min}$ and
+$r_{\max}$.
 
-\item The equation
+\item An observed orbit has nearest focal distance $4$ and farthest focal distance
+$12$. Determine its semi-major axis, eccentricity, and focal parameter. Write its
+polar equation with the nearest point at $\theta=0$.
+
+\item Compare the two descriptions of the ellipse
 \[
-x^2+4xy+4y^2=1
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
 \]
-contains a mixed term. Factor its quadratic part, describe the geometry suggested by the factorisation, and explain why a rotation or new coordinate direction is natural.
-
-\item For
+and
 \[
-z=x^2+y^2,
+r=\frac{a(1-e^2)}{1+e\cos\theta}.
 \]
-compute and sketch the sections $x=0$, $y=0$, and $z=c$ for several positive values of $c$. Use the sections to justify the name elliptic paraboloid.
+Explain what becomes easy to read in the centre-based Cartesian description and
+what becomes easy to read in the focus-based polar description.
 
-\item For
+\item The parameterisation
 \[
-z=x^2-y^2,
+x=a\cos t,
+\qquad
+y=b\sin t
 \]
-compute the sections $x=0$, $y=0$, and $z=0$. Explain how the different section types reveal saddle behaviour.
+and the polar equation
+\[
+r=\frac{a(1-e^2)}{1+e\cos\theta}
+\]
+both describe an ellipse. Explain why $t$ is not generally the same angle as
+$\theta$. Support the explanation with a labelled drawing.
 
-\item Explain the two complementary tasks of the chapter: constructing a conic from a geometric condition and recognising geometry hidden in an equation. Use one complete example of each and compare the reasoning required.
+\item Study the rotated polar equation
+\[
+r=\frac{p}{1+e\cos(\theta-\theta_0)}.
+\]
+Explain separately the roles of $p$, $e$, and $\theta_0$. Sketch two curves with
+the same $p$ and $e$ but different $\theta_0$.
+
+\item Complete squares and reconstruct the geometry of
+\[
+x^2+4y^2-6x+8y-3=0.
+\]
+Find the centre, semi-axes, foci, eccentricity, and the focus-based polar equation
+after translating the Cartesian origin to the centre and orienting the polar
+axis along the major axis.
+
+\item Explain why the classification
+\[
+0\leq e<1,
+\qquad e=1,
+\qquad e>1
+\]
+is especially useful for mechanics. Your answer should distinguish bounded
+motion, threshold escape, and unbounded passage, while making clear that the
+physical derivation of the orbit equation has not yet been performed.
+
 \end{enumerate}
