@@ -1,137 +1,159 @@
-\subsection{Two Journeys Become One: Why Vectors Add}
+\subsection{Addition, Opposite Vectors, and Subtraction}
 
-Suppose a point is moved twice. The first displacement is
+Let $\overrightarrow{PQ}$ represent the free vector
 \[
-\mathbf u=(u_1,u_2),
+\mathbf a=[a_1,a_2],
 \]
-and the second is
+and choose a representative $\overrightarrow{QR}$ of
 \[
-\mathbf v=(v_1,v_2).
+\mathbf b=[b_1,b_2]
 \]
-We want one vector that has exactly the same final effect as these two moves
-performed successively.
-
-\begin{corebox}[The geometric problem]
-Vector addition must represent the single displacement whose effect is identical
-to performing two given displacements one after the other.
-\end{corebox}
-
-\begin{derivationbox}[Coordinate form forced by successive motion]
-Start at an arbitrary point $(x,y)$. After applying $\mathbf u$ we are at
-\[
-(x+u_1,\,y+u_2).
-\]
-Applying $\mathbf v$ from there gives
-\[
-(x+u_1+v_1,\,y+u_2+v_2).
-\]
-Relative to the original point, the total horizontal change is $u_1+v_1$ and
-the total vertical change is $u_2+v_2$. Therefore the coordinate rule is forced
-by the meaning of successive displacement.
-\end{derivationbox}
-
-\begin{definitionbox}
-For vectors $\mathbf u=(u_1,u_2)$ and $\mathbf v=(v_1,v_2)$, their sum is
-\[
-\boxed{
-\mathbf u+\mathbf v
-=
-(u_1+v_1,\,u_2+v_2)
-}.
-\]
-\end{definitionbox}
-
-\begin{interpretationbox}[What coordinatewise addition records]
-The formula is bookkeeping for a journey performed in two stages. It adds
-changes of the same kind: horizontal change to horizontal change and vertical
-change to vertical change.
-\end{interpretationbox}
+whose initial point is the endpoint of the first arrow. The arrow
+$\overrightarrow{PR}$ records the combined change.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.95,>=stealth]
-    \coordinate (O) at (0,0);
-    \coordinate (U) at (3.2,0.9);
-    \coordinate (V) at (1.0,2.5);
-    \coordinate (S) at (4.2,3.4);
+\begin{tikzpicture}[scale=1.0]
+    \coordinate (P) at (0.4,0.5);
+    \coordinate (Q) at (3.2,1.4);
+    \coordinate (R) at (4.7,4.0);
 
-    \draw[blue!70!black,line width=1.1pt,->] (O) -- (U)
-        node[midway,below] {$\mathbf u$};
-    \draw[orange!85!black,line width=1.1pt,->] (U) -- (S)
-        node[midway,right] {$\mathbf v$};
-    \draw[very thick,->] (O) -- (S)
-        node[midway,above left] {$\mathbf u+\mathbf v$};
+    \draw[subset,->] (P) -- (Q)
+        node[midway,below] {$\mathbf a$};
+    \draw[subset,->] (Q) -- (R)
+        node[midway,right] {$\mathbf b$};
+    \draw[very thick,->] (P) -- (R)
+        node[midway,above left] {$\mathbf a+\mathbf b$};
 
-    \draw[orange!85!black,dashed,->] (O) -- (V)
-        node[midway,left] {$\mathbf v$};
-    \draw[blue!70!black,dashed,->] (V) -- (S)
-        node[midway,above] {$\mathbf u$};
-
-    \fill (O) circle (2pt) node[below left] {start};
-    \fill (U) circle (2pt);
-    \fill (V) circle (2pt);
-    \fill (S) circle (2pt) node[above right] {finish};
+    \fill (P) circle (2pt) node[below left] {$P$};
+    \fill (Q) circle (2pt) node[below right] {$Q$};
+    \fill (R) circle (2pt) node[above right] {$R$};
 \end{tikzpicture}
 \end{center}
 
-\begin{proofbox}[Why the order does not change the result]
-The diagram contains two routes to the same endpoint:
+Since
 \[
-\mathbf u\text{ then }\mathbf v,
-\qquad
-\mathbf v\text{ then }\mathbf u.
+Q=P+(a_1,a_2)
 \]
-They agree because addition of real numbers is commutative:
+and
 \[
-u_1+v_1=v_1+u_1,
-\qquad
-u_2+v_2=v_2+u_2.
+R=Q+(b_1,b_2),
 \]
-Therefore
+we have
 \[
-\mathbf u+\mathbf v=\mathbf v+\mathbf u.
+R=P+(a_1+b_1,\,a_2+b_2).
 \]
-\end{proofbox}
-
-\begin{theorembox}
-Vector addition is commutative:
-\[
-\boxed{\mathbf u+\mathbf v=\mathbf v+\mathbf u}.
-\]
-Geometrically, this is the parallelogram rule.
-\end{theorembox}
-
-Subtraction answers a different practical question: what displacement must be
-performed after $\mathbf v$ in order to have the same effect as $\mathbf u$?
-We seek a vector $\mathbf w$ satisfying
-\[
-\mathbf v+\mathbf w=\mathbf u.
-\]
-
-\begin{derivationbox}[Subtraction as the missing displacement]
-Solving the equation $\mathbf v+\mathbf w=\mathbf u$ coordinate by coordinate
-gives
-\[
-\mathbf w=(u_1-v_1,\,u_2-v_2).
-\]
-\end{derivationbox}
-
-\begin{definitionbox}
-For vectors $\mathbf u=(u_1,u_2)$ and $\mathbf v=(v_1,v_2)$,
+Therefore the free vector represented by $\overrightarrow{PR}$ depends only on
+$\mathbf a$ and $\mathbf b$, not on the chosen point $P$. We define
 \[
 \boxed{
-\mathbf u-\mathbf v
+\mathbf a+\mathbf b
 =
-(u_1-v_1,\,u_2-v_2)
+[\overrightarrow{PR}]
+=
+[a_1+b_1,\,a_2+b_2]
 }.
 \]
-In particular,
-\[
-\boxed{\overrightarrow{AB}=B-A}.
-\]
-\end{definitionbox}
 
-\begin{remarkbox}
-The expression $B-A$ does not subtract geometric points as physical objects. It
-subtracts their coordinate addresses to recover the displacement carrying one
-point to the other.
-\end{remarkbox}
+The same sum can be constructed in the opposite order. Placing a representative
+of $\mathbf b$ first and then a representative of $\mathbf a$ gives the same
+endpoint. This is the parallelogram rule.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.1,0.9);
+    \coordinate (B) at (1.2,2.6);
+    \coordinate (S) at (4.3,3.5);
+
+    \draw[subset,->] (O) -- (A) node[midway,below] {$\mathbf a$};
+    \draw[subset,->] (O) -- (B) node[midway,left] {$\mathbf b$};
+    \draw[helper,dashed,->] (A) -- (S) node[midway,right] {$\mathbf b$};
+    \draw[helper,dashed,->] (B) -- (S) node[midway,above] {$\mathbf a$};
+    \draw[very thick,->] (O) -- (S)
+        node[midway,above left] {$\mathbf a+\mathbf b$};
+
+    \fill (O) circle (2pt);
+    \fill (A) circle (2pt);
+    \fill (B) circle (2pt);
+    \fill (S) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+Thus
+\[
+\boxed{
+\mathbf a+\mathbf b=\mathbf b+\mathbf a
+}.
+\]
+
+For every vector
+\[
+\mathbf a=[a_1,a_2]
+\]
+there is an \emph{opposite vector}
+\[
+\boxed{
+-\mathbf a=[-a_1,-a_2]
+},
+\]
+characterised by
+\[
+\mathbf a+(-\mathbf a)=\mathbf 0.
+\]
+Geometrically it has the same length and direction line as $\mathbf a$, but the
+opposite orientation.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.0,1.7);
+    \coordinate (M) at (-3.0,-1.7);
+
+    \draw[subset,->] (O) -- (A)
+        node[midway,above left] {$\mathbf a$};
+    \draw[subset,->] (O) -- (M)
+        node[midway,below right] {$-\mathbf a$};
+    \draw[helper,dashed] (M) -- (A);
+    \fill (O) circle (2pt) node[below right] {$O$};
+\end{tikzpicture}
+\end{center}
+
+Subtraction is defined by adding the opposite vector:
+\[
+\boxed{
+\mathbf a-\mathbf b
+=
+\mathbf a+(-\mathbf b)
+=
+[a_1-b_1,\,a_2-b_2]
+}.
+\]
+It is the missing vector in the equation
+\[
+(\mathbf a-\mathbf b)+\mathbf b=\mathbf a.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3.4,2.7);
+    \coordinate (B) at (1.0,1.0);
+
+    \draw[subset,->] (O) -- (A) node[midway,above left] {$\mathbf a$};
+    \draw[subset,->] (O) -- (B) node[midway,below right] {$\mathbf b$};
+    \draw[very thick,->] (B) -- (A)
+        node[midway,below right] {$\mathbf a-\mathbf b$};
+
+    \fill (O) circle (2pt);
+    \fill (A) circle (2pt);
+    \fill (B) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+The last diagram also explains the relation between points and vectors. For any
+two points $P$ and $Q$,
+\[
+[\overrightarrow{PQ}]=Q-P.
+\]
+The subtraction is performed on their coordinate descriptions and produces the
+free vector represented by the arrow from $P$ to $Q$.
