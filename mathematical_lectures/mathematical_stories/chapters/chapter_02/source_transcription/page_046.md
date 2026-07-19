@@ -18,19 +18,7 @@ $$
 
 Jest to tzw. *wektorialna postać równania prostej*.
 
-Prosta $L$ nie ulegnie zmianie, gdy punkt $a$ zastąpimy przez jakikolwiek inny punkt $a'\in L$, a wektor $\mathfrak a$ przez jakikolwiek wektor $\mathfrak a'\neq0$ równoległy do $\mathfrak a$. Istotnie, punkt $a'$ jest postaci
-
-$$
-a'=a+\alpha(\mathfrak a),
-$$
-
-a wektor $\mathfrak a'$ jest postaci
-
-$$
-\beta\mathfrak a,
-$$
-
-gdzie $\beta\neq0$. A więc
+Prosta $L$ nie ulegnie zmianie, gdy punkt $a$ zastąpimy przez jakikolwiek inny punkt $a'\in L$, a wektor $\mathfrak a$ przez jakikolwiek wektor $\mathfrak a'\neq0$ równoległy do $\mathfrak a$. Istotnie, punkt $a'$ jest postaci $a+\alpha(\mathfrak a)$, a wektor $\mathfrak a'$ jest postaci $\beta\mathfrak a$, gdzie $\beta\neq0$. A więc
 
 $$
 p=a+\lambda(\mathfrak a)
@@ -40,13 +28,7 @@ a'+(\lambda-\alpha)(\mathfrak a)
 a'+\frac{\lambda-\alpha}{\beta}(\mathfrak a'),
 $$
 
-gdzie $\frac{\lambda-\alpha}{\beta}$ (przy stałych $\alpha$ i $\beta$) przebiega wraz z $\lambda$ wszystkie wartości rzeczywiste. W szczególności dla
-
-$$
-\beta=\frac{1}{|\mathfrak a|}
-$$
-
-otrzymamy jako $\mathfrak a'$ pewien wersor. Każda prosta ma więc równanie wektorialne postaci
+gdzie $\frac{\lambda-\alpha}{\beta}$ (przy stałych $\alpha$ i $\beta$) przebiega wraz z $\lambda$ wszystkie wartości rzeczywiste. W szczególności dla $\beta=\frac{1}{|\mathfrak a|}$ otrzymamy jako $\mathfrak a'$ pewien wersor. Każda prosta ma więc równanie wektorialne postaci
 
 **(13.3)**
 
@@ -56,19 +38,7 @@ $$
 
 gdzie $a$ jest jednym z jej punktów, a $\mathfrak a$ jest wersorem.
 
-Zauważmy, że jeśli równania wektorialne
-
-$$
-p=a+\lambda(\mathfrak a)
-$$
-
-i
-
-$$
-p'=a'+\lambda'(\mathfrak a')
-$$
-
-przedstawiają jedną i tę samą prostą, to wektory $\mathfrak a$ i $\mathfrak a'$ są równoległe. Istotnie, wówczas istnieje $\lambda_0$ takie, że
+Zauważmy, że jeśli równania wektorialne $p=a+\lambda(\mathfrak a)$ i $p'=a'+\lambda'(\mathfrak a')$ przedstawiają jedną i tę samą prostą, to wektory $\mathfrak a$ i $\mathfrak a'$ są równoległe. Istotnie, wówczas istnieje $\lambda_0$ takie, że
 
 $$
 a'=a+\lambda_0(\mathfrak a).
@@ -107,5 +77,5 @@ Wektor przestrzeni $C_n$ określony wzorem
 **(13.5)**
 
 $$
-\mathfrak p_i=[\delta_1^i,\delta_2^i,\ldots,\delta_n^i]
+\mathfrak v_i=[\delta_1^i,\delta_2^i,\ldots,\delta_n^i]
 $$
