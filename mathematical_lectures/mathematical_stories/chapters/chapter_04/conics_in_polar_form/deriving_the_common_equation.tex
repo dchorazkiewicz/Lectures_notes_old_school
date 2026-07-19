@@ -1,0 +1,59 @@
+\subsection{Deriving the common polar equation}
+
+Place the pole at the focus $F=(0,0)$ and choose the directrix
+\[
+D:x=d,
+\qquad d>0.
+\]
+For a point $P=(r,\theta)$,
+\[
+x=r\cos\theta.
+\]
+Its distance from the directrix is therefore
+\[
+d(P,D)=d-r\cos\theta
+\]
+for the branch lying to the left of the directrix.
+
+The focus--directrix condition becomes
+\[
+r=e(d-r\cos\theta).
+\]
+Collecting the terms containing $r$ gives
+\[
+r(1+e\cos\theta)=ed.
+\]
+Define the focal parameter
+\[
+\boxed{p=ed}.
+\]
+Then
+\[
+\boxed{r(\theta)=\frac{p}{1+e\cos\theta}}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.86,>=stealth]
+    \draw[axis,->] (-1.0,0)--(6.6,0) node[right] {$x$};
+    \draw[gray,thick] (5.0,-3.5)--(5.0,3.5) node[above] {$x=d$};
+    \coordinate (F) at (0,0);
+    \coordinate (P) at (2.8,2.0);
+    \coordinate (H) at (5.0,2.0);
+    \draw[blue!70!black,line width=1.2pt,->] (F)--(P)
+        node[midway,above left] {$r$};
+    \draw[orange!85!black,line width=1.1pt] (P)--(H)
+        node[midway,above] {$d-r\cos\theta$};
+    \draw[helper,dashed] (P)--(2.8,0)
+        node[midway,right] {$r\sin\theta$};
+    \draw (1.0,0) arc[start angle=0,end angle=35.54,radius=1.0];
+    \node at (1.28,0.48) {$\theta$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below left] {$F$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above left] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\begin{corebox}[The central idea]
+The formula is not an algebraic trick. The denominator records how the distance
+to the directrix changes when the viewing ray turns. Changing $e$ changes the
+balance between the two distances and therefore changes the type of conic.
+\end{corebox}
