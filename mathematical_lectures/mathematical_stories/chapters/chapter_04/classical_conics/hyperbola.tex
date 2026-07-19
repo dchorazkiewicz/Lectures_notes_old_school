@@ -1,0 +1,59 @@
+\subsection{Hyperbola: two complete branches and two asymptotes}
+
+For $a>0$ and $b>0$, the standard hyperbola is
+\[
+\boxed{\frac{x^2}{a^2}-\frac{y^2}{b^2}=1}.
+\]
+Define
+\[
+c=\sqrt{a^2+b^2}.
+\]
+The foci are $F_1=(-c,0)$ and $F_2=(c,0)$, and the geometric condition is
+\[
+\boxed{|d(P,F_1)-d(P,F_2)|=2a}.
+\]
+The absolute value is essential: one sign describes the right branch and the
+opposite sign describes the left branch.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[axis,->] (-6.0,0)--(6.2,0) node[right] {$x$};
+    \draw[axis,->] (0,-4.3)--(0,4.5) node[above] {$y$};
+    \draw[helper,dashed] (-5.5,-3.67)--(5.5,3.67)
+        node[right] {$y=(b/a)x$};
+    \draw[helper,dashed] (-5.5,3.67)--(5.5,-3.67)
+        node[right] {$y=-(b/a)x$};
+    \draw[subset,domain=2.05:5.5,samples=120]
+        plot (\x,{1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=2.05:5.5,samples=120]
+        plot (\x,{-1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=-5.5:-2.05,samples=120]
+        plot (\x,{1.333*sqrt(\x*\x/4-1)});
+    \draw[subset,domain=-5.5:-2.05,samples=120]
+        plot (\x,{-1.333*sqrt(\x*\x/4-1)});
+    \coordinate (F1) at (-3.33,0);
+    \coordinate (F2) at (3.33,0);
+    \coordinate (P) at (3.2,1.67);
+    \draw[blue!70!black,line width=1pt] (F1)--(P);
+    \draw[orange!85!black,line width=1pt] (F2)--(P);
+    \fill[geometricSubsetColor] (F1) circle (2.2pt) node[below] {$F_1$};
+    \fill[geometricSubsetColor] (F2) circle (2.2pt) node[below] {$F_2$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+    \node at (3.8,-3.7) {right branch};
+    \node at (-3.8,-3.7) {left branch};
+\end{tikzpicture}
+\end{center}
+
+The asymptotes
+\[
+\boxed{y=\pm\frac ba x}
+\]
+are not parts of the hyperbola. They record the directions approached by both
+branches far from the centre.
+
+\begin{corebox}[Do not confuse a branch with the whole hyperbola]
+A focus-centred polar equation will naturally describe the branch visible from
+that chosen focus and directrix. The Cartesian equation above remains the cleanest
+single picture of the complete two-branch curve. Later we will state explicitly
+which branch a polar formula traces and how the second branch is recovered.
+\end{corebox}
