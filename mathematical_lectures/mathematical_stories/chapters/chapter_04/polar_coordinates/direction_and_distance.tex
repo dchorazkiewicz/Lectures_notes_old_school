@@ -1,0 +1,57 @@
+\subsection{A point described by direction and distance}
+
+Choose a point $O$, called the pole, and a directed ray from $O$, called the
+polar axis. A point $P$ is described by
+\[
+\boxed{(r,\theta)},
+\]
+where $r$ is the distance from $O$ to $P$ and $\theta$ is the directed angle from
+the polar axis to the ray $OP$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0,>=stealth]
+    \draw[axis,->] (-0.8,0)--(6.2,0) node[right] {polar axis};
+    \coordinate (O) at (0,0);
+    \coordinate (P) at ({4.2*cos(38)},{4.2*sin(38)});
+    \draw[blue!70!black,line width=1.2pt,->] (O)--(P)
+        node[midway,above left] {$r$};
+    \draw (1.1,0) arc[start angle=0,end angle=38,radius=1.1];
+    \node at (1.35,0.48) {$\theta$};
+    \fill[geometricSubsetColor] (O) circle (2.2pt) node[below left] {$O$};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+For this chapter we use $r\geq0$ and $0\leq\theta<2\pi$. The pole is represented
+by $r=0$; its angle is geometrically irrelevant.
+
+\begin{interpretationbox}[Why this is adapted to a focus]
+If the pole is placed at a focus, then the first coordinate $r$ is already the
+focal distance. No square root is needed to recover it from $x$ and $y$.
+\end{interpretationbox}
+
+The coordinate curves also change character. In Cartesian coordinates,
+$x=\text{constant}$ and $y=\text{constant}$ are lines. In polar coordinates,
+\[
+\theta=\text{constant}
+\]
+is a ray, while
+\[
+r=\text{constant}
+\]
+is a circle centred at the pole.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82,>=stealth]
+    \draw[axis,->] (-4.2,0)--(4.4,0);
+    \draw[axis,->] (0,-4.0)--(0,4.2);
+    \foreach \rad in {1,2,3} {\draw[gray!45] (0,0) circle (\rad);}
+    \foreach \ang in {0,30,...,330} {
+        \draw[gray!45] (0,0)--({3.4*cos(\ang)},{3.4*sin(\ang)});
+    }
+    \draw[blue!70!black,line width=1.2pt] (0,0)--({3.5*cos(35)},{3.5*sin(35)});
+    \draw[orange!85!black,line width=1.2pt] (0,0) circle (2.2);
+    \node[blue!70!black] at (3.0,2.4) {$\theta=35^\circ$};
+    \node[orange!85!black] at (-2.8,-1.6) {$r=2.2$};
+\end{tikzpicture}
+\end{center}
