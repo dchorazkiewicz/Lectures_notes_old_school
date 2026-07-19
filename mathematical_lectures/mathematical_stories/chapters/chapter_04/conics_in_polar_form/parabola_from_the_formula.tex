@@ -1,0 +1,51 @@
+\subsection{Parabola from the polar formula}
+
+Set
+\[
+e=1.
+\]
+Then
+\[
+\boxed{r(\theta)=\frac{p}{1+\cos\theta}}.
+\]
+For directions near $\theta=\pi$, the denominator approaches zero and the radius
+grows without bound. This is the geometric reason the curve is open.
+
+Using
+\[
+1+\cos\theta=2\cos^2\frac\theta2,
+\]
+we may also write
+\[
+r=\frac{p}{2\cos^2(\theta/2)}.
+\]
+The formula shows that the vertex lies on the positive polar axis at
+\[
+\boxed{r=\frac p2}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.84,>=stealth]
+    \draw[axis,->] (-1.8,0)--(7.0,0) node[right] {polar axis};
+    \draw[axis,->] (0,-4.2)--(0,4.4);
+    \draw[subset,domain=-3.5:3.5,samples=140]
+        plot ({0.45*\x*\x+1.0},{\x});
+    \coordinate (F) at (0,0);
+    \coordinate (V) at (1.0,0);
+    \coordinate (P) at (3.2,2.2);
+    \draw[blue!70!black,line width=1.1pt,->] (F)--(P)
+        node[midway,above left] {$r$};
+    \draw (0.9,0) arc[start angle=0,end angle=34.5,radius=0.9];
+    \node at (1.18,0.43) {$\theta$};
+    \fill[geometricSubsetColor] (F) circle (2.2pt) node[below left] {focus};
+    \fill[geometricSubsetColor] (V) circle (2.2pt) node[below] {vertex};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[The exact transition]
+For an ellipse, the denominator stays away from zero. At $e=1$ it reaches zero
+in one limiting direction. The closed orbit has opened into a parabola. Nothing
+new was inserted into the formula; only one parameter reached its boundary
+value.
+\end{interpretationbox}
