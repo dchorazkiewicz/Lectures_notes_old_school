@@ -46,7 +46,7 @@ defined coordinatewise:
 At this stage these are arithmetic operations on ordered pairs. They are useful
 computational rules, but their geometric meaning has not yet been established.
 The first expression to acquire such a meaning will be the difference $Q-P$.
-It will describe the directed change from the point $P$ to the point $Q$.
+It will provide the coordinates of the directed change from $P$ to $Q$.
 
 \subsubsection*{An ordered pair of points determines an anchored vector}
 
@@ -82,17 +82,22 @@ point and $Q$ is its endpoint.
 \end{tikzpicture}
 \end{center}
 
-The coordinates of the anchored vector are the coordinate differences between
-its endpoint and its initial point:
+The difference of the endpoint and the initial point is the Cartesian point
+\[
+Q-P=(q_1-p_1,\,q_2-p_2).
+\]
+Its two coordinates are, by definition, the coordinates of the anchored vector:
 \[
 \boxed{
-[\overrightarrow{PQ}]
-=
-Q-P
-=
-(q_1-p_1,\,q_2-p_2)
+\operatorname{coord}\!\left(\overrightarrow{PQ}\right)
+=(q_1-p_1,\,q_2-p_2)
 }.
 \]
+Thus $Q-P$ is a point produced by the previously defined arithmetic, whereas
+$\operatorname{coord}(\overrightarrow{PQ})$ denotes the ordered pair of numbers
+assigned to the anchored vector. The two expressions use the same numbers but
+do not denote the same kind of object.
+
 Its length is the distance between the two points:
 \[
 \boxed{
@@ -102,9 +107,9 @@ Its length is the distance between the two points:
 Reversing the order reverses the arrow and changes the signs of both
 coordinates:
 \[
-[\overrightarrow{QP}]
-=P-Q
-=-(Q-P).
+\operatorname{coord}\!\left(\overrightarrow{QP}\right)
+=(p_1-q_1,\,p_2-q_2)
+=-\operatorname{coord}\!\left(\overrightarrow{PQ}\right).
 \]
 
 \subsubsection*{When do arrows drawn in different places represent the same vector?}
@@ -161,6 +166,12 @@ We have therefore obtained a coordinate criterion for the geometric relation:
 Q-P=Q'-P'
 }.
 \]
+Equivalently,
+\[
+\operatorname{coord}\!\left(\overrightarrow{PQ}\right)
+=
+\operatorname{coord}\!\left(\overrightarrow{P'Q'}\right).
+\]
 Thus two anchored vectors are equal precisely when they produce the same change
 in every coordinate. Their initial points may be different.
 
@@ -196,22 +207,31 @@ all arrows representing one and the same directed change. Such a class is called
 a \emph{free vector}.
 
 If $\overrightarrow{PQ}$ is one representative of a free vector $\mathbf v$, we
-may write
-\[
-\mathbf v=[\overrightarrow{PQ}].
-\]
-All representatives have the same coordinate differences. Consequently a free
-vector is completely described by one coordinate pair:
+write
 \[
 \boxed{
-\mathbf v=[v_1,v_2]
+\mathbf v=[\overrightarrow{PQ}]
 }.
 \]
-Every anchored vector satisfying
+Here the square brackets denote the equivalence class of all anchored vectors
+equal to $\overrightarrow{PQ}$; they do not denote an ordered pair of numbers.
+
+All representatives have the same coordinate differences. We therefore define
+the coordinates of the free vector by
 \[
-Q-P=(v_1,v_2)
+\boxed{
+\operatorname{coord}(\mathbf v)=(v_1,v_2)
+}.
 \]
-is a representative of this same free vector.
+An anchored vector $\overrightarrow{PQ}$ represents $\mathbf v$ exactly when
+\[
+Q-P=(v_1,v_2),
+\]
+or, equivalently,
+\[
+\operatorname{coord}\!\left(\overrightarrow{PQ}\right)
+=\operatorname{coord}(\mathbf v).
+\]
 
 A particularly convenient representative begins at the origin. If
 \[
@@ -221,11 +241,16 @@ V=(v_1,v_2),
 \]
 then
 \[
-[\overrightarrow{OV}]=V-O=(v_1,v_2).
+\operatorname{coord}\!\left(\overrightarrow{OV}\right)
+=(v_1,v_2),
 \]
-Thus the point $V$ and the free vector $\mathbf v$ use the same numbers, but they
-are not the same type of object: $V$ is a point, whereas $\mathbf v$ is a class
-of equal anchored arrows.
+and therefore
+\[
+\mathbf v=[\overrightarrow{OV}].
+\]
+Thus the point $V$ and the free vector $\mathbf v$ use the same two numbers, but
+they remain different kinds of objects: $V$ is a point, whereas $\mathbf v$ is
+a class of equal anchored vectors.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
