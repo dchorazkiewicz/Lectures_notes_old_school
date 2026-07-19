@@ -134,19 +134,21 @@ It is the missing vector in the equation
 \]
 
 \begin{center}
-\begin{tikzpicture}[scale=0.95]
+\begin{tikzpicture}[scale=1.0]
     \coordinate (O) at (0,0);
-    \coordinate (A) at (3.4,2.7);
-    \coordinate (B) at (1.0,1.0);
+    \coordinate (B) at (1.35,1.15);
+    \coordinate (A) at (4.25,3.35);
 
-    \draw[subset,->] (O) -- (A) node[midway,above left] {$\mathbf a$};
-    \draw[subset,->] (O) -- (B) node[midway,below right] {$\mathbf b$};
+    \draw[subset,->] (O) -- (B)
+        node[pos=0.48,below left=3pt] {$\mathbf b$};
     \draw[very thick,->] (B) -- (A)
-        node[midway,below right] {$\mathbf a-\mathbf b$};
+        node[pos=0.55,below right=5pt] {$\mathbf a-\mathbf b$};
+    \draw[subset,->] (O) -- (A)
+        node[pos=0.60,above left=5pt] {$\mathbf a$};
 
-    \fill (O) circle (2pt);
-    \fill (A) circle (2pt);
-    \fill (B) circle (2pt);
+    \fill (O) circle (2pt) node[below left] {$O$};
+    \fill (B) circle (2pt) node[above left] {$B$};
+    \fill (A) circle (2pt) node[above right] {$A$};
 \end{tikzpicture}
 \end{center}
 
