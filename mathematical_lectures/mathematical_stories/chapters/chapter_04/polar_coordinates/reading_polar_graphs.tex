@@ -1,0 +1,58 @@
+\subsection{Reading a polar equation as a radial instruction}
+
+A polar equation
+\[
+r=f(\theta)
+\]
+should be read operationally: choose a direction $\theta$, then travel the
+prescribed distance $r$ from the pole.
+
+The simplest example is
+\[
+\boxed{r=R},
+\]
+which gives the circle of radius $R$ centred at the pole.
+
+A more revealing example is
+\[
+\boxed{r=2R\cos\theta}.
+\]
+Using $x=r\cos\theta$ and $r^2=x^2+y^2$,
+\[
+r^2=2Rr\cos\theta
+\quad\Longrightarrow\quad
+x^2+y^2=2Rx,
+\]
+so
+\[
+\boxed{(x-R)^2+y^2=R^2}.
+\]
+The same curve is therefore a circle centred at $(R,0)$ and passing through the
+pole.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=stealth]
+    \draw[axis,->] (-1.8,0)--(6.3,0) node[right] {$x$};
+    \draw[axis,->] (0,-3.3)--(0,3.5) node[above] {$y$};
+    \draw[subset] (2.0,0) circle (2.0);
+    \coordinate (P) at ({4*cos(45)*cos(45)},{4*cos(45)*sin(45)});
+    \draw[blue!70!black,line width=1.1pt,->] (0,0)--(P)
+        node[midway,above left] {$r=2R\cos\theta$};
+    \draw (0.9,0) arc[start angle=0,end angle=45,radius=0.9];
+    \node at (1.15,0.45) {$\theta$};
+    \fill[geometricSubsetColor] (0,0) circle (2.2pt) node[below left] {pole};
+    \fill[geometricSubsetColor] (2.0,0) circle (2.2pt) node[below] {centre};
+    \fill[geometricSubsetColor] (P) circle (2.2pt) node[above right] {$P$};
+\end{tikzpicture}
+\end{center}
+
+\begin{interpretationbox}[What the equation is doing]
+The factor $\cos\theta$ shortens the permitted radial distance as the ray turns
+away from the positive axis. At $\theta=\pi/2$ the distance becomes zero, so the
+curve returns to the pole. A Cartesian equation hides this directional story;
+the polar equation displays it directly.
+\end{interpretationbox}
+
+This way of reading a formula prepares the conic equation. The next question is
+whether one radial law can generate ellipse, parabola, and hyperbola by changing
+only one parameter.
