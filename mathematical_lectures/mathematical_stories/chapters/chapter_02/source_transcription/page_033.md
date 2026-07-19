@@ -87,6 +87,6 @@ $$
 
 ## § 7$^z$[^1]. Działania na punktach w przestrzeni $C_n$
 
-Okoliczność, że punkty przestrzeni $C_n$ są układami liczb, pozwala wprowadzić pewne działania,
+Okoliczność, że punkty przestrzeni $C_n$ są układami liczb, pozwala wprowadzić
 
 [^1]: Jak już wspomnieliśmy (w przedmowie), wskaźnik „$z$” oznacza, że twierdzenia i zadania z tego paragrafu zachowują się bez zmiany również w dziedzinie zespolonej.
